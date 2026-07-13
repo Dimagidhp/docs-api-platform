@@ -543,6 +543,7 @@ nav:
         - LLM Proxy:
             - Quick Start Guide: ai-gateway/next/llm-proxy/quick-start-guide.md
             - LLM Provider Templates: ai-gateway/next/llm-proxy/llm-templates.md
+            - Multi-Provider Routing: ai-gateway/next/llm-proxy/multi-provider-routing.md
             - Guardrails:
                 - AWS Bedrock Guardrail: ai-gateway/next/llm-proxy/guardrails/aws-bedrock-guardrail.md
                 - Azure Content Safety: ai-gateway/next/llm-proxy/guardrails/azure-content-safety.md
