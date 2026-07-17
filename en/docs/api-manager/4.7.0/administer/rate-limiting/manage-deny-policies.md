@@ -1,3 +1,18 @@
+---
+title: "Manage Deny Policies"
+description: "Configure deny policies in the WSO2 API Manager Admin Portal to block requests to specific APIs, applications, IP addresses, or users, protecting backend servers from abuse and attacks."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/rate-limiting/manage-deny-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/rate-limiting/manage-deny-policies.md
+tags:
+  - api-manager
+  - rate-limiting
+  - admin-portal
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Manage Deny Policies
 
 By denying requests, you can protect servers from common attacks and abuse by users. Tenant administrative users can block requests based on the following parameters:

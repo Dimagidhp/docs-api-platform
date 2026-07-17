@@ -1,3 +1,17 @@
+---
+title: "WSO2 API Manager Quick Start Guide"
+description: "A first walkthrough of WSO2 API Manager: start the All-in-one package, create and publish a REST API from the Publisher Portal, subscribe to it from the Developer Portal, and invoke it using a generated access token."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/get-started/api-manager-quick-start-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/get-started/api-manager-quick-start-guide.md
+tags:
+  - api-manager
+  - getting-started
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "quickstart"
+---
+
 # Quick Start Guide
 
 New to WSO2 API Manager? This guide will walk you through the basics.

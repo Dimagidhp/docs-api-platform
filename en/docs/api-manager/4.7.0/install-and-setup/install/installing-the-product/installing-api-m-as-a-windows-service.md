@@ -1,3 +1,17 @@
+---
+title: "Run WSO2 API Manager as a Windows Service"
+description: "Configure YAJSW to run WSO2 API Manager as a Windows service, including setting up wrapper.conf, CARBON_HOME, running the server in console mode, and installing, starting, stopping, and uninstalling the WSO2CARBON service."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install/installing-the-product/installing-api-m-as-a-windows-service/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install/installing-the-product/installing-api-m-as-a-windows-service.md
+tags:
+  - api-manager
+  - installation
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Running API Manager as a Windows Service
 
 !!! note

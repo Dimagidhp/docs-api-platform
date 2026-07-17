@@ -1,3 +1,18 @@
+---
+title: "Configure Workflows in a Clustered Deployment"
+description: "Configure workflow-related settings such as Admin Portal roles, the WorkflowCallbackService endpoint, and BPEL/HumanTask WSDL addresses when running the Developer Portal, Publisher, Gateway, and Key Manager on separate nodes in a distributed deployment."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-workflows-in-a-cluster/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-workflows-in-a-cluster.md
+tags:
+  - api-manager
+  - workflows
+  - distributed-deployment
+  - customization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configuring Workflows in a Cluster
 
 If you are working in a clustered API Manager setup with the Developer Portal, Publisher, Gateway and Key Manager in separate servers, do the workflow configurations that are discussed in the previous topics in the **Developer Portal node** . In addition, do the following configurations.

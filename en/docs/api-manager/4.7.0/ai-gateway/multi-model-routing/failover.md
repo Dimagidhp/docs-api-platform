@@ -1,3 +1,18 @@
+---
+title: "Configure Model Failover for AI APIs"
+description: "Configure the Model Failover policy in WSO2 API Manager to automatically switch an AI API request to alternate fallback models and endpoints when the primary model is unresponsive or errors."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/multi-model-routing/failover/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/multi-model-routing/failover.md
+tags:
+  - api-manager
+  - ai-gateway
+  - multi-model-routing
+  - ai-apis
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Failover
 
 Failover routing enhances reliability by automatically switching to an alternate AI model if the primary model becomes unresponsive or encounters an error. This strategy ensures continuous service availability without manual intervention.

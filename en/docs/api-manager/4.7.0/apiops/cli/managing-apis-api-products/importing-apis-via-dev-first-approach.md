@@ -1,3 +1,17 @@
+---
+title: "Import APIs Using the Dev First Approach with API Controller"
+description: "Create and deploy APIs without the Publisher Portal by initializing an apictl project from scratch or from an OpenAPI/Swagger specification, editing api.yaml, and importing the project into a WSO2 API Manager environment."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-apis-api-products/importing-apis-via-dev-first-approach/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-apis-api-products/importing-apis-via-dev-first-approach.md
+tags:
+  - api-manager
+  - api-controller
+  - openapi
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Importing APIs Via Dev First Approach
 
 **WSO2 API Controller (apictl)** allows you to create and deploy APIs without using the Publisher Portal of the WSO2 API Manager (WSO2 API-M). You can use this feature to create an API **from scratch** or **using an existing Swagger or Open API specification** and then deploy it to the desired WSO2 API-M environment.

@@ -1,3 +1,18 @@
+---
+title: "Passing a Custom Authorization Token to the Backend"
+description: "A tutorial that swaps the application-generated Authorization token for a custom token exchange mechanism using a mediation sequence, so a backend that expects a specific fixed token receives it instead of the standard access token."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/passing-a-custom-authorization-token-to-the-backend/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/passing-a-custom-authorization-token-to-the-backend.md
+tags:
+  - api-manager
+  - mediation
+  - security
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Passing a Custom Authorization Token to the Backend
 
 When you send an API request to the backend, you pass a token in the `Authorization` header of the request. 

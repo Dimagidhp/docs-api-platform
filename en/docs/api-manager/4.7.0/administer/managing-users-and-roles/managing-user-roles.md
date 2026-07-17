@@ -1,3 +1,17 @@
+---
+title: "Managing User Roles"
+description: "Create and manage user roles such as admin, creator, publisher, and subscriber in WSO2 API Manager, assign scopes to roles, and update role names before or after the first server startup."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/managing-users-and-roles/managing-user-roles/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/managing-users-and-roles/managing-user-roles.md
+tags:
+  - api-manager
+  - user-management
+  - access-control
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Managing User Roles
 
 Roles contain permissions for users to manage the server. They can be reused and they eliminate the overhead of granting permissions to users individually.

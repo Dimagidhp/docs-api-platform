@@ -1,3 +1,18 @@
+---
+title: "Configure a JDBC User Store"
+description: "Configure a JDBC user store as the primary user store in WSO2 API Manager by editing the [user_store] section of deployment.toml, setting the PasswordHashMethod, updating the system administrator, and linking the datasource used by the userstore."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-jdbc-user-store/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-jdbc-user-store.md
+tags:
+  - api-manager
+  - user-stores
+  - databases
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configuring a JDBC User Store
 
 JDBC user stores can be configured using the <APIM_HOME>/repository/conf/deployment.toml file's [user_store] configuration section. The user core connects to two databases (the same database is utilized by default):

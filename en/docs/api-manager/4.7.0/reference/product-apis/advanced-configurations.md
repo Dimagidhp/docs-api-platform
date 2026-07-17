@@ -1,3 +1,18 @@
+---
+title: "Advanced Configurations for Product REST APIs"
+description: "Explains how to configure OAuth2 scope-to-role mappings for API Manager REST APIs and how to restrict allowed CORS origins for the Publisher, Developer Portal, Gateway, and Service Catalog REST APIs via deployment.toml or startup parameters."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/product-apis/advanced-configurations/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/product-apis/advanced-configurations.md
+tags:
+  - api-manager
+  - rest-api
+  - configuration
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Advanced Configurations
 
 This section explains how to configure scope to role mappings for API Manager REST APIs.

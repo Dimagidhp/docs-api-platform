@@ -1,3 +1,18 @@
+---
+title: "Define Custom Linter Rules for API Governance"
+description: "Write a custom Spectral-based linter rule, such as validating that a contact email is a corporate address, to enforce API definition standards through the API Manager governance validation engine."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/define-custom-linters/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/define-custom-linters.md
+tags:
+  - api-manager
+  - governance
+  - customization
+  - api-design
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Defining Custom Linter Rules
 
 Linting against custom rules is useful in standardizing and keeping API definitions clean. 

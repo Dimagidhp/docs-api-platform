@@ -1,3 +1,17 @@
+---
+title: "Prototyped (Pre-Released) APIs Overview"
+description: "Learn how WSO2 API Manager's PRE-RELEASED lifecycle state lets publishers share work-in-progress APIs, with mock or real backend implementations, so subscribers can try them out and give feedback before the API is published."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/prototype-api/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/prototype-api/overview.md
+tags:
+  - api-manager
+  - lifecycle-management
+  - api-lifecycle
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Prototyped APIs (Pre-Released APIs)
 
 Prototyped APIs (Pre-Released APIs) give publishers the ability to make an API available in the Developer Portal while indicating that it still is a work in progress. Subscribers can try out these APIs and provide feedback for improvements. Additionally, Pre-Released APIs provide mocking capabilities that enables receiving direct responses from the gateway even without a backend.

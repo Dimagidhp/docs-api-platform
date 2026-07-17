@@ -1,3 +1,18 @@
+---
+title: "Configure Gateway Visibility"
+description: "Restrict access to Gateway environments in WSO2 API Manager based on user roles, using either the Admin Portal or the deployment.toml configuration file with allow or deny permission types."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/multiple-gateways/configure-gateway-visibility/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/multiple-gateways/configure-gateway-visibility.md
+tags:
+  - api-manager
+  - gateway-policies
+  - access-control
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configure Gateway visibility
 
 Access to Gateways can be restricted based on user roles either from the Admin Portal or via the `<API-M_HOME>/repository/conf/deployment.toml` file.

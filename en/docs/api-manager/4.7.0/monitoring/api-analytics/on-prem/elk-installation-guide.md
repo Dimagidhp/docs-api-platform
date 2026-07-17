@@ -1,3 +1,18 @@
+---
+title: "Configure ELK-Based Analytics for API Manager"
+description: "Set up an on-premise ELK (Elasticsearch, Logstash, Kibana) analytics solution for WSO2 API Manager, covering deployment.toml and log4j2 configuration, installing Filebeat, Logstash, Elasticsearch, and Kibana, securing the stack with OpenID Connect single sign-on, and using the Overview, Traffic, API, MCP, User, Errors, Latency, Cache, and Devices dashboards."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/api-analytics/on-prem/elk-installation-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/api-analytics/on-prem/elk-installation-guide.md
+tags:
+  - api-manager
+  - analytics
+  - logging
+  - sso
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # ELK Based Analytics Installation Guide
 
 <a href="../../../assets/img/analytics/cloud/architecture.png"><img src="../../../assets/img/analytics/cloud/architecture.png" width="70%" alt="Deployment diagram"></a>

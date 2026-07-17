@@ -1,3 +1,17 @@
+---
+title: "Manage Applications with API Controller"
+description: "apictl commands to list and delete Applications in a WSO2 API Manager environment, including how the --owner flag behavior differs between unified endpoint and multi-endpoint environment registrations."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-applications/managing-applications/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-applications/managing-applications.md
+tags:
+  - api-manager
+  - api-controller
+  - applications
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Managing Applications
 
 ## Add Applications in an environment

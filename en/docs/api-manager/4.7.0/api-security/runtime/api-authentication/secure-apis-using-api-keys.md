@@ -1,3 +1,17 @@
+---
+title: "Secure APIs Using API Keys"
+description: "Secure APIs in WSO2 API Manager 4.7.0 using API-bound API keys - opaque tokens scoped to a single API - covering key generation, invocation, regeneration, revocation, and IP/referrer restrictions."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/api-authentication/secure-apis-using-api-keys/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/api-authentication/secure-apis-using-api-keys.md
+tags:
+  - api-manager
+  - api-security
+  - access-tokens
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Secure APIs with API Keys
 
 From WSO2 API Manager 4.7.0 onwards, you can secure APIs using **API-bound API keys** - opaque tokens that are scoped to a single API. Unlike traditional application-bound keys that can be reused across multiple APIs, an API key bounded to an API is valid only for the specific API it was generated for.

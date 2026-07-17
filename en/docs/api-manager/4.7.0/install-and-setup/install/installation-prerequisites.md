@@ -1,3 +1,17 @@
+---
+title: "Installation Prerequisites for WSO2 API Manager"
+description: "The environment, system, and database storage requirements for installing WSO2 API Manager, including supported operating systems and JDKs, physical/VM/EC2 sizing recommendations, required applications, and ARM processor compatibility."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install/installation-prerequisites/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install/installation-prerequisites.md
+tags:
+  - api-manager
+  - installation
+  - databases
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Installation Prerequisites
 
 WSO2 API Manager contains multiple runtimes. Before installing the runtimes, be sure that the appropriate prerequisites are fulfilled.

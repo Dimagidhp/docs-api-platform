@@ -1,3 +1,17 @@
+---
+title: "AI Guardrails Overview"
+description: "Learn how WSO2 AI Guardrails act as real-time validation and enforcement layers between applications and AI providers, and browse the full catalog of supported guardrail policies."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/overview.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # AI Guardrails
 
 Generative AI brings immense potential—but without the right controls, it also introduces significant risks.

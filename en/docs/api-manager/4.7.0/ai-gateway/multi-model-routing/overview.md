@@ -1,3 +1,18 @@
+---
+title: "Multi-Model Routing Overview"
+description: "An overview of Multi-Model Routing in WSO2 API Manager, covering load balancing and failover strategies for distributing AI API requests across multiple models, plus prerequisites for configuring model lists and endpoints."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/multi-model-routing/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/multi-model-routing/overview.md
+tags:
+  - api-manager
+  - ai-gateway
+  - multi-model-routing
+  - ai-apis
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Multi-Model Routing
 
 AI APIs often require flexibility in routing requests to multiple models within the same AI provider. The Multi-Model Routing feature in WSO2 API Manager enables API creators to define and enforce routing strategies for distributing requests across different AI models. This ensures efficient resource utilization, enhances reliability, and optimizes performance.

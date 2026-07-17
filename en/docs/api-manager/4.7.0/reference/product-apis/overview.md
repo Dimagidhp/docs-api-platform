@@ -1,3 +1,17 @@
+---
+title: "WSO2 API Manager REST APIs Overview"
+description: "Overview and index of the REST APIs exposed by the API Publisher, Developer Portal, Admin Portal, Gateway, Service Catalog, DevOps, and Governance components, plus a downloadable Postman collection for a quick start."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/product-apis/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/product-apis/overview.md
+tags:
+  - api-manager
+  - rest-api
+  - publisher-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # RESTful APIs
 
 The following topics list the APIs exposed from the API Publisher, Developer Portal, Admin Portal, Gateway, Service Catalog, Devops and Governance which you can use to create and manage APIs. You can consume APIs directly through their UIs or an external REST client like cURL.

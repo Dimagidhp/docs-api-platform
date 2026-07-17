@@ -1,3 +1,18 @@
+---
+title: "Setting Passwords Using Environment Variables or System Properties"
+description: "Configure WSO2 API Manager passwords for system users, keystores, and truststores using environment variable and system property placeholders in deployment.toml instead of hardcoding plain text values."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/logins-and-passwords/set-passwords-using-vars-and-sys-props/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/logins-and-passwords/set-passwords-using-vars-and-sys-props.md
+tags:
+  - api-manager
+  - security
+  - secure-vault
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Set Passwords using Environment Variables or System Properties
 
 The instructions on this page explain how you can set the passwords of system users, keystores, and truststores, etc. using system properties and environment variable, rather than hard coding them in the configuration file itself. 

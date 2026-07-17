@@ -1,3 +1,17 @@
+---
+title: "Federate OAuth Applications with an External Identity Provider"
+description: "Configure WSO2 API Manager to federate OAuth application authentication to an external identity provider, such as Okta, by editing the service-providers default.xml file to register a FederatedIdentityProviders configuration."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/applications/federating-oauth-applications/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/applications/federating-oauth-applications.md
+tags:
+  - api-manager
+  - oauth2
+  - sso
+  - key-managers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
 
 In the following document we will be explaining how to federate the OAuth applications using an external identity provider.
 

@@ -1,3 +1,17 @@
+---
+title: "Streaming APIs Overview"
+description: "Understand how WSO2 API Manager supports Event-Driven Architecture through Streaming APIs over the WebSocket, WebSub, and SSE protocols, and how topic-based authorization works for streaming events."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-streaming-api/streaming-api-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-streaming-api/streaming-api-overview.md
+tags:
+  - api-manager
+  - streaming-api
+  - api-design
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Streaming APIs Overview
 
 Event Driven Architecture (EDA) allows changes to data and state, and interesting business events to be pushed to applications immediately without requiring the applications to poll for the updates. Organizations try to embrace EDA to modernize their applications with rich, interactive, and immediate user experience (e.g., immediately seeing the changes in the stock prices). In addition to EDA, you also need to manage streaming APIs in scenarios when an organization needs to expose their event-streams in a managed way, to generate money based on streaming data, or to only allow authorized clients to access certain APIs. However, organizations face multiple challenges, as listed below, when attempting to implement an event driven architecture or introduce eventing.

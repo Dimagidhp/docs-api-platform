@@ -1,3 +1,17 @@
+---
+title: "Comment on an API via the Publisher"
+description: "Add and reply to comments on an API through the Publisher Portal to build a community around the API and collaborate with API consumers and other publishers."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-collaborations/comment-on-an-api-via-the-publisher/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-collaborations/comment-on-an-api-via-the-publisher.md
+tags:
+  - api-manager
+  - publisher-portal
+  - developer-portal
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Comment on an API via the Publisher
 
 The Publisher portal provides several useful features to build and nurture an active community of users for your APIs. Community features help API Consumers collaborate and communicate with the API Publisher and also build up constructive conversations.

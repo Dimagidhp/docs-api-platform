@@ -1,3 +1,18 @@
+---
+title: "Configuring a Single-Node All-in-One Deployment"
+description: "Manually configure and deploy WSO2 API Manager as a single standalone all-in-one instance: create an SSL certificate, configure the load balancer, set up production databases, configure the internal encryption key, gateway URLs, the Dev Portal URL, and analytics before starting the server."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/single-node/configuring-a-single-node/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/single-node/configuring-a-single-node.md
+tags:
+  - api-manager
+  - deployment
+  - installation
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Pattern 0: All-in-One Setup
 
 This page walks you through how to manually configure and deploy WSO2 API Manager in a single standalone instance, without using a distributed or HA deployment patterns. 

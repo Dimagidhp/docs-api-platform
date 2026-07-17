@@ -1,3 +1,17 @@
+---
+title: "PII Masking with Regex Guardrail"
+description: "Detect and protect Personally Identifiable Information in AI API requests and responses using WSO2 AI Gateway's Regex PII Masking Guardrail, supporting reversible masking and irreversible redaction modes."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/regex-pii-masking/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/regex-pii-masking.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Regex PII Masking Guardrail
 
 The **Regex PII Masking Guardrail** is a custom Synapse mediator for the **WSO2 API Manager Classic Gateway** that safeguards Personally Identifiable Information (PII) in incoming AI API requests and GenAI responses using user‑defined regular expressions. It enables flexible, rule‑driven detection, anonymization, and optional redaction of sensitive data across request and response flows.

@@ -1,3 +1,18 @@
+---
+title: "Customizing the Developer Portal and Gateway URLs for Tenants"
+description: "Configure per-tenant custom domain mappings, per-tenant service provider creation, and an NGINX load balancer so each tenant can access the Developer Portal and Gateway through its own custom URL."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/customize-the-api-store-and-gateway-urls-for-tenants/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/customize-the-api-store-and-gateway-urls-for-tenants.md
+tags:
+  - api-manager
+  - multitenancy
+  - customization
+  - gateway-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Customizing the Developer Portal and Gateway URLs for Tenants
 
 The default URL of WSO2 API Manager Developer Portal (`https://<HostName>:9443/devportal`) and the gateway URLs (`http://<HostName>:8280/t/<tenant-domain>` and `https://<HostName>:8243/t/<tenant-domain>`) can be customized per tenant. Following steps illustrate how to configure devportal and gateway custom URLs for a given tenant.

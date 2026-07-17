@@ -1,3 +1,18 @@
+---
+title: "Troubleshooting in Production Environments"
+description: "Guides administrators through analyzing Java stack traces and CPU spikes, capturing system state with Carbon Dump, viewing process threads on Solaris, and tuning Hazelcast cluster heartbeat settings for production WSO2 API Manager deployments."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/troubleshooting/admin-troubleshooting-in-production-environments/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/troubleshooting/admin-troubleshooting-in-production-environments.md
+tags:
+  - api-manager
+  - troubleshooting
+  - high-availability
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "troubleshooting"
+---
+
 # Troubleshooting in Production Environments
 
 The following sections provide information on how to troubleshoot various problems that may arise for deployment in production environments.

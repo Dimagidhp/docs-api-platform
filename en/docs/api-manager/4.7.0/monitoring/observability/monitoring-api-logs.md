@@ -1,3 +1,17 @@
+---
+title: "Monitor API Logs in WSO2 API Manager"
+description: "Enable and configure per-API HTTP request/response logging in WSO2 API Manager using BASIC, STANDARD, and FULL log levels, and manage API Logs via the Devops REST API or the API Controller (APICTL)."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/observability/monitoring-api-logs/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/observability/monitoring-api-logs.md
+tags:
+  - api-manager
+  - logging
+  - observability
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Monitoring API Logs
 
 WSO2 API-M enables a simple way to observe requests and responses going through the WSO2 API Gateway by introducing this light weight feature called API Logs. Since Correlation Logs cause lower performance on the API gateway, API Logs can be used to collect HTTP call logs without a considerable performance hit. There are 4 log levels where each log level has a set of properties.

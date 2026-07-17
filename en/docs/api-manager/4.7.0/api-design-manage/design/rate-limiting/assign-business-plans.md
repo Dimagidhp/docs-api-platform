@@ -1,3 +1,17 @@
+---
+title: "Assign Business Plans (Subscription Tiers) to APIs"
+description: "Assign subscription-level rate limiting tiers (business plans) to an API in the Publisher Portal, understand the default Bronze/Silver/Gold/Unlimited tiers and AI API business plans, and configure burst control to protect backends from traffic spikes."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/rate-limiting/assign-business-plans/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/rate-limiting/assign-business-plans.md
+tags:
+  - api-manager
+  - rate-limiting
+  - throttling
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Assign Business Plans (Subscription Tiers)
 
 When you publish an API, you must define the limits under which applications can consume it. You do this by assigning Subscription Tiers (Business Plans). These tiers act as a contract between the API provider and the consumer; for example, a Gold tier might allow 5000 requests per minute, while a Silver tier restricts access to 2000 requests per minute.

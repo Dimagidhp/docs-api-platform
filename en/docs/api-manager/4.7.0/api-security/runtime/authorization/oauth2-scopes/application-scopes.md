@@ -1,3 +1,17 @@
+---
+title: "Application Scopes"
+description: "Configure and use application-level OAuth2 scopes in WSO2 API Manager so client credentials grant tokens can be issued with scopes approved at the application level, for both the Resident and Global Key Manager."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/authorization/oauth2-scopes/application-scopes/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/authorization/oauth2-scopes/application-scopes.md
+tags:
+  - api-manager
+  - oauth2
+  - key-managers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Application Scopes
 
 Application scopes are configured at the application level as allowed scopes for specific application. In the client credentials grant type, if these scopes are requested during a token request, these will be granted along with the other approved scopes.

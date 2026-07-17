@@ -1,3 +1,17 @@
+---
+title: "Enable Role-Based Access Control Using XACML"
+description: "Integrate an external XACML entitlement server such as WSO2 Identity Server with WSO2 API Manager to enforce role-based access control on APIs, including creating entitlement policies, an entitlement mediator, and attaching it as an API policy."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/authorization/role-based-access-control-using-xacml/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/authorization/role-based-access-control-using-xacml.md
+tags:
+  - api-manager
+  - access-control
+  - api-security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Enabling Role-Based Access Control Using XACML
 
 Many organizations expose their business capabilities through APIs. One of the key challenges is controlling access to these exposed APIs in such a way that all authorized users are able to access its APIs without any interruption, while at the same time making sure that any unauthorized users are kept out. In order to achieve this, parameters such as the user role can be used in determining whether to grant or deny access to an API for a given user. There are two ways to control access to users, namely [OAuth 2.0 scope](oauth2-scopes/fine-grained-access-control-with-oauth-scopes.md) and XACML. This section explains how an external extensible Access Control Markup Language (XACML) entitlement server can be integrated with WSO2 API Manager to provide role-based access control to APIs exposed via WSO2 API Manager. XACML is a declarative access control policy language based on XML that can provide a standardized way of validating authorization requests.

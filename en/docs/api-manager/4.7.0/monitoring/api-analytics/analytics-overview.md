@@ -1,3 +1,17 @@
+---
+title: "API Analytics Overview"
+description: "Overview of the WSO2 API Manager analytics architecture, covering inbound, outbound, and AI analytics data, and the supported analytics platforms including Moesif, ELK, OpenSearch, and DataDog."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/api-analytics/analytics-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/api-analytics/analytics-overview.md
+tags:
+  - api-manager
+  - analytics
+  - observability
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # API Analytics Overview
 
 API Manager analytics provides insights into API usage, performance, and other key metrics to help API publishers and consumers make informed decisions. The analytics dashboard provides a comprehensive view of the API traffic, user engagement, and other relevant data. This section provides an overview of the analytics features available in WSO2 API Manager and guidance on how to use them effectively.

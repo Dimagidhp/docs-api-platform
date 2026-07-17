@@ -1,3 +1,18 @@
+---
+title: "Configuring reCAPTCHA for Single Sign-On"
+description: "Configure reCaptcha for the Single Sign-On (SSO) login flow in WSO2 API Manager to mitigate or block brute force login attacks, including always-prompt and max-failed-attempts options."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/logins-and-passwords/configuring-recaptcha-for-single-sign-on/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/logins-and-passwords/configuring-recaptcha-for-single-sign-on.md
+tags:
+  - api-manager
+  - sso
+  - security
+  - saml2
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configuring reCaptcha for Single Sign On
 
 This section guides you through configuring reCaptcha for the Single Sign

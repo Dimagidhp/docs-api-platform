@@ -1,3 +1,17 @@
+---
+title: "Configure the Crypto Provider in WSO2 API Manager"
+description: "Switch WSO2 API Manager's cryptographic provider between the default Bouncy Castle (BC) and FIPS 140-2 compliant Bouncy Castle FIPS (BCFIPS) using the fips.sh/fips.bat scripts and the security.jce.provider system property."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/advance-configurations/configuring-the-crypto-provider/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/advance-configurations/configuring-the-crypto-provider.md
+tags:
+  - api-manager
+  - security
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configure the Crypto Provider
 
 ## What is a Crypto Provider?

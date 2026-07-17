@@ -1,3 +1,18 @@
+---
+title: "Change Your Developer Portal Password"
+description: "Change your own password for the WSO2 API Manager Developer Portal, and optionally disable the Change Password feature via deployment.toml."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/user-account-management/change-dev-portal-password/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/user-account-management/change-dev-portal-password.md
+tags:
+  - api-manager
+  - developer-portal
+  - user-management
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Change Password for the Developer Portal
 
 Follow the instructions below to change your own password for the Developer Portal:

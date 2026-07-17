@@ -1,3 +1,17 @@
+---
+title: "Configure Caching in WSO2 API Manager"
+description: "Configure and tune the various caches used by WSO2 API Manager in deployment.toml, including the Classic Gateway cache, resource cache, Key Manager OAuth cache, response cache, JWT claims cache, and Publisher and Developer Portal caches."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/advance-configurations/configuring-caching/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/advance-configurations/configuring-caching.md
+tags:
+  - api-manager
+  - configuration
+  - deployment-toml
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configuring Caching
 
 When an API call hits the Classic Gateway, the Gateway carries out security checks to verify if the token is valid. During these verifications, the Classic Gateway extracts parameters (i.e., access token, API name, and API version) that are passed on to it. As the entire load of the traffic to APIs goes through the Classic Gateway, this verification process needs to be fast and efficient in order to prevent overhead and delays. WSO2 API Manager uses caching for this purpose, where the validation information is cached with the token, API name, and version, and the cache is stored in either the Classic Gateway or the Key Manager server.

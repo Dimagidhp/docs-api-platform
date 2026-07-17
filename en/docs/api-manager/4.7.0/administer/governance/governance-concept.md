@@ -1,3 +1,17 @@
+---
+title: "API Governance Concepts"
+description: "Understand the core concepts behind WSO2 API Manager's governance capabilities, including artifacts, rulesets, policies, severity levels, enforcement criteria, and labels."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/governance/governance-concept/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/governance/governance-concept.md
+tags:
+  - api-manager
+  - governance
+  - mcp
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Governance Concepts
 
 The governance capabilities in WSO2 API Manager builds upon the following core concepts:

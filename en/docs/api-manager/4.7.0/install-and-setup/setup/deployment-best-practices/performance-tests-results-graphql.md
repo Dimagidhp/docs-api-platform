@@ -1,3 +1,18 @@
+---
+title: "GraphQL Performance Test Results"
+description: "Review WSO2 API Manager's GraphQL performance test setup and results, including throughput, response time percentiles, and GC throughput measured across varying concurrent users and query complexities."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/performance-tests-results-graphql/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/performance-tests-results-graphql.md
+tags:
+  - api-manager
+  - graphql
+  - deployment
+  - monitoring
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Performance Test Results
 
 The performance of WSO2 API Manager was measured for GraphQL APIs. While the schema, the queries, and the responses were mimicked using the [Starwars API](https://github.com/wso2/samples-apim/tree/master/graphql-backend), the backend used for the test is a Netty backend. The Netty service is configured so that the response is aligned with the GraphQL request in order to only provide the data requested by a particular query.

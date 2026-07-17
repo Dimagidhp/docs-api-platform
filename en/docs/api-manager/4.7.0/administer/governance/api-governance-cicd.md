@@ -1,3 +1,18 @@
+---
+title: "CI/CD-Driven API Governance with WSO2 APICTL"
+description: "Use WSO2 APICTL's --dry-run flag to validate API compliance against governance policies before importing APIs, enabling automated governance checks within a CI/CD pipeline."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/governance/api-governance-cicd/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/governance/api-governance-cicd.md
+tags:
+  - api-manager
+  - governance
+  - ci-cd
+  - api-controller
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # CI/CD-Driven API Governance
 
 ## API Governance with WSO2 APICTL

@@ -1,3 +1,17 @@
+---
+title: "WSO2 API Management Guidelines"
+description: "Reference list of governance ruleset rules that validate WSO2 API Manager API definitions for naming, context, versioning, ownership, security, and tagging best practices, with valid and invalid YAML examples for each rule."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/governance/wso2-api-management-guidelines/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/governance/wso2-api-management-guidelines.md
+tags:
+  - api-manager
+  - governance
+  - api-design
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # WSO2 API Management Guidelines
 
 A guide detailing best practices for creating robust, scalable, and secure APIs, ensuring alignment with industry standards for optimal design.

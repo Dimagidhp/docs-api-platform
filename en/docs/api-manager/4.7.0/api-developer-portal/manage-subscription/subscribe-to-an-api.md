@@ -1,3 +1,18 @@
+---
+title: "Subscribe to an API"
+description: "Subscribe an application to a published API in the Developer Portal using the Subscription and Key Generation Wizard or an existing application, update subscription tiers, and unsubscribe from an API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/manage-subscription/subscribe-to-an-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/manage-subscription/subscribe-to-an-api.md
+tags:
+  - api-manager
+  - developer-portal
+  - subscriptions
+  - applications
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Subscribe to an API
 
 You have to **subscribe** to a published API before using it in your applications. The subscription process fulfills the authentication process and provides you with access tokens that you can use to invoke an API. 

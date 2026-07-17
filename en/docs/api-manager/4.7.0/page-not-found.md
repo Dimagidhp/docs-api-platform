@@ -1,5 +1,15 @@
 --- 
 template: templates/no-navbars.html 
+title: "Page Not Found"
+description: "The custom 404 error page shown when a requested WSO2 API Manager documentation page does not exist, has been removed, renamed, or is temporarily unavailable."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/page-not-found/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/page-not-found.md
+tags:
+  - api-manager
+  - troubleshooting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
 ---
 
 <head>

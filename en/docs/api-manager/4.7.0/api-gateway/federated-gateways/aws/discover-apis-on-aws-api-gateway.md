@@ -1,3 +1,18 @@
+---
+title: "Discover APIs on AWS API Gateway"
+description: "Configure AWS API Gateway as a federated gateway to discover APIs created and managed in AWS, bringing them under WSO2 API Manager's centralized governance, developer portal, and subscription control plane."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/aws/discover-apis-on-aws-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/aws/discover-apis-on-aws-api-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - governance
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Discover API on AWS API Gateway
 
 From 4.6.0 release, WSO2 API Manager supports federated API discovery for APIs deployed in AWS API Gateway. This enables APIs created and managed in AWS to be discovered and brought under the centralized control plane of WSO2 API Manager.

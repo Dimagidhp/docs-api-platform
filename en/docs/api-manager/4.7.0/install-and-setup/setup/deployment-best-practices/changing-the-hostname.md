@@ -1,3 +1,18 @@
+---
+title: "Change the Hostname in WSO2 API Manager"
+description: "Configure the hostname for a WSO2 API Manager instance in deployment.toml, set the Developer Portal URL, update portal settings.json files, and troubleshoot callback URL mismatches after a hostname change."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/changing-the-hostname/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/changing-the-hostname.md
+tags:
+  - api-manager
+  - deployment
+  - deployment-toml
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Changing the Hostname
 
 By default, WSO2 products identify the hostname of the current machine through the Java API. However, it is recommended to configure the hostname by setting the hostname parameter in the `deployment.toml` file.

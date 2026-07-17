@@ -1,3 +1,17 @@
+---
+title: "Migrate APIs Between Environments with API Controller"
+description: "Export APIs as archives from one WSO2 API Manager environment and import them into another using apictl, covering the exported archive structure, bulk export of a tenant's APIs, and tenanted-environment considerations."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-apis-api-products/migrating-apis-to-different-environments/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-apis-api-products/migrating-apis-to-different-environments.md
+tags:
+  - api-manager
+  - api-controller
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Migrating APIs to Different Environments
 
 **WSO2 API Controller(apictl)** allows you to maintain multiple environments running on the same WSO2 API Manager (WSO2 API-M) version. This allows you to import and export APIs between your environments. For example, if you have an API running in the development environment, you can export it and import it to the production environment. Thereby, APIs do not have to be created from scratch in different environments.

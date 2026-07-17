@@ -1,3 +1,17 @@
+---
+title: "Allow Multiple Active Access Tokens"
+description: "Configure WSO2 API Manager to issue multiple active JWT access tokens for the same consumer key, user, and scope combination instead of revoking the previous token."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/tokens/multiple-active-access-tokens/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/tokens/multiple-active-access-tokens.md
+tags:
+  - api-manager
+  - oauth2
+  - access-tokens
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Multiple Active Access Tokens
 
 WSO2 API Manager by default allows only one active access token to be in existence for the same Consumer Key, User and Scope combination at a given time. This behaviour can be modified to allow multiple access tokens as described in the following sections.

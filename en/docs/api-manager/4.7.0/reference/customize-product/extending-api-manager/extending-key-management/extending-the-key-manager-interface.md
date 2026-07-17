@@ -1,3 +1,18 @@
+---
+title: "Extend the Key Manager Interface"
+description: "Understand the role of the KeyManager interface as the bridge between the OAuth provider and WSO2 API Manager, and its methods for application registration, token retrieval, and scope and resource management, for building a custom Key Manager connector."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-key-management/extending-the-key-manager-interface/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-key-management/extending-the-key-manager-interface.md
+tags:
+  - api-manager
+  - key-managers
+  - customization
+  - oauth2
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Extending the Key Manager Interface
 
 In a typical WSO2 API Manager (WSO2 API-M) deployment, different components talk to the **KeyManager** interface to achieve different tasks. 

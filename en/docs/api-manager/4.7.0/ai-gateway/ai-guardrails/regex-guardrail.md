@@ -1,3 +1,17 @@
+---
+title: "Regex Guardrail"
+description: "Validate AI API request and response JSON content against custom regular expression patterns using WSO2 AI Gateway's Regex Guardrail policy to enforce security, compliance, and prompt-safety rules."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/regex-guardrail/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/regex-guardrail.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Regex Guardrail
 
 The **Regex Guardrail** is a custom Synapse mediator for the **WSO2 API Manager Classic Gateway** that evaluates incoming AI API requests and GenAI responses JSON content against API creator defined **regular expression (regex) patterns**. It enables enforcement of security, compliance, prompt-safety, or data quality rules by targeting specific JSON fields via JSON Path.

@@ -1,3 +1,18 @@
+---
+title: "Write Custom OAuth2 Grant Types"
+description: "Extend WSO2 API Manager's OAuth2 grant type handlers, such as authorization_code, password, client_credentials, refresh_token, and saml2-bearer, and safely clean up OAuth applications before removing a custom grant type from deployment.toml."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-key-management/writing-custom-grant-types/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-key-management/writing-custom-grant-types.md
+tags:
+  - api-manager
+  - grant-types
+  - oauth2
+  - customization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Writing Custom Grant Types
 
 OAuth 2.0 authorization servers provide support for four main grant types according to the OAuth 2.0 specification. They also allow you to add custom grant types and extend the existing ones.

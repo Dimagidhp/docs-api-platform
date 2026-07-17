@@ -1,3 +1,17 @@
+---
+title: "Enable Response Caching for an API"
+description: "Configure response caching for an API in WSO2 API Manager using the Publisher Portal or an OpenAPI extension, tune cache mediator properties, and invalidate cached responses remotely via JMX."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/response-caching/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/response-caching.md
+tags:
+  - api-manager
+  - api-gateway
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 #Response caching
 
 The API Manager uses [WSO2 ESB's cache mediator](https://docs.wso2.com/display/EI650/Cache+Mediator) to cache response messages for each API. Caching improves performance, because the backend server does not have to process the same data for a request multiple times. You need to set an appropriate timeout period to offset the risk of stale data in the cache.

@@ -1,3 +1,18 @@
+---
+title: "Configure the Prompt Decorator Policy"
+description: "Use the Prompt Decorator custom Synapse mediator in WSO2 API Manager's Classic Gateway to prepend or append structured meta-instructions to text and chat-based AI prompts for consistent tone and behavior."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/prompt-management/prompt-decorator/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/prompt-management/prompt-decorator.md
+tags:
+  - api-manager
+  - ai-gateway
+  - prompt-management
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Prompt Decorator
 
 The **Prompt Decorator** is a custom Synapse mediator for the **WSO2 API Manager Classic Gateway**, designed to enhance and standardize prompt inputs sent to AI services. It applies structured **prompt decoration techniques** to incoming text or chat-based payloads, enabling centralized control over prompt formatting, tone, behavior hints, and other guiding cues.

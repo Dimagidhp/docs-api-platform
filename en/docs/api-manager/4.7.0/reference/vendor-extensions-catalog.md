@@ -1,3 +1,18 @@
+---
+title: "Vendor-Specific OpenAPI Extensions Reference"
+description: "Reference catalog of WSO2 API Manager's vendor-specific OpenAPI extensions, covering x-auth-type, x-throttling-tier, x-wso2-auth-header, x-wso2-cors, production/sandbox endpoints, scope mappings and bindings, x-wso2-soap, mutual SSL, and response caching, with example snippets for each."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/vendor-extensions-catalog/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/vendor-extensions-catalog.md
+tags:
+  - api-manager
+  - openapi
+  - api-design
+  - rate-limiting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Vendor Specific Extensions
  
 WSO2 API Manager utilizes the vendor extensions support in [Open API specification](https://swagger.io/docs/specification/openapi-extensions/), to store operations such as throttling, against each API.

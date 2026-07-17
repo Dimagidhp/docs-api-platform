@@ -1,3 +1,17 @@
+---
+title: "JSON Schema Validator"
+description: "Enable the JSON Schema Validator in WSO2 API Manager to validate API request and response payloads against the OpenAPI-defined JSON schema and reject invalid requests or responses."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/api-request-response-schema-validation/json-schema-validator/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/runtime/api-request-response-schema-validation/json-schema-validator.md
+tags:
+  - api-manager
+  - api-security
+  - api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # JSON Schema Validator
 
 Attackers may try malicious payloads to break the API Gateway. Therefore, it is vital to have thorough client-side validation to validate all the requests and responses to reduce backend failures. 

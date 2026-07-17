@@ -1,3 +1,18 @@
+---
+title: "Onboard a Custom AI Service Provider"
+description: "Integrate a custom AI service provider with WSO2 API Manager's AI Gateway by configuring provider details, model lists, request/response field mappings, the API definition, and authentication in the Admin Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-vendor-management/custom-ai-vendors/onboarding-custom-ai-service-provider/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-vendor-management/custom-ai-vendors/onboarding-custom-ai-service-provider.md
+tags:
+  - api-manager
+  - ai-vendor-management
+  - ai-gateway
+  - ai-apis
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Creating Custom AI Service Providers
 
 This guide explains how to integrate WSO2 API Manager with custom AI service providers, allowing you to access various AI APIs via API Manager's AI Gateway. It provides step-by-step instructions for configuring any AI service provider to effectively manage and track AI API interactions.

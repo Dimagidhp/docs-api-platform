@@ -1,3 +1,18 @@
+---
+title: "Develop an Integration from a Managed API"
+description: "API-first integration tutorial where an API developer creates and mock-tests a REST API in WSO2 API Manager first, an integration developer implements the backend in WSO2 Integration Studio and publishes it to the Service Catalog, and the API developer then wires up the real service endpoint."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/develop-an-integration-with-a-managed-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/develop-an-integration-with-a-managed-api.md
+tags:
+  - api-manager
+  - micro-integrator
+  - service-catalog
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Develop an Integration From a Managed API
 
 The top down approach of API first integration provides the capability for API developers to start creating a managed REST API first in WSO2 API Manager. Then the integration developer can use the same API in the WSO2 Integration Studio to develop the integration later on and expose it to WSO2 API Manager. Thereafter, the API consumers can discover the API from the marketplace, subscribe to it, and use it for application development.

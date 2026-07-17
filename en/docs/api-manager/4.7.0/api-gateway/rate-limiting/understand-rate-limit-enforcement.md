@@ -1,3 +1,18 @@
+---
+title: "Understand Rate Limit Enforcement in the API Gateway"
+description: "Explains how the WSO2 API Gateway and Traffic Manager work together to enforce rate limiting policies, covering the policy evaluation hierarchy, distributed counter behavior in clusters, enforcement accuracy, and how to identify which limit throttled a request."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/rate-limiting/understand-rate-limit-enforcement/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/rate-limiting/understand-rate-limit-enforcement.md
+tags:
+  - api-manager
+  - rate-limiting
+  - api-gateway
+  - troubleshooting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Understand Rate Limit Enforcement
 
 The API Gateway enforces rate limiting policies in real-time as API requests flow through it. Rate limiting protects your APIs from security attacks such as denial of service (DoS), regulates traffic according to infrastructure availability, and enables different service levels for API monetization.

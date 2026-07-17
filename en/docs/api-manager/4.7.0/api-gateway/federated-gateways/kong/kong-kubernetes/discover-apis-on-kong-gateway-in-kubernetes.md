@@ -1,3 +1,18 @@
+---
+title: "Discover APIs on Kong Gateway in Kubernetes"
+description: "Configure Kong Gateway running on Kubernetes as a federated API gateway: install prerequisites, register the gateway environment in the Admin Portal, upload a PEM certificate to the Key Manager, deploy the WSO2 Kong Gateway Agent with Helm, and discover, publish, and invoke APIs from Kong custom resources."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/kong/kong-kubernetes/discover-apis-on-kong-gateway-in-kubernetes/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/kong/kong-kubernetes/discover-apis-on-kong-gateway-in-kubernetes.md
+tags:
+  - api-manager
+  - api-gateway
+  - federated-gateways
+  - kubernetes
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Discover APIs on Kong Gateway in Kubernetes
 
 From the 4.6.0 release onward, WSO2 API Manager introduces federated API discovery for APIs deployed on Kong Gateway in a Kubernetes cluster. WSO2 API Manager includes a built-in Kong Gateway connector and a separate Gateway Agent, which enables the discovery of APIs deployed on Kong Gateway in the cluster.

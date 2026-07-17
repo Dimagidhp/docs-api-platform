@@ -1,3 +1,18 @@
+---
+title: "Configure Gateways with Dedicated Backends"
+description: "Use parameterized endpoint URLs so each Gateway environment in WSO2 API Manager proxies to a different dedicated backend, resolved at Gateway startup using system properties or a custom class mediator."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/api-gateways-with-dedicated-backends/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/api-gateways-with-dedicated-backends.md
+tags:
+  - api-manager
+  - api-gateway
+  - endpoints
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Gateways with Dedicated Backends
 
 We can extend the [multiple gateway environments](maintaining-separate-production-and-sandbox-gateways.md) feature by utilizing parameterized endpoint capabilities of WSO2 API Manager to have each gateway point to a different back-end endpoint. Classic Gateway is the actual runtime of the APIs that are developed and published from the API Publisher. WSO2 API Manager is capable of publishing APIs to different Gateways where API users connect to those Classic Gateways in order to do the actual API calls through the applications to which they are subscribed.

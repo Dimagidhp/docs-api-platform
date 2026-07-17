@@ -1,3 +1,17 @@
+---
+title: "Enforce GraphQL Query Depth and Complexity Limits"
+description: "Learn how the WSO2 API Gateway's Static Query Analyzer protects GraphQL APIs from denial-of-service attacks by enforcing query depth and complexity limits configured in subscription policies, with worked examples of each calculation."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/rate-limiting/enforce-graphql-query-limits/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/rate-limiting/enforce-graphql-query-limits.md
+tags:
+  - api-manager
+  - rate-limiting
+  - graphql
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Enforce GraphQL Query Limits
 
 GraphQL APIs allow clients to request complex queries with nested fields and relationships. Without protection, backends are vulnerable to DoS attacks caused by the execution of malicious and complex queries. WSO2 API Manager introduces a Static Query Analyzer at the Gateway to secure GraphQL APIs by detecting and blocking complex queries before they reach the backend.

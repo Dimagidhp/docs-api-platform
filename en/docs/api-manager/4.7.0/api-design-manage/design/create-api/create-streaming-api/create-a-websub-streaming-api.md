@@ -1,3 +1,17 @@
+---
+title: "Create a WebSub/WebHook API"
+description: "Create a WebSub (WebHook) streaming API in WSO2 API Manager, configure receive-only topics, generate a signing secret, and register the callback URL with a WebHook provider."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-streaming-api/create-a-websub-streaming-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-streaming-api/create-a-websub-streaming-api.md
+tags:
+  - api-manager
+  - websub
+  - streaming-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Create a WebSub/WebHook API
 
 ## Overview

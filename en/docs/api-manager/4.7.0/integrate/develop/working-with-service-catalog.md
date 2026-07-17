@@ -1,3 +1,17 @@
+---
+title: "Publish Integration Services to the API Manager via the Service Catalog"
+description: "Publish a REST API artifact built with WSO2 Integration Studio from the Micro Integrator runtime to WSO2 API Manager using the Service Catalog, covering service metadata updates, enabling the Micro Integrator publishing client, and starting the servers."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/integrate/develop/working-with-service-catalog/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/integrate/develop/working-with-service-catalog.md
+tags:
+  - api-manager
+  - service-catalog
+  - micro-integrator
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Publishing Integrations to the API Manager
 
 A REST API artifact you create from WSO2 Integration Studio is exposed to consumers when you run it on the Micro Integrator runtime. If you want to control and manage this API, and also expose it to an API marketplace where it becomes discoverable to a wider community of consumers, you need to publish this REST API to the API management layer (API-M runtime) of the product.

@@ -1,3 +1,18 @@
+---
+title: "Subscribe to an MCP Server"
+description: "Subscribe an application to a published MCP Server in the WSO2 API Manager Developer Portal to complete authentication and obtain the access tokens needed to invoke its tools."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/mcp-gateway/subscribe-to-a-mcp-server/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/mcp-gateway/subscribe-to-a-mcp-server.md
+tags:
+  - api-manager
+  - mcp-gateway
+  - mcp
+  - subscriptions
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Subscribe to a MCP Server
 
 You have to **subscribe** to a published MCP Server before using its tools in your applications. The subscription process fulfills the authentication process and provides you with access tokens that you can use to invoke a MCP Server's tools. 

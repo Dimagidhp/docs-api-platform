@@ -1,3 +1,18 @@
+---
+title: "Enable or Disable API Star Rating"
+description: "Disable the star rating feature shown on Developer Portal API pages by setting the custom.social.showRating property to false in userTheme.json."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-rating/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-rating.md
+tags:
+  - api-manager
+  - developer-portal
+  - theming
+  - ui-customization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Enable or Disable Rating
 
 The star rating is enabled by default. You can disable the star rating by configuring the `userTheme.json` file.

@@ -1,3 +1,17 @@
+---
+title: "Set Up a Third-Party Key Manager"
+description: "Understand how the Key Manager component handles OAuth clients and access tokens in WSO2 API Manager, and how to decouple it to plug in a third-party OAuth Authorization Server."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/distributed-deployment/configure-a-third-party-key-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/distributed-deployment/configure-a-third-party-key-manager.md
+tags:
+  - api-manager
+  - key-managers
+  - oauth2
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Set up a Third-party Key Manager
 
 The **Key Manager** handles all clients, security, and access token-related operations. In a typical API Manager production deployment, different components talk to the Key Manager component to achieve different tasks. The Classic Gateway connects with the Key Manager to check the validity of OAuth tokens, subscriptions, and API invocations. When a subscriber generates an access token to the application using the Developer Portal, the Developer Portal makes a call to the Key Manager to create an OAuth application and obtains an access token. 

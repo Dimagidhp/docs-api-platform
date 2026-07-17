@@ -1,3 +1,17 @@
+---
+title: "Enforce Rate Limits for Streaming APIs"
+description: "Understand how the WSO2 API Gateway enforces count-based, time-based, and hybrid rate limiting for WebSocket, SSE, and WebSub streaming APIs, including default Business Plans and per-protocol enforcement behavior."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/rate-limiting/enforce-streaming-api-limits/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/rate-limiting/enforce-streaming-api-limits.md
+tags:
+  - api-manager
+  - rate-limiting
+  - streaming-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Enforce Streaming API Limits
 
 Streaming APIs (WebSocket, WebHook/WebSub, and SSE) maintain long-lived connections and deliver events over time, requiring different rate limiting approaches than traditional REST APIs. The Gateway enforces rate limiting for Streaming APIs based on event counts and connection duration rather than simple request counts.

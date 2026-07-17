@@ -1,3 +1,16 @@
+---
+title: "Third-Party Key Manager Integration"
+description: "Overview of WSO2 API Manager's support for integrating external authorization servers as Key Managers, listing supported enterprise, cloud, and custom Key Manager connectors."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/third-party-key-managers/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/third-party-key-managers/overview.md
+tags:
+  - api-manager
+  - key-managers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Third-Party Key Manager Integration
 
 WSO2 API Manager supports integration with external authorization servers as Key Managers, enabling organizations to leverage existing enterprise identity providers alongside the built-in Key Manager.

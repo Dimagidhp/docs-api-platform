@@ -1,3 +1,18 @@
+---
+title: "View API Documentation in the Developer Portal"
+description: "View documents added to an API in the Developer Portal, including default auto-generated documentation for REST and SOAP APIs."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/view-api-documentation/view-api-documentation/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/view-api-documentation/view-api-documentation.md
+tags:
+  - api-manager
+  - developer-portal
+  - rest-api
+  - soap
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # View API Documents
 
 You can view the Documents added to an API via the Developer Portal by following the below steps.

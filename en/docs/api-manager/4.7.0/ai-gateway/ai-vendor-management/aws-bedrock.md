@@ -1,3 +1,18 @@
+---
+title: "Configure the AWS Bedrock AI Service Provider"
+description: "Configure AWS Bedrock as a multi-model AI Service Provider in the WSO2 API Manager Admin Portal by adding model provider families such as Meta, DeepSeek, and Anthropic, and their associated models."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-vendor-management/aws-bedrock/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-vendor-management/aws-bedrock.md
+tags:
+  - api-manager
+  - ai-vendor-management
+  - ai-gateway
+  - multi-model-routing
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # AWS Bedrock
 
 AWS Bedrock is a **default AI Service Provider** in WSO2 API Manager which has **Multi Model Provider** support that allows you to manage multiple AI models from various providers. This guide explains how to configure AWS Bedrock by adding model families (providers) and their associated models within the API Manager. For more information about AWS Bedrock, see the [AWS Bedrock Documentation](https://docs.aws.amazon.com/bedrock/).

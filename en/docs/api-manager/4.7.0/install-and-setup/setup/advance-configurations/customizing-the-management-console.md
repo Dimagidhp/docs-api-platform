@@ -1,3 +1,18 @@
+---
+title: "Customize the WSO2 API Manager Management Console UI"
+description: "Customize the look and feel of the WSO2 API Manager Management Console by editing the Carbon UI JAR and product-specific styles JAR, covering layout tiles, global.css, and product-specific images and banners."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/advance-configurations/customizing-the-management-console/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/advance-configurations/customizing-the-management-console.md
+tags:
+  - api-manager
+  - ui-customization
+  - customization
+  - theming
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Customizing the Management Console
 
 The User Interface of the Management Console (

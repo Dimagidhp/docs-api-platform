@@ -1,3 +1,18 @@
+---
+title: "Scenario 2: Engage Access Control to the API"
+description: "Scenario tutorial on restricting an internal API's Developer Portal visibility to users with a specific role, and protecting individual resources with OAuth2 scopes so only tokens carrying the required scope can invoke privileged operations."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario2-access-control/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario2-access-control.md
+tags:
+  - api-manager
+  - access-control
+  - oauth2
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Scenario 2 - Engage Access Control to the API
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to control access to the API. For more details on the scenario and general prerequisites, please see [the scenario overview page](scenario-overview.md).

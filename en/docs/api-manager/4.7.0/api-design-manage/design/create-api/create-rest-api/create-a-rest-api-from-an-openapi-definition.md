@@ -1,3 +1,18 @@
+---
+title: "Create a REST API from an OpenAPI Definition"
+description: "Import an OpenAPI definition to create a REST API in WSO2 API Manager, then configure its resources, security, endpoints, runtime transport settings, and business plan subscriptions using the Petstore sample API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition.md
+tags:
+  - api-manager
+  - openapi
+  - api-design
+  - rest-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Create an API from an OpenAPI Definition
 
 An OpenAPI definition is a format that describes REST APIs. 

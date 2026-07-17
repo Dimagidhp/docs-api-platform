@@ -1,3 +1,18 @@
+---
+title: "Federated Gateways Overview"
+description: "Understand WSO2 API Manager's federated gateway architecture, including supported gateway types (AWS, Azure, Kong, Envoy, and custom agents), gateway modes, and the architectural benefits of separating the control plane from distributed runtime gateways."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/overview.md
+tags:
+  - api-manager
+  - api-gateway
+  - federated-gateways
+  - architecture
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Federated Gateways Overview
 
 WSO2 API Manager supports deploying APIs to external third-party API Gateways, enabling a federated API gateway architecture. This approach separates the control plane from the runtime gateways, allowing centralized API governance while enabling APIs to run closer to users or services for improved performance and resilience.

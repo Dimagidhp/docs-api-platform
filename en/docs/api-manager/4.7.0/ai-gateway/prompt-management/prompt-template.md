@@ -1,3 +1,18 @@
+---
+title: "Configure the Prompt Template Policy"
+description: "Use the Prompt Template custom Synapse mediator in WSO2 API Manager's Classic Gateway to apply reusable, placeholder-based templates that structure prompts sent to AI services for text and chat-based payloads."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/prompt-management/prompt-template/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/prompt-management/prompt-template.md
+tags:
+  - api-manager
+  - ai-gateway
+  - prompt-management
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Prompt Template
 
 The **Prompt Template** is a custom Synapse mediator for the **WSO2 API Manager Classic Gateway**, designed to translate incoming requests into structured, context-aware instructions for AI services. It dynamically applies configurable **prompt templates** to user inputs, helping align requests with the desired format, tone, and task-specific guidance without violating the underlying AI service’s OpenAPI specification.

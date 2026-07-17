@@ -1,3 +1,17 @@
+---
+title: "Accessibility Compliance"
+description: "WSO2's commitment to accessible product design, detailing how the WSO2 API Manager Developer Portal complies with Level A and AA success criteria of the Web Content Accessibility Guidelines 2.1 (WCAG 2.1)."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/accessibility-compliance/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/accessibility-compliance.md
+tags:
+  - api-manager
+  - developer-portal
+  - accessibility
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Accessibility Compliance
 
 According to WHO over 2 billion people, about 37.5% of the world's population, have some form of disability. 

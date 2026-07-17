@@ -1,3 +1,18 @@
+---
+title: "Enable Publisher Access Control"
+description: "Restrict which users can view or modify an API within the API Publisher by enabling role-based Publisher Access Control through the Publisher UI or the REST API, and configure the publisher role cache."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/advanced-topics/enable-publisher-access-control-in-api-publisher-portal/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/advanced-topics/enable-publisher-access-control-in-api-publisher-portal.md
+tags:
+  - api-manager
+  - access-control
+  - publisher-portal
+  - rest-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Enable Publisher Access Control
 
 The APIs created in the API Publisher are visible to any user who signs in to the API Publisher, by default. However, WSO2 API Manager allows API creators to restrict the visibility of their APIs within the API Publisher if required. API creators can set the Publisher Access control option to restrict API view and modify actions to a set of users, based on their roles. You can enable Publisher Access Control in API Publisher using one of the following methods:

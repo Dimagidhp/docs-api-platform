@@ -1,3 +1,18 @@
+---
+title: "Maintain Separate Gateways per Single or Multiple Tenants"
+description: "Configure isolated Classic Gateway instances for single or multiple tenants in a multi-tenant WSO2 API Manager deployment using the tenant_loading configuration in deployment.toml, to achieve traffic isolation, dedicated resources, and tenant-specific security."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/maintain-seperate-gateways-per-tenants/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/maintain-seperate-gateways-per-tenants.md
+tags:
+  - api-manager
+  - multitenancy
+  - api-gateway
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Maintain Separate Gateways per Single or Multiple Tenants
 
 ## Overview

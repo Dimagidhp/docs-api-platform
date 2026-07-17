@@ -1,3 +1,17 @@
+---
+title: "Introduction to User Management"
+description: "An overview of user management concepts in WSO2 API Manager, covering users, permissions, and user roles, and how these building blocks are used to control access to the system."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/managing-users-and-roles/introduction-to-user-management/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/managing-users-and-roles/introduction-to-user-management.md
+tags:
+  - api-manager
+  - user-management
+  - access-control
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 User management involves defining and managing users, roles, and their access levels in a system. A user management dashboard or console provides system administrators with a high-level view of a system's active user sessions, their login statuses, the privileges of each user, and their activity in the system. It enables system admins to make business-critical, real-time security decisions. A typical user management implementation involves a wide range of functionality such as adding/deleting users, controlling user activity through permissions, managing user roles, defining authentication policies, managing external user stores and manual/automatic logout, and resetting passwords.
 
 Any user management system has the following basic components:

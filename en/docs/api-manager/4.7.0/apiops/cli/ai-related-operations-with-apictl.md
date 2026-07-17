@@ -1,3 +1,17 @@
+---
+title: "Manage the Marketplace Assistant Vector Database with apictl"
+description: "Use WSO2 API Controller commands to set an AI token and delete or upload APIs and API Products to the vector database, keeping the Marketplace Assistant up to date with published artifacts."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/ai-related-operations-with-apictl/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/ai-related-operations-with-apictl.md
+tags:
+  - api-manager
+  - api-controller
+  - ai-apis
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # AI related operations with apictl
 
 To ensure that the Marketplace Assistant is fully informed about all published APIs and API Products, it is essential to update the vector database.

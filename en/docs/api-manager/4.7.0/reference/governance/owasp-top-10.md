@@ -1,3 +1,18 @@
+---
+title: "OWASP API Security Top 10 Ruleset Reference"
+description: "Reference for the built-in OWASP API Security Top 10 governance ruleset, listing each rule's severity and purpose, with valid and invalid OpenAPI examples covering authentication, JSON schema, rate limiting, transport security, and API inventory rules."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/governance/owasp-top-10/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/governance/owasp-top-10.md
+tags:
+  - api-manager
+  - governance
+  - api-security
+  - threat-protection
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # OWASP Top 10
 
 The OWASP Top 10 ruleset enforces security best practices based on OWASP guidelines to prevent common vulnerabilities in API definitions. This ruleset ensures that API definitions comply with security standards, reducing the risk of security breaches.

@@ -1,3 +1,18 @@
+---
+title: "Enable Social Media Interaction for APIs"
+description: "Enable social media sharing links (Facebook, Twitter, Reddit) in the Developer Portal, and add GitHub and Slack channel URLs to an API so consumers can engage with its community."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-collaborations/enable-social-media-interaction/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md
+tags:
+  - api-manager
+  - developer-portal
+  - theming
+  - customization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Enable Social Media Interaction
 
 By default, the community links option is **disabled** (hidden). As a result, the sharable Developer Portal links of the APIs for Facebook, Twitter, and Reddit will not appear in the Developer Portal by default. Instead, the administrators have to enable the social media sharing option if they wish to allow API Consumers to use this feature.

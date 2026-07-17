@@ -1,3 +1,18 @@
+---
+title: "Configure Load Balancing for AI APIs"
+description: "Configure Round Robin and Weighted Round Robin load balancing policies in WSO2 API Manager to distribute AI API requests across multiple models from the same AI service provider."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/multi-model-routing/load-balancing/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/multi-model-routing/load-balancing.md
+tags:
+  - api-manager
+  - ai-gateway
+  - multi-model-routing
+  - ai-apis
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Load Balancing
 
 Load balancing ensures that AI API requests are efficiently distributed across multiple models within the same AI Service Provider, preventing overloading of any single model. WSO2 API Manager supports the following load balancing methods:

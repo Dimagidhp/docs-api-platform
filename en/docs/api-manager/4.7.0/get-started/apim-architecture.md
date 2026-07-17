@@ -1,3 +1,18 @@
+---
+title: "WSO2 API Manager Architecture and Key Components"
+description: "An explanation of the WSO2 API Manager architecture, covering the API Control Plane (Publisher, Developer Portal, Service Catalog, Key Manager, Analytics), the Data Plane (Classic Gateway, Kubernetes Gateway, Immutable Gateway), the Traffic Manager, and tooling such as the API Controller."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/get-started/apim-architecture/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/get-started/apim-architecture.md
+tags:
+  - api-manager
+  - architecture
+  - api-gateway
+  - key-managers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Architecture and Key Components
 
 The diagram below is a high-level snapshot of WSO2 API Manager and the various components that it can work together with. 

@@ -1,3 +1,18 @@
+---
+title: "Configuring Keystores in WSO2 API Manager"
+description: "Configure the primary, secondary (TLS), internal, and custom keystores used by WSO2 API Manager for signing, SSL/TLS communication, and encrypting internal data, with recommended keystore setup practices."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager.md
+tags:
+  - api-manager
+  - keystores
+  - security
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configuring Keystores in WSO2 API Manager
 
 In asymmetric cryptography, keystores (with key pairs and certificates) are created and stored for the product. Keystore is a repository where private keys and certificates can be stored. It is possible to have multiple keystores so that the keys used for different use cases are kept unique. For more information about keystores and its concepts, see [About Keystores and Truststores](keystore-basics/about-keystores-and-truststores.md).

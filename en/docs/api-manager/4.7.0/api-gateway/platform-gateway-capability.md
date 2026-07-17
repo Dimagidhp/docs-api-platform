@@ -1,3 +1,18 @@
+---
+title: "Gateway Runtimes Overview: Platform, Classic, and Third-Party Gateways"
+description: "Compares the gateway runtimes supported by WSO2 API Manager's single control plane model — the self-hosted Platform Gateway, the Classic Gateway (Universal), and federated third-party gateways — and when to use each deployment option."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/platform-gateway-capability/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/platform-gateway-capability.md
+tags:
+  - api-manager
+  - api-gateway
+  - deployment
+  - architecture
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Overview
 
 WSO2 API Manager enables you to expose and manage APIs across multiple gateway runtimes through a unified control plane. This single control plane model allows organizations to design, publish, govern, and secure APIs centrally, while deploying them to gateway runtimes that best align with their infrastructure, compliance, and operational needs.

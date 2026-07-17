@@ -1,3 +1,18 @@
+---
+title: "Setting Up Platform Gateway for Production"
+description: "Deploy Platform Gateway in production using Virtual Machine, Docker, or Kubernetes options, covering prerequisites, downloading and configuring the gateway, starting it with Docker Compose or Helm, and verifying, upgrading, or uninstalling the deployment."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/platform-gateway/setting-up/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/platform-gateway/setting-up.md
+tags:
+  - api-manager
+  - api-gateway
+  - deployment
+  - kubernetes
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Setting Up
 
 This guide provides detailed instructions for deploying Platform Gateway in production environments. Choose the infrastructure option that matches your environment.

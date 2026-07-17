@@ -1,3 +1,18 @@
+---
+title: "Configure XML Threat Protection for the Classic Gateway"
+description: "Configure the XML validator sequence in WSO2 API Manager's Classic Gateway to limit XML depth, element count, attribute count, and entity expansion, enable schema validation per resource, and apply and test the policy on an API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/threat-protectors/xml-threat-protection-for-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/threat-protectors/xml-threat-protection-for-api-gateway.md
+tags:
+  - api-manager
+  - threat-protection
+  - api-gateway
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # XML Threat Protection for Classic Gateway
 
 The XML threat protector in WSO2 API Manager validates the XML payload vulnerabilities based on the pre-configured 

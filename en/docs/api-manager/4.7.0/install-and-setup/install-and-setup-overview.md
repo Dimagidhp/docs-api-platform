@@ -1,3 +1,17 @@
+---
+title: "Install and Setup Overview"
+description: "An entry point to installing, deploying, and setting up WSO2 API Manager, linking to topics on installing the runtime, setting up key managers and databases, securing the product, configuring user stores and SSO, deployment patterns, CI/CD with apictl, and reference material."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install-and-setup-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install-and-setup-overview.md
+tags:
+  - api-manager
+  - installation
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Install and Setup Overview
 
 The installation and the setup of API Manager involve installing the product, deploying it in the method that is best suited for your requirements, and setting it up to run in the production environment. If you already have an older version of WSO2 API Manager or one of its components, you can follow the upgrading instructions in this guide.

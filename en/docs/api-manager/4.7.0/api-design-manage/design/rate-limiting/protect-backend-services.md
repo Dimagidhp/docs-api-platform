@@ -1,3 +1,17 @@
+---
+title: "Protect Backend Services with Maximum Throughput Limits"
+description: "Configure Maximum Backend Throughput limits in the WSO2 API Manager Publisher Portal to cap the requests, or for AI APIs the tokens, forwarded to production and sandbox backend endpoints, protecting backend services from overload."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/rate-limiting/protect-backend-services/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/rate-limiting/protect-backend-services.md
+tags:
+  - api-manager
+  - rate-limiting
+  - ai-apis
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Protect Backend Services
 
 When you expose an API, you create a proxy to your actual backend service. While subscription tiers and advanced rate limiting policies control how applications and users access your API, Maximum Backend Throughput limits protect your backend service itself from being overwhelmed.

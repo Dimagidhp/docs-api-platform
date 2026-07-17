@@ -1,3 +1,17 @@
+---
+title: "Configure Asgardeo as a Third-Party Key Manager"
+description: "Connect WSO2 API Manager to Asgardeo using the WSO2 API-M Asgardeo Connector: create a management OAuth application and API resource in Asgardeo, add Asgardeo as a Key Manager in the Admin Portal, and configure scope creation, authorization, and role naming conventions."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/third-party-key-managers/configure-asgardeo-connector/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/third-party-key-managers/configure-asgardeo-connector.md
+tags:
+  - api-manager
+  - key-managers
+  - oauth2
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configure Asgardeo as a Key Manager
 
 WSO2 API Manager supports multiple Key Managers at the same time. As a result, WSO2 API Manager is prepacked with an inbuilt resident Key Manager, and with the use of connectors, it is capable of supporting any authorization server as a Key Manager.  

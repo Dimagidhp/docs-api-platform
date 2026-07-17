@@ -1,3 +1,18 @@
+---
+title: "Create a Custom API Policy"
+description: "Create a common (globally reusable) or API-specific policy in WSO2 API Manager by uploading a Synapse mediation policy file and defining its policy attributes, gateway support, and applicable flows."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-policies/create-policy/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-policies/create-policy.md
+tags:
+  - api-manager
+  - api-policies
+  - gateway-policies
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Create a Policy
 
 Listed below are two ways of creating a new policy. Depending on whether you need the policy to be accessible only within a specific API or available for all APIs, you can decide on the option you need to follow.

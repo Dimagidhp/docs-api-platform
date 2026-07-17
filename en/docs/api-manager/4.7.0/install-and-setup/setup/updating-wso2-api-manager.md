@@ -1,3 +1,17 @@
+---
+title: "Update WSO2 API Manager Using WSO2 Updates"
+description: "Use the WSO2 Updates 2.0 command-line utility to fetch the latest bug fixes and security patches for an installed WSO2 API Manager instance, including how to persist Solr index data and local H2 databases before applying updates."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/updating-wso2-api-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/updating-wso2-api-manager.md
+tags:
+  - api-manager
+  - installation
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Updating WSO2 API Manager
 
 WSO2 introduces [WSO2 Updates](https://updates.docs.wso2.com/en/latest/) , which is a command-line utility that allows you to get the latest updates that are available for a particular product release. These updates include the latest bug fixes and security fixes that are released by WSO2 after a particular product version is released. Therefore, you do not need to wait and upgrade to the next product release to get these bug fixes.

@@ -1,3 +1,18 @@
+---
+title: "Modify the Workflow Approval Task Limit in the Admin Portal"
+description: "Increase the default limit of 25 visible pending workflow approval tasks in the Admin Portal by updating the limit parameter in the admin webapp's settings.json file and restarting the server."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/modify-workflow-approval-task-limit/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/modify-workflow-approval-task-limit.md
+tags:
+  - api-manager
+  - workflows
+  - admin-portal
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Modify Workflow Approval Task Limit
 
 By default, in the Admin Portal(https://<host>:<port>/admin), only 25 workflow approval tasks can be seen. If you expect to have more than 25 pending approval tasks at a time, in order to view them, you need to increase the "limit" parameter inside the `<APIM_HOME>/repository/deployment/server/webapps/admin/site/public/conf/settings.json` file.

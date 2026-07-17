@@ -1,3 +1,18 @@
+---
+title: "Scenario 12: Guaranteed Message Delivery"
+description: "Scenario tutorial demonstrating the store-and-forward messaging pattern in WSO2 Micro Integrator: invoke an API whose backend is unavailable so the message lands in the Message Store, then restore the backend and observe the Message Processor successfully redeliver it."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario12-message-delivery/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario12-message-delivery.md
+tags:
+  - api-manager
+  - micro-integrator
+  - message-mediation
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Scenario 12 - Guaranteed Message Delivery
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to guarantee message delivery. For more details on the scenario and general prerequisites, please see [the scenario overview page](scenario-overview.md).

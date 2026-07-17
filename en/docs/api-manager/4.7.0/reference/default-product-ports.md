@@ -1,3 +1,18 @@
+---
+title: "Default Product Ports Reference"
+description: "Reference list of the default ports used by each WSO2 API Manager runtime component, including the management console, servlet and passthrough transports, throttling event ports, and random ports opened at server startup."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/default-product-ports/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/default-product-ports.md
+tags:
+  - api-manager
+  - installation
+  - configuration
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Default Product Ports
 
 This page describes the default ports used by each runtime of WSO2 API Manager.

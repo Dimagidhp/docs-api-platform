@@ -1,3 +1,18 @@
+---
+title: "Configure Multi-DC Pattern 1: Geo-Regional Synchronized API Management"
+description: "Configure Multi-DC Pattern 1 for WSO2 API Manager, covering database replication setup, API Manager node configuration, and cross-region control plane communication using JMS event publishers and JNDI configuration."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-1/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-1.md
+tags:
+  - api-manager
+  - multi-dc-deployment
+  - distributed-deployment
+  - high-availability
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configure Pattern 1: Geo-Regional Synchronized API Management with Replicated Databases
 
 <a href="../../../assets/img/setup-and-install/multi-dc-pattern-1.png"><img src="../../../assets/img/setup-and-install/multi-dc-pattern-1.png" alt="Multi-DC Pattern 1" width="80%"></a>

@@ -1,3 +1,18 @@
+---
+title: "Disabling Message Chunking"
+description: "Attach the Disable Chunking policy to an API's request (and optionally response) flow so the Gateway stops sending Transfer-Encoding: chunked messages to legacy backends or clients that don't support chunked transfer."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/disabling-message-chunking/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/disabling-message-chunking.md
+tags:
+  - api-manager
+  - api-policies
+  - mediation
+  - api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Disabling Message Chunking
 
 When processing large messages, message chunking facilitates sending the message as multiple independent chunks. 

@@ -1,3 +1,17 @@
+---
+title: "Write a Client Application Using a Generated SDK"
+description: "Build a Java client application using an SDK downloaded from the WSO2 API Manager Developer Portal, including a version that automatically renews expired access tokens via an OkHttp interceptor."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/generating-sdks/write-a-client-application-using-the-sdk/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/generating-sdks/write-a-client-application-using-the-sdk.md
+tags:
+  - api-manager
+  - developer-portal
+  - access-tokens
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Write a Client Application Using the SDK
 
 

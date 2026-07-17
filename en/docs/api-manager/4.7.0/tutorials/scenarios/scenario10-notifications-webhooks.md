@@ -1,3 +1,17 @@
+---
+title: "Scenario 10: Send Notifications Using Webhooks"
+description: "Scenario tutorial on subscribing a client to a WSO2 API Manager WebHooks topic, then publishing an HMAC-signed notification event from the topic's callback URL and confirming it is delivered to the registered subscriber URL."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario10-notifications-webhooks/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario10-notifications-webhooks.md
+tags:
+  - api-manager
+  - websub
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Scenario 10 - Notifications Using WebHooks
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to work with notifications using WebHook. For more details on the scenario and general prerequisites, please see [the scenario overview page](scenario-overview.md).

@@ -1,3 +1,18 @@
+---
+title: "Configure a Custom Key Manager"
+description: "Build and deploy a custom Key Manager connector for WSO2 API Manager by implementing the KeyManagerConnectorConfiguration interface and extending AbstractKeyManager, deploy the connector JAR, then register and configure it as a third-party Key Manager in the Admin Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/third-party-key-managers/configure-custom-connector/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/third-party-key-managers/configure-custom-connector.md
+tags:
+  - api-manager
+  - key-managers
+  - oauth2
+  - customization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configure a Custom Key Manager
 
 WSO2 API Manager is capable of integrating with any external OAuth Authorization Server to manage the OAuth clients and tokens that are required by WSO2 API Manager. Essentially, if the API Provider wants to expose their APIs to users who are not in the API Manager’s user-store, you need to use a custom Key Manager connector. To configure a custom Key Manager, you need to do the following:

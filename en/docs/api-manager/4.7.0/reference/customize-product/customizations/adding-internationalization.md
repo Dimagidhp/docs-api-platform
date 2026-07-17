@@ -1,3 +1,18 @@
+---
+title: "Adding Internationalization and Localization"
+description: "Localize the API Publisher and Developer Portal web applications by changing the browser language, adding new language locale files, switching the UI text direction to RTL, and enabling an in-app language switch."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/adding-internationalization/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/customizations/adding-internationalization.md
+tags:
+  - api-manager
+  - developer-portal
+  - publisher-portal
+  - ui-customization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Adding Internationalization and Localization
 
 The API Manager includes two Web interfaces, namely the API Publisher and Developer Portal. The steps below explain how you can localize the API Publisher and the Developer Portal.

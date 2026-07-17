@@ -1,3 +1,18 @@
+---
+title: "Manage Application Rate Limiting Policies"
+description: "Configure application-level rate limiting policies in the WSO2 API Manager Admin Portal to control the number of requests allowed per access token generated for an application."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/rate-limiting/manage-application-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/rate-limiting/manage-application-policies.md
+tags:
+  - api-manager
+  - rate-limiting
+  - admin-portal
+  - throttling
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Manage Application Policies
 
 Application-level rate limiting policies are applicable per access token generated for an application.

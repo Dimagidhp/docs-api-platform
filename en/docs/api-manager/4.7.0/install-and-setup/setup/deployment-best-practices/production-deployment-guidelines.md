@@ -1,3 +1,18 @@
+---
+title: "Production Deployment Checklist"
+description: "A checklist of production deployment guidelines for WSO2 API Manager covering security hardening, hostname configuration, registry and governance, performance tuning, firewalls, proxy servers, high availability, backups, and encryption keys."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md
+tags:
+  - api-manager
+  - deployment
+  - high-availability
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Production Deployment Checklist
 
 Given below is a checklist that will guide you to set up your production environment for WSO2 API-M.

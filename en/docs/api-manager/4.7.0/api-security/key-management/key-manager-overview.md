@@ -1,3 +1,17 @@
+---
+title: "WSO2 Key Manager Overview"
+description: "Overview of WSO2 Key Manager as the authentication and authorization service securing WSO2 API Manager, covering the built-in key manager's OAuth2/OpenID Connect capabilities, third-party key manager integration options, and best practices for choosing a key manager strategy."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/key-manager-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/key-manager-overview.md
+tags:
+  - api-manager
+  - key-managers
+  - oauth2
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # WSO2 Key Manager
 
 Production API deployments face authentication and authorization challenges: token management complexity, OAuth application lifecycle overhead, inconsistent security policies across providers, and the need for enterprise-grade access control systems.

@@ -1,3 +1,18 @@
+---
+title: "Handle Rate Limiting Errors"
+description: "Recognize HTTP 429 rate limiting responses from the WSO2 API Gateway and interpret the throttling error codes returned in the response body."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/rate-limiting/handle-rate-limiting-errors/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/rate-limiting/handle-rate-limiting-errors.md
+tags:
+  - api-manager
+  - rate-limiting
+  - developer-portal
+  - troubleshooting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "troubleshooting"
+---
+
 # Handle Rate Limiting Errors
 
 When your application exceeds rate limits, the API Gateway returns HTTP 429 (Too Many Requests) responses.

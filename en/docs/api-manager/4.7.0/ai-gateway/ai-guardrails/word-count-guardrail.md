@@ -1,3 +1,17 @@
+---
+title: "Word Count Guardrail"
+description: "Enforce minimum and maximum word count limits on AI API requests and responses using WSO2 AI Gateway's Word Count Guardrail policy."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/word-count-guardrail/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/word-count-guardrail.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Word Count Guardrail
 
 The **Word Count Guardrail** is a custom Synapse mediator for the **WSO2 API Manager Classic Gateway** that enforces **minimum and/or maximum word count limits** on a selected JSON field in AI API requests or GenAI responses. It helps control verbosity, prompt injection surface, and output consistency.

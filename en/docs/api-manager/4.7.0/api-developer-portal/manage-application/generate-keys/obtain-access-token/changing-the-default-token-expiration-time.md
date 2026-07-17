@@ -1,3 +1,18 @@
+---
+title: "Change the Default Token Expiration Time"
+description: "Configure the default expiration time for application, user, and refresh access tokens globally in deployment.toml, or set a custom validity period for tokens at the individual application level."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/manage-application/generate-keys/obtain-access-token/changing-the-default-token-expiration-time/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/manage-application/generate-keys/obtain-access-token/changing-the-default-token-expiration-time.md
+tags:
+  - api-manager
+  - access-tokens
+  - oauth2
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Changing the Default Token Expiration Time
 
 Follow the instructions below to change the default token expiry time based on your requirements.

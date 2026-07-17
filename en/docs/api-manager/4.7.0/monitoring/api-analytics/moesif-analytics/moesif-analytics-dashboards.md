@@ -1,3 +1,18 @@
+---
+title: "Moesif Analytics Dashboards Reference"
+description: "Reference for the Moesif Analytics dashboards in WSO2 API Manager, covering the Overview, REST/GraphQL/gRPC/SOAP API dashboards, LLM APIs Analytics, and MCP Analytics, with their summary metrics and charts."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/api-analytics/moesif-analytics/moesif-analytics-dashboards/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/api-analytics/moesif-analytics/moesif-analytics-dashboards.md
+tags:
+  - api-manager
+  - analytics
+  - ai-apis
+  - mcp
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Moesif Analytics Dashboards
 
 Moesif Analytics Dashboards give you both real-time and historical visibility into API traffic, LLM API usage, MCP (Model Context Protocol) activity, and overall platform health. Together, these dashboards help platform teams move from raw event data to operational insight by showing how traffic is distributed, where failures are occurring, which consumers are most active, and how usage changes over time.

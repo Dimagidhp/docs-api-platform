@@ -1,3 +1,17 @@
+---
+title: "Understanding the API Manager Configuration Model"
+description: "Explains the TOML-based deployment.toml configuration model introduced in API Manager 3.0.0, including how to map old XML configuration parameters using .j2 template files and default.json, and how to configure arrays and key-value pairs."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/understanding-the-new-configuration-model/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/understanding-the-new-configuration-model.md
+tags:
+  - api-manager
+  - deployment-toml
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Understanding the New Configuration Model
 
 ## Overview

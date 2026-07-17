@@ -1,3 +1,18 @@
+---
+title: "Block Subscription to an API"
+description: "Block and unblock subscription access to an API in WSO2 API Manager at the production-only or full-access level to control usage, and understand how Gateway caching affects when the block takes effect."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api.md
+tags:
+  - api-manager
+  - subscriptions
+  - api-gateway
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Block Subscription to an API
 
 An API publisher can **block subscription** to an API as a way of disabling access to it and managing its usage and monetization. Subscription blocking can be temporary or permanent. There is an unblocking facility to allow API invocations again.

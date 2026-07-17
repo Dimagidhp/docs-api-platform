@@ -1,3 +1,18 @@
+---
+title: "Working with Databases in WSO2 API Manager"
+description: "Overview of the default AM, Shared, and Carbon H2 databases shipped with WSO2 API Manager, where to obtain schema scripts for Kubernetes or VM deployments, and links to instructions for switching to a production-grade RDBMS."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/setting-up-databases/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/setting-up-databases/overview.md
+tags:
+  - api-manager
+  - databases
+  - deployment
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Working with Databases
 
 WSO2 API Manager is shipped with an H2 database for storing data. These default databases are located in the `<API-M_HOME>/repository/database` directory of the product pack.

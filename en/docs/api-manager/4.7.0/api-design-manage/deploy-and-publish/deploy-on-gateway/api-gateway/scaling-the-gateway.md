@@ -1,3 +1,18 @@
+---
+title: "Scale the API Gateway"
+description: "Guidance on scaling WSO2 API Gateway deployments, including key caching strategies with Key Managers, recommended Gateway-to-Traffic-Manager ratios, and Gateway-to-Control-Plane node ratios for large deployments."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/scaling-the-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/scaling-the-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - high-availability
+  - distributed-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Scaling the Gateway
 
 Scaling the Gateway requires considering the load that the Gateways will handle. We recommend that a load test be carried out on the Gateways in the environment. For more information on what factors affect the load, and how the numbers have to be derived in order to scale, refer to the article on [Capacity Planning](https://wso2.com/library/articles/2015/12/article-capacity-planning-exercise-with-wso2-middleware-platform/) . Make sure to check the backends as well for the expected load.

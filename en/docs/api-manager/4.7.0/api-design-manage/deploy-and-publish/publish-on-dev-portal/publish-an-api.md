@@ -1,3 +1,18 @@
+---
+title: "Publish an API on the Developer Portal"
+description: "Publish a created API from the API Publisher so it becomes visible and subscribable on the Developer Portal, including the prerequisites for publishing and how the API lifecycle state changes."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md
+tags:
+  - api-manager
+  - publisher-portal
+  - developer-portal
+  - api-lifecycle
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Publish an API on the Developer Portal
 
 **API Publishing** is the process of making the API available for subscription. An API in the lifecycle state CREATED will have the  API metadata added to the Developer Portal, but not deployed to the API Gateway. Therefore, it is not visible to subscribers in the Developer Portal. When the API is published the API lifecycle state will be changed to **PUBLISHED**. 

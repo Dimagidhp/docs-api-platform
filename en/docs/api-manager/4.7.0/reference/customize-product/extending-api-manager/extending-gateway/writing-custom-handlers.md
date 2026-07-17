@@ -1,3 +1,18 @@
+---
+title: "Write Custom Handlers for the API Gateway"
+description: "Understand the default API Gateway handler chain and write, build, and engage a custom handler that extends org.apache.synapse.rest.AbstractHandler to customize the API mediation flow, either for all APIs or selected ones."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-gateway/writing-custom-handlers/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-gateway/writing-custom-handlers.md
+tags:
+  - api-manager
+  - api-gateway
+  - customization
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Writing Custom Handlers
 
 This section introduces handlers and explains how to write a custom handler using an example.

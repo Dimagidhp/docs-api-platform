@@ -1,3 +1,17 @@
+---
+title: "Test a REST API Using the Integrated API Console"
+description: "Subscribe to a REST API, generate a production access token, and invoke the API from WSO2 API Manager's Integrated API Console (Swagger UI) in the Developer Portal, including how to get a quick test key."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md
+tags:
+  - api-manager
+  - developer-portal
+  - rest-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Test a REST API Using the Integrated API Console
 
 WSO2 API Manager has an Integrated API Console, which allows you to visualize the API contract and interact with API's resources without being aware of the backend logic.

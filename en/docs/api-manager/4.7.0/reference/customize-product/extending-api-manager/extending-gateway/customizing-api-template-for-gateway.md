@@ -1,3 +1,18 @@
+---
+title: "Customize the API Template for the Gateway"
+description: "Modify the Gateway's Velocity-based API template (velocity_template.xml) to customize the generated Synapse configuration, including conditionally engaging custom handlers based on API properties."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-gateway/customizing-api-template-for-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/customize-product/extending-api-manager/extending-gateway/customizing-api-template-for-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - customization
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Customizing API Template
 
 When an API is [published](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md) and [deployed](../../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md) in the Gateway, corresponding API is generated and deployed in the gateway in-memory. 

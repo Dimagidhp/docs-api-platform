@@ -1,3 +1,18 @@
+---
+title: "Pattern 2: Simple Scalable Kubernetes Setup"
+description: "Deploy WSO2 API Manager on Kubernetes with a dedicated, independently scalable Classic Gateway alongside the All-in-One node, covering database setup, custom Docker images, keystore secrets, Gateway replicas, and Key Manager/EventHub/throttling configuration."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md
+tags:
+  - api-manager
+  - kubernetes
+  - deployment
+  - high-availability
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Pattern 2: Simple Scalable Setup
 
 This pattern deploys a dedicated Classic Gateway alongside the All-in-One node, allowing the Gateway to scale independently from the control plane. It is suitable for production environments with moderate to high API traffic where Gateway scaling is the primary concern.

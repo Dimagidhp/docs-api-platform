@@ -1,3 +1,17 @@
+---
+title: "Pattern 2: Simple Scalable Setup"
+description: "Deploy WSO2 API Manager in a simple scalable setup with the All-in-One node and Classic Gateway as separate nodes, covering database setup, SSL certificates, analytics, gateway and all-in-one node configuration, and high availability."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-simple-scalable-setup/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-simple-scalable-setup.md
+tags:
+  - api-manager
+  - distributed-deployment
+  - high-availability
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Pattern 2: Simple Scalable Setup
 
 WSO2 API-M can be deployed as an [all-in-one deployment](../single-node/all-in-one-deployment-overview.md) or as a distributed deployment. In the distributed setup, the respective component distributions, namely WSO2 API Manager All-in-One, and WSO2 Classic Gateway (Universal) are deployed as separate nodes.

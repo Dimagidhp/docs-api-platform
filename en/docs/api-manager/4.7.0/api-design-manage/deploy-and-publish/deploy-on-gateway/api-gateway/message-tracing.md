@@ -1,3 +1,18 @@
+---
+title: "Message Tracing (Deprecated)"
+description: "Configure the deprecated Message Tracer feature in WSO2 API Manager to log message flow, content, and direction for API invocations through the Management Console, intended for development environments only."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/message-tracing/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/message-tracing.md
+tags:
+  - api-manager
+  - troubleshooting
+  - logging
+  - api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "troubleshooting"
+---
+
 # Message Tracing
 
 !!! Info "Deprecated feature"

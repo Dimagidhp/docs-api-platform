@@ -1,3 +1,18 @@
+---
+title: "Configure AI Backend Security"
+description: "Secure communication between WSO2 API Manager AI Gateway and AI service providers by obtaining and configuring an API key for the backend endpoint of an AI API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-backend-security/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-backend-security.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-vendor-management
+  - endpoint-security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # AI Backend Security
 
 Let's configure backend security for your AI APIs in order to ensure secure communication with AI service providers. Note that you do not have to worry about this step if the AI Service Provider you have used is unsecured.

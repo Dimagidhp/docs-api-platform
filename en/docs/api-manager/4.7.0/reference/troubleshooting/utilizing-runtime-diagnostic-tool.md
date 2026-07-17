@@ -1,3 +1,18 @@
+---
+title: "Utilizing the WSO2 Runtime Diagnostic Tool"
+description: "Guide to configuring and using the WSO2 Runtime Diagnostic Tool's memory, CPU, log, and traffic watchers and action executors to automatically capture diagnostic data for troubleshooting production issues, plus how to analyze the generated diagnostics log."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/troubleshooting/utilizing-runtime-diagnostic-tool/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/troubleshooting/utilizing-runtime-diagnostic-tool.md
+tags:
+  - api-manager
+  - troubleshooting
+  - monitoring
+  - logging
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Utilizing the WSO2 Runtime Diagnostic Tool
 
 WSO2 Runtime Diagnostic Tool is a lightweight and easy-to-use tool for generating diagnostic details. It simplifies the data collection process to minimize user involvement. The tool is capable of preemptive data collection for certain types of issues, such as OOM errors. It also captures significant changes in Passthrough metrics for better insight into specific issues.

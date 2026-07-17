@@ -1,3 +1,18 @@
+---
+title: "Performance Test Results for Token Persistence"
+description: "Presents throughput and CPU/IOPS benchmark results comparing WSO2 API Manager token generation with and without token persistence across Client Credentials, Password, and Refresh grant types."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/performance-test-results-token-persistence/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/performance-test-results-token-persistence.md
+tags:
+  - api-manager
+  - key-managers
+  - access-tokens
+  - grant-types
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Performance Test Results for Token Persistence
 
 

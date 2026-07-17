@@ -1,3 +1,18 @@
+---
+title: "Scenario 8: Rate Limiting"
+description: "Scenario tutorial on applying a subscription rate limiting policy to an API in WSO2 API Manager and setting a maximum backend throughput to protect the backend, then observing throttled-out responses when the limits are exceeded."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario8-rate-limiting/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario8-rate-limiting.md
+tags:
+  - api-manager
+  - rate-limiting
+  - throttling
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Scenario 8 - Rate Limiting
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to set up rate limiting for an API. For more details on the scenario and general prerequisites, please see [the scenario overview page](scenario-overview.md).

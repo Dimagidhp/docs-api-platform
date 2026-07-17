@@ -1,3 +1,17 @@
+---
+title: "OAuth2 Password Grant"
+description: "Explains the OAuth2 resource owner password credentials grant flow in WSO2 API Manager, its prerequisites, and how to invoke the Token API with a username and password to generate an access token and refresh token."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/authentication/grant-types/password-grant/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/authentication/grant-types/password-grant.md
+tags:
+  - api-manager
+  - oauth2
+  - grant-types
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Password Grant
 
 You can obtain an access token by providing the resource owner's username and password as an authorization grant. It requires the base64 encoded string of the `consumer-key:consumer-secret` combination. You need to meet the following prerequisites before using the Token API to generate a token.

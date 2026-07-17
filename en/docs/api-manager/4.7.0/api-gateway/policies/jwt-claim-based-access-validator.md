@@ -1,3 +1,18 @@
+---
+title: "JWT Claim Based Access Validator Policy"
+description: "Attach the JWT Claim Based Access Validator policy to an API resource to restrict access based on a custom claim value in the JWT access token, matched by equality or an optional regex."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/jwt-claim-based-access-validator/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/jwt-claim-based-access-validator.md
+tags:
+  - api-manager
+  - jwt
+  - api-policies
+  - access-control
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # JWT Claim Based Access Validator
 
 This policy provides the capability to restrict access to an API resource based on a custom claim value provided in the JWT access token.

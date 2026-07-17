@@ -1,3 +1,17 @@
+---
+title: "Configure the Azure OpenAI AI Service Provider"
+description: "Configure the default Azure OpenAI AI Service Provider in the WSO2 API Manager Admin Portal, including editable model lists and read-only LLM and authentication configurations."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-vendor-management/azure-openai/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-vendor-management/azure-openai.md
+tags:
+  - api-manager
+  - ai-vendor-management
+  - ai-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Azure OpenAI
 
 Azure OpenAI is a **default AI Service Provider** in WSO2 API Manager that provides access to OpenAI's language models through Azure's infrastructure. For more information about Azure OpenAI, see the [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/).

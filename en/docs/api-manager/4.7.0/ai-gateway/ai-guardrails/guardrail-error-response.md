@@ -1,3 +1,17 @@
+---
+title: "Guardrail Error Response"
+description: "Understand the structure of WSO2 AI Gateway's default guardrail error response and learn how to customize the fault sequence for AI Guardrail policy interventions."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/guardrail-error-response/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/ai-guardrails/guardrail-error-response.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Guardrail Error Response
 
 When a **guardrail policy intervenes** due to violations of organizational safety, security, or compliance standards downstream systems must be notified **clearly and reliably**. To enable this, **AI Guardrails in WSO2 AI Gateway emit structured error responses**, allowing applications to observe, react, and recover appropriately.

@@ -1,3 +1,17 @@
+---
+title: "Expose a Backend Implementation as a Prototype API"
+description: "Create a Prototype (Pre-Released) API in WSO2 API Manager backed by an actual working backend URL, configure the endpoint in the Publisher, and invoke it from the Developer Portal to test the implementation."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/prototype-api/backend-url-prototype-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/prototype-api/backend-url-prototype-api.md
+tags:
+  - api-manager
+  - endpoints
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Expose an Existing Backend Implementation as a Prototype API
 
 This allows you to create a prototype API with an actual working backend URL and publish the API to the Developer Portal as a Pre-Released API.

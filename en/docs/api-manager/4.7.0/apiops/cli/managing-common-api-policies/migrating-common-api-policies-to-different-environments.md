@@ -1,3 +1,17 @@
+---
+title: "Migrate Common API Policies Between Environments with API Controller"
+description: "Export a common API Policy as an archive from one WSO2 API Manager environment and import it into another using apictl, including the exported archive structure."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-common-api-policies/migrating-common-api-policies-to-different-environments/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-common-api-policies/migrating-common-api-policies-to-different-environments.md
+tags:
+  - api-manager
+  - api-controller
+  - api-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Migrating Common API Policies to Different Environments
 
 **WSO2 API Controller (apictl)** allows you to maintain multiple environments running on the same WSO2 API Manager (WSO2 API-M) version. This allows you to import and export Common API Policies between your environments. For example, if you have a Common API Policy defined in the development environment, you can export it and import it to the production environment. Thereby, Common API Policies do not have to be created from scratch in different environments.

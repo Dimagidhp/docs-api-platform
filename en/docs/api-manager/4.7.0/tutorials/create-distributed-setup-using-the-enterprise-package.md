@@ -1,3 +1,18 @@
+---
+title: "Set Up a Distributed WSO2 API Manager Deployment with the Enterprise Package"
+description: "Tutorial for standing up a distributed WSO2 API Manager environment with the Enterprise Package's API Control Plane, Traffic Manager, and Classic (Universal) Gateway using Docker Compose, including accessing the portals and troubleshooting the setup."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/create-distributed-setup-using-the-enterprise-package/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/create-distributed-setup-using-the-enterprise-package.md
+tags:
+  - api-manager
+  - distributed-deployment
+  - deployment
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Setting Up a Distributed Setup Using the APIM Enterprise Package
 
 The WSO2 API Manager Enterprise Package comprises the **API Control Plane**, **Traffic Manager**, and **Classic Gateway (Universal)**.

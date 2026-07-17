@@ -1,3 +1,18 @@
+---
+title: "Create an MCP Server by Proxying an Existing MCP Server"
+description: "Proxy an existing standards-compliant MCP Server through WSO2 API Manager, discovering its upstream tools and applying governance policies such as auth, throttling, and analytics without regenerating tools."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/mcp-gateway/create-from-mcp-server/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/mcp-gateway/create-from-mcp-server.md
+tags:
+  - api-manager
+  - mcp-gateway
+  - mcp
+  - ai-tools
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Create a MCP Server by Proxying an Existing MCP Server
 
 Use this path when you already run a standards-compliant **MCP Server** and want to expose it through **WSO2 API Manager** for governance and developer onboarding. APIM **does not generate tools** here; it **discovers** the upstream server’s tools and **proxies** MCP methods (e.g., `initialize`, `tools/list`, `tools/call`).

@@ -1,3 +1,18 @@
+---
+title: "API Policies Overview"
+description: "Understand how API policies enforce business logic on the request, response, and fault flows of an API invocation in WSO2 API Manager, and the architectural improvements over previous mediation policy features."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-policies/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-policies/overview.md
+tags:
+  - api-manager
+  - api-policies
+  - gateway-policies
+  - mediation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # API Policies Overview
 
 Policies generally enforce some business logic that needs to be executed on the `Request`, `Response`, or `Fault` flow of an API invocation. A policy is a collection of rules that will be executed at the API Gateway. Using policies we can make API invocations undergo slight behavioural modifications before reaching the backend. In a similar manner, we can modify the API response a client receives.

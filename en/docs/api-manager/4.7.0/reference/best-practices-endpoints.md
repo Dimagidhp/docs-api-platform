@@ -1,3 +1,18 @@
+---
+title: "Best Practices for Working with Endpoints"
+description: "Recommended practices for configuring endpoints in WSO2 API Manager, including using named endpoints, setting socket and endpoint timeout values correctly, handling endpoint errors, and choosing between REST APIs and HTTP endpoints."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/best-practices-endpoints/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/best-practices-endpoints.md
+tags:
+  - api-manager
+  - endpoints
+  - mediation
+  - micro-integrator
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Best practices for working with endpoints
 
 - Do not use anonymous endpoints. Always use [named endpoints](https://mi.docs.wso2.com/en/latest/reference/synapse-properties/endpoint-properties/). As anynymous endpoints have auto-generated names in the synapse

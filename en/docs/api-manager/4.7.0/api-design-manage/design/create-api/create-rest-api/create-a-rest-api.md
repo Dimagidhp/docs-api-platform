@@ -1,3 +1,17 @@
+---
+title: "Create a REST API"
+description: "Create a REST API from scratch in the WSO2 API Publisher by defining API details, configuring runtime transport security, and adding resources with parameters and security settings, using the PizzaShack sample API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md
+tags:
+  - api-manager
+  - api-design
+  - rest-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Create a REST API
 
 **API creation** is the process of linking an existing backend API implementation to the [API Publisher](../../../../get-started/apim-architecture.md#api-publisher), so that you can manage and monitor the [API's lifecycle](../../lifecycle-management/api-lifecycle.md), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../../../../get-started/apim-architecture.md#api-publisher) itself.

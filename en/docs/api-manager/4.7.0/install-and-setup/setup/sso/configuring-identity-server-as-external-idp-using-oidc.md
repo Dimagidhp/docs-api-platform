@@ -1,3 +1,17 @@
+---
+title: "Configure WSO2 Identity Server as an External IdP Using OIDC"
+description: "Connect WSO2 Identity Server as a third-party identity provider to WSO2 API Manager using OIDC single sign-on, covering service provider setup, certificate import, identity provider configuration, role and claim mapping, and troubleshooting."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/sso/configuring-identity-server-as-external-idp-using-oidc/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/sso/configuring-identity-server-as-external-idp-using-oidc.md
+tags:
+  - api-manager
+  - sso
+  - oauth2
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configuring Identity Server as External IDP using OIDC
 
 WSO2 API Manager uses the OIDC Single Sign-On feature by default. This document explains how to connect WSO2 Identity Server (or WSO2 Identity Server as a Keymanager) as a third party Identity provider to API-Manager.

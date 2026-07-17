@@ -1,5 +1,16 @@
 ---
 template: templates/redoc.html
+title: "Gateway API v2 Reference"
+description: "Interactive OpenAPI reference for the WSO2 API Manager Gateway REST API v2, covering endpoints for managing APIs, policies, and other resources deployed directly on the Gateway."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/product-apis/gateway-apis/gateway-v2/gateway-v2/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/product-apis/gateway-apis/gateway-v2/gateway-v2.md
+tags:
+  - api-manager
+  - api-gateway
+  - rest-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
 ---
 
 <redoc spec-url='../gateway-v2.yaml'></redoc>

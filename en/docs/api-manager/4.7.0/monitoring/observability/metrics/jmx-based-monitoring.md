@@ -1,3 +1,17 @@
+---
+title: "Monitor WSO2 API Manager Using JMX"
+description: "Enable and configure JMX in WSO2 API Manager, then monitor the server with JConsole or Jolokia, covering JMX ports, datasource JMX, and the ServerAdmin, StatisticsAdmin, and DataSource MBeans."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/observability/metrics/jmx-based-monitoring/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/observability/metrics/jmx-based-monitoring.md
+tags:
+  - api-manager
+  - observability
+  - monitoring
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # JMX-Based Monitoring
 
 Java Management Extensions (JMX) is a technology that lets you implement management interfaces for Java applications. A management interface, as defined by JMX, is composed of named objects called MBeans (Management Beans). MBeans are registered with a name (an ObjectName) in an MBeanServer. To manage a resource or many resources in your application, you can write an MBean defining its management interface and register that MBean in your MBeanServer. The content of the MBeanServer can then be exposed through various protocols, implemented by protocol connectors, or protocol adapters.

@@ -1,3 +1,18 @@
+---
+title: "Migrate Rate Limiting Policies to Different Environments"
+description: "Use apictl to export rate limiting policies from one WSO2 API Manager environment and import them into another, so that APIs and Applications depending on custom or default policies can be migrated without subscription errors."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-rate-limiting-policies/migrating-rate-limiting-policies-to-different-environments/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-rate-limiting-policies/migrating-rate-limiting-policies-to-different-environments.md
+tags:
+  - api-manager
+  - api-controller
+  - rate-limiting
+  - ci-cd
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Migrating Rate Limiting Policies to Different Environments
 
 Rate limiting policies exist at different levels such as Application Level, Subscriber Level, Advanced Policy Level, etc. These rate limiting policies can belong to different environments according to the product lifecycle and are related to different APIs or Applications. Of these rate limiting policies, some of them exist as default policies belonging to every environment, and rate limiting policies can be custom-made. You may need to import custom-made or default rate limiting policies from one environment to another.

@@ -1,3 +1,17 @@
+---
+title: "Classic Gateway Overview"
+description: "Learn how the WSO2 Classic Gateway processes API requests, its message-handling architecture (transports, builders, handlers, formatters), and the security and traffic-management features it supports."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/overview-of-the-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/overview-of-the-api-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - architecture
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Overview of the Classic Gateway (Universal)
 
 [![API-M overview](../../../../assets/img/learn/apim-overview.png){: style="width:60%"}](../../../../assets/img/learn/apim-overview.png)

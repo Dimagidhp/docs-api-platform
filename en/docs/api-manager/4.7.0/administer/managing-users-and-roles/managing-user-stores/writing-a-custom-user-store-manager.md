@@ -1,3 +1,17 @@
+---
+title: "Writing a Custom User Store Manager"
+description: "Implement a custom user store manager for WSO2 API Manager by extending AbstractUserStoreManager, including a sample JDBC implementation with custom password hashing, and deploy it as a primary or secondary user store."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/managing-users-and-roles/managing-user-stores/writing-a-custom-user-store-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/managing-users-and-roles/managing-user-stores/writing-a-custom-user-store-manager.md
+tags:
+  - api-manager
+  - user-stores
+  - customization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Writing a Custom User Store Manager
 
 This page demonstrates the process of writing a simple custom user store

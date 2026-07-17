@@ -1,3 +1,18 @@
+---
+title: "Change the Default Ports with an Offset"
+description: "Avoid port conflicts when running multiple WSO2 API Manager runtimes on the same machine by applying a port offset either through the deployment.toml server configuration or as a startup system property."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset.md
+tags:
+  - api-manager
+  - deployment
+  - deployment-toml
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Changing the Default Ports with Offset
 
 When you run multiple runtimes on the same server or virtual machines (VMs), you must change their default ports with an `offset` value to avoid port conflicts. An offset defines the number by which all ports in the runtime (e.g., HTTP/S ports) are increased. 

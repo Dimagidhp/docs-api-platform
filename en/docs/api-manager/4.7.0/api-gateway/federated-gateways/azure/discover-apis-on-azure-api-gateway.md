@@ -1,3 +1,18 @@
+---
+title: "Discover APIs on Azure API Gateway"
+description: "Register Microsoft Azure API Management as a federated gateway in WSO2 API Manager: create an Azure API Management service, generate application credentials, add the gateway environment in the Admin Portal, then publish and invoke the discovered APIs from the Developer Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/azure/discover-apis-on-azure-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/azure/discover-apis-on-azure-api-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - federated-gateways
+  - deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Discover API on Azure API Gateway
 
 From the 4.6.0 release, WSO2 API Manager supports federated API discovery for APIs deployed in Azure API Gateway. This enables APIs created and managed in Azure to be discovered and brought under the centralized control plane of WSO2 API Manager.

@@ -1,3 +1,17 @@
+---
+title: "Manage Common API Policies with API Controller"
+description: "apictl commands to list and delete common API Policies in a WSO2 API Manager environment without using the Publisher Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-common-api-policies/managing-common-api-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/apiops/cli/managing-common-api-policies/managing-common-api-policies.md
+tags:
+  - api-manager
+  - api-controller
+  - api-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # Managing common API Policies
 
 Following actions on common API Policies are allowed by apictl.

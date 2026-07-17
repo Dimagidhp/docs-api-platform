@@ -1,3 +1,18 @@
+---
+title: "Getting Started with the MCP Gateway"
+description: "An overview of how the WSO2 API Manager MCP Gateway lets you create, discover, and manage MCP Servers, transforming APIs into AI-ready tools for LLMs, with the three available MCP Server creation paths."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/mcp-gateway/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/ai-gateway/mcp-gateway/overview.md
+tags:
+  - api-manager
+  - mcp-gateway
+  - mcp
+  - ai-tools
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "overview"
+---
+
 # Getting Started with MCP Gateway
 
 WSO2 API Manager provides a unified platform for managing MCP Servers, enabling you to transform APIs into AI-ready tools and govern their lifecycle. With a centralized control plane, you can create, discover, and manage MCP Servers efficiently—streamlining workflows for both API developers and AI agent builders.

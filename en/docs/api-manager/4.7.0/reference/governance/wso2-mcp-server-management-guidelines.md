@@ -1,3 +1,18 @@
+---
+title: "WSO2 MCP Server Management Guidelines"
+description: "Reference list of governance ruleset rules that validate WSO2 API Manager MCP Server definitions for naming, context, versioning, tool target names, security, ownership, and tagging, with valid and invalid YAML examples for each rule."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/governance/wso2-mcp-server-management-guidelines/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/reference/governance/wso2-mcp-server-management-guidelines.md
+tags:
+  - api-manager
+  - mcp
+  - governance
+  - mcp-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "reference"
+---
+
 # WSO2 MCP Server Management Guidelines
 
 A guide detailing best practices for creating robust, scalable, and secure MCP Servers, ensuring alignment with industry standards for optimal design.

@@ -1,3 +1,18 @@
+---
+title: "Monitor WSO2 API Manager Logs with OpenSearch"
+description: "Configure Fluent Bit and OpenSearch to collect, parse, and index WSO2 API Manager's carbon, HTTP access, audit, correlation, and trace logs, then view the results in OpenSearch Dashboards."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/observability/monitoring-with-opensearch/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/monitoring/observability/monitoring-with-opensearch.md
+tags:
+  - api-manager
+  - observability
+  - logging
+  - monitoring
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Monitoring APIM logs with OpenSearch
 
 WSO2 APIM facilitates integration with log management and analytics solutions for improved observability and monitoring. This guide details the procedure for configuring WSO2 APIM to monitor its logs with OpenSearch.

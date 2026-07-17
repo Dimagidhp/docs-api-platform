@@ -1,3 +1,18 @@
+---
+title: "Create and Publish an API with a Sequence Backend"
+description: "Tutorial that walks through creating a REST API in WSO2 API Manager backed by a custom mediation sequence instead of an HTTP endpoint, uploading sequence files for the production and sandbox key types, and saving the configuration."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/create-and-publish-a-sequencebackend-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/create-and-publish-a-sequencebackend-api.md
+tags:
+  - api-manager
+  - mediation
+  - tutorials
+  - api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Create and Publish an API with Sequence as a Backend
 
 When using a sequence as a backend, you can execute any mediation logic which acts as a backend to the **REST API**.

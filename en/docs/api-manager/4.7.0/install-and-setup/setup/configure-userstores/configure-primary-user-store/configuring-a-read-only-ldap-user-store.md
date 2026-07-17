@@ -1,3 +1,17 @@
+---
+title: "Configure a Read-Only LDAP User Store"
+description: "Configure an existing read-only LDAP directory as the primary user store in WSO2 API Manager, covering the required deployment.toml connection settings, advanced LDAP userstore properties, and system administrator setup for a read-only store."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-only-ldap-user-store/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-only-ldap-user-store.md
+tags:
+  - api-manager
+  - user-stores
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configuring a Read-Only LDAP User Store
 
 It is assumed that you have already setup your read-only LDAP user store. Follow the given steps to configure it as the primary user store in WSO2 API Manager:

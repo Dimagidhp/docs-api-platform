@@ -1,3 +1,18 @@
+---
+title: "OAuth2 SAML Extension Grant"
+description: "Explains how WSO2 API Manager's SAML extension grant exchanges a SAML2.0 bearer assertion for an OAuth2 access token, and walks through configuring the identity provider, service provider, and token exchange to support existing SAML SSO trust relationships."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/authentication/grant-types/saml-extension-grant/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/authentication/grant-types/saml-extension-grant.md
+tags:
+  - api-manager
+  - oauth2
+  - grant-types
+  - saml2
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # SAML Extension Grant
 
 #### Flow

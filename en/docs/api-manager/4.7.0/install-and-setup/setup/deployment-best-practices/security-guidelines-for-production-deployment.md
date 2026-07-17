@@ -1,3 +1,18 @@
+---
+title: "Security Guidelines for a Production Deployment"
+description: "Comprehensive runtime, OS-level, and network-level security guidelines for hardening a WSO2 API Manager production deployment, covering keystores, TLS/HSTS, admin credentials, mediator access control, and firewall configuration."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment.md
+tags:
+  - api-manager
+  - security
+  - deployment
+  - threat-protection
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Security Guidelines for Production Deployment
 
 Given below are the common security guidelines for deploying a WSO2 API Manager in a **production environment**.

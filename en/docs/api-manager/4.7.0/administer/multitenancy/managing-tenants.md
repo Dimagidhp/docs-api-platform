@@ -1,3 +1,17 @@
+---
+title: "Managing Tenants"
+description: "Add a new tenant through the management console in WSO2 API Manager, view registered tenants across developer portals, and delete a tenant using the TenantMgtAdminService SOAP API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/multitenancy/managing-tenants/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/multitenancy/managing-tenants.md
+tags:
+  - api-manager
+  - multitenancy
+  - user-management
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Managing Tenants
 
 

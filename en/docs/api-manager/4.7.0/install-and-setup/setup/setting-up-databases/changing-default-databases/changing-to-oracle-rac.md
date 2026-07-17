@@ -1,3 +1,18 @@
+---
+title: "Changing to Oracle RAC in WSO2 API Manager"
+description: "Replace the default embedded H2 database with Oracle Real Application Clusters (RAC) in WSO2 API Manager: create the database user, install the JDBC driver, run the oracle_rac.sql scripts, and configure the shared_db and apim_db datasource connections for a highly available Oracle cluster."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle-rac/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle-rac.md
+tags:
+  - api-manager
+  - databases
+  - high-availability
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Changing to Oracle RAC
 
 By default, WSO2 API Manager uses the embedded H2 database as the database for storing user management and registry data. Given below are the instructions you need to follow in order to use Oracle RAC for this purpose.

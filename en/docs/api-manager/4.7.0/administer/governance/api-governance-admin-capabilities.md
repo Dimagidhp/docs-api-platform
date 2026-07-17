@@ -1,3 +1,18 @@
+---
+title: "API Governance Administrative Capabilities"
+description: "Manage API governance rulesets and policies in the WSO2 API Manager Admin Portal: create and customize rulesets, define policies with enforcement criteria, monitor artifact compliance through dashboards, and configure the governance scheduler."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/governance/api-governance-admin-capabilities/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/administer/governance/api-governance-admin-capabilities.md
+tags:
+  - api-manager
+  - governance
+  - admin-portal
+  - mcp
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Administrative Capabilities
 
 WSO2 API Manager provides organization administrators the following administrative capabilities 

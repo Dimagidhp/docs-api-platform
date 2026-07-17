@@ -1,3 +1,18 @@
+---
+title: "Share Applications Across Users"
+description: "Enable application sharing in WSO2 API Manager so users within the same organization group can view shared applications and subscriptions, and configure a custom group ID extractor if needed."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/manage-application/sharing-applications/sharing-applications/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-developer-portal/manage-application/sharing-applications/sharing-applications.md
+tags:
+  - api-manager
+  - developer-portal
+  - applications
+  - user-management
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Sharing Applications
 
 WSO2 API Manager provides the facility for users to share their applications and subscriptions with a specific logical group or groups such as an organization. As a result of application sharing, users in the group can view such shared applications.

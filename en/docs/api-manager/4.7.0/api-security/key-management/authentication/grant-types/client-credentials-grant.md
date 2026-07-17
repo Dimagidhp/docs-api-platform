@@ -1,3 +1,17 @@
+---
+title: "OAuth2 Client Credentials Grant"
+description: "Explains the OAuth2 client credentials grant flow in WSO2 API Manager and walks through enabling the grant type, generating consumer keys, and obtaining an access token via cURL with and without a scope."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/authentication/grant-types/client-credentials-grant/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-security/key-management/authentication/grant-types/client-credentials-grant.md
+tags:
+  - api-manager
+  - oauth2
+  - grant-types
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "concept"
+---
+
 # Client Credentials Grant
 
 Client credentials can be used when the authorization scope is limited to the protected resources belonging to the client. Client credentials are used as an authorization grant when the client requests access to protected resources based on an authorization previously arranged with the authorization server. The client application requests an access token from the authorization server, authenticating the request with its client key and client secret. If the client is successfully authenticated, an access token is returned.

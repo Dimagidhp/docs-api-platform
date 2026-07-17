@@ -1,3 +1,17 @@
+---
+title: "Scenario 11: GraphQL Support"
+description: "Scenario tutorial on creating a GraphQL API in WSO2 API Manager by importing a GraphQL SDL schema, then publishing it, subscribing to it from the Developer Portal, and invoking a sample query through the Try Out console."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario11-graphql/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/tutorials/scenarios/scenario11-graphql.md
+tags:
+  - api-manager
+  - graphql
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Scenario 11 - GraphQL Support
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to work with GraphQL. For more details on the scenario and general prerequisites, please see [the scenario overview page](scenario-overview.md).

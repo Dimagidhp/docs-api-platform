@@ -1,3 +1,18 @@
+---
+title: "Adding Dynamic Endpoints"
+description: "Use a default endpoint with a dynamically constructed To header, driven by a mediation sequence property, to route API requests to a backend endpoint that cannot be defined as a static address endpoint."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/adding-dynamic-endpoints/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/policies/adding-dynamic-endpoints.md
+tags:
+  - api-manager
+  - endpoints
+  - mediation
+  - api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Adding Dynamic Endpoints
 
 You cannot dynamically construct the back-end endpoint of an API using the address endpoints in the WSO2 API Manager. To achieve the requirement of a dynamic endpoint, you can use the default endpoint instead. 

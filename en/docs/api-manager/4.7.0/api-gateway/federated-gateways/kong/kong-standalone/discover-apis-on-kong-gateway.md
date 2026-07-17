@@ -1,3 +1,17 @@
+---
+title: "Discover APIs on Kong Gateway (Standalone)"
+description: "Connect a standalone Kong Gateway to WSO2 API Manager as a federated gateway by generating a Kong Connect access token, retrieving the Gateway's Admin API details, registering it in the Admin Portal, and publishing and invoking the discovered APIs."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/kong/kong-standalone/discover-apis-on-kong-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-gateway/federated-gateways/kong/kong-standalone/discover-apis-on-kong-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - federated-gateways
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Discover APIs on Kong Gateway
 
 WSO2 API Manager supports discovering APIs from Kong Gateway and managing them through its Control Plane. It comes prepackaged with a built-in Kong Gateway connector, which enables the discovery of APIs deployed in Kong Gateway.

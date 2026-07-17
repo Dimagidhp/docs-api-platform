@@ -1,3 +1,18 @@
+---
+title: "Create a New API Version"
+description: "Create a new version of a published API in the Publisher Portal to change its behavior, authentication, or resources without disrupting existing subscribers, and control multi-version visibility in the Developer Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-versioning/create-a-new-api-version/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/api-design-manage/design/api-versioning/create-a-new-api-version.md
+tags:
+  - api-manager
+  - api-versioning
+  - publisher-portal
+  - tutorials
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "tutorial"
+---
+
 # Create a New API Version
 
 You need to create a new **API version** when you want to change a published API's behavior,

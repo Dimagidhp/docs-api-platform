@@ -1,3 +1,17 @@
+---
+title: "Integrating HashiCorp Vault with WSO2 API Manager"
+description: "Set up the HashiCorp Vault extension to store WSO2 API Manager passwords as aliases instead of plain text, using either Root Token or App-Role authentication, and configure deployment.toml to resolve secrets at startup."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/logins-and-passwords/harshicrop-vault-extension/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/security/logins-and-passwords/harshicrop-vault-extension.md
+tags:
+  - api-manager
+  - secure-vault
+  - security
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
 
 # Integrate with HashiCorp Vault
 

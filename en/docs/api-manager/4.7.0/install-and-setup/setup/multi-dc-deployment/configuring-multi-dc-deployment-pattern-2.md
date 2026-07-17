@@ -1,3 +1,18 @@
+---
+title: "Configure Multi-DC Pattern 2: Centralized API Management with Regional Data Planes"
+description: "Configure Multi-DC Pattern 2 for WSO2 API Manager, covering the main region control plane setup and sub-region Gateway and Traffic Manager configuration for connecting to the main region's control plane."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-2/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-2.md
+tags:
+  - api-manager
+  - multi-dc-deployment
+  - distributed-deployment
+  - high-availability
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Configure Pattern 2: Centralized API Management with Regional Data Planes
 
 <a href="../../../assets/img/setup-and-install/multi-dc-pattern-2.png"><img src="../../../assets/img/setup-and-install/multi-dc-pattern-2.png" alt="Multi-DC Pattern 2" width="80%"></a>

@@ -1,3 +1,17 @@
+---
+title: "Run the WSO2 API Manager Runtime"
+description: "Start and stop the WSO2 API Manager server, sign in to the Management Console, API Publisher, and Developer Portal web portals, and troubleshoot common server startup errors on Windows and macOS."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install/installing-the-product/running-the-api-m/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/install/installing-the-product/running-the-api-m.md
+tags:
+  - api-manager
+  - installation
+  - troubleshooting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Running the API Manager Runtime
 
 Follow the steps given below to run the WSO2 API Manager runtime and access its web portals: **Management Console**, **API Publisher**, and the **Developer Portal**.

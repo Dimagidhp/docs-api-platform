@@ -1,3 +1,18 @@
+---
+title: "Tuning Performance for WSO2 API Manager"
+description: "Recommended performance tuning configurations for WSO2 API Manager covering OS-level settings, JVM settings, Carbon platform settings, timeout configurations, connection pool tuning, and database indexing."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/tuning-performance/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.7.0/install-and-setup/setup/deployment-best-practices/tuning-performance.md
+tags:
+  - api-manager
+  - deployment
+  - databases
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-17
+content_type: "how-to"
+---
+
 # Tuning Performance
 
 This section describes some recommended performance tuning configurations to optimize WSO2 API Manager. It assumes that you have set up the API Manager on Unix/Linux, which is recommended for a production deployment.
