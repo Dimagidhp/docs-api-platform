@@ -11,7 +11,7 @@ Before API-M 4.5.0, WSO2 API Manager operated without a defined organizational s
 
 The WSO2 API Manager B2B Organization feature is compatible with any Identity Server that supports organization hierarchies. To utilize the Identity Server's organization hierarchy within API Manager, we need to configure it as a federated identity provider. This documentation uses WSO2 Identity Server 7.1.0 as an example, due to its built-in organization support.
 
-For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 Identity Server as a federated authenticator]({{base_path}}/manage-apis/design/b2b-api-management/setup-identity-server/)
+For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 Identity Server as a federated authenticator](setup-identity-server.md)
 
 
 ## Set Up WSO2 API Manager
@@ -32,18 +32,18 @@ For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 I
 
 2. Add a new local claim to store the organization ID. Go to **Home > Identity > Claims > Add**, select `Add Local Claim`, and fill in the form. Use `http://wso2.org/claims/organizationId` as the claim URI.
 
-    ![Add new local claim]({{base_path}}/assets/img/design/b2b/claims.png) 
+    ![Add new local claim](../../assets/img/design/b2b/claims.png) 
 
 
 3. Add `org_id` and `org_name` to the OIDC claims and map them to the local claims `http://wso2.org/claims/organizationId` and `http://wso2.org/claims/organization` (this claim is pre-defined in API-M). To do this, go to **Home > Identity > Claims > Add** and select `Add External Claim`.
 
-    ![Add new external claim]({{base_path}}/assets/img/design/b2b/add-claim-1.png) 
+    ![Add new external claim](../../assets/img/design/b2b/add-claim-1.png) 
       
-    ![Add new external claim]({{base_path}}/assets/img/design/b2b/add-claim-2.png) 
+    ![Add new external claim](../../assets/img/design/b2b/add-claim-2.png) 
 
 4. Once added, the claims will be visible under the `http://wso2.org/oidc/claim` claim dialect.
 
-    ![Claim view]({{base_path}}/assets/img/design/b2b/claim-view.png) 
+    ![Claim view](../../assets/img/design/b2b/claim-view.png) 
 
 5. Configure WSO2 IS 7.1 as a federated identity provider for API Manager. Create a new identity provider by selecting `Identity Providers` → `Add`, and then set a name for the IDP.
 
@@ -51,7 +51,7 @@ For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 I
 
 7. Set the `User ID Claim URI` to `username` and the `Role Claim URI` to `groups`.
 
-    ![Claim config]({{base_path}}/assets/img/design/b2b/claim-config.png) 
+    ![Claim config](../../assets/img/design/b2b/claim-config.png) 
 
     !!! note
         `org_name`, `org_id`, `username`, and `groups` are OIDC claims sent from WSO2 IS. If an external IDP is configured, map the corresponding claims.
@@ -59,7 +59,7 @@ For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 I
 
 8. Under `Role Configuration`, map the IDP group `developer` to the local role `Internal/subscriber`. Configure the other groups similarly.
 
-    ![Role config]({{base_path}}/assets/img/design/b2b/role-config.png) 
+    ![Role config](../../assets/img/design/b2b/role-config.png) 
 
 9. Under the `Federated Authenticators` section, configure IS 7 as the federated authenticator using the OAuth2 application details.
 
@@ -71,26 +71,26 @@ For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 I
     | Callback URL                    | https://localhost:9443/commonauth     |
 
 
-    ![Federated authenticator]({{base_path}}/assets/img/design/b2b/federated-authenticator.png) 
+    ![Federated authenticator](../../assets/img/design/b2b/federated-authenticator.png) 
 
     You can find the URLs for the other endpoints in the `Info` tab of the application created in Identity Server.
 
-    ![Well-known URLs]({{base_path}}/assets/img/design/b2b/url-list.png) 
+    ![Well-known URLs](../../assets/img/design/b2b/url-list.png) 
 
 10. Under `Just-in-Time Provisioning`, configure provisioning as shown below. Finish the IDP configuration by clicking `Register`.
 
-    ![JIT Provisioning]({{base_path}}/assets/img/design/b2b/jit.png) 
+    ![JIT Provisioning](../../assets/img/design/b2b/jit.png) 
 
 11. Next, configure authenticators for the service providers. Go to the `Service Providers` section and select the edit button for `apim_devportal`. 
 
-    ![Service providers]({{base_path}}/assets/img/design/b2b/service-providers.png) 
+    ![Service providers](../../assets/img/design/b2b/service-providers.png) 
 
     !!! note
         If these service providers are not available, first log in to the respective portal. They will be created automatically.
 
 12. Under the `Local & Outbound Authentication Configuration` section, set the identity provider you created earlier under the `Federated Authentication` section.
 
-    ![Configure federated authenticator]({{base_path}}/assets/img/design/b2b/configure-federated-authenticator.png) 
+    ![Configure federated authenticator](../../assets/img/design/b2b/configure-federated-authenticator.png) 
 
 13. Repeat the same configuration for the service providers of the other portals.
 
@@ -105,7 +105,7 @@ First, map the organizations in the Identity Server to API Manager.
 
 2. Go to the `Organizations` tab and select `Register Organization`. Use the organization IDs that you obtained during the organization registration step in WSO2 IS.
 
-    ![Register organizations]({{base_path}}/assets/img/design/b2b/register-org.png) 
+    ![Register organizations](../../assets/img/design/b2b/register-org.png) 
 
 
 ## Register Organization-specific key managers
@@ -133,11 +133,11 @@ WSO2 IS 7.1 provides the capability to register OAuth applications within organi
 
 4. Under the `Available Organizations` section, select the organization.
 
-    ![Key Manager visibility]({{base_path}}/assets/img/design/b2b/key-manager-visibility.png) 
+    ![Key Manager visibility](../../assets/img/design/b2b/key-manager-visibility.png) 
 
 5. Under `Advanced Configurations`, set `Token Handling Options` to JWT and set the organization ID used previously for key manager registration as shown below.
 
-    ![Key Manager config]({{base_path}}/assets/img/design/b2b/key-manager-conf.png) 
+    ![Key Manager config](../../assets/img/design/b2b/key-manager-conf.png) 
 
 ## Set Organization Visibility for APIs
 
@@ -148,11 +148,11 @@ You can set APIs to be visible to users in all organizations, the current organi
 3. Go to the `Lifecycle` page and publish the API.
 4. On the top bar, click `Share`.
 
-    ![Share with Organizations]({{base_path}}/assets/img/design/b2b/share.png) 
+    ![Share with Organizations](../../assets/img/design/b2b/share.png) 
 
 5. Select the organizations to share the API with, choose the organization-specific business plans, and save the changes.
 
-    ![Share with Organizations]({{base_path}}/assets/img/design/b2b/share-with-plans.png) 
+    ![Share with Organizations](../../assets/img/design/b2b/share-with-plans.png) 
 
     !!! note
         APIs with Developer Portal visibility set to `public` are still not visible on the anonymous Developer Portal page if they have been shared with an organization. To make them visible in the Developer Portal without user login, set the organization visibility to `All Organizations`.
@@ -166,19 +166,19 @@ You can set APIs to be visible to users in all organizations, the current organi
 
 2. Use the SSO option and enter the organization name. 
 
-    ![Login with SSO]({{base_path}}/assets/img/design/b2b/login.png) 
+    ![Login with SSO](../../assets/img/design/b2b/login.png) 
     
-    ![Login with SSO]({{base_path}}/assets/img/design/b2b/login-orgname.png) 
+    ![Login with SSO](../../assets/img/design/b2b/login-orgname.png) 
 
 3. You should be able to see APIs shared with this organization.
 
 4. Create an application. You also have the option to share the application with all users within the organization.
 
-    ![Share Application]({{base_path}}/assets/img/design/b2b/share-app.png) 
+    ![Share Application](../../assets/img/design/b2b/share-app.png) 
 
 5. Under the application keys section, you will see the key manager configured specifically for this organization.
 
-    ![Application Keys]({{base_path}}/assets/img/design/b2b/key-page.png) 
+    ![Application Keys](../../assets/img/design/b2b/key-page.png) 
 
 6. You should be able to generate an access token and invoke the API now.
 

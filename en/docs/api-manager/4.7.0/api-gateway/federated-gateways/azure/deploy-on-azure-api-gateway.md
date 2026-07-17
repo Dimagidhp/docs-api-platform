@@ -45,7 +45,7 @@ Follow the instructions given below to configure Azure API Gateway as a Federate
     8. **APIM Hostname** - The hostname assigned to APIs deployed on Azure. The default is `azure-api.net`.
 3. Save the configurations.
 
-    [![add azure gateway environment]({{base_path}}/assets/img/deploy/add-azure-gw-environment.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/add-azure-gw-environment.png)
+    [![add azure gateway environment](../../../assets/img/deploy/add-azure-gw-environment.png){: style="width:90%"}](../../../assets/img/deploy/add-azure-gw-environment.png)
 
 ## Step 4 : Create and Design API
 
@@ -57,7 +57,7 @@ Follow the instructions given below to configure Azure API Gateway as a Federate
 
 2. Create a new REST API and select Gateway Type as Azure. And provide a valid endpoint URL.
 
-    [![select azure gateway]({{base_path}}/assets/img/deploy/select-azure-gateway.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/select-azure-gateway.png)
+    [![select azure gateway](../../../assets/img/deploy/select-azure-gateway.png){: style="width:90%"}](../../../assets/img/deploy/select-azure-gateway.png)
 
 3. Design the API as required.
 
@@ -70,7 +70,7 @@ By default, APIs will be deployed in Azure without any security. But the capabil
 
 2. Attach the Azure OAuth2.0 policy to the API. Here you will have to provide the OpenID URL .
 
-    [![attach azure oauth policy]({{base_path}}/assets/img/deploy/attach-azure-oauth-policy.png){: style="width:70%"}]({{base_path}}/assets/img/deploy/attach-azure-oauth-policy.png)
+    [![attach azure oauth policy](../../../assets/img/deploy/attach-azure-oauth-policy.png){: style="width:70%"}](../../../assets/img/deploy/attach-azure-oauth-policy.png)
 
 ## Step 6 : Deploy and Publish API
 

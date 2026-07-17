@@ -3,7 +3,7 @@
 This guide provides a step-by-step approach to deploying WSO2 API Manager on Google Kubernetes Engine (GKE). This deployment follows the standard WSO2 Kubernetes architecture, extended to use Google Cloud-specific services such as Cloud SQL for databases and Artifact Registry for container image storage.
 
 !!! info
-    This deployment aligns with the standard deployment models described in [WSO2 API Manager Deployment Patterns]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/#deployment-patterns) and [API-M Deployment with All-in-One HA Setup]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/).
+    This deployment aligns with the standard deployment models described in [WSO2 API Manager Deployment Patterns](../kubernetes/kubernetes-overview.md#deployment-patterns) and [API-M Deployment with All-in-One HA Setup](../kubernetes/am-pattern-1-all-in-one-ha.md).
 
 ## Contents
 
@@ -93,7 +93,7 @@ gcloud container clusters create apim-cluster \
 
 ## Step 2: Install Envoy Gateway API Controller
 
-WSO2 API Manager uses the Gateway API to route traffic to the cluster. You can install it and configure additional settings as needed via the `values.yaml` file by following the instructions in the [API-M Deployment with All-in-One HA Routing Controller Setup]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/#step-4-install-a-routing-controller) guide.
+WSO2 API Manager uses the Gateway API to route traffic to the cluster. You can install it and configure additional settings as needed via the `values.yaml` file by following the instructions in the [API-M Deployment with All-in-One HA Routing Controller Setup](../kubernetes/am-pattern-1-all-in-one-ha.md#step-4-install-a-routing-controller) guide.
 
 ## Step 3: Configure the Databases
 
@@ -270,7 +270,7 @@ kubectl create secret generic apim-keystore-secret \
 
 ### Configure values.yaml
 
-Before deploying, set the mandatory internal encryption key under `wso2.apim.configurations.encryption.key`. If your deployment runs more than one API-M pod or instance, use the same key value across all of them. For more information, see [Configuring Encryption Key]({{base_path}}/install-and-setup/setup/security/encryption/symmetric-encryption/#generate-a-secret-key).
+Before deploying, set the mandatory internal encryption key under `wso2.apim.configurations.encryption.key`. If your deployment runs more than one API-M pod or instance, use the same key value across all of them. For more information, see [Configuring Encryption Key](../../security/encryption/symmetric-encryption.md#generate-a-secret-key).
 
 Create a `values.yaml` file with the following configuration:
 
@@ -432,10 +432,10 @@ Check:
 ## Next Steps
 
 - Set up [Rate Limiting]({{base_path}}/manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
-- Enable [Analytics]({{base_path}}/monitoring/api-analytics/analytics-overview/)
+- Enable [Analytics](../../../../monitoring/api-analytics/analytics-overview.md)
 
 ## See Also
 
-- [Kubernetes Deployment Overview]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/)
-- [API-M Deployment with All-in-One HA Setup]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/)
+- [Kubernetes Deployment Overview](../kubernetes/kubernetes-overview.md)
+- [API-M Deployment with All-in-One HA Setup](../kubernetes/am-pattern-1-all-in-one-ha.md)
 - [Envoy Gateway Documentation](https://gateway.envoyproxy.io/docs/)

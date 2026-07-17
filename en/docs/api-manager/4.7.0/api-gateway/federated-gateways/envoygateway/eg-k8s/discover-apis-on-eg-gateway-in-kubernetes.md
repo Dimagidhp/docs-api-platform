@@ -60,7 +60,7 @@ Follow these steps to add EnvoyGateway as an external gateway environment:
    - **Vhosts** section: Add `example.com` as host-1
 4. Click 'Add'
 
-[![add EnvoyGateway as external gateway]({{base_path}}/assets/img/deploy/add-eg-gateway.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/add-eg-gateway.png)
+[![add EnvoyGateway as external gateway](../../../../assets/img/deploy/add-eg-gateway.png){: style="width:90%"}](../../../../assets/img/deploy/add-eg-gateway.png)
 
 ## Step 5. Install APIM Common Agent
 
@@ -94,7 +94,7 @@ Follow these steps to observe the discovered API:
 1. Open your browser and navigate to `https://am.wso2.com/publisher/`
 2. You will be able to see the discovered API in the Publisher interface
 
-[![Discovered API In Publisher]({{base_path}}/assets/img/deploy/discovered-eg-api-publisher.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/discovered-eg-api-publisher.png)
+[![Discovered API In Publisher](../../../../assets/img/deploy/discovered-eg-api-publisher.png){: style="width:90%"}](../../../../assets/img/deploy/discovered-eg-api-publisher.png)
 
 ## Next Steps
 

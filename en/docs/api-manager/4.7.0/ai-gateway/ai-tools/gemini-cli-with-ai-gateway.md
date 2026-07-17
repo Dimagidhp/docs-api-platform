@@ -121,7 +121,7 @@ WSO2 provides integrated analytics, powered by Moesif, and also supports integra
 
 For example, an admin could view the token usage by users and applications to identify overuse of the AI Agents.
 
-[![analytics token usage example]({{base_path}}/assets/img/llm-gateway/analytics-token-usage-example.png)]({{base_path}}/assets/img/llm-gateway/analytics-token-usage-example.png)
+[![analytics token usage example](../../assets/img/llm-gateway/analytics-token-usage-example.png)](../../assets/img/llm-gateway/analytics-token-usage-example.png)
 
 For more information on Analytics, refer to the official [WSO2 API Manager Documentation](https://apim.docs.wso2.com/en/latest/monitoring/api-analytics/analytics-overview/)
 
@@ -135,7 +135,7 @@ By applying guardrails, you can enforce security and compliance policies.
 
 For example, a **PII Masking Regex Guardrail** can be configured in the request flow to prevent Personally Identifiable Information (PII) from reaching the Google Gemini API. If a user submits a prompt containing PII, the guardrail evaluates the request against defined patterns and redacts them before they reach the Google Gemini API.
 
-[![gemini cli guardrail example]({{base_path}}/assets/img/llm-gateway/gemini-cli-guardrail-redacted-example.png)]({{base_path}}/assets/img/llm-gateway/gemini-cli-guardrail-redacted-example.png)
+[![gemini cli guardrail example](../../assets/img/llm-gateway/gemini-cli-guardrail-redacted-example.png)](../../assets/img/llm-gateway/gemini-cli-guardrail-redacted-example.png)
 
 For more information on AI Guardrails, refer to the official [WSO2 API Manager Documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/ai-guardrails/overview/)
 
@@ -151,7 +151,7 @@ This helps control token consumption and avoid unexpected costs.
 
 The following screenshot illustrates Gemini CLI operating under a minute-level token limit, where requests are delayed until the quota is refreshed.
 
-[![gemini cli rate limit example]({{base_path}}/assets/img/llm-gateway/gemini-cli-rate-limit-example.png)]({{base_path}}/assets/img/llm-gateway/gemini-cli-rate-limit.png)
+[![gemini cli rate limit example](../../assets/img/llm-gateway/gemini-cli-rate-limit-example.png)]({{base_path}}/assets/img/llm-gateway/gemini-cli-rate-limit.png)
 
 For more information on Rate Limiting, refer to the official [WSO2 API Manager documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/rate-limiting/)
 
@@ -165,12 +165,12 @@ This is useful when working with Gemini CLI in scenarios such as fallback handli
 
 For example, the following screenshot illustrates Gemini CLI being proxied through WSO2 API Manager AI Gateway, where the user explicitly requests the `gemini-3.1-pro-preview` model. Since this model has exceeded its usage limits, the request fails.
 
-[![gemini cli multi model routing example 1]({{base_path}}/assets/img/llm-gateway/gemini-cli-multi-model-routing-example-1.png)]({{base_path}}/assets/img/llm-gateway/gemini-cli-multi-model-routing-example-1.png)
+[![gemini cli multi model routing example 1](../../assets/img/llm-gateway/gemini-cli-multi-model-routing-example-1.png)](../../assets/img/llm-gateway/gemini-cli-multi-model-routing-example-1.png)
 
 With Multi-Model Routing configured using a Round Robin strategy across `gemini-2.5-flash-lite` and `gemini-2.5-flash`, the behavior changes. Even though Gemini CLI continues to request the `gemini-3.1-pro-preview` model, the AI Gateway dynamically routes the request to one of the available configured models.
 As a result, the request is successfully processed without requiring any changes on the client side.
 
-[![gemini cli multi model routing example 2]({{base_path}}/assets/img/llm-gateway/gemini-cli-multi-model-routing-example-2.png)]({{base_path}}/assets/img/llm-gateway/gemini-cli-multi-model-routing-example-2.png)
+[![gemini cli multi model routing example 2](../../assets/img/llm-gateway/gemini-cli-multi-model-routing-example-2.png)](../../assets/img/llm-gateway/gemini-cli-multi-model-routing-example-2.png)
 
 For more information on Multi-Model Routing, refer to the official [WSO2 API Manager documentation](https://apim.docs.wso2.com/en/4.7.0/ai-gateway/multi-model-routing/overview/)
 
@@ -186,6 +186,6 @@ As a simple example, you can configure a Prompt Decorator in the request flow to
 
 Once configured, every request sent from Gemini CLI is automatically modified by the Gateway to include this instruction before being forwarded to the AI provider.
 
-[![gemini cli multi model routing example 2]({{base_path}}/assets/img/llm-gateway/gemini-cli-prompt-decorator-example.png)]({{base_path}}/assets/img/llm-gateway/gemini-cli-prompt-decorator-example.png)
+[![gemini cli multi model routing example 2](../../assets/img/llm-gateway/gemini-cli-prompt-decorator-example.png)](../../assets/img/llm-gateway/gemini-cli-prompt-decorator-example.png)
 
 For more information on Prompt Management, refer to the official [WSO2 API Manager documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/prompt-management/overview/)

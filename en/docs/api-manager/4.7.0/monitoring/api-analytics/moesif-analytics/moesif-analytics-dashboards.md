@@ -14,9 +14,9 @@ This dashboard is especially useful for answering broad questions such as:
 - Are traffic increases concentrated in APIs, LLM usage, or MCP activity?
 - Which applications, APIs, or regions are contributing most to the current load?
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-overview-dashboard.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-overview-dashboard.png" width="95%" alt="Moesif Overview Dashboard"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-overview-dashboard.png"><img src="../../../assets/img/analytics/moesif/moesif-overview-dashboard.png" width="95%" alt="Moesif Overview Dashboard"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-overview-dashboard-2.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-overview-dashboard-2.png" width="95%" alt="Moesif Overview Dashboard Additional View"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-overview-dashboard-2.png"><img src="../../../assets/img/analytics/moesif/moesif-overview-dashboard-2.png" width="95%" alt="Moesif Overview Dashboard Additional View"/></a>
 
 ### Summary Metrics
 
@@ -74,11 +74,11 @@ This dashboard is useful for questions such as:
 - Is an increase in latency affecting all API traffic or only a subset?
 - Are failures spread across the platform or concentrated in one type of API?
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-all-apis-dashboard.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-all-apis-dashboard.png" width="95%" alt="Moesif All APIs Analytics Dashboard"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-all-apis-dashboard.png"><img src="../../../assets/img/analytics/moesif/moesif-all-apis-dashboard.png" width="95%" alt="Moesif All APIs Analytics Dashboard"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-all-apis-dashboard-2.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-all-apis-dashboard-2.png" width="95%" alt="Moesif All APIs Analytics Dashboard Additional View 1"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-all-apis-dashboard-2.png"><img src="../../../assets/img/analytics/moesif/moesif-all-apis-dashboard-2.png" width="95%" alt="Moesif All APIs Analytics Dashboard Additional View 1"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-all-apis-dashboard-3.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-all-apis-dashboard-3.png" width="95%" alt="Moesif All APIs Analytics Dashboard Additional View 2"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-all-apis-dashboard-3.png"><img src="../../../assets/img/analytics/moesif/moesif-all-apis-dashboard-3.png" width="95%" alt="Moesif All APIs Analytics Dashboard Additional View 2"/></a>
 
 #### Summary Metrics
 
@@ -123,9 +123,9 @@ The **REST API Analytics** dashboard is a protocol-specific drill-down view for 
 
 Because REST traffic often represents the largest share of gateway traffic, this dashboard is particularly useful for day-to-day operational monitoring, troubleshooting client-facing issues, and identifying optimization opportunities.
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-rest-api-dashboard.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-rest-api-dashboard.png" width="95%" alt="Moesif REST API Analytics Dashboard"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-rest-api-dashboard.png"><img src="../../../assets/img/analytics/moesif/moesif-rest-api-dashboard.png" width="95%" alt="Moesif REST API Analytics Dashboard"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-rest-api-dashboard-2.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-rest-api-dashboard-2.png" width="95%" alt="Moesif REST API Analytics Dashboard Additional View"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-rest-api-dashboard-2.png"><img src="../../../assets/img/analytics/moesif/moesif-rest-api-dashboard-2.png" width="95%" alt="Moesif REST API Analytics Dashboard Additional View"/></a>
 
 #### Summary Metrics
 
@@ -185,11 +185,11 @@ The **LLM APIs Analytics** dashboard provides observability for LLM usage manage
 
 This dashboard is especially useful for teams building AI-powered experiences because it combines operational insight with cost visibility. Instead of looking only at traffic volume, you can also understand how requests are distributed across providers and models, how much those requests are costing, and whether safeguards such as guardrails or semantic caching are working as expected.
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-llm-dashboard.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-llm-dashboard.png" width="95%" alt="Moesif LLM APIs Analytics Dashboard"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-llm-dashboard.png"><img src="../../../assets/img/analytics/moesif/moesif-llm-dashboard.png" width="95%" alt="Moesif LLM APIs Analytics Dashboard"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-llm-dashboard-2.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-llm-dashboard-2.png" width="95%" alt="Moesif LLM APIs Analytics Dashboard Additional View 1"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-llm-dashboard-2.png"><img src="../../../assets/img/analytics/moesif/moesif-llm-dashboard-2.png" width="95%" alt="Moesif LLM APIs Analytics Dashboard Additional View 1"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-llm-dashboard-3.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-llm-dashboard-3.png" width="95%" alt="Moesif LLM APIs Analytics Dashboard Additional View 2"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-llm-dashboard-3.png"><img src="../../../assets/img/analytics/moesif/moesif-llm-dashboard-3.png" width="95%" alt="Moesif LLM APIs Analytics Dashboard Additional View 2"/></a>
 
 ### Summary Metrics
 
@@ -245,11 +245,11 @@ The **MCP Analytics** dashboard provides visibility into Model Context Protocol 
 
 This dashboard is useful when AI agents or MCP-enabled clients are interacting with tools exposed through your platform. It helps you understand which tools are being used most often, whether agents are succeeding or failing, and how activity is distributed across MCP servers and client environments.
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-mcp-dashboard.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-mcp-dashboard.png" width="95%" alt="Moesif MCP Analytics Dashboard"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-mcp-dashboard.png"><img src="../../../assets/img/analytics/moesif/moesif-mcp-dashboard.png" width="95%" alt="Moesif MCP Analytics Dashboard"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-mcp-dashboard-2.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-mcp-dashboard-2.png" width="95%" alt="Moesif MCP Analytics Dashboard View 2"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-mcp-dashboard-2.png"><img src="../../../assets/img/analytics/moesif/moesif-mcp-dashboard-2.png" width="95%" alt="Moesif MCP Analytics Dashboard View 2"/></a>
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-mcp-dashboard-3.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-mcp-dashboard-3.png" width="95%" alt="Moesif MCP Analytics Dashboard View 3"/></a>
+<a href="../../../assets/img/analytics/moesif/moesif-mcp-dashboard-3.png"><img src="../../../assets/img/analytics/moesif/moesif-mcp-dashboard-3.png" width="95%" alt="Moesif MCP Analytics Dashboard View 3"/></a>
 
 ### Summary Metrics
 

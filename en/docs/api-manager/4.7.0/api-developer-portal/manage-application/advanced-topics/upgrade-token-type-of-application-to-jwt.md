@@ -1,6 +1,6 @@
 # Upgrading the Token Type of an Application to JWT
 
-It is recommended to upgrade the token type of your **legacy opaque applications** to JWT as we have deprecated the support for opaque access tokens. If you already have legacy applications that are using opaque access tokens please consider upgrading them to use [JWT-based access tokens]({{base_path}}/api-security/key-management/tokens/jwt-tokens/).
+It is recommended to upgrade the token type of your **legacy opaque applications** to JWT as we have deprecated the support for opaque access tokens. If you already have legacy applications that are using opaque access tokens please consider upgrading them to use [JWT-based access tokens](../../../api-security/key-management/tokens/jwt-tokens.md).
 
 !!! note
     When you upgrade the token type of a legacy application to JWT,
@@ -20,10 +20,10 @@ Follow the instructions below to upgrade the token type of your legacy applicati
 3.  Click **Change Application Settings** under **Settings**.
 4.  If you have legacy applications that are still using opaque access tokens, they will be shown under the **Legacy Applications** tab as follows.
 
-    [![Application listing to upgrade the token type to JWT]({{base_path}}/assets/img/learn/upgrade-token-type.png)]({{base_path}}/assets/img/learn/upgrade-token-type.png)
+    [![Application listing to upgrade the token type to JWT](../../../assets/img/learn/upgrade-token-type.png)](../../../assets/img/learn/upgrade-token-type.png)
 
 5. Click on the **Upgrade to JWT** button of the required application. You will see a dialog box as below.
 
-    [![Upgrade to JWT Button]({{base_path}}/assets/img/learn/upgrade-token-type-confirmation.png)]({{base_path}}/assets/img/learn/upgrade-token-type-confirmation.png)
+    [![Upgrade to JWT Button](../../../assets/img/learn/upgrade-token-type-confirmation.png)](../../../assets/img/learn/upgrade-token-type-confirmation.png)
 
 6. Click on the **Upgrade** button. **Please note that this action cannot be undone**.

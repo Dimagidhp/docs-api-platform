@@ -5,7 +5,7 @@ When you expose an API, you create a proxy to your actual backend service. While
 This limit acts as a protective cap on the total number of requests your API forwards to the backend within a given time period, ensuring your backend services remain stable even as API usage grows.
 
 !!! note
-    By default, backend throughput limits are enforced locally on each Gateway node. For clustered deployments where you need consistent enforcement across all nodes, you can configure distributed counters using Redis. See [Configuring Distributed Throttling]({{base_path}}/api-gateway/rate-limiting/configuring-rate-limiting-api-gateway-cluster) for details.
+    By default, backend throughput limits are enforced locally on each Gateway node. For clustered deployments where you need consistent enforcement across all nodes, you can configure distributed counters using Redis. See [Configuring Distributed Throttling](../../../api-gateway/rate-limiting/configuring-rate-limiting-api-gateway-cluster.md) for details.
 
 ## Setting Backend Throughput Limits
 
@@ -16,7 +16,7 @@ To set maximum backend throughput for your API:
 3. In the **Backend Throughput** section, select **Specify**.
 4. Set limits for **Production** and **Sandbox** endpoints separately, as they may have different capacities.
 
-[![Max Throughput]({{base_path}}/assets/img/learn/learn-throttling-maxtps.png)]({{base_path}}/assets/img/learn/learn-throttling-maxtps.png)
+[![Max Throughput](../../../assets/img/learn/learn-throttling-maxtps.png)](../../../assets/img/learn/learn-throttling-maxtps.png)
 
 5. Save the API.
 
@@ -43,7 +43,7 @@ To configure token-based backend throughput for AI APIs:
 3. In the **Backend Throughput** section, select **Specify**.
 4. Configure the token-based limits:
 
-[![Max Backend Throughput for AI APIs]({{base_path}}/assets/img/learn/learn-throttling-maxtps-tokens.png)]({{base_path}}/assets/img/learn/learn-throttling-maxtps-tokens.png)
+[![Max Backend Throughput for AI APIs](../../../assets/img/learn/learn-throttling-maxtps-tokens.png)](../../../assets/img/learn/learn-throttling-maxtps-tokens.png)
 
 5. Set limits for both **Production** and **Sandbox** environments separately.
 6. Save the API.

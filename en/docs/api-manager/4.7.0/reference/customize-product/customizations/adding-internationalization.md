@@ -58,7 +58,7 @@ For example, let's assume that you are using Google Chrome, and let's change the
 
 1. Navigate to the `chrome://settings/languages` URL in your browser.
 
-     ![Chrome browser settings]({{base_path}}/assets/img/administer/chrome-set-language.png)
+     ![Chrome browser settings](../../../assets/img/administer/chrome-set-language.png)
 
 2. Add the highest preference to "Spanish", so that "Spanish" moves to the top of the language list.
 
@@ -128,7 +128,7 @@ Sometimes going through the list of keys and modifying each of the values that c
 
 Let's find the key for the main title named **APIs** in the following screen.
 
-![Main title highlighted in the Developer Portal]({{base_path}}/assets/img/administer/find-key-01.png)
+![Main title highlighted in the Developer Portal](../../../assets/img/administer/find-key-01.png)
 
 <div class="admonition tip">
 <p class="admonition-title">Prerequisites</p>
@@ -142,13 +142,13 @@ Let's find the key for the main title named **APIs** in the following screen.
 
 1. Right-click over the title named **APIs** and select **Inspect Element**.
 
-     ![Right click menu]({{base_path}}/assets/img/administer/find-key-02.png)
+     ![Right click menu](../../../assets/img/administer/find-key-02.png)
 
      The Chrome Developer Tools will open.
 
 2. Click on **Components** and copy the ID of the text component.
 	
-     ![Inspect element window]({{base_path}}/assets/img/administer/find-key-03.png)
+     ![Inspect element window](../../../assets/img/administer/find-key-03.png)
 
 
 ## Changing the direction of the UI
@@ -182,7 +182,7 @@ Follow the instructions below to change the direction of the UI:
     ```
 
     !!! tip
-    Learn more about [Tenant theming]({{base_path}}/consume/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#uploading-via-the-admin-portal-tenants-only).
+    Learn more about [Tenant theming](customizing-the-developer-portal/overriding-developer-portal-theme.md#uploading-via-the-admin-portal-tenants-only).
 
 
 ## Enabling the language switch
@@ -290,7 +290,7 @@ Follow the instructions below to enable the language switch:
 
      Now, a switch will be displayed in the top menu to change the language.
 
-     ![Switch language option]({{base_path}}/assets/img/administer/find-key-04.png)
+     ![Switch language option](../../../assets/img/administer/find-key-04.png)
 
 
 ### Languages available by default

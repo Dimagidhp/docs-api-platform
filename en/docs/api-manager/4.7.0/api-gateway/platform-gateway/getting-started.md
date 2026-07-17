@@ -113,7 +113,7 @@ The gateway should appear as active in the Control Plane.
 
 In this example, you will use the URL of an OpenAPI definition to create a REST API.
 
-For detailed API creation steps, see [Create a REST API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api/).
+For detailed API creation steps, see [Create a REST API](../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md).
 
 1. Sign in to the **Publisher Portal**.
 2. Click **REST APIs**.
@@ -201,10 +201,10 @@ curl -k -i "https://<gateway-host>:<gateway-port>/readinglistapi/1.0/books" \
 If authentication fails, confirm the policy is deployed, the header names match the policy and API configuration, and you have redeployed the API after policy changes.
 
 !!! info
-    - For policy configuration steps, see [Adding and Managing Policies]({{base_path}}/api-gateway/platform-gateway/adding-and-managing-policies/).
+    - For policy configuration steps, see [Adding and Managing Policies](adding-and-managing-policies.md).
     - Gateway policies for this deployment model are sourced from [Policy Hub](https://wso2.com/api-platform/policy-hub). Choose the policy that matches your security model (for example [API Key Authentication](https://wso2.com/api-platform/policy-hub/policies/api-key-auth) or other JWT, OAuth, or Basic policies listed there).
 
 ## Next steps
 
-- [Setting Up Platform Gateway]({{base_path}}/api-gateway/platform-gateway/setting-up/)
-- [Adding and Managing Policies]({{base_path}}/api-gateway/platform-gateway/adding-and-managing-policies/)
+- [Setting Up Platform Gateway](setting-up.md)
+- [Adding and Managing Policies](adding-and-managing-policies.md)

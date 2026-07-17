@@ -13,7 +13,7 @@ The instructions below explain how plain text passwords in configuration files c
 
 ## Encrypting passwords in product configurations 
 
-While you are able to encrypt passwords using symmetric or asymmetric encryption, it is recommended to use symmetric encryption due to its greater resilience against post-quantum threats. Asymmetric encryption methods like RSA are not recommended due to their vulnerability to quantum computing capabilities. If you are using asymmetric encryption for the cipher tool, you should switch to [asymmetric key encryption]({{base_path}}/install-and-setup/setup/security/encryption/asymmetric-encryption) for the system too.
+While you are able to encrypt passwords using symmetric or asymmetric encryption, it is recommended to use symmetric encryption due to its greater resilience against post-quantum threats. Asymmetric encryption methods like RSA are not recommended due to their vulnerability to quantum computing capabilities. If you are using asymmetric encryption for the cipher tool, you should switch to [asymmetric key encryption](../encryption/asymmetric-encryption.md) for the system too.
 
 1.  Open the `<APIM_HOME>/repository/conf/deployment.toml` file. 
 
@@ -82,7 +82,7 @@ While you are able to encrypt passwords using symmetric or asymmetric encryption
         ``` 
        
     !!! Note
-        You can also replace your passwords by referring to values passed by environment variables and system properties. For instructions, see [Set Passwords using Environment Variables/System Properties]({{base_path}}/administer/product-security/logins-and-passwords/set-passwords-using-vars-and-sys-props)
+        You can also replace your passwords by referring to values passed by environment variables and system properties. For instructions, see [Set Passwords using Environment Variables/System Properties](set-passwords-using-vars-and-sys-props.md)
        
 4.  Encrypt the passwords.
     1. Open a terminal and navigate to the `<APIM_HOME>/bin` directory.
@@ -118,7 +118,7 @@ While you are able to encrypt passwords using symmetric or asymmetric encryption
 
         - **For Windows**: `ciphertool.bat -Dconfigure`
 
-        You will be prompted to enter the internal keystore password for the server. When prompted, if you have not configured a separate [internal keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon` and proceed. 
+        You will be prompted to enter the internal keystore password for the server. When prompted, if you have not configured a separate [internal keystore](../configuring-keystores/configuring-keystores-in-wso2-api-manager.md#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon` and proceed. 
 
         If the encryption is successful, you will see the following log.
 
@@ -143,7 +143,7 @@ While you are able to encrypt passwords using symmetric or asymmetric encryption
 
 ## Encrypting secured endpoint passwords
 
-When exposing an API backend, which is secured with [Digest]({{base_path}}/manage-apis/design/endpoints/endpoint-security/digest-auth) or [Basic]({{base_path}}/manage-apis/design/endpoints/endpoint-security/basic-auth) Authentication, the backend user credentials have to be provided under endpoint configuration. These credentials are encoded in base64 and stored in the API configuration as a Basic Authorization header (`Authorization: Basic base64Encode(<username>:password)`). By default, the Authorization header value is stored in plain text.
+When exposing an API backend, which is secured with [Digest](../../../../api-design-manage/design/endpoints/endpoint-security/digest-auth.md) or [Basic](../../../../api-design-manage/design/endpoints/endpoint-security/basic-auth.md) Authentication, the backend user credentials have to be provided under endpoint configuration. These credentials are encoded in base64 and stored in the API configuration as a Basic Authorization header (`Authorization: Basic base64Encode(<username>:password)`). By default, the Authorization header value is stored in plain text.
 
 Follow the instructions below to secure the endpoint's password that is given in plain text in the UI.
 
@@ -159,7 +159,7 @@ Follow the instructions below to secure the endpoint's password that is given in
     !!! warning "Important"
         This configuration should be added before all the other `[apim]` elements or this will result in an error.
 
-3.  Follow step 4 in [Encrypting passwords in product configurations]({{base_path}}/install-and-setup/setup/security/logins-and-passwords/working-with-encrypted-passwords/#encrypting-passwords-in-product-configurations) to run the cipher tool.
+3.  Follow step 4 in [Encrypting passwords in product configurations](working-with-encrypted-passwords.md#encrypting-passwords-in-product-configurations) to run the cipher tool.
     
 4.  Restart the server. 
 
@@ -190,7 +190,7 @@ Follow the instructions below to change any password that you have already encry
 
         - **For Windows**: `ciphertool.bat -Dchange`
 
-        You will be prompted to enter the internal keystore password. When prompted, if you have not configured a separate [internal keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon` and proceed. 
+        You will be prompted to enter the internal keystore password. When prompted, if you have not configured a separate [internal keystore](../configuring-keystores/configuring-keystores-in-wso2-api-manager.md#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon` and proceed. 
 
 4.  The alias values of all the passwords that you encrypted will now be shown in a numbered list as follows.
 
@@ -274,11 +274,11 @@ You can rotate encryption keys by switching between symmetric and asymmetric enc
 === "Symmetric encryption"
 
     !!! Note
-            If you have secured the plain text passwords in configuration files using Secure Vault with symmetric encryption, the symmetric encryption key will serve as the root key for Secure Vault. This key is needed to initialize the values encrypted by the **Secret Manager** in the **Secret Repository**. Therefore, the **Secret Callback handler** is used to resolve the encryption key. The default Secret CallbackHandler provides the two options given below. For more information on secure vault concepts, see [Secure Vault concepts]({{base_path}}/administer/product-security/logins-and-passwords/carbon-secure-vault-implementation/#elements-of-the-secure-vault-implementation).
+            If you have secured the plain text passwords in configuration files using Secure Vault with symmetric encryption, the symmetric encryption key will serve as the root key for Secure Vault. This key is needed to initialize the values encrypted by the **Secret Manager** in the **Secret Repository**. Therefore, the **Secret Callback handler** is used to resolve the encryption key. The default Secret CallbackHandler provides the two options given below. For more information on secure vault concepts, see [Secure Vault concepts](carbon-secure-vault-implementation.md#elements-of-the-secure-vault-implementation).
 === "Asymmetric encryption"
 
     !!! Note
-            If you have secured the plain text passwords in configuration files using Secure Vault, the keystore password and private key password of the product's [primary keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager) will serve as the root passwords for Secure Vault, if you have not configured a separate [internal keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore). This is because the keystore passwords are needed to initialize the values encrypted by the **Secret Manager** in the **Secret Repository**. Therefore, the **Secret Callback handler** is used to resolve these passwords. The default Secret CallbackHandler provides the two options given below. For more information on secure vault concepts, see [Secure Vault concepts]({{base_path}}/administer/product-security/logins-and-passwords/carbon-secure-vault-implementation/#elements-of-the-secure-vault-implementation).
+            If you have secured the plain text passwords in configuration files using Secure Vault, the keystore password and private key password of the product's [primary keystore](../configuring-keystores/configuring-keystores-in-wso2-api-manager.md) will serve as the root passwords for Secure Vault, if you have not configured a separate [internal keystore](../configuring-keystores/configuring-keystores-in-wso2-api-manager.md#configuring-the-internal-keystore). This is because the keystore passwords are needed to initialize the values encrypted by the **Secret Manager** in the **Secret Repository**. Therefore, the **Secret Callback handler** is used to resolve these passwords. The default Secret CallbackHandler provides the two options given below. For more information on secure vault concepts, see [Secure Vault concepts](carbon-secure-vault-implementation.md#elements-of-the-secure-vault-implementation).
 
 ### Enter password in command-line
 

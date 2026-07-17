@@ -14,7 +14,7 @@ Explained below are the default databases which will be used within API Manager.
 
 The following image shows the default databases and the data that are stored in each database.
 
-<a href="{{base_path}}/assets/img/setup-and-install/working-with-dbs-overview.png" ><img src="{{base_path}}/assets/img/setup-and-install/working-with-dbs-overview.png" alt="Data bases" title="Data bases" width="100%" /></a>
+<a href="../../../assets/img/setup-and-install/working-with-dbs-overview.png" ><img src="../../../assets/img/setup-and-install/working-with-dbs-overview.png" alt="Data bases" title="Data bases" width="100%" /></a>
 
 See how these databases are used when you [run API-M in a distributed deployment]({{base_path}}/install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/).
 
@@ -60,9 +60,9 @@ Use the table below to find the correct script filename for your database type:
 
 See the following topics for database-specific instructions:
 
--   [Changing to MySQL]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mysql)
--   [Changing to Oracle]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle)
--   [Changing to MSSQL]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mssql)
--   [Changing to Oracle RAC]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle-rac)
--   [Changing to PostgreSQL]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-postgresql)
--   [Changing to IBM DB2]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-ibm-db2)
+-   [Changing to MySQL](changing-default-databases/changing-to-mysql.md)
+-   [Changing to Oracle](changing-default-databases/changing-to-oracle.md)
+-   [Changing to MSSQL](changing-default-databases/changing-to-mssql.md)
+-   [Changing to Oracle RAC](changing-default-databases/changing-to-oracle-rac.md)
+-   [Changing to PostgreSQL](changing-default-databases/changing-to-postgresql.md)
+-   [Changing to IBM DB2](changing-default-databases/changing-to-ibm-db2.md)

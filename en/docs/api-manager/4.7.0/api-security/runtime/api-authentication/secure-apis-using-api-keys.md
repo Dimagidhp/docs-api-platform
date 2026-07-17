@@ -76,7 +76,7 @@ Invoke the API using the API key. You can use either of the following methods to
 
 You can regenerate API Keys from the **API Keys** section of the API in the Developer Portal. When you regenerate a key, the existing key is immediately revoked and a new opaque token is issued in its place. The existing application association is preserved - you do not need to re-associate the key with the application after regeneration. Update your client application with the new key value to resume API invocations.
 
-   [![Regenerate API Key]({{base_path}}/assets/img/learn/api-keys/regenerate-apikey.png)]({{base_path}}/assets/img/learn/api-keys/regenerate-apikey.png)
+   [![Regenerate API Key](../../../assets/img/learn/api-keys/regenerate-apikey.png)](../../../assets/img/learn/api-keys/regenerate-apikey.png)
 
 ## Revoking an API Key
 
@@ -86,13 +86,13 @@ Once an API key is revoked, it is immediately invalidated and any API calls usin
 
 An API key can be revoked by the API consumer from the **API Keys** section of the API in the Developer Portal.
 
-   [![Revoke API Key from Devportal]({{base_path}}/assets/img/learn/api-keys/revoke-apikey-consumer.png)]({{base_path}}/assets/img/learn/api-keys/revoke-apikey-consumer.png)
+   [![Revoke API Key from Devportal](../../../assets/img/learn/api-keys/revoke-apikey-consumer.png)](../../../assets/img/learn/api-keys/revoke-apikey-consumer.png)
 
 ### Revoking via the Admin Portal
 
 Administrators can revoke API keys via the Admin Portal. This allows centrally managing and invalidating keys across all APIs and applications without requiring Developer Portal access.
 
-   [![Revoke API Key from Admin]({{base_path}}/assets/img/learn/api-keys/revoke-apikey-admin.png)]({{base_path}}/assets/img/learn/api-keys/revoke-apikey-admin.png)
+   [![Revoke API Key from Admin](../../../assets/img/learn/api-keys/revoke-apikey-admin.png)](../../../assets/img/learn/api-keys/revoke-apikey-admin.png)
 
 ## API key security restrictions for IP address and HTTP referrer
 
@@ -115,7 +115,7 @@ in the following formats.
 
 2. Select `Preferred IP` option, add the IP addresses in the text input as shown below, and generate the key.
 
-   [![IP Restricted API key]({{base_path}}/assets/img/learn/api-keys/ip-restrictions.png){: style="width:80%"}]({{base_path}}/assets/img/learn/api-keys/ip-restrictions.png)
+   [![IP Restricted API key](../../../assets/img/learn/api-keys/ip-restrictions.png){: style="width:80%"}](../../../assets/img/learn/api-keys/ip-restrictions.png)
 
 ### HTTP referrer restriction
 
@@ -131,4 +131,4 @@ When the HTTP referrer restriction has been enabled, only the specific HTTP refe
 
 2. Select `Preferred Referrer` option and add the referrers in the text input as shown below and generate the key.
 
-   [![HTTP Referer Restricted API key]({{base_path}}/assets/img/learn/api-keys/referrer-restrictions.png){: style="width:80%"}]({{base_path}}/assets/img/learn/api-keys/referrer-restrictions.png)
+   [![HTTP Referer Restricted API key](../../../assets/img/learn/api-keys/referrer-restrictions.png){: style="width:80%"}](../../../assets/img/learn/api-keys/referrer-restrictions.png)

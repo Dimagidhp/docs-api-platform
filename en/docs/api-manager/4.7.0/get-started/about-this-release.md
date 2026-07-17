@@ -4,11 +4,11 @@ WSO2 API Manager is a complete platform for building, integrating, and exposing 
 
 **WSO2 API Manager 4.7.0** is the latest **WSO2 API Manager release** and is the successor of **WSO2 API Manager 4.6.0**.
 
-For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-started/overview/).
+For more information on WSO2 API Manager, see the [overview](overview.md).
 
 ## Downloads
 
-<a href="https://wso2.com/api-manager/#"><img src="{{base_path}}/assets/img/get_started/download-apim.png" title="Download WSO2 API Manager" width="25%" alt="Download WSO2 API Manager"/></a>
+<a href="https://wso2.com/api-manager/#"><img src="../assets/img/get_started/download-apim.png" title="Download WSO2 API Manager" width="25%" alt="Download WSO2 API Manager"/></a>
 
 ## New Features
 
@@ -21,7 +21,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **APIM as control plane**: Manage gateway registration, configuration, API deployments, and policies directly from API Manager.
     - **Unified gateway model**: Use a single gateway implementation across cloud and on-prem environments.
 
-    **[Learn more]({{base_path}}/api-gateway/platform-gateway/getting-started)**
+    **[Learn more](../api-gateway/platform-gateway/getting-started.md)**
 
 ??? note "API-Bound API Keys with Enhanced Security and Access Control"
 
@@ -32,7 +32,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **Lifecycle management**: Define validity periods and manage API key generation and association with applications.
     - **Advanced security restrictions**: Restrict API key usage based on IP addresses or HTTP referrers.
 
-    **[Learn more]({{base_path}}/api-security/runtime/api-authentication/secure-apis-using-api-keys)**
+    **[Learn more](../api-security/runtime/api-authentication/secure-apis-using-api-keys.md)**
 
 ??? note "Symmetric Encryption Support"
 
@@ -44,7 +44,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **APICTL Enhancement**: Supports symmetric key encryption for creating secrets using an initialized encryption key.  
     - **Cipher Tool and Secure Vault**: Encrypt configuration secrets using symmetric encryption and support key rotation and password updates through symmetric cryptography.  
 
-    **[Learn more]({{base_path}}/install-and-setup/setup/security/encryption/symmetric-encryption)**
+    **[Learn more](../install-and-setup/setup/security/encryption/symmetric-encryption.md)**
 
 ??? note "Support for Multiple Client Secrets in OAuth Applications"
 
@@ -55,7 +55,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **Flexible token generation**: Access tokens can be generated using any valid client secret.
     - **Configurable limits**: Control the number of allowed client secrets or disable the feature via configuration.
     
-    **[Learn more]({{base_path}}/api-developer-portal/manage-application/generate-keys/generate-api-keys)**
+    **[Learn more](../api-developer-portal/manage-application/generate-keys/generate-api-keys.md)**
 
 ??? note "AsyncAPI 3.0.x Specification Support"
 
@@ -65,7 +65,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **Backward compatibility**: Import and work with existing AsyncAPI 2.x definitions without disruption.
     - **Standardized API creation**: All newly created Async APIs are based on the AsyncAPI 3.x specification.
 
-    **[Learn more]({{base_path}}/api-design-manage/design/create-api/create-streaming-api/create-a-streaming-api-from-an-asyncapi-definition)**
+    **[Learn more](../api-design-manage/design/create-api/create-streaming-api/create-a-streaming-api-from-an-asyncapi-definition.md)**
 
 ??? note "MCP Governance"
 
@@ -73,7 +73,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     
     - Enforce ruleset-attached policies on MCP Servers in either synchronous or asynchronous mode.
 
-    **[Learn more]({{base_path}}/administer/governance/governance-concept)**
+    **[Learn more](../administer/governance/governance-concept.md)**
 
 ??? note "MCP Analytics"
 
@@ -85,7 +85,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **Structured analytics model**: Publish MCP-specific fields in a standardized format for accurate querying and dashboards.
     - **Minimal performance impact**: Analytics data is collected from existing context and published asynchronously.
 
-    **[Learn more]({{base_path}}/monitoring/api-analytics/moesif-analytics/moesif-analytics-dashboards)**
+    **[Learn more](../monitoring/api-analytics/moesif-analytics/moesif-analytics-dashboards.md)**
 
 ??? note "Asgardeo Key Manager Support"
 
@@ -94,7 +94,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **Out-of-the-box integration**: Easily connect to Asgardeo using the provided connector.
     - **Scope and role management**: Supports managing scopes and roles through Asgardeo integration.
 
-    **[Learn more]({{base_path}}/api-security/key-management/third-party-key-managers/configure-asgardeo-connector/)**
+    **[Learn more](../api-security/key-management/third-party-key-managers/configure-asgardeo-connector.md)**
 
 ??? note "Semantic Tool Filtering Guardrail"
 
@@ -104,14 +104,14 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **Flexible selection modes**: Supports selection by rank (top-N) or by threshold (similarity score).
     - **Multiple embedding provider support**: Works with different embedding providers.
 
-    **[Learn more]({{base_path}}/ai-gateway/ai-guardrails/semantic-tool-filtering-guardrail/)**
+    **[Learn more](../ai-gateway/ai-guardrails/semantic-tool-filtering-guardrail.md)**
 
 ??? note "Multi-Model Routing Policies"
 
     WSO2 API Manager introduces new policies to support multi-model routing, enabling dynamic selection of models based on request context and defined strategies.
 
-    - **Intelligent Model Routing**: Selects the most suitable model based on predefined criteria and runtime conditions. **[Learn more]({{base_path}}/ai-gateway/multi-model-routing/intelligent-model-routing/)**
-    - **Semantic Model Routing**: Routes requests to models based on semantic relevance. **[Learn more]({{base_path}}/ai-gateway/multi-model-routing/semantic-model-routing/)**
+    - **Intelligent Model Routing**: Selects the most suitable model based on predefined criteria and runtime conditions. **[Learn more](../ai-gateway/multi-model-routing/intelligent-model-routing.md)**
+    - **Semantic Model Routing**: Routes requests to models based on semantic relevance. **[Learn more](../ai-gateway/multi-model-routing/semantic-model-routing.md)**
     
 ## Improvements
 
@@ -135,7 +135,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **Better scalability**: Supports large-scale deployments with high token generation rates without database bottlenecks.
     - **Configurable behavior**: Option to enable token persistence if required for specific use cases.
 
-    **[Learn more]({{base_path}}/api-security/key-management/tokens/token-persistence/)**
+    **[Learn more](../api-security/key-management/tokens/token-persistence.md)**
 
 ??? note "Enhanced SOAP API Experience in the Developer Portal"
 
@@ -144,7 +144,7 @@ For more information on WSO2 API Manager, see the [overview]({{base_path}}/get-s
     - **WSDL access via URL**: Access WSDL of a SOAP API through a direct URL without needing to manually download them, enabling seamless integration with tools like SOAPUI.
     - **SOAP operations visibility**: View available SOAP operations directly in the Developer Portal Documents section without inspecting the WSDL manually.
 
-    **[Learn more]({{base_path}}/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-a-soap-client)**
+    **[Learn more](../api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-a-soap-client.md)**
 
 ## Compatible WSO2 product versions
 

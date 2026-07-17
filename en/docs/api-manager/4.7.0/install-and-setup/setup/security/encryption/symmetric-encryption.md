@@ -3,7 +3,7 @@
 Symmetric encryption uses a single key to encrypt and decrypt information. WSO2 API Manager uses symmetric encryption by default.
 
 !!! note
-    If required, you may switch to [asymmetric key encryption]({{base_path}}/install-and-setup/setup/security/encryption/asymmetric-encryption).
+    If required, you may switch to [asymmetric key encryption](asymmetric-encryption.md).
 
 ## Why symmetric key encryption?
 
@@ -21,7 +21,7 @@ WSO2 API Manager uses the `AES/GCM/NoPadding` algorithm for symmetric key encryp
 
 WSO2 API Manager uses symmetric key encryption to encrypt the following sensitive data and credentials.
 
-- **Backend security secrets** - Passwords and credentials for secured backend endpoints configured in the Publisher Portal. For more information on encrypting secured endpoint passwords, see [Working with Encrypted Passwords]({{base_path}}/install-and-setup/setup/security/logins-and-passwords/working-with-encrypted-passwords/#encrypting-secured-endpoint-passwords).
+- **Backend security secrets** - Passwords and credentials for secured backend endpoints configured in the Publisher Portal. For more information on encrypting secured endpoint passwords, see [Working with Encrypted Passwords](../logins-and-passwords/working-with-encrypted-passwords.md#encrypting-secured-endpoint-passwords).
 
 - **Key Manager secrets** - Credentials and configuration secrets for Key Manager components managed in the Admin Portal.
 
@@ -29,7 +29,7 @@ WSO2 API Manager uses symmetric key encryption to encrypt the following sensitiv
 
 - **API Policy secrets** - Sensitive data within API policies and configurations managed in the Publisher Portal.
 
-- **Access Tokens** - OAuth 2.0 access tokens, refresh tokens, authorization codes, and consumer secrets when token encryption is enabled in the Developer Portal. For more information on encrypting OAuth 2.0 tokens, see [Encrypting OAuth2 Tokens]({{base_path}}/api-security/key-management/tokens/encrypting-oauth2-tokens/).
+- **Access Tokens** - OAuth 2.0 access tokens, refresh tokens, authorization codes, and consumer secrets when token encryption is enabled in the Developer Portal. For more information on encrypting OAuth 2.0 tokens, see [Encrypting OAuth2 Tokens](../../../../api-security/key-management/tokens/encrypting-oauth2-tokens.md).
 
 - **Mediation Policy secrets** - Sensitive data and credentials within mediation policies configured in the Publisher Portal.
 
@@ -81,4 +81,4 @@ It is recommended to change the encryption key before using WSO2 API Manager for
 
 !!! note "Important"
 
-    It is highly recommended to encrypt the secret key using the [cipher tool]({{base_path}}/install-and-setup/setup/security/logins-and-passwords/working-with-encrypted-passwords/).
+    It is highly recommended to encrypt the secret key using the [cipher tool](../logins-and-passwords/working-with-encrypted-passwords.md).

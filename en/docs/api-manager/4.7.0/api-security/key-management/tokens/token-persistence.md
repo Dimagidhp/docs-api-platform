@@ -17,7 +17,7 @@ The JWT token persistence behavior differs from the opaque token persistence beh
 
 In large-scale deployments of WSO2 API Manager, when there are millions of users and concurrent user logins, number of tokens in database can exponentially grow and scaling will be extremely hard. This can also result in a noticeable decrease in Transactions Per Second (TPS) for token generation.  For example, consider a large telco provider company with 1.4 million subscribers with a 1000 per sec daily token generation rate. Scaling the deployment by increasing the number of key manager nodes, partitioning the database or periodically running the token clean up scripts might not give you the optimal TPS as needed. For such a requirements, token persistence optimization comes into play by using JWTs as both access and refresh tokens, not persisting them during generation while still supporting essential token revocation and refresh-grant functionalities.
 
-- Token persistence optimization is only applicable to JWT tokens as they can be self validated. If you are still using Opaque type applications, we recommend you to switch to JWT type applications to fully receive the benefits. Please follow the instructions given in [Upgrading the Token Type of an Application to JWT]({{base_path}}/api-developer-portal/manage-application/advanced-topics/upgrade-token-type-of-application-to-jwt.md) if you wish to do so.
+- Token persistence optimization is only applicable to JWT tokens as they can be self validated. If you are still using Opaque type applications, we recommend you to switch to JWT type applications to fully receive the benefits. Please follow the instructions given in [Upgrading the Token Type of an Application to JWT](../../../api-developer-portal/manage-application/advanced-topics/upgrade-token-type-of-application-to-jwt.md) if you wish to do so.
 - With token persistence optimization, it will not persist the JWT tokens during generation, hence upon every token generation request, a new JWT access and refresh token pair will be generated.
 
 #### Limitations
@@ -60,7 +60,7 @@ The following sections guide you through the difference between these two approa
 
 ### Synchronous token persistence
 
-[![Synchronous token persistence]({{base_path}}/assets/img/learn/synchronous-token-persistence.png)]({{base_path}}/assets/img/learn/synchronous-token-persistence.png)
+[![Synchronous token persistence](../../../assets/img/learn/synchronous-token-persistence.png)](../../../assets/img/learn/synchronous-token-persistence.png)
 
 The flow of synchronous token persistence is as follows:
 
@@ -88,7 +88,7 @@ By default, synchronous token persistence is enabled in WSO2 API Manager 4.0.0. 
     
 ### Asynchronous token persistence
 
-[![Asynchronous token persistence]({{base_path}}/assets/img/learn/asynchronous-token-generation.png)]({{base_path}}/assets/img/learn/synchronous-token-persistence.png)
+[![Asynchronous token persistence](../../../assets/img/learn/asynchronous-token-generation.png)](../../../assets/img/learn/synchronous-token-persistence.png)
 
 If an existing access token is not found, the OAuth2 component creates a new access token and adds it to a persisting queue. Once the token is added to the queue, the token is returned to the client. There are background threads that consume the queue, and persist the tokens in the queue to the database.
 

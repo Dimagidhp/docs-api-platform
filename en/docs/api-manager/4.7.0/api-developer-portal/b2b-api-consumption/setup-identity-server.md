@@ -32,24 +32,24 @@ WSO2 Identity Server 7.1.0 includes B2B organization support. The following inst
     - Select `Traditional Web Application` and complete the form.
     - Set the Redirect URL to [https://localhost:9443/commonauth](https://localhost:9443/commonauth).
 
-    ![Create new application]({{base_path}}/assets/img/design/b2b/create-new-app.png) 
+    ![Create new application](../../assets/img/design/b2b/create-new-app.png) 
 
 5. Select the `Allow sharing with organizations` option.
 
-    ![Allow sharing with organizations]({{base_path}}/assets/img/design/b2b/allow-sharing-with-orgs.png) 
+    ![Allow sharing with organizations](../../assets/img/design/b2b/allow-sharing-with-orgs.png) 
 
 6. Once the application is created, go to the `Protocol` tab and copy the Client ID and Client Secret for later use.
 7. Go to the **User Attributes** tab and select **Groups**.
 
-    ![Select roles]({{base_path}}/assets/img/design/b2b/select-roles.png) 
+    ![Select roles](../../assets/img/design/b2b/select-roles.png) 
 
 8. Under the **Subject** sub-section, select **Assign alternate subject identifier** and then select **Username**.
 
-    ![Select subject ]({{base_path}}/assets/img/design/b2b/sub_alt.png) 
+    ![Select subject ](../../assets/img/design/b2b/sub_alt.png) 
 
 9. Go to the **User Management** menu item, navigate to the **Groups** sub-menu item, and add the following groups: **developer**, **publisher**, and **creator**.
 
-    ![Add new groups - Super organization]({{base_path}}/assets/img/design/b2b/super-org-groups.png) 
+    ![Add new groups - Super organization](../../assets/img/design/b2b/super-org-groups.png) 
 
 10. Go to the **User Management** menu item, navigate to the **Users** sub-menu item, and create three users—one for each portal. Make sure to assign the respective group to each user during user creation.
 
@@ -59,19 +59,19 @@ WSO2 Identity Server 7.1.0 includes B2B organization support. The following inst
     - `larry` → **publisher**, **creator**
     - `david` → **developer**
 
-    ![Organization users ]({{base_path}}/assets/img/design/b2b/org-users.png) 
+    ![Organization users ](../../assets/img/design/b2b/org-users.png) 
 
 11. Next, create organizations. Select **Organization** and create a few new organizations. Note down the organization IDs.
 
-    ![Create organizations ]({{base_path}}/assets/img/design/b2b/create-organizations.png) 
+    ![Create organizations ](../../assets/img/design/b2b/create-organizations.png) 
 
 12. Select the organization and click **Switch to Organization**.
 
-    ![Switch organizations ]({{base_path}}/assets/img/design/b2b/switch-organization.png) 
+    ![Switch organizations ](../../assets/img/design/b2b/switch-organization.png) 
 
 13. Navigate to the **Groups** sub-menu item under **User Management**, and add a new group that will be assigned to users who access the API-M Developer Portal.
 
-    ![Add new groups - Sub organization]({{base_path}}/assets/img/design/b2b/sub-org-groups.png) 
+    ![Add new groups - Sub organization](../../assets/img/design/b2b/sub-org-groups.png) 
 
 14. Under the **Users** menu item in **User Management**, add new users such as `emily` and `robert`. Make sure to assign the group created previously to each user during user creation.
 

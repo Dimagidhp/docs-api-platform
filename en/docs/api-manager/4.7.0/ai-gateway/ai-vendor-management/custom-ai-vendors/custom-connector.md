@@ -8,7 +8,7 @@ This guide provides step-by-step instructions for creating and deploying a custo
 
 1. Set up a Maven project.
 
-    You can download a sample Maven project from [here]({{base_path}}/assets/attachments/administer/llm.provider.connector.zip).
+    You can download a sample Maven project from [here](../../../assets/attachments/administer/llm.provider.connector.zip).
 
     When manually creating a maven project, you will need to define a class that implements the `LLMProviderService` interface that is responsible of handling request/response payloads specific to AI service providers.
 

@@ -20,7 +20,7 @@ You need to write a custom Gateway Agent bundle as explained below.
 
 1. Create a Maven project.
 
-    Let's download the sample project from [here]({{base_path}}/assets/attachments/deploy-and-publish/custom.gw.client.zip).
+    Let's download the sample project from [here](../../assets/attachments/deploy-and-publish/custom.gw.client.zip).
 
     However, when manually creating a Maven project, you will need to follow the following steps.
 
@@ -144,7 +144,7 @@ You need to write a custom Gateway Agent bundle as explained below.
 
     1. Click **Gateways** and then click **Add Gateway Environment**.
 
-        [![Add new Gateway Environment]({{base_path}}/assets/img/deploy/add-custom-gateway-environment.png)]({{base_path}}/assets/img/deploy/add-custom-gateway-environment.png)
+        [![Add new Gateway Environment](../../assets/img/deploy/add-custom-gateway-environment.png)](../../assets/img/deploy/add-custom-gateway-environment.png)
 
 ## Step 4 - Create and Deploy API
 
@@ -152,8 +152,8 @@ You need to write a custom Gateway Agent bundle as explained below.
 
 2. Create a new API. Select the custom gateway from the gateway list.
 
-   [![Create API]({{base_path}}/assets/img/deploy/create-custom-gateway-api.png)]({{base_path}}/assets/img/deploy/create-custom-gateway-api.png)
+   [![Create API](../../assets/img/deploy/create-custom-gateway-api.png)](../../assets/img/deploy/create-custom-gateway-api.png)
 
 3. Navigate to deployments tab, select the custom gateway environment registered in step 3 and deploy API to custom gateway.
 
-   [![Deploy API]({{base_path}}/assets/img/deploy/deploy-custom-gateway-api.png)]({{base_path}}/assets/img/deploy/deploy-custom-gateway-api.png)
+   [![Deploy API](../../assets/img/deploy/deploy-custom-gateway-api.png)](../../assets/img/deploy/deploy-custom-gateway-api.png)

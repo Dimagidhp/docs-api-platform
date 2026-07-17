@@ -128,7 +128,7 @@ WSO2 provides integrated analytics, powered by Moesif, and also supports integra
 
 For example, an admin could view the token usage by users and applications to identify overuse of the AI Agents.
 
-[![analytics token usage example]({{base_path}}/assets/img/llm-gateway/analytics-token-usage-example.png)]({{base_path}}/assets/img/llm-gateway/analytics-token-usage-example.png)
+[![analytics token usage example](../../assets/img/llm-gateway/analytics-token-usage-example.png)](../../assets/img/llm-gateway/analytics-token-usage-example.png)
 
 For more information on Analytics, refer to the official [WSO2 API Manager Documentation](https://apim.docs.wso2.com/en/latest/monitoring/api-analytics/analytics-overview/)
 
@@ -146,7 +146,7 @@ By applying guardrails, you can enforce security and compliance policies such as
 
 For example, a **PII Masking Regex Guardrail** can be configured in the request flow to prevent Personally Identifiable Information (PII) from reaching Anthropic API. If a user submits a prompt containing PII, the guardrail evaluates the request against defined patterns and redacts them before they reach Anthropic API.
 
-[![claude code guardrail example]({{base_path}}/assets/img/llm-gateway/claude-code-guardrail-redacted-example.png)]({{base_path}}/assets/img/llm-gateway/claude-code-guardrail-redacted-example.png)
+[![claude code guardrail example](../../assets/img/llm-gateway/claude-code-guardrail-redacted-example.png)](../../assets/img/llm-gateway/claude-code-guardrail-redacted-example.png)
 
 For more information on AI Guardrails, refer to the official [WSO2 API Manager Documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/ai-guardrails/overview/)
 
@@ -160,7 +160,7 @@ For example, you can create an AI subscription policy with a limited request cou
 
 This helps control token consumption and avoid unexpected costs.
 
-[![claude code rate limit example]({{base_path}}/assets/img/llm-gateway/claude-code-rate-limit-example.png)]({{base_path}}/assets/img/llm-gateway/claude-code-rate-limit.png)
+[![claude code rate limit example](../../assets/img/llm-gateway/claude-code-rate-limit-example.png)]({{base_path}}/assets/img/llm-gateway/claude-code-rate-limit.png)
 
 For more information on Rate Limiting, refer to the official [WSO2 API Manager documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/rate-limiting/)
 
@@ -172,11 +172,11 @@ As a simple example, you can configure a Prompt Decorator in the request flow to
 
 The following screenshot shows Claude Code responding to a simple prompt with no Prompt Decorator.
 
-[![claude code prompt decorator example]({{base_path}}/assets/img/llm-gateway/claude-code-prompt-decorator-example.png)]({{base_path}}/assets/img/llm-gateway/claude-code-prompt-decorator-example.png)
+[![claude code prompt decorator example](../../assets/img/llm-gateway/claude-code-prompt-decorator-example.png)](../../assets/img/llm-gateway/claude-code-prompt-decorator-example.png)
 
 The following screenshot shows Claude Code responding to that same prompt with a Prompt Decorator configured to append the following decoration: "Be very concise. Use as little words as possible when answering."
 
-[![claude code prompt decorator example]({{base_path}}/assets/img/llm-gateway/claude-code-prompt-decorator-example-2.png)]({{base_path}}/assets/img/llm-gateway/claude-code-prompt-decorator-example-2.png)
+[![claude code prompt decorator example](../../assets/img/llm-gateway/claude-code-prompt-decorator-example-2.png)](../../assets/img/llm-gateway/claude-code-prompt-decorator-example-2.png)
 
 
 For more information on Prompt Management, refer to the official [WSO2 API Manager documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/prompt-management/overview/)

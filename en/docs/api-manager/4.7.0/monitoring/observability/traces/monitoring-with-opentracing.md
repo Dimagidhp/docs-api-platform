@@ -10,7 +10,7 @@ OpenTracing aims to be an open, vendor-neutral standard for distributed systems 
  - Zipkin
  - Log
 
-For more information, see [OpenTracer Configurations]({{base_path}}/reference/config-catalog/#api-m-open-tracer-configurations).
+For more information, see [OpenTracer Configurations](../../../reference/config-catalog.md#api-m-open-tracer-configurations).
 
 ## Enabling Jaeger Tracing
 
@@ -38,7 +38,7 @@ For more information, see [OpenTracer Configurations]({{base_path}}/reference/co
 
      After you invoke the APIs you will see the tracing data in Jaeger as follow:
 
-    [![Distributed tracing jaeger]({{base_path}}/assets/img/administer/opentracing-jaeger.png)]({{base_path}}/assets/img/administer/opentracing-jaeger.png)
+    [![Distributed tracing jaeger](../../../assets/img/administer/opentracing-jaeger.png)](../../../assets/img/administer/opentracing-jaeger.png)
 
 ## Enabling Zipkin Tracing
 
@@ -66,7 +66,7 @@ For more information, see [OpenTracer Configurations]({{base_path}}/reference/co
 
      After you invoke the APIs you will see the tracing data in Zipkin as follow:
 
-[![Distributed tracing zipkin]({{base_path}}/assets/img/administer/opentracing-zipkin.png)]({{base_path}}/assets/img/administer/opentracing-zipkin.png)
+[![Distributed tracing zipkin](../../../assets/img/administer/opentracing-zipkin.png)](../../../assets/img/administer/opentracing-zipkin.png)
 
 
 ## Enabling Log Tracing
@@ -104,7 +104,7 @@ For more information, see [OpenTracer Configurations]({{base_path}}/reference/co
 
 You can use any tracing server with a custom tracer implementation in WSO2 API Manager to publish your tracing data. As an example, let's use the Elastic APM (Application Performance Monitoring), which is a tracing server, and let's implement a custom tracer in WSO2 API Manager for it using the instructions given below:
 
-1. Implement the `org.wso2.carbon.apimgt.tracing.OpenTracer` interface and add your implementation. The getTracer method should contain the generation of the `Tracer` instance. Also, the getName method should return the tracer name to be configured in the `deployment.toml` file. In this specific scenario let's name this tracer `elastic`. This tracer needs to be loaded as an osgi service using a module activator. The sample project for the elastic APM tracer can be downloaded from [here]({{base_path}}/assets/attachments/administer/custom.tracing.client.zip).
+1. Implement the `org.wso2.carbon.apimgt.tracing.OpenTracer` interface and add your implementation. The getTracer method should contain the generation of the `Tracer` instance. Also, the getName method should return the tracer name to be configured in the `deployment.toml` file. In this specific scenario let's name this tracer `elastic`. This tracer needs to be loaded as an osgi service using a module activator. The sample project for the elastic APM tracer can be downloaded from [here](../../../assets/attachments/administer/custom.tracing.client.zip).
 
 2. Build the Maven project and add the JAR file to the `dropins` directory. (`<API-M_HOME>/repository/components/dropins`)
 

@@ -37,4 +37,4 @@ See [Policy Hub](https://wso2.com/api-platform/policy-hub) for available policie
 
 ## What's next
 
-- Return to [Getting Started]({{base_path}}/api-gateway/platform-gateway/getting-started/) to test API invocation with and without API-key-based authentication.
+- Return to [Getting Started](getting-started.md) to test API invocation with and without API-key-based authentication.

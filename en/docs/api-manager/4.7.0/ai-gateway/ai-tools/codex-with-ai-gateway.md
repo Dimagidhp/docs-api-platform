@@ -172,7 +172,7 @@ WSO2 provides integrated analytics, powered by Moesif, and also supports integra
 
 For example, an admin could view the token usage by users and applications to identify overuse of the AI Agents.
 
-[![analytics token usage example]({{base_path}}/assets/img/llm-gateway/analytics-token-usage-example.png)]({{base_path}}/assets/img/llm-gateway/analytics-token-usage-example.png)
+[![analytics token usage example](../../assets/img/llm-gateway/analytics-token-usage-example.png)](../../assets/img/llm-gateway/analytics-token-usage-example.png)
 
 For more information on Analytics, refer to the official [WSO2 API Manager Documentation](https://apim.docs.wso2.com/en/latest/monitoring/api-analytics/analytics-overview/)
 
@@ -186,7 +186,7 @@ By applying guardrails, you can enforce security and compliance policies.
 
 For example, a **PII Masking Regex Guardrail** can be configured in the request flow to prevent Personally Identifiable Information (PII) from reaching the OpenAI API. If a user submits a prompt containing PII, the guardrail evaluates the request against defined patterns and redacts them before they reach the OpenAI API.
 
-[![codex cli guardrail example]({{base_path}}/assets/img/llm-gateway/codex-guardrail-redacted-example.png)]({{base_path}}/assets/img/llm-gateway/codex-guardrail-redacted-example.png)
+[![codex cli guardrail example](../../assets/img/llm-gateway/codex-guardrail-redacted-example.png)](../../assets/img/llm-gateway/codex-guardrail-redacted-example.png)
 
 For more information on AI Guardrails, refer to the official [WSO2 API Manager Documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/ai-guardrails/overview/)
 
@@ -202,7 +202,7 @@ This helps control token consumption and avoid unexpected costs.
 
 The following screenshot illustrates Codex CLI operating under a configured AI Gateway rate limit.
 
-[![codex cli rate limit example]({{base_path}}/assets/img/llm-gateway/codex-rate-limit-example.png)]({{base_path}}/assets/img/llm-gateway/codex-rate-limit-example.png)
+[![codex cli rate limit example](../../assets/img/llm-gateway/codex-rate-limit-example.png)](../../assets/img/llm-gateway/codex-rate-limit-example.png)
 
 For more information on Rate Limiting, refer to the official [WSO2 API Manager documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/rate-limiting/)
 
@@ -219,6 +219,6 @@ As a simple example, you can configure a Prompt Decorator in the request flow to
 
 Once configured, every request sent from Codex CLI is automatically modified by the Gateway to include this instruction before being forwarded to OpenAI.
 
-[![codex cli prompt decorator example]({{base_path}}/assets/img/llm-gateway/codex-prompt-decorator-example.png)]({{base_path}}/assets/img/llm-gateway/codex-prompt-decorator-example.png)
+[![codex cli prompt decorator example](../../assets/img/llm-gateway/codex-prompt-decorator-example.png)](../../assets/img/llm-gateway/codex-prompt-decorator-example.png)
 
 For more information on Prompt Management, refer to the official [WSO2 API Manager documentation](https://apim.docs.wso2.com/en/latest/ai-gateway/prompt-management/overview/)

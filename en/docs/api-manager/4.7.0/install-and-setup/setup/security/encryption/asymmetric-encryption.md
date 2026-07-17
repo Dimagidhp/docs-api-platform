@@ -3,11 +3,11 @@
 Asymmetric encryption uses public and private keys to encrypt and decrypt data. While the **public key** of the key pair is shared with external parties, the **private key** is kept secret. When one of the key pairs is used to encrypt a message, the other key can be used to decrypt it. In a **keystore**, you can store both private and public keys, and in a **truststore** you can store only public keys.
 
 !!! info
-    For more information on how to configure the keystores for asymmetric key encryption, see [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager).
+    For more information on how to configure the keystores for asymmetric key encryption, see [Configuring Keystores in WSO2 API Manager](../configuring-keystores/configuring-keystores-in-wso2-api-manager.md).
 
 
 !!! note
-    In WSO2 API Manager, [symmetric encryption]({{base_path}}/install-and-setup/setup/security/encryption/symmetric-encryption/) is used by default.
+    In WSO2 API Manager, [symmetric encryption](symmetric-encryption.md) is used by default.
 
     To switch to asymmetric encryption, add the following configurations to the `deployment.toml` file located in the `<APIM_HOME>/repository/conf` directory.
     

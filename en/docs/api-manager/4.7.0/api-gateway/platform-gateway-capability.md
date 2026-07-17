@@ -31,8 +31,8 @@ With WSO2 Gateways, you get the best of both worlds: **centralized API managemen
 
 For more information, see:
 
-- [Getting Started with WSO2 Platform Gateway]({{base_path}}/api-gateway/platform-gateway/getting-started/)
-- [Getting Started with WSO2 Classic Gateway]({{base_path}}/api-gateway/overview-of-the-api-gateway/)
+- [Getting Started with WSO2 Platform Gateway](platform-gateway/getting-started.md)
+- [Getting Started with WSO2 Classic Gateway](overview-of-the-api-gateway.md)
 
 ---
 
@@ -48,10 +48,10 @@ This approach enables organizations to:
 
 For more information, see:
 
-- [Federated Gateways Overview]({{base_path}}/api-gateway/federated-gateways/overview/)
+- [Federated Gateways Overview](federated-gateways/overview.md)
 
 ---
 
 ## Related tutorials
 
-- [WSO2's Centralized API Management: The Single Control Plane for Multiple Gateways]({{base_path}}/tutorials/single-control-plane-for-multiple-gateways/)
+- [WSO2's Centralized API Management: The Single Control Plane for Multiple Gateways](../tutorials/single-control-plane-for-multiple-gateways.md)

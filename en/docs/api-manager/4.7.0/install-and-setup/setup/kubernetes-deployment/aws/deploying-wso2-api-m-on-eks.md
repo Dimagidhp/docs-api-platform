@@ -3,7 +3,7 @@
 This guide provides a step-by-step approach to deploying WSO2 API Manager on Amazon Elastic Kubernetes Service (EKS). This deployment follows the standard WSO2 Kubernetes architecture, extended to use AWS-specific services such as Amazon RDS/Aurora for databases and Application Load Balancer (ALB) for ingress.
 
 !!! info
-    This deployment aligns with the standard deployment models described in [WSO2 API Manager Deployment Patterns]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/#deployment-patterns) and [API-M Deployment with All-in-One HA Setup]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/).
+    This deployment aligns with the standard deployment models described in [WSO2 API Manager Deployment Patterns](../kubernetes/kubernetes-overview.md#deployment-patterns) and [API-M Deployment with All-in-One HA Setup](../kubernetes/am-pattern-1-all-in-one-ha.md).
 
 ## Contents
 
@@ -79,11 +79,11 @@ This deployment follows the standard WSO2 Kubernetes architecture, extended to u
 
 ### AWS Deployment Architecture
 
-<a href="{{base_path}}/assets/img/setup-and-install/aws-eks-deployment-architecture.png"><img src="{{base_path}}/assets/img/setup-and-install/aws-eks-deployment-architecture.png" alt="AWS deployment architecture overview" width="80%"></a>
+<a href="../../../../assets/img/setup-and-install/aws-eks-deployment-architecture.png"><img src="../../../../assets/img/setup-and-install/aws-eks-deployment-architecture.png" alt="AWS deployment architecture overview" width="80%"></a>
 
 ### WSO2 API Manager Deployment Architecture
 
-<a href="{{base_path}}/assets/img/setup-and-install/active-active-apim-deployment.png"><img src="{{base_path}}/assets/img/setup-and-install/active-active-apim-deployment.png" alt="WSO2 API Manager deployment architecture" width="80%"></a>
+<a href="../../../../assets/img/setup-and-install/active-active-apim-deployment.png"><img src="../../../../assets/img/setup-and-install/active-active-apim-deployment.png" alt="WSO2 API Manager deployment architecture" width="80%"></a>
 
 ## Step 1: Create and Prepare the EKS Cluster
 
@@ -262,7 +262,7 @@ Replace `<namespace>` with your target namespace (e.g., `wso2`).
 
 ### Configure values.yaml
 
-Before deploying, set the mandatory internal encryption key under `wso2.apim.configurations.encryption.key`. If your deployment runs more than one API-M pod or instance, use the same key value across all of them. For more information, see [Configuring Encryption Key]({{base_path}}/install-and-setup/setup/security/encryption/symmetric-encryption/#generate-a-secret-key).
+Before deploying, set the mandatory internal encryption key under `wso2.apim.configurations.encryption.key`. If your deployment runs more than one API-M pod or instance, use the same key value across all of them. For more information, see [Configuring Encryption Key](../../security/encryption/symmetric-encryption.md#generate-a-secret-key).
 
 Create a `values.yaml` file with the following configuration:
 
@@ -417,10 +417,10 @@ Check:
 ## Next Steps
 
 - Set up [Rate Limiting]({{base_path}}/manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
-- Enable [Analytics]({{base_path}}/monitoring/api-analytics/analytics-overview/)
+- Enable [Analytics](../../../../monitoring/api-analytics/analytics-overview.md)
 
 ## See Also
 
-- [Kubernetes Deployment Overview]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/)
-- [API-M Deployment with All-in-One HA Setup]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/)
+- [Kubernetes Deployment Overview](../kubernetes/kubernetes-overview.md)
+- [API-M Deployment with All-in-One HA Setup](../kubernetes/am-pattern-1-all-in-one-ha.md)
 - [AWS Load Balancer Controller Documentation](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)

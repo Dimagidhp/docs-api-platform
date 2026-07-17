@@ -11,8 +11,8 @@ The **Rulesets Catalog** provides a list of predefined governance rulesets that 
 2. Go to the **Governance** section in the main menu.  
 3. Click **Rulesets Catalog** to view all available rulesets.  
 
-<a href="{{base_path}}/assets/img/governance/ruleset_view.png">
-  <img src="{{base_path}}/assets/img/governance/ruleset_view.png" alt="APIM Governance Ruleset View"/>
+<a href="../../assets/img/governance/ruleset_view.png">
+  <img src="../../assets/img/governance/ruleset_view.png" alt="APIM Governance Ruleset View"/>
 </a>
 
 ### Create a New Ruleset
@@ -31,27 +31,27 @@ To create a new ruleset, click on the **Create Ruleset**. When creating a new ru
 
 After providing the required information, click on the **Create** button to create the ruleset.
 
-<a href="{{base_path}}/assets/img/governance/ruleset_create.png">
-  <img src="{{base_path}}/assets/img/governance/ruleset_create.png" alt="APIM Governance Ruleset Create" width="60%"/>
+<a href="../../assets/img/governance/ruleset_create.png">
+  <img src="../../assets/img/governance/ruleset_create.png" alt="APIM Governance Ruleset Create" width="60%"/>
 </a>
 
 ### Writing Your Own Ruleset
 
-Please refer to the [WSO2 Rule Validator Documentation]({{base_path}}/governance/rule-validator/rule-validator) to understand the ruleset format and how to write your own ruleset.
+Please refer to the [WSO2 Rule Validator Documentation](../../reference/governance/rule-validator/rule-validator.md) to understand the ruleset format and how to write your own ruleset.
 
 - If Ruleset Type is selected as **Definition**, the ruleset should only contain rules that can be validated against the Artifact definition file (OpenAPI or AsyncAPI).
-- If Ruleset Type is selected as **Metadata**, the ruleset should only contain rules that can be validated against the [API's YAML Representation]({{base_path}}/reference/governance/api-yaml-representation/).
-- If Ruleset Type is selected as **Documentation**, the ruleset should only contain rules that can be validated against the [Documentation YAML Representation]({{base_path}}/reference/governance/api-doc-yaml-representation/). This representation is common for all artifact types.
+- If Ruleset Type is selected as **Metadata**, the ruleset should only contain rules that can be validated against the [API's YAML Representation](../../reference/governance/api-yaml-representation.md).
+- If Ruleset Type is selected as **Documentation**, the ruleset should only contain rules that can be validated against the [Documentation YAML Representation](../../reference/governance/api-doc-yaml-representation.md). This representation is common for all artifact types.
 
 ### Default Rulesets
 
 WSO2 API Manager comes with a set of default rulesets that cover common governance aspects such as security, compliance, and performance. These rulesets can be used as-is or customized to meet specific organizational requirements. These include,
 
 
-1. **[WSO2 API Management Guidelines]({{base_path}}/reference/governance/wso2-api-management-guidelines)** - An API Metadata ruleset that applies to REST APIs and covers general API management guidelines.
-2. **[WSO2 REST API Design Guidelines]({{base_path}}/reference/governance/wso2-rest-api-design-guidelines)** - An API Definition ruleset that applies to REST APIs and covers design best practices.
-3. **[OWASP Top 10]({{base_path}}/reference/governance/owasp-top-10)** - An API Definition ruleset that applies to REST APIs and covers best practices for securing APIs against OWASP Top 10 vulnerabilities.
-4. **[WSO2 MCP Server Management Guidelines]({{base_path}}/reference/governance/wso2-mcp-server-management-guidelines)** - An MCP Metadata ruleset that applies to MCP Servers and covers general MCP guidelines.
+1. **[WSO2 API Management Guidelines](../../reference/governance/wso2-api-management-guidelines.md)** - An API Metadata ruleset that applies to REST APIs and covers general API management guidelines.
+2. **[WSO2 REST API Design Guidelines](../../reference/governance/wso2-rest-api-design-guidelines.md)** - An API Definition ruleset that applies to REST APIs and covers design best practices.
+3. **[OWASP Top 10](../../reference/governance/owasp-top-10.md)** - An API Definition ruleset that applies to REST APIs and covers best practices for securing APIs against OWASP Top 10 vulnerabilities.
+4. **[WSO2 MCP Server Management Guidelines](../../reference/governance/wso2-mcp-server-management-guidelines.md)** - An MCP Metadata ruleset that applies to MCP Servers and covers general MCP guidelines.
 
 !!! tip "Deleting Default Rulesets"  
     Deleting default rulesets from the list of rulesets is not sufficient. You must also remove the corresponding default ruleset files located in the `<APIM_HOME>/repository/resources/governance/default-rulesets` directory.
@@ -67,8 +67,8 @@ The **Policies** section in the **API Manager Admin Portal** provides a list of 
 1. Navigate to the **Governance** section in the **API Manager Admin Portal**.  
 2. Click **Policies** to view the list of available policies.  
 
-<a href="{{base_path}}/assets/img/governance/policy_view.png">
-  <img src="{{base_path}}/assets/img/governance/policy_view.png" alt="APIM Governance Ruleset Create"/>
+<a href="../../assets/img/governance/policy_view.png">
+  <img src="../../assets/img/governance/policy_view.png" alt="APIM Governance Ruleset Create"/>
 </a>
 
 ### Create a new Policy
@@ -86,8 +86,8 @@ To create a new policy, click the **Create Policy** button and provide the follo
 
 After providing the required information, click on the **Create** button to create the policy.
 
-<a href="{{base_path}}/assets/img/governance/policy_create.png">
-  <img src="{{base_path}}/assets/img/governance/policy_create.png" alt="APIM Governance Policy Create" width="60%" />
+<a href="../../assets/img/governance/policy_create.png">
+  <img src="../../assets/img/governance/policy_create.png" alt="APIM Governance Policy Create" width="60%" />
 </a>
 
 ### Default Policies
@@ -96,9 +96,9 @@ WSO2 API Manager comes with a default governance policy named **WSO2 API Managem
 
 It includes the following rulesets.
 
-1. **[WSO2 API Management Guidelines]({{base_path}}/reference/governance/wso2-api-management-guidelines)**
-2. **[WSO2 REST API Design Guidelines]({{base_path}}/reference/governance/wso2-rest-api-design-guidelines)**
-3. **[WSO2 MCP Server Management Guidelines]({{base_path}}/reference/governance/wso2-mcp-server-management-guidelines)**
+1. **[WSO2 API Management Guidelines](../../reference/governance/wso2-api-management-guidelines.md)**
+2. **[WSO2 REST API Design Guidelines](../../reference/governance/wso2-rest-api-design-guidelines.md)**
+3. **[WSO2 MCP Server Management Guidelines](../../reference/governance/wso2-mcp-server-management-guidelines.md)**
 
 !!! tip "Deleting or Disabling Default Policies"
     - Deleting default policies from the policy list is not sufficient. You must also remove the corresponding default policy files located in the `<APIM_HOME>/repository/resources/governance/default-policies` directory.
@@ -118,8 +118,8 @@ Compliance monitoring is a key aspect of governance. It ensures that artifacts a
 2. Go to the **Governance** section in the main menu.
 3. Click **Compliance** to view the compliance status of Artifacts.
 
-<a href="{{base_path}}/assets/img/governance/admin_compliance.png">
-  <img src="{{base_path}}/assets/img/governance/admin_compliance.png" alt="APIM Governance Compliance Dashboard"/>
+<a href="../../assets/img/governance/admin_compliance.png">
+  <img src="../../assets/img/governance/admin_compliance.png" alt="APIM Governance Compliance Dashboard"/>
 </a>
 
 ### **Policy Adherence**
@@ -146,7 +146,7 @@ By clicking on each Artifact listed in [Artifact Compliance Details](#artifact-c
 ## Configuration Options
 
 The background compliance evaluation tasks are conducted by a scheduler which by default runs every 2 minutes and consists of a thread pool of 20 threads and a queue size of 20. These values can be updated by updating the following configuration in the `deployment.toml` file located in the `<APIM_HOME>/repository/conf` directory.
-For more information refer the [configuration catalog]({{base_path}}/reference/config-catalog/#apim-governance-configurations).
+For more information refer the [configuration catalog](../../reference/config-catalog.md#apim-governance-configurations).
 
 ```toml
 [apim.governance.scheduler]

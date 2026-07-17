@@ -23,7 +23,7 @@ Follow the instructions below to generate/renew application keys:
             
 2.  Click **Applications** to navigate to the applications listing page and click on the respective application for which you want to generate keys.
 
-     [![Application view]({{base_path}}/assets/img/learn/application-listing.png)]({{base_path}}/assets/img/learn/application-listing.png)
+     [![Application view](../../../assets/img/learn/application-listing.png)](../../../assets/img/learn/application-listing.png)
  
 3.  Click **Production Keys** or **Sandbox Keys** based on the environment for which you need to generate keys.
       
@@ -33,53 +33,53 @@ Follow the instructions below to generate/renew application keys:
 
      An optional description and expiry time can be provided for the consumer secret which will be generated.
 
-     [![Consumer Secret Meta Data Form]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secret-metadata-form.png)]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secret-metadata-form.png)
+     [![Consumer Secret Meta Data Form](../../../assets/img/consume/consumer-secrets/consumer-secret-metadata-form.png)](../../../assets/img/consume/consumer-secrets/consumer-secret-metadata-form.png)
 
 5.  The generated consumer secret will be displayed.
 
     !!! Important
         Make sure to copy the generated consumer secret as it will be displayed only once.
 
-     [![Generated Consumer Secret]({{base_path}}/assets/img/consume/consumer-secrets/generated-consumer-secret.png)]({{base_path}}/assets/img/consume/consumer-secrets/generated-consumer-secret.png)
+     [![Generated Consumer Secret](../../../assets/img/consume/consumer-secrets/generated-consumer-secret.png)](../../../assets/img/consume/consumer-secrets/generated-consumer-secret.png)
 
 6.  The consumer secret list will be displayed in a table.
 
-     [![Consumer Secrets Table View]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secrets-table-view.png)]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secrets-table-view.png)
+     [![Consumer Secrets Table View](../../../assets/img/consume/consumer-secrets/consumer-secrets-table-view.png)](../../../assets/img/consume/consumer-secrets/consumer-secrets-table-view.png)
 
 7.  To generate another consumer secret, click **+ NEW SECRET** button. A form will be shown where an optional description and expiry time can be provided
     for the consumer secret which will be generated.
 
-     [![New Consumer Secret Generation Form]({{base_path}}/assets/img/consume/consumer-secrets/new-consumer-secret-generation-form.png)]({{base_path}}/assets/img/consume/consumer-secrets/new-consumer-secret-generation-form.png)
+     [![New Consumer Secret Generation Form](../../../assets/img/consume/consumer-secrets/new-consumer-secret-generation-form.png)](../../../assets/img/consume/consumer-secrets/new-consumer-secret-generation-form.png)
 
      The generated consumer secret will be displayed. Make sure to copy the generated consumer secret as it will be displayed only once.
 
 8.  Two consumer secrets are now available for the application. Access tokens can be generated using any of the available consumer secrets associated with the application. To generate an access token, click **GENERATE ACCESS TOKEN**. When prompted, provide one of the consumer secrets associated with the application.
 
-     <a href="{{base_path}}/assets/img/consume/consumer-secrets/access-token-generation-with-consumer-secret.png">
-        <img src="{{base_path}}/assets/img/consume/consumer-secrets/access-token-generation-with-consumer-secret.png" alt="Access Token Generation With Consumer Secret" width="60%">
+     <a href="../../../assets/img/consume/consumer-secrets/access-token-generation-with-consumer-secret.png">
+        <img src="../../../assets/img/consume/consumer-secrets/access-token-generation-with-consumer-secret.png" alt="Access Token Generation With Consumer Secret" width="60%">
     </a>
 
 9.  Copy the generated JWT Access Token that appears so that you can use it in the future.
 
-     <a href="{{base_path}}/assets/img/learn/jwt-access-token.png" ><img src="{{base_path}}/assets/img/learn/jwt-access-token.png" alt="JWT access token" title="JWT access token" width="60%" /></a>
+     <a href="../../../assets/img/learn/jwt-access-token.png" ><img src="../../../assets/img/learn/jwt-access-token.png" alt="JWT access token" title="JWT access token" width="60%" /></a>
 
 !!! tip
-    When you generate Access Tokens for APIs that are protected by scopes, you can select the respective [scopes]({{base_path}}/api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) and, thereafter, generate the token for it.
+    When you generate Access Tokens for APIs that are protected by scopes, you can select the respective [scopes](../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes.md) and, thereafter, generate the token for it.
 
 ### Deleting a Consumer Secret
 
 1.  To delete a consumer secret, click the **DELETE** icon under the **Actions** column corresponding to the consumer secret which should be deleted.
 
-     [![Delete Consumer Secret]({{base_path}}/assets/img/consume/consumer-secrets/delete-consumer-secret.png)]({{base_path}}/assets/img/consume/consumer-secrets/delete-consumer-secret.png)
+     [![Delete Consumer Secret](../../../assets/img/consume/consumer-secrets/delete-consumer-secret.png)](../../../assets/img/consume/consumer-secrets/delete-consumer-secret.png)
 
 2.  A confirmation box will be opened to verify whether the action was intended. Click **DELETE** to delete the consumer secret.
 
-     [![Delete Consumer Secret Confirmation]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secret-deletion-confirmation.png)]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secret-deletion-confirmation.png)
+     [![Delete Consumer Secret Confirmation](../../../assets/img/consume/consumer-secrets/consumer-secret-deletion-confirmation.png)](../../../assets/img/consume/consumer-secrets/consumer-secret-deletion-confirmation.png)
 
 !!! note
      The most recently added consumer secret cannot be deleted because an application must always retain at least one consumer secret.
 
-     [![Consumer Secret Deletion Constraint]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secret-deletion-constraint.png)]({{base_path}}/assets/img/consume/consumer-secrets/consumer-secret-deletion-constraint.png)
+     [![Consumer Secret Deletion Constraint](../../../assets/img/consume/consumer-secrets/consumer-secret-deletion-constraint.png)](../../../assets/img/consume/consumer-secrets/consumer-secret-deletion-constraint.png)
 
 !!! Important
      Deleting a consumer secret does **not** revoke access tokens that were generated using that secret. These tokens will continue to remain valid until their configured expiry time. Therefore, it is recommended to use access tokens with the **minimum required expiry time**.
@@ -119,7 +119,7 @@ Proof Key for Code Exchange (PKCE) is a commonly used security measure to secure
 
 To enable PKCE, you need to select the **Enable PKCE** option as shown below when generating the keys.
 
-[![Enabling PKCE]({{base_path}}/assets/img/learn/key-generation-with-pkce.png)]({{base_path}}/assets/img/learn/key-generation-with-pkce.png)
+[![Enabling PKCE](../../../assets/img/learn/key-generation-with-pkce.png)](../../../assets/img/learn/key-generation-with-pkce.png)
 
 The following are the associated options when enabling PKCE.
 
@@ -127,18 +127,18 @@ The following are the associated options when enabling PKCE.
 
       When this option is enabled, the code challenger and code verifier used will be in plain text. The recommended way is to use a SHA 256 algorithm, which is the default value when this option is not selected.
 
-      [![Enabling Public client for PKCE]({{base_path}}/assets/img/learn/key-generation-with-pkce-plain.png)]({{base_path}}/assets/img/learn/key-generation-with-pkce-plain.png)
+      [![Enabling Public client for PKCE](../../../assets/img/learn/key-generation-with-pkce-plain.png)](../../../assets/img/learn/key-generation-with-pkce-plain.png)
 
 - Public Client
 
       This option will allow the client to be authenticated without the secret.
 
-      [![Enabling plain text support for PKCE]({{base_path}}/assets/img/learn/key-generation-with-pkce-bypass-secret.png)]({{base_path}}/assets/img/learn/key-generation-with-pkce-bypass-secret.png)
+      [![Enabling plain text support for PKCE](../../../assets/img/learn/key-generation-with-pkce-bypass-secret.png)](../../../assets/img/learn/key-generation-with-pkce-bypass-secret.png)
 
 ## Generating application keys using Okta
 
 !!! note
-     Before you begin, make sure to follow [steps 1 and 2 in Configure Okta as a Key Manager]({{base_path}}/administer/key-managers/configure-okta-connector/) guide.
+     Before you begin, make sure to follow [steps 1 and 2 in Configure Okta as a Key Manager](../../../api-security/key-management/third-party-key-managers/configure-okta-connector.md) guide.
 
 Follow the instructions below to generate keys using Okta as the Key Manager:
 
@@ -152,7 +152,7 @@ Follow the instructions below to generate keys using Okta as the Key Manager:
 
 4. Click **Generate Keys** to create an application Access Token.
 
-     [![Generate Okta application keys]({{base_path}}/assets/img/learn/okta-application-key-generation.png)]({{base_path}}/assets/img/learn/okta-application-key-generation.png)
+     [![Generate Okta application keys](../../../assets/img/learn/okta-application-key-generation.png)](../../../assets/img/learn/okta-application-key-generation.png)
 
 !!! info
     For more information on the client application properties that need to be set, see the [Okta documentation](https://developer.okta.com/docs/reference/api/oauth-clients/#client-application-properties).
@@ -163,7 +163,7 @@ Follow the instructions below to generate keys using Okta as the Key Manager:
 ## Generating application keys using Keycloak
 
 !!! note
-     Before you begin, make sure to follow [steps 1 and 2 in Configure Keycloak as a Key Manager]({{base_path}}/administer/key-managers/configure-keycloak-connector/) guide.
+     Before you begin, make sure to follow [steps 1 and 2 in Configure Keycloak as a Key Manager](../../../api-security/key-management/third-party-key-managers/configure-keycloak-connector.md) guide.
 
 Follow the instructions below to generate keys using the Keycloak as the Key Manager:
 
@@ -177,4 +177,4 @@ Follow the instructions below to generate keys using the Keycloak as the Key Man
 
 4. Click **Generate Keys** to create an application access token.
 
-     [![Generate Keycloak application keys]({{base_path}}/assets/img/learn/keycloak-generate-keys.png){: style="width:70%"}]({{base_path}}/assets/img/learn/keycloak-generate-keys.png)
+     [![Generate Keycloak application keys](../../../assets/img/learn/keycloak-generate-keys.png){: style="width:70%"}](../../../assets/img/learn/keycloak-generate-keys.png)

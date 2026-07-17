@@ -71,16 +71,16 @@ Follow these steps to configure the Semantic Routing policy for your AI API:
 3. Navigate to **API Configurations**, and click **Policies**.
 4. Look for the policy named **Semantic Routing** listed under the Common Policies section within the policy list. Drag and drop the **Semantic Routing** policy to the **Request** flow of `/chat/completions` POST operation.
 
-    [![Attach Semantic Model Routing Policy]({{base_path}}/assets/img/learn/ai-gateway/attach-model-semantic-model-routing.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/attach-model-semantic-model-routing.png)
+    [![Attach Semantic Model Routing Policy](../../assets/img/learn/ai-gateway/attach-model-semantic-model-routing.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/attach-model-semantic-model-routing.png)
 
 5. Fill in the requested details and click **Save**.
 
-    [![Semantic Model Routing Policy Configuration]({{base_path}}/assets/img/learn/ai-gateway/semantic-model-routing-policy-configuration.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/semantic-model-routing-policy-configuration.png)
+    [![Semantic Model Routing Policy Configuration](../../assets/img/learn/ai-gateway/semantic-model-routing-policy-configuration.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/semantic-model-routing-policy-configuration.png)
 
 !!! note "AWS Bedrock Configuration"
     When configuring semantic routing with AWS Bedrock as a multi-model provider service, you must select both the **Provider** (model family) and the **Model** for each route and the default model. The **Provider** dropdown lists the model families you have set up in the Admin Portal (such as Meta, Anthropic, DeepSeek, etc.), and once a provider is selected, the **Model** dropdown will display the specific models available under that provider.
 
-    [![AWS Bedrock Semantic Model Routing Policy Configuration]({{base_path}}/assets/img/learn/ai-gateway/aws-bedrock-semantic-model-routing-policy-configuration.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/aws-bedrock-semantic-model-routing-policy-configuration.png)
+    [![AWS Bedrock Semantic Model Routing Policy Configuration](../../assets/img/learn/ai-gateway/aws-bedrock-semantic-model-routing-policy-configuration.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/aws-bedrock-semantic-model-routing-policy-configuration.png)
 
 ## Policy Configuration
 

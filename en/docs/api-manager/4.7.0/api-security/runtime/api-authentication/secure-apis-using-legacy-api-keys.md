@@ -1,7 +1,7 @@
 # Secure APIs with Legacy API Keys
 
 !!! warning "Deprecated"
-    Legacy API Keys are deprecated from WSO2 API Manager 4.7.0 onwards. It is recommended to use [API Keys]({{base_path}}/api-security/runtime/api-authentication/secure-apis-using-api-keys/) instead, which provide tighter security by scoping each key to a specific API. If you want to move to the new model, see [Migrating to the New API Key Feature](#migrating-to-the-new-api-key-feature).
+    Legacy API Keys are deprecated from WSO2 API Manager 4.7.0 onwards. It is recommended to use [API Keys](secure-apis-using-api-keys.md) instead, which provide tighter security by scoping each key to a specific API. If you want to move to the new model, see [Migrating to the New API Key Feature](#migrating-to-the-new-api-key-feature).
 
 A Legacy API key is the simplest form of application-based security that you can configure for an API. You can obtain a Legacy API key for a client application from WSO2 API Manager's Developer Portal, via the UI, or via REST APIs. Thereafter, the client application can use the API key to invoke the APIs that are secured with the API key security scheme.
 
@@ -13,7 +13,7 @@ When an API is invoked specifying a Legacy API key as the authentication method,
 - IP and referrer validation
 
 !!! info
-      API keys, generated within the WSO2 API Manager developer portal without direct key manager communication, cannot be directly forwarded to the backend through the API Gateway for API requests. To grant backends access to user, application specific attributes during API calls, enable backend JWT generation. For detailed instructions on how to enable and utilize backend JWT generation for passing end-user attributes to the backend via the API Gateway, refer to [Passing End-User Attributes to the Backend via API Gateway]({{base_path}}/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/).
+      API keys, generated within the WSO2 API Manager developer portal without direct key manager communication, cannot be directly forwarded to the backend through the API Gateway for API requests. To grant backends access to user, application specific attributes during API calls, enable backend JWT generation. For detailed instructions on how to enable and utilize backend JWT generation for passing end-user attributes to the backend via the API Gateway, refer to [Passing End-User Attributes to the Backend via API Gateway](../../../api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md).
 
 ## Validation of API subscriptions
 
@@ -101,7 +101,7 @@ in the following formats.
 
 2. Select `IP Addresses`, add the IP addresses in the text input as shown below, and generate the key.
 
-   [![IP Restricted Legacy API key]({{base_path}}/assets/img/learn/ip-legacy-api-key.png){: style="width:80%"}]({{base_path}}/assets/img/learn/ip-legacy-api-key.png)
+   [![IP Restricted Legacy API key](../../../assets/img/learn/ip-legacy-api-key.png){: style="width:80%"}](../../../assets/img/learn/ip-legacy-api-key.png)
 
 ### 2) HTTP referrer restriction
 
@@ -117,11 +117,11 @@ When the HTTP referrer restriction has been enabled, only the specific HTTP refe
 
 2. Select `HTTP Referrers (Web Sites)` and add the referrers in the text input as shown below and generate the key.
 
-   [![HTTP Referer Restricted Legacy API key]({{base_path}}/assets/img/learn/http-referer-legacy-api-key.png){: style="width:80%"}]({{base_path}}/assets/img/learn/http-referer-legacy-api-key.png)
+   [![HTTP Referer Restricted Legacy API key](../../../assets/img/learn/http-referer-legacy-api-key.png){: style="width:80%"}](../../../assets/img/learn/http-referer-legacy-api-key.png)
 
 ## Migrating to the New API Key Feature
 
-If you are moving from Legacy API Keys to the new [API-bound API Keys]({{base_path}}/api-security/runtime/api-authentication/secure-apis-using-api-keys/), be aware of the following key differences and required changes:
+If you are moving from Legacy API Keys to the new [API-bound API Keys](secure-apis-using-api-keys.md), be aware of the following key differences and required changes:
 
 - **One key per API** - Previously, a single Legacy API key issued for an application could invoke all APIs subscribed to that application. With the new API Keys, each key is valid for one specific API only. You must generate a separate key for each API your client needs to call.
 - **Key generation location** - Legacy API keys were generated from the application's credentials page. New API keys are generated from the **API Keys** section within the specific API in the Developer Portal.

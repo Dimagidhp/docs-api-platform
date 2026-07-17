@@ -16,7 +16,7 @@ Follow the steps to set up and customize Azure AI Foundry within your API Manage
 
 The **Model Provider(s)** section allows you to add and configure different AI model providers within Azure AI Foundry.
 
-[![Azure AI Foundry Configuration]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-config.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-config.png)
+[![Azure AI Foundry Configuration](../../assets/img/learn/ai-gateway/azure-ai-foundry-config.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/azure-ai-foundry-config.png)
 #### Adding Model Providers
 
 1. Click the **"+ Add Model Provider"** button to add a new provider family
@@ -44,7 +44,7 @@ The **Model Provider(s)** section allows you to add and configure different AI m
 </table>
 
 !!! Note "Add Multiple Model Providers and models"
-    Adding multiple models under a provider allows you to use advanced routing strategies such as failover, load balancing, and other traffic management options. You can configure these routing policies when creating AI APIs to control how requests are distributed among the available models. For more details, see [Multi-Model Routing Overview]({{base_path}}/ai-gateway/multi-model-routing/overview/).
+    Adding multiple models under a provider allows you to use advanced routing strategies such as failover, load balancing, and other traffic management options. You can configure these routing policies when creating AI APIs to control how requests are distributed among the available models. For more details, see [Multi-Model Routing Overview](../multi-model-routing/overview.md).
 
 ##### Example Provider Configurations
 

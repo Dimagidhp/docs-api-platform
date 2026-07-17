@@ -67,7 +67,7 @@ Once the constraints are defined in the key manager connector, administrators ca
 2. Scroll to the **Advanced Configurations** section.
 3. Click the **Application Configuration Constraints** header to expand it.
 
-[![Application Configuration Constraints section]({{base_path}}/assets/img/administer/km-app-config-constraints-section.png)]({{base_path}}/assets/img/administer/km-app-config-constraints-section.png)
+[![Application Configuration Constraints section](../../../assets/img/administer/km-app-config-constraints-section.png)](../../../assets/img/administer/km-app-config-constraints-section.png)
 
 ### Step 3 – Enable and Set Constraints
 
@@ -160,7 +160,7 @@ When a developer opens an application's **Production Keys** or **Sandbox Keys** 
 
 For `ENUM`-constrained fields, the dropdown only shows the values in the `allowed` list.
 
-[![Constraint validation error in DevPortal]({{base_path}}/assets/img/administer/km-constraint-error-devportal.png)]({{base_path}}/assets/img/administer/km-constraint-error-devportal.png)
+[![Constraint validation error in DevPortal](../../../assets/img/administer/km-constraint-error-devportal.png)](../../../assets/img/administer/km-constraint-error-devportal.png)
 
 ### REST API Behavior
 

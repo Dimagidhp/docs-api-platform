@@ -397,7 +397,7 @@ APIM calls IS over HTTPS using the Kubernetes service name `is-identity-server:9
                   password: "<DB_PASSWORD>"
         ```
 
-        For JDBC URL formats per database type, see [Setting Up Databases]({{base_path}}/install-and-setup/setup/setting-up-databases/overview/#changing-the-default-databases).
+        For JDBC URL formats per database type, see [Setting Up Databases](../../setting-up-databases/overview.md#changing-the-default-databases).
 
 ### Step 9 — Deploy WSO2 API Manager { #step-9 }
 
@@ -663,7 +663,7 @@ wso2:
 
 In [Step 8](#step-8), you created `apim-keystore-secret` using the default WSO2 keystores with the IS certificate imported. Those are self-signed certificates suitable for evaluation only.
 
-For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
+For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../security/configuring-keystores/configuring-keystores-in-wso2-api-manager.md). Then recreate the secret with your own certificates:
 
 ```bash
 kubectl create secret generic apim-keystore-secret \

@@ -2,7 +2,7 @@
 
 You cannot dynamically construct the back-end endpoint of an API using the address endpoints in the WSO2 API Manager. To achieve the requirement of a dynamic endpoint, you can use the default endpoint instead. 
 
-[![Dynamic Endpoints]({{base_path}}/assets/img/learn/api-gateway/message-mediation/dynamic-endpoints.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/dynamic-endpoints.png)  
+[![Dynamic Endpoints](../../assets/img/learn/api-gateway/message-mediation/dynamic-endpoints.png)](../../assets/img/learn/api-gateway/message-mediation/dynamic-endpoints.png)  
 
 The default endpoint sends the message to the address specified in the **To** header. The **To** header can be constructed dynamically. An example is given below.
 
@@ -24,7 +24,7 @@ In this example, you have constructed the `service_ep` property dynamically and 
     The mediation extension is applied to all resources of the API. Therefore, all resources will contain a similar logic to construct the endpoint.
 
 !!! tip
-    For more details about working with dynamic endpoints, see [Endpoint Types]({{base_path}}/learn/design-api/endpoints/endpoint-types).
+    For more details about working with dynamic endpoints, see [Endpoint Types](../../api-design-manage/design/endpoints/endpoint-types.md).
 
 You can copy the content of the above sequence to an XML file and upload it to an API configured with a dynamic endpoint using the Publisher Portal UI.
 

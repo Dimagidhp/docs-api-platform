@@ -14,7 +14,7 @@ Follow the instructions below to change the ownership of an application:
          `https://<APIM-hostname>:9443/carbon`
 
      2. Create two users named **Chris** and **Kim** with the `Internal/subscriber` role.
-        Refer [Create New Users]({{base_path}}/administer/managing-users-and-roles/managing-users#adding-a-new-user) for more information.
+        Refer [Create New Users](../../../administer/managing-users-and-roles/managing-users.md#adding-a-new-user) for more information.
 
 3.  Check the details of the application that you wish to share in the Developer Portal (e.g., testApplication).
 
@@ -34,7 +34,7 @@ Follow the instructions below to change the ownership of an application:
         This shows you the list of applications together with the respective owners.
 
     3.  Search for the application that you want to share and click **Edit**.
-        [![Search for the application]({{base_path}}/assets/img/learn/changing-application-owner-search.png)]({{base_path}}/assets/img/learn/changing-application-owner-search.png)
+        [![Search for the application](../../../assets/img/learn/changing-application-owner-search.png)](../../../assets/img/learn/changing-application-owner-search.png)
 
     4.  Update the **Owner** field with the new owner's username (Chris).
 
@@ -44,11 +44,11 @@ Follow the instructions below to change the ownership of an application:
 
          The application page shows the new ownership.
 
-        [![Application page with the new ownership]({{base_path}}/assets/img/learn/changing-application-owner.png)]({{base_path}}/assets/img/learn/changing-application-owner.png)   
+        [![Application page with the new ownership](../../../assets/img/learn/changing-application-owner.png)](../../../assets/img/learn/changing-application-owner.png)   
         
         Now, when Kim signs in to the Developer Portal, the application named "testApplication" does not appear.
-        [![Kim Application List]({{base_path}}/assets/img/learn/application-kim.png)]({{base_path}}/assets/img/learn/application-chris.png)
+        [![Kim Application List](../../../assets/img/learn/application-kim.png)](../../../assets/img/learn/application-chris.png)
         And when Chris signs in to the Developer Portal the application named "testApplication" appears under the application list.
-        [![Chris Application List]({{base_path}}/assets/img/learn/application-chris.png)]({{base_path}}/assets/img/learn/application-chris.png)
+        [![Chris Application List](../../../assets/img/learn/application-chris.png)](../../../assets/img/learn/application-chris.png)
 
 

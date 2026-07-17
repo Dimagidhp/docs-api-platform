@@ -12,7 +12,7 @@ You can view the Documents added to an API via the Developer Portal by following
 
 3. Use the dropdown and select the document that you want to view or download.
 
-     [![View default document]({{base_path}}/assets/img/learn/view-documents-devportal.png)]({{base_path}}/assets/img/learn/view-documents-devportal.png)
+     [![View default document](../../assets/img/learn/view-documents-devportal.png)](../../assets/img/learn/view-documents-devportal.png)
 
 ## Default Documents
 
@@ -23,10 +23,10 @@ API Documentations are available by default for REST and SOAP APIs.
 The generated API Documentation in the Publisher Portal is available for view in the Developer Portal under **Documents** tab.
 This is listed as `Default`.
 
-[![View default document]({{base_path}}/assets/img/learn/view-default-document-rest-devportal.png)]({{base_path}}/assets/img/learn/view-default-document-rest-devportal.png)
+[![View default document](../../assets/img/learn/view-default-document-rest-devportal.png)](../../assets/img/learn/view-default-document-rest-devportal.png)
 
 #### For SOAP APIs
 
 You can view the list of SOAP Operations available for the API directly in the Developer Portal without the need to inspect the SOAP API Definition. This is listed as `Default`.
 
-[![View default document]({{base_path}}/assets/img/learn/view-default-document-soap-devportal.png)]({{base_path}}/assets/img/learn/view-default-document-soap-devportal.png)
+[![View default document](../../assets/img/learn/view-default-document-soap-devportal.png)](../../assets/img/learn/view-default-document-soap-devportal.png)

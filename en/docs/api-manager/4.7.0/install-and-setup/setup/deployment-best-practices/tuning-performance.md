@@ -92,7 +92,7 @@ In multi-tenant mode, the WSO2 Carbon runtime limits the thread execution time. 
 
 The following diagram shows the communication/network paths that occur when an API is called. The timeout configurations for each network call are explained below.
 
-![]({{base_path}}/assets/img/setup-and-install/gateway-to-keymanager-ws-call.png)
+![](../../../assets/img/setup-and-install/gateway-to-keymanager-ws-call.png)
 
 !!! info
     The Gateway to Key Manager network call to validate the token only happens with the OAuth token. This network call does not happen for JSON Web Tokens (JWTs). JWT access tokens are the default token type for applications. As JWTs are self-contained access tokens, the Key Manager is not needed to validate the token, and the token is validated from the Gateway.
@@ -287,7 +287,7 @@ default_max_per_route = 50
      <p class="admonition-title">Note</p>
      <p>Note that when the endpoint is suspended, the default action is defined here as invoking the fault sequence.</p>
 </div> 
-<p><img src="{{base_path}}/assets/img/setup-and-install/timeout-configuration.png" alt="timeout-configuration.png" width="734" /></p></li>
+<p><img src="../../../assets/img/setup-and-install/timeout-configuration.png" alt="timeout-configuration.png" width="734" /></p></li>
 <li><p>Click <strong>Save</strong>.</p></li>
 </ol>
 <div class="admonition note">

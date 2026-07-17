@@ -63,17 +63,17 @@ WSO2 Identity Server acts as an identity service provider of systems enabled wit
         </tbody>
      </table>
 
-    [![Create Traditional Web Application]({{base_path}}/assets/img/setup-and-install/create-traditional-web-app-saml.png)]({{base_path}}/assets/img/setup-and-install/create-traditional-web-app-saml.png)
+    [![Create Traditional Web Application](../../../assets/img/setup-and-install/create-traditional-web-app-saml.png)](../../../assets/img/setup-and-install/create-traditional-web-app-saml.png)
 
     c.  Under the **Protocol** tab, go to **Response Signing**, select **Sign SAML Responses**, and click **Update**.
 
-    [![Enable Response Signing]({{base_path}}/assets/img/setup-and-install/enable-response-signing.png)]({{base_path}}/assets/img/setup-and-install/enable-response-signing.png)
+    [![Enable Response Signing](../../../assets/img/setup-and-install/enable-response-signing.png)](../../../assets/img/setup-and-install/enable-response-signing.png)
 
     d.  Go to the **User Attribute Selection** section in **User Attributes** tab, click **Add user attributes**, and add the **Username** and **Groups** attributes.
 
     e.  Under the **Subject** section, select **Username** as the subject attribute.
 
-    [![Add user attributes and subject]({{base_path}}/assets/img/setup-and-install/add-user-attributes-saml.png)]({{base_path}}/assets/img/setup-and-install/add-user-attributes-saml.png)
+    [![Add user attributes and subject](../../../assets/img/setup-and-install/add-user-attributes-saml.png)](../../../assets/img/setup-and-install/add-user-attributes-saml.png)
 
     f.  Go to the **Info** tab and download the IdP Metadata file using the **Download IdP Metadata** option.
 
@@ -155,7 +155,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
 
         Following image shows the sample values for SAML2 Web SSO Configurations:
 
-        [![saml-configuration-in-identity-provider]({{base_path}}/assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)]({{base_path}}/assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)
+        [![saml-configuration-in-identity-provider](../../../assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)](../../../assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)
 
         !!! Note
             If you configure manually, make sure your service provider configurations in the Identity Server and the identity provider configurations in API Manager are similarly reflected to each other.
@@ -167,7 +167,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
 
     2.  Enable Just-in-Time Provisioning to provision the users in API Manager.
 
-        [![Just-in-Time Provisioning]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)
+        [![Just-in-Time Provisioning](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)
 
     3.  Add the following role mapping under **Role Configuration** section:
 
@@ -190,7 +190,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
         </tbody>
         </table>
 
-        [![Role Configuration]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso.png)]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso.png)
+        [![Role Configuration](../../../assets/img/setup-and-install/role-mapping-for-sso.png)](../../../assets/img/setup-and-install/role-mapping-for-sso.png)
 
         !!! Tip
             Instead of using the default internal roles, you can also create new roles in API Manager and map it to the provisioned users.
@@ -213,7 +213,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
     
         Also select **groups** as the **Role Claim URI**.
 
-    [![Claim mapping for sso]({{base_path}}/assets/img/setup-and-install/claim-mapping-for-sso.png)]({{base_path}}/assets/img/setup-and-install/claim-mapping-for-sso.png)
+    [![Claim mapping for sso](../../../assets/img/setup-and-install/claim-mapping-for-sso.png)](../../../assets/img/setup-and-install/claim-mapping-for-sso.png)
 
 ### Step - 3 Configure the Service Provider
 
@@ -225,7 +225,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
 
 2.  Expand the **Local & Outbound Authentication Configuration** section and select **Federated Authentication** as the **Authentication Type** and select the name of the Identity Provider you created. Update the configurations with your selection.
 
-    [![Local & Outbound Authentication Configuration]({{base_path}}/assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)]({{base_path}}/assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)
+    [![Local & Outbound Authentication Configuration](../../../assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)](../../../assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)
 
 3.  Repeat the same step for the apim_devportal Service Provider as well.
 

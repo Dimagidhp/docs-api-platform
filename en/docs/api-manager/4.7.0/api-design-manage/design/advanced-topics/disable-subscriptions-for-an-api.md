@@ -6,7 +6,7 @@ You can disable the subscription requirement for an API at any point after the c
 
 To disable subscription validation requirement, deselect all the Business Plans (subscription policies) under the Business Plan section of the API in the Publisher portal and save the API.
 
-[![Disable subscription validation]({{base_path}}/assets/img/design/advanced/disable-sub-validation.png)]({{base_path}}/assets/img/design/advanced/disable-sub-validation.png)
+[![Disable subscription validation](../../../assets/img/design/advanced/disable-sub-validation.png)](../../../assets/img/design/advanced/disable-sub-validation.png)
 
 !!! warning
     Disabling subscription requirement for an API means that the API will be overly permissive as neither Subscription Level nor Application Level rate limiting will be applicable. Please make sure you apply proper Advanced (API or Resource level) rate limiting policies to secure your APIs.

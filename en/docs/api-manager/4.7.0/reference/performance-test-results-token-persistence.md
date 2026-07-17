@@ -1,7 +1,7 @@
 # Performance Test Results for Token Persistence
 
 
-The token endpoint's performance was assessed in the WSO2 API Manager, both with and without token persistence. The tests were conducted with **100** concurrent users and **10** Developer Portal applications. Tokens were generated with device scopes to simulate high load, mimicking scenarios where thousands of tokens are generated within a short period of time. Tests covered Client Credentials, Passwords, and Refresh grant types. Please refer the [Token Persistence Management]({{base_path}}/manage-apis/design/api-security/oauth2/token-persistence/) documentation to get more insights about the use cases in which this feature should be used.
+The token endpoint's performance was assessed in the WSO2 API Manager, both with and without token persistence. The tests were conducted with **100** concurrent users and **10** Developer Portal applications. Tokens were generated with device scopes to simulate high load, mimicking scenarios where thousands of tokens are generated within a short period of time. Tests covered Client Credentials, Passwords, and Refresh grant types. Please refer the [Token Persistence Management](../api-security/key-management/tokens/token-persistence.md) documentation to get more insights about the use cases in which this feature should be used.
 
 A few key performance metrics were used to measure the performance of each grant type.
 
@@ -92,19 +92,19 @@ The following graphs depict the variance of the CPU usage of the database over t
 
 CPU Usage                  |  Total IOPS
 :-------------------------:|:----------------------:
-[![DB CPU vs time for Client Credentials]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/cc_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/cc__db_cpu.png)  |  [![DB IOPS vs time for Client Credentials]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/cc_iops.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/cc_iops.png)
+[![DB CPU vs time for Client Credentials](../assets/img/setup-and-install/performance-test-results/token/cc_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/cc__db_cpu.png)  |  [![DB IOPS vs time for Client Credentials](../assets/img/setup-and-install/performance-test-results/token/cc_iops.png)](../assets/img/setup-and-install/performance-test-results/token/cc_iops.png)
 
 **Password Grant**
 
 CPU Usage                  |  Total IOPS
 :-------------------------:|:----------------------:
-[![DB CPU vs time for Password]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/pwd_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/pwd__db_cpu.png)  |  [![DB IOPS vs time for Password]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/pwd_iops.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/pwd_iops.png)
+[![DB CPU vs time for Password](../assets/img/setup-and-install/performance-test-results/token/pwd_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/pwd__db_cpu.png)  |  [![DB IOPS vs time for Password](../assets/img/setup-and-install/performance-test-results/token/pwd_iops.png)](../assets/img/setup-and-install/performance-test-results/token/pwd_iops.png)
 
 **Refresh Grant**
 
 CPU Usage                  |  Total IOPS
 :-------------------------:|:----------------------:
-[![DB CPU vs time for Password]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/refresh_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/refresh__db_cpu.png)  |  [![DB IOPS vs time for Password]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/refresh_iops.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/refresh_iops.png)
+[![DB CPU vs time for Password](../assets/img/setup-and-install/performance-test-results/token/refresh_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/refresh__db_cpu.png)  |  [![DB IOPS vs time for Password](../assets/img/setup-and-install/performance-test-results/token/refresh_iops.png)](../assets/img/setup-and-install/performance-test-results/token/refresh_iops.png)
 
 
 The above graphs were generated without any throughput limits in JMeter. As a result, the API Manager CPU was saturated and the maximum throughput was observed. The following graphs show the metrics from a similar test setup where the throughput was limited to **100 TPS**.
@@ -113,19 +113,19 @@ The above graphs were generated without any throughput limits in JMeter. As a re
 
 APIM CPU Usage            |  DB CPU Usage           |  DB Total IOPS
 :-------------------------:|:------------------------:|:------------------------:
-[![APIM CPU vs time for Client Credentials at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_apim_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_apim_cpu.png)  |  [![DB CPU vs time for Client Credentials at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_cpu.png)  |  [![DB IOPS vs time for Client Credentials at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_iops.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_iops.png)
+[![APIM CPU vs time for Client Credentials at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_apim_cpu.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_apim_cpu.png)  |  [![DB CPU vs time for Client Credentials at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_cpu.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_cpu.png)  |  [![DB IOPS vs time for Client Credentials at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_iops.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/cc_fixed_db_iops.png)
 
 **Password Grant - 100 TPS**
 
 APIM CPU Usage            |  DB CPU Usage           |  DB Total IOPS
 :-------------------------:|:------------------------:|:------------------------:
-[![APIM CPU vs time for Password at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_apim_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_apim_cpu.png)  |  [![DB CPU vs time for Password at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_cpu.png)  |  [![DB IOPS vs time for Password at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_iops.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_iops.png)
+[![APIM CPU vs time for Password at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_apim_cpu.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_apim_cpu.png)  |  [![DB CPU vs time for Password at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_cpu.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_cpu.png)  |  [![DB IOPS vs time for Password at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_iops.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/pwd_fixed_db_iops.png)
 
 **Refresh Grant - 100 TPS**
 
 APIM CPU Usage            |  DB CPU Usage           |  DB Total IOPS
 :-------------------------:|:------------------------:|:------------------------:
-[![APIM CPU vs time for Refresh at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_apim_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_apim_cpu.png)  |  [![DB CPU vs time for Refresh at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_cpu.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_cpu.png)  |  [![DB IOPS vs time for Refresh at 100 TPS]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_iops.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_iops.png)
+[![APIM CPU vs time for Refresh at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_apim_cpu.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_apim_cpu.png)  |  [![DB CPU vs time for Refresh at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_cpu.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_cpu.png)  |  [![DB IOPS vs time for Refresh at 100 TPS](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_iops.png)](../assets/img/setup-and-install/performance-test-results/token/fixed_tps_metrics/refresh_fixed_db_iops.png)
 
 !!! note
     The above data clearly shows a significant reduction in database load (CPU and IOPS) for each grant type when token persistence optimization is enabled. In summary, enabling token persistence optimization can enhance system performance, especially in scenarios where the database is a limiting factor.

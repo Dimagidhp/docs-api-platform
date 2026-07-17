@@ -56,7 +56,7 @@ Following are the minimum userstore properties that are needed to be provided to
 <br />
 If you are connecting over ldaps (secured LDAP)<br />
 Need to import the certificate of userstore to the client-truststore.jks of the WSO2 product. For information on how to add certificates to the truststore and how keystores are configured and used in a system, see<br />
-<a href="{{base_path}}/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/">Creating New Keystores</a><br />
+<a href="../../security/configuring-keystores/keystore-basics/creating-new-keystores.md">Creating New Keystores</a><br />
 <br />
 If LDAP connection pooling is used, see enable connection pooling for LDAPS connections.<br />
 <a href="{{base_path}}/deploy/performance/performance-tuning-recommendations#performance-tuning-ldaps-pooling">performance tuning ldaps pooling)</a></p></td>
@@ -138,7 +138,7 @@ Default: identityPerson( Is a custom object class defined in WSO2 Identity Serve
 <td><p>A uniquely identifying attribute that represents the username of the user. Users can be authenticated using their email address, UID, etc. The value of the attribute is considered as the username.</p>
 <p>Default: uid<br />
 <br />
- Note: email address is considered as a special case in WSO2 products, if you want to set the email address as username, see <a href="{{base_path}}/administer/product-security/logins-and-passwords/maintaining-logins-and-passwords/#setting-up-an-e-mail-login">Using email address as the username</a></p></td>
+ Note: email address is considered as a special case in WSO2 products, if you want to set the email address as username, see <a href="../../security/logins-and-passwords/maintaining-logins-and-passwords.md#setting-up-an-e-mail-login">Using email address as the username</a></p></td>
 </tr>
 <tr class="odd">
 <td>UserIDAttribute</td>
@@ -496,7 +496,7 @@ Following are some key points to consider  :
 
 ## Step 2: Updating the system administrator
 
-The **admin** user is the super tenant that will be able to manage all other users, roles, and permissions in the system by using the management console of the product. Therefore, the user that should have admin permissions is required to be stored in the userstore when you start the system for the first time. Since the LDAP userstore can be written to, you have the option of creating a new admin user in the userstore when you start the system for the first time. Alternatively, you can also use a user ID that already exists in the LDAP. For information about the system administrator user, see [Configuring the System Administrator]({{base_path}}/reference/config-catalog/#super-admin-configurations) .
+The **admin** user is the super tenant that will be able to manage all other users, roles, and permissions in the system by using the management console of the product. Therefore, the user that should have admin permissions is required to be stored in the userstore when you start the system for the first time. Since the LDAP userstore can be written to, you have the option of creating a new admin user in the userstore when you start the system for the first time. Alternatively, you can also use a user ID that already exists in the LDAP. For information about the system administrator user, see [Configuring the System Administrator](../../../../reference/config-catalog.md#super-admin-configurations) .
 
 These two alternative configurations can be done as explained below.
 

@@ -35,7 +35,7 @@ A cloud-native deployment involves running WSO2 API Manager in containers, orche
 
 WSO2 API Manager is deployed to Kubernetes using **Helm charts**, which package all the necessary Kubernetes resources (such as Deployments, Services, and Ingresses) for each [Deployment Pattern](./deployment-patterns.md).
 
-> **Next Steps:** [View the Kubernetes Installation Guides]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/)
+> **Next Steps:** [View the Kubernetes Installation Guides](../install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview.md)
 
 ### Key Characteristics
 
@@ -64,4 +64,4 @@ The flexibility of Kubernetes also allows for advanced patterns, such as deployi
 
 ## What's Next
 
-- Ready to set up your environment? Read the comprehensive [Deployment Patterns]({{base_path}}/get-started/deployment-patterns/) guide.
+- Ready to set up your environment? Read the comprehensive [Deployment Patterns](deployment-patterns.md) guide.
