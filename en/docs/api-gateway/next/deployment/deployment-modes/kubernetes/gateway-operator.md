@@ -263,11 +263,14 @@ kubectl get gatewayclass wso2-api-platform
 
 ### 3. Gateway
 
+!!! warning "Pre-create the encryption key Secret"
+    At-rest encryption is mandatory and fail-closed. The operator installs the gateway into the **Gateway's own namespace**, so the AES-256 key Secret must exist in that namespace (`gateway-api-demo` below) before you apply the `Gateway`, and the per-Gateway values must enable it (`gateway.controller.encryptionKeys.enabled: true` with a `secretName`). Create it as shown in [Security Hardening → Encryption Keys](../../production-deployment/security-hardening.md#encryption-keys), using `-n gateway-api-demo`.
+
 ```sh
 kubectl apply -f - <<'EOF'
 # Triggers the operator: Helm installs release named platform-gw-gateway, then registers the gateway-controller Service.
 # Optional: set metadata.annotations["gateway.api-platform.wso2.com/helm-values-configmap"] to a ConfigMap name (key values.yaml)
-# for per-Gateway Helm overrides (TLS, auth, developmentMode). See operator chart defaults in gateway_values.yaml.
+# for per-Gateway Helm overrides (TLS, auth, encryptionKeys). See operator chart defaults in gateway_values.yaml.
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:

@@ -129,7 +129,7 @@ url = "https://<platform-api-host>"
 [oidc]
 authority                = "https://api.asgardeo.io/t/<your-tenant>/oauth2/token"
 client_id                = "<ai-workspace-client-id>"
-client_secret            = '{{ env "APIP_AIW_OIDC_CLIENT_SECRET" }}'
+client_secret            = '{% raw %}{{ env "APIP_AIW_OIDC_CLIENT_SECRET" }}{% endraw %}'
 redirect_url             = "https://<your-domain>/api/auth/callback"
 post_logout_redirect_url = "https://<your-domain>/login"
 
@@ -142,7 +142,7 @@ org_handle_claim_name   = "org_handle"
 
 `redirect_url` must exactly match the authorized redirect URL you registered in step 2.
 
-Never write the client secret as a literal in `config.toml` — the {% raw %}`{{ env }}`{% endraw %} placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
+Never write the client secret as a literal in `config.toml` — the `{% raw %}{{ env }}{% endraw %}` placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
 
 ```bash
 export APIP_AIW_OIDC_CLIENT_SECRET=<ai-workspace-client-secret>
