@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - quickstart
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-08
+last_updated: 2026-07-23
 content_type: "quickstart"
 ---
 
@@ -19,7 +19,7 @@ The AI Workspace enables you to manage AI gateways and LLM providers. This guide
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) with the Compose plugin (`docker compose version`)
-- Ports **5380** and **9243** available on your machine
+- Ports **9643** and **9243** available on your machine
 - `curl` and `unzip` installed
 
 ## Step 1: Download AI Workspace
@@ -51,7 +51,7 @@ docker compose up -d
 
 ## Step 4: Open AI Workspace
 
-Navigate to **https://localhost:5380** and sign in with the admin credentials printed by `setup.sh`:
+Navigate to **https://localhost:9643** and sign in with the admin credentials printed by `setup.sh`:
 
 ![AI Workspace file-based login window with Username and Password fields](../../assets/img/ai-gateway/ai-workspace/authentication/filebased-login.png)
 

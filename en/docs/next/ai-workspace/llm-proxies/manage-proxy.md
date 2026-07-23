@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - llm-proxies
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
@@ -145,6 +145,7 @@ Configure how client applications authenticate when accessing your proxy endpoin
 |-------|-------------|
 | **Authentication type** | Select the authentication method from the dropdown. Currently, **API Key** is available. |
 | **Key name** | The name of the key that clients must provide (e.g., `X-API-Key`). |
+| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, e.g. `Bearer` so clients send `Bearer <key>`. |
 | **Sent in** | Choose how clients send the authentication key: **Header** (recommended) or **Query Parameter**. |
 
 3. Click **Save** to apply the security configuration.

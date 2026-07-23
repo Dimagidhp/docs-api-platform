@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - llm-providers
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
@@ -84,6 +84,9 @@ The authentication fields vary depending on the provider you selected:
 === "Azure AI Foundry"
     1. **Upstream URL*** (Required): Enter your Azure AI Foundry endpoint URL.
     2. **API Key*** (Required): Enter your Azure AI Foundry API key.
+
+!!! note "Custom provider templates"
+    If you're adding a provider from a custom [LLM Provider Template](overview.md#connecting-a-custom-provider) (**Settings > LLM Provider Templates**), the **Authentication Type** can also be set to **other** (no credentials stored — use a policy to handle upstream auth) or **none** (no upstream authentication sent), in addition to **api-key**.
 
 ### Add Guardrails (Optional)
 

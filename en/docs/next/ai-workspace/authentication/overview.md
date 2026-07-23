@@ -8,35 +8,35 @@ tags:
   - ai-workspace
   - authentication
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-09
+last_updated: 2026-07-23
 content_type: "concept"
 ---
 
 # Authentication in AI Workspace
 
-AI Workspace supports two authentication modes, set with the `auth_mode` key in `config.toml`. A running instance uses one mode at a time.
+AI Workspace and the Platform API read their settings from a single `config.toml` file, with AI Workspace's `[ai_workspace.*]` tables and the Platform API's `[platform_api.*]` tables living side by side. Authentication is set independently in each service's table, though both must agree for a given mode to work end to end. A running instance uses one mode at a time.
 
-| Mode | `auth_mode` value | Best for |
-|------|--------------------|----------|
-| File-based | `basic` | Local use and quick demos, no identity provider required |
-| Identity provider | `oidc` | Production, where a dedicated identity provider manages user login |
+| Mode | `[ai_workspace.auth] mode` | `[platform_api.auth] mode` | Best for |
+|------|------------------------------|-------------------------------|----------|
+| File-based | `basic` | `file` | Local use and quick demos, no identity provider required |
+| Identity provider | `oidc` | `idp` | Production, where a dedicated identity provider manages user login |
 
 ## File-based authentication
 
-File-based authentication stores a list of users directly in the Platform API configuration file. It requires no external identity provider, which makes it the default when you [get started with AI Workspace](../getting-started.md) using Docker Compose.
+File-based authentication stores a list of users directly in the Platform API's configuration table. It requires no external identity provider, which makes it the default when you [get started with AI Workspace](../getting-started.md) using Docker Compose.
 
-When `auth_mode = "basic"`, the AI Workspace login page renders a username and password form. The Platform API validates the credentials against a hashed user list defined in `config-platform-api.toml`:
+When `[ai_workspace.auth] mode = "basic"`, the AI Workspace login page renders a username and password form. The Platform API validates the credentials against a hashed user list defined in `[platform_api.auth.file.users]`:
 
 ![AI Workspace file-based login window with Username and Password fields](../../../assets/img/ai-gateway/ai-workspace/authentication/filebased-login.png)
 
 ```toml
-[auth.file_based]
-enabled = true
+[platform_api.auth]
+mode = "file"
 
-[[auth.file_based.users]]
+[[platform_api.auth.file.users]]
 username      = "admin"
 password_hash = "$2a$10$..."   # bcrypt hash of the password
-role          = "admin"
+scopes        = "ap:organization:manage ap:gateway:manage ..."
 ```
 
 Generate a bcrypt hash for the password with any standard tool, for example:
@@ -45,7 +45,7 @@ Generate a bcrypt hash for the password with any standard tool, for example:
 htpasswd -bnBC 10 "" "your-password" | tr -d ':\n'
 ```
 
-The Docker Compose bundle ships with a default `admin` / `admin` credential so you can sign in right away. Change this password before sharing the deployment with anyone else.
+The `setup.sh` script bundled with the Docker Compose distribution generates the admin username and password for you and prints them to the terminal once — see [Getting Started](../getting-started.md). Change this password before sharing the deployment with anyone else.
 
 File-based authentication has two limitations:
 

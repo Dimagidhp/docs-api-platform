@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - ai-gateways
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
@@ -90,8 +90,8 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-alpha2/wso2apip-ai-gateway-1.2.0-alpha2.zip && \
-    unzip wso2apip-ai-gateway-1.2.0-alpha2.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip && \
+    unzip wso2apip-ai-gateway-1.2.0-beta.zip
     ```
 
     **Step 2: Configure the Gateway**
@@ -99,7 +99,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command to create the environment configuration file with the required environment variables:
 
     ```bash
-    cat > wso2apip-ai-gateway-1.2.0-alpha2/configs/keys.env << 'ENVFILE'
+    cat > wso2apip-ai-gateway-1.2.0-beta/configs/keys.env << 'ENVFILE'
     MOESIF_KEY=<your-moesif-key>
     GATEWAY_CONTROLPLANE_HOST=connect.bijira.dev
     GATEWAY_REGISTRATION_TOKEN=<your-gateway-token>
@@ -113,7 +113,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     1. Navigate to the gateway folder:
 
         ```bash
-        cd wso2apip-ai-gateway-1.2.0-alpha2
+        cd wso2apip-ai-gateway-1.2.0-beta
         ```
 
     2. Run this command to start the gateway using the environment file created in Step 2:
@@ -145,8 +145,8 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-alpha2/wso2apip-ai-gateway-1.2.0-alpha2.zip && \
-    unzip wso2apip-ai-gateway-1.2.0-alpha2.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip && \
+    unzip wso2apip-ai-gateway-1.2.0-beta.zip
     ```
 
     **Step 2: Configure the Gateway**
@@ -158,7 +158,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     1. Navigate to the gateway folder:
 
         ```bash
-        cd wso2apip-ai-gateway-1.2.0-alpha2
+        cd wso2apip-ai-gateway-1.2.0-beta
         ```
 
     2. Run this command to start the gateway using the environment file created in Step 2:
@@ -178,8 +178,8 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-alpha2/wso2apip-ai-gateway-1.2.0-alpha2.zip && \
-    unzip wso2apip-ai-gateway-1.2.0-alpha2.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip && \
+    unzip wso2apip-ai-gateway-1.2.0-beta.zip
     ```
 
     **Step 2: Configure the Gateway**
@@ -191,7 +191,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     1. Navigate to the gateway folder:
 
         ```bash
-        cd wso2apip-ai-gateway-1.2.0-alpha2
+        cd wso2apip-ai-gateway-1.2.0-beta
         ```
 
     2. Run this command to start the gateway using the environment file created in Step 2:
@@ -215,11 +215,13 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command to install the gateway chart with control plane configurations:
 
     ```bash
-    helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version 1.0.0 \
+    helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version 1.2.0-beta \
     --set gateway.controller.controlPlane.host="host.docker.internal" \
     --set gateway.controller.controlPlane.port=8443 \
     --set gateway.controller.controlPlane.token.value="your-gateway-token"
     ```
+
+    Use the Helm chart version that matches the gateway version shown on this page's **Get Started** section, not necessarily `1.2.0-beta`.
 
     Replace `your-gateway-token` with the token from the Get Started section.
 

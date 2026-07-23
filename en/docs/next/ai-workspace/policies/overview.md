@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - policies
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "overview"
 ---
 
@@ -58,6 +58,10 @@ Policies are configured through the management tabs of your LLM Providers and Ap
 - **App LLM Proxy** — Guardrails configured on a proxy can be applied globally (all endpoints) or per resource (specific endpoints) to specialize the behavior for a specific Gen AI application or agent.
 
 When both provider-level and proxy-level policies are active, they are both enforced. Provider-level policies act as a baseline, and proxy-level policies add additional protection.
+
+## Custom Policies
+
+Beyond the built-in policies above, you can write and deploy your own [custom AI policy](writing-an-ai-policy.md) to a gateway. Once a gateway runs a custom policy, it's synced into AI Workspace and listed under **Settings > Custom Policies**, where you can search, review, and delete the policies synced from your gateways. From there, a custom policy can be attached to a provider or proxy the same way a built-in policy is, through the guardrails/policy sidebar on the provider or proxy details page.
 
 ## Policy Hub
 
