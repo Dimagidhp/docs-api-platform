@@ -47,7 +47,7 @@ This setup enables:
 
 Consider a deployment scenario within a complex enterprise architecture where multiple API gateways are strategically positioned to manage diverse traffic flows and enforce specific security policies.
 
-[![Deployment diagram for a single control plane to multiple gateways]({{base_path}}/assets/img/tutorials/gateway/deployment-diagram-for-single-control-plane.png)]({{base_path}}/assets/img/tutorials/gateway/deployment-diagram-for-single-control-plane.png)
+[![Deployment diagram for a single control plane to multiple gateways](../assets/img/tutorials/gateway/deployment-diagram-for-single-control-plane.png)](../assets/img/tutorials/gateway/deployment-diagram-for-single-control-plane.png)
 
 In this scenario, we have identified three distinct APIs: the HR System API, responsible for accessing and managing human resources data; the Product Catalog API, providing access to the organization's product information; and the Compliance Report API, which generates and disseminates necessary compliance documentation. Based on varying business needs, traffic patterns, and regional requirements, each of these APIs is deployed independently and redundantly across several geographically distributed API gateways.
 
@@ -178,22 +178,22 @@ Create and deploy the HR System API as shown below (follow the steps in [Create 
 3. Select **OpenAPI Archive/File** option and drag and drop or click **Browse File to Upload** to upload the [HRSystemAPI.json](https://github.com/wso2/samples-apim/blob/master/single-cp-multi-gw-tutorial/api-definitions/HRSystemAPI.json) definition file (save the file locally and upload). 
 4. Edit the information as given below and click **Create**.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/create-hr-api.png)
+    ![](../assets/img/tutorials/gateway/create-hr-api.png)
 
 5. Note that the Gateway type is selected as **Universal Gateway** here.
 6. Once created, go to **Deploy** -> **Deployments** and deploy the API.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/deploy-hr-api.png)
+    ![](../assets/img/tutorials/gateway/deploy-hr-api.png)
 
 7. Finally navigate to **Lifecycle** and click the **Publish** button to publish the API.
 8. Navigate to the developer portal via `https://localhost:9444/devportal/` and click **APIs** from the top menu. 
 9. You will see the published HRSystemAPI as below in the developer portal.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/devportal-hr-api.png)
+    ![](../assets/img/tutorials/gateway/devportal-hr-api.png)
 
     You have successfully published the HRSystemAPI to the Universal Gateway now.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/gateway-url-hr-api.png)
+    ![](../assets/img/tutorials/gateway/gateway-url-hr-api.png)
 
 Next let’s see how to publish an API to the Kubernetes Gateway.
 
@@ -331,12 +331,12 @@ Alternatively, you have the option to add the Kubernetes gateway related configu
 
     Note that the name assigned to the Kubernetes Gateway is determined by the value specified for **environmentLabels** in the `values.yaml` file used with the Kubernetes Gateway Agent Helm Chart. This label acts as an identifier for the gateway instance and is used by the system to map and manage the gateway. Ensure that the **environmentLabels** value accurately reflects the intended name of your Kubernetes Gateway to avoid any misconfigurations or mismatches during deployment.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/add-k8s-gw.png)
+    ![](../assets/img/tutorials/gateway/add-k8s-gw.png)
 
 4. Click **Add**. 
 5. You will see the newly added Kubernetes gateway details in the list as below.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/k8s-gw-list.png)
+    ![](../assets/img/tutorials/gateway/k8s-gw-list.png)
 
 Create the Product Catalog API as below.
 
@@ -345,21 +345,21 @@ Create the Product Catalog API as below.
 8. Select **OpenAPI Archive/File** option and drag and drop or click **Browse File to Upload** to upload the ProductCatalogAPI.json definition file (save the file locally and upload). 
 9. Edit the information as given below and click **Create**.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/add-products-api.png)
+    ![](../assets/img/tutorials/gateway/add-products-api.png)
 
 10. Note that the Gateway type is selected as **Kubernetes Gateway** here. Once created, go to **Deploy** -> **Deployments** and deploy the API.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/deploy-k8s-gw.png)
+    ![](../assets/img/tutorials/gateway/deploy-k8s-gw.png)
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/deploy-products-api.png)
+    ![](../assets/img/tutorials/gateway/deploy-products-api.png)
 
 11. Finally navigate to **Lifecycle** and click the **Publish** button to publish the API. 
 12. Navigate to the Developer Portal via `https://localhost:9444/devportal/` and click **APIs** from the top menu. 
 13. You will see the published ProductCatalogAPI as below in the developer portal.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/devportal-products-api.png)
+    ![](../assets/img/tutorials/gateway/devportal-products-api.png)
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/products-gw-url.png)
+    ![](../assets/img/tutorials/gateway/products-gw-url.png)
 
 14. Verify that the ProductCatalogAPI is successfully deployed to Kubernetes Gateway by executing the following command.
 
@@ -369,7 +369,7 @@ Create the Product Catalog API as below.
 
     The deployed API can be seen as below.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/products-k8s-gw-list.png)
+    ![](../assets/img/tutorials/gateway/products-k8s-gw-list.png)
 
 Let’s see how to publish an API to the Immutable gateway now.
 
@@ -425,11 +425,11 @@ The same ComplianceReportAPI can be deployed in the Publisher portal as below, s
 3. Select **OpenAPI Archive/File** option and drag and drop or click **Browse File to Upload** to upload the [ComplianceReportAPI.json](https://github.com/wso2/samples-apim/blob/master/single-cp-multi-gw-tutorial/api-definitions/ComplianceReportAPI.json) definition file (save the file locally and upload).
 4. Edit the information as given below and click **Create**.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/create-reports-api.png)
+    ![](../assets/img/tutorials/gateway/create-reports-api.png)
 
 5. Note that the Gateway type is selected as **Universal Gateway** here as we need to get a valid token to be used while invoking the API in the Microgateway. Once created, go to **Deploy** -> **Deployments** and deploy the API.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/deploy-reports-api.png)
+    ![](../assets/img/tutorials/gateway/deploy-reports-api.png)
 
 6. Finally go to **Lifecycle** and click **Publish** to publish the API.
 
@@ -441,7 +441,7 @@ The developer portal can be used for API discovery purposes for application deve
 
 All the deployed APIs can be seen in the developer portal as below.
 
-![]({{base_path}}/assets/img/tutorials/gateway/devportal-reports-api.png)
+![](../assets/img/tutorials/gateway/devportal-reports-api.png)
 
 Subscribe to the 3 APIs by creating an application as below.
 
@@ -449,21 +449,21 @@ Subscribe to the 3 APIs by creating an application as below.
 2. Click on the **Applications** tab and then use the **ADD NEW APPLICATION** option. 
 3. Provide the information as given below and click **Save**.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/create-sample-app.png)
+    ![](../assets/img/tutorials/gateway/create-sample-app.png)
 
 4. Click Subscriptions to subscribe to the created HRSystemAPI, ProductCatalogAPI, and ComplianceReportAPI.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/sample-app-subscriptions.png)
+    ![](../assets/img/tutorials/gateway/sample-app-subscriptions.png)
 
 5. Click Production Keys or Sandbox Keys based on the environment for which you need to generate keys. Let's assume that you are working in a production environment. Therefore, click **Production Keys**.
 6. Click **Generate Keys** to create an application Access Token with relevant scopes.
 7. Copy the generated token and use that for invoking the APIs in the API Console tab in each API. The following image shows an example of API invocation response for the HRSystemAPI’s employees GET resource.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/invoke-hr-api.png)
+    ![](../assets/img/tutorials/gateway/invoke-hr-api.png)
 
 8. Similarly, the ProductCatalogAPI can be invoked.
 
-    ![]({{base_path}}/assets/img/tutorials/gateway/invoke-products-api.png)
+    ![](../assets/img/tutorials/gateway/invoke-products-api.png)
 
 9. The generated token can be used to invoke the ComplianceReportAPI deployed in the Microgateway as below.
 

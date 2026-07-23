@@ -18,11 +18,11 @@ Configure the Advanced Endpoint Configurations as follows:
      
 4. Click on the cogwheel, which is inline with the endpoint that you need to configure, and update the endpoint related configurations as required. 
  
-     [![Advanced endpoint configuration menu]({{base_path}}/assets/img/learn/advance-ep-config-cogwheel.png)]({{base_path}}/assets/img/learn/advance-ep-config-cogwheel.png)
+     [![Advanced endpoint configuration menu](../../../../assets/img/learn/advance-ep-config-cogwheel.png)](../../../../assets/img/learn/advance-ep-config-cogwheel.png)
 
      The Advanced Endpoint Configurations page appears.
 
-    <a href="{{base_path}}/assets/img/learn/advance-config-dialog.png"><img src="{{base_path}}/assets/img/learn/advance-config-dialog.png" alt="Advanced endpoint configurations" width="60%"/></a>
+    <a href="../../../../../assets/img/learn/advance-config-dialog.png"><img src="../../../../../assets/img/learn/advance-config-dialog.png" alt="Advanced endpoint configurations" width="60%"/></a>
 
 The following are Advanced Endpoint Configurations that you can configure for both the production and sandbox endpoints.
 
@@ -35,7 +35,7 @@ The following are Advanced Endpoint Configurations that you can configure for bo
                     <p>If you want to configure the suspension of an endpoint, you can use the <b>Endpoint Suspension State</b> section to define the error codes, maximum suspension time, and suspension factors.</p>
                     <ul><li>
                     <p><strong>Error Codes:</strong> The error codes that are associated with suspended endpoints. If the backend endpoint receives the selected error codes, the endpoint will be marked as
-                    suspended. Specify the <a href="{{base_path}}/reference/troubleshooting/error-handling/#transport-error-codes">transport error codes</a> to define when the endpoint suspension should be triggered. You can select a single error code or multiple error codes.</p>
+                    suspended. Specify the <a href="../../../../../reference/troubleshooting/error-handling/#transport-error-codes">transport error codes</a> to define when the endpoint suspension should be triggered. You can select a single error code or multiple error codes.</p>
                     </li><li>
                     <p><strong>Initial duration:</strong> The time duration for which the endpoint will be suspended when one or more suspend error codes are received from the endpoint for the first time.</p>
                         <div class="admonition note">
@@ -102,4 +102,4 @@ The following are Advanced Endpoint Configurations that you can configure for bo
     </tbody>
 </table>
 
-For more information on endpoints and how to add, edit, or delete them, see [Endpoint Properties]({{base_path}}/reference/synapse-properties/endpoint-properties).
+For more information on endpoints and how to add, edit, or delete them, see [Endpoint Properties](../../../../reference/synapse-properties/endpoint-properties).

@@ -2,7 +2,7 @@
 
 This pattern deploys all WSO2 API Manager components — Control Plane, Gateway, Traffic Manager, and Key Manager — in a single node. It is suitable for development, testing, and evaluation environments where high availability is not required.
 
-<a href="{{base_path}}/assets/img/setup-and-install/single-node-apim-deployment.png"><img src="{{base_path}}/assets/img/setup-and-install/single-node-apim-deployment.png" alt="single-node api-m deployment" width="60%"></a>
+<a href="../../../../../assets/img/setup-and-install/single-node-apim-deployment.png"><img src="../../../../../assets/img/setup-and-install/single-node-apim-deployment.png" alt="single-node api-m deployment" width="60%"></a>
 
 ---
 

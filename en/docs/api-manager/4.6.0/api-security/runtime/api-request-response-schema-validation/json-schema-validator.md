@@ -14,13 +14,13 @@ If the request fails the validations, the JSON Schema Validator sends a bad requ
 
 The following diagram illustrates the message flow when sending a valid request.
 
-<a href="{{base_path}}/assets/img/learn/json-validator-send-valid-request.png"><img src="{{base_path}}/assets/img/learn/json-validator-send-valid-request.png" width="70%" alt="JSON schema validator - Sending a valid request"></a> 
+<a href="../../../../assets/img/learn/json-validator-send-valid-request.png"><img src="../../../../assets/img/learn/json-validator-send-valid-request.png" width="70%" alt="JSON schema validator - Sending a valid request"></a> 
 
 **Sending an invalid request**
 
 The following diagram illustrates the message flow when sending an invalid request.
 
-<a href="{{base_path}}/assets/img/learn/json-validator-send-invalid-request.png"><img src="{{base_path}}/assets/img/learn/json-validator-send-invalid-request.png" width="70%" alt="JSON schema validator - Sending an invalid request"></a>
+<a href="../../../../assets/img/learn/json-validator-send-invalid-request.png"><img src="../../../../assets/img/learn/json-validator-send-invalid-request.png" width="70%" alt="JSON schema validator - Sending an invalid request"></a>
 
 **Example:**
 
@@ -46,13 +46,13 @@ The following response is displayed.
 
 The following diagram illustrates the message flow when sending a valid response.
 
-<a href="{{base_path}}/assets/img/learn/json-validator-send-valid-response.png"><img src="{{base_path}}/assets/img/learn/json-validator-send-valid-response.png" width="70%" alt="JSON schema validator - Sending a valid response"></a>
+<a href="../../../../assets/img/learn/json-validator-send-valid-response.png"><img src="../../../../assets/img/learn/json-validator-send-valid-response.png" width="70%" alt="JSON schema validator - Sending a valid response"></a>
 
 **Invalid response from the backend**
 
 The following diagram illustrates the message flow when sending an invalid response.
 
-<a href="{{base_path}}/assets/img/learn/json-validator-send-invalid-response.png"><img src="{{base_path}}/assets/img/learn/json-validator-send-invalid-response.png" width="70%" alt="JSON schema validator - Sending an invalid response"></a>
+<a href="../../../../assets/img/learn/json-validator-send-invalid-response.png"><img src="../../../../assets/img/learn/json-validator-send-invalid-response.png" width="70%" alt="JSON schema validator - Sending an invalid response"></a>
 
 **Example**
 
@@ -99,7 +99,7 @@ The following validation response from the Gateway is displayed.
 
      By default, the schema validation property is set to `false`.
 
-     ![Enable API schema validation]({{base_path}}/assets/img/learn/api-runtime-config.png)
+     ![Enable API schema validation](../../../assets/img/learn/api-runtime-config.png)
 
 6. Click **SAVE**.
 

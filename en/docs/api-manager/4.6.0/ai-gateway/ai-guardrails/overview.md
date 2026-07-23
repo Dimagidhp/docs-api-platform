@@ -33,7 +33,7 @@ They act as intelligent filters that:
 - Apply **policy-driven checks** to assess safety, quality, and compliance.
 - Enable client applications to implement **adaptive response strategies** based on given guardrail error responses.
 
-[![AI Gateway]({{base_path}}/assets/img/learn/ai-gateway/ai-guardrail-offerings.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/ai-guardrail-offerings.png)
+[![AI Gateway](../../assets/img/learn/ai-gateway/ai-guardrail-offerings.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/ai-guardrail-offerings.png)
 
 ---
 

@@ -70,7 +70,7 @@ Let’s take a look at the deployment architecture of the two patterns.
 
 Pattern 1 in a multi-datacenter (multi-DC) deployment of WSO2 API Manager involves the creation of multiple distributed setups connected by replicated databases and control planes (event hubs) across different regions. This configuration is designed to maximize high availability and ensure fault tolerance.
 
-<a href="{{base_path}}/assets/img/setup-and-install/multi-dc-pattern-1.png"><img src="{{base_path}}/assets/img/setup-and-install/multi-dc-pattern-1.png" alt="Multi-DC Pattern 1" width="80%"></a>
+<a href="../../../../assets/img/setup-and-install/multi-dc-pattern-1.png"><img src="../../../../assets/img/setup-and-install/multi-dc-pattern-1.png" alt="Multi-DC Pattern 1" width="80%"></a>
 
 !!! Note
     WSO2 API Manager has been tested for DB replication only with MSSQL, Oracle and PostgreSQL DBs.
@@ -102,7 +102,7 @@ This replication provides data redundancy and fault tolerance, allowing for cons
 The control planes (Event Hubs) in each data center setup are interconnected to facilitate real-time communication and data synchronization.
 Control planes play a crucial role in managing and coordinating activities across distributed setups.
 
-Please refer to the [documentation]({{base_path}}/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-1) for detailed information on configuring pattern 1.
+Please refer to the [documentation](../../../install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-1.md) for detailed information on configuring pattern 1.
 
 ## Pattern 2: Centralized API Management with Regional Data Planes
 
@@ -110,7 +110,7 @@ Please refer to the [documentation]({{base_path}}/install-and-setup/setup/multi-
 
 In Pattern 2 of a multi-datacenter (multi-DC) deployment of WSO2 API Manager, the architecture is designed with a clear division of roles. Specifically, one region acts as the central control point for the entire multi-DC deployment and is referred to as the "main region." Other regions, which are dedicated to handling incoming traffic and scaling needs, are known as the "sub regions."
 
-<a href="{{base_path}}/assets/img/setup-and-install/multi-dc-pattern-2.png"><img src="{{base_path}}/assets/img/setup-and-install/multi-dc-pattern-2.png" alt="Multi-DC Pattern 2" width="80%"></a>
+<a href="../../../../assets/img/setup-and-install/multi-dc-pattern-2.png"><img src="../../../../assets/img/setup-and-install/multi-dc-pattern-2.png" alt="Multi-DC Pattern 2" width="80%"></a>
 
 ### Advantages
 
@@ -132,9 +132,9 @@ Sub regions are configured to handle incoming traffic exclusively. These regions
 
 3. **Horizontal Scalability:**
 This documentation provides information on configuring a single main region with a single sub region. However, the deployment can be horizontally scaled as needed by adding multiple sub regions. This approach ensures flexibility and responsiveness to changes in traffic patterns and loads.
-Please note the recommendations mentioned [here]({{base_path}}/manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/scaling-the-gateway) when scaling the Gateways.
+Please note the recommendations mentioned [here](../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/scaling-the-gateway) when scaling the Gateways.
 
-Please refer to the [documentation]({{base_path}}/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-2) for detailed information on configuring pattern 2.
+Please refer to the [documentation](../../../install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-2.md) for detailed information on configuring pattern 2.
 
 !!! Note
     Both pattern 1 and pattern 2 supports throttling based on the region/geographical area by default. Therefore, throttling will be handled independently for each region from their respective data center traffic.

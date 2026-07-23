@@ -2,7 +2,7 @@
 
 WSO2 API Manager provides the capability to publish APIs that are deployed in an external gateway. Since these APIs are not deployed in the WSO2 API gateway, the API will not be proxied through the gateway.
 
-In previous versions of API Manager, third-party APIs were available when importing APIs from [AWS API Gateway]({{base_path}}/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-aws-apis-in-the-dev-portal/) and when [publishing through external developer portals]({{base_path}}/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-to-multiple-external-api-stores/).
+In previous versions of API Manager, third-party APIs were available when importing APIs from [AWS API Gateway](../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-aws-apis-in-the-dev-portal/) and when [publishing through external developer portals](../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-to-multiple-external-api-stores/).
 
 
 ## Creating a Third-party API
@@ -13,7 +13,7 @@ A regular API can be converted to a third-party API from the **Basic Info** sect
 
 !!! note
     An API cannot be converted to a third-party API when there are active deployments.
-        [![Convert to third-party API]({{base_path}}/assets/img/develop/convert-to-third-party.png)]({{base_path}}/assets/img/develop/convert-to-third-party.png)
+        [![Convert to third-party API](../../../assets/img/develop/convert-to-third-party.png)](../../../assets/img/develop/convert-to-third-party.png)
 
 #### Method 2 - Streaming APIs
 
@@ -21,7 +21,7 @@ In addition to the streaming APIs supported in API Manager (WebSocket, SSE, and 
 
 !!! note
     The APIs created using the ‘Other’ option cannot be converted to a regular API. It can be only used as a third-party API.
-        [![Create AsyncAPIs using the Other option]({{base_path}}/assets/img/develop/async-api.png)]({{base_path}}/assets/img/develop/async-api.png)
+        [![Create AsyncAPIs using the Other option](../../../assets/img/develop/async-api.png)](../../../assets/img/develop/async-api.png)
 
 
 Listed below are the fields available when adding third-party API details to the API Manager.
@@ -35,7 +35,7 @@ Listed below are the fields available when adding third-party API details to the
 You can see an indicator added to the API thumbnail in the API Publisher Portal to distinguish whether an API is from a third-party, as shown below.
 
 
-<a href="{{base_path}}/assets/img/develop/third-party-tag-with-business-info.png"><img src="{{base_path}}/assets/img/develop/third-party-tag-with-business-info.png" width="20%"></a>
+<a href="../../../../assets/img/develop/third-party-tag-with-business-info.png"><img src="../../../../assets/img/develop/third-party-tag-with-business-info.png" width="20%"></a>
 
 You can use the new default property `thirdParty` to search for APIs that are from a third-party.
 

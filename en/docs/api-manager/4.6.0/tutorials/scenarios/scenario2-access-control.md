@@ -1,6 +1,6 @@
 # Scenario 2 - Engage Access Control to the API
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to control access to the API. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to control access to the API. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 7 minutes_**
 
@@ -10,11 +10,11 @@ ColTrain has a separate API to manage schedules for their internal staff. This A
 
 We could configure the API to be visible for a set of users. For example, this API should be visible for only Developer Portal users with **coltrain_employee** role only.
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario2.png" title="Rate limiting" width="630"/>
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario2.png" title="Rate limiting" width="630"/>
 
 Also WSO2 API Manager provides capability to provide access control to the resources of the API by using OAuth2 scopes. Requests containing access tokens with the correct scope will be able to access these resources. 
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario2a.png" title="Rate limiting" width="630"/>
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario2a.png" title="Rate limiting" width="630"/>
 
 !!! Note 
     This setup contains roles **schedule_admin**  and **coltrain_employee** already created in the ColTrain tenant domain. **schedule_admin** and **coltrain_employee** roles are assigned to the user **jenny@coltrain.com** and only **coltrain_employee** role is assigned to **george@coltrain.com** . 
@@ -26,11 +26,11 @@ Lets create a separate API named **ColTrainInternalTimeTableAPI** for this and s
 1. Log on to the Publisher Portal again `https://localhost:9443/publisher/`. Use user credentials as `apiprovider@coltrain.com` and password as `user123`.
 2. Create a new API using the OpenAPI definition **coltrain-openapi.yaml** provided in the `/resources` location. Lets use _/coltrain-schedule_ as the context. Use the endpoint provided in the file as it is.
 
-    ![Create API]({{base_path}}/assets/img/tutorials/scenarios/coltrain-internal-api-create.png)
+    ![Create API](../../assets/img/tutorials/scenarios/coltrain-internal-api-create.png)
 
 3. Go to **Develop → Portal Configurations → Basic Info** and under the **Developer portal visibility**, select **Restrict by role(s)** . This would enable another field to set the role. Use **coltrain_employee** and press enter and save.
 
-    ![Set visibility]({{base_path}}/assets/img/tutorials/scenarios/set-visibility.png)
+    ![Set visibility](../../assets/img/tutorials/scenarios/set-visibility.png)
 
 Developer Portal visibility is set to the API. Users with the **coltrain_employee** role can now view the API in the Developer Portal. 
 
@@ -40,11 +40,11 @@ Next task is to set the access control for the resources. To do that, follow the
 
 1. Create a scope by selecting the **Develop → API Configurations → Local Scopes** and create a scope using the below details. Use **schedule_admin** as the role.
 
-    ![Create scope]({{base_path}}/assets/img/tutorials/scenarios/create-scope.png)
+    ![Create scope](../../assets/img/tutorials/scenarios/create-scope.png)
 
 2. Go to **Develop → API Configurations → Resources** section and assign the role to the relevant resource. For example, to set the **schedule_admin** scope to `POST /schedule` resource, select this resource to expand and select the scope from **Operation scope** drop down menu.
 
-    ![Set scope]({{base_path}}/assets/img/tutorials/scenarios/set-scope.png)
+    ![Set scope](../../assets/img/tutorials/scenarios/set-scope.png)
 
 3. Define a business plan for the API. For that, go to **Develop → Portal Configurations → Subscriptions** and select a business plan. (e.g., Unlimited).
 4. Deploy the API. For that, go to the **Deploy → Deployments** section and click deploy.
@@ -52,11 +52,11 @@ Next task is to set the access control for the resources. To do that, follow the
    
 Now go to the Developer Portal and go to the ColTrain’s domain. You would not be able to not see the **ColTrainInternalTimeTableAPI** API.
 
-![Not visible]({{base_path}}/assets/img/tutorials/scenarios/not-visible.png)
+![Not visible](../../assets/img/tutorials/scenarios/not-visible.png)
 
 Lets login using `jenny@coltrain.com`. Use `user123` as the password. Now you should be able to see the API. 
 
-![Visible]({{base_path}}/assets/img/tutorials/scenarios/visible.png)
+![Visible](../../assets/img/tutorials/scenarios/visible.png)
 
 Jenny has **coltrain_employee** role and as a result she can view the API. 
 
@@ -68,7 +68,7 @@ Now lets try out the API.
 2. Go to **Applications → Add new Application** and create an application and generate keys.
 3. Copy the key and the secret. Secret can be viewed by clicking the icon next the **Consumer Secret** section.
 
-    ![Generate keys]({{base_path}}/assets/img/tutorials/scenarios/gen-keys.png)
+    ![Generate keys](../../assets/img/tutorials/scenarios/gen-keys.png)
 
 4. Subscribe to the API using this application.
 
@@ -103,8 +103,8 @@ You would see that you could access the resource using jenny@coltrain.com user�
 
 You could tryout the same commands using the Postman collection provided in the **resources/Access_Control_Demo.postman_collection.json** location as well. You need to add the client_id and client_secret under the variable section to use this.
 
-![Postman configuration]({{base_path}}/assets/img/tutorials/scenarios/postman.png)
+![Postman configuration](../../assets/img/tutorials/scenarios/postman.png)
 
 ## What's next
 
-Try out the next scenario in the series, [Implementing an API]({{base_path}}/tutorials/scenarios/scenario3-implementing-an-api).
+Try out the next scenario in the series, [Implementing an API](../../tutorials/scenarios/scenario3-implementing-an-api.md).

@@ -16,8 +16,8 @@ apictl import api --file <path-to-API-archive> --environment <environment> --dry
 
 The results will be displayed in the console as shown in the example below:
 
-<a href="{{base_path}}/assets/img/governance/api_gov_apictl_result.png">
-  <img src="{{base_path}}/assets/img/governance/api_gov_apictl_result.png" alt="APIM Governance Validation Result Example" width="90%" />
+<a href="../../../assets/img/governance/api_gov_apictl_result.png">
+  <img src="../../../assets/img/governance/api_gov_apictl_result.png" alt="APIM Governance Validation Result Example" width="90%" />
 </a>
 
 !!! note "Applicable Governance Policies"
@@ -27,5 +27,5 @@ Integrating this step into your CI/CD pipeline helps ensure that only compliant 
 improving governance and reducing the risk of introducing faulty APIs.
 
 For more information on how to use WSO2 APICTL, refer to the 
-[WSO2 APICTL documentation]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/).
+[WSO2 APICTL documentation](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/).
 

@@ -74,4 +74,4 @@ The Gateway enforces the following default Business Plans for Streaming APIs:
 
 ## See Also
 
-- [Setting Rate Limiting for Streaming APIs]({{base_path}}/api-design-manage/design/rate-limiting/set-streaming-api-limits/) - How to configure Business Plans for Streaming APIs
+- [Setting Rate Limiting for Streaming APIs](../../api-design-manage/design/rate-limiting/set-streaming-api-limits/) - How to configure Business Plans for Streaming APIs

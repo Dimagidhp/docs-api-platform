@@ -1,6 +1,6 @@
 # ELK Based Analytics Installation Guide
 
-<a href="{{base_path}}/assets/img/analytics/cloud/architecture.png"><img src="{{base_path}}/assets/img/analytics/cloud/architecture.png" width="70%" alt="Deployment diagram"></a>
+<a href="../../../../assets/img/analytics/cloud/architecture.png"><img src="../../../../assets/img/analytics/cloud/architecture.png" width="70%" alt="Deployment diagram"></a>
 
 ### Analytics Data flow
 
@@ -301,8 +301,8 @@ Operation and API Policies of the APIs/API Products are loaded to the Analytics 
     ```
 
 5. Download the artifact file from below.<br />
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Artifacts v1 - [here]({{base_path}}/assets/img/analytics/cloud/old_export.ndjson)<br />
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Artifacts v2 - [here]({{base_path}}/assets/img/analytics/cloud/export.ndjson)
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Artifacts v1 - [here](../../../assets/img/analytics/cloud/old_export.ndjson)<br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Artifacts v2 - [here](../../../assets/img/analytics/cloud/export.ndjson)
 6. Navigate to **Stack Management** > **Saved Object** and click on **Import**. Add the downloaded artifact file as an import object, and import
 
 !!! info
@@ -340,26 +340,26 @@ To enable SSO with WSO2 API Manager, a service provider needs to be created. Fol
 1. Login to the WSO2 API Manager management console via `https://<API-M_HOST>:9443/carbon`.
 2. From the **Main**, click **Add** under the **Service Providers** section.
     
-    <a href="{{base_path}}/assets/img/analytics/cloud/service-providers.png"><img src="{{base_path}}/assets/img/analytics/cloud/service-providers.png" width="30%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/service-providers.png"><img src="../../../../assets/img/analytics/cloud/service-providers.png" width="30%" alt=""></a>
 
 3. In the **Add New Service Provider** page, create a new service provider by providing the service provider name (e.g.,kibana).
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/add-new-sp.png"><img src="{{base_path}}/assets/img/analytics/cloud/add-new-sp.png" width="70%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/add-new-sp.png"><img src="../../../../assets/img/analytics/cloud/add-new-sp.png" width="70%" alt=""></a>
 
 4. Once the service provider is created, go to the service provider, expand the **Claim Configuration** section. Configure the claims as shown in the image below and click **Update**.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/claim-config.png"><img src="{{base_path}}/assets/img/analytics/cloud/claim-config.png" width="70%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/claim-config.png"><img src="../../../../assets/img/analytics/cloud/claim-config.png" width="70%" alt=""></a>
 
 5. Expand the **Inbound Authentication Configuration** section, then **OAuth/OpenID Connect Configuration** and click  **Edit**. 
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/inbound-auth-config.png"><img src="{{base_path}}/assets/img/analytics/cloud/inbound-auth-config.png" width="70%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/inbound-auth-config.png"><img src="../../../../assets/img/analytics/cloud/inbound-auth-config.png" width="70%" alt=""></a>
 
 
 6. In the **View/Update Application Settings** page, set the `callback URL` as follows.
     ```
     regexp=(https://kibana.example.com:5601/api/security/oidc/callback|https://kibana.example.com:5601/security/logged_out)
     ```
-    <a href="{{base_path}}/assets/img/analytics/cloud/update-settings.png"><img src="{{base_path}}/assets/img/analytics/cloud/update-settings.png" width="70%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/update-settings.png"><img src="../../../../assets/img/analytics/cloud/update-settings.png" width="70%" alt=""></a>
 
 7. Click **Update** to save your changes.
 
@@ -402,25 +402,25 @@ Once the above steps are completed, role mapping needs to be configured in Kiban
 
 2. From the **Main** menu in the left panel, click **Add** under the **Users and Roles** section.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/main-menu.png"><img src="{{base_path}}/assets/img/analytics/cloud/main-menu.png" width="30%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/main-menu.png"><img src="../../../../assets/img/analytics/cloud/main-menu.png" width="30%" alt=""></a>
 
 3. In **Add Users and Roles**, click **Add new role**.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/add-new-role.png"><img src="{{base_path}}/assets/img/analytics/cloud/add-new-role.png" width="30%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/add-new-role.png"><img src="../../../../assets/img/analytics/cloud/add-new-role.png" width="30%" alt=""></a>
 
 4. Create a new role (e.g., `AnalyticsViewer`) and click **Finish**.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/add-new-role.png"><img src="{{base_path}}/assets/img/analytics/cloud/add-new-role.png" width="30%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/add-new-role.png"><img src="../../../../assets/img/analytics/cloud/add-new-role.png" width="30%" alt=""></a>
 
 5. In **Add Users and Roles**, click **Add new user**.
 
 6. Create a new user and click the **Next**. 
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/add-new-user.png"><img src="{{base_path}}/assets/img/analytics/cloud/add-new-user.png" width="30%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/add-new-user.png"><img src="../../../../assets/img/analytics/cloud/add-new-user.png" width="30%" alt=""></a>
 
 7. In the “Step 2: Select Roles of the User” page select the previously created role and click “Finish”.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/select-user-role.png"><img src="{{base_path}}/assets/img/analytics/cloud/select-user-role.png" width="30%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/select-user-role.png"><img src="../../../../assets/img/analytics/cloud/select-user-role.png" width="30%" alt=""></a>
 
 ###### Create role mapping
 
@@ -428,19 +428,19 @@ Once the above steps are completed, role mapping needs to be configured in Kiban
 2. In the **Create Role Mapping** section, add a new role mapping by providing a **Mapping name**. 
 3. Select a role that has access to the particular dashboard from the **Roles**.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/create-role-mapping.png"><img src="{{base_path}}/assets/img/analytics/cloud/create-role-mapping.png" width="50%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/create-role-mapping.png"><img src="../../../../assets/img/analytics/cloud/create-role-mapping.png" width="50%" alt=""></a>
 
 4. Under **Mapping Rules** select **groups** as the user field and name of the previously-created role as the value and click **Add**.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/mapping-rules.png"><img src="{{base_path}}/assets/img/analytics/cloud/mapping-rules.png" width="50%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/mapping-rules.png"><img src="../../../../assets/img/analytics/cloud/mapping-rules.png" width="50%" alt=""></a>
 
 5. Logout from the Kibana and re-login by selecting the **Log in with WSO2** option.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/login-elastic.png"><img src="{{base_path}}/assets/img/analytics/cloud/login-elastic.png" width="50%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/login-elastic.png"><img src="../../../../assets/img/analytics/cloud/login-elastic.png" width="50%" alt=""></a>
 
 6. This will navigate to the WSO2 API Manager login page. Try login with the previously created user credentials.
 
-    <a href="{{base_path}}/assets/img/analytics/cloud/login-apim.png"><img src="{{base_path}}/assets/img/analytics/cloud/login-apim.png" width="50%" alt=""></a>
+    <a href="../../../../assets/img/analytics/cloud/login-apim.png"><img src="../../../../assets/img/analytics/cloud/login-apim.png" width="50%" alt=""></a>
 
 ##### Configure SSL/TLS to secure ElasticSearch, Kibana, Beats, and Logstash
 
@@ -456,52 +456,52 @@ Once you have set up the Kibana dashboards, you can access the following dashboa
 
 The Overview page gives you a quick overview of the performance of the system. It can be used as a dashboard to view the current system status.
 
-<a href="{{base_path}}/assets/img/analytics/cloud/overview.png"><img src="{{base_path}}/assets/img/analytics/cloud/overview.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/overview.png"><img src="../../../../assets/img/analytics/cloud/overview.png" width="70%" alt=""></a>
 
 ##### Traffic
 The Traffic page shows information related to the traffic that goes through your API management deployments. This includes API usage, application usage, resource usage, etc. You can use this page to investigate the usage of APIs and applications, traffic patterns, etc.
 
-<a href="{{base_path}}/assets/img/analytics/cloud/traffic1.png"><img src="{{base_path}}/assets/img/analytics/cloud/traffic1.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/traffic1.png"><img src="../../../../assets/img/analytics/cloud/traffic1.png" width="70%" alt=""></a>
 
-<a href="{{base_path}}/assets/img/analytics/cloud/traffic2.png"><img src="{{base_path}}/assets/img/analytics/cloud/traffic2.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/traffic2.png"><img src="../../../../assets/img/analytics/cloud/traffic2.png" width="70%" alt=""></a>
 
 ##### API Analytics
 
 The API Analytics Dashboard provides business insights on APIs enabling users to take proactive actions to improve profitability and the quality of the service provided. This dashboard focuses on API developers who wish to see the analytics related to their APIs. This dashboard includes graphs to represent,  Overall API Usage,  Top 10 API and Application creators, API Usage by version, application, resource path and backend.
 
-<a href="{{base_path}}/assets/img/analytics/cloud/api-analytics-1.png"><img src="{{base_path}}/assets/img/analytics/cloud/api-analytics-1.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/api-analytics-1.png"><img src="../../../../assets/img/analytics/cloud/api-analytics-1.png" width="70%" alt=""></a>
 
-<a href="{{base_path}}/assets/img/analytics/cloud/api-analytics-2.png"><img src="{{base_path}}/assets/img/analytics/cloud/api-analytics-2.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/api-analytics-2.png"><img src="../../../../assets/img/analytics/cloud/api-analytics-2.png" width="70%" alt=""></a>
 
 ##### User Analytics
 
 User Analytics dashboard provides insights of API Users, most API Users, No of success and fault requests by users for each API and application
 
-<a href="{{base_path}}/assets/img/analytics/cloud/user-analytics.png"><img src="{{base_path}}/assets/img/analytics/cloud/user-analytics.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/user-analytics.png"><img src="../../../../assets/img/analytics/cloud/user-analytics.png" width="70%" alt=""></a>
 
 ##### Errors
 
 The Errors page shows information related to erroneous API calls that are received by your system. The errors are categorized based on the error type. You can further drill down using the error subtypes. Use this page as the starting point for debugging any API errors.
 
-<a href="{{base_path}}/assets/img/analytics/cloud/errors.png"><img src="{{base_path}}/assets/img/analytics/cloud/errors.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/errors.png"><img src="../../../../assets/img/analytics/cloud/errors.png" width="70%" alt=""></a>
 
 
 ##### Latency
 
 The Latency page shows information related to the latency of API calls within the API management deployment. You can view a summary of the slowest APIs and then drill down into the API view for further analysis. Use this page as a starting point to debug API slowness.
 
-<a href="{{base_path}}/assets/img/analytics/cloud/latency1.png"><img src="{{base_path}}/assets/img/analytics/cloud/latency1.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/latency1.png"><img src="../../../../assets/img/analytics/cloud/latency1.png" width="70%" alt=""></a>
 
-<a href="{{base_path}}/assets/img/analytics/cloud/latency2.png"><img src="{{base_path}}/assets/img/analytics/cloud/latency2.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/latency2.png"><img src="../../../../assets/img/analytics/cloud/latency2.png" width="70%" alt=""></a>
 
 
 ##### Cache
 The Cache page shows statistics that indicate the efficiency with which response caching is carried out for the requests sent to your APIs.
 
-<a href="{{base_path}}/assets/img/analytics/cloud/cache.png"><img src="{{base_path}}/assets/img/analytics/cloud/cache.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/cache.png"><img src="../../../../assets/img/analytics/cloud/cache.png" width="70%" alt=""></a>
 
 ##### Devices
 
 The Devices page displays information about operating systems and HTTP agents that end users use to invoke the APIs. You can use this page to get an idea of the distribution of your user base and improve your APIs to match the audience.
 
-<a href="{{base_path}}/assets/img/analytics/cloud/devices.png"><img src="{{base_path}}/assets/img/analytics/cloud/devices.png" width="70%" alt=""></a>
+<a href="../../../../assets/img/analytics/cloud/devices.png"><img src="../../../../assets/img/analytics/cloud/devices.png" width="70%" alt=""></a>

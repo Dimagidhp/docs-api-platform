@@ -16,7 +16,7 @@ Follow the steps to set up and customize Azure AI Foundry within your API Manage
 
 The **Model Provider(s)** section allows you to add and configure different AI model providers within Azure AI Foundry.
 
-[![Azure AI Foundry Configuration]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-config.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-config.png)
+[![Azure AI Foundry Configuration](../../assets/img/learn/ai-gateway/azure-ai-foundry-config.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/azure-ai-foundry-config.png)
 #### Adding Model Providers
 
 1. Click the **"+ Add Model Provider"** button to add a new provider family
@@ -44,7 +44,7 @@ The **Model Provider(s)** section allows you to add and configure different AI m
 </table>
 
 !!! Note "Add Multiple Model Providers and models"
-    Adding multiple models under a provider allows you to use advanced routing strategies such as failover, load balancing, and other traffic management options. You can configure these routing policies when creating AI APIs to control how requests are distributed among the available models. For more details, see [Multi-Model Routing Overview]({{base_path}}/ai-gateway/multi-model-routing/overview/).
+    Adding multiple models under a provider allows you to use advanced routing strategies such as failover, load balancing, and other traffic management options. You can configure these routing policies when creating AI APIs to control how requests are distributed among the available models. For more details, see [Multi-Model Routing Overview](../../ai-gateway/multi-model-routing/overview/).
 
 ##### Example Provider Configurations
 
@@ -94,7 +94,7 @@ Once you have saved your changes, the updated Azure AI Foundry configuration wil
 
 ### API Key
 
-The default authentication method uses an Azure AI Foundry API key. Obtain an API key from the Azure AI Foundry portal and configure it as the endpoint security credential in the API Publisher. For step-by-step instructions, see [AI Backend Security]({{base_path}}/ai-gateway/ai-backend-security/).
+The default authentication method uses an Azure AI Foundry API key. Obtain an API key from the Azure AI Foundry portal and configure it as the endpoint security credential in the API Publisher. For step-by-step instructions, see [AI Backend Security](../../ai-gateway/ai-backend-security/).
 
 ### Azure Workload Identity (UMI)
 
@@ -207,18 +207,18 @@ For Azure-side setup details, see the Microsoft documentation on [Azure Workload
 2. Click **Add AI Service Provider** to create a new **AzureAIFoundry** service provider with **UMI** as the authentication type.
 3. Under **LLM Provider Auth Configurations**, select **UMI** as the authentication type.
 
-    [![LLM Provider Auth UMI Configuration]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-llm-provider-auth-umi-config.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-llm-provider-auth-umi-config.png)
+    [![LLM Provider Auth UMI Configuration](../../assets/img/learn/ai-gateway/azure-ai-foundry-llm-provider-auth-umi-config.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/azure-ai-foundry-llm-provider-auth-umi-config.png)
 
 4. Configure the remaining properties by referring to the existing AzureAIFoundry service provider configuration.
 5. Click **Save** to register the provider as a new version, such as `1.1.0`.
 
-    [![Saving Azure Foundry UMI-enabled version]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-save-umi-version.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-save-umi-version.png)
+    [![Saving Azure Foundry UMI-enabled version](../../assets/img/learn/ai-gateway/azure-ai-foundry-save-umi-version.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/azure-ai-foundry-save-umi-version.png)
 
 **Step 2: Create an AI API using the UMI-enabled provider version**
 
 When creating a new AI API in the API Publisher, select **AzureAIFoundry** as the AI Service Provider and choose the UMI-enabled version you created. The gateway then acquires and injects the Microsoft Entra bearer token for outbound requests, so no API key configuration is required.
 
-[![Create AI API from UMI-enabled provider version]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-create-ai-api-umi.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/azure-ai-foundry-create-ai-api-umi.png)
+[![Create AI API from UMI-enabled provider version](../../assets/img/learn/ai-gateway/azure-ai-foundry-create-ai-api-umi.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/azure-ai-foundry-create-ai-api-umi.png)
 
 **Token Scope (Optional Override)**
 

@@ -12,7 +12,7 @@ Deploying on Virtual Machines is the traditional approach, where you install and
 
 This model gives you full control over the network, storage, and operating system, and it supports the full range of architectural patterns. You can run a simple **[All-in-One pattern](./deployment-patterns.md)** on a single VM for development, or scale up to a fully **[Distributed](./deployment-patterns.md)** or **[Multi-Datacenter](./deployment-patterns.md)** architecture across multiple VMs for a robust, production-grade environment.
 
-> **Next Steps:** [View the VM Installation Guides]({{base_path}}/install-and-setup/setup/deployment-overview/)
+> **Next Steps:** [View the VM Installation Guides](../install-and-setup/setup/deployment-overview/)
 
 ### Key Characteristics
 
@@ -35,7 +35,7 @@ A cloud-native deployment involves running WSO2 API Manager in containers, orche
 
 WSO2 API Manager is deployed to Kubernetes using **Helm charts**, which package all the necessary Kubernetes resources (such as Deployments, Services, and Ingresses) for each [Deployment Pattern](./deployment-patterns.md).
 
-> **Next Steps:** [View the Kubernetes Installation Guides]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/)
+> **Next Steps:** [View the Kubernetes Installation Guides](../install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/)
 
 ### Key Characteristics
 
@@ -64,4 +64,4 @@ The flexibility of Kubernetes also allows for advanced patterns, such as deployi
 
 ## What's Next
 
-- Ready to set up your environment? Read the comprehensive [Deployment Patterns]({{base_path}}/get-started/deployment-patterns/) guide.
+- Ready to set up your environment? Read the comprehensive [Deployment Patterns](../get-started/deployment-patterns/) guide.

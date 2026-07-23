@@ -153,7 +153,7 @@ In Pattern 6, APIM must trust the IS self-signed certificate. This step extracts
     ```
 
 !!! note
-    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). You must also exchange the public certificates of APIM and IS and import them into each other's truststore — see [Importing certificates to the truststore](https://apim.docs.wso2.com/en/4.6.0/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/#step-3-importing-certificates-to-the-truststore).
+    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). You must also exchange the public certificates of APIM and IS and import them into each other's truststore — see [Importing certificates to the truststore](https://apim.docs.wso2.com/en/4.6.0/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/#step-3-importing-certificates-to-the-truststore).
 
 ### Step 7 — Deploy WSO2 Identity Server { #step-7 }
 
@@ -227,7 +227,7 @@ In Pattern 6, APIM must trust the IS self-signed certificate. This step extracts
 
 APIM must trust the IS self-signed certificate to communicate with IS during Key Manager registration. This step imports the IS certificate into the APIM truststore and creates the `apim-keystore-secret` Kubernetes secret with the final truststore content.
 
-For background, refer to [Importing the Identity Server certificate to WSO2 API Manager]({{base_path}}/install-and-setup/setup/sso/configuring-identity-server-as-external-idp-using-oidc/#step-1-import-the-identity-server-certificate-to-wso2-api-manager).
+For background, refer to [Importing the Identity Server certificate to WSO2 API Manager](../../../../install-and-setup/setup/sso/configuring-identity-server-as-external-idp-using-oidc/#step-1-import-the-identity-server-certificate-to-wso2-api-manager).
 
 1. Port-forward the IS service to your local machine and extract the IS public certificate.
 
@@ -509,7 +509,7 @@ wso2:
 
 In [Step 8](#step-8), you created `apim-keystore-secret` containing the default APIM keystores with the IS certificate imported into the truststore. Those are self-signed certificates suitable for evaluation only.
 
-For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
+For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
 
 ```bash
 kubectl create secret generic apim-keystore-secret \

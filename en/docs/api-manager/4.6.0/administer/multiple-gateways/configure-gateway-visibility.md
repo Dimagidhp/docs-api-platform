@@ -12,7 +12,7 @@ Similarly, when the permission type for the role-based restriction is set to **D
 
 ## Option 1: Configure visibility for a Gateway environment via the Admin Portal
 
-1. [Start WSO2 API Manager]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server).
+1. [Start WSO2 API Manager](../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server).
 
    This will start WSO2 API Manager in the all-in-one mode, which includes the default Gateway as well.
 
@@ -28,7 +28,7 @@ Similarly, when the permission type for the role-based restriction is set to **D
 
    1. Click **Gateways**, and then click **Add Gateway Environment**.
 
-      [![Menu to add Gateway environment]({{base_path}}/assets/img/deploy/add-gateway-environment-menu.png)]({{base_path}}/assets/img/deploy/add-gateway-environment-menu.png)
+      [![Menu to add Gateway environment](../../assets/img/deploy/add-gateway-environment-menu.png)](../../assets/img/deploy/add-gateway-environment-menu.png)
 
    2. Enter a name, display name, description, visibility and a virtual host as follows.
 
@@ -38,13 +38,13 @@ Similarly, when the permission type for the role-based restriction is set to **D
       |-------------|--------------|----------------|--------------|--------------|
       | us-region   | US Region    | Gateway environment deployed in the US region. | Public         | us.wso2.com    |
 
-      [![Menu to add Gateway environment visibility]({{base_path}}/assets/img/deploy/add-gateway-visibility-menu.png)]({{base_path}}/assets/img/deploy/add-gateway-visibility-menu.png)
+      [![Menu to add Gateway environment visibility](../../assets/img/deploy/add-gateway-visibility-menu.png)](../../assets/img/deploy/add-gateway-visibility-menu.png)
 
 !!! note
     The visibility of a Gateway can be set by selecting the permission type. The list of allowed/denied roles should be provided for the ALLOW of DENY types.
     The default value is set to **Public** and it does not have any visibility restrictions.
 
-[![Gateway environment visibility roles]({{base_path}}/assets/img/deploy/add-gateway-visibility-roles.png)]({{base_path}}/assets/img/deploy/add-gateway-visibility-roles.png)
+[![Gateway environment visibility roles](../../assets/img/deploy/add-gateway-visibility-roles.png)](../../assets/img/deploy/add-gateway-visibility-roles.png)
    
 ## Option 2: Configure visibility for a Gateway environment using the configuration file
 
@@ -80,12 +80,12 @@ Follow the instructions below to use the `deployment.toml` file, which is the ce
     websub_event_receiver_https_endpoint = "https://localhost:8021"
    ```
 
-3. [Start WSO2 API Manager]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server).
+3. [Start WSO2 API Manager](../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server).
 
    This will start WSO2 API Manager in the all-in-one mode, which includes the default Gateway as well.
 
 The added Gateway environments with visibility permissions are listed as below with the allowed/denied roles. Click on the permission type to view the allowed/denied roles.
 
-[![List Gateway environment visibility]({{base_path}}/assets/img/deploy/list-gateway-visibility.png)]({{base_path}}/assets/img/deploy/list-gateway-visibility.png)
+[![List Gateway environment visibility](../../assets/img/deploy/list-gateway-visibility.png)](../../assets/img/deploy/list-gateway-visibility.png)
 
-[![List Gateway environment visibility roles]({{base_path}}/assets/img/deploy/list-gateway-visibility-roles.png)]({{base_path}}/assets/img/deploy/list-gateway-visibility-roles.png)
+[![List Gateway environment visibility roles](../../assets/img/deploy/list-gateway-visibility-roles.png)](../../assets/img/deploy/list-gateway-visibility-roles.png)

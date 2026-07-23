@@ -10,7 +10,7 @@ In this section let's see how to add an approval workflow to control the deploym
 
     2. Click **Registry** --> **Browse**.
 
-       [![Resources Browse Menu]({{base_path}}/assets/img/learn/navigate-main-resources.png)]({{base_path}}/assets/img/learn/navigate-main-resources.png)
+       [![Resources Browse Menu](../../../../assets/img/learn/navigate-main-resources.png)](../../../../assets/img/learn/navigate-main-resources.png)
 
     3. Go to the `/_system/governance/apimgt/applicationdata/workflow-extensions.xml` resource.
 
@@ -38,16 +38,16 @@ In this section let's see how to add an approval workflow to control the deploym
 
     A revision request will be sent to the administrator for approval. A pending chip will be displayed in the **Next Revision** column. The gateway will continue to serve the current revision until the request is approved. 
 
-    ![Deployment Pending]({{base_path}}/assets/img/deploy/pending-revision.png)
+    ![Deployment Pending](../../../../assets/img/deploy/pending-revision.png)
 
     !!! info
         Note that when clicking the Deploy New Revision button, a gateway with a pending request will be disabled for selection until the workflow task is completed or deleted.
     
-    ![Deploy New Revision Disabled]({{base_path}}/assets/img/deploy/pending-deploy-new-revision-tab.png)
+    ![Deploy New Revision Disabled](../../../../assets/img/deploy/pending-deploy-new-revision-tab.png)
 
     4. Optionally, you can revoke the deployment revision change by clicking **Cancel**.
 
-       [![Delete pending task]({{base_path}}/assets/img/deploy/delete-revision-deployment-request.png)]({{base_path}}/assets/img/deploy/delete-revision-deployment-request.png)
+       [![Delete pending task](../../../../assets/img/deploy/delete-revision-deployment-request.png)](../../../../assets/img/deploy/delete-revision-deployment-request.png)
 
 3. Approve or reject the API revision deployment pending request.
 
@@ -61,7 +61,7 @@ In this section let's see how to add an approval workflow to control the deploym
 
     If the request is approved, the existing revision deployed on the gateway will be removed, and the new revision will take its place. If the request is rejected, the currently deployed revision will remain unchanged. 
 
-       [![API revision deployment pending list]({{base_path}}/assets/img/deploy/revision-deployment-pending-list.png)]({{base_path}}/assets/img/deploy/revision-deployment-pending-list.png)
+       [![API revision deployment pending list](../../../../assets/img/deploy/revision-deployment-pending-list.png)](../../../../assets/img/deploy/revision-deployment-pending-list.png)
 
 4. View the outcome of the updated API revision deployment request.
 
@@ -74,10 +74,10 @@ In this section let's see how to add an approval workflow to control the deploym
     If the request is approved, the new revision will be shown in the **Current Revision** column.
     If the request is rejected, the **Current Revision** column will remain unchanged.
 
-       [![API revision deployment updated list]({{base_path}}/assets/img/deploy/revision deployment-updated-status.png)]({{base_path}}/assets/img/deploy/revision deployment-updated-status.png)
+       [![API revision deployment updated list](../../../../assets/img/deploy/revision deployment-updated-status.png)](../../../../assets/img/deploy/revision deployment-updated-status.png)
        
     !!! info
          You can send a new pending request even while a deployment to a specific gateway is in progress. The current revision will not be undeployed until the new request is approved. As
          mentioned earlier, you have the option to either cancel the second pending request or undeploy the current revision at your discretion.
 
-    [![API gateway with a deployed and a pending revision]({{base_path}}/assets/img/deploy/deployed-and-pending-revisions.png)]({{base_path}}/assets/img/deploy/deployed-and-pending-revisions.png)
+    [![API gateway with a deployed and a pending revision](../../../../assets/img/deploy/deployed-and-pending-revisions.png)](../../../../assets/img/deploy/deployed-and-pending-revisions.png)

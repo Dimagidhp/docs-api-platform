@@ -6,8 +6,8 @@ API Manager analytics provides insights into API usage, performance, and other k
 
 ## Architecture
 
-<a href="{{base_path}}/assets/img/analytics/analytics-architecture.png" >
-  <img src="{{base_path}}/assets/img/analytics/analytics-architecture.png" width="60%" alt="APIM Analytics Architecture"/>
+<a href="../../../assets/img/analytics/analytics-architecture.png" >
+  <img src="../../../assets/img/analytics/analytics-architecture.png" width="60%" alt="APIM Analytics Architecture"/>
 </a>
 
 Analytics architecture consists of the following components

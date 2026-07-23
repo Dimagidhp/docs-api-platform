@@ -36,18 +36,18 @@ Follow the instructions below to enable CORS response headers globally. Once thi
 ## Enabling CORS Per API
 
 !!! note
-    You need to enable CORS globally before you enable CORS Per API. Therefore, if you have not enabled CORS globally, follow the instructions in [Enabling CORS Globally]({{base_path}}/api-design-manage/design/advanced-topics/enabling-cors-for-apis/#enabling-cors-globally) before carrying out the following instructions.
+    You need to enable CORS globally before you enable CORS Per API. Therefore, if you have not enabled CORS globally, follow the instructions in [Enabling CORS Globally](../../../api-design-manage/design/advanced-topics/enabling-cors-for-apis/#enabling-cors-globally) before carrying out the following instructions.
 
 !!! note
     When CORS is enabled globally, it applies to all APIs served by the API Gateway. You can override this global configuration for a specific API by following the instructions below. However, disabling CORS for an individual API does not turn off the global CORS configuration.
 
-1.  Sign in to API Publisher and [create a new API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api).
+1.  Sign in to API Publisher and [create a new API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md).
 
 2.  Go to **API Configurations** from the left menu and click **Runtime**.
 
 3.  Enable the switch under **CORS Configuration** to enable CORS for the API.
 
-     [![{base_path}}/assets/img/learn/enable-cors.png]({{base_path}}/assets/img/learn/enable-cors.png)]({{base_path}}/assets/img/learn/enable-cors.png)
+     [![../../..}/assets/img/learn/enable-cors.png](../../../assets/img/learn/enable-cors.png)](../../../assets/img/learn/enable-cors.png)
 
      After you enable CORS, you will be able to see the CORS response header configuration section. 
 
@@ -90,7 +90,7 @@ Follow the instructions below to enable CORS response headers globally. Once thi
 
 5.  Click **Save**.
 
-     <a href="{{base_path}}/assets/img/learn/configure-cors-properties.png"><img src="{{base_path}}/assets/img/learn/configure-cors-properties.png" width="70%" alt="Configure CORS properties"></a> 
+     <a href="../../../../assets/img/learn/configure-cors-properties.png"><img src="../../../../assets/img/learn/configure-cors-properties.png" width="70%" alt="Configure CORS properties"></a> 
 
 
 You have successfully enabled CORS for a specific API.

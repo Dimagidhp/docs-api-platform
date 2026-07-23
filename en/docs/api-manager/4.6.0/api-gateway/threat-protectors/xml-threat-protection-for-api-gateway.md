@@ -101,7 +101,7 @@ in sequence.
 2. Go to **Policies** under the **API Configuration** sub-section from the left hand panel.
 3. As required, drag and drop the **XML Validator** from the Policy List tab into Request Flow.
 
-    <a href="{{base_path}}/assets/img/learn/mediation-xml-validator.png"><img src="{{base_path}}/assets/img/learn/mediation-xml-validator.png" width="70%" alt="Drag and drop the XML Validator from the policy list"></a> 
+    <a href="../../../assets/img/learn/mediation-xml-validator.png"><img src="../../../assets/img/learn/mediation-xml-validator.png" width="70%" alt="Drag and drop the XML Validator from the policy list"></a> 
     
 4. Scroll down the page and click **Save** to save the changes (click **Save and Deploy** and deploy the API for the changes to take effect in the gateways).
 

@@ -1,6 +1,6 @@
 # Scenario 7 - Analytics
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to set up and view analytics for an API. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to set up and view analytics for an API. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 5 minutes_**
 
@@ -10,12 +10,12 @@ GOGO Transit has identified a new business opportunity; since the train arrival 
 
 Choreo API-M Analytics can be used to fulfill the stats and analytics needs of the API Manager. It is a cloud analytics offering for the Choreo API Manager and On-Prem API Manager deployments. 
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario7.png" title="Analytics Description" width="630"/>
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario7.png" title="Analytics Description" width="630"/>
 
 ## Step 1: Set up analytics
 
 !!! info "Before you begin..."
-    You need to be a registered user to follow the steps below. Refer the [Analytics Getting Started Guide]({{base_path}}/monitoring/api-analytics/choreo-analytics/getting-started-guide/) for instructions.
+    You need to be a registered user to follow the steps below. Refer the [Analytics Getting Started Guide](../../monitoring/api-analytics/choreo-analytics/getting-started-guide/) for instructions.
 
 To configure analytics, 
 
@@ -50,13 +50,13 @@ curl -X GET "https://localhost:8243/info/1.0.0/passenger-count" -H "accept: appl
 
 Go to [Choreo Insights](https://console.choreo.dev/insights) to view statistics. Following are some of the graphs.
 
-![Usage]({{base_path}}/assets/img/tutorials/scenarios/usage-graph.png)
+![Usage](../../assets/img/tutorials/scenarios/usage-graph.png)
 
 
-![Usage over time]({{base_path}}/assets/img/tutorials/scenarios/usage-ot-graph.png)
+![Usage over time](../../assets/img/tutorials/scenarios/usage-ot-graph.png)
 
-![Response time]({{base_path}}/assets/img/tutorials/scenarios/resp-time-graph.png)
+![Response time](../../assets/img/tutorials/scenarios/resp-time-graph.png)
 
 ## What's next
 
-Try out the next scenario in the series, [Rate Limiting]({{base_path}}/tutorials/scenarios/scenario8-rate-limiting).
+Try out the next scenario in the series, [Rate Limiting](../../tutorials/scenarios/scenario8-rate-limiting.md).

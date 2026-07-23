@@ -8,7 +8,7 @@ Applications allow you to:
 -   Subscribe multiple times to a single API with different Service Level Agreements (SLAs)/business plans which 
 operate on per access token basis.
 
-WSO2 API Manager comes with a pre-created default application, which allows unlimited access by default. Default application creation can be disabled by adding the configuration `"DisableDefaultApplicationCreation" : true` in to the `Advanced Configurations` under `Settings` of the `admin` portal. You can also [create]({{base_path}}/consume/manage-application/create-application/#create-a-new-application) your own.
+WSO2 API Manager comes with a pre-created default application, which allows unlimited access by default. Default application creation can be disabled by adding the configuration `"DisableDefaultApplicationCreation" : true` in to the `Advanced Configurations` under `Settings` of the `admin` portal. You can also [create](../../consume/manage-application/create-application/#create-a-new-application) your own.
 
 ## Create a new application
 
@@ -18,7 +18,7 @@ WSO2 API Manager comes with a pre-created default application, which allows unli
 
 3.  Click **ADD NEW APPLICATION**.
 
-    [![Add new application option]({{base_path}}/assets/img/learn/add-new-application-option.png)]({{base_path}}/assets/img/learn/add-new-application-option.png)
+    [![Add new application option](../../assets/img/learn/add-new-application-option.png)](../../assets/img/learn/add-new-application-option.png)
 
 4.  Enter the application details and click **SAVE** to create the application.
    
@@ -36,14 +36,14 @@ WSO2 API Manager comes with a pre-created default application, which allows unli
     !!! note
         From API-M 3.1.0 onwards the options to select key types and multiple key managers have been removed.
 
-       [![Create a new application]({{base_path}}/assets/img/learn/create-new-application.png)]({{base_path}}/assets/img/learn/create-new-application.png)
+       [![Create a new application](../../assets/img/learn/create-new-application.png)](../../assets/img/learn/create-new-application.png)
       
        If the application creation is successful, you will be redirected to the application overview page.
 
-       [![Application overview]({{base_path}}/assets/img/learn/application-overview.png)]({{base_path}}/assets/img/learn/application-overview.png)
+       [![Application overview](../../assets/img/learn/application-overview.png)](../../assets/img/learn/application-overview.png)
     
 5.  Click **Applications** to navigate to Applications listing page.
     
     You will find the PizzaShack application listed with the other applications. The application can be edited or deleted by the application owner.
 
-    [![Application listing]({{base_path}}/assets/img/learn/application-listing.png)]({{base_path}}/assets/img/learn/application-listing.png)
+    [![Application listing](../../assets/img/learn/application-listing.png)](../../assets/img/learn/application-listing.png)

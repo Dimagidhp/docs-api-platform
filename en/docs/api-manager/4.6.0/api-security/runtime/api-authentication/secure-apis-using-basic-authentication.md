@@ -11,7 +11,7 @@ Basic Authentication is an API level configuration. Please sign in to the API Pu
 Basic Authentication. Under the Application Level Security section in the Runtime Configuration of the API Details page allow users to configure
 the Basic Authentication as follow.
 
-[![Basic Authentication]({{base_path}}/assets/img/learn/basic_authentication.png)]({{base_path}}/assets/img/learn/basic_authentication.png)
+[![Basic Authentication](../../../assets/img/learn/basic_authentication.png)](../../../assets/img/learn/basic_authentication.png)
 
 ## Understanding multiple authentication schemes
 
@@ -45,7 +45,7 @@ Use the cURL command below to invoke the API via the gateway.
     ```
 
 ##Basic Authentication with Scopes
-WSO2 API Manager allow users to configure [Scopes]({{base_path}}/api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) with role bindings which can associate with API Resources. Basic authentication
+WSO2 API Manager allow users to configure [Scopes](../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) with role bindings which can associate with API Resources. Basic authentication
 uses credentials of the user to authenticate with the Basic Authentication protected API.
 
 If a user associate API resources with scopes which protected with Basic Authentication scheme, API Manager will perform the 

@@ -21,14 +21,14 @@ A common policy is a globally maintained policy and you can easily utilize this 
 
 2. Navigate to **Policies** tab from the left menu and click **Add New Policy**.
 
-    [![Add policies]({{base_path}}/assets/img/design/api-policies/common-policy-1.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/common-policy-1.png)
+    [![Add policies](../../../assets/img/design/api-policies/common-policy-1.png){: style="width:90%"}](../../../assets/img/design/api-policies/common-policy-1.png)
 
     !!! note
         Common policy list will vary depending on the selected `API Gateway`.
 
 3. Let’s create a policy named **Sample Add Header** for demo purposes. First let’s fill the **General Details** section using the following details.
 
-    [![Add Header policies]({{base_path}}/assets/img/design/api-policies/common-policy-2.png){: style="width:80%"}]({{base_path}}/assets/img/design/api-policies/common-policy-2.png)
+    [![Add Header policies](../../../assets/img/design/api-policies/common-policy-2.png){: style="width:80%"}](../../../assets/img/design/api-policies/common-policy-2.png)
 
     <table>
         <tr>
@@ -74,7 +74,7 @@ A common policy is a globally maintained policy and you can easily utilize this 
         </tr>
     </table>
 
-    [![Gateway-specific details]({{base_path}}/assets/img/design/api-policies/common-policy-3.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/common-policy-3.png)
+    [![Gateway-specific details](../../../assets/img/design/api-policies/common-policy-3.png){: style="width:90%"}](../../../assets/img/design/api-policies/common-policy-3.png)
 
     !!! note
         Please note that the policy content should not contain any XML – Prolog components. E.g.,: Should not begin with `<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>`. You have to start from a root element or child elements.
@@ -88,11 +88,11 @@ A common policy is a globally maintained policy and you can easily utilize this 
         'limit_java_class_access_in_scripts.list_type' = "ALLOW_LIST" # or BLOCK_LIST
         'limit_java_class_access_in_scripts.class_prefixes' = "java.util"</code></pre>
 
-        To further configure script mediation access control, please refer to the  <a href="{{base_path}}/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/#restrict-access-java">Restrict Access to Java classes and Java Methods/Native Objects in Scripts documentation.</a>
+        To further configure script mediation access control, please refer to the  <a href="../../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/#restrict-access-java">Restrict Access to Java classes and Java Methods/Native Objects in Scripts documentation.</a>
 
 5. The final section in the form is the **Policy Attributes** section. These attributes are derived from the policy file that you uploaded in the previous step. If you observe the policy content you should notice two dynamic values embedded into that policy, namely the headerName and headerValue. Those are the attributes that we should include when creating our policy (note that you can have a static policy with no attributes if the policy content is static). Let’s fill the **Policy Attributes** section using the following details.
 
-    [![Policy attributes]({{base_path}}/assets/img/design/api-policies/common-policy-4.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/common-policy-4.png)
+    [![Policy attributes](../../../assets/img/design/api-policies/common-policy-4.png){: style="width:90%"}](../../../assets/img/design/api-policies/common-policy-4.png)
 
     **Attribute 1**
     <table>
@@ -168,13 +168,13 @@ A common policy is a globally maintained policy and you can easily utilize this 
 
 6. Once that is done, the completed form should look like the below screenshot. We can now click on **Save**.
 
-    [![Completed policy form]({{base_path}}/assets/img/design/api-policies/common-policy-5.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/common-policy-5.png)
+    [![Completed policy form](../../../assets/img/design/api-policies/common-policy-5.png){: style="width:90%"}](../../../assets/img/design/api-policies/common-policy-5.png)
 
 7. Now the newly created policy will appear in the table. You can go ahead and search for this policy to verify.
 
 8. Try viewing this policy by clicking on **View** action. Note that you can download the policy as a `.zip` file using the **Download Policy** button.
 
-    [![Policy view]({{base_path}}/assets/img/design/api-policies/common-policy-6.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/common-policy-6.png)
+    [![Policy view](../../../assets/img/design/api-policies/common-policy-6.png){: style="width:90%"}](../../../assets/img/design/api-policies/common-policy-6.png)
 
 ## Creating an API Specific Policy
 
@@ -186,19 +186,19 @@ If you would rather create a policy that is local to the API, you can follow the
 
 2. Click on any API (e.g., `PizzaShackAPI 1.0.0`) and navigate to the **Policies** tab. You will see a screen like below. Click on the **Add New Policy** button in order to create an API specific policy.
 
-    [![Policy view]({{base_path}}/assets/img/design/api-policies/specific-policy-1.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/specific-policy-1.png)
+    [![Policy view](../../../assets/img/design/api-policies/specific-policy-1.png){: style="width:90%"}](../../../assets/img/design/api-policies/specific-policy-1.png)
 
 3. Then you will be prompted to enter the policy details. Let’s name this API specific policy as **Local Add Header**. Please refer to steps 3 to 5 from the common policy creation guide above to fill the rest of the form. Fully filled form should look like the below screenshot. Then click on **Save**.
 
-    [![Policy view]({{base_path}}/assets/img/design/api-policies/specific-policy-2.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/specific-policy-2.png)
+    [![Policy view](../../../assets/img/design/api-policies/specific-policy-2.png){: style="width:90%"}](../../../assets/img/design/api-policies/specific-policy-2.png)
 
 4. You should be able to see a policy named **Local Add Header** under the **Request** tab and **Response** tab of the **Policy List**.
 
-    [![Policy view]({{base_path}}/assets/img/design/api-policies/specific-policy-3.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/specific-policy-3.png)
+    [![Policy view](../../../assets/img/design/api-policies/specific-policy-3.png){: style="width:90%"}](../../../assets/img/design/api-policies/specific-policy-3.png)
 
 5. Once you hover over the **Local Add Header** policy that you created, you should be able to see the view icon and delete icon as shown in the screenshot below.
 
-    [![Policy view]({{base_path}}/assets/img/design/api-policies/specific-policy-4.png){: style="width:40%"}]({{base_path}}/assets/img/design/api-policies/specific-policy-4.png)
+    [![Policy view](../../../assets/img/design/api-policies/specific-policy-4.png){: style="width:40%"}](../../../assets/img/design/api-policies/specific-policy-4.png)
 
     - If you click on the **View** action, you will be prompted with a populated policy form with the details you entered.
     - If you choose to delete the policy, you can click on the **Delete** action that appears on policy hover. It will ask for your consent before deleting the API specific policy. On confirmation that policy will be deleted.
@@ -215,4 +215,4 @@ If you would rather create a policy that is local to the API, you can follow the
         'limit_java_class_access_in_scripts.list_type' = "ALLOW_LIST" # or BLOCK_LIST
         'limit_java_class_access_in_scripts.class_prefixes' = "java.util"</code></pre>
 
-        To further configure script mediation access control, please refer to the  <a href="{{base_path}}/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/#restrict-access-java">Restrict Access to Java classes and Java Methods/Native Objects in Scripts documentation.</a>
+        To further configure script mediation access control, please refer to the  <a href="../../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/#restrict-access-java">Restrict Access to Java classes and Java Methods/Native Objects in Scripts documentation.</a>

@@ -1,6 +1,6 @@
 # Adding an API Subscription Deletion Workflow
 
-[Subscription Deletion]({{base_path}}/consume/manage-subscription/subscribe-to-an-api/) provides the capability to remove an already existing subscription. Attaching a custom workflow to the API subscription deletion, enables an admin to approve/reject the subscription deletion request made for an existing subscription. Note that only an admin is able to approve/reject a subscription deletion request.
+[Subscription Deletion](../../../consume/manage-subscription/subscribe-to-an-api/) provides the capability to remove an already existing subscription. Attaching a custom workflow to the API subscription deletion, enables an admin to approve/reject the subscription deletion request made for an existing subscription. Note that only an admin is able to approve/reject a subscription deletion request.
 
 When the API subscription deletion workflow is enabled, when the subscription deletion request is made, the subscription status is changed to the `DELETE_PENDING` state. In this state, a consumer can still invoke the API with the same subscription, using its production or sandbox keys, until the subscription deletion is approved. Once the subscription deletion request is approved the subscription will be deleted.
 
@@ -8,7 +8,7 @@ When the API subscription deletion workflow is enabled, when the subscription de
 
 1.  Sign in to the API Manager Management Console (`https://<Server Host>:9443/carbon`) and go to **Browse** under **Registry**.
 
-    [![Workflow Extensions Browse]({{base_path}}/assets/img/learn/navigate-main-resources.png)]({{base_path}}/assets/img/learn/navigate-main-resources.png)
+    [![Workflow Extensions Browse](../../../assets/img/learn/navigate-main-resources.png)](../../../assets/img/learn/navigate-main-resources.png)
 
 2.  Open the `/_system/governance/apimgt/applicationdata/workflow-extensions.xml` resource and click **Edit as text**. Disable the `SubscriptionDeletionSimpleWorkflowExecutor` and enable `SubscriptionDeletionApprovalWorkflowExecutor`. 
     ``` 
@@ -25,25 +25,25 @@ When the API subscription deletion workflow is enabled, when the subscription de
 
 3.  Sign in to the WSO2 API Developer Portal (`https://<hostname>:<port>/devportal`) and click **Applications**. Select the application which has the subscriptions you need to delete.
 
-    [![Applications Overview Tab]({{base_path}}/assets/img/learn/application-overview.png)]({{base_path}}/assets/img/learn/application-overview.png)
+    [![Applications Overview Tab](../../../assets/img/learn/application-overview.png)](../../../assets/img/learn/application-overview.png)
 
 
 4. Click **Subscriptions** to list the subscriptions of the application.
     
-    [![Subscriptions Overview Tab]({{base_path}}/assets/img/learn/subscriptions-overview-tab.png)]({{base_path}}/assets/img/learn/subscriptions-overview-tab.png)
+    [![Subscriptions Overview Tab](../../../assets/img/learn/subscriptions-overview-tab.png)](../../../assets/img/learn/subscriptions-overview-tab.png)
 
      
 5.  Select the subscription which needs to be deleted and click the **DELETE** icon to open the **Subscription Delete** popup.
 
-    [![Subscription Delete Popup]({{base_path}}/assets/img/learn/subscription-delete-popup-start.png)]({{base_path}}/assets/img/learn/subscription-delete-popup-start.png)
+    [![Subscription Delete Popup](../../../assets/img/learn/subscription-delete-popup-start.png)](../../../assets/img/learn/subscription-delete-popup-start.png)
 
 6.  Click **DELETE** to continue. You will see the subscription status as **DELETE_PENDING**.
 
-    [![Subscription Delete Before Approval]({{base_path}}/assets/img/learn/subscription-delete-before-approval.png)]({{base_path}}/assets/img/learn/subscription-delete-before-approval.png)
+    [![Subscription Delete Before Approval](../../../assets/img/learn/subscription-delete-before-approval.png)](../../../assets/img/learn/subscription-delete-before-approval.png)
     
 7.  Sign in to the Admin Portal (`https://<Server Host>:9443/admin`), list all the tasks for API subscription delete from **Tasks** --> **Subscription Deletion** and click on approve (or reject) to approve (or reject) the workflow pending request.
 
-    [![Subscription Delete Admin]({{base_path}}/assets/img/learn/subscription-delete-admin-entry.png)]({{base_path}}/assets/img/learn/subscription-delete-admin-entry.png)
+    [![Subscription Delete Admin](../../../assets/img/learn/subscription-delete-admin-entry.png)](../../../assets/img/learn/subscription-delete-admin-entry.png)
 
 8.  After approving go back to the API Developer Portal Application Subscriptions tab. The subscription will be removed.
 

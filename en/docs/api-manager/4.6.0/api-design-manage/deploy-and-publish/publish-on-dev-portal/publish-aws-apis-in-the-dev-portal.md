@@ -6,7 +6,7 @@ You can publish an API that exists in the AWS API Gateway, on the WSO2 API Manag
 
 1. **Download and configure the apictl**.
    
-     The apictl is a command-line tool providing the capability to move APIs, API Products, and Applications across environments and to perform CI/CD operations. You need to download and configure the apictl because two **WSO2 API Controller (apictl)** commands are needed for this task. For more information, see [Getting started with the API Controller (apictl)]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller).
+     The apictl is a command-line tool providing the capability to move APIs, API Products, and Applications across environments and to perform CI/CD operations. You need to download and configure the apictl because two **WSO2 API Controller (apictl)** commands are needed for this task. For more information, see [Getting started with the API Controller (apictl)](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller).
 
 2. **Download and install the AWS CLI**.
 
@@ -22,7 +22,7 @@ You can publish an API that exists in the AWS API Gateway, on the WSO2 API Manag
 
 5. **Start the WSO2 API-M server**.
    
-     The WSO2 API-M server needs to be up and running to import the API project to WSO2 API-M successfully. For more information, see [installing WSO2 API-M]({{base_path}}/install-and-setup/install-and-setup-overview/#installing).
+     The WSO2 API-M server needs to be up and running to import the API project to WSO2 API-M successfully. For more information, see [installing WSO2 API-M](../../../install-and-setup/install-and-setup-overview/#installing).
 
 6. **An active internet connection**.
     
@@ -92,13 +92,13 @@ Upon successful initialization of the project, execute the following command to 
 
 After successfully importing the API, it will appear in the publisher as shown below.
 
-[![]({{base_path}}/assets/img/publish/aws-api-publisher.png)]({{base_path}}/assets/img/publish/aws-api-publisher.png)
+[![](../../../assets/img/publish/aws-api-publisher.png)](../../../assets/img/publish/aws-api-publisher.png)
 
 To publish the API, go to `Lifecycle` under `Publish` and click on `Publish`.
 
-[![]({{base_path}}/assets/img/publish/publish-aws-api.png)]({{base_path}}/assets/img/publish/publish-aws-api.png)
+[![](../../../assets/img/publish/publish-aws-api.png)](../../../assets/img/publish/publish-aws-api.png)
 
-To learn more about importing an API project refer to [import-api-project]({{base_path}}/install-and-setup/setup/api-controller/managing-apis-api-products/importing-apis-via-dev-first-approach).
+To learn more about importing an API project refer to [import-api-project](../../../install-and-setup/setup/api-controller/managing-apis-api-products/importing-apis-via-dev-first-approach).
 
 The initial state of the API will be set to `CREATED` so the user will be able to make changes to the API if necessary in the publisher portal, before publishing the API on the developer portal.
 

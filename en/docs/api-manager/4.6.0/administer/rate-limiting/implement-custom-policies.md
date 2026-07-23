@@ -20,11 +20,11 @@ For example, the following sample custom policy allows the admin user to send 5 
 
 2.  Click **Rate Limiting Policies** tab and click **Custom Policies** tab.
 
-     <a href="{{base_path}}/assets/img/learn/custom_policy_left_tag.png"><img src="{{base_path}}/assets/img/learn/custom_policy_left_tag.png" alt="Add Custom policy page" width="30%"></a>
+     <a href="../../../assets/img/learn/custom_policy_left_tag.png"><img src="../../../assets/img/learn/custom_policy_left_tag.png" alt="Add Custom policy page" width="30%"></a>
     
 3.  To add a new policy, click **Define Policy**.
 
-    [![Add Custom policy page]({{base_path}}/assets/img/learn/click_custom_policy.png)]({{base_path}}/assets/img/learn/click_custom_policy.png)
+    [![Add Custom policy page](../../assets/img/learn/click_custom_policy.png)](../../assets/img/learn/click_custom_policy.png)
 
 4.  Fill in the required details and click **Save**.
     
@@ -70,7 +70,7 @@ For example, the following sample custom policy allows the admin user to send 5 
     INSERT ALL EVENTS into ResultStream;
     ```
 
-    [![Add Custom policy page]({{base_path}}/assets/img/learn/throttling-custom-policy.png)]({{base_path}}/assets/img/learn/throttling-custom-policy.png)
+    [![Add Custom policy page](../../assets/img/learn/throttling-custom-policy.png)](../../assets/img/learn/throttling-custom-policy.png)
 
 !!! important
     As shown in the above Siddhi query, the throttle key must match the key template format. If there is a mismatch between the key template format and the throttle key, requests will not be throttled.

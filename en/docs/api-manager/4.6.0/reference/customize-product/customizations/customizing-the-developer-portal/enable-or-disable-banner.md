@@ -2,11 +2,11 @@
 
 The banner section is hidden by default. The banner section can be used to show an announcement to the developer portal users as follows. 
 
- ![enable or disable banner]({{base_path}}/assets/img/learn/enable-or-disable-banner.png) 
+ ![enable or disable banner](../../../../assets/img/learn/enable-or-disable-banner.png) 
 
 You can show a banner by configuring the `userTheme.json` file.
 
-The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#global-theming).
+The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here](../../../../reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#global-theming).
 
 1. Open the `<API-M_HOME>/repository/deployment/server/webapps/devportal/site/public/theme/userTheme.json` file in a text editor and set the `custom.banner.active` to `true` to display the banner.
 

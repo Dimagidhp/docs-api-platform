@@ -30,7 +30,7 @@ Follow the instructions below to add documentation to an API:
 
     1.  Click **Documents** and click **Add New Document**.
         
-         [![Add new documents option]({{base_path}}/assets/img/learn/add-docs-documents.png)]({{base_path}}/assets/img/learn/add-docs-documents.png)
+         [![Add new documents option](../../../assets/img/learn/add-docs-documents.png)](../../../assets/img/learn/add-docs-documents.png)
 
     2.  Enter the following details to create an in-line document.
 
@@ -41,22 +41,22 @@ Follow the instructions below to add documentation to an API:
         | Type    | How To                               |
         | Source  | In-line                              |
 
-        [![Create an inline document]({{base_path}}/assets/img/learn/add-docs-create-inline.png)]({{base_path}}/assets/img/learn/add-docs-create-inline.png)
+        [![Create an inline document](../../../assets/img/learn/add-docs-create-inline.png)](../../../assets/img/learn/add-docs-create-inline.png)
 
     3.  Click **Add Document**.
 
     4.  Click **Add Content** to open an embedded editor.
 
-         [![Add content to inline document]({{base_path}}/assets/img/learn/add-docs-add-content.png)]({{base_path}}/assets/img/learn/add-docs-add-content.png)
+         [![Add content to inline document](../../../assets/img/learn/add-docs-add-content.png)](../../../assets/img/learn/add-docs-add-content.png)
 
         !!! note
             You can edit the content later by clicking **Edit Content**. It will open up the embedded editor to proceed.
 
-        [![Edit content in an API document]({{base_path}}/assets/img/learn/add-docs-edit-content.png)]({{base_path}}/assets/img/learn/add-docs-edit-content.png)
+        [![Edit content in an API document](../../../assets/img/learn/add-docs-edit-content.png)](../../../assets/img/learn/add-docs-edit-content.png)
 
     5.  Edit the document content in-line using the embedded editor and click **Update Content**.
     
-         [![Edit inline document]({{base_path}}/assets/img/learn/add-docs-update-content.png){: style="width:60%"}]({{base_path}}/assets/img/learn/add-docs-update-content.png)
+         [![Edit inline document](../../../assets/img/learn/add-docs-update-content.png){: style="width:60%"}](../../../assets/img/learn/add-docs-update-content.png)
          
          The API's **Documents** tab opens.
 
@@ -94,7 +94,7 @@ Follow the instructions below to add documentation to an API:
         </tbody>
         </table>
 
-        [![Add forum type URL based API documentation]({{base_path}}/assets/img/learn/add-docs-forum-type.png)]({{base_path}}/assets/img/learn/add-docs-forum-type.png)
+        [![Add forum type URL based API documentation](../../../assets/img/learn/add-docs-forum-type.png)](../../../assets/img/learn/add-docs-forum-type.png)
 
     #### Add an other type URL based document
 
@@ -130,7 +130,7 @@ Follow the instructions below to add documentation to an API:
         </tbody>
         </table>
 
-        [![Add other type URL based API documentation]({{base_path}}/assets/img/learn/add-docs-url-type.png)]({{base_path}}/assets/img/learn/add-docs-url-type.png)
+        [![Add other type URL based API documentation](../../../assets/img/learn/add-docs-url-type.png)](../../../assets/img/learn/add-docs-url-type.png)
 
     2.  Click **Add Document**.
          
@@ -147,7 +147,7 @@ Follow the instructions below to add documentation to an API:
         | Name    | APIManagerSamples                                                                                                                                                                                                                                                                                                          |
         | Summary | API Manager Samples                                                                                                                                                                                                                                                                                                          |
         | Type    | Samples & SDK                                                                                                                                                                                                                                                                                                                |
-        | Source  | You can provide any of the allowed file formats. Use the sample PDF [here]({{base_path}}/assets/attachments/learn/api-docs-sample.pdf). |
+        | Source  | You can provide any of the allowed file formats. Use the sample PDF [here](../../../assets/attachments/learn/api-docs-sample.pdf). |
 
 !!! Note
     The API Manager allows to configure the types of files that can be uploaded as documentation using below configuration. By default, the allowed file types include pdf, txt, doc, docx, xls, xlsx, odt, ods, json, yaml, and md.
@@ -157,7 +157,7 @@ Follow the instructions below to add documentation to an API:
     supported_document_types = "pdf, txt, doc"
     ```
 
-[![Add file based API documentation]({{base_path}}/assets/img/learn/add-docs-pdf-file.png)]({{base_path}}/assets/img/learn/add-docs-pdf-file.png)
+[![Add file based API documentation](../../../assets/img/learn/add-docs-pdf-file.png)](../../../assets/img/learn/add-docs-pdf-file.png)
 
 3.  Click **Add Document**.
     
@@ -165,7 +165,7 @@ Follow the instructions below to add documentation to an API:
 
 1.  Click **Documents** and click **Add New Document**.
     
-     [![Add new document option]({{base_path}}/assets/img/learn/add-docs-documents.png)]({{base_path}}/assets/img/learn/add-docs-documents.png)
+     [![Add new document option](../../../assets/img/learn/add-docs-documents.png)](../../../assets/img/learn/add-docs-documents.png)
 
 2.  Enter the following details to create Markdown documentation and click **Add Document**.
 
@@ -176,23 +176,23 @@ Follow the instructions below to add documentation to an API:
     | Type    | How To                               |
     | Source  | Markdown                              |
 
-    [![Add Markdown based API documentation]({{base_path}}/assets/img/learn/add-docs-markdown.png)]({{base_path}}/assets/img/learn/add-docs-markdown.png)
+    [![Add Markdown based API documentation](../../../assets/img/learn/add-docs-markdown.png)](../../../assets/img/learn/add-docs-markdown.png)
 
 3.  Click **Add Content** to open an embedded editor.
 
-    [![Add content for Markdown documentation]({{base_path}}/assets/img/learn/add-docs-markdown-add-content.png){: style="width:80%"}]({{base_path}}/assets/img/learn/add-docs-markdown-add-content.png)
+    [![Add content for Markdown documentation](../../../assets/img/learn/add-docs-markdown-add-content.png){: style="width:80%"}](../../../assets/img/learn/add-docs-markdown-add-content.png)
 
 4.  Edit the document content using the embedded markdown editor and click **Update Content**.
     
-     [![Update content for Markdown documentation]({{base_path}}/assets/img/learn/add-docs-markdown-editor.png)]({{base_path}}/assets/img/learn/add-docs-markdown-editor.png)
+     [![Update content for Markdown documentation](../../../assets/img/learn/add-docs-markdown-editor.png)](../../../assets/img/learn/add-docs-markdown-editor.png)
      
      The API's **Documents** tab opens.
      
-     [![APIs documentation tab with added documentation]({{base_path}}/assets/img/learn/add-docs-markdown-view.png)]({{base_path}}/assets/img/learn/add-docs-markdown-view.png)
+     [![APIs documentation tab with added documentation](../../../assets/img/learn/add-docs-markdown-view.png)](../../../assets/img/learn/add-docs-markdown-view.png)
 
  You have now added four type of documents to the API: in-line, URL, file, and markdown.
  
- [![APIs documentation tab with a list of the added documentation]({{base_path}}/assets/img/learn/add-docs-all.png)]({{base_path}}/assets/img/learn/add-docs-all.png)
+ [![APIs documentation tab with a list of the added documentation](../../../assets/img/learn/add-docs-all.png)](../../../assets/img/learn/add-docs-all.png)
 
 4. Sign in to the WSO2 Developer Portal and click on the `PizzaShackAPI` version 1.0.0 API.
     
@@ -209,7 +209,7 @@ Follow the instructions below to add documentation to an API:
     !!! note
           For REST APIs, generated document will be listed as `Default`
 
-          [![View API related documentation]({{base_path}}/assets/img/learn/view-docs-api.png)]({{base_path}}/assets/img/learn/view-docs-api.png)
+          [![View API related documentation](../../../assets/img/learn/view-docs-api.png)](../../../assets/img/learn/view-docs-api.png)
 
 You have created documentation using the API Publisher and viewed the documentation as a subscriber in the Developer Portal.
 
@@ -239,12 +239,12 @@ Document visibility levels can be one of the following options:
 1.  Sign in to the API Publisher as an API creator using the following URL: 
      `https://<localhost>:9443/publisher`
 
-2.  [Create a new API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) or edit an existing API.
+2.  [Create a new API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) or edit an existing API.
 
 3.  In the **Documents** tab, Click **Add New Document**, to see a new drop-down list added to select visibility from.
-     [ ![API document visibility selector]({{base_path}}/assets/img/learn/api-doc-visibility-selector.png)]({{base_path}}/assets/img/learn/api-doc-visibility-selector.png)
+     [ ![API document visibility selector](../../../assets/img/learn/api-doc-visibility-selector.png)](../../../assets/img/learn/api-doc-visibility-selector.png)
 
 4.  Select the desired visibility level for the document.
-     [ ![API document visibility selector dropdown]({{base_path}}/assets/img/learn/api-doc-visibility-dropdown.png)]({{base_path}}/assets/img/learn/api-doc-visibility-dropdown.png)
+     [ ![API document visibility selector dropdown](../../../assets/img/learn/api-doc-visibility-dropdown.png)](../../../assets/img/learn/api-doc-visibility-dropdown.png)
 
 5.  Add the Document.

@@ -17,7 +17,7 @@ First enable the approve workflow executor for application creation.
 
 2. Click **Main** --> **Registry** --> **Browse**.
 
-    <a href="{{base_path}}/assets/img/learn/navigate-main-resources.png"><img src="{{base_path}}/assets/img/learn/navigate-main-resources.png" width="250" height="100"/></a>
+    <a href="../../../../assets/img/learn/navigate-main-resources.png"><img src="../../../../assets/img/learn/navigate-main-resources.png" width="250" height="100"/></a>
     
 3.  Go to the `/_system/governance/apimgt/applicationdata/workflow-extensions.xml` resource, click on `Edit as text` to edit the file, disable the Simple Workflow Executor, and enable **Approval Workflow Executor** for application creation.
 
@@ -40,11 +40,11 @@ First enable the approve workflow executor for application creation.
                   
          Note that the **Status** field of the application states **INACTIVE** (Waiting for approval)
 
-    ![Application status is INACTIVE - Waiting for approval]({{base_path}}/assets/img/learn/application-creation-inactive.png)
+    ![Application status is INACTIVE - Waiting for approval](../../../assets/img/learn/application-creation-inactive.png)
 
 5.  Sign in to the Admin Portal (`https://localhost:9443/admin`), list all the tasks for application creation  from **Tasks** --> **Application Creation** and approve or reject the task. 
      
-    ![Approve tasks]({{base_path}}/assets/img/learn/application-creation-pending-request.png)
+    ![Approve tasks](../../../assets/img/learn/application-creation-pending-request.png)
 
 6.  Go back to the **Applications** page in the WSO2 Developer Portal and see the created application.
 

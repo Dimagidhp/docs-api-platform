@@ -1,6 +1,6 @@
 # Scenario 13 - Integrate with Services via Connectors
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to use connectors. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to use connectors. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 10 minutes_**
 
@@ -10,7 +10,7 @@ RailCo is maintaining a Railway yard for their routine maintenance checkups for 
 
 When you integrate the systems in your organization, it is also necessary to integrate with third-party systems and its capabilities to enhance your services. WSO2 Micro Integrator uses Connectors for the purpose of referring to the APIs of third-party systems.
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario13.png" alt="Integrating with Connectors" title="Integrating with Connectors" width="60%" />
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario13.png" alt="Integrating with Connectors" title="Integrating with Connectors" width="60%" />
 
 To develop the service you can use Integration Studio, where you can import and package the connector with the Composite application. To listen for a file, you can use an Inbound Endpoint, which will be listening to a particular location which you provide. Once a file is added to that location it will pick up the file and process it. Inbound Endpoints support various protocols such as HTTP, JMS, RabbitMQ, WebSocket etc, 
 
@@ -18,7 +18,7 @@ While developing you can try it out in the Embedded Micro Integrator inside the 
 
 ## Step 1: Create and setup the service
 
-<img src="{{base_path}}/assets/img/tutorials/scenarios/integration_studio_connectors.png" alt="Integration Studio" title="Integration Studio" width="70%" />
+<img src="../../../assets/img/tutorials/scenarios/integration_studio_connectors.png" alt="Integration Studio" title="Integration Studio" width="70%" />
 
 Here, for simplicity, the service is already created and exported as a Composite Application along with the connector. Before adding the service to the system, you need to do the following.
 
@@ -64,4 +64,4 @@ Here, for simplicity, the service is already created and exported as a Composite
 
 ## What's next
 
-Try out the next scenario in the series, [External Key Manager Support]({{base_path}}/tutorials/scenarios/scenario14-external-key-manager).
+Try out the next scenario in the series, [External Key Manager Support](../../tutorials/scenarios/scenario14-external-key-manager.md).

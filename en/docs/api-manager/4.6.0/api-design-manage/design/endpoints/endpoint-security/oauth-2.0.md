@@ -16,7 +16,7 @@ The OAuth 2.0 Authorization Framework specification declares 4 grant-types to ob
 
 ## Securing an endpoint with OAuth 2.0 in WSO2 API Manager
 
-When you [create an API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api) using the API Publisher, you can specify the production and sandbox endpoints of the API backend implementation via the **Endpoints** page.
+When you [create an API](../../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md) using the API Publisher, you can specify the production and sandbox endpoints of the API backend implementation via the **Endpoints** page.
 
 Follow the instructions below to use OAuth 2.0 as the endpoint authorization type when using a secured endpoint and allow WSO2 API Manager to communicate with the backend to retrieve access tokens on behalf of the API.
 
@@ -24,15 +24,15 @@ Follow the instructions below to use OAuth 2.0 as the endpoint authorization typ
 
 2. Click the Endpoint Security symbol that corresponds to the endpoint that you want to secure with OAuth 2.0.
 
-      [![Endpoint security symbol]({{base_path}}/assets/img/design/endpoints/endpoint-security/endpoint-security-symbol.png)]({{base_path}}/assets/img/learn/endpoint-security-symbol.png)
+      [![Endpoint security symbol](../../../../assets/img/design/endpoints/endpoint-security/endpoint-security-symbol.png)](../../../../assets/img/learn/endpoint-security-symbol.png)
 
 3. Click on OAuth 2.0 from the drop-down menu.
 
-     [![OAuth2 dropdown]({{base_path}}/assets/img/learn/oauth-2-dropdown.png)]({{base_path}}/assets/img/learn/oauth-2-dropdown.png)
+     [![OAuth2 dropdown](../../../../assets/img/learn/oauth-2-dropdown.png)](../../../../assets/img/learn/oauth-2-dropdown.png)
 
 4. Select the preferred grant-type from the next drop-down menu and enter the required properties.
 
-     ![oauth-2-grant-type]({{base_path}}/assets/img/learn/oauth-2-grant-type.png)
+     ![oauth-2-grant-type](../../../../assets/img/learn/oauth-2-grant-type.png)
 
      a. Provide the following properties with regard to **Client Credentials**:
 
@@ -53,7 +53,7 @@ Follow the instructions below to use OAuth 2.0 as the endpoint authorization typ
       </tbody>
      </table>
 
-     ![client credentials config]({{base_path}}/assets/img/learn/client-credentials-config.png)
+     ![client credentials config](../../../../assets/img/learn/client-credentials-config.png)
 
     b. Provide the following properties with regard to the **Resource Owner Password** in addition to the properties that you entered as the Client Credentials grant-type:
 
@@ -61,19 +61,19 @@ Follow the instructions below to use OAuth 2.0 as the endpoint authorization typ
         
     * **Password** - Password of a user with access to the resource.
     
-     [![resource owner password config]({{base_path}}/assets/img/learn/resource-owner-password-config.png)]({{base_path}}/assets/img/learn/resource-owner-password-config.png)
+     [![resource owner password config](../../../../assets/img/learn/resource-owner-password-config.png)](../../../../assets/img/learn/resource-owner-password-config.png)
 
 5. If the OAuth-2.0-protected backend server token endpoint requires any other properties to be passed in addition to the above, click **Add Parameter** and provide the required properties and their respective values. 
       
       Editing and removing parameter name-value pairs are also supported.
 
-     [![oauth-2-add-parameter]({{base_path}}/assets/img/learn/oauth-2-add-parameter.png)]({{base_path}}/assets/img/learn/oauth-2-add-parameter.png)
+     [![oauth-2-add-parameter](../../../../assets/img/learn/oauth-2-add-parameter.png)](../../../../assets/img/learn/oauth-2-add-parameter.png)
 
 6. Click **Submit** to confirm the details of the respective endpoint, and then click **Save and deploy** in the **Endpoints** page to save all the changes.
 
-     [![oauth-2-submit-button]({{base_path}}/assets/img/learn/oauth-2-submit-button.png)]({{base_path}}/assets/img/learn/oauth-2-submit-button.png)
+     [![oauth-2-submit-button](../../../../assets/img/learn/oauth-2-submit-button.png)](../../../../assets/img/learn/oauth-2-submit-button.png)
 
-     [![endpoints-save-button]({{base_path}}/assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)]({{base_path}}/assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)
+     [![endpoints-save-button](../../../../assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)](../../../../assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)
 
     !!! info
         The Endpoint Auth Type selected should match with the authentication mechanism supported by the secured endpoint.

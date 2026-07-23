@@ -4,7 +4,7 @@ The **WSO2 API Controller (apictl)** can inject dynamic values based on environm
 
 ## Add dynamic data to environment configurations
 
-To allow easily configuring environment-specific details, by default, the apictl supports an additional parameter file. For more information on using an environment parameter file, see [Configuring Environment Specific Parameters]({{base_path}}/install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters). 
+To allow easily configuring environment-specific details, by default, the apictl supports an additional parameter file. For more information on using an environment parameter file, see [Configuring Environment Specific Parameters](../../../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters). 
 
 The file supports detecting environment variables during the API (or API Product) import process. You can use the notation `${DEV_URL}` to specify environment variables to any attribute in this file. 
 
@@ -64,7 +64,7 @@ Follow the instructions below to add dynamic data to environment configurations 
 
 Once the project is successfully imported, sign-in to the WSO2 API Manager (WSO2 API-M) Publisher Portal and check the Endpoints section of the imported API. The URLs specified as environment variables will appear there.
 
-[![]({{base_path}}/assets/img/learn/api-controller/advanced-topics/dynamic-data-env-config-api-endpoints.png)]({{base_path}}/assets/img/learn/api-controller/advanced-topics/dynamic-data-env-config-api-endpoints.png) 
+[![](../../../assets/img/learn/api-controller/advanced-topics/dynamic-data-env-config-api-endpoints.png)](../../../assets/img/learn/api-controller/advanced-topics/dynamic-data-env-config-api-endpoints.png) 
 
 ## Add dynamic data to Operation Policies in an API project
 

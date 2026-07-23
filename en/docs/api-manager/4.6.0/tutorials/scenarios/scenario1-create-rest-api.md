@@ -1,6 +1,6 @@
 # Scenario 1 - Create REST API from an OpenAPI Definition
 
-This tutorial is part of a series that guides you through all the capabilities of API Manager. This involves creating a REST API from an OpenAPI Definition. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This tutorial is part of a series that guides you through all the capabilities of API Manager. This involves creating a REST API from an OpenAPI Definition. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 10 minutes_**
 
@@ -12,7 +12,7 @@ By exposing this API through WSO2 API Manager, Coltrain expects to get the full 
 
 WSO2 API manager provides capability to import OAS definitions and create the API using that. 
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario1.png" title="Import OAS definition to API-M" width="630"/>
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario1.png" title="Import OAS definition to API-M" width="630"/>
     
 ## Step 1: Testing the backend
 
@@ -36,17 +36,17 @@ This indicates that the backend is working fine. Next, let’s expose this API t
 1. Log on to https://localhost:9443/publisher/apis using a Coltrain publisher user. Use user as `apiprovider@coltrain.com` and password as `user123`.
 2. Select **Import Open API** option under **REST API** section
    
-    ![Create API]({{base_path}}/assets/img/get_started/design-new-rest-api.png)
+    ![Create API](../../assets/img/get_started/design-new-rest-api.png)
 
 
 3. Select **OpenAPI File/Archive** radio button and import the **coltrain-public-openapi.yaml** definition from `/resources` location.
 
-    ![Import Definition]({{base_path}}/assets/img/tutorials/scenarios/import-oas-def.png)
+    ![Import Definition](../../assets/img/tutorials/scenarios/import-oas-def.png)
 
 4. Add the context (say /coltrain) and create the API. Keep the endpoint as it is. You could select the checkbox in front of the endpoint to check the status of the backend URL.
 
 
-    ![Create API]({{base_path}}/assets/img/tutorials/scenarios/create-coltrain-public-api.png)
+    ![Create API](../../assets/img/tutorials/scenarios/create-coltrain-public-api.png)
 
    
 Since this API is intended to be accessed by public users, the Coltrain API providers want to remove any authentication for this resource. This way anyone can access the service without any credentials. 
@@ -59,7 +59,7 @@ To implement this, follow the steps below.
 2. Expand a resource.
 3. Under the **Operation Governance** section, turn off the radio button for **Security**.
 
-    ![Change security]({{base_path}}/assets/img/tutorials/scenarios/resource-security.png)
+    ![Change security](../../assets/img/tutorials/scenarios/resource-security.png)
 
 4. Save the API.
 
@@ -72,17 +72,17 @@ First you need to select a business plan for the API. For that, go to **Develop 
 After that, go to the **Deploy → Deployment** section and select **Deploy**. This will deploy the API in the Gateway but the API will not be visible to the outside world.
 
 
-![Deploy API]({{base_path}}/assets/img/tutorials/scenarios/deploy-coltrain-public.png)
+![Deploy API](../../assets/img/tutorials/scenarios/deploy-coltrain-public.png)
 
 ## Step 5: Test the API
 
 Now we are ready to test the API. Go to **Test → Try Out** . This provides an API console in the Publisher portal to test the API.
 
-![Try out]({{base_path}}/assets/img/tutorials/scenarios/tryout.png)
+![Try out](../../assets/img/tutorials/scenarios/tryout.png)
 
 Expand the _/schedules_ resource and invoke the API. You won’t need to click **Generate Key** since we have removed the security for this resource. You will have to generate one if you want to test the _/schedules/{id}_ resource.
 
-![Try out result]({{base_path}}/assets/img/tutorials/scenarios/tryout-result.png)
+![Try out result](../../assets/img/tutorials/scenarios/tryout-result.png)
 
 Now testing is done from the publisher end. 
 
@@ -96,8 +96,8 @@ Now the API is published. To view this API go to https://localhost:9443/devporta
 
 Select the **ColTrainScheduleCommunityAPI** and select the **Try-Out** button from the left menu. This will open up an in-built API console for this API. You could now try out the API by clicking the resources. 
 
-![Developer Portal Tryout]({{base_path}}/assets/img/tutorials/scenarios/coltrain-public-dev.png)
+![Developer Portal Tryout](../../assets/img/tutorials/scenarios/coltrain-public-dev.png)
 
 ## What's next
 
-Try out the next scenario in the series, [Access Control]({{base_path}}/tutorials/scenarios/scenario2-access-control).
+Try out the next scenario in the series, [Access Control](../../tutorials/scenarios/scenario2-access-control.md).

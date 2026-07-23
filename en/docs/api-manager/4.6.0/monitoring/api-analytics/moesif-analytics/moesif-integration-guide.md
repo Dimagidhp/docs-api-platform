@@ -20,8 +20,8 @@ Before you begin, ensure you have:
 The Moesif integration captures both **successful** and **failed** API invocations in WSO2 API Manager and publishes them to your Moesif dashboard in near real-time. This allows for powerful analytics and monitoring capabilities.
 
 <div style="text-align:center;">
-  <a href="{{base_path}}/assets/img/analytics/moesif/moesif-data-flow.png">
-    <img src="{{base_path}}/assets/img/analytics/moesif/moesif-data-flow.png" alt="Moesif integration diagram">
+  <a href="../../../../assets/img/analytics/moesif/moesif-data-flow.png">
+    <img src="../../../../assets/img/analytics/moesif/moesif-data-flow.png" alt="Moesif integration diagram">
   </a>
 </div>
 

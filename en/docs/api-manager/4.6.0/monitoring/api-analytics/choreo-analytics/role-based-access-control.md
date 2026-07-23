@@ -16,7 +16,7 @@ Enterprises and companies who want to use Choreo Insights collaboratively can ut
 
      The Organization page appears. This page contains information about your organization, such as the organization name, current members, pending members, and different groups within your organization.
 
-     [![Organization Page]({{base_path}}/assets/img/observe/organization-page.png)]({{base_path}}/assets/img/observe/organization-page.png)
+     [![Organization Page](../../../assets/img/observe/organization-page.png)](../../../assets/img/observe/organization-page.png)
 
 4. Click **Invite Members** and fill in the dialog box. 
 
@@ -28,7 +28,7 @@ Enterprises and companies who want to use Choreo Insights collaboratively can ut
    
 5. Click **Invite**.
 
-     <a href="{{base_path}}/assets/img/observe/invite-dialogue-box.png"><img src="{{base_path}}/assets/img/observe/invite-dialogue-box.png" title="Invite dialog box" width="380"/></a>
+     <a href="../../../../assets/img/observe/invite-dialogue-box.png"><img src="../../../../assets/img/observe/invite-dialogue-box.png" title="Invite dialog box" width="380"/></a>
 
      After the invitation is successfully submitted, the invitee will receive an email. After the invitee clicks on the activation link, he/she will be added to the respective organization.
 
@@ -40,7 +40,7 @@ When you are a part of multiple organizations, you are allowed to modify/view se
  
      Your current organization will be shown in the top left-hand side corner.
 
-     [![Invite Page]({{base_path}}/assets/img/observe/organization-selector.png)]({{base_path}}/assets/img/observe/organization-selector.png)
+     [![Invite Page](../../../assets/img/observe/organization-selector.png)](../../../assets/img/observe/organization-selector.png)
 
 2. If you are a part of multiple organizations, select an organization from the organization selector.
 

@@ -64,7 +64,7 @@ Before you start, ensure you have a Kong Gateway running in a Kubernetes cluster
     7. Enter the **VHost** details according to your Gateway setup. Add the **Host**, **HTTP port** and **HTTPS port** under Advanced Settings.
     9. Click **Add** button to add the Gateway.
 
-         [![add kong k8s gateway]({{base_path}}/assets/img/deploy/add-kong-k8s-gateway.png){: style="width:100%"}]({{base_path}}/assets/img/deploy/add-kong-k8s-gateway.png)
+         [![add kong k8s gateway](../../../../assets/img/deploy/add-kong-k8s-gateway.png){: style="width:100%"}](../../../../assets/img/deploy/add-kong-k8s-gateway.png)
 
     !!!note
         If you are running Kong Gateway locally and using a custom hostname, make sure to add that hostname to your /etc/hosts file so it resolves correctly. For example:
@@ -86,7 +86,7 @@ Kong Gateway on Kubernetes requires PEM-format certificates. Therefore, you need
 
 2. In the Admin Portal, go to the Key Managers section and upload the generated `km-cert.pem` PEM certificate to the Resident Key Manager.
 
-    [![add pem to key manager for kong]({{base_path}}/assets/img/deploy/add-pem-to-key-manger-for-kong.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/add-pem-to-key-manger-for-kong.png)
+    [![add pem to key manager for kong](../../../../assets/img/deploy/add-pem-to-key-manger-for-kong.png){: style="width:90%"}](../../../../assets/img/deploy/add-pem-to-key-manger-for-kong.png)
 
 ## Step 3 : Set up WSO2 Kong Gateway Agent
 
@@ -165,7 +165,7 @@ When configuring the agent, update the following parameters in the `values.yaml`
 4. In the application, go to **OAuth2 Tokens** under **Production Keys**. Generate and copy the access token.
 5. Navigate to the **API Console** under the **Try Out** of the subscribed API, and paste the copied token inside the **Authorization Header Value field**.
 
-    [![try out for kong gateway]({{base_path}}/assets/img/deploy/try-out-for-kong-gateway.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/try-out-for-kong-gateway.png)
+    [![try out for kong gateway](../../../../assets/img/deploy/try-out-for-kong-gateway.png){: style="width:90%"}](../../../../assets/img/deploy/try-out-for-kong-gateway.png)
 
 6. Click on **Try Out**, and then click **Execute** to invoke the API.
 

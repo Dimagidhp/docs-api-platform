@@ -25,7 +25,7 @@ Follow the instructions below to enable notifications for new API versions:
     | password               | App Password used to authenticate the mail server.  Follow the instructions [here](https://support.google.com/accounts/answer/185833?hl=en) to create this. |
     | signature              | Signature of the sender account.|
     
-    For more information, see [Enable Notifications]({{base_path}}/reference/config-catalog/#enable-notifications).    
+    For more information, see [Enable Notifications](../../../reference/config-catalog/#enable-notifications).    
 
 
 2. Sign in to the Admin Portal `https://<hostname>:9443/admin`

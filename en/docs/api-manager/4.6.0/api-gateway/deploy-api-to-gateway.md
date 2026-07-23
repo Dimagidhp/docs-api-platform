@@ -81,7 +81,7 @@ Revisions are snapshots of your API or API Product configuration at a specific p
 
 If you haven't deployed any revisions yet, you'll see the following screen:
 
-![First Revision]({{base_path}}/assets/img/design/revision/deploy-first-revision.png)
+![First Revision](../assets/img/design/revision/deploy-first-revision.png)
 
 1. Optionally, provide a **description** for the revision.Good revision descriptions help track changes over time. Example: "Added rate limiting and updated endpoint"
 
@@ -91,13 +91,13 @@ If you haven't deployed any revisions yet, you'll see the following screen:
 
 4. Verify deployment status. Hover over the deployment status icon to view detailed information about the deployment.
 
-   ![Deployment Status]({{base_path}}/assets/img/design/revision/revision-deployment-acknowledgement.png)      
+   ![Deployment Status](../assets/img/design/revision/revision-deployment-acknowledgement.png)      
 
 ### Step 4: Deploy Additional Revisions
 
 If you already have existing revisions, the Deployments page appears as follows:
 
-![Deploy New Revision]({{base_path}}/assets/img/design/revision/deploy-new-revision.png)
+![Deploy New Revision](../assets/img/design/revision/deploy-new-revision.png)
 
 **To deploy a new revision:**
 
@@ -115,15 +115,15 @@ Your API or API Product is now deployed and ready to receive traffic through the
 
 !!! warning
     You cannot deploy more than 5 revisions. If the maximum is reached, delete an existing revision first.
-    ![Delete and Deploy]({{base_path}}/assets/img/design/revision/delete-and-deploy-revision.png)
+    ![Delete and Deploy](../assets/img/design/revision/delete-and-deploy-revision.png)
 
 ---
 
 ## See Also
 
-- [Deploy an API]({{base_path}}/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/) - Step-by-step guide to deploy an API using revisions.
-- [Create API Revisions]({{base_path}}/api-design-manage/design/create-api/create-api-revisions/) - Learn how to create and manage API revisions for deployment.
-- [Publish an API to Developer Portal]({{base_path}}/api-developer-portal/publish-an-api-to-dev-portal/) - Make your deployed APIs discoverable and subscribable in the Developer Portal.
-- [Gateway Environments]({{base_path}}/api-gateway/maintaining-separate-production-and-sandbox-gateways/) - Configure separate production and sandbox Gateway environments.
-- [Gateway Policies]({{base_path}}/api-gateway/gateway-policies/) - Apply global policies across all APIs deployed on a Gateway.
-- [Understand Rate Limit Enforcement]({{base_path}}/api-gateway/rate-limiting/understand-rate-limit-enforcement/) - Learn how the Gateway enforces rate limiting policies in real-time.
+- [Deploy an API](../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/) - Step-by-step guide to deploy an API using revisions.
+- [Create API Revisions](../api-design-manage/design/create-api/create-api-revisions/) - Learn how to create and manage API revisions for deployment.
+- [Publish an API to Developer Portal](../api-developer-portal/publish-an-api-to-dev-portal/) - Make your deployed APIs discoverable and subscribable in the Developer Portal.
+- [Gateway Environments](../api-gateway/maintaining-separate-production-and-sandbox-gateways/) - Configure separate production and sandbox Gateway environments.
+- [Gateway Policies](../api-gateway/gateway-policies/) - Apply global policies across all APIs deployed on a Gateway.
+- [Understand Rate Limit Enforcement](../api-gateway/rate-limiting/understand-rate-limit-enforcement/) - Learn how the Gateway enforces rate limiting policies in real-time.

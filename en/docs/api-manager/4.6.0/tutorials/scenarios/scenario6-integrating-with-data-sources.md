@@ -1,6 +1,6 @@
 # Scenario 6 - Integrating with Data Sources
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to integrate with Data Sources. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to integrate with Data Sources. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 5 minutes_**
 
@@ -10,19 +10,19 @@ RailCo HR department is planning to develop an HR system dashboard. Therefore, R
 
 With WSO2 Micro Integrator Data Services, users can integrate with different Data Sources and decouple the data from its infrastructure. In other words, when you create a data service in WSO2 Micro Integrator, the data that is stored in a storage system (such as the RDBMS) can be exposed in the form of a service. This allows users (that may be any application or system) to access the data without interacting with the original source of the data.
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario6.png" alt="Expose Datasource" title="Expose Datasource" width="60%" />
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario6.png" alt="Expose Datasource" title="Expose Datasource" width="60%" />
 
 ## Step 1: Develop a service in Micro Integrator
 
 To develop a service in Micro Integrator, you can use WSO2 Integration Studio. 
 
-<img src="{{base_path}}/assets/img/tutorials/scenarios/integration_studio_dataservice.jpg" alt="Integration Studio Dataservice View" title="Integration Studio Dataservice View" width="80%" />
+<img src="../../../assets/img/tutorials/scenarios/integration_studio_dataservice.jpg" alt="Integration Studio Dataservice View" title="Integration Studio Dataservice View" width="80%" />
 
 ## Step 2: Expose data via API Manager
 
 Once developed, you can expose the data via API manager for secure access. For simplicity, the data service is already developed and added in the API manager. A database has been created with dummy Employee Data that you can query and modify.
 
-<img src="{{base_path}}/assets/img/tutorials/scenarios/employee_database.png" alt="Employee Database" title="Employee Database" width="60%" />
+<img src="../../../assets/img/tutorials/scenarios/employee_database.png" alt="Employee Database" title="Employee Database" width="60%" />
 
 ## Step 3: Invoke the API
 
@@ -33,7 +33,7 @@ To invoke the API from API Manager,
 3. Click on RailCoEmployeeAPI and click subscribe using a policy and generate the access token.
 4. After that you can try out the CRUD operations on the EmployeeAPI.
 
-    <img src="{{base_path}}/assets/img/tutorials/scenarios/employee_resources_apim.png" alt="Employee API resources" title="Employee API resources" width="60%" />
+    <img src="../../../assets/img/tutorials/scenarios/employee_resources_apim.png" alt="Employee API resources" title="Employee API resources" width="60%" />
     
     For e.g., you can try out the following Curl request.
     
@@ -46,4 +46,4 @@ To invoke the API from API Manager,
 
 ## What's next
 
-Try out the next scenario in the series, [Analytics]({{base_path}}/tutorials/scenarios/scenario7-analytics).
+Try out the next scenario in the series, [Analytics](../../tutorials/scenarios/scenario7-analytics.md).

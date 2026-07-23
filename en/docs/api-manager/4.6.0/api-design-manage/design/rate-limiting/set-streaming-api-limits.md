@@ -13,7 +13,7 @@ Streaming APIs support three types of limits through subscription tiers:
 - **Hybrid Limits** - Combine both event count and time constraints (e.g., 1M events within 24 hours).
 
 !!! tip
-    Subscription tiers with streaming-specific limits are created by Administrators. As a Publisher, you select which tiers to make available for your Streaming API. For creating custom subscription tiers, see [Adding a new subscription-level Rate Limiting tier]({{base_path}}/administer/rate-limiting/manage-subscription-policies).
+    Subscription tiers with streaming-specific limits are created by Administrators. As a Publisher, you select which tiers to make available for your Streaming API. For creating custom subscription tiers, see [Adding a new subscription-level Rate Limiting tier](../../../administer/rate-limiting/manage-subscription-policies.md).
 
 ## How Events Are Counted
 
@@ -40,7 +40,7 @@ To apply rate limiting to your Streaming API:
 
 Applications subscribing to your API will be limited by the event count, duration, or subscription limits defined in their chosen tier.
 
-[![Streaming API Business Plans]({{base_path}}/assets/img/design/rate-limiting/stream-api-business-plans.png)]({{base_path}}/assets/img/design/rate-limiting/stream-api-business-plans.png)
+[![Streaming API Business Plans](../../../assets/img/design/rate-limiting/stream-api-business-plans.png)](../../../assets/img/design/rate-limiting/stream-api-business-plans.png)
 
 ## Default Streaming Tiers
 
@@ -61,4 +61,4 @@ The following default subscription tiers are available for Streaming APIs:
 
 ## See Also
 
-- For more information on setting Streaming API Limits in Subscription Policies, see [Streaming API Limits in Subscription Policies]({{base_path}}/administer/rate-limiting/manage-subscription-policies/#streaming-api-limits-in-subscription-policies).
+- For more information on setting Streaming API Limits in Subscription Policies, see [Streaming API Limits in Subscription Policies](../../../administer/rate-limiting/manage-subscription-policies/#streaming-api-limits-in-subscription-policies).

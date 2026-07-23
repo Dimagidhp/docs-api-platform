@@ -7,7 +7,7 @@ WSO2 API Manager's Publisher offers an integrated API Console that allows API cr
 Follow the instructions below to use the Publisher test console to test an API:
 
 !!! note
-    Create the `PizzaShack` REST API or an API of your choice before following the instructions below. For more information, see [Create a REST API.]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api).
+    Create the `PizzaShack` REST API or an API of your choice before following the instructions below. For more information, see [Create a REST API.](../../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md).
 
 1.  {!includes/sign-in-publisher.md!}
 
@@ -24,7 +24,7 @@ Follow the instructions below to use the Publisher test console to test an API:
      <ul> The API can be tested in any lifecycle state, and can be used in any state except for the "retired" state. Even in the "block" state you can still try it out, but you will get a 503 (service unavailable) response.</ul></div>
      </html>
 
-     <a href="{{base_path}}/assets/img/design/create-api/test-api/publisher-testconsole-leftpane.png"><img src="{{base_path}}/assets/img/design/create-api/test-api/publisher-testconsole-leftpane.png" width="20%" alt="Try out menu option in the left panel"></a>
+     <a href="../../../../../assets/img/design/create-api/test-api/publisher-testconsole-leftpane.png"><img src="../../../../../assets/img/design/create-api/test-api/publisher-testconsole-leftpane.png" width="20%" alt="Try out menu option in the left panel"></a>
 
 4.  You can generate the internal key by clicking on the **Generate Key** button to invoke and test the PizzaShack API.
 
@@ -34,10 +34,10 @@ Follow the instructions below to use the Publisher test console to test an API:
           <ul>If the API Publishers have a token or key, then they can paste it in the UI and invoke the API using that key.</ul>
           </div>
        </html>
-      <a href="{{base_path}}/assets/img/design/create-api/test-api/publisher-testconsole-generatekey.png"><img src="{{base_path}}/assets/img/design/create-api/test-api/publisher-testconsole-generatekey.png" width="80%" alt="Generate key"></a>
+      <a href="../../../../../assets/img/design/create-api/test-api/publisher-testconsole-generatekey.png"><img src="../../../../../assets/img/design/create-api/test-api/publisher-testconsole-generatekey.png" width="80%" alt="Generate key"></a>
 
 5.  Expand the **GET**  method, click **Try it out**, and click **Execute**.
 
     Note the successful response for the API invocation.
 
-    [![Publisher test console]({{base_path}}/assets/img/design/create-api/test-api/publisher-testconsole-swaggerui.png)]({{base_path}}/assets/img/design/create-api/test-api/publisher-testconsole-swaggerui.png)
+    [![Publisher test console](../../../../assets/img/design/create-api/test-api/publisher-testconsole-swaggerui.png)](../../../../assets/img/design/create-api/test-api/publisher-testconsole-swaggerui.png)

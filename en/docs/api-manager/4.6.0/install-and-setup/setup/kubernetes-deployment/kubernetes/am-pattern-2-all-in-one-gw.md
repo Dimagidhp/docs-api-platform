@@ -2,7 +2,7 @@
 
 This pattern deploys a dedicated Universal Gateway alongside the All-in-One node, allowing the Gateway to scale independently from the control plane. It is suitable for production environments with moderate to high API traffic where Gateway scaling is the primary concern.
 
-<a href="{{base_path}}/assets/img/setup-and-install/deployment-no-tm.png"><img src="{{base_path}}/assets/img/setup-and-install/deployment-no-tm.png" alt="simple scalable api-m deployment" width="60%"></a>
+<a href="../../../../../assets/img/setup-and-install/deployment-no-tm.png"><img src="../../../../../assets/img/setup-and-install/deployment-no-tm.png" alt="simple scalable api-m deployment" width="60%"></a>
 
 ## How Pattern 2 Differs from Pattern 0 and Pattern 1
 
@@ -167,7 +167,7 @@ Pattern 2 requires custom Docker images for the All-in-One node and the Universa
 
 Pattern 2 requires two databases: `apim_db` and `shared_db`. Both must be reachable from inside the Kubernetes cluster before the pods start.
 
-Follow the [Setting Up Databases]({{base_path}}/install-and-setup/setup/setting-up-databases/overview/) guide to:
+Follow the [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/) guide to:
 
 1. Set up a database instance accessible from your cluster
 2. Obtain the schema scripts for your database type
@@ -211,7 +211,7 @@ The Helm chart mounts a Kubernetes secret named `apim-keystore-secret` as a volu
     ```
 
 !!! note
-    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/).
+    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/).
 
 ### Step 8 — Deploy the All-in-One { #step-8 }
 
@@ -252,7 +252,7 @@ The Helm chart mounts a Kubernetes secret named `apim-keystore-secret` as a volu
               password: "<DB_PASSWORD>"
     ```
 
-    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases]({{base_path}}/install-and-setup/setup/setting-up-databases/overview/#changing-the-default-databases).
+    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/#changing-the-default-databases).
 
 3. Deploy the All-in-One:
 
@@ -474,7 +474,7 @@ All available configuration options for each Helm chart are documented in their 
 
 In [Step 7](#step-7), you created `apim-keystore-secret` using the default WSO2 keystores extracted from the Docker image. Those are self-signed certificates suitable for evaluation only.
 
-For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
+For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
 
 ```bash
 kubectl create secret generic apim-keystore-secret \

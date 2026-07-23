@@ -31,7 +31,7 @@ Note that the above configuration can be done independently on a per tenant basi
 
 When the above `EnableMonetization` property is set to true for the respective tenant, the API monetization category labels are displayed in the tenant Developer Portal.
 
-![]({{base_path}}/assets/attachments/103333418/103333420.png)
+![](../../assets/attachments/103333418/103333420.png)
 **Related links**
 
 For more information on Monetization of APIs, see [Enabling Monetization of APIs-](https://docs.wso2.com/pages/viewpage.action?pageId=97564601) .

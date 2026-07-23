@@ -31,7 +31,7 @@ Let’s create an API in WSO2 API Manager.
    
      You can use any option to create the REST API.
 	 
-	 [![API from scratch menu]({{base_path}}/assets/img/get_started/design-new-rest-api.png)]({{base_path}}/assets/img/get_started/design-new-rest-api.png)
+	 [![API from scratch menu](../assets/img/get_started/design-new-rest-api.png)](../assets/img/get_started/design-new-rest-api.png)
 
 1. Enter the details of the API and click **Create** to create the REST API.
     
@@ -56,13 +56,13 @@ Let’s create an API in WSO2 API Manager.
       </tr>
     </table>
 
-	 [![Create Healthcare API]({{base_path}}/assets/img/tutorials/create-healthcare-api.png){: style=width:80%}]({{base_path}}/assets/img/tutorials/create-healthcare-api.png)
+	 [![Create Healthcare API](../assets/img/tutorials/create-healthcare-api.png){: style=width:80%}](../assets/img/tutorials/create-healthcare-api.png)
 
 4.	Let’s add a new GET resource named `/queryDocter/{category}` to the REST API.
 
-	 [![Add GET resource]({{base_path}}/assets/img/tutorials/querydocter-resource.png)]({{base_path}}/assets/img/tutorials/querydocter-resource.png)
+	 [![Add GET resource](../assets/img/tutorials/querydocter-resource.png)](../assets/img/tutorials/querydocter-resource.png)
 
-5.	You can manage the API the way you want and test out the resource by adding a [Mock Implementation]({{base_path}}/manage-apis/design/prototype-api/create-mocked-js-api).
+5.	You can manage the API the way you want and test out the resource by adding a [Mock Implementation](../manage-apis/design/prototype-api/create-mocked-js-api).
 
 ## Step 2 - Develop the integration service
 
@@ -133,7 +133,7 @@ Let’s start implementing the integration for the created `Healthcare` REST API
 
      2.	Select **Import API from API Manager**.
 	 
-	     [![New Synapse API options]({{base_path}}/assets/img/tutorials/new-synapse-api-options.png)]({{base_path}}/assets/img/tutorials/new-synapse-api-options.png)
+	     [![New Synapse API options](../assets/img/tutorials/new-synapse-api-options.png)](../assets/img/tutorials/new-synapse-api-options.png)
 
      3.	Enter the credentials of the API Manager user and API Manager host URl. 
 	 
@@ -168,7 +168,7 @@ Let’s start implementing the integration for the created `Healthcare` REST API
 
 	4.	Click **List APIs**.
 
-	     [![Import API from API-M]({{base_path}}/assets/img/tutorials/import-api-from-apim.png)]({{base_path}}/assets/img/tutorials/import-api-from-apim.png)
+	     [![Import API from API-M](../assets/img/tutorials/import-api-from-apim.png)](../assets/img/tutorials/import-api-from-apim.png)
 
 	5.	Click **HealthcareAPI** and click **Finish**. 
 	
@@ -226,7 +226,7 @@ Let’s start implementing the integration for the created `Healthcare` REST API
       </tr>
     </table>
 
-	 [![Project explorer]({{base_path}}/assets/img/tutorials/project-explorer.png)]({{base_path}}/assets/img/tutorials/project-explorer.png)
+	 [![Project explorer](../assets/img/tutorials/project-explorer.png)](../assets/img/tutorials/project-explorer.png)
 
 ## Step 3 - Configure service metadata
 
@@ -276,7 +276,7 @@ Let's enable this client for the embedded Micro Integrator of WSO2 Integration S
 
 1. Click the Embedded Micro Integrator Configuration icon on the upper menu to open the dialog box.
 
-	 [![Micro Integrator Configuration icon]({{base_path}}/assets/img/tutorials/mi-config-icon.png){: style=width:5%}]({{base_path}}/assets/img/tutorials/mi-config-icon.png)
+	 [![Micro Integrator Configuration icon](../assets/img/tutorials/mi-config-icon.png){: style=width:5%}](../assets/img/tutorials/mi-config-icon.png)
 
 2. Uncomment the `[[service_catalog]]` section as shown below and change the API-M server configurations accordingly.
 
@@ -371,13 +371,13 @@ Now let’s add the developed backend service to the API.
 	 2. Add the production endpoint using service endpoints.
 	 3. Select the `HealthcareAPI` service endpoint from the dropdown.
 
-   [![Service endpoint dropdown]({{base_path}}/assets/img/tutorials/service-endpoint-dropdown.png)]({{base_path}}/assets/img/tutorials/service-endpoint-dropdown.png)
+   [![Service endpoint dropdown](../assets/img/tutorials/service-endpoint-dropdown.png)](../assets/img/tutorials/service-endpoint-dropdown.png)
 
 5.	Click **Save**.
 
 ## Step 8 - Deploy the API
 
-Depoly the `HealthcareAPI` REST API in the Gateway. For more information, see [Deploy an API]({{base_path}}/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/#deploy-an-api).
+Depoly the `HealthcareAPI` REST API in the Gateway. For more information, see [Deploy an API](../manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/#deploy-an-api).
 
 ## Step 9 - Start the backend service
 
@@ -394,7 +394,7 @@ Let's start the back-end hospital service.
 
 ## Step 10 - Subscribe to the API and test it
 
-Subscribe to the `HealthcareAPI` REST API and invoke it. For more information, see [Test a REST API Using the Integrated API Console]({{base_path}}/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console).
+Subscribe to the `HealthcareAPI` REST API and invoke it. For more information, see [Test a REST API Using the Integrated API Console](../consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console).
 
 You will get the response message from the Healthcare service, if you send the category as `surgery`:
 

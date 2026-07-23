@@ -1,6 +1,6 @@
 # DataDog Based Analytics Solution For API Manager
 
-<a href="{{base_path}}/assets/img/analytics/datadog/architecture.png"><img src="{{base_path}}/assets/img/analytics/datadog/architecture.png" width="70%" alt="Deployment diagram"></a>
+<a href="../../../../assets/img/analytics/datadog/architecture.png"><img src="../../../../assets/img/analytics/datadog/architecture.png" width="70%" alt="Deployment diagram"></a>
 
 ### Deployment
 
@@ -157,4 +157,4 @@ Create measures for the following attributes to enable numerical analysis and ag
 
 #### Step 2.4 - Import Dashboards
 
-Import the [dashboards.zip]({{base_path}}/assets/attachments/apim-elk/dashboards.zip) following the steps [here.](https://docs.datadoghq.com/dashboards/#copy-import-or-export-dashboard-json)
+Import the [dashboards.zip](../../../assets/attachments/apim-elk/dashboards.zip) following the steps [here.](https://docs.datadoghq.com/dashboards/#copy-import-or-export-dashboard-json)

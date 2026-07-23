@@ -2,11 +2,11 @@
 
 The header section can be customized to match different design needs by configuring the `defaultTheme.js` file.
 
-The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#global-theming).
+The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here](../../../../reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#global-theming).
 
 The following is the default look and the configuration. The default header of the API Manager Developer Portal is shown below.
 
- ![changing the logo and header]({{base_path}}/assets/img/learn/changing-the-logo-and-header1.png) 
+ ![changing the logo and header](../../../../assets/img/learn/changing-the-logo-and-header1.png) 
 
 1. Open the `<API-M_HOME>/repository/deployment/server/webapps/devportal/site/public/theme/userTheme.json` file in a text editor and set the attributes accordingly as shown below which customizes the logo and the header of the developer portal.
 
@@ -63,4 +63,4 @@ We can change the logo and the header background as follows by changing the para
 
 Make sure you restart the server for the changes to take effect.
 
- ![changing the logo and header]({{base_path}}/assets/img/learn/changing-the-logo-and-header3.png) 
+ ![changing the logo and header](../../../../assets/img/learn/changing-the-logo-and-header3.png) 

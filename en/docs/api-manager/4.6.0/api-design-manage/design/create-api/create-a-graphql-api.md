@@ -20,7 +20,7 @@ Follow the instructions below to design a GraphQL API.
 
 Now, you have successfully created and configured a GraphQL API. 
 
-Next, let's deploy your API in the [WSO2 API Gateway]({{base_path}}/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/) and [Publish your API]({{base_path}}/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/).
+Next, let's deploy your API in the [WSO2 API Gateway](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/) and [Publish your API](../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/).
 
 ### GraphQL operations
 
@@ -63,13 +63,13 @@ Rate limiting is set to unlimited, and thereby disabled by default.
 
 Learn more on the concepts that you need to know when creating a GraphQL API:
 
--   [Endpoints]({{base_path}}/api-design-manage/design/endpoints/endpoint-types/)
--   [API Security]({{base_path}}/api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens/)
--   [Rate Limiting]({{base_path}}/api-design-manage/design/rate-limiting/graphql-api/overview-query-limits-for-graphql/)
--   [Life Cycle Management]({{base_path}}/api-design-manage/design/lifecycle-management/api-lifecycle/)
--   [API Monetization]({{base_path}}/api-design-manage/design/api-monetization/monetizing-an-api/)
--   [API Visibility]({{base_path}}/api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation]({{base_path}}/api-design-manage/design/api-documentation/add-api-documentation/)
--   [Custom Properties]({{base_path}}/api-design-manage/design/create-api/adding-custom-properties-to-apis/)
+-   [Endpoints](../../../api-design-manage/design/endpoints/endpoint-types/)
+-   [API Security](../../../api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens/)
+-   [Rate Limiting](../../../api-design-manage/design/rate-limiting/graphql-api/overview-query-limits-for-graphql/)
+-   [Life Cycle Management](../../../api-design-manage/design/lifecycle-management/api-lifecycle/)
+-   [API Monetization](../../../api-design-manage/design/api-monetization/monetizing-an-api/)
+-   [API Visibility](../../../api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
+-   [API Documentation](../../../api-design-manage/design/api-documentation/add-api-documentation/)
+-   [Custom Properties](../../../api-design-manage/design/create-api/adding-custom-properties-to-apis/)
 
-- Try out the tutorial on <a href="{{base_path}}/tutorials/create-and-publish-a-graphql-api">Creating and Publishing a GraphQL API</a>.
+- Try out the tutorial on <a href="../../../../tutorials/create-and-publish-a-graphql-api">Creating and Publishing a GraphQL API</a>.

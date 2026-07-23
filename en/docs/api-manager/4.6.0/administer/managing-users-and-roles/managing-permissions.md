@@ -7,11 +7,11 @@ The **User Management** module in WSO2 products enables role-based access. As a 
 
 The permissions navigator that you use to enable permissions for a role is divided into these two categories (**Super Admin** permissions and **Admin** permissions) as shown below.
 
-![Admin permissions tree]({{base_path}}/assets/img/administer/admin-permissions-tree.png)
+![Admin permissions tree](../../assets/img/administer/admin-permissions-tree.png)
 
 You can access the permissions navigator for a particular role by clicking **Permissions** as shown below.
 
-![Change permissions of role]({{base_path}}/assets/img/administer/change-permissions-of-role.png)
+![Change permissions of role](../../assets/img/administer/change-permissions-of-role.png)
 
 By default, every WSO2 product comes with the following Users, Roles and Permissions configured:
 
@@ -31,7 +31,7 @@ By default, every WSO2 product comes with the following Users, Roles and Permiss
             <Password>admin</Password>
         </AdminUser>
         ```
-        These properties can be customized by configuring the `<PRODUCT_HOME>/repository/conf/deployment.toml` file. For more information, see [Change the super admin credentials]({{base_path}}/install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords/#change-the-super-admin-credentials). 
+        These properties can be customized by configuring the `<PRODUCT_HOME>/repository/conf/deployment.toml` file. For more information, see [Change the super admin credentials](../../install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords/#change-the-super-admin-credentials). 
 
     -   The **admin** role has all the permissions in the system enabled by default. Therefore, this is a super tenant, with all permissions enabled.
 
@@ -50,7 +50,7 @@ In addition to the above, the following roles exist by default.
 -  Internal/publisher
 -  Internal/subscriber
 
-For more information about managing roles, see [Managing User Roles]({{base_path}}/administer/managing-users-and-roles/managing-user-roles)
+For more information about managing roles, see [Managing User Roles](../../administer/managing-users-and-roles/managing-user-roles.md)
 
 You will be able to log in to the management console of the product with the **admin** user defined in the `user-mgt.xml` file. You can then create new users and roles and configure permissions for the roles using the management console. However, note that you cannot modify the permissions of the **admin** role. The possibility of managing users, roles, and permissions is granted by the **User Management** permission. For more information, see [Configuring the User Realm](https://is.docs.wso2.com/en/5.10.0/setup/configuring-the-realm/).
 
@@ -63,7 +63,7 @@ You will be able to log in to the management console of the product with the **a
 
 The **Login** permission defined under **Admin** permissions allows users to log in to the management console of the product. Therefore, this is the primary permission required for using the management console.
 
-![Login Permissions]({{base_path}}/assets/img/administer/login-permissions.png)
+![Login Permissions](../../assets/img/administer/login-permissions.png)
 
 ### Super tenant permissions
 
@@ -83,14 +83,14 @@ The following table describes the permissions at **Super Tenant** level. These a
 <tbody>
 <tr class="odd">
 <td><strong>Management</strong> permissions: </br>
-<img src="{{base_path}}/assets/img/administer/manage-permissions.png" /></td>
+<img src="../../../assets/img/administer/manage-permissions.png" /></td>
 <td><p>The <strong>Super Admin/Manage</strong> permissions are used for adding new tenants and monitoring them.</p>
 <p><strong>- Modify/Tenants</strong> permission enables the <strong>Add New Tenant</strong> option in the <strong>Configure/Multitenancy</strong> menu of the management console, which allows users to add new tenants.<br />
 <strong>- Monitor/Tenants</strong> permission enables the <strong>View Tenants</strong> option in the <strong>Configure/Multitenancy</strong> menu of the management console.</p></td>
 </tr>
 <tr class="even">
 <td><strong>Server Admin</strong> permissions:<br />
-<img src="{{base_path}}/assets/img/administer/server-admin-permissions.png" /></td>
+<img src="../../../assets/img/administer/server-admin-permissions.png" /></td>
 <td>Selecting the <strong>Server Admin</strong> permission enables the <strong>Manage/Shutdown/Restart</strong> option in the <strong>Main</strong> menu of the management console.</td>
 </tr>
 </tbody>
@@ -121,14 +121,14 @@ The following table describes the permissions at **Tenant** level. These are als
 <td>Admin</td>
 <td>When the <strong>Admin</strong> permission node is selected, features including the following menus are enabled in the management console:
 <ul><li>
-<strong>Identity/User Stores:</strong> This permission allows users to add new user stores and manage them with the management console. Note that only secondary user stores can be added using this option. See the topic on <a href="{{base_path}}/administer/product-administration/managing-users-and-roles/managing-user-stores/configuring-secondary-user-stores/">Configuring Secondary User Stores</a> for more details.<br />
+<strong>Identity/User Stores:</strong> This permission allows users to add new user stores and manage them with the management console. Note that only secondary user stores can be added using this option. See the topic on <a href="../../administer/product-administration/managing-users-and-roles/managing-user-stores/configuring-secondary-user-stores/">Configuring Secondary User Stores</a> for more details.<br />
 </li><li><strong>Identity/Identity Providers:</strong> For more information, see <a href="https://is.docs.wso2.com/en/5.10.0/learn/adding-and-configuring-an-identity-provider"> working with identity providers</a>.
 </li><li>
 <p>Additionally, all permissions listed under <strong>Admin</strong> in the permissions navigator are selected automatically.</p></li></ul></td>
 </tr>
 <tr class="even">
 <td>Admin/Manage/Identity/User Store Management</td>
-<td>This permission enables the <strong>Identity/User Stores</strong> option in the <strong>Main</strong> menu. This option allows users to add new user stores. For more details on User Store Management, see <a href="{{base_path}}/administer/product-administration/managing-users-and-roles/managing-user-stores/configuring-secondary-user-stores/">Configuring Secondary User Stores</a></td>
+<td>This permission enables the <strong>Identity/User Stores</strong> option in the <strong>Main</strong> menu. This option allows users to add new user stores. For more details on User Store Management, see <a href="../../administer/product-administration/managing-users-and-roles/managing-user-stores/configuring-secondary-user-stores/">Configuring Secondary User Stores</a></td>
 </tr>
 <tr class="odd">
 <td>Admin/Manage/Identity/Claim</td>
@@ -161,17 +161,17 @@ Additionally, all permissions listed under <strong>Admin/Monitor</strong> in the
 
 !!! note
     Note that the role-scope assignments mentioned here are related to the internal API-M specific scope assignments 
-    which is different from the [role-permission assignments]({{base_path}}/administer/managing-users-and-roles/managing-permissions/#role-based-permissions) done in the management console.
+    which is different from the [role-permission assignments](../../administer/managing-users-and-roles/managing-permissions/#role-based-permissions) done in the management console.
 
 1. Sign in to Admin Portal (`https://<APIM_Host>:<APIM_Port>/admin`) and navigate to **Settings** > **Scope Assignments** in the Admin Portal. 
 
 2. Click **Add scope mappings**.
 
-    ![Add Scope Mapping]({{base_path}}/assets/img/administer/add-scope-mapping.png) 
+    ![Add Scope Mapping](../../assets/img/administer/add-scope-mapping.png) 
 
 3. Provide a role name created in a Carbon console. Then click **Next** to proceed.
 
-    ![Add Role]({{base_path}}/assets/img/administer/add-new-scope-name.png)
+    ![Add Role](../../assets/img/administer/add-new-scope-name.png)
  
 4. In **Select scope assignments**, you can either select **Role alias** or **Custom scope assignment**.
  
@@ -180,13 +180,13 @@ Additionally, all permissions listed under <strong>Admin/Monitor</strong> in the
     - If you want to map the scopes of `Internal/creator` to the new `creator` role, select `Internal/creator` from the drop-down menu and save. 
     - This will update all scope mappings in the `tenant-conf.json` file with `Internal/creator` as an allowed role resulting in the new `creator` role to be allowed for all scopes allowed for the `Internal/creator` role.
         
-        ![Add Role Alias Mapping]({{base_path}}/assets/img/administer/new-role-alias-mapping.png)
+        ![Add Role Alias Mapping](../../assets/img/administer/new-role-alias-mapping.png)
 
     ##### Custom Scope Assignments
     - New roles can be associated with scopes individually. If you create a custom role that has different permissions, add the required scopes for the role based on the functionality or permissions you need to give to a user carrying this role. 
     - For example, if you need to allow the user to create APIs, select the new scope `apim:api_create` under **custom scope assignments**.
         
-        ![Add Custom Scope Mapping]({{base_path}}/assets/img/administer/new-custom-scope-mapping.png) 
+        ![Add Custom Scope Mapping](../../assets/img/administer/new-custom-scope-mapping.png) 
 
 !!! info 
     The following are the scopes allowed for each default Internal role under the default configurations.

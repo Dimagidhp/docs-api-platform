@@ -54,7 +54,7 @@ Follow the instructions given below to configure Azure API Gateway as a Federate
     8. **APIM Hostname** - The hostname assigned to APIs deployed on Azure. The default is `azure-api.net`, but custom domains can be configured.
 3. Save the configurations.
 
-    [![add azure gateway environment]({{base_path}}/assets/img/deploy/add-azure-gw-environment.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/add-azure-gw-environment.png)
+    [![add azure gateway environment](../../../assets/img/deploy/add-azure-gw-environment.png){: style="width:90%"}](../../../assets/img/deploy/add-azure-gw-environment.png)
 
 
 ## Step 4 : Publish to Developer Portal

@@ -2,7 +2,7 @@
 
 When you go to the API details page, all the linked tabs (credentials, comments, tryout, SDKs, documents) are displayed. You can enable or disable them by configuring the `userTheme.json` file.
 
-The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#global-theming).
+The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here](../../../../reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#global-theming).
 
 By using `defaultTheme.js` as a reference , you could customize these link tabs by modifying `userTheme.json` file. For that
 

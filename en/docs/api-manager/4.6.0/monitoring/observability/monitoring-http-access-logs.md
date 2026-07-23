@@ -297,7 +297,7 @@ Follow the steps given below to enable access logs for the PassThrough or NIO tr
     "nhttp.is.log.rotatable" = "true"
     ```
     
-7.  Then [Restart the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/).
+7.  Then [Restart the server](../../install-and-setup/install/installing-the-product/running-the-api-m/).
 
 8.  Invoke an API in API Gateway. Then, navigate to `<API-M_HOME>/repository/logs/` directory, and you will see a newly created log file called `http_gw.log`, which contains API invocation related access logs.
 

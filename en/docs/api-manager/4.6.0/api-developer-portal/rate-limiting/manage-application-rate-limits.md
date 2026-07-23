@@ -19,7 +19,7 @@ To create an application with rate limiting:
    - **Description**: (Optional) Add a description for your application
 5. Click **Save** to create the application
 
-[![Application create policy]({{base_path}}/assets/img/learn/application-create-policy.png){: style="width:65%"}]({{base_path}}/assets/img/learn/application-create-policy.png)
+[![Application create policy](../../assets/img/learn/application-create-policy.png){: style="width:65%"}](../../assets/img/learn/application-create-policy.png)
 
 !!! tip
     The available rate limiting tiers are configured by your API administrator. If you need a custom tier with specific limits, contact your administrator before creating the application.
@@ -73,7 +73,7 @@ When subscribing to an API, select the tier that matches your needs:
 4. Choose the appropriate subscription tier based on your expected usage
 5. Complete the subscription
 
-[![Subscribe application tier]({{base_path}}/assets/img/learn/subscribe-application-tier.png)]({{base_path}}/assets/img/learn/subscribe-application-tier.png)
+[![Subscribe application tier](../../assets/img/learn/subscribe-application-tier.png)](../../assets/img/learn/subscribe-application-tier.png)
 
 !!! tip
     Some APIs may offer custom subscription tiers with specialized configurations for different API types:
@@ -97,6 +97,6 @@ If your usage requirements change, you can upgrade or downgrade your subscriptio
 
 ## See Also
 
-- [Rate Limiting for App Developers]({{base_path}}/api-developer-portal/rate-limiting/rate-limiting-for-app-developers/) - Understand how rate limiting works
-- [Handle Rate Limiting Errors]({{base_path}}/api-developer-portal/rate-limiting/handle-rate-limiting-errors/) - Implement error handling strategies
-- [Reset Application Throttling Policies]({{base_path}}/api-developer-portal/rate-limiting/resetting-application-throttling-policies/) - Reset individual user quotas
+- [Rate Limiting for App Developers](../../api-developer-portal/rate-limiting/rate-limiting-for-app-developers/) - Understand how rate limiting works
+- [Handle Rate Limiting Errors](../../api-developer-portal/rate-limiting/handle-rate-limiting-errors/) - Implement error handling strategies
+- [Reset Application Throttling Policies](../../api-developer-portal/rate-limiting/resetting-application-throttling-policies/) - Reset individual user quotas

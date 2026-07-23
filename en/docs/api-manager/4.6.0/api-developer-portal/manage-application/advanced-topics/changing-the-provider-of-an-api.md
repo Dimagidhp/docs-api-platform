@@ -14,7 +14,7 @@ Follow the instructions below to change the ownership of an application:
          `https://<APIM-hostname>:9443/carbon`
 
      2. Create two users named **Chris** and **Kim** with the `Internal/creator` role.
-        Refer [Create New Users]({{base_path}}/administer/managing-users-and-roles/managing-users#adding-a-new-user) for more information.
+        Refer [Create New Users](../../../administer/managing-users-and-roles/managing-users.md#adding-a-new-user) for more information.
 
 3.  We can check the current provider by logging to the publisher portal and by looking at the api tiles.
 
@@ -34,7 +34,7 @@ Follow the instructions below to change the ownership of an application:
         This shows you the list of apis together with the respective providers.
 
     3.  Search for the apis that you want to change and click **Edit**.
-        [![Search for the api]({{base_path}}/assets/img/learn/changing-api-provider-search.png)]({{base_path}}/assets/img/learn/changing-api-provider-search.png)
+        [![Search for the api](../../../assets/img/learn/changing-api-provider-search.png)](../../../assets/img/learn/changing-api-provider-search.png)
 
     4.  Update the **Provider** field with the new provider's username (Chris).
 
@@ -44,7 +44,7 @@ Follow the instructions below to change the ownership of an application:
 
         The apis page shows the new ownership.
 
-        [![Api page with the new ownership]({{base_path}}/assets/img/learn/changing-api-provider.png)]({{base_path}}/assets/img/learn/changing-api-provider.png)   
+        [![Api page with the new ownership](../../../assets/img/learn/changing-api-provider.png)](../../../assets/img/learn/changing-api-provider.png)   
 
         Now, when Kim or Chris signs in to the publisher Portal, the provider name is changed to Chris.
-        [![Kim Application List]({{base_path}}/assets/img/learn/api-chris.png)]({{base_path}}/assets/img/learn/api-chris.png)
+        [![Kim Application List](../../../assets/img/learn/api-chris.png)](../../../assets/img/learn/api-chris.png)

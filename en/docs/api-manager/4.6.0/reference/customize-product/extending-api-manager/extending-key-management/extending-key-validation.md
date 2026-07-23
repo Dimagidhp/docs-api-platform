@@ -1,6 +1,6 @@
 # Extending the Key Validation Interface
 
-Previously, in WSO2 API Manager (WSO2 API-M) the Key Manager was loosely coupled with other components and the users could [plug in different OAuth2 providers]({{base_path}}/install-and-setup/setup/distributed-deployment/configure-a-third-party-key-manager/) for the purpose of key validation. However, now, the Key Manager call that was used in the key validation process at runtime has been removed altogether and the default token type has been set to JWT (JSON Web Token). Now, the JWT Token validation takes place at the Gateway itself and the subsequent subscription validation also takes place in the Gateway as the required meta-information is available in the Gateway memory. 
+Previously, in WSO2 API Manager (WSO2 API-M) the Key Manager was loosely coupled with other components and the users could [plug in different OAuth2 providers](../../../../install-and-setup/setup/distributed-deployment/configure-a-third-party-key-manager/) for the purpose of key validation. However, now, the Key Manager call that was used in the key validation process at runtime has been removed altogether and the default token type has been set to JWT (JSON Web Token). Now, the JWT Token validation takes place at the Gateway itself and the subsequent subscription validation also takes place in the Gateway as the required meta-information is available in the Gateway memory. 
 
 When you call an API providing an access token, the execution flows through the handlers specified in the API. The API authentication handler extracts the token from the header and determines whether the token is a JWT. If the token is a JWT, it validates it via the `JWTValidator` interface. 
 
@@ -33,7 +33,7 @@ The following are the methods that the `JWTValidator` interface uses to carry ou
 </tbody>
 </table>
 
-You can implement the `JWTValidator` interface inside a custom Key Manager connector. For more information, see [writing a custom key manager connector]({{base_path}}/administer/key-managers/configure-custom-connector).
+You can implement the `JWTValidator` interface inside a custom Key Manager connector. For more information, see [writing a custom key manager connector](../../../../administer/key-managers/configure-custom-connector).
 
 After you implement the `JWTValidator` interface the implementation class can be instantiated using the `KeyManagerConnectorConfiguration`interface.
 
@@ -83,7 +83,7 @@ A few examples are listed below.
 <td>When creating a key via the API Developer Portal, the subscriber can specify which domains are allowed to make calls using a token granted against a particular consumer key. If this validation does not add any value, these trivial steps can be ignored and skipped by extending the <code>KeyValidationHandler</code>.
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>For another example scenario, see <a href="{{base_path}}/develop/extending-api-manager/extending-key-management/extending-scope-validation/">Skipping Role Validation for Scopes</a>.</p>
+<p>For another example scenario, see <a href="../../../../develop/extending-api-manager/extending-key-management/extending-scope-validation/">Skipping Role Validation for Scopes</a>.</p>
 </div>
 </td>
 </tr>

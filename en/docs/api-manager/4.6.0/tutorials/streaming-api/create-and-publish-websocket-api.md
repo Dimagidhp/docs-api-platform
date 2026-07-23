@@ -2,7 +2,7 @@
 
 This tutorial will guide you to implement a WebSocket based chat application using the WSO2 API Manager.
 Follow the instructions in this tutorial to design and publish API via a WebSocket backend, and thereafter 
-invoke the [WebSocket API]({{base_path}}/manage-apis/design/create-api/create-streaming-api/create-a-websocket-streaming-api) using the **wscat** WebSocket client.
+invoke the [WebSocket API](../../manage-apis/design/create-api/create-streaming-api/create-a-websocket-streaming-api) using the **wscat** WebSocket client.
 
 This will demonstrate a simple command line based chat room which has two channels: **rooms**, and **notifications**.
 
@@ -21,7 +21,7 @@ This will demonstrate a simple command line based chat room which has two channe
       </div>
      </html>
 
-    [![Design New Streaming API]({{base_path}}/assets/img/design/create-api/streaming-api/design-new-streaming-api.png)]({{base_path}}/assets/img/design/create-api/streaming-api/design-new-streaming-api.png)
+    [![Design New Streaming API](../../assets/img/design/create-api/streaming-api/design-new-streaming-api.png)](../../assets/img/design/create-api/streaming-api/design-new-streaming-api.png)
 
 3.  Enter the details of the new WebSocket API.
 
@@ -71,12 +71,12 @@ This will demonstrate a simple command line based chat room which has two channe
 
      The overview page of the created WebSocket API appears.
 
-     [![Overview of WebSocket API]({{base_path}}/assets/img/tutorials/streaming-api/websocket-api-overview.png)]({{base_path}}/assets/img/tutorials/streaming-api/websocket-api-overview.png)
+     [![Overview of WebSocket API](../../assets/img/tutorials/streaming-api/websocket-api-overview.png)](../../assets/img/tutorials/streaming-api/websocket-api-overview.png)
 
 5. Configure the runtime configurations.
     1. Click **Runtime** under the **API Configurations** section, select the required authentication type, and click **Save**.
 
-       <a href="{{base_path}}/assets/img/tutorials/streaming-api/websocket-api-runtime-configurations.png"><img src="{{base_path}}/assets/img/tutorials/streaming-api/websocket-api-runtime-configurations.png" width="65%" alt="Runtime Configurations of WebSocket API"></a>
+       <a href="../../../assets/img/tutorials/streaming-api/websocket-api-runtime-configurations.png"><img src="../../../assets/img/tutorials/streaming-api/websocket-api-runtime-configurations.png" width="65%" alt="Runtime Configurations of WebSocket API"></a>
     
 6. Add topics to the WebSocket API.
 
@@ -91,7 +91,7 @@ This will demonstrate a simple command line based chat room which has two channe
           - /notifications
           - /rooms/{roomID}
 
-          <img src="{{base_path}}/assets/img/tutorials/streaming-api/websocket-api-add-topics.png" width="80%" alt="Add Topics to WebSocket API">
+          <img src="../../../assets/img/tutorials/streaming-api/websocket-api-add-topics.png" width="80%" alt="Add Topics to WebSocket API">
           
      4. Expand each topic, provide URL Mappings as follows, and click **Save**.
 
@@ -103,7 +103,7 @@ This will demonstrate a simple command line based chat room which has two channe
 
           URL Mapping provided for a topic will be appended to the WebSocket endpoint URL, which was provided when creating the API, and the traffic via the topic will be sent to & received from the resulting URL.
 
-          [![Add URL Mappings to WebSocket API Topics]({{base_path}}/assets/img/tutorials/streaming-api/websocket-api-topic-url-mapping.png)]({{base_path}}/assets/img/tutorials/streaming-api/websocket-api-topic-url-mapping.png)
+          [![Add URL Mappings to WebSocket API Topics](../../assets/img/tutorials/streaming-api/websocket-api-topic-url-mapping.png)](../../assets/img/tutorials/streaming-api/websocket-api-topic-url-mapping.png)
 
 
 6. Attach business plans to your WebSocket API.
@@ -112,7 +112,7 @@ This will demonstrate a simple command line based chat room which has two channe
 
      2. Select **AsyncGold** and click on **Save**.
 
-           [![Subscriptions of WebSocket API]({{base_path}}/assets/img/tutorials/streaming-api/websocket-api-subscriptions.png)]({{base_path}}/assets/img/tutorials/streaming-api/websocket-api-subscriptions.png)
+           [![Subscriptions of WebSocket API](../../assets/img/tutorials/streaming-api/websocket-api-subscriptions.png)](../../assets/img/tutorials/streaming-api/websocket-api-subscriptions.png)
 
 Now, you have created and configured the WebSocket API successfully.
 
@@ -124,7 +124,7 @@ Now, you have created and configured the WebSocket API successfully.
 
 3. Select **Production and Sandbox**, choose **localhost** as the VHost, and click on **Deploy**.
 
-      <a href="{{base_path}}/assets/img/tutorials/streaming-api/streaming-api-deploy-new-revision.png"><img src="{{base_path}}/assets/img/tutorials/streaming-api/streaming-api-deploy-new-revision.png" width="80%" alt="Deploy New Revision"></a>
+      <a href="../../../assets/img/tutorials/streaming-api/streaming-api-deploy-new-revision.png"><img src="../../../assets/img/tutorials/streaming-api/streaming-api-deploy-new-revision.png" width="80%" alt="Deploy New Revision"></a>
 
 ### Step 3 - Start the WebSocket Server
 
@@ -163,11 +163,11 @@ Now, you have created and configured the WebSocket API successfully.
            </p>
            </div>
 
-         [![Key Generation Wizard]({{base_path}}/assets/img/tutorials/streaming-api/streaming-api-key-generation-wizard.png)]({{base_path}}/assets/img/tutorials/streaming-api/streaming-api-key-generation-wizard.png)
+         [![Key Generation Wizard](../../assets/img/tutorials/streaming-api/streaming-api-key-generation-wizard.png)](../../assets/img/tutorials/streaming-api/streaming-api-key-generation-wizard.png)
 
     2. Copy the authorization token that appears, and click **Finish**.
 
-         [![Authorization Token]({{base_path}}/assets/img/tutorials/streaming-api/streaming-api-subscription-token.png)]({{base_path}}/assets/img/tutorials/streaming-api/streaming-api-subscription-token.png)
+         [![Authorization Token](../../assets/img/tutorials/streaming-api/streaming-api-subscription-token.png)](../../assets/img/tutorials/streaming-api/streaming-api-subscription-token.png)
 
 4. Try out the operations.
      
@@ -304,4 +304,4 @@ You have successfully created and published your first WebSocket API, subscribed
 
 ### Troubleshooting
 
-If you require more detailed logs in the WebSocket API flow in order to troubleshoot and debug an error in your scenario, see [Troubleshooting WebSocket APIs]({{base_path}}/reference/troubleshooting/troubleshooting-websocket-api/).
+If you require more detailed logs in the WebSocket API flow in order to troubleshoot and debug an error in your scenario, see [Troubleshooting WebSocket APIs](../../reference/troubleshooting/troubleshooting-websocket-api/).

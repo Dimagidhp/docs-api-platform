@@ -16,7 +16,7 @@ Before creating a custom AI service provider, ensure you have:
 1. **Login to the Admin Portal**
 2. **Navigate to the AI Service Providers section** and click on **Add AI Service Provider**.
 
-    [![Add AI Vendor]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png)
+    [![Add AI Vendor](../../../assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png){: style="width:90%"}](../../../assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png)
 
 3. **Fill in the general details** for the AI Service Provider as shown below.
     
@@ -51,7 +51,7 @@ Before creating a custom AI service provider, ensure you have:
     - **Single Model Provider**: Use this option when you want to configure a single model for the provider
     - **Multi Model Provider**: Use this option when you want to configure an AI Service with multiple service providers like AWS Bedrock.
 
-    [![Custom AI Vendor Select Provider Type]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-select-provider-type.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-select-provider-type.png)
+    [![Custom AI Vendor Select Provider Type](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-select-provider-type.png){: style="width:90%"}](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-select-provider-type.png)
 
 
 5. **Add Available Models** - Enter the model names supported by your AI service provider. You can add multiple models by typing your model name and pressing enter. This enables model-based load balancing and failover capabilities.
@@ -62,7 +62,7 @@ Before creating a custom AI service provider, ensure you have:
     **For Multi Model Provider:**
     - You can add multiple model providers and their associated models
 
-    [![Custom AI Vendor Add Provider Name]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/costom-ai-vendor-add-provider-name.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/costom-ai-vendor-add-provider-name.png)
+    [![Custom AI Vendor Add Provider Name](../../../assets/img/learn/ai-gateway/custom-ai-vendor/costom-ai-vendor-add-provider-name.png){: style="width:90%"}](../../../assets/img/learn/ai-gateway/custom-ai-vendor/costom-ai-vendor-add-provider-name.png)
 
     > **Important**: Ensure you use the exact model names/IDs as expected by your AI service provider. The model names should match exactly what the provider's API documentation specifies.
 
@@ -138,7 +138,7 @@ Before creating a custom AI service provider, ensure you have:
     - Type: `authHeader`
     - Identifier: Your custom header name
 
-    [![Custom AI Vendor Auth Header]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/auth-header.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/auth-header.png)
+    [![Custom AI Vendor Auth Header](../../../assets/img/learn/ai-gateway/custom-ai-vendor/auth-header.png){: style="width:90%"}](../../../assets/img/learn/ai-gateway/custom-ai-vendor/auth-header.png)
 
 8. **Choose the connector type** as `default`.
 
@@ -149,8 +149,8 @@ Before creating a custom AI service provider, ensure you have:
 
 Once your custom AI service provider is configured:
 
-1. **Create AI APIs** using the configured provider - See [Getting Started with AI Gateway]({{base_path}}/ai-gateway/getting-started-with-ai-gateway/)
-2. **Set up rate limiting** and **policies** specific to your AI service - See [Rate Limiting]({{base_path}}/ai-gateway/rate-limiting/) and [API Policies]({{base_path}}/api-design-manage/design/api-policies/overview/)
-3. **Configure monitoring** and **analytics** to track usage - See [API Analytics]({{base_path}}/monitoring/api-analytics/analytics-overview/)
-4. **Test the integration** with sample requests - See [AI Gateway Overview]({{base_path}}/ai-gateway/ai-gateway-overview/)
-5. **Deploy to production** and manage access through the API Gateway - See [Deploy an API]({{base_path}}/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/)
+1. **Create AI APIs** using the configured provider - See [Getting Started with AI Gateway](../../../ai-gateway/getting-started-with-ai-gateway/)
+2. **Set up rate limiting** and **policies** specific to your AI service - See [Rate Limiting](../../../ai-gateway/rate-limiting/) and [API Policies](../../../api-design-manage/design/api-policies/overview/)
+3. **Configure monitoring** and **analytics** to track usage - See [API Analytics](../../../monitoring/api-analytics/analytics-overview/)
+4. **Test the integration** with sample requests - See [AI Gateway Overview](../../../ai-gateway/ai-gateway-overview/)
+5. **Deploy to production** and manage access through the API Gateway - See [Deploy an API](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/)

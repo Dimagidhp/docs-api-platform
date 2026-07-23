@@ -1,7 +1,7 @@
 # Write a Client Application Using the SDK
 
 
-1.  Follow the steps in the [Quick Start Guide]({{base_path}}/get-started/api-manager-quick-start-guide), to deploy the sample API, subscribe and generate keys.
+1.  Follow the steps in the [Quick Start Guide](../../get-started/api-manager-quick-start-guide.md), to deploy the sample API, subscribe and generate keys.
 
     <div class="admonition info">
         <p class="admonition-title">Info</p>
@@ -9,9 +9,9 @@
         <p>Once the keys are generated, copy the access token. You can use this token to invoke APIs that you subscribe to using the same application.</p>
     </div>
 
-2.  Go to the Developer Portal. Select your API and [download the SDK for Java]({{base_path}}/consume/generating-sdks/generate-sdks-in-dev-portal/). 
+2.  Go to the Developer Portal. Select your API and [download the SDK for Java](../../consume/generating-sdks/generate-sdks-in-dev-portal/). 
 
-![Default SDKs in Developer Portal]({{base_path}}/assets/img/consume/default-sdks.png)
+![Default SDKs in Developer Portal](../../assets/img/consume/default-sdks.png)
 
 3.  In this example, you would have downloaded the `PizzaShackAPI_1.0.0_java.zip` file. This file name includes the API name, version, and language of the SDK. Unzip the `PizzaShackAPI_1.0.0_java.zip` file.
 <details class="admonition info">
@@ -151,7 +151,7 @@
     The base path for the client application is the production (or sandbox) URL of the API. This could be found from the URL of the API in overview tab.
     
     The context of the API can be found from the API Overview in Developer Portal.
-    ![Context of the API]({{base_path}}/assets/img/consume/url-of-api.png)
+    ![Context of the API](../../assets/img/consume/url-of-api.png)
 
 10. Once the `ApiClient` object has all the required data, set the `ApiClient` for the instance of the `DefaultApi` object.
 

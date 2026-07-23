@@ -2,7 +2,7 @@
 
 WSO2 API Manager is shipped with an H2 database for storing data. These default databases are located in the `<API-M_HOME>/repository/database` directory of the product pack.
 
-When setting up databases, you need to ensure that the setup matches the distributed deployment pattern that you implement. For more information, see [Understanding the Distributed Deployment of API Manager]({{base_path}}/install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/).
+When setting up databases, you need to ensure that the setup matches the distributed deployment pattern that you implement. For more information, see [Understanding the Distributed Deployment of API Manager](../../../install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/).
 
 ## Default databases
 
@@ -14,9 +14,9 @@ Explained below are the default databases which will be used within API Manager.
 
 The following image shows the default databases and the data that are stored in each database.
 
-<a href="{{base_path}}/assets/img/setup-and-install/working-with-dbs-overview.png" ><img src="{{base_path}}/assets/img/setup-and-install/working-with-dbs-overview.png" alt="Data bases" title="Data bases" width="100%" /></a>
+<a href="../../../../assets/img/setup-and-install/working-with-dbs-overview.png" ><img src="../../../../assets/img/setup-and-install/working-with-dbs-overview.png" alt="Data bases" title="Data bases" width="100%" /></a>
 
-See how these databases are used when you [run API-M in a distributed deployment]({{base_path}}/install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/).
+See how these databases are used when you [run API-M in a distributed deployment](../../../install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/).
 
 ## Changing the default databases
 
@@ -60,9 +60,9 @@ Use the table below to find the correct script filename for your database type:
 
 See the following topics for database-specific instructions:
 
--   [Changing to MySQL]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mysql)
--   [Changing to Oracle]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle)
--   [Changing to MSSQL]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mssql)
--   [Changing to Oracle RAC]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle-rac)
--   [Changing to PostgreSQL]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-postgresql)
--   [Changing to IBM DB2]({{base_path}}/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-ibm-db2)
+-   [Changing to MySQL](../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mysql.md)
+-   [Changing to Oracle](../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle.md)
+-   [Changing to MSSQL](../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mssql.md)
+-   [Changing to Oracle RAC](../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-oracle-rac.md)
+-   [Changing to PostgreSQL](../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-postgresql.md)
+-   [Changing to IBM DB2](../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-ibm-db2.md)

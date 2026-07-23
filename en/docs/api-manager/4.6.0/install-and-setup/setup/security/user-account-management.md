@@ -56,7 +56,7 @@ The following steps show how to enable account locking. See [Account Locking by 
 
 4.  Expand the **Account Lock** tab and tick the **Lock user accounts on maximum failed attempts** checkbox. Click **Update** to save changes.
 
-    ![enable-account-lock]({{base_path}}/assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-config.png)
+    ![enable-account-lock](../../../assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-config.png)
 
 !!! info
     - If you have configured the email sending module as mentioned in [Configuring the Email Sending Module](https://is.docs.wso2.com/en/5.10.0/setup/configuring-email-sending/) and if the particular locked user's email address is correct in his profile, he/she will receive an email stating that the account is locked.
@@ -72,17 +72,17 @@ An administrative user can lock and unlock a particular user's account through t
 
 3.  Expand the **Account Locked** claim and click **Edit**.
    
-    ![account-lock-claim]({{base_path}}/assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-claim-edit.png)
+    ![account-lock-claim](../../../assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-claim-edit.png)
 
 4.  Tick the **Supported by Default** checkbox and click **Update**. This is done to make the **Account Locked** status appear in the user's profile.
    
-    ![edit-account-lock-claim]({{base_path}}/assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-claim-update.png)
+    ![edit-account-lock-claim](../../../assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-claim-update.png)
 
 5.  Go to **Users and Roles &gt; List &gt; Users** on the **Main** menu and click on **User Profile** of the user you want to lock.
 
 6.  Tick the checkbox in front of the **Account Locked** field to lock the account for the user and click **Update**.
    
-    ![profile-account-lock]({{base_path}}/assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-checkbox.png)
+    ![profile-account-lock](../../../assets/img/administer/product-security/identity-management-for-the-api-dev-portal/account-lock-checkbox.png)
 
 ## Password policies
 
@@ -92,7 +92,7 @@ You can define your custom password policy for the Developer Portal, Publisher a
     
 #### User store password RegEx
 
-For more information, see [Configuring a JDBC User Store]({{base_path}}/administer/managing-users-and-roles/managing-user-stores/configure-primary-user-store/configuring-a-jdbc-user-store/#configuring-a-jdbc-user-store)  
+For more information, see [Configuring a JDBC User Store](../../../administer/managing-users-and-roles/managing-user-stores/configure-primary-user-store/configuring-a-jdbc-user-store/#configuring-a-jdbc-user-store)  
 
 Example:
 
@@ -140,7 +140,7 @@ When changing the password, the new password will be validated against the user 
   
 You can display a list of policy guidelines in the change password page that appears in the Developer Portal.  
   
-<img src="{{base_path}}/assets/img/learn/change-devportal-password-policy-guideline-display.png" alt="Displaying Developer Portal password policy guidelines" width="700"/>
+<img src="../../../../assets/img/learn/change-devportal-password-policy-guideline-display.png" alt="Displaying Developer Portal password policy guidelines" width="700"/>
   
 1. Enable password changing guidelines in the `settings.json` file.  
 
@@ -195,11 +195,11 @@ Follow the instructions below to disable anonymous access to the Developer Porta
 
 2. Navigate to **Settings > Advanced**.
 
-    [![Admin Portal Advanced Settings]({{base_path}}/assets/img/administer/advanced-config-browse.png)]({{base_path}}/assets/img/administer/advanced-config-browse.png)
+    [![Admin Portal Advanced Settings](../../../assets/img/administer/advanced-config-browse.png)](../../../assets/img/administer/advanced-config-browse.png)
 
 3. In the Advanced Configurations editor, locate the `EnableAnonymous` field and set its value to `false`.
 
-    [![Advanced Configurations Editor]({{base_path}}/assets/img/administer/advanced-config-save.png)]({{base_path}}/assets/img/administer/advanced-config-save.png)
+    [![Advanced Configurations Editor](../../../assets/img/administer/advanced-config-save.png)](../../../assets/img/administer/advanced-config-save.png)
 
     !!! note
         To disable anonymous access globally, add the following to the `<API-M_HOME>/repository/conf/deployment.toml` file.

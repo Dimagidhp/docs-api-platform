@@ -74,7 +74,7 @@ APIs in WSO2 API Manager can be secured using Certificate Bound Access Tokens, a
 
      `https://<hostname>:9443/publisher`
 
-2. [Create an API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api).     
+2. [Create an API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md).     
     
 ### Invoke an API secured with Certificate Bound Access Token using Postman
 
@@ -82,11 +82,11 @@ Import the certificate and private key to Postman.
 
 1. Navigate to the certificates tab in Postman settings.
     
-     [![Add the certificate to Postman]({{base_path}}/assets/img/learn/add-certificate-to-postman.png)]({{base_path}}/assets/img/learn/add-certificate-to-postman.png)
+     [![Add the certificate to Postman](../../../assets/img/learn/add-certificate-to-postman.png)](../../../assets/img/learn/add-certificate-to-postman.png)
     
 2. Add the certificate and private key.
 
-     [![Provide certificate and private key]({{base_path}}/assets/img/learn/provide-crt-and-private-key.png)]({{base_path}}/assets/img/learn/provide-crt-and-private-key.png)
+     [![Provide certificate and private key](../../../assets/img/learn/provide-crt-and-private-key.png)](../../../assets/img/learn/provide-crt-and-private-key.png)
     
 3. Set the Certificate Bound Access Token as the Bearer token.
    

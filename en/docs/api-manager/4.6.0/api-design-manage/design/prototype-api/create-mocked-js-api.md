@@ -9,7 +9,7 @@ Note the following when creating an interface for the API.
 - You can create either a new API or a new version of an existing API for this purpose.
 - Leave the endpoint field empty since the gateway will be acting as a backend using the javascript definitions we provide.
 
-For this example, let's follow [steps 1 to 5 in the Create a REST API from an OpenAPI Definition - basic flow guide]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition/#create-an-api-using-the-basic-flow) to create the basic structure of the API interface using the following details.
+For this example, let's follow [steps 1 to 5 in the Create a REST API from an OpenAPI Definition - basic flow guide](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition/#create-an-api-using-the-basic-flow) to create the basic structure of the API interface using the following details.
 
 | **Field**    | **Value**                        |
 |----------|-------------------------------------|
@@ -29,7 +29,7 @@ Follow the instructions below to add a mock implementation to the API:
 
 2. Select **Mock Implementation** as the endpoint type and click **Add**.
 
-     [![Select Mock Implementation]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-mock-impl-swagger-petstore.png)]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-mock-impl-swagger-petstore.png)
+     [![Select Mock Implementation](../../../assets/img/learn/prototype-api/create-api-prototype-mock-impl-swagger-petstore.png)](../../../assets/img/learn/prototype-api/create-api-prototype-mock-impl-swagger-petstore.png)
 
 3. View the inline script that has been generated.
 
@@ -40,7 +40,7 @@ Follow the instructions below to add a mock implementation to the API:
 
      Let's click on the `GET /pet/{petId}` method.
 
-     [![Generated inline script]({{base_path}}/assets/img/learn/create-api-prototype-generated-script.png)]({{base_path}}/assets/img/learn/create-api-prototype-generated-script.png)
+     [![Generated inline script](../../../assets/img/learn/create-api-prototype-generated-script.png)](../../../assets/img/learn/create-api-prototype-generated-script.png)
 
      The example response defined in the OpenAPI definition is set as the mock response payload. You can modify the generated inline scripts as required. 
 
@@ -75,7 +75,7 @@ Follow the instructions below to add a mock implementation to the API:
    
         The **RESET** button appears after a change is made to the script. When pressed, the script will revert to the originally generated script.
 
-     [![Modified inline script]({{base_path}}/assets/img/learn/create-api-prototype-generated-script-modified.png)]({{base_path}}/assets/img/learn/create-api-prototype-generated-script-modified.png)
+     [![Modified inline script](../../../assets/img/learn/create-api-prototype-generated-script-modified.png)](../../../assets/img/learn/create-api-prototype-generated-script-modified.png)
    
     ??? note "Click here to view the modified inline Mock Implementation script."
         ```
@@ -161,7 +161,7 @@ Follow the instructions below to add a mock implementation to the API:
       
 5. Click **Save** to save the endpoint configurations in the API.
 
-     [![Save inline scripts]({{base_path}}/assets/img/learn/create-api-prototype-click-save.png)]({{base_path}}/assets/img/learn/create-api-prototype-click-save.png)
+     [![Save inline scripts](../../../assets/img/learn/create-api-prototype-click-save.png)](../../../assets/img/learn/create-api-prototype-click-save.png)
 
 {!includes/design/invoke-prerelease-api.md!}
 
@@ -170,20 +170,20 @@ Follow the instructions below to add a mock implementation to the API:
 1. Click **View in Dev Portal** to navigate to the Developer Portal.
 
     !!! note 
-        If you have enabled security for the prototype API, follow the [Subscribe to an API]({{base_path}}/api-developer-portal/manage-subscription/subscribe-to-an-api/) guide to subscribe and obtain an access token to invoke the prototype API.
+        If you have enabled security for the prototype API, follow the [Subscribe to an API](../../../api-developer-portal/manage-subscription/subscribe-to-an-api/) guide to subscribe and obtain an access token to invoke the prototype API.
 
 2. Click **Try Out** to navigate to the API Console.
 
 3. If you have enabled security, you can either use the access token that you got from the above step or use the **GET TEST KEY** option.
      
     !!! note
-        Skip this step if you have [disabled security for the API]({{base_path}}/manage-apis/design/api-security/api-authentication/disable-security/), and leave the **Access Token** field empty.
+        Skip this step if you have [disabled security for the API](../../../manage-apis/design/api-security/api-authentication/disable-security/), and leave the **Access Token** field empty.
 
-     [![Try out prototype]({{base_path}}/assets/img/learn/prototype-api/create-prototype-api-dev-portal-tryout-petstore.png)]({{base_path}}/assets/img/learn/prototype-api/create-prototype-api-dev-portal-tryout-petstore.png)
+     [![Try out prototype](../../../assets/img/learn/prototype-api/create-prototype-api-dev-portal-tryout-petstore.png)](../../../assets/img/learn/prototype-api/create-prototype-api-dev-portal-tryout-petstore.png)
 
 4. Expand any method and click **Try it out**.
 
-     [![Click Try it out]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-tryout-click.png)]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-tryout-click.png)
+     [![Click Try it out](../../../assets/img/learn/prototype-api/create-api-prototype-tryout-click.png)](../../../assets/img/learn/prototype-api/create-api-prototype-tryout-click.png)
 
 5. Enter the value for the parameter and click **Execute** to invoke the API.
 
@@ -192,19 +192,19 @@ Follow the instructions below to add a mock implementation to the API:
 
     1. For `petId : " 0 " `
 
-         [![Tryout for petid0]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid0.png)]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid0.png)
+         [![Tryout for petid0](../../../assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid0.png)](../../../assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid0.png)
  
         The response payload that is defined in the generated script is returned.
    
-        [![Response for petid0]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-execute-response-petid0.png)]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-execute-response-petid0.png)
+        [![Response for petid0](../../../assets/img/learn/prototype-api/create-api-prototype-execute-response-petid0.png)](../../../assets/img/learn/prototype-api/create-api-prototype-execute-response-petid0.png)
 
     2. For `petId : " 1 " `
 
-        [![Tryout for petid1]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid1.png)]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid1.png)
+        [![Tryout for petid1](../../../assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid1.png)](../../../assets/img/learn/prototype-api/create-api-prototype-tryout-execute-petid1.png)
 
         The response payload defined in the manually modified script is returned.
 
-        [![Response for petid1]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-execute-response-petid1.png)]({{base_path}}/assets/img/learn/prototype-api/create-api-prototype-execute-response-petid1.png)
+        [![Response for petid1](../../../assets/img/learn/prototype-api/create-api-prototype-execute-response-petid1.png)](../../../assets/img/learn/prototype-api/create-api-prototype-execute-response-petid1.png)
 
 ## Additional Information
 
@@ -313,11 +313,11 @@ It is recommended to use an Allow List approach for both class and method access
 
 Learn more on the concepts that you need to know when creating a Prototype API:
 
--   [Endpoints]({{base_path}}/manage-apis/design/endpoints/endpoint-types/)
--   [API Security]({{base_path}}/manage-apis/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
--   [Rate Limiting]({{base_path}}/manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
--   [Life Cycle Management]({{base_path}}/manage-apis/design/lifecycle-management/api-lifecycle/)
--   [API Monetization]({{base_path}}/manage-apis/design/api-monetization/monetizing-an-api/)
--   [API Visibility]({{base_path}}/manage-apis/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation]({{base_path}}/manage-apis/design/api-documentation/add-api-documentation/)
--   [Custom Properties]({{base_path}}/manage-apis/design/create-api/adding-custom-properties-to-apis/)
+-   [Endpoints](../../../manage-apis/design/endpoints/endpoint-types/)
+-   [API Security](../../../manage-apis/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
+-   [Rate Limiting](../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
+-   [Life Cycle Management](../../../manage-apis/design/lifecycle-management/api-lifecycle/)
+-   [API Monetization](../../../manage-apis/design/api-monetization/monetizing-an-api/)
+-   [API Visibility](../../../manage-apis/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
+-   [API Documentation](../../../manage-apis/design/api-documentation/add-api-documentation/)
+-   [Custom Properties](../../../manage-apis/design/create-api/adding-custom-properties-to-apis/)

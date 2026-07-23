@@ -9,7 +9,7 @@ Anthropic is a **default AI Service Provider** in WSO2 API Manager that allows y
 1. Login to the Admin Portal (`https://<hostname>:9443/admin`)
 2. Navigate to **AI Service Providers** → **Anthropic**
 
-[![Anthropic Configuration]({{base_path}}/assets/img/learn/ai-gateway/anthropic-config.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/anthropic-config.png)
+[![Anthropic Configuration](../../assets/img/learn/ai-gateway/anthropic-config.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/anthropic-config.png)
 
 ### Step 2: Configure Models
 
@@ -85,7 +85,7 @@ The following configurations can be updated:
 
 - By default, the following models are included: `claude-opus-4-1-20250805`, `claude-sonnet-4-20250514`, and `claude-3-7-sonnet-20250219`.
 - To add available models supported by Anthropic, type the model name and press enter. 
-- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview]({{base_path}}/ai-gateway/multi-model-routing/overview/).
+- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview](../../ai-gateway/multi-model-routing/overview/).
 
 ### Step 3: Save Configuration
 

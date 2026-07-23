@@ -31,11 +31,11 @@ The error code in the response indicates which specific limit was exceeded:
 | `900806` | Custom policy throttled out | Message throttled out due to exceeding the limit configured through the custom throttling policy rules. |
 | `900807` | Message throttled out | Messaged throttled out because of exceeding the burst control/rate limit (requests per second) in the subscription level policy. |
 
-For complete information on all error codes, see [Error Handling]({{base_path}}/reference/troubleshooting/error-handling/#api-handlers-error-codes).
+For complete information on all error codes, see [Error Handling](../../reference/troubleshooting/error-handling/#api-handlers-error-codes).
 
 ## See Also
 
-- Learn about rate limiting tiers: [Rate Limiting for App Developers]({{base_path}}/api-developer-portal/rate-limiting/rate-limiting-for-app-developers/)
-- Reset user quotas in your application: [Reset Application Throttling Policies]({{base_path}}/api-developer-portal/rate-limiting/resetting-application-throttling-policies/)
-- Manage your applications: [Manage Application Rate Limits]({{base_path}}/api-developer-portal/rate-limiting/manage-application-rate-limits/)
+- Learn about rate limiting tiers: [Rate Limiting for App Developers](../../api-developer-portal/rate-limiting/rate-limiting-for-app-developers/)
+- Reset user quotas in your application: [Reset Application Throttling Policies](../../api-developer-portal/rate-limiting/resetting-application-throttling-policies/)
+- Manage your applications: [Manage Application Rate Limits](../../api-developer-portal/rate-limiting/manage-application-rate-limits/)
 

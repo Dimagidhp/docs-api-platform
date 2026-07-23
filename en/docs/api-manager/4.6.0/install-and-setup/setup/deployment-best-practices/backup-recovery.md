@@ -17,7 +17,7 @@ Also, a full backup of the entire server pack is also created automatically each
 
 We recommend that you use a proper artifact management system such as [Puppet](https://puppet.com/) to back up and manage your artifacts before deploying them in the API Manager runtime. Also, use the [**WSO2 Updates 2.0**](https://updates.docs.wso2.com/en/latest/) tool, which allows you to get the latest updates (bug fixes and security fixes) of a particular product release.
 
-![Backup and recovery flow]({{base_path}}/assets/img/integrate/admin-guide-configuration-mgmt.png)
+![Backup and recovery flow](../../../assets/img/integrate/admin-guide-configuration-mgmt.png)
 
 ## Recovery recommendations
 Be sure to determine the following depending on your business-continuity requirements:

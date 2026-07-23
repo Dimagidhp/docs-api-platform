@@ -8,8 +8,8 @@ A policy for Open Policy Agent can be though as a set of rules and policy engine
 
 WSO2 API Manager uses this unique policy engine to evaluate the requests that the Gateway receives and decides the fate of the request.
 
-<a href="{{base_path}}/assets/img/design/security/opa/opa-policy-architecture.png">
-    <img src="{{base_path}}/assets/img/design/security/opa/opa-policy-architecture.png" alt="OPA Architecture"/>
+<a href="../../../../assets/img/design/security/opa/opa-policy-architecture.png">
+    <img src="../../../../assets/img/design/security/opa/opa-policy-architecture.png" alt="OPA Architecture"/>
 </a>
 
 ## How to use OPA for request validation?
@@ -33,8 +33,8 @@ Once OPA engine is deployed, you have to attach the policy to the operations tha
 5. Fill the configurations as per your deployment and save the page.
 6. Create a new revision from these changes and deploy it to the Gateway.
 
-<a href="{{base_path}}/assets/img/design/security/opa/opa-policy-selection.png">
-    <img src="{{base_path}}/assets/img/design/security/opa/opa-policy-selection.png" alt="Select the OPA Policy"/>
+<a href="../../../../assets/img/design/security/opa/opa-policy-selection.png">
+    <img src="../../../../assets/img/design/security/opa/opa-policy-selection.png" alt="Select the OPA Policy"/>
 </a>
 
 Configurations for the policy is as follows.
@@ -50,8 +50,8 @@ Configurations for the policy is as follows.
 | Max Open Connections  | **Optional** Maximum number of open HTTP connections between the gateway and OPA server.                                                                                                                                                                               | `500`                                  |
 | Connection Timeout    | **Optional** Connection timeout in seconds.                                                                                                                                                                                                                            | `30`                                   |
 
-<a href="{{base_path}}/assets/img/design/security/opa/configure-opa-policy.png">
-    <img src="{{base_path}}/assets/img/design/security/opa/configure-opa-policy.png" alt="Configure OPA policy"/>
+<a href="../../../../assets/img/design/security/opa/configure-opa-policy.png">
+    <img src="../../../../assets/img/design/security/opa/configure-opa-policy.png" alt="Configure OPA policy"/>
 </a>
 
 ## Defining Policies in the OPA Server

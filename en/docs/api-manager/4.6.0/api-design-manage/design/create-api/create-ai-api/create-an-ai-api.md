@@ -2,7 +2,7 @@
 
 AI APIs enable seamless integration of AI services into applications through the WSO2 API Manager. By using the AI API feature, users can select specific AI vendors that best suit their needs. WSO2 API Manager provides built-in support for leading AI vendors like **OpenAI**, **Azure OpenAI**, and **Mistral**, while also allowing configuration of custom AI vendors to create AI APIs.
 
-This guide will get you started with AI API creation using WSO2 API Manager. Thus created AI API wil be deployed into the AI Gateway. Refer to [AI Gateway]({{base_path}}/ai-gateway/overview/) to get a deeper understanding on API Manager's AI Gateway capabilities.
+This guide will get you started with AI API creation using WSO2 API Manager. Thus created AI API wil be deployed into the AI Gateway. Refer to [AI Gateway](../../../../ai-gateway/overview/) to get a deeper understanding on API Manager's AI Gateway capabilities.
 
 Follow the instructions below to create an AI API using the basic flow:
 
@@ -12,15 +12,15 @@ Follow the instructions below to create an AI API using the basic flow:
 
 2. Create an **AI API** by clicking on **Create AI API**.
 
-    [![Select AI API]({{base_path}}/assets/img/learn/ai-gateway/select-ai-api.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/select-ai-api.png)
+    [![Select AI API](../../../../assets/img/learn/ai-gateway/select-ai-api.png){: style="width:90%"}](../../../../assets/img/learn/ai-gateway/select-ai-api.png)
 
 3. Select the desired provider and version. Then, click Next.
 
-    [![Select AI Service Provider and Version]({{base_path}}/assets/img/learn/ai-gateway/select-service-provider.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/select-service-provider.png)
+    [![Select AI Service Provider and Version](../../../../assets/img/learn/ai-gateway/select-service-provider.png){: style="width:90%"}](../../../../assets/img/learn/ai-gateway/select-service-provider.png)
 
     <div class="admonition tip">
         <p class="admonition-title">Tip</p>
-        <p>The built-in AI service providers and versions will appear on relevant dropdowns. In addition to the default vendors, you can add custom AI vendors by following the <a href='{{base_path}}/ai-gateway/ai-vendor-management/custom-ai-vendors/overview'>custom AI vendor integration</a> documentation.</p>
+        <p>The built-in AI service providers and versions will appear on relevant dropdowns. In addition to the default vendors, you can add custom AI vendors by following the <a href='../../../../../ai-gateway/ai-vendor-management/custom-ai-vendors/overview'>custom AI vendor integration</a> documentation.</p>
     </div>
 
 4. Fill in the AI API details and click **Create**.
@@ -79,7 +79,7 @@ Follow the instructions below to create an AI API using the basic flow:
         </tbody>
     </table>
 
-    [![Create OpenAI API]({{base_path}}/assets/img/learn/ai-gateway/create-openai-api.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/create-openai-api.png)
+    [![Create OpenAI API](../../../../assets/img/learn/ai-gateway/create-openai-api.png){: style="width:90%"}](../../../../assets/img/learn/ai-gateway/create-openai-api.png)
 
     The overview page of the newly created API appears.
 
@@ -88,7 +88,7 @@ Follow the instructions below to create an AI API using the basic flow:
 1. Login to OpenAI and go to <a href='https://platform.openai.com/api-keys'>OpenAI Dashboard.</a>
 2. Navigate to **API keys** section from the left menu. Then, click on **Create new secret key**. Provide a name for the key and click on **Create secret key**.
 
-    [![Get OpenAI API Key]({{base_path}}/assets/img/learn/ai-gateway/openai-api-key-generation.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/openai-api-key-generation.png)
+    [![Get OpenAI API Key](../../../../assets/img/learn/ai-gateway/openai-api-key-generation.png){: style="width:90%"}](../../../../assets/img/learn/ai-gateway/openai-api-key-generation.png)
 
 ### Step 3: Configure Sandbox and Production Endpoint
 
@@ -107,18 +107,18 @@ Follow the instructions below to create an AI API using the basic flow:
 
         Note that we prepend "Bearer " to the header value that you provide when it comes to MistralAI and OpenAI since they are expecting an Authorization header.
 
-    [![API Key Configuration]({{base_path}}/assets/img/learn/ai-gateway/ai-api-configure-backend-security.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/ai-api-configure-backend-security.png)
+    [![API Key Configuration](../../../../assets/img/learn/ai-gateway/ai-api-configure-backend-security.png){: style="width:90%"}](../../../../assets/img/learn/ai-gateway/ai-api-configure-backend-security.png)
 
-Now, you have successfully created an AI API. Next, [deploy the API]({{base_path}}/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API]({{base_path}}/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api).
+Now, you have successfully created an AI API. Next, [deploy the API](../../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API](../../../../api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ## See Also
 
 Learn more on the concepts that you need to know when creating a REST API:
 
--   [API Security]({{base_path}}/api-security/runtime/secure-apis-using-oauth2-tokens/)
--   [Rate Limiting for AI APIs]({{base_path}}/ai-gateway/rate-limiting/)
--   [Multi-Model Routing]({{base_path}}/ai-gateway/multi-model-routing/overview/)
--   [Life Cycle Management]({{base_path}}/api-design-manage/design/lifecycle-management/api-lifecycle/)
--   [API Visibility]({{base_path}}/api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation]({{base_path}}/api-design-manage/design/api-documentation/add-api-documentation/)
--   [Custom Properties]({{base_path}}/api-design-manage/design/create-api/adding-custom-properties-to-apis/)
+-   [API Security](../../../../api-security/runtime/secure-apis-using-oauth2-tokens/)
+-   [Rate Limiting for AI APIs](../../../../ai-gateway/rate-limiting/)
+-   [Multi-Model Routing](../../../../ai-gateway/multi-model-routing/overview/)
+-   [Life Cycle Management](../../../../api-design-manage/design/lifecycle-management/api-lifecycle/)
+-   [API Visibility](../../../../api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
+-   [API Documentation](../../../../api-design-manage/design/api-documentation/add-api-documentation/)
+-   [Custom Properties](../../../../api-design-manage/design/create-api/adding-custom-properties-to-apis/)

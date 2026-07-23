@@ -9,7 +9,7 @@ Gemini is a **default AI Service Provider** in WSO2 API Manager that allows you 
 1. Login to the Admin Portal (`https://<hostname>:9443/admin`)
 2. Navigate to **AI Service Providers** → **Gemini**
 
-[![Gemini Configuration]({{base_path}}/assets/img/learn/ai-gateway/gemini-config.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/gemini-config.png)
+[![Gemini Configuration](../../assets/img/learn/ai-gateway/gemini-config.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/gemini-config.png)
 
 ### Step 2: Configure Models
 
@@ -85,7 +85,7 @@ The following configurations can be updated:
 
 - By default, the following models are included: `gemini-2.5-flash-lite`, `gemini-2.5-flash`, and `gemini-2.5-pro`.
 - To add available models supported by Gemini, type the model name and press enter.
-- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview]({{base_path}}/ai-gateway/multi-model-routing/overview/).
+- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview](../../ai-gateway/multi-model-routing/overview/).
 
 ### Step 3: Save Configuration
 

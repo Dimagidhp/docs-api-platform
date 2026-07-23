@@ -2,7 +2,7 @@
 
 This pattern deploys WSO2 API Manager as a highly available active-active cluster with two nodes, each running all components — Control Plane, Gateway, Traffic Manager, and Key Manager. It is suitable for production environments that require high availability and can handle moderate traffic.
 
-<a href="{{base_path}}/assets/img/setup-and-install/active-active-apim-deployment.png"><img src="{{base_path}}/assets/img/setup-and-install/active-active-apim-deployment.png" alt="active-active api-m deployment" width="60%"></a>
+<a href="../../../../../assets/img/setup-and-install/active-active-apim-deployment.png"><img src="../../../../../assets/img/setup-and-install/active-active-apim-deployment.png" alt="active-active api-m deployment" width="60%"></a>
 
 ## How Pattern 1 Differs from Pattern 0
 
@@ -156,7 +156,7 @@ Any other customisations — additional JARs, patches, or environment-specific l
 
 Pattern 1 requires two databases: `apim_db` and `shared_db`. Both must be reachable from inside the Kubernetes cluster before the pods start.
 
-Follow the [Setting Up Databases]({{base_path}}/install-and-setup/setup/setting-up-databases/overview/) guide to:
+Follow the [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/) guide to:
 
 1. Set up a database instance accessible from your cluster
 2. Obtain the schema scripts for your database type
@@ -197,7 +197,7 @@ The Helm chart mounts a Kubernetes secret named `apim-keystore-secret` as a volu
     ```
 
 !!! note
-    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/).
+    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/).
 
 ### Step 8 — Deploy WSO2 API Manager { #step-8 }
 
@@ -242,7 +242,7 @@ Pattern 1 uses a single Helm chart release with two pod replicas forming the act
               password: "<DB_PASSWORD>"
     ```
 
-    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases]({{base_path}}/install-and-setup/setup/setting-up-databases/overview/#changing-the-default-databases).
+    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/#changing-the-default-databases).
 
 3. Deploy WSO2 API Manager:
 
@@ -443,7 +443,7 @@ In a distributed or HA deployment, all API Manager nodes must use the same inter
 
 In [Step 7](#step-7) of the Quick Start, you created `apim-keystore-secret` using the default WSO2 keystores extracted from the Docker image. Those are self-signed certificates suitable for evaluation only.
 
-For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
+For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
 
 ```bash
 kubectl create secret generic apim-keystore-secret \

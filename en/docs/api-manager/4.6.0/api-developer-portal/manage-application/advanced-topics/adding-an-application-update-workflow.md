@@ -14,7 +14,7 @@ First, enable the approval workflow executor for application update.
 
 2.  Click Main → Registry → Browse.
 
-    <a href="{{base_path}}/assets/img/learn/navigate-main-resources.png"><img src="{{base_path}}/assets/img/learn/navigate-main-resources.png" width="250" height="100"/></a>
+    <a href="../../../../assets/img/learn/navigate-main-resources.png"><img src="../../../../assets/img/learn/navigate-main-resources.png" width="250" height="100"/></a>
 
 3.  Go to the /_system/governance/apimgt/applicationdata/workflow-extensions.xml resource, click on Edit as text to edit the file, disable the Simple Workflow Executor, and enable Approval Workflow Executor for application update. 
 
@@ -42,12 +42,12 @@ First, enable the approval workflow executor for application update.
    
           Note that the Status field of the application is changed to UPDATE PENDING.
 
-    ![Application status is UPDATE PENDING]({{base_path}}/assets/img/learn/application-update-pending.png)
+    ![Application status is UPDATE PENDING](../../../assets/img/learn/application-update-pending.png)
 
 
 5.  Sign in to the Admin Portal (`https://localhost:9443/admin`), list all the tasks for application update from **Tasks** → **Application Update** and approve or reject the task.
 6.  Click the arrow icon on the left side of the table entry to view the detailed summary of the pending changes before proceeding with an Approve or Reject action.
 
-     ![Application pending details]({{base_path}}/assets/img/learn/application-pending-details.png)
+     ![Application pending details](../../../assets/img/learn/application-pending-details.png)
 
 7. Go back to the Applications page in the WSO2 Developer Portal and see the updated application, the status has to be either ACTIVE or UPDATE REJECTED.

@@ -42,13 +42,13 @@ If you need to change the default behavior, you can implement the `org.wso2.carb
 notifier_impl="org.wso2.carbon.apimgt.notification.TokenRevocationNotifier"
 ```
 
-For more information on the above configuration, see the [Config Catalog]({{base_path}}/reference/config-catalog/#api-m-token-revocation).
+For more information on the above configuration, see the [Config Catalog](../../../reference/config-catalog/#api-m-token-revocation).
 
 ## Resource cache
 
 An API's resources are HTTP methods that handle particular types of requests such as GET, POST, etc. They are similar to the methods of a particular class. Each resource has parameters such as its throttling level, Auth type, etc.
 
-[![Resource security and throttling limit]({{base_path}}/assets/img/administer/resource-security-and-throttling-limit.png)]({{base_path}}/assets/img/administer/resource-security-and-throttling-limit.png)
+[![Resource security and throttling limit](../../../assets/img/administer/resource-security-and-throttling-limit.png)](../../../assets/img/administer/resource-security-and-throttling-limit.png)
 
 Users can make requests to an API by calling any one of the HTTP methods of the API's resources. The API Manager uses the resource cache at the Gateway node to store the API's resource-level parameters (Auth type and throttling level). The cache entry is identified by a cache key, which is based on the API's context, version, request path, and HTTP method. Caching avoids the need to do a separate back-end call to check the Auth type and throttling level of a resource, every time a request to the API comes. It improves performance.
 
@@ -71,11 +71,11 @@ The OAuth token is saved in this cache, which is enabled by default. Whenever a 
 
 ## Response cache
 
-For information on how to enable response caching for a given API, see [Response Caching]({{base_path}}/manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/response-caching/).
+For information on how to enable response caching for a given API, see [Response Caching](../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/response-caching/).
 
 ## JWT claims cache
 
-For information on how to enable JWT claims caching, see [JWT claims Caching]({{base_path}}/manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/#expiry-time-of-the-jwt).
+For information on how to enable JWT claims caching, see [JWT claims Caching](../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/#expiry-time-of-the-jwt).
 
 ## Publisher cache
 

@@ -1,6 +1,6 @@
 # Scenario 12 - Guaranteed Message Delivery
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to guarantee message delivery. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to guarantee message delivery. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 6 minutes_**
 
@@ -12,7 +12,7 @@ Store and forward messaging pattern is used to ensure guaranteed delivery of mes
 
 This will be implemented with Message Store and Message Processor in Micro Integrator. Whenever the catering system is down, the messages will be stored in the Message Store. When the system becomes available again, the stored messages will be sent to the Catering system.
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario12.png" alt="Guaranteed Message Delivery" title="Guaranteed Message Delivery" width="60%" />
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario12.png" alt="Guaranteed Message Delivery" title="Guaranteed Message Delivery" width="60%" />
 
 If you look at the `docker-compose.yml` file, you can see that ``CATERING_SERVICE_EP`` is defined as ‘<code>[http://www.urldoesnotexist.com](http://www.urldoesnotexist.com)</code>’ under mi-runtime service. If you send a request to this endpoint, it will fail and the message will be stored in the Message Store database.
 
@@ -80,4 +80,4 @@ You can refresh the hookbin site and see that the message has been captured now.
 
 ## What's next
 
-Try out the next scenario in the series, [Integrate with Connectors]({{base_path}}/tutorials/scenarios/scenario13-integrate-with-connectors).
+Try out the next scenario in the series, [Integrate with Connectors](../../tutorials/scenarios/scenario13-integrate-with-connectors.md).

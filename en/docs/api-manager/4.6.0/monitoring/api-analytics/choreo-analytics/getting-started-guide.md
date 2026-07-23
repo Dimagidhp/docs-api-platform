@@ -16,7 +16,7 @@ Follow the instructions below to sign in to Choreo.
 
 2. Sign-in to Choreo.
    
-    [![Choreo sign-in options]({{base_path}}/assets/img/observe/sign-in-choreo.png)]({{base_path}}/assets/img/observe/sign-in-choreo.png)
+    [![Choreo sign-in options](../../../assets/img/observe/sign-in-choreo.png)](../../../assets/img/observe/sign-in-choreo.png)
 
 ## Step 2 - Register your environment
 
@@ -24,17 +24,17 @@ Follow the instructions below to register your on-premise environment:
 
 1. Click the **Settings** on the bottom left corner.
 
-     [![Settings Menu]({{base_path}}/assets/img/observe/settings-menu.png)]({{base_path}}/assets/img/observe/settings-menu.png)
+     [![Settings Menu](../../../assets/img/observe/settings-menu.png)](../../../assets/img/observe/settings-menu.png)
 
 2. If you are a member of multiple organizations, select the appropriate organization from the top left-hand corner. 
    
-     For more information on handling users with role-based access control in organizations, see [Role-based Access Control for API Analytics]({{base_path}}/monitoring/api-analytics/choreo-analytics/role-based-access-control).
+     For more information on handling users with role-based access control in organizations, see [Role-based Access Control for API Analytics](../../../monitoring/api-analytics/choreo-analytics/role-based-access-control.md).
 
-     [![Org Selector]({{base_path}}/assets/img/observe/organization-selector.png)]({{base_path}}/assets/img/observe/organization-selector.png)
+     [![Org Selector](../../../assets/img/observe/organization-selector.png)](../../../assets/img/observe/organization-selector.png)
 
 3. Select the **On-prem Keys** tab and click **Generate keys**.
 
-     [![On-prem Key]({{base_path}}/assets/img/observe/on-prem-key.png)]({{base_path}}/assets/img/observe/on-prem-key.png)
+     [![On-prem Key](../../../assets/img/observe/on-prem-key.png)](../../../assets/img/observe/on-prem-key.png)
 
 4. Enter a suitable name for your environment (e.g., customer1-dev).
 
@@ -184,4 +184,4 @@ For more detailed information on the Choreo Insights dashboards and their usage,
 
 ## What's Next?
 
-Enterprises and companies who want to use the Choreo Insights collaboratively can utilize the organization concept in Choreo. For more information, see [Role-based Access Control for API Analytics]({{base_path}}/monitoring/api-analytics/choreo-analytics/role-based-access-control).
+Enterprises and companies who want to use the Choreo Insights collaboratively can utilize the organization concept in Choreo. For more information, see [Role-based Access Control for API Analytics](../../../monitoring/api-analytics/choreo-analytics/role-based-access-control.md).

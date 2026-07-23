@@ -41,7 +41,7 @@ Deploy and manage APIs on Amazon Web Services API Gateway. WSO2 API Manager come
 - OAuth 2.0 security via Lambda Authorizer
 - Centralized management through WSO2 API Manager
 
-[Learn more about AWS API Gateway deployment]({{base_path}}/api-gateway/federated-gateways/aws/deploy-on-aws-api-gateway/)
+[Learn more about AWS API Gateway deployment](../../api-gateway/federated-gateways/aws/deploy-on-aws-api-gateway/)
 
 ### Azure API Gateway
 Deploy and manage APIs on Microsoft Azure API Management Service. The built-in Azure gateway connector facilitates deployment and discovery of APIs on Azure infrastructure.
@@ -52,7 +52,7 @@ Deploy and manage APIs on Microsoft Azure API Management Service. The built-in A
 - Integration with Microsoft Entra ID
 - Centralized governance from WSO2 API Manager
 
-[Learn more about Azure API Gateway deployment]({{base_path}}/deploy-and-publish/federated-gateways/azure/deploy-on-azure-api-gateway/)
+[Learn more about Azure API Gateway deployment](../../deploy-and-publish/federated-gateways/azure/deploy-on-azure-api-gateway/)
 
 ### Kong Gateway
 Discover and manage APIs deployed on Kong Gateway. WSO2 API Manager supports both Kong Kubernetes and Kong Standalone deployments.
@@ -63,7 +63,7 @@ Discover and manage APIs deployed on Kong Gateway. WSO2 API Manager supports bot
 - Support for Kong Kubernetes and Standalone modes
 - Unified management through WSO2 API Manager Control Plane
 
-[Learn more about Kong Gateway integration]({{base_path}}/api-gateway/federated-gateways/kong/kong-standalone/discover-apis-on-kong-gateway/)
+[Learn more about Kong Gateway integration](../../api-gateway/federated-gateways/kong/kong-standalone/discover-apis-on-kong-gateway/)
 
 ### Envoy Gateway
 Discover and manage APIs deployed on Envoy Gateway in Kubernetes environments. 
@@ -73,7 +73,7 @@ Discover and manage APIs deployed on Envoy Gateway in Kubernetes environments.
 - Kubernetes-native integration
 - Centralized API governance
 
-[Learn more about Envoy Gateway integration]({{base_path}}/api-gateway/federated-gateways/EnvoyGateway/eg-k8s/discover-apis-on-eg-gateway-in-kubernetes/)
+[Learn more about Envoy Gateway integration](../../api-gateway/federated-gateways/EnvoyGateway/eg-k8s/discover-apis-on-eg-gateway-in-kubernetes/)
 
 ## Gateway Modes
 
@@ -87,7 +87,7 @@ Federated gateways can operate in different modes depending on your requirements
 
 If you need to integrate with a third-party gateway that is not supported out-of-the-box, WSO2 API Manager provides the flexibility to create custom gateway agents. This allows you to extend the federated gateway capabilities to any external gateway.
 
-[Learn more about configuring custom gateway agents]({{base_path}}/api-gateway/federated-gateways/configure-custom-gateway-agent/)
+[Learn more about configuring custom gateway agents](../../api-gateway/federated-gateways/configure-custom-gateway-agent/)
 
 ## Architecture Benefits
 
@@ -112,5 +112,5 @@ To get started with federated gateways:
 
 ## Additional Resources
 
-- [Tutorial: Deploying APIs to AWS API Gateway]({{base_path}}/tutorials/deploying-apis-to-federated-gateways-with-wso2/)
-- [WSO2 API Manager Architecture]({{base_path}}/get-started/apim-architecture/)
+- [Tutorial: Deploying APIs to AWS API Gateway](../../tutorials/deploying-apis-to-federated-gateways-with-wso2/)
+- [WSO2 API Manager Architecture](../../get-started/apim-architecture/)

@@ -3,7 +3,7 @@
 !!! note
     **Before you begin:**
 
-    -   See [our compatibility matrix]({{base_path}}/install-and-setup/ProductCompatibility) to find out if this version of the product is fully tested on your OS.
+    -   See [our compatibility matrix](../../../install-and-setup/ProductCompatibility) to find out if this version of the product is fully tested on your OS.
 
 
 ### Prerequisites
@@ -20,7 +20,7 @@ The configuration file used for wrapping Java Applications by YAJSW is `wrapper.
 
 !!! info
     
-    If you want to set additional properties from an external registry at runtime, store sensitive information like usernames and passwords for connecting to the registry in a properties file and secure it with [secure vault]({{base_path}}/install-and-setup/setup/security/logins-and-passwords/carbon-secure-vault-implementation).
+    If you want to set additional properties from an external registry at runtime, store sensitive information like usernames and passwords for connecting to the registry in a properties file and secure it with [secure vault](../../../install-and-setup/setup/security/logins-and-passwords/carbon-secure-vault-implementation.md).
 
 !!! note
     
@@ -188,11 +188,11 @@ You will now verify that YAJSW is configured correctly for running the WSO2 API 
 
     For example:
 
-    ![]({{base_path}}/assets/attachments/28717183/29364287.png)
+    ![](../../../assets/attachments/28717183/29364287.png)
 
 If the configurations are set properly for YAJSW, you will see console output similar to the following and can now access the WSO2 management console from your web browser via <https://localhost:9443/carbon>.
 
-![]({{base_path}}/assets/attachments/28717183/29364286.png)
+![](../../../assets/attachments/28717183/29364286.png)
 
 ### Working with the WSO2CARBON service
 
@@ -204,7 +204,7 @@ installService.bat
 
 The console will display a message confirming that the WSO2CARBON service was installed.
 
-![]({{base_path}}/assets/attachments/28717183/29364285.png)
+![](../../../assets/attachments/28717183/29364285.png)
 
 To start the service, execute the following command in the same console window:
 
@@ -214,7 +214,7 @@ startService.bat
 
 The console will display a message confirming that the WSO2CARBON service was started.
 
-![]({{base_path}}/assets/attachments/28717183/29364288.png)
+![](../../../assets/attachments/28717183/29364288.png)
 
 To stop the service, execute the following command in the same console window:
 
@@ -224,7 +224,7 @@ stopService.bat
 
 The console will display a message confirming that the WSO2CARBON service has stopped.
 
-![]({{base_path}}/assets/attachments/28717183/29364290.png)
+![](../../../assets/attachments/28717183/29364290.png)
 
 To uninstall the service, execute the following command in the same console window:
 
@@ -234,4 +234,4 @@ uninstallService.bat
 
 The console will display a message confirming that the WSO2CARBON service was removed.
 
-![]({{base_path}}/assets/attachments/28717183/29364291.png)
+![](../../../assets/attachments/28717183/29364291.png)

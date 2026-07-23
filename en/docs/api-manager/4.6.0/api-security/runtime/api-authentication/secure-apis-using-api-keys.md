@@ -10,7 +10,7 @@ When an API is invoked specifying an API key as the authentication method, the A
 - Subscription validation
 
 !!! info
-...in the WSO2 API Manager developer portal without direct key manager communication, cannot be directly forwarded to the backend through the API Gateway for API requests. To grant backends access to user, application specific attributes during API calls, enable backend JWT generation. For detailed instructions on how to enable and utilize backend JWT generation for passing end-user attributes to the backend via the API Gateway, refer to [Passing End-User Attributes to the Backend via API Gateway]({{base_path}}/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/).
+...in the WSO2 API Manager developer portal without direct key manager communication, cannot be directly forwarded to the backend through the API Gateway for API requests. To grant backends access to user, application specific attributes during API calls, enable backend JWT generation. For detailed instructions on how to enable and utilize backend JWT generation for passing end-user attributes to the backend via the API Gateway, refer to [Passing End-User Attributes to the Backend via API Gateway](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/).
 
 ## Prerequisites for API keys
 
@@ -151,7 +151,7 @@ By default, the alias name is `gateway_certificate_alias`. Follow the instructio
 
 ### Configuring Custom Keystores
 
-You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog]({{base_path}}/reference/config-catalog/).
+You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog](../../../reference/config-catalog/).
 
 To configure custom keystores, add the following to the `<API-M_HOME>/repository/conf/deployment.toml` file.
 
@@ -194,7 +194,7 @@ in the following formats.
 
 2. Select `IP Addresses`, add the IP addresses in the text input as shown below, and generate the key.
 
-   [![IP Restricted API key]({{base_path}}/assets/img/learn/ip-api-key.png)]({{base_path}}/assets/img/learn/ip-api-key.png)
+   [![IP Restricted API key](../../../assets/img/learn/ip-api-key.png)](../../../assets/img/learn/ip-api-key.png)
 
 #### 2) HTTP referrer restriction
 
@@ -210,4 +210,4 @@ When the HTTP referrer restriction has been enabled, only the specific HTTP refe
 
 2. Select `HTTP Referrers (Web Sites)` and add the referrers in the text input as shown below and generate the key.
 
-   [![HTTP Referer Restricted API key]({{base_path}}/assets/img/learn/http-referer-api-key.png)]({{base_path}}/assets/img/learn/http-referer-api-key.png)
+   [![HTTP Referer Restricted API key](../../../assets/img/learn/http-referer-api-key.png)](../../../assets/img/learn/http-referer-api-key.png)

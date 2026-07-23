@@ -6,7 +6,7 @@ Kerberos is a security protocol that has support built into various operating sy
 
 The following section describes the flow involved in exchanging a Kerberos ticket for an OAuth2 token.
 
-![Kerberos-OAuth2 Grant Flow when using WSO2 API-M]({{base_path}}/assets/img/learn/kerberos-grant-flow.png)
+![Kerberos-OAuth2 Grant Flow when using WSO2 API-M](../../../../assets/img/learn/kerberos-grant-flow.png)
 
 1.  The Kerberos client requests the Kerberos Service Ticket from the Kerberos Key Distribution Center (KDC) to invoke the service.
 
@@ -96,7 +96,7 @@ Follow the instructions below to configure Kerberos Grant using the Identity Se
     
     3. Click **Identity Server as a Key Manager Pack** under **OTHER RESOURCES**.
 
-2.  Download the [Kerberos grant.jar]({{base_path}}/assets/attachments/kerberos-grant-1.0.0.jar) file.
+2.  Download the [Kerberos grant.jar](../../../../assets/attachments/kerberos-grant-1.0.0.jar) file.
 3.  Copy the JAR into the `<IS-KM_HOME>/repository/components/lib` directory.
 4.  To enable the **Kerberos grant**, add the following entry to the
     `deployment.toml` file in the `<IS-KM_HOME>/repository/conf/` folder.
@@ -126,10 +126,10 @@ Follow the instructions below to configure Kerberos Grant using the Identity Se
             2.  Fill in the form that appears. For the **Allowed Grant
                 Types** you can disable the ones you do not require or wish
                 to block. Select the **kerberos** grant type as an allowed grant type.
-                [![Register new OAuth app]({{base_path}}/assets/img/learn/register-new-oauth-app.png)]({{base_path}}/assets/img/learn/register-new-oauth-app.png)
+                [![Register new OAuth app](../../../../assets/img/learn/register-new-oauth-app.png)](../../../../assets/img/learn/register-new-oauth-app.png)
             3.  Click **Add**. The following information is added to your
                 service provider.
-                [![OAuth SP clientid clientsecret]({{base_path}}/assets/img/learn/oauth-sp-clientid-clientsecret.png)]({{base_path}}/assets/img/learn/oauth-sp-clientid-clientsecret.png)
+                [![OAuth SP clientid clientsecret](../../../../assets/img/learn/oauth-sp-clientid-clientsecret.png)](../../../../assets/img/learn/oauth-sp-clientid-clientsecret.png)
 
                 -   **OAuth Client Key** - This is the client key of the
                     service provider, which will be checked for
@@ -170,7 +170,7 @@ Follow the instructions below to configure Kerberos Grant using the Identity Se
 
         -   **Alias** : <https://192.168.53.12:9443/oauth/token>
 
-        [![add-new-idp]({{base_path}}/assets/img/learn/add-new-idp.png)]({{base_path}}/assets/img/learn/add-new-idp.png)
+        [![add-new-idp](../../../../assets/img/learn/add-new-idp.png)](../../../../assets/img/learn/add-new-idp.png)
 
     3.  Expand the **Federated Authenticators** tab, and then the **IWA
         Kerberos Configuration** tab. Enter the required details as
@@ -179,7 +179,7 @@ Follow the instructions below to configure Kerberos Grant using the Identity Se
             <HTTP/idp.example.com@EXAMPLE.COM>
         -   **Server Principal Password:** <password\>
 
-        [![Configure Kerberos]({{base_path}}/assets/img/learn/configure-kerberos.png)]({{base_path}}/assets/img/learn/configure-kerberos.png)
+        [![Configure Kerberos](../../../../assets/img/learn/configure-kerberos.png)](../../../../assets/img/learn/configure-kerberos.png)
         
         <a name="step7"></a>
 

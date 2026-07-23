@@ -70,7 +70,7 @@ If you require multiple endpoints and multiple AI Service Provider API Keys to m
         </tr>
     </table>
 
-    [![Multiple Endpoint Add]({{base_path}}/assets/img/learn/ai-gateway/endpoint-add.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/endpoint-add.png)
+    [![Multiple Endpoint Add](../../assets/img/learn/ai-gateway/endpoint-add.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/endpoint-add.png)
 
 5. Click on **Create**.
 6. Repeat steps 3 to 5 if you wish to add more production/sandbox endpoints.

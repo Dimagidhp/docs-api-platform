@@ -71,7 +71,7 @@ The instructions below explain how plain text passwords in configuration files c
         ``` 
        
     !!! Note
-        You can also replace your passwords by referring values passed by environment variables and system properties. For instructions, see [Set Passwords using Environment Variables/System Properties]({{base_path}}/administer/product-security/logins-and-passwords/set-passwords-using-vars-and-sys-props)
+        You can also replace your passwords by referring values passed by environment variables and system properties. For instructions, see [Set Passwords using Environment Variables/System Properties](../../../../administer/product-security/logins-and-passwords/set-passwords-using-vars-and-sys-props)
        
 4.  Encrypt the passwords.
     1. Open a terminal and navigate to the `<APIM_HOME>/bin` directory.
@@ -82,7 +82,7 @@ The instructions below explain how plain text passwords in configuration files c
 
     You will be prompted to enter the internal key store password for the server. 
 
-5.  When prompted, if you have not configured a separate [internal keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon` and proceed. 
+5.  When prompted, if you have not configured a separate [internal keystore](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon` and proceed. 
 
      If the encryption is successful, you will see the following log.
 
@@ -108,7 +108,7 @@ The instructions below explain how plain text passwords in configuration files c
 
 ## Encrypting secured endpoint passwords
 
-When exposing an API backend, which is secured with [Digest]({{base_path}}/manage-apis/design/endpoints/endpoint-security/digest-auth) or [Basic]({{base_path}}/manage-apis/design/endpoints/endpoint-security/basic-auth) Authentication, the backend user credentials have to be provided under endpoint configuration. These credentials are encoded in base64 and stored in the API configuration as Basic Authorization header (`Authorization: Basic base64Encode(<username>:password)`). By default, the Authorization header value is stored in plain text.
+When exposing an API backend, which is secured with [Digest](../../../../manage-apis/design/endpoints/endpoint-security/digest-auth) or [Basic](../../../../manage-apis/design/endpoints/endpoint-security/basic-auth) Authentication, the backend user credentials have to be provided under endpoint configuration. These credentials are encoded in base64 and stored in the API configuration as Basic Authorization header (`Authorization: Basic base64Encode(<username>:password)`). By default, the Authorization header value is stored in plain text.
 
 Follow the instructions below to secure the endpoint's password that is given in plain-text in the UI.
 
@@ -131,7 +131,7 @@ Follow the instructions below to secure the endpoint's password that is given in
 
      You will be prompted to enter the internal key store password for the server. 
 
-4.  When prompted, if you have not configured a separate [internal keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon`. 
+4.  When prompted, if you have not configured a separate [internal keystore](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore), enter the primary key password, which is by default `wso2carbon`. 
 
      If the encryption is successful, you will see the following log.
 
@@ -192,8 +192,8 @@ Follow the instructions below to change any password that you have already encry
 -   [Start server as a background job](#start-server-as-a-background-job)
 
 !!! Note
-    If you have secured the plain text passwords in configuration files using Secure Vault, the keystore password and private key password of the product's [primary keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager) will serve as the root passwords for Secure Vault, if you have not configured a separate [internal keystore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore). This is because the keystore passwords are needed to initialize the values encrypted by the **Secret Manager** in the **Secret Repository**. Therefore, the **Secret Callback 
-    handler** is used to resolve these passwords. The default secret CallbackHandler provides the two options given below. For more information on secure vault concepts, see [Secure Vault concepts]({{base_path}}/administer/product-security/logins-and-passwords/carbon-secure-vault-implementation/#elements-of-the-secure-vault-implementation).
+    If you have secured the plain text passwords in configuration files using Secure Vault, the keystore password and private key password of the product's [primary keystore](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager.md) will serve as the root passwords for Secure Vault, if you have not configured a separate [internal keystore](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#configuring-the-internal-keystore). This is because the keystore passwords are needed to initialize the values encrypted by the **Secret Manager** in the **Secret Repository**. Therefore, the **Secret Callback 
+    handler** is used to resolve these passwords. The default secret CallbackHandler provides the two options given below. For more information on secure vault concepts, see [Secure Vault concepts](../../../../administer/product-security/logins-and-passwords/carbon-secure-vault-implementation/#elements-of-the-secure-vault-implementation).
 
 
 ### Enter password in command-line

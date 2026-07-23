@@ -14,7 +14,7 @@
   separate connections that do not depend on each other. Even if one
   connections times out, the other is unaffected.  
 
-<a href="{{base_path}}/assets/img/reference/typical-message-flow.png"><img src="{{base_path}}/assets/img/reference/typical-message-flow.png" width=500></a> 
+<a href="../../assets/img/reference/typical-message-flow.png"><img src="../../assets/img/reference/typical-message-flow.png" width=500></a> 
 
   Here are the important timeout parameters you should configure
   before going into production:

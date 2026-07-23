@@ -170,7 +170,7 @@ The All-in-One pattern uses an embedded H2 database by default, which is suitabl
 
 If you are using H2, skip this step and proceed to [Step 7](#step-7).
 
-For production, follow the [Setting Up Databases]({{base_path}}/install-and-setup/setup/setting-up-databases/overview/) guide to:
+For production, follow the [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/) guide to:
 
 1. Set up a database instance accessible from your cluster
 2. Obtain the schema scripts for your database type
@@ -205,7 +205,7 @@ The Helm chart mounts a Kubernetes secret named `apim-keystore-secret` as a volu
 
 !!! note
     - Make sure to create the secret inside the namespace which will be used for installing the API Manager.
-    - The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager]({{base_path}}/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/).
+    - The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/).
 
 ### Step 8 — Deploy the All-in-One { #step-8 }
 

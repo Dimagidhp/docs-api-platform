@@ -9,8 +9,8 @@ Initially, the Admins will define API categories. Thereafter, API providers will
 
 You can add an API category using any of the following methods:
 
-- [Add an API Category using the Admin Portal UI]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/api-category-based-grouping/#add-an-api-category-using-the-admin-portal-ui)
-- Add an API Category using the Admin REST API. (You can use the POST resource in the **API Category (Individual)** section [here]({{base_path}}/reference/product-apis/admin-apis/admin-v4/admin-v4))
+- [Add an API Category using the Admin Portal UI](../../../../../reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/api-category-based-grouping/#add-an-api-category-using-the-admin-portal-ui)
+- Add an API Category using the Admin REST API. (You can use the POST resource in the **API Category (Individual)** section [here](../../../../../reference/product-apis/admin-apis/admin-v4/admin-v4.md))
 
 ### Add an API Category using the Admin Portal UI
 
@@ -20,11 +20,11 @@ You can add an API category using any of the following methods:
 
 2. Click **API Category** and then click **API Categories**.
     
-    <img src="{{base_path}}/assets/img/develop/new_api_category_left_tag.png" width="250" alt="API categories menu">
+    <img src="../../../../../../assets/img/develop/new_api_category_left_tag.png" width="250" alt="API categories menu">
     
 3. Click **Add New Category**.
 
-    [![Add API category page]({{base_path}}/assets/img/develop/new_click_add_category.png)]({{base_path}}/assets/img/develop/new_click_add_category.png)
+    [![Add API category page](../../../../../assets/img/develop/new_click_add_category.png)](../../../../../assets/img/develop/new_click_add_category.png)
 
 4. Enter a name and a description for the API category.
 
@@ -33,7 +33,7 @@ You can add an API category using any of the following methods:
      |  Name          |  Food                  |
      |  Description   |  Fast food related APIs     |
 
-    <img src="{{base_path}}/assets/img/develop/new_add_category.png" width="500" alt="Add API category">
+    <img src="../../../../../../assets/img/develop/new_add_category.png" width="500" alt="Add API category">
 
 5. Click **Save**.
 
@@ -47,11 +47,11 @@ You can add an API category using any of the following methods:
 
 3. Click **Portal Configurations > Basic Info**. 
 
-     <img src="{{base_path}}/assets/img/develop/api-portal-config-basic-info.png" width="235" alt="Add API category">
+     <img src="../../../../../../assets/img/develop/api-portal-config-basic-info.png" width="235" alt="Add API category">
 
 4. Select the API category.
 
-     [![Add API categories]({{base_path}}/assets/img/develop/attach_category.png)]({{base_path}}/assets/img/develop/attach_category.png)
+     [![Add API categories](../../../../../assets/img/develop/attach_category.png)](../../../../../assets/img/develop/attach_category.png)
 
 5. Click **Save**.
 
@@ -67,4 +67,4 @@ You can add an API category using any of the following methods:
 
      All APIs that belong to the selected category appear.
 
-     [![APIs categorised based on API category]({{base_path}}/assets/img/develop/devportal_listing.png)]({{base_path}}/assets/img/develop/devportal_listing.png)
+     [![APIs categorised based on API category](../../../../../assets/img/develop/devportal_listing.png)](../../../../../assets/img/develop/devportal_listing.png)

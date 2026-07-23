@@ -20,8 +20,8 @@ In large-scale deployments of WSO2 API Manager, when there are millions of users
 - Token persistence optimization feature will only work with JWT tokens as they can be self validated.
 - If you are enabling this feature in an existing or migrating setup,
       - The token type of all the existing applications should be changed to JWT (including the system applications; publisher, developer portal and admin portal). 
-         - Follow [Update token type of an Application from OAUTH to JWT]({{base_path}}/reference/product-apis/devportal-apis/devportal-v3/devportal-v3/#tag/Applications/paths/~1applications~1%7BapplicationId%7D/put) to update the existing developer portal applications' token types.
-         - Follow the instructions for existing deployments in [Enable JWT for Portals]({{base_path}}/install-and-setup/setup/security/securing-api-m-web-portals/#enable-jwt-for-web-portals) to update existing portal applications.
+         - Follow [Update token type of an Application from OAUTH to JWT](../../../reference/product-apis/devportal-apis/devportal-v3/devportal-v3/#tag/Applications/paths/~1applications~1%7BapplicationId%7D/put) to update the existing developer portal applications' token types.
+         - Follow the instructions for existing deployments in [Enable JWT for Portals](../../../install-and-setup/setup/security/securing-api-m-web-portals/#enable-jwt-for-web-portals) to update existing portal applications.
       - The already generated Opaque tokens before enabling the feature will continue to work.
 - This solution will not persist the tokens during generation, hence upon every token generation request, a new JWT access and refresh token pair will be generated. So it is recommended to use this feature only with short lived access and refresh tokens.
 - The session invalidation will not perform token revocation after user logout in portals.   
@@ -30,7 +30,7 @@ In large-scale deployments of WSO2 API Manager, when there are millions of users
 
 ### Enabling Token Persistence Optimization
 
-1. Follow the steps in [Enable JWT for Web Portal]({{base_path}}/install-and-setup/setup/security/securing-api-m-web-portals/#enable-jwt-for-web-portals).
+1. Follow the steps in [Enable JWT for Web Portal](../../../install-and-setup/setup/security/securing-api-m-web-portals/#enable-jwt-for-web-portals).
 2. Add the following to the `deployment.toml` in API Manager. Add this to the Key Manager if you are using a distributed API-M setup.
     
    ```toml
@@ -58,7 +58,7 @@ The following sections guide you through the difference between these two approa
 
 ### Synchronous token persistence
 
-[![Synchronous token persistence]({{base_path}}/assets/img/learn/synchronous-token-persistence.png)]({{base_path}}/assets/img/learn/synchronous-token-persistence.png)
+[![Synchronous token persistence](../../../assets/img/learn/synchronous-token-persistence.png)](../../../assets/img/learn/synchronous-token-persistence.png)
 
 The flow of synchronous token persistence is as follows:
 
@@ -86,7 +86,7 @@ By default, synchronous token persistence is enabled in WSO2 API Manager 4.0.0. 
     
 ### Asynchronous token persistence
 
-[![Asynchronous token persistence]({{base_path}}/assets/img/learn/asynchronous-token-generation.png)]({{base_path}}/assets/img/learn/synchronous-token-persistence.png)
+[![Asynchronous token persistence](../../../assets/img/learn/asynchronous-token-generation.png)](../../../assets/img/learn/synchronous-token-persistence.png)
 
 If an existing access token is not found, the OAuth2 component creates a new access token and adds it to a persisting queue. Once the token is added to the queue, the token is returned to the client. There are background threads that consume the queue, and persist the tokens in the queue to the database.
 

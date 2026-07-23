@@ -21,15 +21,15 @@ To rate an API,
 
 2.  Click on a published API.
 
-    [![Select an API]({{base_path}}/assets/img/get_started/architecture/developer-portal-overview.png)]({{base_path}}/assets/img/get_started/architecture/developer-portal-overview.png)
+    [![Select an API](../../assets/img/get_started/architecture/developer-portal-overview.png)](../../assets/img/get_started/architecture/developer-portal-overview.png)
 
      The **Overview** page appears.
 
-    [![Rating icon]({{base_path}}/assets/img/consume/community-features/devportal-api-overview-select-rating.png)]({{base_path}}/assets/img/consume/community-features/devportal-api-overview-select-rating.png)
+    [![Rating icon](../../assets/img/consume/community-features/devportal-api-overview-select-rating.png)](../../assets/img/consume/community-features/devportal-api-overview-select-rating.png)
 
 3.  Click on the **Ratings** icon, which is denoted by a star, to add your rating.
 
-    [![API rating]({{base_path}}/assets/img/consume/community-features/devportal-api-already-rated.png)]({{base_path}}/assets/img/consume/community-features/devportal-api-already-rated.png)
+    [![API rating](../../assets/img/consume/community-features/devportal-api-already-rated.png)](../../assets/img/consume/community-features/devportal-api-already-rated.png)
 
 ## Comment and reply to an API
 
@@ -45,7 +45,7 @@ Let's see how to add a comment and how to reply to a comment:
 
 2. Click on a published API.
 
-    [![Select an API]({{base_path}}/assets/img/get_started/architecture/developer-portal-overview.png)]({{base_path}}/assets/img/get_started/architecture/developer-portal-overview.png)
+    [![Select an API](../../assets/img/get_started/architecture/developer-portal-overview.png)](../../assets/img/get_started/architecture/developer-portal-overview.png)
 
 3.  Click **Comments**.
 
@@ -55,20 +55,20 @@ Let's see how to add a comment and how to reply to a comment:
 
      Note that the comments appear sorted by the time they were entered, alongside the author's name.
 
-     [![Add a comments]({{base_path}}/assets/img/consume/community-features/devportal-add-new-comment.png)]({{base_path}}/assets/img/consume/community-features/devportal-add-new-comment.png)
+     [![Add a comments](../../assets/img/consume/community-features/devportal-add-new-comment.png)](../../assets/img/consume/community-features/devportal-add-new-comment.png)
 
 5. Optionally, **Reply to a comment**.
 
      Click **REPLY**, type your reply, and click **COMMENT**.
 
-     [![Reply to a comment]({{base_path}}/assets/img/consume/community-features/developer-portal-reply-to-comment.png)]({{base_path}}/assets/img/consume/community-features/developer-portal-reply-to-comment.png)
+     [![Reply to a comment](../../assets/img/consume/community-features/developer-portal-reply-to-comment.png)](../../assets/img/consume/community-features/developer-portal-reply-to-comment.png)
 
      When you add a reply to a comment, it will appear in a nested format to the original or the root comment.
 
 ## Share API link on social media
 
 !!! note
-    WSO2 API Manager generates sharable links for Facebook, Twitter, and Reddit out-of-the-box. However, the API sharing options for Facebook, Twitter, and Reddit will appear in the Developer Portal only if the administrator has [enabled this sharing feature.]({{base_path}}/manage-apis/design/api-collaborations/enable-social-media-interaction/#enable-sharing-api-links-on-social-media)
+    WSO2 API Manager generates sharable links for Facebook, Twitter, and Reddit out-of-the-box. However, the API sharing options for Facebook, Twitter, and Reddit will appear in the Developer Portal only if the administrator has [enabled this sharing feature.](../../manage-apis/design/api-collaborations/enable-social-media-interaction/#enable-sharing-api-links-on-social-media)
 
 1.  Sign in to the Developer Portal.
 
@@ -80,7 +80,7 @@ Let's see how to add a comment and how to reply to a comment:
 
      The social media sharable links and the email composer link appear along with the iframe code embedding of the API.
 
-    [![Community link in Developer Portal]({{base_path}}/assets/img/design/community-features/devportal-default-community-links.png)]({{base_path}}/assets/img/design/community-features/devportal-default-community-links.png)
+    [![Community link in Developer Portal](../../assets/img/design/community-features/devportal-default-community-links.png)](../../assets/img/design/community-features/devportal-default-community-links.png)
 
 3. Click on a social media sharing option of your choice.
 
@@ -91,7 +91,7 @@ Let's see how to add a comment and how to reply to a comment:
 ## Access GitHub and Slack URLs
 
 !!! note
-    The GitHub and Slack URLs will appear in the Developer Portal only if the [API Publisher has defined these URLs for the API.]({{base_path}}/manage-apis/design/api-collaborations/enable-social-media-interaction/#add-github-and-slack-channel-urls-to-an-api)
+    The GitHub and Slack URLs will appear in the Developer Portal only if the [API Publisher has defined these URLs for the API.](../../manage-apis/design/api-collaborations/enable-social-media-interaction/#add-github-and-slack-channel-urls-to-an-api)
 
 1. Sign in to the Developer Portal.
 
@@ -103,7 +103,7 @@ Let's see how to add a comment and how to reply to a comment:
 
      The API's overview page appears with the GitHub and Slack channel URLs.
 
-     [![Developer Portal community links with Slack and Github]({{base_path}}/assets/img/design/community-features/devportal-community-links-with-slack-github.png)]({{base_path}}/assets/img/design/community-features/devportal-community-links-with-slack-github.png)
+     [![Developer Portal community links with Slack and Github](../../assets/img/design/community-features/devportal-community-links-with-slack-github.png)](../../assets/img/design/community-features/devportal-community-links-with-slack-github.png)
 
 
 3. Optionally, click on the **GitHub URL**.

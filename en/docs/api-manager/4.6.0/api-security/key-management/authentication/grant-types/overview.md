@@ -5,11 +5,11 @@ In OAuth2, the term **Grant Type** refers to the way for a client application to
 
 WSO2 API Manager supports following grant types including the basic grant types offered by OAuth2 framework. 
 
-- [Password Grant]({{base_path}}/api-security/key-management/authentication/grant-types/password-grant)
-- [Client Credentials Grant]({{base_path}}/api-security/key-management/authentication/grant-types/client-credentials-grant)
-- [Authorization Code Grant]({{base_path}}/api-security/key-management/authentication/grant-types/authorization-code-grant)
-- [Refresh Token Grant]({{base_path}}/api-security/key-management/authentication/grant-types/refresh-token-grant)
-- [JWT Grant]({{base_path}}/api-security/key-management/authentication/grant-types/jwt-grant)
-- [SAML Extension Grant]({{base_path}}/api-security/key-management/authentication/grant-types/saml-extension-grant)
-- [Kerberos OAuth2 Grant]({{base_path}}/api-security/key-management/authentication/grant-types/kerberos-oauth2-grant) 
-- [NTLM Grant]({{base_path}}/api-security/key-management/authentication/grant-types/ntlm-grant)
+- [Password Grant](../../../../api-security/key-management/authentication/grant-types/password-grant.md)
+- [Client Credentials Grant](../../../../api-security/key-management/authentication/grant-types/client-credentials-grant.md)
+- [Authorization Code Grant](../../../../api-security/key-management/authentication/grant-types/authorization-code-grant.md)
+- [Refresh Token Grant](../../../../api-security/key-management/authentication/grant-types/refresh-token-grant.md)
+- [JWT Grant](../../../../api-security/key-management/authentication/grant-types/jwt-grant.md)
+- [SAML Extension Grant](../../../../api-security/key-management/authentication/grant-types/saml-extension-grant.md)
+- [Kerberos OAuth2 Grant](../../../../api-security/key-management/authentication/grant-types/kerberos-oauth2-grant.md) 
+- [NTLM Grant](../../../../api-security/key-management/authentication/grant-types/ntlm-grant.md)

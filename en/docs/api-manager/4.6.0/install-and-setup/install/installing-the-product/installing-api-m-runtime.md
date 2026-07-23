@@ -4,7 +4,7 @@ Follow the steps given below to install the WSO2 API Manager runtime.
 
 ## Before you begin
 
-See the [Installation Prerequisites]({{base_path}}/install-and-setup/install/installation-prerequisites). 
+See the [Installation Prerequisites](../../../install-and-setup/install/installation-prerequisites.md). 
 Java Development Kit (JDK) is essential to run the product.
 
 ## Installing the API Manager
@@ -13,7 +13,7 @@ Java Development Kit (JDK) is essential to run the product.
 2.  Extract the archive file to a dedicated directory for the API Manager, which will hereafter be referred to as `<API-M_HOME>`.
 
 !!! note
-    If you want to install and setup the **Enterprise package** of WSO2 API Manager, download the package from the [WSO2 API Manager website](https://wso2.com/api-manager/) and follow the instructions in [Configure a Distributed API-M Deployment]({{base_path}}/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup/) to setup a simple scalable deployment of WSO2 API Manager.
+    If you want to install and setup the **Enterprise package** of WSO2 API Manager, download the package from the [WSO2 API Manager website](https://wso2.com/api-manager/) and follow the instructions in [Configure a Distributed API-M Deployment](../../../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup/) to setup a simple scalable deployment of WSO2 API Manager.
 
 ## Setting up JAVA_HOME
 
@@ -91,15 +91,15 @@ You must set your `JAVA_HOME` environment variable to point to the directory whe
 
     1.  Right-click the **My Computer** icon on the desktop and click **Properties.**
 
-        ![]({{base_path}}/assets/attachments/thumbnails/26838941/27042151)
+        ![](../../../assets/attachments/thumbnails/26838941/27042151)
 
     2.  In the System Properties window, click the **Advanced** tab, and then click **Environment Variables**.
 
-        ![]({{base_path}}/assets/attachments/26838941/27042150.png)
+        ![](../../../assets/attachments/26838941/27042150.png)
 
     3.  Click **New** under **System variables** (for all users) or under **User variables** (just for the user who is currently logged in).
 
-        ![]({{base_path}}/assets/attachments/thumbnails/26838941/27042154)
+        ![](../../../assets/attachments/thumbnails/26838941/27042154)
 
     4.  Enter the following information:
         -   In the **Variable name** field, enter: `JAVA_HOME`
@@ -124,5 +124,5 @@ If you need to set additional system properties when the server starts, you can 
 
 ## What's Next?
 
--   [Running the API-M Runtime]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m).
+-   [Running the API-M Runtime](../../../install-and-setup/install/installing-the-product/running-the-api-m.md).
 

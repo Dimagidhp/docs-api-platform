@@ -9,7 +9,7 @@ OpenTelemetry is a single set of APIs and libraries that standardize how telemet
  - Log
  - OTLP
 
-For more information, see [OpenTelemetry Configurations]({{base_path}}/reference/config-catalog/#api-m-open-tracer-configurations).
+For more information, see [OpenTelemetry Configurations](../../../reference/config-catalog/#api-m-open-tracer-configurations).
 
 !!! note
     At a time, only one of the below types can be enabled.
@@ -63,7 +63,7 @@ For more information, see [OpenTelemetry Configurations]({{base_path}}/reference
 
  	After you invoke the APIs you will see the tracing data in Jaeger as follow:
 
-	[![Distributed tracing jaeger]({{base_path}}/assets/img/administer/opentelemetry-jaeger.png)]({{base_path}}/assets/img/administer/opentelemetry-jaeger.png)
+	[![Distributed tracing jaeger](../../../assets/img/administer/opentelemetry-jaeger.png)](../../../assets/img/administer/opentelemetry-jaeger.png)
 
 
 ## Enabling Zipkin Tracing
@@ -92,7 +92,7 @@ For more information, see [OpenTelemetry Configurations]({{base_path}}/reference
 
  	After you invoke the APIs you will see the tracing data in Zipkin as follow:
 
-    [![Distributed tracing zipkin]({{base_path}}/assets/img/administer/opentelemetry-zipkin.png)]({{base_path}}/assets/img/administer/opentelemetry-zipkin.png)
+    [![Distributed tracing zipkin](../../../assets/img/administer/opentelemetry-zipkin.png)](../../../assets/img/administer/opentelemetry-zipkin.png)
 
 
 ## Enabling Log Tracing

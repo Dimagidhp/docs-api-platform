@@ -46,12 +46,12 @@ WSO2 API Manager uses the OIDC Single Sign-On feature by default. This document 
 
 2. Click on **Root Organization** and click **Manage Root Organization**
 
-    [![IS 7 dashboard]({{base_path}}/assets/img/setup-and-install/is-create-new-org.png)]({{base_path}}/assets/img/setup-and-install/is-create-new-org.png)
+    [![IS 7 dashboard](../../../assets/img/setup-and-install/is-create-new-org.png)](../../../assets/img/setup-and-install/is-create-new-org.png)
 
 
 3. Then click New Root Organization button and fill this form to create new organization
 
-    [![IS 7 register new org]({{base_path}}/assets/img/setup-and-install/is-register-new-org.png)]({{base_path}}/assets/img/setup-and-install/is-register-new-org.png)
+    [![IS 7 register new org](../../../assets/img/setup-and-install/is-register-new-org.png)](../../../assets/img/setup-and-install/is-register-new-org.png)
 
 4. Log into the new organization. (https://localhost:9444/t/TENANT_DOMAIN/console)
 
@@ -80,15 +80,15 @@ WSO2 API Manager uses the OIDC Single Sign-On feature by default. This document 
         </tbody>
      </table>
 
-    [![Create Traditional Web Application]({{base_path}}/assets/img/setup-and-install/create-traditional-web-app-tenant.png)]({{base_path}}/assets/img/setup-and-install/create-traditional-web-app-tenant.png)
+    [![Create Traditional Web Application](../../../assets/img/setup-and-install/create-traditional-web-app-tenant.png)](../../../assets/img/setup-and-install/create-traditional-web-app-tenant.png)
 
     c.  In the configuration page, select **User Attributes** and enable the **Groups** attribute.
 
-    [![Select Groups user attribute]({{base_path}}/assets/img/setup-and-install/select-groups-attribute.png)]({{base_path}}/assets/img/setup-and-install/select-groups-attribute.png)
+    [![Select Groups user attribute](../../../assets/img/setup-and-install/select-groups-attribute.png)](../../../assets/img/setup-and-install/select-groups-attribute.png)
 
     d.  In the same tab, under the **Subject** section, select **Assign alternate subject identifier** and from the dropdown list select **Username**.
 
-    [![Assign alternate subject identifier]({{base_path}}/assets/img/setup-and-install/assign-alternate-subject-identifier.png)]({{base_path}}/assets/img/setup-and-install/assign-alternate-subject-identifier.png)
+    [![Assign alternate subject identifier](../../../assets/img/setup-and-install/assign-alternate-subject-identifier.png)](../../../assets/img/setup-and-install/assign-alternate-subject-identifier.png)
 
     e.  Under the **Protocol** tab, copy the **Client ID** and **Client Secret**.
 
@@ -229,7 +229,7 @@ order = 20
     
         Also select **groups** as the **Role Claim URI**.
 
-    [![Claim mapping for sso]({{base_path}}/assets/img/setup-and-install/claim-mapping-for-sso.png)]({{base_path}}/assets/img/setup-and-install/claim-mapping-for-sso.png)
+    [![Claim mapping for sso](../../../assets/img/setup-and-install/claim-mapping-for-sso.png)](../../../assets/img/setup-and-install/claim-mapping-for-sso.png)
 
 
     -   Add the following role mapping under the **Role Configuration** section:
@@ -253,7 +253,7 @@ order = 20
         </tbody>
         </table>
 
-        [![]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso.png)]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso.png)
+        [![](../../../assets/img/setup-and-install/role-mapping-for-sso.png)](../../../assets/img/setup-and-install/role-mapping-for-sso.png)
 
         !!! Tip
             Instead of using the default internal roles, you can also create new roles in API Manager and map it to the provisioned users. 
@@ -294,12 +294,12 @@ order = 20
 
         Other fields are self explanatory. Refer the image below if you need more clarity.
 
-        [![Multi Tenant Authneticator Configs]({{base_path}}/assets/img/setup-and-install/multi-tenant-authenticator-configs.png)]({{base_path}}/assets/img/setup-and-install/multi-tenant-authenticator-configs.png)
+        [![Multi Tenant Authneticator Configs](../../../assets/img/setup-and-install/multi-tenant-authenticator-configs.png)](../../../assets/img/setup-and-install/multi-tenant-authenticator-configs.png)
     
 
     -   Enable Just-in-Time Provisioning to provision the users in API Manager:
 
-        [![]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)
+        [![](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)
 
     - Finally click **Register** to save the changes
 
@@ -309,7 +309,7 @@ order = 20
 -   From the left navigation menu, go to the Service Providers section and click the Add button.
 -   The SP name should match the one you define in the super tenant IdP, under 'Common Service Provider Name'.
 
-    [![Multi Tenant Common SP]({{base_path}}/assets/img/setup-and-install/multi-tenant-common-sp.png)]({{base_path}}/assets/img/setup-and-install/multi-tenant-common-sp.png)
+    [![Multi Tenant Common SP](../../../assets/img/setup-and-install/multi-tenant-common-sp.png)](../../../assets/img/setup-and-install/multi-tenant-common-sp.png)
 
 -   Next, you need to configure the claim settings to pass user details to the super tenant custom authenticator.
     -   Expand the Claim Configuration and expand the Basic Claim Configuration section.
@@ -318,16 +318,16 @@ order = 20
         -   `http://wso2.org/claims/roles`
     -   Then, select `http://wso2.org/claims/username` as the Subject Claim URI.
 
-    [![Multi Tenant SP Claim Configs]({{base_path}}/assets/img/setup-and-install/multi-tenant-sp-claim-configs.png)]({{base_path}}/assets/img/setup-and-install/multi-tenant-sp-claim-configs.png)
+    [![Multi Tenant SP Claim Configs](../../../assets/img/setup-and-install/multi-tenant-sp-claim-configs.png)](../../../assets/img/setup-and-install/multi-tenant-sp-claim-configs.png)
 
 
 -   Next, expand the Inbound Authentication Configurations, and expand Oauth/OpenID connect configuration and click configure. Then set the Callback Url to `https://localhost:9443/commonauth` and click update.
 
-    [![Multi Tenant SP OIDC Configs]({{base_path}}/assets/img/setup-and-install/multi-tenant-sp-oidc-config.png)]({{base_path}}/assets/img/setup-and-install/multi-tenant-sp-oidc-config.png)
+    [![Multi Tenant SP OIDC Configs](../../../assets/img/setup-and-install/multi-tenant-sp-oidc-config.png)](../../../assets/img/setup-and-install/multi-tenant-sp-oidc-config.png)
 
 -   Next, expand the Local & Outbound Authentication Configurations, Select the previously created IdP as the Federated Authenticator, and check the following configurations:
 
-    [![Multi Tenant SP Outbound Configs]({{base_path}}/assets/img/setup-and-install/multi-tenant-sp-outbound-configs.png)]({{base_path}}/assets/img/setup-and-install/multi-tenant-sp-outbound-configs.png)
+    [![Multi Tenant SP Outbound Configs](../../../assets/img/setup-and-install/multi-tenant-sp-outbound-configs.png)](../../../assets/img/setup-and-install/multi-tenant-sp-outbound-configs.png)
 
 
 ### Step 5: Configure Tenanted IdP
@@ -354,14 +354,14 @@ order = 20
 -   Select Federated Authentication option under the Authentication Type section and select the created IdP (WSO2_IS7)
 -   Put a tick to Assert identity using mapped local subject identifier option. Please note that this is a mandatory one to perform the role mapping properly.
 
-    [![Multi Tenant Portal SPs Configs]({{base_path}}/assets/img/setup-and-install/multi-tenant-portal-sps.png)]({{base_path}}/assets/img/setup-and-install/multi-tenant-portal-sps.png)
+    [![Multi Tenant Portal SPs Configs](../../../assets/img/setup-and-install/multi-tenant-portal-sps.png)](../../../assets/img/setup-and-install/multi-tenant-portal-sps.png)
 
 
 ## Verifying
 
 - Now you are good to go, go the publisher portal `https://{apim-ip}:9443/publisher` you will see a tenant selection page
 
-    [![Tenant Selection Page]({{base_path}}/assets/img/setup-and-install/tenant-selection-page.png)]({{base_path}}/assets/img/setup-and-install/tenant-selection-page.png)
+    [![Tenant Selection Page](../../../assets/img/setup-and-install/tenant-selection-page.png)](../../../assets/img/setup-and-install/tenant-selection-page.png)
 
 
 !!! Note For secondary user stores

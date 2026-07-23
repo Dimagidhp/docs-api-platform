@@ -51,7 +51,7 @@ This will complete the  [Set up a tenant](https://learn.microsoft.com/en-us/entr
 
 Ensure that the newly added permissions display a green checkmark to indicate successful configuration.
 
-[![Azure AD Permission]({{base_path}}/assets/img/administer/azuread-grant-permission.png){: style="width:90%"}]({{base_path}}/assets/img/administer/azuread-grant-permission.png)
+[![Azure AD Permission](../../../assets/img/administer/azuread-grant-permission.png){: style="width:90%"}](../../../assets/img/administer/azuread-grant-permission.png)
 
 ### Step 4 - Copy Application Details
   1. Navigate to [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview).
@@ -309,7 +309,7 @@ The steps to create the application and generate client secrets remain the same 
 3. In the left-hand menu, select **Manifest**.
 4. In the manifest editor, locate the `requestedAccessTokenVersion` property and set its value.
 
-[![Azure AD Application Manifest Example]({{base_path}}/assets/img/administer/azuread-application-manifest.png){: style="width:90%"}]({{base_path}}/assets/img/administer/azuread-application-manifest.png)
+[![Azure AD Application Manifest Example](../../../assets/img/administer/azuread-application-manifest.png){: style="width:90%"}](../../../assets/img/administer/azuread-application-manifest.png)
 
 !!! note
     If you plan to use **Microsoft Entra External ID** as a third-party Key Manager, you can follow the same configuration steps described above. Ensure that the correct Application ID URI is configured because this value is used as the scope parameter when generating access tokens.

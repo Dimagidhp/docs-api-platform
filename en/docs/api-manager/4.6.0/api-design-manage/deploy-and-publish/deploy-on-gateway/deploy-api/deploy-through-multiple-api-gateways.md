@@ -59,7 +59,7 @@ https_endpoint = "https://localhost:8245"
 !!! tip
         If you have multiple Gateways that support one type of key (e.g., when there are two Gateways that support the production keys, as seen in the above code snippet), the environments you add via the `<API-M_HOME>/repository/conf/deployment.toml` file will be visible in a drop-down list of the API **Try Out** tab, which is in the Developer Portal of instance 1. This allows subscribers to send API requests to any selected Gateway.
 
-[![API tryout tab]({{base_path}}/assets/img/learn/devportal-tryout-multiple-gateways.png)]({{base_path}}/assets/img/learn/devportal-tryout-multiple-gateways.png)
+[![API tryout tab](../../../../assets/img/learn/devportal-tryout-multiple-gateways.png)](../../../../assets/img/learn/devportal-tryout-multiple-gateways.png)
 
 !!! note
     To stop a given Gateway environment from being displayed in the API Try Out tab, you can set the `display_in_api_console` attribute to `false` in the `apim.gateway.environment` element, which is in the `deployment.toml` file.
@@ -162,11 +162,11 @@ Carry out the following instructions in the **second** and the **third** instanc
 
 4.  Enable JSON Web Token (JWT) if required.
 
-     For instructions, see [Generating JSON Web Token]({{base_path}}/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/).   
+     For instructions, see [Generating JSON Web Token](../../../../api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/).   
      
 5.  Add the public certificate of the private key (that is used for signing the tokens) to the truststore under the `"gateway_certificate_alias"` alias. 
     
-    For instructions, see [Create and import SSL certificates]({{base_path}}/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores).
+    For instructions, see [Create and import SSL certificates](../../../../install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores.md).
 
      <html>
       <div class="admonition note">
@@ -180,7 +180,7 @@ Carry out the following instructions in the **second** and the **third** instanc
     1.  Create a copy of the API-M Gateway node that you just configured. This is the second node of the API-M Gateway cluster.
     2.  Configure a load balancer fronting the two Gateway nodes in your deployment.
                 
-        For instructions, see [Configuring the Proxy Server and the Load Balancer]({{base_path}}/install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer/).
+        For instructions, see [Configuring the Proxy Server and the Load Balancer](../../../../install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer/).
 
         !!! Note
         
@@ -296,25 +296,25 @@ Make sure to start instance 1 first before starting the other two instances.
 
 2.  Click **Deployments** and click **Deploy New Revision**.
 
-    <a href="{{base_path}}/assets/img/learn/api-revisions-mutiple-gateways.png"><img src="{{base_path}}/assets/img/learn/api-revisions-mutiple-gateways.png" title="API Revisions Multiple Gateways" width="80%" alt="API Revisions Multiple Gateways"/></a>
+    <a href="../../../../../assets/img/learn/api-revisions-mutiple-gateways.png"><img src="../../../../../assets/img/learn/api-revisions-mutiple-gateways.png" title="API Revisions Multiple Gateways" width="80%" alt="API Revisions Multiple Gateways"/></a>
     
     Note that the two Gateway environments are listed there.
 
-    <a href="{{base_path}}/assets/img/learn/multiple-gateways-revision-dialog.png"><img src="{{base_path}}/assets/img/learn/multiple-gateways-revision-dialog.png" title="Multiple Gateways Dialog" width="40%" alt="Multiple Gateways Dialog"/></a>
+    <a href="../../../../../assets/img/learn/multiple-gateways-revision-dialog.png"><img src="../../../../../assets/img/learn/multiple-gateways-revision-dialog.png" title="Multiple Gateways Dialog" width="40%" alt="Multiple Gateways Dialog"/></a>
 
     Here you have the option to view the visibility permissions set for each Gateway environment. Click on the permission type to view the allowed/denied roles.
 
-    <a href="{{base_path}}/assets/img/learn/api-gateway-visibility-permissions.png"><img src="{{base_path}}/assets/img/learn/api-gateway-visibility-permissions.png" title="API Gateway Visibility Permissions" width="80%" alt="API Gateway Visibility Permissions"/></a>
+    <a href="../../../../../assets/img/learn/api-gateway-visibility-permissions.png"><img src="../../../../../assets/img/learn/api-gateway-visibility-permissions.png" title="API Gateway Visibility Permissions" width="80%" alt="API Gateway Visibility Permissions"/></a>
 
 3.  Select both Gateways and click deploy.
 
-    <a href="{{base_path}}/assets/img/learn/multiple-gateways-revision-dialog-filled.png"><img src="{{base_path}}/assets/img/learn/multiple-gateways-revision-dialog-filled.png" title="Filled Multiple Gateways Dialog" width="40%" alt="Filled Multiple Gateways Dialog"/></a>
+    <a href="../../../../../assets/img/learn/multiple-gateways-revision-dialog-filled.png"><img src="../../../../../assets/img/learn/multiple-gateways-revision-dialog-filled.png" title="Filled Multiple Gateways Dialog" width="40%" alt="Filled Multiple Gateways Dialog"/></a>
 
 4.  Sign in to the Developer Portal (of the **first** instance) and click on the respective API to open it.
 
     In the **Overview** tab that corresponds to the API, note that it has two sets of URLs for the two Gateway instances:
 
-    <a href="{{base_path}}/assets/img/learn/multiple-gateways-devportal-overview.png"><img src="{{base_path}}/assets/img/learn/multiple-gateways-devportal-overview.png" title="Multiple Gateways Deploy Overview" width="50%" alt="Multiple Gateways Deploy Overview"/></a>
+    <a href="../../../../../assets/img/learn/multiple-gateways-devportal-overview.png"><img src="../../../../../assets/img/learn/multiple-gateways-devportal-overview.png" title="Multiple Gateways Deploy Overview" width="50%" alt="Multiple Gateways Deploy Overview"/></a>
 
 You have successfully published an API to the API Developer Portals through multiple Gateway environments.
 
@@ -322,7 +322,7 @@ You have successfully published an API to the API Developer Portals through mult
 
 Use the following sample cURL command to generate an access token for the Gateway URL of the initially published Gateway Environments, which was listed in API Publisher in step 10, using the Password Grant type.
 
-<a href="{{base_path}}/assets/img/learn/generate-access-tokens.png"><img src="{{base_path}}/assets/img/learn/generate-access-tokens.png" title="Generate Access Token" width="55%" alt="Generate Access Token"/></a>
+<a href="../../../../../assets/img/learn/generate-access-tokens.png"><img src="../../../../../assets/img/learn/generate-access-tokens.png" title="Generate Access Token" width="55%" alt="Generate Access Token"/></a>
 
 Change the Gateway URL based on the Gateway that you need to publish the API.
 

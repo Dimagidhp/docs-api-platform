@@ -1,6 +1,6 @@
 # Scenario 10 - Notifications Using WebHooks
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to work with notifications using WebHook. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to work with notifications using WebHook. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 5 minutes_**
 
@@ -10,13 +10,13 @@ From time to time GoGo transit provides notifications to the Train companies. (F
 
 WebHooks only allow one-way communication, from a caller web app to caller web app. The client who intends to receive the events from the server/web app/publisher has to register its URL against the interesting events in the publisher. When an event occurs, if a client is registered for that event, the publisher will make an HTTP POST request to the registered URL of the client to notify the event.
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario10.png" alt="Webhook notifications" title="Webhook notifications" width="60%" />
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario10.png" alt="Webhook notifications" title="Webhook notifications" width="60%" />
 
 You can view the WebHook API created in WSO2 API Manager by going to the publisher (Super tenant - admin). [https://localhost:9443/publisher/apis](https://localhost:9443/publisher/apis) 
 
 You can publish notifications under different topics.
 
-<img src="{{base_path}}/assets/img/tutorials/scenarios/notification_api_topics.png" alt="Notification Topics" title="Notification Topics" width="60%" />
+<img src="../../../assets/img/tutorials/scenarios/notification_api_topics.png" alt="Notification Topics" title="Notification Topics" width="60%" />
 
 ## Step 1: Subscribe to an API
 
@@ -33,7 +33,7 @@ To receive notifications, you need to register a service that will be called for
 1. You can use [https://webhook.site/](https://webhook.site/) for this purpose. You can use the WebHook site unique URL to subscribe yourself to the **general** topic. 
 2. Go to the **Try out** tab and enter the following details under **general** topic.
 
-    <img src="{{base_path}}/assets/img/tutorials/scenarios/notification_subscribe_devportal.png" alt="Subscribing to Topic" title="Subscribing to Topic" width="60%" />
+    <img src="../../../assets/img/tutorials/scenarios/notification_subscribe_devportal.png" alt="Subscribing to Topic" title="Subscribing to Topic" width="60%" />
 3. Click on **Generate Curl**, copy the Curl command, and run it on your terminal. This will subscribe your client (WebHook site) to the API Manager. You can verify that the subscription was successful by checking the event that was received on the WebHook site.
 
 ## Step 3: Send notifications
@@ -43,11 +43,11 @@ To send a notification, you need to retrieve the callback URL for a topic from t
 1. Sign in to the publisher again with admin user credentials and select NotificationAPI.
 2. You can get the Callback URL by visiting the Topics tab and selecting the topic you require. Since you have subscribed to the **general** topic above, let’s get the URL for that topic.
 
-    <img src="{{base_path}}/assets/img/tutorials/scenarios/notification_topic_configuration.png" alt="Topic Configuration" title="Topic Configuration" width="60%" />
+    <img src="../../../assets/img/tutorials/scenarios/notification_topic_configuration.png" alt="Topic Configuration" title="Topic Configuration" width="60%" />
 
 3. Next you need to go to the **Subscription Configuration** section on the top and enable it. Click on the **Generate** button and generate a secret. You need this secret to calculate the hmac value that you can send in the request header.
 
-    <img src="{{base_path}}/assets/img/tutorials/scenarios/notification_topic_secret.png" alt="Subscription Configuration" title=""Subscription Configuration" width="60%" />
+    <img src="../../../assets/img/tutorials/scenarios/notification_topic_secret.png" alt="Subscription Configuration" title=""Subscription Configuration" width="60%" />
 
 4. Let’s say that we are going to send the below payload.
 
@@ -70,4 +70,4 @@ To send a notification, you need to retrieve the callback URL for a topic from t
 
 ## What's next
 
-Try out the next scenario in the series, [GraphQL]({{base_path}}/tutorials/scenarios/scenario11-graphql).
+Try out the next scenario in the series, [GraphQL](../../tutorials/scenarios/scenario11-graphql.md).

@@ -46,7 +46,7 @@ By default, the WSDLs of admin services are hidden from consumers. Follow the in
     
      The list of admin services related to WSO2 API Manager product will appear as shown below. 
      
-     ![Discover Admin Services]({{base_path}}/assets/img/develop/discover-admin-services.png)
+     ![Discover Admin Services](../assets/img/develop/discover-admin-services.png)
     
 5.  If required, view the service contract of an admin service.
 
@@ -223,4 +223,4 @@ public class AdminServiceClientManager {
 }
 ```
 
-The complete Maven project can be found at: [org.wso2.carbon.sample.admin.service.invoker.zip]({{base_path}}/assets/attachments/develop/org.wso2.carbon.sample.admin.service.invoker.zip)
+The complete Maven project can be found at: [org.wso2.carbon.sample.admin.service.invoker.zip](../assets/attachments/develop/org.wso2.carbon.sample.admin.service.invoker.zip)

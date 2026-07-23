@@ -30,13 +30,13 @@ Follow the steps below to enable OAuth2 token encryption
         "org.wso2.CipherTransformation" = "<Algorithm>"
         ```
     
-3.  [Start the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server). 
+3.  [Start the server](../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server). 
 
-4.  Follow the [Generate Application Keys]({{base_path}}/consume/manage-application/generate-keys/generate-api-keys) guide to create a new application, generate application consumer keys, and to obtain an access token.
+4.  Follow the [Generate Application Keys](../../../consume/manage-application/generate-keys/generate-api-keys) guide to create a new application, generate application consumer keys, and to obtain an access token.
 
     !!! tip
 
-        -   If you use a [Distributed API Manager setup]({{base_path}}/install-and-setup/deploying-wso2-api-manager/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m) , the changes must be made on both the Developer Portal and Key Manager nodes.
-        -   If you use WSO2 Identity Server [(WSO2 IS) as the Key Manager setup]({{base_path}}/api-security/key-management/third-party-key-managers/configure-wso2is-connector/) , you need to make changes in both WSO2 IS and WSO2 API Manager.
+        -   If you use a [Distributed API Manager setup](../../../install-and-setup/deploying-wso2-api-manager/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m) , the changes must be made on both the Developer Portal and Key Manager nodes.
+        -   If you use WSO2 Identity Server [(WSO2 IS) as the Key Manager setup](../../../api-security/key-management/third-party-key-managers/configure-wso2is-connector/) , you need to make changes in both WSO2 IS and WSO2 API Manager.
 
 

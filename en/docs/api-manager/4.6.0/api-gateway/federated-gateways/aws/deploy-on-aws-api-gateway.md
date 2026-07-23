@@ -30,7 +30,7 @@ Follow the instructions given below to configure AWS API Gateway as a Federated 
     2. Enter the Access Key and Secret Key obtained in Step 1 under Gateway configurations.
     3. Save the configurations.
 
-    [![add aws gateway environment]({{base_path}}/assets/img/deploy/add-aws-gw-environment.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/add-aws-gw-environment.png)
+    [![add aws gateway environment](../../../assets/img/deploy/add-aws-gw-environment.png){: style="width:90%"}](../../../assets/img/deploy/add-aws-gw-environment.png)
 
 ## Step 3 : Configure a third party Key Manager
 
@@ -43,7 +43,7 @@ Follow the instructions given below to configure AWS API Gateway as a Federated 
 
     `https://localhost:9443/admin`
 
-2. Register a third party KM following instructions in WSO2 documentation. In this guide we will setup Auth0 as the KM following the guide [Configure Auth0 as a Key Manager]({{base_path}}/api-security/key-management/third-party-key-managers/configure-auth0-connector/).
+2. Register a third party KM following instructions in WSO2 documentation. In this guide we will setup Auth0 as the KM following the guide [Configure Auth0 as a Key Manager](../../../api-security/key-management/third-party-key-managers/configure-auth0-connector/).
 
 ## Step 4 : Create and Design API
 
@@ -55,7 +55,7 @@ Follow the instructions given below to configure AWS API Gateway as a Federated 
 
 2. Create a new REST API and select Gateway Type as AWS. And provide a valid endpoint URL.
 
-    [![select aws gateway]({{base_path}}/assets/img/deploy/select-aws-gateway.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/select-aws-gateway.png)
+    [![select aws gateway](../../../assets/img/deploy/select-aws-gateway.png){: style="width:90%"}](../../../assets/img/deploy/select-aws-gateway.png)
 
 3. Design the API as required.
 
@@ -124,7 +124,7 @@ Please follow the steps below to configure the security for the API.
 
 2. Attach the AWS OAuth2.0 policy to the API. Here you will have to provide the ARN of the Lambda function and the execution role created above.
 
-    [![attach aws oauth policy]({{base_path}}/assets/img/deploy/attach-aws-oauth-policy.png){: style="width:70%"}]({{base_path}}/assets/img/deploy/attach-aws-oauth-policy.png)
+    [![attach aws oauth policy](../../../assets/img/deploy/attach-aws-oauth-policy.png){: style="width:70%"}](../../../assets/img/deploy/attach-aws-oauth-policy.png)
 
 ## Step 7 : Deploy and Publish API
 

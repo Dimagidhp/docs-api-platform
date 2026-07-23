@@ -50,7 +50,7 @@ Follow the steps below to configure Kong Gateway as a Federated API Gateway for 
     8. Enter the **Vhost** derived from the **Proxy URL** obtained in Step 2. Here the for the Vhost provide only the hostname part of the Proxy URL.
     9. Click **Add** button to add the Gateway.
 
-         [![add kong gateway environment]({{base_path}}/assets/img/deploy/add-kong-gw-discovery.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/add-kong-gw-discovery.png)
+         [![add kong gateway environment](../../../../assets/img/deploy/add-kong-gw-discovery.png){: style="width:90%"}](../../../../assets/img/deploy/add-kong-gw-discovery.png)
 
 ## Step 4 : Discover the API and Publish the API to Developer Portal
 

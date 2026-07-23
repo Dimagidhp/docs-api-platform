@@ -5,7 +5,7 @@ A REST API artifact you create from WSO2 Integration Studio is exposed to consum
 Follow the steps given below to publish REST APIs from the Micro Integrator to the API-M runtime.
 
 !!! tip "Related Tutorials"
-        To try out an end-to-end use case where an integration service is created and used as a managed API, see tutorials: [Exposing an Integration Service as a Managed API]({{base_path}}/tutorials/integration-tutorials/service-catalog-tutorial) and [Exposing an Integration SOAP Service as a Managed API]({{base_path}}/tutorials/integration-tutorials/service-catalog-tutorial-for-proxy-services).
+        To try out an end-to-end use case where an integration service is created and used as a managed API, see tutorials: [Exposing an Integration Service as a Managed API](../../tutorials/integration-tutorials/service-catalog-tutorial) and [Exposing an Integration SOAP Service as a Managed API](../../tutorials/integration-tutorials/service-catalog-tutorial-for-proxy-services).
 
 ## Prerequisites
 
@@ -14,14 +14,14 @@ Develop a REST API artifact using WSO2 Integration Studio. This is your integrat
 !!! Tip
     For instructions on creating a new integration service, use the following documentation: 
 
-    -   [Developing your First Integration Service]({{base_path}}/integrate/develop/integration-development-kickstart).
-    -   [Integration Tutorials]({{base_path}}/tutorials/tutorials-overview/#integration-tutorials).
+    -   [Developing your First Integration Service](../../integrate/develop/integration-development-kickstart).
+    -   [Integration Tutorials](../../tutorials/tutorials-overview/#integration-tutorials).
 
 ## Step 1 - Update the service metadata
 
 When you create a REST API artifact from WSO2 Integration Studio, a **resources** folder with metadata files is created as shown below. This metadata is used by the API management runtime to generate the API proxy for the service.
 
-<img src="{{base_path}}/assets/img/integrate/tutorials/service-catalog/metadata-folder-service-catalog.png" width="400">
+<img src="../../assets/img/integrate/tutorials/service-catalog/metadata-folder-service-catalog.png" width="400">
 
 Update the metadata for your service as explained below.
 
@@ -65,7 +65,7 @@ Update the metadata for your service as explained below.
 </table>
 
 !!! Tip
-    See the [Service Catalog API documentation]({{base_path}}/reference/product-apis/service-catalog-apis/service-catalog-v1/service-catalog-v1/) for more information on the metadata in the YAML file.
+    See the [Service Catalog API documentation](../../reference/product-apis/service-catalog-apis/service-catalog-v1/service-catalog-v1/) for more information on the metadata in the YAML file.
 
 ## Step 2 - Configure the Micro Integrator server
 
@@ -79,7 +79,7 @@ username = "admin"
 password = "admin"
 ```
 
-See the descriptions of the [service catalog parameters]({{base_path}}/reference/config-catalog-mi/#service-catalog-client).
+See the descriptions of the [service catalog parameters](../../reference/config-catalog-mi/#service-catalog-client).
 
 ## Step 3 - Start the servers
 
@@ -91,6 +91,6 @@ Note that the API-M server should be started before the Micro Integrator. The cl
 
 Once the servers are started and the services are published, you can access the service from the API-M layer, and then proceed to **Create**, **Deploy**, and **Publish** the API as follows:
 
-1. [Create and API ]({{base_path}}/manage-apis/design/create-api/create-an-api-using-a-service) using the integration service.
-2. [Deploy the API]({{base_path}}/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api) in the API Gateway.
-3. [Publish the API]({{base_path}}/manage-apis/deploy-and-publish/publish-on-dev-portal/publish-an-api) to the Developer Portal.
+1. [Create and API ](../../manage-apis/design/create-api/create-an-api-using-a-service) using the integration service.
+2. [Deploy the API](../../manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api) in the API Gateway.
+3. [Publish the API](../../manage-apis/deploy-and-publish/publish-on-dev-portal/publish-an-api) to the Developer Portal.

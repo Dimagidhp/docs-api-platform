@@ -10,13 +10,13 @@ Instead of redirecting the user to the authorization server, the client itself w
 
 The diagram below illustrates the resource owner password credentials grant flow.
 
-![]({{base_path}}/assets/img/learn/oauth-resource-owner-diagram.png)
+![](../../../../assets/img/learn/oauth-resource-owner-diagram.png)
 
 #### Prerequisites
 
--   A valid user account in the API Developer Portal. You can self sign up if it is [enabled by an admin]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enabling-or-disabling-self-signup/).
+-   A valid user account in the API Developer Portal. You can self sign up if it is [enabled by an admin](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enabling-or-disabling-self-signup/).
 -   A valid consumer key and consumer secret pair. Initially, these keys must be generated through the API Developer Portal by clicking **GENERATE KEYS** on the **Production Keys** tab of the application.
--   A running API Gateway instance (typically an API Manager instance should be running). For instructions on API Gateway, see [Components]({{base_path}}/get-started/key-concepts/).
+-   A running API Gateway instance (typically an API Manager instance should be running). For instructions on API Gateway, see [Components](../../../../get-started/key-concepts/).
 
 -   If the Key Manager is on a different server than the API Gateway, change the server URL (host and ports) of the Key Manager accordingly by adding following configuration in `<APIM_HOME>/repository/conf/deployment.toml` file.
 
@@ -25,7 +25,7 @@ The diagram below illustrates the resource owner password credentials grant flow
 configuration.ServerURL = "<key-manager-server-url>"
 
 ```
-If you have multiple Carbon servers running on the same computer, [change the port with an offset]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-ports-with-offset) to avoid port conflicts.
+If you have multiple Carbon servers running on the same computer, [change the port with an offset](../../../../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-ports-with-offset) to avoid port conflicts.
 
 #### Invoking the Token API to generate tokens
 
@@ -52,7 +52,7 @@ If you have multiple Carbon servers running on the same computer, [change the po
         !!! tip
             **`<scope>` is optional.**
     
-            If you define a [scope]({{base_path}}/api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) for an API's resource, the API can only be accessed through a token that is issued for the scope of the said resource. For example, if you define a scope named 'update' and issue one token for the scopes 'read' and 'update', the token is allowed to access the resource. However, if you issue the token for the scope named 'read', the request to the API will be blocked.
+            If you define a [scope](../../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) for an API's resource, the API can only be accessed through a token that is issued for the scope of the said resource. For example, if you define a scope named 'update' and issue one token for the scopes 'read' and 'update', the token is allowed to access the resource. However, if you issue the token for the scope named 'read', the request to the API will be blocked.
 
 
     -   Headers 

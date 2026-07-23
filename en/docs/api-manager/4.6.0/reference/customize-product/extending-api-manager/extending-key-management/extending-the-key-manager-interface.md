@@ -4,7 +4,7 @@ In a typical WSO2 API Manager (WSO2 API-M) deployment, different components talk
 
 For instance, after creating an application in the Developer Portal, subscribers would click on the `Generate Keys` button to register an application. 
 
-[![Generate Keys]({{base_path}}/assets/img/learn/extensions/key-manager-interface/generate-keys-button.png)]({{base_path}}/assets/img/learn/extensions/key-manager-interface/generate-keys-button.png)
+[![Generate Keys](../../../../assets/img/learn/extensions/key-manager-interface/generate-keys-button.png)](../../../../assets/img/learn/extensions/key-manager-interface/generate-keys-button.png)
 
 -   At this point, the Developer Portal talks to the **KeyManager** interface to create an *OAuth client* and get the *Consumer Key/Secret* and the *Application Access token*.
 
@@ -15,7 +15,7 @@ Therefore, the **KeyManager** interface acts as the bridge between the OAuth Pro
 ## Extending the Key Manager Interface
 
 When you need to write your own implementation to plug an external OAuth2 Authorization Server that will act as the Key Manager, you should implement a third-party Key Manager Connector as explain in 
-[Configure a Custom Key Manger]({{base_path}}/administer/key-managers/configure-custom-connector/)
+[Configure a Custom Key Manger](../../../../administer/key-managers/configure-custom-connector/)
 
 
 The following are the methods that the `KeyManager` interface uses to carry out operations.

@@ -1,6 +1,6 @@
 # Scenario 3 - Implementing an API
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to implement the API. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to implement the API. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 8 minutes_**
 
@@ -17,13 +17,13 @@ curl -X GET 'http://localhost:8082/telecom-rest-service/nexus/v1/metrics'
 
 With Micro Integrator and Integration Studio, you can implement the business logic to call these three backends, aggregate the response, and present it to the client as one response.
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario3.png" alt="Implement API" title="Implement API" width="60%" />
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario3.png" alt="Implement API" title="Implement API" width="60%" />
 
 ## Step 1: Create a service using Micro Integrator
 
 To develop a service in Micro Integrator, you need to use Integration Studio. While developing you can try it out in the Embedded Micro Integrator inside the Studio. Once the development is complete you can export it as a Compose Application and add it to the Micro Integrator runtime.
 
-<img src="{{base_path}}/assets/img/tutorials/scenarios/integration_studio_view.png" alt="Integration Studio View" title="Integration Studio View" width="60%" />
+<img src="../../../assets/img/tutorials/scenarios/integration_studio_view.png" alt="Integration Studio View" title="Integration Studio View" width="60%" />
 
 Here, for simplicity, the service is already created and exported as a Composite Application and added to the Micro Integrator instance in the tutorial setup. You can test the Micro Integrator service by invoking it directly.
 
@@ -49,9 +49,9 @@ You can view the API entry in the API Manager by visiting the following URL. Log
 
 [https://localhost:9443/publisher/service-catalog](https://localhost:9443/publisher/service-catalog)
 
-<img src="{{base_path}}/assets/img/tutorials/scenarios/service_catalog_view.png" alt="Service Catalog View" title="Service Catalog View" width="60%" />
+<img src="../../../assets/img/tutorials/scenarios/service_catalog_view.png" alt="Service Catalog View" title="Service Catalog View" width="60%" />
 
-<img src="{{base_path}}/assets/img/tutorials/scenarios/service_catalog_detail_view.png" alt="Service Detailed View" title="Service Detailed View" width="60%" />
+<img src="../../../assets/img/tutorials/scenarios/service_catalog_detail_view.png" alt="Service Detailed View" title="Service Detailed View" width="60%" />
 
 ## Step 2: View the API in the Developer Portal
 
@@ -70,4 +70,4 @@ In this setup, the API is already deployed from the Publisher and you can view i
 
 ## What's next
 
-Try out the next scenario in the series, [Signing up a New User]({{base_path}}/tutorials/scenarios/scenario4-user-signup-approval-flow).
+Try out the next scenario in the series, [Signing up a New User](../../tutorials/scenarios/scenario4-user-signup-approval-flow.md).

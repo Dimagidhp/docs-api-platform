@@ -1,23 +1,23 @@
 # Customize API Life Cycle
 
-APIs created in WSO2 API Manager have their own life cycle consisting of the following: a set of life cycle states, specific actions for each state transition, and a checklist of items before a state transition occurs. An API has a predefined life cycle consists of [six states]({{base_path}}/api-design-manage/design/lifecycle-management/api-lifecycle/#api-lifecycle-states). This tutorial demonstrates how you can edit the default API lifecycle and customize it according to your requirements.
+APIs created in WSO2 API Manager have their own life cycle consisting of the following: a set of life cycle states, specific actions for each state transition, and a checklist of items before a state transition occurs. An API has a predefined life cycle consists of [six states](../../../api-design-manage/design/lifecycle-management/api-lifecycle/#api-lifecycle-states). This tutorial demonstrates how you can edit the default API lifecycle and customize it according to your requirements.
 
 Follow the steps below to add a new state to the default life cycle.
 
 1.  Sign in to the API Publisher and click on the API that you created previously (e.g., PizzaShackAPI - 1.0.0).
     
 2.  Click **Lifecycle** tab to view the current state and states available by default.
-    ![Published life cycle state]({{base_path}}/assets/img/learn/default-lifecycle.png)
+    ![Published life cycle state](../../../assets/img/learn/default-lifecycle.png)
 
 3.  Open the API Manager Management Console: <https://localhost:9443/admin>
 
 4.  Click on the Advanced tab.
 
-    ![]({{base_path}}/assets/img/learn/admin-dashboard-advanced.png)
+    ![](../../../assets/img/learn/admin-dashboard-advanced.png)
 
 5.  By default LifeCycle configuration doesn't appear in the advanced configurations. To view the default LifeCylce configuration type as **LifeCycle** and select **LifeCycle** autosuggested option.
 
-    ![]({{base_path}}/assets/img/learn/admin-dashboard-lifecycle-config.png)    
+    ![](../../../assets/img/learn/admin-dashboard-lifecycle-config.png)    
     
     The default LifeCycle is given below.
 
@@ -155,7 +155,7 @@ Follow the steps below to add a new state to the default life cycle.
 
 8.  Open API Publisher and check the Lifecycle tab to see the newly added state.
 
-    ![]({{base_path}}/assets/img/learn/custom-life-cycle-states.png)
+    ![](../../../assets/img/learn/custom-life-cycle-states.png)
 
     !!! tip
         Consider the following points when extending and customizing the API lifecycle JSON configuration.
@@ -166,7 +166,7 @@ Follow the steps below to add a new state to the default life cycle.
     !!! info
         By default following lifecycle diagram is added in Publisher portal to show the state changes.
 
-        ![]({{base_path}}/assets/img/learn/lifecycle-image.png)
+        ![](../../../assets/img/learn/lifecycle-image.png)
 
         If you want to change the lifecycle image in Publisher, you can follow the steps mentioned below:
 
@@ -176,4 +176,4 @@ Follow the steps below to add a new state to the default life cycle.
                 lifeCycleImage: '/publisher/site/public/images/custom-lifecycle.png,
 
     !!! Tip "For Advanced Customization"
-        If you want to add the custom lifecycle state to the existing lifecycle diagram, you have to customize the LifeCycleImage.jsx file located in  `<APIM-Home>/repository/deployment/server/webapps/publisher/src/main/webapp/source/src/app/components/Apis/Details/LifeCycle/` directory, as mentioned in the [Advanced Customization]({{base_path}}/reference/customize-product/customizations/advanced-ui-customization/) section.
+        If you want to add the custom lifecycle state to the existing lifecycle diagram, you have to customize the LifeCycleImage.jsx file located in  `<APIM-Home>/repository/deployment/server/webapps/publisher/src/main/webapp/source/src/app/components/Apis/Details/LifeCycle/` directory, as mentioned in the [Advanced Customization](../../../reference/customize-product/customizations/advanced-ui-customization/) section.

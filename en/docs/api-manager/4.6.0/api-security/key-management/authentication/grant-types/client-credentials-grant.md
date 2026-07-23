@@ -6,9 +6,9 @@ For a detailed explanation on this grant type, go to the [WSO2 IS documentation]
 
 ## Flow
 
-The client can request an access token using only its client credentials with this grant type. It is similar to the [resource owner password credentials grant]({{base_path}}/api-security/key-management/authentication/grant-types/password-grant) type, except in this case, only the client's credentials are used to authenticate a request for an access token.
+The client can request an access token using only its client credentials with this grant type. It is similar to the [resource owner password credentials grant](../../../../api-security/key-management/authentication/grant-types/password-grant.md) type, except in this case, only the client's credentials are used to authenticate a request for an access token.
 
-[![OAuth Client Credentials]({{base_path}}/assets/img/learn/oauth-client-credentials-diagram.png){: style="width:60%"}]({{base_path}}/assets/img/learn/oauth-client-credentials-diagram.png)
+[![OAuth Client Credentials](../../../../assets/img/learn/oauth-client-credentials-diagram.png){: style="width:60%"}](../../../../assets/img/learn/oauth-client-credentials-diagram.png)
 
 
 ## Invoking the Token API to generate the tokens
@@ -30,7 +30,7 @@ Follow the instructions below to make sure that the Client Credentials grant typ
 4. Navigate to the **Grant Types** section, which is under the **Key Configurations** section.
 5. Select **Client Credentials**.
 
-     [![Client Credentials]({{base_path}}/assets/img/learn/client-credentials.png)]({{base_path}}/assets/img/learn/client-credentials.png)
+     [![Client Credentials](../../../../assets/img/learn/client-credentials.png)](../../../../assets/img/learn/client-credentials.png)
 
 ### Step 3 - Get a valid consumer key and consumer secret pair
    
@@ -103,4 +103,4 @@ If you want to **disable the Client Credentials grant type** in the API-M instan
 
 ### Refresh Token grant type - supported or not
 
-The Client Credentials grant type **does not support** the Refresh Token grant type. This grant type does not issue a refresh token which can be used to obtain new access tokens using the [refresh token grant]({{base_path}}/api-security/key-management/authentication/grant-types/refresh-token-grant/).
+The Client Credentials grant type **does not support** the Refresh Token grant type. This grant type does not issue a refresh token which can be used to obtain new access tokens using the [refresh token grant](../../../../api-security/key-management/authentication/grant-types/refresh-token-grant/).

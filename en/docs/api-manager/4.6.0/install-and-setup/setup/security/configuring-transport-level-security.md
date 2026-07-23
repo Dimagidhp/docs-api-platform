@@ -27,7 +27,7 @@ To prevent these types of security attacks, it is encouraged to disable the weak
 
 4.  Start the server.
 
-5.  To verify that the configurations are all set correctly, download and run the [testsslserver.jar]({{base_path}}/assets/attachments/admin/testsslserver-jar.zip).
+5.  To verify that the configurations are all set correctly, download and run the [testsslserver.jar](../../../assets/attachments/admin/testsslserver-jar.zip).
 
     !!! note
         Note the following when you run `testsslserver.jar` :
@@ -164,4 +164,4 @@ ResponseHeaderFilter com.sample.tomcat.filter.ResponseHeaderFilter Content-Secur
 
 ## What's Next?
 
-See the [Security Guidelines for Production Deployment]({{base_path}}/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment) for the full list of security-related recommendations for WSO2 API Manager.
+See the [Security Guidelines for Production Deployment](../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment.md) for the full list of security-related recommendations for WSO2 API Manager.

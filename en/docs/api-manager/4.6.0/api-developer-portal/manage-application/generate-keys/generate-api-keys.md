@@ -15,7 +15,7 @@ Follow the instructions below to generate/renew application keys:
             
 2.  Click **Applications** to navigate to the applications listing page and click on the respective application for which you want to generate keys.
 
-     [![Application view]({{base_path}}/assets/img/learn/application-listing.png)]({{base_path}}/assets/img/learn/application-listing.png)
+     [![Application view](../../../assets/img/learn/application-listing.png)](../../../assets/img/learn/application-listing.png)
  
 3.  Click **Production Keys** or **Sandbox Keys** based on the environment for which you need to generate keys.
       
@@ -25,19 +25,19 @@ Follow the instructions below to generate/renew application keys:
 
      The Access Token will be generated along with the application consumer key and secret.
 
-     [![Generate Application Keys]({{base_path}}/assets/img/learn/application-key-generation.png)]({{base_path}}/assets/img/learn/application-key-generation.png)
+     [![Generate Application Keys](../../../assets/img/learn/application-key-generation.png)](../../../assets/img/learn/application-key-generation.png)
     
 5. Copy the generated JWT Access Token that appears so that you can use it in the future.
 
-      <a href="{{base_path}}/assets/img/learn/jwt-access-token.png" ><img src="{{base_path}}/assets/img/learn/jwt-access-token.png" alt="JWT access token" title="JWT access token" width="60%" /></a>
+      <a href="../../../../assets/img/learn/jwt-access-token.png" ><img src="../../../../assets/img/learn/jwt-access-token.png" alt="JWT access token" title="JWT access token" width="60%" /></a>
      
      After the keys are generated, you can find the consumer key and consumer secret pair via the application details page.
      
-     [![Application Consumer Key Secret]({{base_path}}/assets/img/learn/application-key-secret-view.png)]({{base_path}}/assets/img/learn/application-key-secret-view.png)
+     [![Application Consumer Key Secret](../../../assets/img/learn/application-key-secret-view.png)](../../../assets/img/learn/application-key-secret-view.png)
      
 
 !!! tip
-    When you generate Access Tokens for APIs that are protected by scopes, you can select the respective [scopes]({{base_path}}/api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) and, thereafter, generate the token for it.
+    When you generate Access Tokens for APIs that are protected by scopes, you can select the respective [scopes](../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) and, thereafter, generate the token for it.
 
 ## Generating application keys with PKCE enabled
 
@@ -45,7 +45,7 @@ Proof Key for Code Exchange (PKCE) is a commonly used security measure to secure
 
 To enable PKCE, you need to select the **Enable PKCE** option as shown below when generating the keys.
 
-[![Enabling PKCE]({{base_path}}/assets/img/learn/key-generation-with-pkce.png)]({{base_path}}/assets/img/learn/key-generation-with-pkce.png)
+[![Enabling PKCE](../../../assets/img/learn/key-generation-with-pkce.png)](../../../assets/img/learn/key-generation-with-pkce.png)
 
 The following are the associated options when enabling PKCE.
 
@@ -53,18 +53,18 @@ The following are the associated options when enabling PKCE.
 
       When this option is enabled, the code challenger and code verifier used will be in plain text. The recommended way is to use a SHA 256 algorithm, which is the default value when this option is not selected.
 
-      [![Enabling Public client for PKCE]({{base_path}}/assets/img/learn/key-generation-with-pkce-plain.png)]({{base_path}}/assets/img/learn/key-generation-with-pkce-plain.png)
+      [![Enabling Public client for PKCE](../../../assets/img/learn/key-generation-with-pkce-plain.png)](../../../assets/img/learn/key-generation-with-pkce-plain.png)
 
 - Public Client
 
       This option will allow the client to be authenticated without the secret.
 
-      [![Enabling plain text support for PKCE]({{base_path}}/assets/img/learn/key-generation-with-pkce-bypass-secret.png)]({{base_path}}/assets/img/learn/key-generation-with-pkce-bypass-secret.png)
+      [![Enabling plain text support for PKCE](../../../assets/img/learn/key-generation-with-pkce-bypass-secret.png)](../../../assets/img/learn/key-generation-with-pkce-bypass-secret.png)
 
 ## Generating application keys using Okta
 
 !!! note
-     Before you begin, make sure to follow [steps 1 and 2 in Configure Okta as a Key Manager]({{base_path}}/administer/key-managers/configure-okta-connector/) guide.
+     Before you begin, make sure to follow [steps 1 and 2 in Configure Okta as a Key Manager](../../../administer/key-managers/configure-okta-connector/) guide.
 
 Follow the instructions below to generate keys using Okta as the Key Manager:
 
@@ -78,7 +78,7 @@ Follow the instructions below to generate keys using Okta as the Key Manager:
 
 4. Click **Generate Keys** to create an application Access Token.
 
-     [![Generate Okta application keys]({{base_path}}/assets/img/learn/okta-application-key-generation.png)]({{base_path}}/assets/img/learn/okta-application-key-generation.png)
+     [![Generate Okta application keys](../../../assets/img/learn/okta-application-key-generation.png)](../../../assets/img/learn/okta-application-key-generation.png)
 
 !!! info
     For more information on the client application properties that need to be set, see the [Okta documentation](https://developer.okta.com/docs/reference/api/oauth-clients/#client-application-properties).
@@ -89,7 +89,7 @@ Follow the instructions below to generate keys using Okta as the Key Manager:
 ## Generating application keys using Keycloak
 
 !!! note
-     Before you begin, make sure to follow [steps 1 and 2 in Configure Keycloak as a Key Manager]({{base_path}}/administer/key-managers/configure-keycloak-connector/) guide.
+     Before you begin, make sure to follow [steps 1 and 2 in Configure Keycloak as a Key Manager](../../../administer/key-managers/configure-keycloak-connector/) guide.
 
 Follow the instructions below to generate keys using the Keycloak as the Key Manager:
 
@@ -103,4 +103,4 @@ Follow the instructions below to generate keys using the Keycloak as the Key Man
 
 4. Click **Generate Keys** to create an application access token.
 
-     [![Generate Keycloak application keys]({{base_path}}/assets/img/learn/keycloak-generate-keys.png){: style="width:70%"}]({{base_path}}/assets/img/learn/keycloak-generate-keys.png)
+     [![Generate Keycloak application keys](../../../assets/img/learn/keycloak-generate-keys.png){: style="width:70%"}](../../../assets/img/learn/keycloak-generate-keys.png)

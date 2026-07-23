@@ -6,13 +6,13 @@ attacks, by configuring reCaptcha.
 
 !!! Info 
     -   For more information on configuring single sign on, see [Configuring
-    Single Sign-On With SAML2]({{base_path}}/reference/customize-product/extending-api-manager/saml2-sso/configuring-single-sign-on-with-saml2).
+    Single Sign-On With SAML2](../../../../reference/customize-product/extending-api-manager/saml2-sso/configuring-single-sign-on-with-saml2.md).
     -   For more information on brute force attacks, see [Mitigating Brute
     Force Attacks](https://is.docs.wso2.com/en/latest/administer/mitigating-brute-force-attacks/).
 
 1.  Set up reCaptcha with the WSO2 API Manager. For instructions on
     how to do this and more information about reCaptcha, see [Setting Up
-    ReCaptcha]({{base_path}}/install-and-setup/setup/security/logins-and-passwords/setting-up-recaptcha).
+    ReCaptcha](../../../../install-and-setup/setup/security/logins-and-passwords/setting-up-recaptcha.md).
 2.  Start the API Manager. Sign in to the Management Console (`https://<APIM_Host>:<APIM_Port>/carbon`).
 3.  Click **List** under **Identity Providers** in the **Main**
     tab.
@@ -28,7 +28,7 @@ attacks, by configuring reCaptcha.
         Select this option to prompt reCaptcha only after the number of maximum failed attempts has been exceeded. 
     
         If this option is selected, enter a value for the **Max failed attempts for reCaptcha** field as well. For example, if you enter 3, reCaptcha will be re-enabled after 3 failed attempts.  
-        ![configure-captcha-for-sso]({{base_path}}/assets/img/learn/api-security/recaptcha/recaptcha-sso.png)
+        ![configure-captcha-for-sso](../../../../assets/img/learn/api-security/recaptcha/recaptcha-sso.png)
         
         Note the following when selecting this option:
         
@@ -36,10 +36,10 @@ attacks, by configuring reCaptcha.
 
         - The **Max failed attempts for reCaptcha** value must be lower than the **Maximum failed login attempts** value configured under the **Account Lock** tab.
     
-            ![configure-account-locking]({{base_path}}/assets/img/learn/api-security/recaptcha/configure-account-locking.png)
+            ![configure-account-locking](../../../../assets/img/learn/api-security/recaptcha/configure-account-locking.png)
     
 
 6.  You have now successfully configured reCaptcha for the SSO flow. If the number of failed attempts reaches the maximum
     configured value, the following reCaptcha window appears.  
 
-    ![captcha-login-failed]({{base_path}}/assets/img/learn/api-security/recaptcha/captcha-login-failed.png)
+    ![captcha-login-failed](../../../../assets/img/learn/api-security/recaptcha/captcha-login-failed.png)

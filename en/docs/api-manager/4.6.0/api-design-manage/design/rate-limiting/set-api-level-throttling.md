@@ -12,7 +12,7 @@ You can apply rate limits at different levels depending on your needs:
 Resource-level limiting is useful when different operations have different performance characteristics. For example, a financial transaction operation might need stricter limits than a simple lookup operation. Advanced policies can also specify bandwidth limits per unit time instead of request counts.
 
 !!! tip
-    Advanced Rate Limiting policies are defined by Administrators in the Admin Portal. As a Publisher, you select which policies to apply to your API or its operations. For information on creating custom advanced policies, see [Adding a new Advanced Rate Limiting policy]({{base_path}}/administer/rate-limiting/manage-advanced-policies).
+    Advanced Rate Limiting policies are defined by Administrators in the Admin Portal. As a Publisher, you select which policies to apply to your API or its operations. For information on creating custom advanced policies, see [Adding a new Advanced Rate Limiting policy](../../../administer/rate-limiting/manage-advanced-policies.md).
 
 ## Applying API-Level Rate Limiting
 
@@ -23,7 +23,7 @@ To apply a rate limit to your entire API:
 3. Under **Rate Limiting Level**, select **API Level**.
 4. Choose the desired rate limiting policy from the available options.
 
-[![API level advanced policy]({{base_path}}/assets/img/learn/api-level-advanced-policy.png)]({{base_path}}/assets/img/learn/api-level-advanced-policy.png)
+[![API level advanced policy](../../../assets/img/learn/api-level-advanced-policy.png)](../../../assets/img/learn/api-level-advanced-policy.png)
 
 ## Applying Resource-Level Rate Limiting
 
@@ -33,7 +33,7 @@ To apply individual rate limits to specific operations:
 2. Select your API and navigate to **Develop** > **API Configurations** > **Resources**.
 3. For each operation (HTTP verb), select the desired rate limiting policy from the dropdown.
 
-[![Operation level advanced policy]({{base_path}}/assets/img/learn/operation-level-advanced-policy.png){: style="width:60%"}]({{base_path}}/assets/img/learn/operation-level-advanced-policy.png)
+[![Operation level advanced policy](../../../assets/img/learn/operation-level-advanced-policy.png){: style="width:60%"}](../../../assets/img/learn/operation-level-advanced-policy.png)
 
 ### Default Advanced Rate Limiting Tiers
 
@@ -88,6 +88,6 @@ As a Publisher, you simply select the appropriate policy name from the dropdown.
 
 ## See Also
 
-- For more information on creating and configuring advanced rate limiting policies, see [Managing Advanced Rate Limiting policies]({{base_path}}/administer/rate-limiting/manage-advanced-policies).
+- For more information on creating and configuring advanced rate limiting policies, see [Managing Advanced Rate Limiting policies](../../../administer/rate-limiting/manage-advanced-policies.md).
 
-- Learn how to ensure your backend remain stable even as API usage grows, see [Protect Backend Services]({{base_path}}/api-design-manage/design/rate-limiting/protect-backend-services).
+- Learn how to ensure your backend remain stable even as API usage grows, see [Protect Backend Services](../../../api-design-manage/design/rate-limiting/protect-backend-services.md).

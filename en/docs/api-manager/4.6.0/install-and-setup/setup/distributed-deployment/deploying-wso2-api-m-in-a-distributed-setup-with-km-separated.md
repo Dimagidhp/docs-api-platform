@@ -1,6 +1,6 @@
 # Pattern 4: Distributed Setup with Key Manager Separation
 
-WSO2 API-M can be deployed as an [all-in-one deployment]({{base_path}}/install-and-setup/setup/single-node/all-in-one-deployment-overview) or as a distributed deployment. In the distributed setup, the respective component distributions, namely WSO2 API Control Plane, WSO2 Universal Gateway and WSO2 Traffic Manager are deployed as separate nodes. 
+WSO2 API-M can be deployed as an [all-in-one deployment](../../../install-and-setup/setup/single-node/all-in-one-deployment-overview.md) or as a distributed deployment. In the distributed setup, the respective component distributions, namely WSO2 API Control Plane, WSO2 Universal Gateway and WSO2 Traffic Manager are deployed as separate nodes. 
 
 Given below are the API-M nodes you can have in a distributed deployment with Key Manager separated from the API Control Plane.
 
@@ -50,6 +50,6 @@ Given below are the API-M nodes you can have in a distributed deployment with Ke
     </tr>
 </table>
 
-<a href="{{base_path}}/assets/img/setup-and-install/deployment-km.png"><img src="{{base_path}}/assets/img/setup-and-install/deployment-km.png" width="100%"></a>
+<a href="../../../../assets/img/setup-and-install/deployment-km.png"><img src="../../../../assets/img/setup-and-install/deployment-km.png" width="100%"></a>
 
 {!includes/deploy/steps-to-deploy-apim-in-a-distributed-setup-with-km-separation.md!}

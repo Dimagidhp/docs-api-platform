@@ -6,11 +6,11 @@ You can integrate **WSO2 API Manager** with custom AI Service Providers to consu
 
 Navigate to the **AI Service Providers** section in the WSO2 API Manager admin portal sidebar, and click **Add AI Service Provider**.
 
-[![Add AI Service Provider]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png)
+[![Add AI Service Provider](../../../assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/add-ai-vendor.png)
 
 ## Step 2 - Provide the AI Service Provider Name and Version.
 
-[![Add AI Service Provider General Details]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details.png)
+[![Add AI Service Provider General Details](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details.png)
 
 ## Step 3 - Configure Data Extraction for AI Model and Token Usage.
 
@@ -54,10 +54,10 @@ This step involves configuring the extraction of key information from request/re
         </tbody>
     </table>
 
-[![Add AI Service Provider General Details]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations.png)
+[![Add AI Service Provider General Details](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations.png)
 
 1. If the data is in the **payload**, specify the appropriate **JSON path** to extract the values.
-[![AI Service Provider General Details - Payload]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-payload.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-payload.png)
+[![AI Service Provider General Details - Payload](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-payload.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-payload.png)
 
     !!! example "Mistral AI Response Payload"
         Below outlines the structure of a sample Mistral AI response payload and provides details on how specific fields can be extracted using JSON paths.
@@ -112,26 +112,26 @@ This step involves configuring the extraction of key information from request/re
 
 2. If the data is in the **header**, provide the header key.
 
-    [![AI Service Provider General Details - Header]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-header.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-header.png)
+    [![AI Service Provider General Details - Header](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-header.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-header.png)
 
 3. If the data is in a **query parameter**, provide the query parameter identifier.
 
-    [![AI Service Provider General Details - Query Param]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-queryparam.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-queryparam.png)
+    [![AI Service Provider General Details - Query Param](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-queryparam.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-general-details-llm-configurations-queryparam.png)
 
 ## Step 4 - Upload the API Definition.
 
 Upload the **OpenAPI specification** file provided by the custom AI service provider. This step defines the API endpoints and operations that the service provider offers.
 
-[![AI Service Provider API Spec]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-openapi.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-openapi.png)
+[![AI Service Provider API Spec](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-openapi.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-openapi.png)
 
 ## Step 5 - Configure the Connector Type.
 
-[![AI Service Provider Connector Type]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-connectortype.png)]({{base_path}}/assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-connectortype.png)
+[![AI Service Provider Connector Type](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-connectortype.png)](../../../assets/img/learn/ai-gateway/custom-ai-vendor/custom-ai-vendor-connectortype.png)
 
  <html><div class="admonition note">
  <p class="admonition-title">Note</p>
  <p>The <a href='https://github.com/wso2/carbon-apimgt/blob/master/components/apimgt/org.wso2.carbon.apimgt.api/src/main/java/org/wso2/carbon/apimgt/api/DefaultLLMProviderService.java'>`default`</a> connector type is a built in connector to extract AI model name, prompt token count, completion token count, total token count from the response.
- To write your own connector follow <a href='{{base_path}}/ai-gateway/ai-vendor-management/custom-ai-vendors/custom-connector'> 
+ To write your own connector follow <a href='../../../../ai-gateway/ai-vendor-management/custom-ai-vendors/custom-connector'> 
  Write a connector for a Custom AI Service Provider.</a></p>
  <p>
  </div>

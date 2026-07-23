@@ -27,7 +27,7 @@ Given below is a checklist that will guide you to set up your production environ
                      <strong>Related links</strong>
                   </div>
                   <div class="panelContent">
-                     <p><a href="{{base_path}}/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment">Security Guidelines for a Production Deployment</a></p>
+                     <p><a href="../../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment">Security Guidelines for a Production Deployment</a></p>
                   </div>
                </div>
             </div>
@@ -50,7 +50,7 @@ Given below is a checklist that will guide you to set up your production environ
                      <strong>Related links</strong>
                   </div>
                   <div class="panelContent">
-                     <p><a href="{{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-hostname">Changing the hostname</a></p>
+                     <p><a href="../../../../install-and-setup/setup/deployment-best-practices/changing-the-hostname">Changing the hostname</a></p>
                   </div>
                </div>
             </div>
@@ -64,7 +64,7 @@ Given below is a checklist that will guide you to set up your production environ
                <p>Note that the default setup does not include database backup procedures. The production setup should obviously need to have regular database backup procedures configured.</p>
                <ul>
                   <li>
-                     <a href="{{base_path}}/install-and-setup/setup/setting-up-databases/overview">Database registry</a> for the API-M runtime.
+                     <a href="../../../../install-and-setup/setup/setting-up-databases/overview">Database registry</a> for the API-M runtime.
                   </li>
                </ul>
             </div>
@@ -113,7 +113,7 @@ Given below is a checklist that will guide you to set up your production environ
          <td>
             If the runtime is hosted behind a proxy such as ApacheHTTPD, you can configure the runtime  to use the proxy server. See the following topics for instructions:
             <ul>
-               <li>Configuring a <a href="{{base_path}}/install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer">proxy server for the API-M runtime</a>.</li>
+               <li>Configuring a <a href="../../../../install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer">proxy server for the API-M runtime</a>.</li>
                <li>Configuring a <a href="https://mi.docs.wso2.com/en/latest/install-and-setup/setup/configuring-proxy-servers/">proxy server for the Micro Integrator runtime</a>.</li>
             </ul>
          </td>
@@ -144,13 +144,13 @@ maxHttpHeaderSize = 32768</code></pre>
       <tr class="even">
          <td>High availability</td>
          <td>
-            <p>Configure your deployment with high availability. Refer the <a href="{{base_path}}/install-and-setup/setup/deployment-overview">recommended deployment patterns</a> and select an option that fits your requirements.</p>
+            <p>Configure your deployment with high availability. Refer the <a href="../../../install-and-setup/setup/deployment-overview">recommended deployment patterns</a> and select an option that fits your requirements.</p>
             <p>In the cloud native deployment, high availability should be achieved via the container orchestration system (Kubernetes).</p>
          </td>
       </tr>
       <tr class="odd">
          <td>Data backup and archiving</td>
-         <td>Implement a <a href="{{base_path}}/install-and-setup/setup/deployment-best-practices/backup-recovery">backup and recovery strategy</a> for your system.</td>
+         <td>Implement a <a href="../../../../install-and-setup/setup/deployment-best-practices/backup-recovery">backup and recovery strategy</a> for your system.</td>
       </tr>
    </tbody>
 </table>

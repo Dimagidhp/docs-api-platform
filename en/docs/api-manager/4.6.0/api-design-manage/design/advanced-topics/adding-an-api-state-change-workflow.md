@@ -10,7 +10,7 @@ This section let's see how to add a simple approval workflow to control the API 
 
      2. Click **Registry** --> **Browse**.
      
-         [![Resources Browse Menu]({{base_path}}/assets/img/learn/navigate-main-resources.png)]({{base_path}}/assets/img/learn/navigate-main-resources.png)
+         [![Resources Browse Menu](../../../assets/img/learn/navigate-main-resources.png)](../../../assets/img/learn/navigate-main-resources.png)
 
      3. Go to the `/_system/governance/apimgt/applicationdata/workflow-extensions.xml` resource.
      
@@ -40,21 +40,21 @@ This section let's see how to add a simple approval workflow to control the API 
 
      1. Sign in to the API Publisher (`https://<Server-Host>:9443/publisher`) and publish an API. 
 
-     For more information, see [Create a REST API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) and [Publish an API]({{base_path}}/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/).
+     For more information, see [Create a REST API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) and [Publish an API](../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/).
 
      2. Click **Lifecycle**.
 
      A message related to the publish workflow will be displayed because the workflow is enabled for **Created to Publish** state change. 
      
-     ![Lifecycle change pending]({{base_path}}/assets/img/learn/api-state-change-workflow-pending.png)
+     ![Lifecycle change pending](../../../assets/img/learn/api-state-change-workflow-pending.png)
 
     !!! info
         Note that the **publish** button will be disabled in the overview page until the workflow task is completed or deleted. 
-        ![Publish Disabled]({{base_path}}/assets/img/learn/api-state-change-publish-pending.png)
+        ![Publish Disabled](../../../assets/img/learn/api-state-change-publish-pending.png)
 
      4. Optionally, you can revoke the state change by clicking **Delete Task**.
 
-         [![Delete pending task]({{base_path}}/assets/img/learn/delete-api-state-change-request.png)]({{base_path}}/assets/img/learn/delete-api-state-change-request.png)
+         [![Delete pending task](../../../assets/img/learn/delete-api-state-change-request.png)](../../../assets/img/learn/delete-api-state-change-request.png)
 
 3. Approve or reject the API state change pending request.
 
@@ -66,7 +66,7 @@ This section let's see how to add a simple approval workflow to control the API 
          
      3. Click on **Approve** or **Reject** to approve or reject the pending API state change request(s).
 
-         [![API state change pending list]({{base_path}}/assets/img/learn/api-state-change-pending-list.png)]({{base_path}}/assets/img/learn/api-state-change-pending-list.png)
+         [![API state change pending list](../../../assets/img/learn/api-state-change-pending-list.png)](../../../assets/img/learn/api-state-change-pending-list.png)
 
 4. View the outcome of the updated API state change request.
 
@@ -79,11 +79,11 @@ This section let's see how to add a simple approval workflow to control the API 
          - If the request was approved, it will update the API state to the new state.
          - If the request was rejected, the status will stay unchanged.
 
-         [![API state change updated list]({{base_path}}/assets/img/learn/api-state-change-updated-status.png)]({{base_path}}/assets/img/learn/api-state-change-updated-status.png)
+         [![API state change updated list](../../../assets/img/learn/api-state-change-updated-status.png)](../../../assets/img/learn/api-state-change-updated-status.png)
 
     !!! info
         Changes that correspond to the API state can be easily viewed through the **Lifecycle** page.
-        [![Lifecycle State]({{base_path}}/assets/img/learn/api-lifecycle-state.png)]({{base_path}}/assets/img/learn/api-lifecycle-state.png)
+        [![Lifecycle State](../../../assets/img/learn/api-lifecycle-state.png)](../../../assets/img/learn/api-lifecycle-state.png)
 
 ## Advanced Configurations
 

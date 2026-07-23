@@ -2,7 +2,7 @@
 
 When a message comes into WSO2 API Manager Gateway, the receiving transport selects a message builder based on the message's content type. It uses that builder to process the message's raw payload data and convert it into SOAP. Conversely, when sending a message out from API Gateway, a message formatter is used to build the outgoing stream from the message. As with message builders, the message formatter is selected based on the message's content type. Given below is the typical workflow:
 
-  [![]({{base_path}}/assets/img/setup-and-install/message-builders-formatters.png)]({{base_path}}/assets/img/setup-and-install/message-builders-formatters.png)
+  [![](../../assets/img/setup-and-install/message-builders-formatters.png)](../../assets/img/setup-and-install/message-builders-formatters.png)
   
 ## Default message builders and formatters
 Listed below are the message formatters that are enabled for WSO2 API Manager by default:
@@ -153,7 +153,7 @@ The default message builder or message formatter for a given content type can be
         application_binary = "org.apache.axis2.format.BinaryFormatter"
         ```
 
-3. Save the changes and [restart the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server) to get the changes applied.
+3. Save the changes and [restart the server](../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server) to get the changes applied.
 
 
 ## Custom message builders and formatters

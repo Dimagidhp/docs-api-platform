@@ -42,7 +42,7 @@ Enabling observability at the server startup is simple in API Manager. All you n
 ### Enable Correlation Logs using the Devops REST API
 
 Devops REST API can be used to enable / disable correlation logs during the runtime and retrieve the correlation logs configurations. 
-For more instructions, see [WSO2 Devops API v0]({{base_path}}/reference/product-apis/devops-apis/devops-v0/devops-v0/#/paths/~1config~1correlation~1/get).
+For more instructions, see [WSO2 Devops API v0](../../reference/product-apis/devops-apis/devops-v0/devops-v0/#/paths/~1config~1correlation~1/get).
 
 1. Enable / disable correlation log configurations.
    
@@ -661,11 +661,11 @@ Enable observability with WSO2 API-M and start the WSO2 API-M server as explain
 
 If you don't have an API to access, follow the following links: 
 
-1. [Creating an API]({{base_path}}/manage-apis/design/create-api/create-rest-api/create-a-rest-api)
+1. [Creating an API](../../manage-apis/design/create-api/create-rest-api/create-a-rest-api)
 
-2. [Publish the API]({{base_path}}/manage-apis/deploy-and-publish/publish-on-dev-portal/publish-an-api)
+2. [Publish the API](../../manage-apis/deploy-and-publish/publish-on-dev-portal/publish-an-api)
 
-3. [Subscribe to the API]({{base_path}}/consume/manage-subscription/subscribe-to-an-api)
+3. [Subscribe to the API](../../consume/manage-subscription/subscribe-to-an-api)
 
 Use the following command to invoke the API.
 

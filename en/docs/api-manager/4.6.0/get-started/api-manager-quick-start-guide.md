@@ -15,7 +15,7 @@ Choose a deployment option to start WSO2 API Manager All-in-one package. The All
     1. Install [Java SE Development Kit (JDK)](https://adoptium.net/temurin/releases/?arch=any&version=21) version **21** and set the `JAVA_HOME` environment variable.
     
         !!! tip
-            For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install]({{base_path}}/install-and-setup/install/installing-the-product/installing-api-m-runtime/#setting-up-java_home)
+            For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install](../install-and-setup/install/installing-the-product/installing-api-m-runtime/#setting-up-java_home)
     
     2. Download WSO2 API-Manager All-in-one package.
     - [Open Source Distribution](https://github.com/wso2/product-apim/releases/tag/v4.6.0)
@@ -39,13 +39,13 @@ Choose a deployment option to start WSO2 API Manager All-in-one package. The All
 
 === "Run on Kubernetes"
 
-    To use Kubernetes (K8s) and Helm resources for container-based deployments of WSO2 API Manager (API-M), follow the steps in [Deploying API-M on Kubernetes using Helm Resources.]({{base_path}}/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one/#step-1-set-up-basic-configurations)
+    To use Kubernetes (K8s) and Helm resources for container-based deployments of WSO2 API Manager (API-M), follow the steps in [Deploying API-M on Kubernetes using Helm Resources.](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one/#step-1-set-up-basic-configurations)
 
 ### What you'll build
 
 In this sample scenario, you'll implement the full lifecycle of an API using WSO2 API Manager.
 
-<a href="{{base_path}}/assets/img/get_started/apim-qsg-diagram.png"><img src="{{base_path}}/assets/img/get_started/apim-qsg-diagram.png" width="60%"></a>
+<a href="../../assets/img/get_started/apim-qsg-diagram.png"><img src="../../assets/img/get_started/apim-qsg-diagram.png" width="60%"></a>
 
 Here are the steps that we are going to follow:
 
@@ -65,7 +65,7 @@ Follow the instructions below to create, deploy and publish an API via the Publi
      
 2. Sign in with **`admin/admin`** as the credentials.
                                                  
-     [![Publisher portal home page]({{base_path}}/assets/img/get_started/api-publisher-home.png)]({{base_path}}/assets/img/get_started/api-publisher-home.png)
+     [![Publisher portal home page](../assets/img/get_started/api-publisher-home.png)](../assets/img/get_started/api-publisher-home.png)
 
 3. Next, let's create a mock REST service by navigating to [Mocky.io](https://designer.mocky.io/design). You can provide the following configuration in order to create a mock service.
     
@@ -81,7 +81,7 @@ Follow the instructions below to create, deploy and publish an API via the Publi
     
 4. Select **REST API** from the home screen and then click **Start From Scratch**.
    
-    [![Design a new REST API]({{base_path}}/assets/img/get_started/design-new-rest-api.png)]({{base_path}}/assets/img/get_started/design-new-rest-api.png)
+    [![Design a new REST API](../assets/img/get_started/design-new-rest-api.png)](../assets/img/get_started/design-new-rest-api.png)
 
 
 5. Enter the API details.
@@ -125,7 +125,7 @@ Follow the instructions below to create, deploy and publish an API via the Publi
      
 6. Click **Create & Publish**.
 
-    [![Create an API]({{base_path}}/assets/img/get_started/api-create.png){: style="width:100%"}]({{base_path}}/assets/img/get_started/api-create.png)
+    [![Create an API](../assets/img/get_started/api-create.png){: style="width:100%"}](../assets/img/get_started/api-create.png)
 
     This will publish your first API on the Developer Portal as well as deploy it on the gateway. You now have an OAuth 2.0 secured REST API that is ready to be consumed.
 
@@ -141,13 +141,13 @@ Follow the instructions below to subscribe to the API via the Developer Portal o
     
      The published `HelloWorld` API is listed in the Developer Portal as shown below.
 
-     [![Developer Portal home page]({{base_path}}/assets/img/get_started/dev-portal-landing-page.png)]({{base_path}}/assets/img/get_started/dev-portal-landing-page.png)
+     [![Developer Portal home page](../assets/img/get_started/dev-portal-landing-page.png)](../assets/img/get_started/dev-portal-landing-page.png)
 
 2. Click **Sign-In** and enter **`admin/admin`** as your credentials to sign in to the Developer Portal.
 
 3. Once you click on the HelloWorld API, you will be redirected to  the API overview page. Then, go ahead and click on the **TRY OUT** button.
 
-     [![API try out]({{base_path}}/assets/img/get_started/try-out.png)]({{base_path}}/assets/img/get_started/try-out.png)
+     [![API try out](../assets/img/get_started/try-out.png)](../assets/img/get_started/try-out.png)
 
      And with that, we have subscribed to the API using the `DefaultApplication`.
 
@@ -167,18 +167,18 @@ Follow the instructions below to invoke the created API.
 
         When running in production, since a trusted certificate is used, you won't have to do this step.
 
-     [![Test API]({{base_path}}/assets/img/get_started/test-api.png)]({{base_path}}/assets/img/get_started/test-api.png)
+     [![Test API](../assets/img/get_started/test-api.png)](../assets/img/get_started/test-api.png)
 
 2. Click on the `GET` resource of the API to expand the resource and Click **Try It Out**.
    
-     [![GET resource]({{base_path}}/assets/img/get_started/expanded-get-resource.png)]({{base_path}}/assets/img/get_started/expanded-get-resource.png)
+     [![GET resource](../assets/img/get_started/expanded-get-resource.png)](../assets/img/get_started/expanded-get-resource.png)
 
 3. Click **Execute**.
 
-     [![GET resource]({{base_path}}/assets/img/get_started/try-api.png)]({{base_path}}/assets/img/get_started/try-api.png)
+     [![GET resource](../assets/img/get_started/try-api.png)](../assets/img/get_started/try-api.png)
 
      You should see the `{"hello" : "world"}` response from the API. 
 
-     [![Successful response]({{base_path}}/assets/img/get_started/try-it-success.png)]({{base_path}}/assets/img/get_started/try-it-success.png)
+     [![Successful response](../assets/img/get_started/try-it-success.png)](../assets/img/get_started/try-it-success.png)
 
 __Congratulations!__ With that, you've created, deployed, and published your first API. Next, you subscribed to it and put it to the test. Your journey with WSO2 API Manager has officially begun!

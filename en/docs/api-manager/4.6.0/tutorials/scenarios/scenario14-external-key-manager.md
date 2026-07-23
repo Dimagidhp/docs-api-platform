@@ -1,6 +1,6 @@
 # Scenario 14 - External Key Manager Support
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to configure a Key Manager. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to configure a Key Manager. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 5 minutes_**
 
@@ -12,11 +12,11 @@ WSO2 API Manager comes with out-of-the-box external key manager connectors to va
 
 For this scenario, we assume Railco has Keycloak IDP as their internal identity provider. Following are the steps to configure Keycloak IdP as the external Key Manager for RailCo.
 
-<img src="{{base_path}}/assets/img/tutorials/scenario-tutorials/scenario14.png" title="Key Manager Description" width="630"/>
+<img src="../../../assets/img/tutorials/scenario-tutorials/scenario14.png" title="Key Manager Description" width="630"/>
 
 ## Step 1: Set up Keycloak
 
-Detailed steps on how to configure Keycloak can be found in [WSO2 Documentation]({{base_path}}/administer/key-managers/configure-keycloak-connector/). Additionally, you could refer to the screencast done on this in [here](https://www.youtube.com/watch?v=xuZ6DPhXNX8). Following are the simplified steps for this setup.
+Detailed steps on how to configure Keycloak can be found in [WSO2 Documentation](../../administer/key-managers/configure-keycloak-connector/). Additionally, you could refer to the screencast done on this in [here](https://www.youtube.com/watch?v=xuZ6DPhXNX8). Following are the simplified steps for this setup.
 
 1. Download Keycloak Server from [https://www.keycloak.org/downloads](https://www.keycloak.org/downloads). At the time of writing this tutorial, keycloak 12.0.4 was used for this.
 2. Extract it to your local setup and navigate to `<keycloak>/bin` and run `./standalone.sh` to start the server.
@@ -56,7 +56,7 @@ Now let's configure the connection between API-M and Keycloak.
 6. Set `http://host.docker.internal:8080/auth/realms/master/protocol/openid-connect/revoke` as **Revoke Endpoint** if this field is empty.
 7. Under the **Connector Configurations** section, provide the **client id** and **secret** we got from executing the script.
 
-    ![Connector configuration]({{base_path}}/assets/img/tutorials/scenarios/connector-config.png)
+    ![Connector configuration](../../assets/img/tutorials/scenarios/connector-config.png)
 
 Now the Key Manager is configured. 
 
@@ -68,11 +68,11 @@ Let’s invoke an API using a token generated from Keycloak.
 2. Go to the **Applications** page and select **KeyCloakAPP**. This application is already subscribed to the **RailCoTrainAPI**. 
 3. Select **Production Keys → OAuth2 Tokens** . You will see a tab for **Keycloak**
     
-    ![Keycloak application]({{base_path}}/assets/img/tutorials/scenarios/keycloak-app.png)
+    ![Keycloak application](../../assets/img/tutorials/scenarios/keycloak-app.png)
 
 4. Click **Generate Keys** to generate a token. (Default values would be enough to generate an access token for this scenario)
 5. Invoke API using this token. 
 
 ## What's next
 
-Look through other [available tutorials]({{base_path}}/tutorials/tutorials-overview) and look through our documentation for topics of interest.
+Look through other [available tutorials](../../tutorials/tutorials-overview.md) and look through our documentation for topics of interest.

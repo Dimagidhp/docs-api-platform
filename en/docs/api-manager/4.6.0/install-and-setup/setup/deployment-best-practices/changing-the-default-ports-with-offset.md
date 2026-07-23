@@ -8,7 +8,7 @@ There are two ways to set an offset to a port: Update the server configurations,
 
 ## Before you begin
 
-See the complete list of [default ports]({{base_path}}/install-and-setup/setup/reference/default-product-ports) in all the API Manager components.
+See the complete list of [default ports](../../../install-and-setup/setup/reference/default-product-ports) in all the API Manager components.
 
 Note that most of the **runtime ports** change automatically based on the offset you specify here.
 
@@ -37,7 +37,7 @@ The default port offset in the WSO2 API-M runtime is `0`. Use one of the followi
         offset=1
         ```
 
-4. [Restart the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/).
+4. [Restart the server](../../../install-and-setup/install/installing-the-product/running-the-api-m/).
 
 #### Pass the port offset during server startup
 

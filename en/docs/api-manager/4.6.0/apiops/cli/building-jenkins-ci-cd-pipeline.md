@@ -4,7 +4,7 @@ In the modern digital-era, many organizations adopt digital transformation techn
 
 In this section, you will learn how to build an automated process using the WSO2 API Controller (apictl) with WSO2 API Manager (WSO2 API-M). You will see how a solution is built using a version control system (Github), artifact repository(JFrog Artifactory) and CI/CD Tool (Jenkins).
 
-<a href="{{base_path}}/assets/img/learn/api-controller/cicd-jenkins-arch.png"><img src="{{base_path}}/assets/img/learn/api-controller/cicd-jenkins-arch.png" alt="" name="" width="600"></a>
+<a href="../../../assets/img/learn/api-controller/cicd-jenkins-arch.png"><img src="../../../assets/img/learn/api-controller/cicd-jenkins-arch.png" alt="" name="" width="600"></a>
 
 ## Setting up the environment
 
@@ -21,23 +21,23 @@ Log in to the server and install following.
   sudo apt-get install jq
 
   ```
-2. Install the [apictl tool]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl). Extract to a location henceforth referred as `CTL_HOME`.
+2. Install the [apictl tool](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl). Extract to a location henceforth referred as `CTL_HOME`.
 
 3. Install java.
 
 4. Setup the Jenkins server following the instructions given [here](https://www.jenkins.io/doc/book/installing/linux/). You can choose to install the suggested default plugins. This will install the commonly-used plugins.
     
-    <a href="{{base_path}}/assets/img/learn/api-controller/customize-jenkins.png"><img src="{{base_path}}/assets/img/learn/api-controller/customize-jenkins.png" alt="" width="500"></a>
+    <a href="../../../assets/img/learn/api-controller/customize-jenkins.png"><img src="../../../assets/img/learn/api-controller/customize-jenkins.png" alt="" width="500"></a>
 
 5. Register a webhook in the JForg Artifact repository to notify changes. To capture these events and trigger a Jenkins job, install a generic-webhook-trigger plugin.
 
-    <a href="{{base_path}}/assets/img/learn/api-controller/webhook-trigger-plugin.png"><img src="{{base_path}}/assets/img/learn/api-controller/webhook-trigger-plugin.png" alt="" width="500"></a>
+    <a href="../../../assets/img/learn/api-controller/webhook-trigger-plugin.png"><img src="../../../assets/img/learn/api-controller/webhook-trigger-plugin.png" alt="" width="500"></a>
 
 6. Configure apictl home as an environment variable. Go to the **Manage Jenkins** section and select **Configure System**. 
-    <a href="{{base_path}}/assets/img/learn/api-controller/configure-system.png"><img src="{{base_path}}/assets/img/learn/api-controller/configure-system.png" alt="" width="500"></a>
+    <a href="../../../assets/img/learn/api-controller/configure-system.png"><img src="../../../assets/img/learn/api-controller/configure-system.png" alt="" width="500"></a>
 
     Under the **Global properties** select **Environment variables** and set the APICTL home as below and click **Save**.
-    <a href="{{base_path}}/assets/img/learn/api-controller/environment-variables.png"><img src="{{base_path}}/assets/img/learn/api-controller/environment-variables.png" alt="" width="70%"></a>
+    <a href="../../../assets/img/learn/api-controller/environment-variables.png"><img src="../../../assets/img/learn/api-controller/environment-variables.png" alt="" width="70%"></a>
 
 
 Now the Jenkins server is set up.
@@ -58,20 +58,20 @@ This section shows how to trigger a Jenkins job when a change is made to the rep
 
 1. Go to the **source** repository and under the **Settings**, select **Webhooks** and add a webhook to the jenkins server.
 
-  <a href="{{base_path}}/assets/img/learn/api-controller/select-webhooks.png"><img src="{{base_path}}/assets/img/learn/api-controller/select-webhooks.png" alt="" width="70%"></a>
+  <a href="../../../assets/img/learn/api-controller/select-webhooks.png"><img src="../../../assets/img/learn/api-controller/select-webhooks.png" alt="" width="70%"></a>
 
 2. Use your jenkins server URL (e.g., `http://&lt;public_ip>:8080/github-webhook/`) as the URL and **Content type** as application/json.
 
 3. Under the **Which events would you like to trigger this webhook?** section, select **Let me select individual events**, and select **pull request** and **pushes**.
 
-  <a href="{{base_path}}/assets/img/learn/api-controller/jenkins-server-url.png"><img src="{{base_path}}/assets/img/learn/api-controller/jenkins-server-url.png" alt="Jenkins server URL" width="70%"></a>
+  <a href="../../../assets/img/learn/api-controller/jenkins-server-url.png"><img src="../../../assets/img/learn/api-controller/jenkins-server-url.png" alt="Jenkins server URL" width="70%"></a>
 
 Source repository is now configured. 
 
 Now let’s initialize the source repository. This will be done from the developer’s local machine.
 
 !!! note
-    If you haven’t setup API Controller, set it up using the [apictl tool]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl) 
+    If you haven’t setup API Controller, set it up using the [apictl tool](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl) 
 
 1. Clone the source repository. Navigate to the repository folder.
 
@@ -101,15 +101,15 @@ Deployment repository will be used to gather configurations for each deployment.
 
 1. Create a user to upload artifacts. Login using admin credentials and go to **Identity and Access** → **Users** and create a user. All roles are selected in this scenario.
   
-    <a href="{{base_path}}/assets/img/learn/api-controller/create-a-user.png"><img src="{{base_path}}/assets/img/learn/api-controller/create-a-user.png" alt="" width="70%"></a>
+    <a href="../../../assets/img/learn/api-controller/create-a-user.png"><img src="../../../assets/img/learn/api-controller/create-a-user.png" alt="" width="70%"></a>
 
 2. Make the repo accessible public. Go to **Security → Settings** and select **Allow Anonymous Access**
 
-    <a href="{{base_path}}/assets/img/learn/api-controller/repo-public-access.png"><img src="{{base_path}}/assets/img/learn/api-controller/repo-public-access.png" alt="" width="70%"></a>
+    <a href="../../../assets/img/learn/api-controller/repo-public-access.png"><img src="../../../assets/img/learn/api-controller/repo-public-access.png" alt="" width="70%"></a>
 
 3. Create a repository to upload the artifacts. Go to **Repositories** and select **Add Repositories**. Select **Generic** type and provide a name (e.g., `myrepo`).
 
-    <a href="{{base_path}}/assets/img/learn/api-controller/create-repository.png"><img src="{{base_path}}/assets/img/learn/api-controller/create-repository.png" alt="" width="70%"></a>
+    <a href="../../../assets/img/learn/api-controller/create-repository.png"><img src="../../../assets/img/learn/api-controller/create-repository.png" alt="" width="70%"></a>
 
     After saving, You should be able to access `https://<your_org>.jfrog.io/artifactory/<repo_name>/`.
 
@@ -130,15 +130,15 @@ Deployment repository will be used to gather configurations for each deployment.
 
     Add the **Event set** as **Artifact was deployed**.
 
-      <a href="{{base_path}}/assets/img/learn/api-controller/set-event.png"><img src="{{base_path}}/assets/img/learn/api-controller/set-event.png" alt="" width="70%"></a>
+      <a href="../../../assets/img/learn/api-controller/set-event.png"><img src="../../../assets/img/learn/api-controller/set-event.png" alt="" width="70%"></a>
     
     Select the repository from the new window that appears.
 
-      <a href="{{base_path}}/assets/img/learn/api-controller/select-repository.png"><img src="{{base_path}}/assets/img/learn/api-controller/select-repository.png" alt="" width="70%"></a>
+      <a href="../../../assets/img/learn/api-controller/select-repository.png"><img src="../../../assets/img/learn/api-controller/select-repository.png" alt="" width="70%"></a>
 
 ### Step 4 - Setup API-M instances
 
-Download the WSO2 API Manager [here]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl) and start the instance. Set this in a separate instance as the `dev` instance. 
+Download the WSO2 API Manager [here](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl) and start the instance. Set this in a separate instance as the `dev` instance. 
 
 ### Step 5 - Configure Jenkins Jobs
 
@@ -191,13 +191,13 @@ As shown in the **Setup Jenkins** Section, Go to **Manage Jenkins** section and 
   </tr>
 </table>
 
-<a href="{{base_path}}/assets/img/learn/api-controller/global-variables.png"><img src="{{base_path}}/assets/img/learn/api-controller/global-variables.png" alt="" width="70%"></a>
+<a href="../../../assets/img/learn/api-controller/global-variables.png"><img src="../../../assets/img/learn/api-controller/global-variables.png" alt="" width="70%"></a>
 
 #### Step 5.2 - Setup Artifact build and upload job
 
 1. Create a jenkins **Pipeline** project.
 
-    <a href="{{base_path}}/assets/img/learn/api-controller/create-pipeline.png"><img src="{{base_path}}/assets/img/learn/api-controller/create-pipeline.png" alt="" width="70%"></a>
+    <a href="../../../assets/img/learn/api-controller/create-pipeline.png"><img src="../../../assets/img/learn/api-controller/create-pipeline.png" alt="" width="70%"></a>
 
 2. Use [this](https://gist.github.com/chamilaadhi/def68ba36cedec6b901731f32bbad532) script for the pipeline. 
 
@@ -210,7 +210,7 @@ As shown in the **Setup Jenkins** Section, Go to **Manage Jenkins** section and 
 
 To set up, Execute a build job. Note that this will fail.
 
-  <a href="{{base_path}}/assets/img/learn/api-controller/build-now.png"><img src="{{base_path}}/assets/img/learn/api-controller/build-now.png" alt="" width="40%"></a>
+  <a href="../../../assets/img/learn/api-controller/build-now.png"><img src="../../../assets/img/learn/api-controller/build-now.png" alt="" width="40%"></a>
 
 ####  Step 5.3 - Setup Artifact deployment Job
 
@@ -220,7 +220,7 @@ The artifact deployment job will listen to any new updates in the Artifactory re
 
 2. Save the script and execute a build to setup. Note that this will fail.
 
-    <a href="{{base_path}}/assets/img/learn/api-controller/build-dev-now.png"><img src="{{base_path}}/assets/img/learn/api-controller/build-dev-now.png" alt="" width="40%"></a>
+    <a href="../../../assets/img/learn/api-controller/build-dev-now.png"><img src="../../../assets/img/learn/api-controller/build-dev-now.png" alt="" width="40%"></a>
 
 3. To test whether the webhook between Artifactory and the Jenkins job is working, you could execute the same upload test we did under Setup JFrog Artifactory section
   ```
@@ -230,7 +230,7 @@ The artifact deployment job will listen to any new updates in the Artifactory re
 
 If the configuration is working, this will trigger a new build.
 
-  <a href="{{base_path}}/assets/img/learn/api-controller/trigger-new-build.png"><img src="{{base_path}}/assets/img/learn/api-controller/trigger-new-build.png" alt="" width="40%"></a>
+  <a href="../../../assets/img/learn/api-controller/trigger-new-build.png"><img src="../../../assets/img/learn/api-controller/trigger-new-build.png" alt="" width="40%"></a>
 
 ## Test the scenario
 
@@ -300,23 +300,23 @@ To test this setup, use the OpenAPI definition based method to create the APIs.
 
     When you commit to the source repository, the `CICD_ARTIFACT_UPLOAD` will get triggered first and upload the built component to the Artifactory. This is displayed in the console log of the Jenkins job.
 
-      <a href="{{base_path}}/assets/img/learn/api-controller/console-log-jenkins.png"><img src="{{base_path}}/assets/img/learn/api-controller/console-log-jenkins.png" alt="" width="70%"></a>
+      <a href="../../../assets/img/learn/api-controller/console-log-jenkins.png"><img src="../../../assets/img/learn/api-controller/console-log-jenkins.png" alt="" width="70%"></a>
 
     Once the bundle is uploaded to the Artifactory repository, it will trigger the deployment Jenkins job. The bundle getting deployed in API-M is displayed in the logs.
 
-      <a href="{{base_path}}/assets/img/learn/api-controller/apim-logs.png"><img src="{{base_path}}/assets/img/learn/api-controller/apim-logs.png" alt="" width="70%"></a>
+      <a href="../../../assets/img/learn/api-controller/apim-logs.png"><img src="../../../assets/img/learn/api-controller/apim-logs.png" alt="" width="70%"></a>
 
     Log in to the API Manager instance and you should see the API is created.
 
-      <a href="{{base_path}}/assets/img/learn/api-controller/created-api.png"><img src="{{base_path}}/assets/img/learn/api-controller/created-api.png" alt="" width="50%"></a>
+      <a href="../../../assets/img/learn/api-controller/created-api.png"><img src="../../../assets/img/learn/api-controller/created-api.png" alt="" width="50%"></a>
 
 Let's update the API and see the changes. The API is in **CREATED** state. Let’s publish this API by following the steps given below. 
 
 1. Open the  **PetstoreAPI/api.yaml** file and change the **lifeCycleStatus** to **PUBLISHED**
 2. Open **PetstoreAPI/meta.yaml** file and change the version to some new value (let’s say 1.0.1) .
-    <a href="{{base_path}}/assets/img/learn/api-controller/create-file-git.png"><img src="{{base_path}}/assets/img/learn/api-controller/create-file-git.png" alt="" width="40%"></a>
+    <a href="../../../assets/img/learn/api-controller/create-file-git.png"><img src="../../../assets/img/learn/api-controller/create-file-git.png" alt="" width="40%"></a>
 
-    <a href="{{base_path}}/assets/img/learn/api-controller/api-state.png"><img src="{{base_path}}/assets/img/learn/api-controller/api-state.png" alt="" width="40%"></a>
+    <a href="../../../assets/img/learn/api-controller/api-state.png"><img src="../../../assets/img/learn/api-controller/api-state.png" alt="" width="40%"></a>
 
 3. Commit both files.
 
@@ -324,4 +324,4 @@ Once you commit the changes to the source repository, you would see the jenkins 
 
 If you go to the artifactory repository and check the **PetstoreAPI** you will see two versions in the repository.
 
-  <a href="{{base_path}}/assets/img/learn/api-controller/two-versions.png"><img src="{{base_path}}/assets/img/learn/api-controller/two-versions.png" alt="" width="60%"></a>
+  <a href="../../../assets/img/learn/api-controller/two-versions.png"><img src="../../../assets/img/learn/api-controller/two-versions.png" alt="" width="60%"></a>

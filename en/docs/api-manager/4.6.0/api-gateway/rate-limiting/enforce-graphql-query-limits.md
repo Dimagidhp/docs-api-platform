@@ -112,11 +112,11 @@ query {
 
 The following diagram illustrates how the Gateway enforces GraphQL query limits at runtime:
 
-[![Model of the GraphQL Query Analysis]({{base_path}}/assets/img/learn/graphql-query-complexity-model.jpg)]({{base_path}}/assets/img/learn/graphql-query-complexity-model.jpg)
+[![Model of the GraphQL Query Analysis](../../assets/img/learn/graphql-query-complexity-model.jpg)](../../assets/img/learn/graphql-query-complexity-model.jpg)
 
 The overall request/response flow:
 
-[![Flow of the GraphQL Query Analysis]({{base_path}}/assets/img/learn/graphql-query-analysis-flow.jpg)]({{base_path}}/assets/img/learn/graphql-query-analysis-flow.jpg)
+[![Flow of the GraphQL Query Analysis](../../assets/img/learn/graphql-query-analysis-flow.jpg)](../../assets/img/learn/graphql-query-analysis-flow.jpg)
 
 **Enforcement Steps:**
 
@@ -139,4 +139,4 @@ Publishers can customize field complexity values for their GraphQL APIs to accur
 
 ## See Also
 
-- For more information on creating and configuring graphql query limits in subscription level policies, see [Managing Subscription Policies]({{base_path}}/administer/rate-limiting/manage-subscription-policies/#graphql-query-limits-in-subscription-policies)
+- For more information on creating and configuring graphql query limits in subscription level policies, see [Managing Subscription Policies](../../administer/rate-limiting/manage-subscription-policies/#graphql-query-limits-in-subscription-policies)

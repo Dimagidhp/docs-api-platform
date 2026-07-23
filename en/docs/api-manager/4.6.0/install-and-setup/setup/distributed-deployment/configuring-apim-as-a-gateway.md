@@ -11,7 +11,7 @@ Kubernetes Gateway only supports REST API and GraphQL API creation for now.
 
 Following diagram depicts the architecture of how the WSO2 API Control Plane connects with WSO2 Kubernetes Gateway using APIM-APK Agent.
 
-<a href="{{base_path}}/assets/img/setup-and-install/apk-overview.png" ><img src="{{base_path}}/assets/img/setup-and-install/apk-overview.png" alt="Architecture" title="Architecture" width="100%" /></a>
+<a href="../../../../assets/img/setup-and-install/apk-overview.png" ><img src="../../../../assets/img/setup-and-install/apk-overview.png" alt="Architecture" title="Architecture" width="100%" /></a>
 
 ## APIM APK Agent
 

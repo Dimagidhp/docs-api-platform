@@ -1,13 +1,13 @@
 # Securing APIs using OAuth2 Access Tokens
 
-APIs published on WSO2 API Gateway can be secured by OAuth 2.0, which is the de facto standard for access delegation in the REST API world. Any client application invoking an OAuth2 secured API needs to have a valid subscription to that particular API and present a valid OAuth2.0 Access Token when invoking it. For more information on how to subscribe to an application to an API and generate credentials for it, see [Subscribe to an API]({{base_path}}/api-developer-portal/manage-subscription/subscribe-to-an-api/).
+APIs published on WSO2 API Gateway can be secured by OAuth 2.0, which is the de facto standard for access delegation in the REST API world. Any client application invoking an OAuth2 secured API needs to have a valid subscription to that particular API and present a valid OAuth2.0 Access Token when invoking it. For more information on how to subscribe to an application to an API and generate credentials for it, see [Subscribe to an API](../../../api-developer-portal/manage-subscription/subscribe-to-an-api/).
 
 After you have got the required credentials, namely the consumer key and consumer secret for your application, you (application users) can obtain access tokens to invoke the APIs that are subscribed under the given application. WSO2 API Manager offers a set of OAuth2 grant types for obtaining access tokens depending on the type of the access token owner, type of the application, and the trust relationship with the application.
-For more information, see [OAuth2 Grant Types]({{base_path}}/api-security/key-management/authentication/grant-types/overview/).
+For more information, see [OAuth2 Grant Types](../../../api-security/key-management/authentication/grant-types/overview/).
 
 ## OAuth 2.0 access token types
 
-WSO2 APIM only allows creating applications of JWT token type. See [JWT Access Tokens]({{base_path}}/api-security/key-management/tokens/jwt-tokens).
+WSO2 APIM only allows creating applications of JWT token type. See [JWT Access Tokens](../../../api-security/key-management/tokens/jwt-tokens.md).
 Hence all the access tokens issued under any application are JWTs.
 
 ## Authentication via access tokens
@@ -92,7 +92,7 @@ Each tenant can define their name for the authorization header by following the 
      `https://<server-host>:9443/admin`
 
     !!! tip
-        For information on creating a tenant, see [Managing Tenants]({{base_path}}/administer/multitenancy/managing-tenants/).
+        For information on creating a tenant, see [Managing Tenants](../../../administer/multitenancy/managing-tenants/).
 
 
 2.  Go to **Settings** --> **Advanced**.
@@ -202,7 +202,7 @@ Each tenant can define their name for the authorization header by following the 
         }
         ```
 
-4.  If you have already published and deployed the APIs, [sign in to the API Publisher]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher) using your tenant credentials, and save and redeploy those APIs.
+4.  If you have already published and deployed the APIs, [sign in to the API Publisher](../../../install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher) using your tenant credentials, and save and redeploy those APIs.
 
 ### Customize per API
 
@@ -214,12 +214,12 @@ The API Publisher application allows an API Developer or Product Manager to spec
 
 Follow the instructions below to add a customized authorization header for an API:
 
-1.  [Sign in to the Publisher]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher).
+1.  [Sign in to the Publisher](../../../install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher).
 `https://<server-host>:9443/publisher         `
 
-2.  When [creating]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) or updating an API, define the customized authorization header in the **Runtime** tab under **Develop -> API Configurations**.
+2.  When [creating](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) or updating an API, define the customized authorization header in the **Runtime** tab under **Develop -> API Configurations**.
 
-    [![Custom Auth Header]({{base_path}}/assets/img/learn/custom-auth-header-publisher.png)]({{base_path}}/assets/img/learn/custom-auth-header-publisher.png)
+    [![Custom Auth Header](../../../assets/img/learn/custom-auth-header-publisher.png)](../../../assets/img/learn/custom-auth-header-publisher.png)
 
 3.  Save and Deploy the API.
 
@@ -265,4 +265,4 @@ Before you start, sign in to the API Publisher and deploy the sample API (`Pizza
 
 Note that the customized authorization header appears in the Developer Portal UI as well.
 
-[![Customized Auth Header]({{base_path}}/assets/img/learn/auth_header.png)]({{base_path}}/assets/img/learn/auth_header.png)
+[![Customized Auth Header](../../../assets/img/learn/auth_header.png)](../../../assets/img/learn/auth_header.png)

@@ -1,7 +1,7 @@
 # Expose a SOAP service as a REST API
 
 WSO2 API Manager supports the management of an existing SOAP and WSDL based services exposing as REST APIs.
-The organizations who have SOAP/ WSDL based services, can easily bridge their existing services to REST without the cost of a major migration. WSO2 API Manager supports two kinds of services as one for performing a  "pass through" of the SOAP message to the backend and other one is generating [a RESTful API from the backend SOAP service]({{base_path}}/manage-apis/design/create-api/create-rest-api/generate-rest-api-from-soap-backend/).
+The organizations who have SOAP/ WSDL based services, can easily bridge their existing services to REST without the cost of a major migration. WSO2 API Manager supports two kinds of services as one for performing a  "pass through" of the SOAP message to the backend and other one is generating [a RESTful API from the backend SOAP service](../manage-apis/design/create-api/create-rest-api/generate-rest-api-from-soap-backend/).
 
 This tutorial will explain the steps to design, publish and invoke a SOAP service as a RESTful API using **Pass Through**
 
@@ -9,7 +9,7 @@ This tutorial will explain the steps to design, publish and invoke a SOAP servic
 
 1.  Sign in to the API Publisher and click **CREATE API**.
     
-    [![Create SOAP API]({{base_path}}/assets/img/learn/create-soap-api.png)]({{base_path}}/assets/img/learn/create-soap-api.png)
+    [![Create SOAP API](../assets/img/learn/create-soap-api.png)](../assets/img/learn/create-soap-api.png)
 
 2.  Select **Pass Through** option and thereafter, select one of the following options:
 
@@ -24,7 +24,7 @@ This tutorial will explain the steps to design, publish and invoke a SOAP servic
      </html>
 
      This example uses the WSDL `http://ws.cdyne.com/phoneverify/phoneverify.asmx?wsdl` from CDYNE as the endpoint here, but you can use any SOAP backend of your choice.
-        ![Create SOAP Pass Through API]({{base_path}}/assets/img/learn/generate-rest-api-from-soap-backend.jpg)
+        ![Create SOAP Pass Through API](../assets/img/learn/generate-rest-api-from-soap-backend.jpg)
 
 3.  Click **NEXT** button to proceed to the next phase and Provide the information in the table below and click **CREATE** button.
 
@@ -35,26 +35,26 @@ This tutorial will explain the steps to design, publish and invoke a SOAP servic
     | Version | 1.0                |
     | Endpoint| http://ws.cdyne.com/phoneverify/phoneverify.asmx|
 
-    ![Create SOAP API]({{base_path}}/assets/img/learn/create-soap-api-form.jpg)
+    ![Create SOAP API](../assets/img/learn/create-soap-api-form.jpg)
 
 4.  The created API appears in the publisher as follows.
-    ![SOAP API overview]({{base_path}}/assets/img/learn/created-soap-api.jpg)
+    ![SOAP API overview](../assets/img/learn/created-soap-api.jpg)
 
 5.  API definition of the Created schema has been displayed at **API Definition** tab.
-     [![SOAP API Definition]({{base_path}}/assets/img/learn/api-definition-of-soap-api-created-by-passthrough-mode.jpg)]({{base_path}}/assets/img/learn/api-definition-of-soap-api-created-by-passthrough-mode.jpg)
+     [![SOAP API Definition](../assets/img/learn/api-definition-of-soap-api-created-by-passthrough-mode.jpg)](../assets/img/learn/api-definition-of-soap-api-created-by-passthrough-mode.jpg)
   
     <html><div class="admonition note"><p class="admonition-title">Note</p>
     <p>
             If you wish to add scopes to the resources that were created, navigate to ***Resources*** and expand the resources. Thereafter, creating new scopes and specify them under operation scope. If you specify a scope, you need to use the same scope when generating access tokens for the subscribed application to invoke the API. For more information on working with the scopes, see
-    [OAuthscopes]({{base_path}}/api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/)
+    [OAuthscopes](../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/)
             </p>
         </div></html>   
 
-    ![Add scopes for Pass Through API]({{base_path}}/assets/img/learn/add-scope-for-passthrough-soap-api.jpg)
+    ![Add scopes for Pass Through API](../assets/img/learn/add-scope-for-passthrough-soap-api.jpg)
      <html><div class="admonition note">
      <p class="admonition-title">Note</p>
      <p> Note that when creating this API, the default option of **Rate limiting level** , was selected to **API Level**. For more information on setting advanced throttling policies,
-     see [Enforce Throttling and Resource Access Policies]({{base_path}}/manage-apis/design/rate-limiting/setting-throttling-limits/).</p>
+     see [Enforce Throttling and Resource Access Policies](../manage-apis/design/rate-limiting/setting-throttling-limits/).</p>
      </div>
      </html>
      
@@ -65,26 +65,26 @@ This tutorial will explain the steps to design, publish and invoke a SOAP servic
 ### Step 2 - Invoke a SOAP service as a REST API.
 
 1.  Log in to the developer portal, navigate to **Subscriptions** tab and subscribe to  the API using (e.g.,DefaultApplication)
-      ![]({{base_path}}/assets/img/learn/subscribed-to-api.jpg)
+      ![](../assets/img/learn/subscribed-to-api.jpg)
 
 2.  Click the **MANAGE APP** button when prompted **View Credentials**.
-    ![]({{base_path}}/assets/img/learn/view-credentials.jpg)
+    ![](../assets/img/learn/view-credentials.jpg)
 
 3.  Click **GENERATED ACCESS TOKEN** and then it prompt a popup to create an application access token.
-    ![]({{base_path}}/assets/img/learn/generate-accesstoken.jpg)
+    ![](../assets/img/learn/generate-accesstoken.jpg)
 
 
 5. Click **GENERATE**.
 
      The generated JSON Web Token (JWT) appears in the popup. Make sure to copy it.
      <html>
-     <img src="{{base_path}}/assets/img/learn/generate-access-token-popup.jpg" height="400" width="580">
+     <img src="../../assets/img/learn/generate-access-token-popup.jpg" height="400" width="580">
      </html>
 
     Let's invoke the API.
 
 6. Navigate to **TryOut** tab and paste the token at Access token input field.
-    ![]({{base_path}}/assets/img/learn/soap-tryout.jpg)
+    ![](../assets/img/learn/soap-tryout.jpg)
 
 7. Expand the POST method and click **Try it out** . Enter the following, and click       **Execute** to invoke the API.
       <html>
@@ -116,13 +116,13 @@ This tutorial will explain the steps to design, publish and invoke a SOAP servic
       </table>
       </html>
 
-    ![]({{base_path}}/assets/img/learn/soap-response.png)
+    ![](../assets/img/learn/soap-response.png)
 
 8.  Note the API response that appears on the console.
     <html><div class="admonition note">
      <p class="admonition-title">Note</p>
      <p>You can also invoke this API using a third-party tool such as SOAP UI. For more information on how to invoke an API using a SOAP client, 
-     see [Invoke an API using a SOAP Client]({{base_path}}/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-a-soap-client/) .</p>
+     see [Invoke an API using a SOAP Client](../consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-a-soap-client/) .</p>
      </div>
      </html>
 

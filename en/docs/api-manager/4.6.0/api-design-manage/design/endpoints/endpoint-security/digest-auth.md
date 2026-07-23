@@ -13,7 +13,7 @@ Digest Authentication applies a hash function to the username and the password b
 
 Digest Authentication is safer than Basic Authentication, which uses unencrypted base64 encoding instead of a hashing mechanism.
 
-When you [create an API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api) using the API Publisher, you can specify the endpoints of the API backend implementation via the **Endpoints** page as Production and Sandbox endpoints respectively.
+When you [create an API](../../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md) using the API Publisher, you can specify the endpoints of the API backend implementation via the **Endpoints** page as Production and Sandbox endpoints respectively.
 
 Follow the instructions below to use Digest Auth as the endpoint authentication type when using a secured endpoint:
 
@@ -21,17 +21,17 @@ Follow the instructions below to use Digest Auth as the endpoint authentication 
 
 2. Click the Endpoint Security symbol of the endpoint you want to secure with Digest Auth.
 
-      [![Endpoint security symbol]({{base_path}}/assets/img/design/endpoints/endpoint-security/endpoint-security-symbol.png)]({{base_path}}/assets/img/learn/endpoint-security-symbol.png)
+      [![Endpoint security symbol](../../../../assets/img/design/endpoints/endpoint-security/endpoint-security-symbol.png)](../../../../assets/img/learn/endpoint-security-symbol.png)
 
 3. Select **Digest Auth** as the endpoint authentication type from the drop-down menu.
 
-     [![digest-auth-dropdown]({{base_path}}/assets/img/learn/digest-auth-dropdown.png)]({{base_path}}/assets/img/learn/digest-auth-dropdown.png)
+     [![digest-auth-dropdown](../../../../assets/img/learn/digest-auth-dropdown.png)](../../../../assets/img/learn/digest-auth-dropdown.png)
 
 4. After entering your credentials, click **Submit** to confirm the details of the respective endpoint and then click **Save and deploy** in the Endpoints page to save all the changes made in the **Endpoints** page.
 
-      [![digest-auth-submit-button]({{base_path}}/assets/img/learn/digest-auth-submit-button.png)]({{base_path}}/assets/img/learn/digest-auth-submit-button.png)
+      [![digest-auth-submit-button](../../../../assets/img/learn/digest-auth-submit-button.png)](../../../../assets/img/learn/digest-auth-submit-button.png)
 
-      [![endpoints-save-button]({{base_path}}/assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)]({{base_path}}/assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)
+      [![endpoints-save-button](../../../../assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)](../../../../assets/img/design/endpoints/endpoint-security/endpoints-save-button.png)
 
 !!! info
      The selected Endpoint Auth Type should match with the authentication mechanism supported by the secured endpoint.

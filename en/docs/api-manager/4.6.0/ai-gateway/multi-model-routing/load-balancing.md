@@ -21,12 +21,12 @@ You can enforce round robin based load balancing for your AI API by attaching th
 3. Navigate to **API Configurations**, and click **Policies**.
 4. Look for the policy named **Model Round Robin** listed under the Common Policies section within the policy list. Let's, drag and drop the **Model Round Robin** policy to the **Request** flow of `/chat/completions` POST operation.
 
-    [![Model Round Robin Policy]({{base_path}}/assets/img/learn/ai-gateway/attach-model-round-robin-policy.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/attach-model-round-robin-policy.png)
+    [![Model Round Robin Policy](../../assets/img/learn/ai-gateway/attach-model-round-robin-policy.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/attach-model-round-robin-policy.png)
 
 !!! note "AWS Bedrock Configuration"
     When configuring a multi model provider service for round robin routing, you must select both the **Provider** (model family) and the **Model** for each model entry. The **Provider** dropdown will show the model families you have configured in the Admin Portal (such as Meta, Anthropic, DeepSeek, etc.). After selecting a provider, the **Model** dropdown will list the specific models available under that provider.
 
-    [![Multi model provider service Weighted Round Robin Policy Configuration]({{base_path}}/assets/img/learn/ai-gateway/aws-bedrock-round-robin-policy-configuration.png){: style="width:40%"}]({{base_path}}/assets/img/learn/ai-gateway/aws-bedrock-round-robin-policy-configuration.png)
+    [![Multi model provider service Weighted Round Robin Policy Configuration](../../assets/img/learn/ai-gateway/aws-bedrock-round-robin-policy-configuration.png){: style="width:40%"}](../../assets/img/learn/ai-gateway/aws-bedrock-round-robin-policy-configuration.png)
 
 5. Fill in the requested details and click **Save**.
 
@@ -45,11 +45,11 @@ You can enforce round robin based load balancing for your AI API by attaching th
         </tr>
     </table>
 
-    [![Model Round Robin Policy Save]({{base_path}}/assets/img/learn/ai-gateway/round-robin-save.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/round-robin-save.png)
+    [![Model Round Robin Policy Save](../../assets/img/learn/ai-gateway/round-robin-save.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/round-robin-save.png)
 
 6. Finally, scroll to the bottom of the page and click on **Save and deploy**.
 
-7. For more information on how to work with API Policies, refer to the [API Policies]({{base_path}}/api-design-manage/design/api-policies/overview/) section.
+7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview/) section.
 
 ### Try Out Round Robin Routing
 
@@ -65,7 +65,7 @@ You can enforce round robin based load balancing for your AI API by attaching th
 
     Notice how the request was made to `gpt-4o` model, but the response was from `gpt-4o-mini`.
 
-    [![Round Robin Invoke]({{base_path}}/assets/img/learn/ai-gateway/round-robin-invoke.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/round-robin-invoke.png)
+    [![Round Robin Invoke](../../assets/img/learn/ai-gateway/round-robin-invoke.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/round-robin-invoke.png)
 
 ## Weighted Round Robin
 
@@ -80,7 +80,7 @@ You can enforce weighted round robin based load balancing for your AI API by att
 3. Navigate to **API Configurations**, and click **Policies**.
 4. Look for the policy named **Model Weighted Round Robin** listed under the Common Policies section within the policy list. Let's, drag and drop the **Model Weighted Round Robin** policy to the **Request** flow of `/chat/completions` POST operation.
 
-    [![Model Round Robin Policy]({{base_path}}/assets/img/learn/ai-gateway/attach-model-weighted-round-robin-policy.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/attach-model-weighted-round-robin-policy.png)
+    [![Model Round Robin Policy](../../assets/img/learn/ai-gateway/attach-model-weighted-round-robin-policy.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/attach-model-weighted-round-robin-policy.png)
 
 5. Fill in the requested details and click **Save**.
 
@@ -99,17 +99,17 @@ You can enforce weighted round robin based load balancing for your AI API by att
         </tr>
     </table>
 
-    [![Model Round Robin Policy Save]({{base_path}}/assets/img/learn/ai-gateway/weighted-round-robin-save.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/weighted-round-robin-save.png)
+    [![Model Round Robin Policy Save](../../assets/img/learn/ai-gateway/weighted-round-robin-save.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/weighted-round-robin-save.png)
     
 
 !!! note "AWS Bedrock Configuration"
     When configuring a multi model provider service for weighted round robin routing, you must select both the **Provider** (model family) and the **Model** for each model entry. The **Provider** dropdown will show the model families you have configured in the Admin Portal (such as Meta, Anthropic, DeepSeek, etc.). After selecting a provider, the **Model** dropdown will list the specific models available under that provider.
 
-    [![Multi model provider service Weighted Round Robin Policy Configuration]({{base_path}}/assets/img/learn/ai-gateway/aws-bedrock-weighted-round-robin-policy-configuration.png){: style="width:40%"}]({{base_path}}/assets/img/learn/ai-gateway/aws-bedrock-weighted-round-robin-policy-configuration.png)
+    [![Multi model provider service Weighted Round Robin Policy Configuration](../../assets/img/learn/ai-gateway/aws-bedrock-weighted-round-robin-policy-configuration.png){: style="width:40%"}](../../assets/img/learn/ai-gateway/aws-bedrock-weighted-round-robin-policy-configuration.png)
 
 6. Finally, scroll to the bottom of the page and click on **Save and deploy**.
 
-7. For more information on how to work with API Policies, refer to the [API Policies]({{base_path}}/api-design-manage/design/api-policies/overview/) section.
+7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview/) section.
 
 ### Try Out Weighted Round Robin Routing
 
@@ -125,4 +125,4 @@ You can enforce weighted round robin based load balancing for your AI API by att
 
     Notice how the request was made to `gpt-4o` model, but the response was from `o3-mini`.
 
-    [![Round Robin Invoke]({{base_path}}/assets/img/learn/ai-gateway/weighted-round-robin-invoke.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/weighted-round-robin-invoke.png)
+    [![Round Robin Invoke](../../assets/img/learn/ai-gateway/weighted-round-robin-invoke.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/weighted-round-robin-invoke.png)

@@ -1,6 +1,6 @@
 # Configure Pattern 1: Geo-Regional Synchronized API Management with Replicated Databases
 
-<a href="{{base_path}}/assets/img/setup-and-install/multi-dc-pattern-1.png"><img src="{{base_path}}/assets/img/setup-and-install/multi-dc-pattern-1.png" alt="Multi-DC Pattern 1" width="80%"></a>
+<a href="../../../../assets/img/setup-and-install/multi-dc-pattern-1.png"><img src="../../../../assets/img/setup-and-install/multi-dc-pattern-1.png" alt="Multi-DC Pattern 1" width="80%"></a>
 
 All the regions are identical in this pattern. therefore, the documentation will provide information about configuring a single region.
 
@@ -96,7 +96,7 @@ Moreover, jndi.properties files should be added per region to provide informatio
 
 Since the control planes are only connected through the JMS connections, the TCP port 5672 should be exposed to the external parties (Other regions' control planes).
 
-<a href="{{base_path}}/assets/img/setup-and-install/multi-dc-cp-to-cp-communication.png"><img src="{{base_path}}/assets/img/setup-and-install/multi-dc-cp-to-cp-communication.png" alt="Multi-DC CP to CP Communication" width="80%"></a>
+<a href="../../../../assets/img/setup-and-install/multi-dc-cp-to-cp-communication.png"><img src="../../../../assets/img/setup-and-install/multi-dc-cp-to-cp-communication.png" alt="Multi-DC CP to CP Communication" width="80%"></a>
 
 Follow the steps below to configure the control plane node(s) in region 1 to communicate with the region 2 control plane. Similarly region 1 configurations should be added to the region 2 control plane.
 

@@ -1,6 +1,6 @@
 # Scenario 5 - Getting the Developer Community Involved
 
-This is a tutorial that is part of a series and can be used as a standalone tutorial on how to involve the developer community. For more details on the scenario and general prerequisites, please see [the scenario overview page]({{base_path}}/tutorials/scenarios/scenario-overview).
+This is a tutorial that is part of a series and can be used as a standalone tutorial on how to involve the developer community. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).
 
 **_Time to Complete : 4 minutes_**
 
@@ -19,9 +19,9 @@ WSO2 API Manager Developer Portal provides many features to assist developers to
 
 This demo setup contains a sample API to demonstrate these features. Log in to the Quantis Developer Portal using Quantis user `sindy@quantis.com` with the password `user123` and check the **QuantisTrainAPI**.
 
-![Community features]({{base_path}}/assets/img/tutorials/scenarios/dev-portal-community.png)
+![Community features](../../assets/img/tutorials/scenarios/dev-portal-community.png)
 
-You could generate client side SDKs for different programming languages. You could find more information on this in our [official documentation]({{base_path}}/consume/generating-sdks/write-a-client-application-using-the-sdk/).  We have provided a sample Java program created using the Java SDK downloaded from the **QuantisTrainAPI**.
+You could generate client side SDKs for different programming languages. You could find more information on this in our [official documentation](../../consume/generating-sdks/write-a-client-application-using-the-sdk/).  We have provided a sample Java program created using the Java SDK downloaded from the **QuantisTrainAPI**.
 
 1. Subscribe to the **QuantisTrainAPI** using an application and generate an access token.
 2. Go to the `/resources` location and invoke the API using the `sdk-demo-1.0.0.jar` with the access token
@@ -31,7 +31,7 @@ java -jar sdk-demo-1.0.0.jar <access_token>
 
 ```
 
-![SDK response]({{base_path}}/assets/img/tutorials/scenarios/sdk-response.png)
+![SDK response](../../assets/img/tutorials/scenarios/sdk-response.png)
 
 !!! Info
     **Sdk-demo-1.0.0.jar** is built using the Java SDK downloaded from the Developer Portal. You could check the source code for this program in the `/resources/sdk-demo` location
@@ -52,4 +52,4 @@ java -jar sdk-demo-1.0.0.jar <access_token>
 
 ## What's next
 
-Try out the next scenario in the series, [Integrating with Data Sources]({{base_path}}/tutorials/scenarios/scenario6-integrating-with-data-sources).
+Try out the next scenario in the series, [Integrating with Data Sources](../../tutorials/scenarios/scenario6-integrating-with-data-sources.md).

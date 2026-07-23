@@ -32,32 +32,32 @@ WSO2 Identity Server 7.1.0 includes B2B organization support. The following inst
     - Select "Traditional Web Application" and complete the form.
     - Set the Redirect URL to [https://localhost:9443/commonauth](https://localhost:9443/commonauth) 
 
-    ![Create new application]({{base_path}}/assets/img/design/b2b/create-new-app.png) 
+    ![Create new application](../../assets/img/design/b2b/create-new-app.png) 
 
 5. Select ‘Allow sharing with organizations’ option.
 
-    ![Allow sharing with organizations]({{base_path}}/assets/img/design/b2b/allow-sharing-with-orgs.png) 
+    ![Allow sharing with organizations](../../assets/img/design/b2b/allow-sharing-with-orgs.png) 
 
 6. Once the application is created, go to the 'Protocol' tab and copy the Client ID and Secret for later use.
 7. Go to the **User Attributes tab** and select **Roles**.
 
-    ![Select roles]({{base_path}}/assets/img/design/b2b/select-roles.png) 
+    ![Select roles](../../assets/img/design/b2b/select-roles.png) 
 
 8. Under the **Subject sub-section**, select **Assign alternate subject identifier** and select **Username**.
 
-    ![Select subject ]({{base_path}}/assets/img/design/b2b/sub_alt.png) 
+    ![Select subject ](../../assets/img/design/b2b/sub_alt.png) 
 
 9. Under the **Roles sub-section**, add application roles **devportal**, **publisher**, **creator**, **admin**.
 
-    ![Application roles ]({{base_path}}/assets/img/design/b2b/app-roles.png) 
+    ![Application roles ](../../assets/img/design/b2b/app-roles.png) 
 
 10. Go to the **User Management** menu item, navigate to the **Users tab**, and create three users—one for each portal.
 
-    ![Organization users ]({{base_path}}/assets/img/design/b2b/org-users.png) 
+    ![Organization users ](../../assets/img/design/b2b/org-users.png) 
 
 11. Go to the **Roles** menu item under the **User Management** menu item and assign application roles to users. (Check audience column and get the application/<application name> roles)
 
-    ![Organization users ]({{base_path}}/assets/img/design/b2b/org-users-with-roles.png) 
+    ![Organization users ](../../assets/img/design/b2b/org-users-with-roles.png) 
 
 12. Select a role and go to the **Users tab** to assign users to the role.
 In this example
@@ -67,17 +67,17 @@ In this example
 
 13. Now let's create organizations. For that, select **Organization** and create a couple of new organizations. Note down the organization IDs.
 
-    ![Create organizations ]({{base_path}}/assets/img/design/b2b/create-organizations.png) 
+    ![Create organizations ](../../assets/img/design/b2b/create-organizations.png) 
 
 14. Select the organization and click **Switch to Organization**.
 
-    ![Switch organizations ]({{base_path}}/assets/img/design/b2b/switch-organization.png) 
+    ![Switch organizations ](../../assets/img/design/b2b/switch-organization.png) 
 
 15. Under the **Users** menu item in **User Management**, add a new user. Let's say `emily` and `robert`.
 
 16. Under the **Roles** menu item in **User Management**, find the previously created `devportal` role and select it. Select the **Users tab** and set the user to this role.
 
-    ![Dev portal roles ]({{base_path}}/assets/img/design/b2b/dev-portal-roles.png) 
+    ![Dev portal roles ](../../assets/img/design/b2b/dev-portal-roles.png) 
 
     !!! note
         Organization restriction capability is not supported in the Admin and Publisher portals in this release. To prevent organization users from logging into these portals, do not assign them Admin or Publisher/Creator roles to the users in sub organizations.

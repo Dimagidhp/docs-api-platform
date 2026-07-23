@@ -7,7 +7,7 @@ There are mainly two ways to customize and override the developer portal theme.
 
 In this section, we will cover the first method which is the simplest way to change the appearance of Developer portal.
 
-For the second method, please refer [Advanced Customization]({{base_path}}/reference/customize-product/customizations/advanced-ui-customization/) section.
+For the second method, please refer [Advanced Customization](../../../../reference/customize-product/customizations/advanced-ui-customization/) section.
 ## Global Theming
 
 You can find the default theme in the following location `<API-M_HOME>/repository/deployment/server/webapps/devportal/source/src/app/data/defaultTheme.js`.
@@ -52,17 +52,17 @@ Enable landing page. **defaultTheme.json** (Tenant theming).
 
 The following documents describe some of the most commonly used customizations, that you can do by changing the `userTheme.json`
 
-  - [Enabling or Disabling API Detail Tabs]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enabling-or-disabling-api-detail-tabs/)
-  - [Override API Overview Page per API]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/override-api-overview-page-per-api/)
-  - [Enable or Disable Rating]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-rating/)
-  - [Enable or Disable Home Page]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-home-page/)
-  - [Enable or Disable Tag Cloud]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-tag-cloud/)
-  - [Enable or Disable Footer]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-footer/)
-  - [Enable or Disable Banner]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-banner/)
-  - [Styling API Details Left Menu]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-left-menu/)
-  - [Styling API Details Info Section]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-info-section/)
-  - [Styling the Logo and Header]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/styling-the-logo-and-header/)
-  - [Customize API Listing Default View]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/change-default-view/)
+  - [Enabling or Disabling API Detail Tabs](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enabling-or-disabling-api-detail-tabs/)
+  - [Override API Overview Page per API](../../../../reference/customize-product/customizations/customizing-the-developer-portal/override-api-overview-page-per-api/)
+  - [Enable or Disable Rating](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-rating/)
+  - [Enable or Disable Home Page](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-home-page/)
+  - [Enable or Disable Tag Cloud](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-tag-cloud/)
+  - [Enable or Disable Footer](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-footer/)
+  - [Enable or Disable Banner](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-banner/)
+  - [Styling API Details Left Menu](../../../../reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-left-menu/)
+  - [Styling API Details Info Section](../../../../reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-info-section/)
+  - [Styling the Logo and Header](../../../../reference/customize-product/customizations/customizing-the-developer-portal/styling-the-logo-and-header/)
+  - [Customize API Listing Default View](../../../../reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/change-default-view/)
 
 ## Tenant Theming 
 
@@ -70,7 +70,7 @@ The following documents describe some of the most commonly used customizations, 
 
 **If you do not have access to the file system** , you can upload/download the Devportal theme via the Admin Portal as shown below:
 
-1.  Download the sample theme here [sample-theme.zip]({{base_path}}/assets/attachments/learn/sample-theme.zip). 
+1.  Download the sample theme here [sample-theme.zip](../../../../assets/attachments/learn/sample-theme.zip). 
 2.  The `sample-theme.zip` file contains the following folder structure. 
 
      You can make the changes required to `userTheme.json` file and archive it back. The name of the archive does not matter. But make sure that the `userTheme.json` file name remains the same.
@@ -101,7 +101,7 @@ The following documents describe some of the most commonly used customizations, 
 4.  Click **Tenant Theme** under **Settings** category and click **Browse File to Upload** to upload your ZIP file.
     Alternatively, you can drag and drop your ZIP file to upload.
 
-    [![Upload tenant theme]({{base_path}}/assets/img/learn/upload-tenant-theme.png)]({{base_path}}/assets/img/learn/upload-tenant-theme.png)
+    [![Upload tenant theme](../../../../assets/img/learn/upload-tenant-theme.png)](../../../../assets/img/learn/upload-tenant-theme.png)
 
 5.  Access the API Developer Portal (`https://<server-host>:<server-port>/devportal`) using your tenant username and password.
 
@@ -530,7 +530,7 @@ The following is the Devportal app theme object merging with the React Material 
 "EnablePerTenantServiceProviderCreation" : "true" 
 ```
 
-[![Per Tenant SP Creation]({{base_path}}/assets/img/learn/per-tenant-sp-creation.png)]({{base_path}}/assets/img/learn/per-tenant-sp-creation.png)
+[![Per Tenant SP Creation](../../../../assets/img/learn/per-tenant-sp-creation.png)](../../../../assets/img/learn/per-tenant-sp-creation.png)
 
 3. `login` folder in the tenant theme contains the config files and resources to define login theme customizations.
 ```

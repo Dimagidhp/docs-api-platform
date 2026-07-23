@@ -51,7 +51,7 @@ in sequence.
 3. As required, drag and drop the **JSON Validator** from the Policy List tab into Request Flow.
 4. Provide the required parameters for JSON validation.
 
-    <a href="{{base_path}}/assets/img/learn/mediation-json-validator.png"><img src="{{base_path}}/assets/img/learn/mediation-json-validator.png" width="70%" alt="Drag and drop the JSON Validator from the policy list"></a> 
+    <a href="../../../assets/img/learn/mediation-json-validator.png"><img src="../../../assets/img/learn/mediation-json-validator.png" width="70%" alt="Drag and drop the JSON Validator from the policy list"></a> 
     
 4. Scroll down the page and click **Save** to save the changes (click **Save and Deploy** and deploy the API for the changes to take effect in the gateways).
 

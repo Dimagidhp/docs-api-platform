@@ -17,11 +17,11 @@ The default URL of WSO2 API Manager Developer Portal (`https://<HostName>:9443/d
 
 2.  In the **Main** menu, click **Browse** under **Resources**.
 
-    ![]({{base_path}}/assets/img/develop/customizations/browse-registry.png)
+    ![](../../../assets/img/develop/customizations/browse-registry.png)
 
-3.  Navigate to the `/_system/governance` registry path and create `customurl/api-cloud/<tenant-domain>/urlMapping` directory structure in the registry, as shown in the following diagram. Replace the `<tenant-domain>` placeholder with the domain name of the tenant you want to customize the devportal and gateway URLs. For details on how to create and manage multiple tenants, see [Managing Tenants]({{base_path}}/administer/multitenancy/managing-tenants).
+3.  Navigate to the `/_system/governance` registry path and create `customurl/api-cloud/<tenant-domain>/urlMapping` directory structure in the registry, as shown in the following diagram. Replace the `<tenant-domain>` placeholder with the domain name of the tenant you want to customize the devportal and gateway URLs. For details on how to create and manage multiple tenants, see [Managing Tenants](../../../administer/multitenancy/managing-tenants.md).
 
-    ![]({{base_path}}/assets/img/develop/customizations/mapping-file-directory-structure.png)
+    ![](../../../assets/img/develop/customizations/mapping-file-directory-structure.png)
 
     To create a directory in the registry path,
 
@@ -29,7 +29,7 @@ The default URL of WSO2 API Manager Developer Portal (`https://<HostName>:9443/d
 
     2.  Click **Add Collection** and specify the name of the directory and click **Add**.
     
-        ![]({{base_path}}/assets/img/develop/customizations/browse-registry.png)
+        ![](../../../assets/img/develop/customizations/browse-registry.png)
 
         !!! note
             In [API Cloud](https://docs.wso2.com/display/APICloud/Customize+Cloud+URLs), this directory structure is created automatically when specifying the custom URL through the UI.
@@ -64,13 +64,13 @@ The default URL of WSO2 API Manager Developer Portal (`https://<HostName>:9443/d
             }
         ```
 
-    ![]({{base_path}}/assets/img/develop/customizations/create-mapping-file.png)
+    ![](../../../assets/img/develop/customizations/create-mapping-file.png)
 
 ## Configure per tenant service provider creation for the Developer Portal
 
 By default the developer portal is acting as SAAS app, which is shared among all the tenants. But when custom URLs are enabled for a given tenant, this particular SAAS application cannot be used(Due to custom callback URLs) for tenant login management. Hence, below steps has to be followed in order to enable service provider creation per tenant.
 
-1.  Carry out the steps provided in the [Advanced Configurations]({{base_path}}/administer/advanced-configurations) section.
+1.  Carry out the steps provided in the [Advanced Configurations](../../../administer/advanced-configurations.md) section.
 
 2.  Edit the Advanced Configurations and add following new property to enable per tenant service provider creation for the respective tenant. Save the content.
 
@@ -78,7 +78,7 @@ By default the developer portal is acting as SAAS app, which is shared among all
     "EnablePerTenantServiceProviderCreation": true
     ```
 
-    ![]({{base_path}}/assets/img/develop/customizations/per-tenant-sp-creation-config.png )
+    ![](../../../assets/img/develop/customizations/per-tenant-sp-creation-config.png )
 
 ## Configure the load balancer for custom URLs
 

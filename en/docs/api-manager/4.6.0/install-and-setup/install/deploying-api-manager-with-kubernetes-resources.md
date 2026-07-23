@@ -73,4 +73,4 @@ Follow the instructions below to use Kubernetes (K8s) and Helm resources for con
 !!! note
     You can read the [README guide](https://github.com/wso2/helm-apim/tree/all-in-one-4.6.0-1/all-in-one/README.md) of WSO2 API Manager Git repository for further details on other dependencies and configurations.
 
-For different deployment patterns, see the deployment configurations with regard to the [Advanced Deployment Patterns]({{base_path}}/install-and-setup/setup/deployment-overview/).
+For different deployment patterns, see the deployment configurations with regard to the [Advanced Deployment Patterns](../../install-and-setup/setup/deployment-overview/).

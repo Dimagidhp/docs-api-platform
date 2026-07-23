@@ -27,18 +27,18 @@ Follow these steps to reset the quota for a specific user of your application:
 
 2. In the application overview page, locate the **Reset User Quota** section.
 
-    [![Application Overview]({{base_path}}/assets/img/learn/application-overview-reset.png)]({{base_path}}/assets/img/learn/application-overview-reset.png)
+    [![Application Overview](../../assets/img/learn/application-overview-reset.png)](../../assets/img/learn/application-overview-reset.png)
 
 3. Fill in the **User** field with either the username or the UUID of the end-user whose quota needs to be reset, then click **Next**.
 
-    [![Application Reset Dialog Box]({{base_path}}/assets/img/learn/application-reset-dialog.png){: style="width:55%"}]({{base_path}}/assets/img/learn/application-reset-dialog.png)
+    [![Application Reset Dialog Box](../../assets/img/learn/application-reset-dialog.png){: style="width:55%"}](../../assets/img/learn/application-reset-dialog.png)
 
     !!! note
         The username or UUID you provide will not be validated by API Manager. You will not receive feedback on whether the reset was successful. Ensure the username or UUID is correct before proceeding.
 
 4. Review that the **User** value is correct, then click **Reset**.
 
-    [![Application Reset Dialog Confirmation Box]({{base_path}}/assets/img/learn/application-reset-dialog-confirm.png){: style="width:55%"}]({{base_path}}/assets/img/learn/application-reset-dialog-confirm.png)
+    [![Application Reset Dialog Confirmation Box](../../assets/img/learn/application-reset-dialog-confirm.png){: style="width:55%"}](../../assets/img/learn/application-reset-dialog-confirm.png)
 
 When you click **Reset**, a reset request is sent to the traffic manager and you'll see a notification saying "Reset request has been triggered successfully". This notification confirms the request was sent, but doesn't guarantee the reset completed successfully. 
 
@@ -48,16 +48,16 @@ To verify the reset worked, the user should try invoking APIs using the applicat
 
 The username or UUID used by the traffic manager to identify users depends on the OAuth grant type used to obtain access tokens:
 
-- **Client Credentials Grant**: Use the normal username of the application owner. With this grant type, your application accesses APIs on behalf of the client rather than individual users. See [Client Credentials Grant]({{base_path}}/manage-apis/design/api-security/oauth2/grant-types/client-credentials-grant/) for details.
+- **Client Credentials Grant**: Use the normal username of the application owner. With this grant type, your application accesses APIs on behalf of the client rather than individual users. See [Client Credentials Grant](../../manage-apis/design/api-security/oauth2/grant-types/client-credentials-grant/) for details.
 
-- **Password Grant** and **Authorization Code Grant**: Use the **UUID** of the end-user, not their username. See [Password Grant]({{base_path}}/manage-apis/design/api-security/oauth2/grant-types/password-grant/) and [Authorization Code Grant]({{base_path}}/manage-apis/design/api-security/oauth2/grant-types/authorization-code-grant/) for details.
+- **Password Grant** and **Authorization Code Grant**: Use the **UUID** of the end-user, not their username. See [Password Grant](../../manage-apis/design/api-security/oauth2/grant-types/password-grant/) and [Authorization Code Grant](../../manage-apis/design/api-security/oauth2/grant-types/authorization-code-grant/) for details.
 
 ### Finding User UUIDs Using Analytics
 
 You can use log-based analytics solutions to identify user UUIDs:
 
-- [ELK Analytics]({{base_path}}/monitoring/api-analytics/on-prem/elk-installation-guide/)
-- [Datadog Analytics]({{base_path}}/monitoring/api-analytics/on-prem/datadog-installation-guide/)
+- [ELK Analytics](../../monitoring/api-analytics/on-prem/elk-installation-guide/)
+- [Datadog Analytics](../../monitoring/api-analytics/on-prem/datadog-installation-guide/)
 
 Each successful API invocation generates a log entry containing details about the API, application, and user. Look for the `userName` field in the logs. For example:
 

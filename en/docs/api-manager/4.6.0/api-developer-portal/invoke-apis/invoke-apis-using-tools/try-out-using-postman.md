@@ -3,7 +3,7 @@
 You can download a Postman collection for an **OpenAPI** using WSO2 API Manager, and test the REST API using Postman.
 
 !!! note "Try out using the Integrated API Console"
-    If required, instead of using Postman you can try out your REST APIs using the [Integrated API Console]({{base_path}}/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/) in WSO2 API Manager.
+    If required, instead of using Postman you can try out your REST APIs using the [Integrated API Console](../../../consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/) in WSO2 API Manager.
     
 Let's download an OpenAPI as a Postman collection and try it out using Postman.
 
@@ -17,19 +17,19 @@ Follow the instructions below to download an OpenAPI as a Postman collection:
 
 2. Click an API (e.g., `PizzaShackAPI`) to go to the API overview.
 
-    [![API overview]({{base_path}}/assets/img/get_started/architecture/developer-portal-overview.png)]({{base_path}}/assets/img/get_started/architecture/developer-portal-overview.png)
+    [![API overview](../../../assets/img/get_started/architecture/developer-portal-overview.png)](../../../assets/img/get_started/architecture/developer-portal-overview.png)
 
 2.  Click **Try Out** to go to the Try out section.
 
-    [![Postman try out]({{base_path}}/assets/img/learn/postman_try_out.png)]({{base_path}}/assets/img/learn/postman_try_out.png)
+    [![Postman try out](../../../assets/img/learn/postman_try_out.png)](../../../assets/img/learn/postman_try_out.png)
 
-3.  [Subscribe to an API]({{base_path}}/consume/manage-subscription/subscribe-to-an-api) if you have not done so already.
+3.  [Subscribe to an API](../../../consume/manage-subscription/subscribe-to-an-api) if you have not done so already.
 
 4. Select the application name and click **Postman collection**.
      
      This downloads the Postman collection.
 
-    [![Collection download]({{base_path}}/assets/img/learn/postman_download_collection.png)]({{base_path}}/assets/img/learn/postman_download_collection.png)
+    [![Collection download](../../../assets/img/learn/postman_download_collection.png)](../../../assets/img/learn/postman_download_collection.png)
     
 ## Step 2 - Try out the collection in Postman
 
@@ -43,34 +43,34 @@ Follow the instructions below to try out the Postman collection that contains th
 
      2. Click the **PROD KEYS** to generate an Access Token.
 
-         [![Subscriptions]({{base_path}}/assets/img/learn/postman_subscriptions.png)]({{base_path}}/assets/img/learn/postman_subscriptions.png)
+         [![Subscriptions](../../../assets/img/learn/postman_subscriptions.png)](../../../assets/img/learn/postman_subscriptions.png)
 
      3. Click **Generate Access Token** to generate a new token. 
 
-         [![Generate token]({{base_path}}/assets/img/learn/postman_generate_token.png)]({{base_path}}/assets/img/learn/postman_generate_token.png)
+         [![Generate token](../../../assets/img/learn/postman_generate_token.png)](../../../assets/img/learn/postman_generate_token.png)
     
      4. Click **Generate**.
 
-         [![Generate dialog]({{base_path}}/assets/img/learn/postman_generate_dialog.png)]({{base_path}}/assets/img/learn/postman_generate_dialog.png)
+         [![Generate dialog](../../../assets/img/learn/postman_generate_dialog.png)](../../../assets/img/learn/postman_generate_dialog.png)
     
      5. **Copy** the access token you generated.
 
 2. Open the Postman application and click **Import** to import the Postman collection file that you downloaded.
 
-     [![Import Postman]({{base_path}}/assets/img/learn/postman_import.png)]({{base_path}}/assets/img/learn/postman_import.png)
+     [![Import Postman](../../../assets/img/learn/postman_import.png)](../../../assets/img/learn/postman_import.png)
 
 3. Select a resource from the Postman collection to test.
 
 4. Click on the **Authorization** tab and select **Bearer Token** as the token type.
 
-     [![Token type]({{base_path}}/assets/img/learn/postman_token_type.png)]({{base_path}}/assets/img/learn/postman_token_type.png)
+     [![Token type](../../../assets/img/learn/postman_token_type.png)](../../../assets/img/learn/postman_token_type.png)
 
 5. Paste the copied token.
 
 6. Click **Send** to proceed.
 
-     [![Put token]({{base_path}}/assets/img/learn/postman_put_token.png)]({{base_path}}/assets/img/learn/postman_put_token.png)
+     [![Put token](../../../assets/img/learn/postman_put_token.png)](../../../assets/img/learn/postman_put_token.png)
 
      You can now see the result under the **Body** tab.
 
-     [![Postman result]({{base_path}}/assets/img/learn/postman_result.png)]({{base_path}}/assets/img/learn/postman_result.png)
+     [![Postman result](../../../assets/img/learn/postman_result.png)](../../../assets/img/learn/postman_result.png)

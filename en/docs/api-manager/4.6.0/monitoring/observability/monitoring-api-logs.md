@@ -27,8 +27,8 @@ WSO2 API-M enables a simple way to observe requests and responses going through 
 
 API Logs is disabled by default and can be enabled per API without restarting the server. There are 2 ways to configure API Logs.
 
-1. [Configure API Logs using Devops REST API]({{base_path}}/monitoring/observability/monitoring-api-logs/#configure-api-logs-using-devops-rest-api)
-2. [Configure API Logs using API Controller (APICTL)]({{base_path}}/monitoring/observability/monitoring-api-logs/#configure-api-logs-using-api-controller-apictl)
+1. [Configure API Logs using Devops REST API](../../monitoring/observability/monitoring-api-logs/#configure-api-logs-using-devops-rest-api)
+2. [Configure API Logs using API Controller (APICTL)](../../monitoring/observability/monitoring-api-logs/#configure-api-logs-using-api-controller-apictl)
 
 After enabling API Logs for an API, logs can be observed in `<APIM_HOME>/repository/logs/api.log` file. Each log contains in-line JSON object with properties assigned with given log level. A sample sets of logs is given below.
 
@@ -85,7 +85,7 @@ Properties, listed above, are mostly used for debugging and users can decide the
 
 ## Configure API Logs using Devops REST API
 
-Devops REST API can be used to configure log level of APIs. It only allows the user with super admin permissions to invoke Devops REST API. For more instructions, see [WSO2 Devops API v0]({{base_path}}/reference/product-apis/devops-apis/devops-v0/devops-v0/).
+Devops REST API can be used to configure log level of APIs. It only allows the user with super admin permissions to invoke Devops REST API. For more instructions, see [WSO2 Devops API v0](../../reference/product-apis/devops-apis/devops-v0/devops-v0/).
 
 1. Get log level details of APIs.
 
@@ -160,5 +160,5 @@ Devops REST API can be used to configure log level of APIs. It only allows the u
 
 APICTL provides the functionality to get and set the log level of APIs. It only allows the user with super admission permissions to configure API Logs. For more instructions, refer to the following doc pages.
 
-1. [Get the log level of APIs or an API in an environment]({{base_path}}/install-and-setup/setup/api-controller/managing-apis-api-products/managing-apis-and-api-products/#get-the-log-level-of-apis-or-an-api-in-an-environment)
-2. [Set the log level of an API in an environment]({{base_path}}/install-and-setup/setup/api-controller/managing-apis-api-products/managing-apis-and-api-products/#set-the-log-level-of-an-api-in-an-environment)
+1. [Get the log level of APIs or an API in an environment](../../install-and-setup/setup/api-controller/managing-apis-api-products/managing-apis-and-api-products/#get-the-log-level-of-apis-or-an-api-in-an-environment)
+2. [Set the log level of an API in an environment](../../install-and-setup/setup/api-controller/managing-apis-api-products/managing-apis-and-api-products/#set-the-log-level-of-an-api-in-an-environment)

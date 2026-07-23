@@ -13,13 +13,13 @@ Follow the instructions below to attach one or more default policies that are sh
     !!! note
         API level policies will execute before operation level policies
 
-    [![Adding API level policies]({{base_path}}/assets/img/design/api-policies/attach-api-level-policies.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/attach-api-level-policies.png)
+    [![Adding API level policies](../../../assets/img/design/api-policies/attach-api-level-policies.png){: style="width:90%"}](../../../assets/img/design/api-policies/attach-api-level-policies.png)
 
 4. Now let us consider the **Operation Level Policies** tab. Pick out the desired operation and flow to which you want to attach policies. Once that is decided, you can expand that API operation. At this point you will notice that by default the UI will open up the first API operation on initial page visit (for PizzaShack API, `/order POST` is expanded by default).
 
 5.  Let’s attach a policy to the `/menu GET` operation. Scroll down through the left side column of the UI and click on `/menu GET` API operation. You should be able to see the below screen when the API operation is expanded.
 
-    [![Operation for adding policies]({{base_path}}/assets/img/design/api-policies/attach-policies-2.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/attach-policies-2.png)
+    [![Operation for adding policies](../../../assets/img/design/api-policies/attach-policies-2.png){: style="width:90%"}](../../../assets/img/design/api-policies/attach-policies-2.png)
 
 6. Drag the **Add Header** policy from the **Request** tab of the **Policy List** and drop that to the **Request Flow** dropzone of `/menu GET` operation. You will notice a side panel appearing from the right hand side. Fill the required details using the values provided below. Then, click **Save**.
 
@@ -43,15 +43,15 @@ Follow the instructions below to attach one or more default policies that are sh
 
 7. Now that we have saved the dropped policy, you should be able to see the attached **Add Header** policy (depicted with the initials `AH`).
 
-    [![API Header policy]({{base_path}}/assets/img/design/api-policies/attach-policies-3.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/attach-policies-3.png)
+    [![API Header policy](../../../assets/img/design/api-policies/attach-policies-3.png){: style="width:90%"}](../../../assets/img/design/api-policies/attach-policies-3.png)
 
 8. If you click on this newly attached **AH** (i.e. Add Header) policy, you should still be able to view/edit values that you entered initially.
 
-    [![API Header policy]({{base_path}}/assets/img/design/api-policies/attach-policies-4.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/attach-policies-4.png)
+    [![API Header policy](../../../assets/img/design/api-policies/attach-policies-4.png){: style="width:90%"}](../../../assets/img/design/api-policies/attach-policies-4.png)
 
 9. Let’s go ahead and attach a few more policies to the same **Request Flow**. Pick any amount of policies from the **Request** tab of the **Policy List**.
 
-    [![Attach policies]({{base_path}}/assets/img/design/api-policies/attach-policies-5.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/attach-policies-5.png)
+    [![Attach policies](../../../assets/img/design/api-policies/attach-policies-5.png){: style="width:90%"}](../../../assets/img/design/api-policies/attach-policies-5.png)
 
     !!! note
         * You can rearrange the dropped policies that are attached to the **Request Flow** of `/menu GET`
@@ -62,7 +62,7 @@ Follow the instructions below to attach one or more default policies that are sh
 
 10. Finally, when you are satisfied with the dragged and dropped policies, you can go ahead and click on the **Save** button at the bottom of the page. Note that if you do not click on save, none of the dropped policies will be saved to the API.
 
-    [![Attach policies]({{base_path}}/assets/img/design/api-policies/save-attached-policies.png){: style="width:90%"}]({{base_path}}/assets/img/design/api-policies/save-attached-policies.png)
+    [![Attach policies](../../../assets/img/design/api-policies/save-attached-policies.png){: style="width:90%"}](../../../assets/img/design/api-policies/save-attached-policies.png)
 
 Once you drag and drop a default policy (Common policy that is accessible to all APIs) and save, to maintain the consistency of API object, the attached policy will be revisioned specific to the API. 
 In case you delete the Common Policy from the publisher portal from the policies tab, this revision will be preserved as an API specific policy and once the policy is detached from the API, this revision will be cleared from the data storage.

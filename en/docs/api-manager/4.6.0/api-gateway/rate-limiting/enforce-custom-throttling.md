@@ -37,5 +37,5 @@ INSERT ALL EVENTS into ResultStream;
 
 ## See Also
 
-- [Custom Throttling Configuration]({{base_path}}/administer/rate-limiting/implement-custom-policies/) - How to create custom throttling policies
+- [Custom Throttling Configuration](../../administer/rate-limiting/implement-custom-policies/) - How to create custom throttling policies
 - [Siddhi Query Language Guide](https://docs.wso2.com/complex-event-processor/SiddhiQL+Guide+3.1) - Complete Siddhi query language reference

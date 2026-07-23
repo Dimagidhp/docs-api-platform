@@ -44,7 +44,7 @@ Follow the instructions given below to configure AWS API Gateway as a Federated 
     !!!tip
         If you want to disable the scheduling of API Discovery for the configured gateway environment, specify 0 as the scheduling interval.
 
-   [![add aws gateway discovery environment]({{base_path}}/assets/img/deploy/add-aws-gw-environment.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/add-aws-gw-discovery.png)
+   [![add aws gateway discovery environment](../../../assets/img/deploy/add-aws-gw-environment.png){: style="width:90%"}](../../../assets/img/deploy/add-aws-gw-discovery.png)
 
 
 ## Step 3 : Deploy to Developer Portal

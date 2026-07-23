@@ -13,15 +13,15 @@ LLM Gateway gives you the ability to create AI APIs, which serve as a bridge bet
 
 2. Create an **AI API** by clicking on **Create AI API**.
 
-    [![Select AI API]({{base_path}}/assets/img/learn/ai-gateway/select-ai-api.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/select-ai-api.png)
+    [![Select AI API](../assets/img/learn/ai-gateway/select-ai-api.png){: style="width:90%"}](../assets/img/learn/ai-gateway/select-ai-api.png)
 
 3. Select the desired provider and version. Then, click Next.
 
-    [![Select AI Service Provider and Version]({{base_path}}/assets/img/learn/ai-gateway/select-service-provider.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/select-service-provider.png)
+    [![Select AI Service Provider and Version](../assets/img/learn/ai-gateway/select-service-provider.png){: style="width:90%"}](../assets/img/learn/ai-gateway/select-service-provider.png)
 
     <div class="admonition tip">
     <p class="admonition-title">Tip</p>
-    <p>The built-in AI service providers and versions will appear on relevant dropdowns. In addition to the default Service Providers, you can add custom AI Service Providers by following the <a href='{{base_path}}/ai-gateway/ai-vendor-management/custom-ai-vendors/overview'>custom AI Service Provider integration</a> documentation.</p>
+    <p>The built-in AI service providers and versions will appear on relevant dropdowns. In addition to the default Service Providers, you can add custom AI Service Providers by following the <a href='../../ai-gateway/ai-vendor-management/custom-ai-vendors/overview'>custom AI Service Provider integration</a> documentation.</p>
     </div>
 
 4. Fill in the AI API details and click **Create**.
@@ -80,13 +80,13 @@ LLM Gateway gives you the ability to create AI APIs, which serve as a bridge bet
         </tbody>
     </table>
 
-    [![Create OpenAI API]({{base_path}}/assets/img/learn/ai-gateway/create-openai-api.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/create-openai-api.png)
+    [![Create OpenAI API](../assets/img/learn/ai-gateway/create-openai-api.png){: style="width:90%"}](../assets/img/learn/ai-gateway/create-openai-api.png)
 
     The overview page of the newly created API appears.
 
 ### Configure Backend Security
 
-Now that the AI API is successfully created, next step is to configure the backend security to ensure AI provider accessibility. You can follow along the steps mentioned below. For detailed steps, see [AI Backend Security]({{base_path}}/ai-gateway/ai-backend-security/).
+Now that the AI API is successfully created, next step is to configure the backend security to ensure AI provider accessibility. You can follow along the steps mentioned below. For detailed steps, see [AI Backend Security](../ai-gateway/ai-backend-security/).
 
 1. Create an **API key** to access the OpenAI API.
 2. Navigate to **API Configurations** --> **Endpoints**.
@@ -95,7 +95,7 @@ Now that the AI API is successfully created, next step is to configure the backe
 
 ### Deploy, Test and Publish your AI API
 
-Following the successful AI API creation and backend security configuration, you can proceed to [deploy]({{base_path}}/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test]({{base_path}}/api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and [publish]({{base_path}}/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api) the AI API.
+Following the successful AI API creation and backend security configuration, you can proceed to [deploy](../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test](../api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and [publish](../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md) the AI API.
 
 ### Invoke AI API
 
@@ -114,7 +114,7 @@ Following the successful AI API creation and backend security configuration, you
 
 6. Note the successful response for the API invocation.
 
-    [![AI API Invocation Success]({{base_path}}/assets/img/learn/ai-gateway/ai-api-invocation-success.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/ai-api-invocation-success.png)
+    [![AI API Invocation Success](../assets/img/learn/ai-gateway/ai-api-invocation-success.png){: style="width:90%"}](../assets/img/learn/ai-gateway/ai-api-invocation-success.png)
 
 Now, you have successfully created, deployed, published and invoked an AI API.
 
@@ -123,21 +123,21 @@ Now, you have successfully created, deployed, published and invoked an AI API.
 Now that you've successfully created your first AI API, explore these advanced capabilities to optimize your AI integration:
 
 ### Enhance Security and Performance
-- **[AI Backend Security]({{base_path}}/ai-gateway/ai-backend-security/)** - Implement advanced authentication and security configurations
-- **[Rate Limiting]({{base_path}}/ai-gateway/rate-limiting/)** - Control API usage and prevent abuse with token-based limits
+- **[AI Backend Security](../ai-gateway/ai-backend-security/)** - Implement advanced authentication and security configurations
+- **[Rate Limiting](../ai-gateway/rate-limiting/)** - Control API usage and prevent abuse with token-based limits
 
 ### Advanced AI Features
-- **[Multi-Model Routing]({{base_path}}/ai-gateway/multi-model-routing/overview/)** - Route requests across multiple AI models for load balancing and failover
-- **[Prompt Management]({{base_path}}/ai-gateway/prompt-management/overview/)** - Centrally manage and version your AI prompts and templates
-- **[AI Guardrails]({{base_path}}/ai-gateway/ai-guardrails/overview/)** - Implement content filtering and safety measures
-- **[Semantic Caching]({{base_path}}/ai-gateway/semantic-caching/)** - Improve performance and reduce costs with intelligent caching
+- **[Multi-Model Routing](../ai-gateway/multi-model-routing/overview/)** - Route requests across multiple AI models for load balancing and failover
+- **[Prompt Management](../ai-gateway/prompt-management/overview/)** - Centrally manage and version your AI prompts and templates
+- **[AI Guardrails](../ai-gateway/ai-guardrails/overview/)** - Implement content filtering and safety measures
+- **[Semantic Caching](../ai-gateway/semantic-caching/)** - Improve performance and reduce costs with intelligent caching
 
 ### AI Service Provider Management
-- **[AI Service Provider Management]({{base_path}}/ai-gateway/ai-vendor-management/overview/)** - Configure additional AI providers beyond OpenAI
-- **[Custom AI Service Providers]({{base_path}}/ai-gateway/ai-vendor-management/custom-ai-vendors/overview/)** - Integrate your custom AI services
+- **[AI Service Provider Management](../ai-gateway/ai-vendor-management/overview/)** - Configure additional AI providers beyond OpenAI
+- **[Custom AI Service Providers](../ai-gateway/ai-vendor-management/custom-ai-vendors/overview/)** - Integrate your custom AI services
 
 ### Developer Experience
-- **[AI APIs via SDKs]({{base_path}}/ai-gateway/using-proxy-apis-in-sdks/)** - Generate and use SDKs for your AI APIs
+- **[AI APIs via SDKs](../ai-gateway/using-proxy-apis-in-sdks/)** - Generate and use SDKs for your AI APIs
 
 ### Explore MCP Gateway
-- **[MCP Gateway]({{base_path}}/mcp/overview/)** - Transform your APIs into AI-ready tools for Large Language Models
+- **[MCP Gateway](../mcp/overview/)** - Transform your APIs into AI-ready tools for Large Language Models

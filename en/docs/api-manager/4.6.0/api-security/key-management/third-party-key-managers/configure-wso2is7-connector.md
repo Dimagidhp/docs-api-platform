@@ -3,7 +3,7 @@
 WSO2 API Manager supports multiple Key Managers. As a result, WSO2 API Manager is prepacked with an inbuilt resident Key Manager, and it has the inbuilt capability of configuring **WSO2 Identity Server 7.x** (WSO2 IS 7.x) as a Key Manager.
 
 !!! info
-    This document provides instructions on configuring **WSO2 Identity Server 7.x** as a Key Manager. If you are using an older version of WSO2 Identity Server, see [Configure WSO2 IS as a Key Manager]({{base_path}}/api-security/key-management/third-party-key-managers/configure-wso2is-connector).
+    This document provides instructions on configuring **WSO2 Identity Server 7.x** as a Key Manager. If you are using an older version of WSO2 Identity Server, see [Configure WSO2 IS as a Key Manager](../../../api-security/key-management/third-party-key-managers/configure-wso2is-connector.md).
 
 !!! Note
     **Role Based Authorization** based on the [WSO2 Identity Server 7 Role Based Authorization model](https://is.docs.wso2.com/en/7.0.0/guides/authorization/api-authorization/api-authorization/) is supported from WSO2 Identity Server 7.0.0.65 update level onwards.
@@ -13,8 +13,8 @@ WSO2 API Manager supports multiple Key Managers. As a result, WSO2 API Manager i
 Data models of WSO2 API Manager {{site_version}} and WSO2 Identity Server 7.x are different. Therefore, when using WSO2 API Manager
 {{site_version}} with WSO2 Identity Server 7.x as the key manager,
 
-- **Tenant sharing has to be configured.** Please refer [**Tenant sharing between WSO2 API Manager and WSO2 IS 7.x**]({{base_path}}/administer/multitenancy/tenant-sharing-with-wso2is7/)
-- To configure WSO2 IS 7.x as default key manager please refer [**Configuring WSO2 IS 7.x as the default key manager**]({{base_path}}/administer/multitenancy/tenant-sharing-with-wso2is7/#configuring-wso2-is-7x-as-the-default-key-manager).
+- **Tenant sharing has to be configured.** Please refer [**Tenant sharing between WSO2 API Manager and WSO2 IS 7.x**](../../../administer/multitenancy/tenant-sharing-with-wso2is7/)
+- To configure WSO2 IS 7.x as default key manager please refer [**Configuring WSO2 IS 7.x as the default key manager**](../../../administer/multitenancy/tenant-sharing-with-wso2is7/#configuring-wso2-is-7x-as-the-default-key-manager).
 
 
 Follow the steps given below to configure WSO2 IS 7.x as a Key Manager component.
@@ -61,9 +61,9 @@ Follow the steps given below to configure WSO2 IS 7.x as a Key Manager component
     !!! Note
         **Before you begin:**
 
-        You need to import the public certificate of the WSO2 Identity Server 7.x to the truststore of the WSO2 API Manager, and vice-versa. For information on importing the certificates, see the [Importing certificates to the truststore]({{base_path}}/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/#step-3-importing-certificates-to-the-truststore) guide.
+        You need to import the public certificate of the WSO2 Identity Server 7.x to the truststore of the WSO2 API Manager, and vice-versa. For information on importing the certificates, see the [Importing certificates to the truststore](../../../install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/#step-3-importing-certificates-to-the-truststore) guide.
 
-3. Download [notification.event.handlers-2.0.8.jar]({{base_path}}/assets/attachments/administer/wso2is.notification.event.handlers-2.0.8.4.jar) and add it to `<IS_HOME>/repository/components/dropins`
+3. Download [notification.event.handlers-2.0.8.jar](../../../assets/attachments/administer/wso2is.notification.event.handlers-2.0.8.4.jar) and add it to `<IS_HOME>/repository/components/dropins`
 
 4. Start WSO2 Identity Server 7.x with a port offset.
    portOffset is required only if you are running both API-M and IS 7.x in the same JVM.
@@ -123,7 +123,7 @@ Follow the steps given below to configure WSO2 IS 7.x as a Key Manager component
     | WSO2 Identity Server 7 Roles Endpoint                   | `https://localhost:9444/scim2/v2/Roles`                                                                                                                                                                                                                                                                             |
     | Create roles in WSO2 Identity Server 7                  | Enable this if you need to create roles in WSO2 Identity Server 7.                                                                                                                                                                                                                                                  |
 
-[![select mutual-tls as authentication type]({{base_path}}/assets/img/administer/wso2-is-7-select-mutualtls-auth-type.png)]({{base_path}}/assets/img/administer/wso2-is-7-select-mutualtls-auth-type.png)
+[![select mutual-tls as authentication type](../../../assets/img/administer/wso2-is-7-select-mutualtls-auth-type.png)](../../../assets/img/administer/wso2-is-7-select-mutualtls-auth-type.png)
 
 !!! Note
     When configuring a key manager manually, keep in mind to provide tenant qualified URLs

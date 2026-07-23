@@ -72,8 +72,8 @@ Follow the instructions below to configure the token expiration time at the appl
 
 3. Click **Oauth2 Token** under **Production Key**, and set the validity period as follows:
 
-     [![Configure custom token expiration time]({{base_path}}/assets/img/learn/generate-token-with-custom-validity.png)]({{base_path}}/assets/img/learn/generate-token-with-custom-validity.png)
+     [![Configure custom token expiration time](../../../../assets/img/learn/generate-token-with-custom-validity.png)](../../../../assets/img/learn/generate-token-with-custom-validity.png)
 
 
 !!! info "More methods to optimize key validation"
-    In addition, see [Configuring Caching]({{base_path}}/install-and-setup/setup/advance-configurations/configuring-caching/) for several caching options that you can use to optimize key validation.
+    In addition, see [Configuring Caching](../../../../install-and-setup/setup/advance-configurations/configuring-caching/) for several caching options that you can use to optimize key validation.

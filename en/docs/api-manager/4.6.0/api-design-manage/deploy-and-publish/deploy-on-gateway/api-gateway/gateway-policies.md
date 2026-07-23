@@ -25,7 +25,7 @@ Follow the instructions provided below to create a gateway policy:
 
     The **Create A New Global Policy** page appears.
 
-    [![Global policies startup]({{base_path}}/assets/img/deploy/gateway/global-polices-fresh-start.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/gateway/global-polices-fresh-start.png)
+    [![Global policies startup](../../../../assets/img/deploy/gateway/global-polices-fresh-start.png){: style="width:90%"}](../../../../assets/img/deploy/gateway/global-polices-fresh-start.png)
 
 3. Update the policy name and description, then simply drag and drop the desired policies onto the respective flows to attach them.
 
@@ -52,10 +52,10 @@ Follow the instructions provided below to create a gateway policy:
 
     4. Finally, click **Save** to complete the process.
 
-        [![Save individual policy data]({{base_path}}/assets/img/deploy/gateway/global-polices-add-header-policy.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/gateway/global-polices-add-header-policy.png)
+        [![Save individual policy data](../../../../assets/img/deploy/gateway/global-polices-add-header-policy.png){: style="width:90%"}](../../../../assets/img/deploy/gateway/global-polices-add-header-policy.png)
 
         !!!note
-            All the policies listed for addition as global policies are [common policies]({{base_path}}/api-design-manage/design/api-policies/create-policy/).
+            All the policies listed for addition as global policies are [common policies](../../../../api-design-manage/design/api-policies/create-policy/).
 
     5. After saving the dropped policy, you should now be able to view the associated **Add Header** policy indicated by the initials **AH**.
 
@@ -63,20 +63,20 @@ Follow the instructions provided below to create a gateway policy:
 
     7. Let's proceed by adding several more policies to the existing Request Flow. Choose any number of policies from the Request tab within the Policy List.
 
-        [![Add multiple common policies to a flow]({{base_path}}/assets/img/deploy/gateway/global-polices-add-multiple-policies.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/gateway/global-polices-add-multiple-policies.png)
+        [![Add multiple common policies to a flow](../../../../assets/img/deploy/gateway/global-polices-add-multiple-policies.png){: style="width:90%"}](../../../../assets/img/deploy/gateway/global-polices-add-multiple-policies.png)
 
         !!! note
             You can rearrange the dropped policies that are attached to each Flow.
 
 4. When you have finalized the dragged and dropped policies to your preference, proceed by clicking the **Save** button at the bottom of the page.
 
-    [![Save global policy]({{base_path}}/assets/img/deploy/gateway/global-polices-save-policy-mapping.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/gateway/global-polices-save-policy-mapping.png)
+    [![Save global policy](../../../../assets/img/deploy/gateway/global-polices-save-policy-mapping.png){: style="width:90%"}](../../../../assets/img/deploy/gateway/global-polices-save-policy-mapping.png)
 
 ## Step 2 - Deploy a gateway policy
 
 - Upon the existence of at least one gateway policy, it will be displayed in the **Global Policies** tab.
 
-    [![Global policy listing]({{base_path}}/assets/img/deploy/gateway/global-polices-list.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/gateway/global-polices-list.png)
+    [![Global policy listing](../../../../assets/img/deploy/gateway/global-polices-list.png){: style="width:90%"}](../../../../assets/img/deploy/gateway/global-polices-list.png)
 
 - Click on the expandable button at the beginning of the policy entry row to choose from available gateway labels for deploying the respective global policy.
 
@@ -85,14 +85,14 @@ Follow the instructions provided below to create a gateway policy:
 
 - After selecting the required gateway labels, click the **Deploy** button. A confirmation dialog box will appear. Upon clicking the **Deploy** button within the dialog, the selected global policy will be deployed to the chosen gateway environments.
 
-    [![Deploy global policy]({{base_path}}/assets/img/deploy/gateway/global-polices-deploy-to-gateway.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/gateway/global-polices-deploy-to-gateway.png)
+    [![Deploy global policy](../../../../assets/img/deploy/gateway/global-polices-deploy-to-gateway.png){: style="width:90%"}](../../../../assets/img/deploy/gateway/global-polices-deploy-to-gateway.png)
 
 To undeploy a global policy from any gateway environment, simply click on the cloud off button placed in front of each gateway label. Similarly, just as during deployment, an undeployment confirmation dialog box will prompt you for confirmation.
 
-[![Undeploy gateway policy]({{base_path}}/assets/img/deploy/gateway/global-polices-undeploy.png){: style="width:90%"}]({{base_path}}/assets/img/deploy/gateway/global-polices-undeploy.png)
+[![Undeploy gateway policy](../../../../assets/img/deploy/gateway/global-polices-undeploy.png){: style="width:90%"}](../../../../assets/img/deploy/gateway/global-polices-undeploy.png)
 
 ## See Also
 
 You can engage policies with APIs and their resources:
 
-[Attaching API Policies]({{base_path}}/api-design-manage/design/api-policies/attach-policy/)
+[Attaching API Policies](../../../../api-design-manage/design/api-policies/attach-policy/)

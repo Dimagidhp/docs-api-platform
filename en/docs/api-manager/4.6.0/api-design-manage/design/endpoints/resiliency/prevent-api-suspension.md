@@ -25,17 +25,17 @@ Follow the instructions below to prevent or turn off API suspension:
 
 3. Click on the cogwheel, which is inline with the endpoint that you need to re-configure, and update the endpoint related configurations as required.
 
-     [![Link to advanced endpoint configurations]({{base_path}}/assets/img/learn/prevent-endpoint-suspension.png)]({{base_path}}/assets/img/learn/prevent-endpoint-suspension.png)
+     [![Link to advanced endpoint configurations](../../../../assets/img/learn/prevent-endpoint-suspension.png)](../../../../assets/img/learn/prevent-endpoint-suspension.png)
 
 4. Configure the **Endpoint Suspension State**. 
 
      Set the value for **Initial Duration** and **Max Duration** to zero to turn off suspension.
 
-    [![Set the Endpoint Suspension State]({{base_path}}/assets/img/learn/initial-duration-and-max-duration.png)]({{base_path}}/assets/img/learn/initial-duration-and-max-duration.png)
+    [![Set the Endpoint Suspension State](../../../../assets/img/learn/initial-duration-and-max-duration.png)](../../../../assets/img/learn/initial-duration-and-max-duration.png)
 
 5.  Click **Save** and re-publish the API.
 
-     For more details on creating and publishing an API, see [Create an API]({{base_path}}/api-design-manage/design/create-api/create-rest-api/create-a-rest-api) and [Publish an API]({{base_path}}/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api).
+     For more details on creating and publishing an API, see [Create an API](../../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md) and [Publish an API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 !!! info
     To avoid backend endpoint suspension:
@@ -68,4 +68,4 @@ Follow the instructions below to prevent or turn off API suspension:
         </endpoint>
         ```
 
-For more details on configuring different timeouts, see [Timeout configurations for an API call]({{base_path}}/install-and-setup/setup/deployment-best-practices/tuning-performance/) in the Performance Tuning guide.
+For more details on configuring different timeouts, see [Timeout configurations for an API call](../../../../install-and-setup/setup/deployment-best-practices/tuning-performance/) in the Performance Tuning guide.

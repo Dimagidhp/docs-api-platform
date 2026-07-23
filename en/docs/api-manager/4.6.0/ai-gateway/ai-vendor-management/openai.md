@@ -9,7 +9,7 @@ OpenAI is a **default AI Service Provider** in WSO2 API Manager that allows you 
 1. Login to the Admin Portal (`https://<hostname>:9443/admin`)
 2. Navigate to **AI Service Providers** → **OpenAI**
 
-[![OpenAI Configuration]({{base_path}}/assets/img/learn/ai-gateway/openai-config.png){: style="width:90%"}]({{base_path}}/assets/img/learn/ai-gateway/openai-config.png)
+[![OpenAI Configuration](../../assets/img/learn/ai-gateway/openai-config.png){: style="width:90%"}](../../assets/img/learn/ai-gateway/openai-config.png)
 
 ### Step 2: Configure Models
 
@@ -85,7 +85,7 @@ The following configurations can be updated:
 
 - By default, the following models are included: `gpt-4o`, `gpt-4o-mini`, and `o3-mini`.
 - To add available models supported by OpenAI, type the model name and press enter. 
-- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview]({{base_path}}/ai-gateway/multi-model-routing/overview/).
+- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview](../../ai-gateway/multi-model-routing/overview/).
 
 ### Step 3: Save Configuration
 

@@ -1,6 +1,6 @@
 # OpenSearch Based Analytics Installation Guide
 
-<a href="{{base_path}}/assets/img/analytics/opensearch/architecture.png"><img src="{{base_path}}/assets/img/analytics/opensearch/architecture.png" width="70%" alt="Deployment diagram"></a>
+<a href="../../../../assets/img/analytics/opensearch/architecture.png"><img src="../../../../assets/img/analytics/opensearch/architecture.png" width="70%" alt="Deployment diagram"></a>
 
 ### Analytics Data flow
 
@@ -324,5 +324,5 @@ Create a parser configuration file (parsers.conf) with the following configurati
     ```
 
 5. Download the artifact file from below.<br />
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Artifacts]({{base_path}}/assets/img/analytics/cloud/opensearchAnalyticsDashboards.ndjson)
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Artifacts](../../../assets/img/analytics/cloud/opensearchAnalyticsDashboards.ndjson)
 6. Navigate to **Dashboard Management** > **Saved Objects** and click on **Import**. Add the downloaded artifact file as an import object, and import.

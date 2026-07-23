@@ -56,15 +56,15 @@ WSO2 API Manager uses the OIDC Single Sign-On feature by default. This document 
         </tbody>
      </table>
 
-    [![Create Traditional Web Application]({{base_path}}/assets/img/setup-and-install/create-traditional-web-app.png)]({{base_path}}/assets/img/setup-and-install/create-traditional-web-app.png)
+    [![Create Traditional Web Application](../../../assets/img/setup-and-install/create-traditional-web-app.png)](../../../assets/img/setup-and-install/create-traditional-web-app.png)
 
     c.  In the configuration page, select **User Attributes** and enable the **Groups** attribute.
 
-    [![Select Groups user attribute]({{base_path}}/assets/img/setup-and-install/select-groups-attribute.png)]({{base_path}}/assets/img/setup-and-install/select-groups-attribute.png)
+    [![Select Groups user attribute](../../../assets/img/setup-and-install/select-groups-attribute.png)](../../../assets/img/setup-and-install/select-groups-attribute.png)
 
     d.  In the same tab, under the **Subject** section, select **Assign alternate subject identifier** and from the dropdown list select **Username**.
 
-    [![Assign alternate subject identifier]({{base_path}}/assets/img/setup-and-install/assign-alternate-subject-identifier.png)]({{base_path}}/assets/img/setup-and-install/assign-alternate-subject-identifier.png)
+    [![Assign alternate subject identifier](../../../assets/img/setup-and-install/assign-alternate-subject-identifier.png)](../../../assets/img/setup-and-install/assign-alternate-subject-identifier.png)
 
     e.  Under the **Protocol** tab, copy the **Client ID** and **Client Secret**.
 
@@ -171,11 +171,11 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
 
         The following image shows the sample values for OAuth2/OpenIDConnect Configurations:
 
-        [![sp]({{base_path}}/assets/img/setup-and-install/identity-provider-configuration-for-sso-is7.png)]({{base_path}}/assets/img/setup-and-install/identity-provider-configuration-for-sso-is7.png)
+        [![sp](../../../assets/img/setup-and-install/identity-provider-configuration-for-sso-is7.png)](../../../assets/img/setup-and-install/identity-provider-configuration-for-sso-is7.png)
 
     2.  Enable Just-in-Time Provisioning to provision the users in API Manager:
 
-        [![]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)
+        [![](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)
 
     3.  Add the following role mapping under the **Role Configuration** section:
     
@@ -198,7 +198,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
         </tbody>
         </table>
 
-        [![]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso-is7.png)]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso-is7.png)
+        [![](../../../assets/img/setup-and-install/role-mapping-for-sso-is7.png)](../../../assets/img/setup-and-install/role-mapping-for-sso-is7.png)
 
         !!! Tip
             Instead of using the default internal roles, you can also create new roles in API Manager and map it to the provisioned users. 
@@ -221,7 +221,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
     
         Also select **groups** as the **Role Claim URI**.
 
-    [![Claim mapping for sso]({{base_path}}/assets/img/setup-and-install/claim-mapping-for-sso.png)]({{base_path}}/assets/img/setup-and-install/claim-mapping-for-sso.png)
+    [![Claim mapping for sso](../../../assets/img/setup-and-install/claim-mapping-for-sso.png)](../../../assets/img/setup-and-install/claim-mapping-for-sso.png)
 
 ### Step - 3 Configure the Service Provider
 
@@ -232,7 +232,7 @@ Import the Keymanager certificate to the WSO2 API Manager `client-truststore.jks
 
 2.  Expand the **Local & Outbound Authentication Configuration** section and select **Federated Authentication** as Authentication Type and select the name of the Identity Provider you created in previous step and update.
 
-    [![]({{base_path}}/assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)]({{base_path}}/assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)
+    [![](../../../assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)](../../../assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)
 
 3.  Repeat the same step for `apim_devportal` Service Provider as well.
 

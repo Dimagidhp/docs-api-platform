@@ -14,7 +14,7 @@ This section will cover the steps required to create a sample and configure the 
 
 You have to create a new `Java/Maven project`. 
 
-There is an already [created sample](https://github.com/wso2/samples-apim/tree/master/analytics-custom-data-provider) and if you wish to use that sample instead of developing the sample from scratch, then you can ignore the steps of creating the sample and start from [here]({{base_path}}/monitoring/api-analytics/samples/publishing-custom-analytics-data/#build-the-project).
+There is an already [created sample](https://github.com/wso2/samples-apim/tree/master/analytics-custom-data-provider) and if you wish to use that sample instead of developing the sample from scratch, then you can ignore the steps of creating the sample and start from [here](../../../monitoring/api-analytics/samples/publishing-custom-analytics-data/#build-the-project).
 
 This section will cover how to configure the `pom.xml`, class implementations and building the created sample.
 
@@ -118,7 +118,7 @@ This configuration will be used when engaging the custom data provider class.
 
 3. Enabling Logs
 
-    To [enable trace logs]({{base_path}}/monitoring/observability/configuring-logging/#enabling-logs-for-a-component) for the component: `org.wso2.am.analytics.publisher`, edit `log4j2.properties` file located inside `<APIM_HOME>/repository/conf` directory. 
+    To [enable trace logs](../../../monitoring/observability/configuring-logging/#enabling-logs-for-a-component) for the component: `org.wso2.am.analytics.publisher`, edit `log4j2.properties` file located inside `<APIM_HOME>/repository/conf` directory. 
 
     1. Add new publisher to the loggers list:
 
