@@ -150,7 +150,7 @@ Never write the client secret as a literal in `config.toml` — the `{% raw %}{{
 export APIP_AIW_AUTH_OIDC_CLIENT_SECRET=<ai-workspace-client-secret>
 ```
 
-Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers. In a production deployment, prefer supplying it from a mounted secret file instead, by swapping the token for `'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'` and mounting the secret at that path — resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
+Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers. In a production deployment, prefer supplying it from a mounted secret file instead, by swapping the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %} and mounting the secret at that path — resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
 
 Once configured, opening AI Workspace redirects you to the Asgardeo-hosted login page instead of the file-based login form:
 
