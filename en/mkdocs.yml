@@ -339,9 +339,11 @@ nav:
     - "next":
         - Overview: api-gateway/next/overview.md
         - Setup:
+          - Configuration & Interpolation: api-gateway/next/setup/configuration.md
           - Storage & Backends: api-gateway/next/setup/storage-and-backends.md
           - Artifact Templating: api-gateway/next/setup/artifact-templating.md
-          - Upstream Timeouts: api-gateway/next/setup/upstream-timeouts.md
+        - Resiliency:
+          - Timeouts: api-gateway/next/resiliency/timeouts.md
         - Quick Start Guide: api-gateway/next/quick-start-guide.md
         - Policies:
           - Overview: api-gateway/next/policies/overview.md
@@ -366,7 +368,9 @@ nav:
           - Deploying APIs:
             - Bottom-Up Deployment: api-gateway/next/deployment/deploying-apis/bottom-up-api-deployment.md
         - Observability:
-          - Logging: api-gateway/next/observability/logging.md
+          - Logging:
+            - Centralized Logging: api-gateway/next/observability/logging.md
+            - Traffic Logging: api-gateway/next/observability/traffic-logging.md
           - Tracing:
             - Overview: api-gateway/next/observability/tracing/overview.md
             - Enabling and Disabling Tracing: api-gateway/next/observability/tracing/enabling-tracing.md
@@ -537,6 +541,8 @@ nav:
   - AI Gateway:
     - "next":
         - Overview: ai-gateway/next/overview.md
+        - Setup:
+            - Configuration & Interpolation: ai-gateway/next/setup/configuration.md
         - LLM Proxy:
             - Quick Start Guide: ai-gateway/next/llm-proxy/quick-start-guide.md
             - LLM Provider Templates: ai-gateway/next/llm-proxy/llm-templates.md
@@ -571,12 +577,18 @@ nav:
             - Overview: ai-gateway/next/deployment-modes/kubernetes/overview.md
             - Standalone Mode: ai-gateway/next/deployment-modes/kubernetes/kubernetes-standalone.md
             - Kubernetes Operator Mode: ai-gateway/next/deployment-modes/kubernetes/gateway-operator.md
+        - Resiliency:
+            - Timeouts: ai-gateway/next/resiliency/timeouts.md
         - Observability:
             - Logging: ai-gateway/next/observability/logging.md
             - Tracing: ai-gateway/next/observability/tracing.md
         - Analytics:
             - Moesif Analytics: ai-gateway/next/analytics/moesif-analytics.md
             - Analytics Header Filter: ai-gateway/next/analytics/analytics-header-filter.md
+        - Performance:
+            - Overview: ai-gateway/next/performance/overview.md
+            - AI Gateway runtime with two CPUs: ai-gateway/next/performance/ai-gateway-runtime-with-two-cpus.md
+            - AI Gateway runtime with four CPUs: ai-gateway/next/performance/ai-gateway-runtime-with-four-cpus.md
     - "1.1.0":
         - Overview: ai-gateway/1.1.0/overview.md
         - LLM Proxy:
@@ -619,6 +631,10 @@ nav:
         - Analytics:
             - Moesif Analytics: ai-gateway/1.1.0/analytics/moesif-analytics.md
             - Analytics Header Filter: ai-gateway/1.1.0/analytics/analytics-header-filter.md
+        - Performance:
+            - Overview: ai-gateway/1.1.0/performance/overview.md
+            - AI Gateway runtime with two CPUs: ai-gateway/1.1.0/performance/ai-gateway-runtime-with-two-cpus.md
+            - AI Gateway runtime with four CPUs: ai-gateway/1.1.0/performance/ai-gateway-runtime-with-four-cpus.md
     - "1.0.0":
         - Overview: ai-gateway/1.0.0/overview.md
         - LLM Proxy:
@@ -692,12 +708,17 @@ nav:
     - Overview: next/ai-workspace/overview.md
     - Getting Started: next/ai-workspace/getting-started.md
     - Configuration: next/ai-workspace/configuration.md
+    - Bottom Up AI Artifact Synchronization: next/ai-workspace/bottom-up-ai-artifact-deployment-guide.md
     - AI Gateways:
         - Setting Up: next/ai-workspace/ai-gateways/setting-up.md
     - LLM Providers:
         - Overview: next/ai-workspace/llm-providers/overview.md
         - Configure Provider: next/ai-workspace/llm-providers/configure-provider.md
         - Manage Provider: next/ai-workspace/llm-providers/manage-provider.md
+    - LLM Provider Templates:
+        - Overview: next/ai-workspace/llm-provider-templates/overview.md
+        - Configure Template: next/ai-workspace/llm-provider-templates/configure-template.md
+        - Manage Template: next/ai-workspace/llm-provider-templates/manage-template.md
     - App LLM Proxies:
         - Overview: next/ai-workspace/llm-proxies/overview.md
         - Configure App LLM Proxy: next/ai-workspace/llm-proxies/configure-proxy.md
@@ -714,6 +735,7 @@ nav:
         - Overview: next/ai-workspace/authentication/overview.md
         - Set up Asgardeo: next/ai-workspace/authentication/asgardeo-setup.md
     - Configure Inbound Auth: next/ai-workspace/configure-inbound-auth.md
+    - Secrets Management: next/ai-workspace/secrets-management.md
     - Invoke via SDKs: next/ai-workspace/using-sdks.md
     - Policies:
         - Overview: next/ai-workspace/policies/overview.md

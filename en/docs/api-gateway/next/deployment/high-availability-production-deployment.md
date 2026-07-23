@@ -15,17 +15,12 @@ content_type: "how-to"
 
 # High-Availability Production Deployment
 
-This guide covers deploying the API Platform Gateway in a production-grade, highly available configuration using Helm on Kubernetes. Development mode is disabled, security is hardened, an external database (PostgreSQL or SQL Server) backs the deployment state, and workloads are replicated across nodes.
+This guide covers deploying the API Platform Gateway in a production-grade, highly available configuration using Helm on Kubernetes. Security is hardened, an external database (PostgreSQL or SQL Server) backs the deployment state, and workloads are replicated across nodes.
 
 ## Prerequisites
 
-!!! warning "Disable development mode"
-    All production deployments must set `gateway.developmentMode: false` in your Helm values. Development mode disables encryption key requirements, uses default credentials, and skips several security checks. It must never be enabled in production.
-
-    ```yaml
-    gateway:
-      developmentMode: false
-    ```
+!!! warning "At-rest encryption is mandatory"
+    At-rest encryption is always required, and the chart is **fail-closed** — it refuses to render unless you provision an AES-256 key Secret and enable it (`gateway.controller.encryptionKeys.enabled: true` with a `secretName`). Provision the key before installing — see [Security Hardening → Encryption Keys](./production-deployment/security-hardening.md#encryption-keys).
 
 Ensure the following tools are installed and configured before starting:
 

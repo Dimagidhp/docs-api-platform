@@ -144,7 +144,7 @@ org_handle   = "org_handle"
 
 `redirect_url` must exactly match the authorized redirect URL you registered in step 2.
 
-Never write the client secret as a literal in `config.toml` — the {% raw %}`{{ env }}`{% endraw %} placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
+Never write the client secret as a literal in `config.toml` — the `{% raw %}{{ env }}{% endraw %}` placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
 
 ```bash
 export APIP_AIW_AUTH_OIDC_CLIENT_SECRET=<ai-workspace-client-secret>

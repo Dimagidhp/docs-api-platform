@@ -48,18 +48,22 @@ docker compose version
 
 ```bash
 # Download distribution.
-wget https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.1.0/wso2apip-ai-gateway-1.1.0.zip
+wget https://github.com/wso2/api-platform/releases/download/ai-gateway%2Fv1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip
 
 # Unzip the downloaded distribution.
-unzip wso2apip-ai-gateway-1.1.0.zip
+unzip wso2apip-ai-gateway-1.2.0-beta.zip
 
+cd wso2apip-ai-gateway-1.2.0-beta/
+
+# Run the one-time setup. This provisions the AES-256 at-rest encryption key,
+# the router HTTPS listener certificate, and api-platform.env
+./scripts/setup.sh
 
 # Start the complete stack
-cd wso2apip-ai-gateway-1.1.0/
 docker compose -p ai-gateway up -d
 
 # Verify gateway controller admin endpoint is running
-curl http://localhost:9094/health
+curl http://localhost:9094/api/admin/v1/health
 ```
 
 ## Deploy an MCP proxy configuration
@@ -73,11 +77,11 @@ docker run -p 3001:3001 --name everything --network ai-gateway_gateway-network r
 Run the following command to deploy the MCP proxy.
 
 ```bash
-curl -X POST http://localhost:9090/api/management/v0.9/mcp-proxies \
+curl -X POST http://localhost:9090/api/management/v1/mcp-proxies \
   -H "Content-Type: application/yaml" \
   -H "Authorization: Basic YWRtaW46YWRtaW4=" \
   --data-binary @- <<'EOF'
-apiVersion: gateway.api-platform.wso2.com/v1alpha1
+apiVersion: gateway.api-platform.wso2.com/v1
 kind: Mcp
 metadata:
   name: everything-mcp-v1.0
