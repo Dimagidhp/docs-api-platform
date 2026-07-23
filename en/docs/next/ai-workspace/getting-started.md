@@ -53,7 +53,7 @@ docker compose up -d
 
 Navigate to **https://localhost:9643** and sign in with the admin credentials printed by `setup.sh`:
 
-![AI Workspace file-based login window with Username and Password fields](../../assets/img/ai-gateway/ai-workspace/authentication/filebased-login.png)
+![AI Workspace file-based login window with Username and Password fields](../../assets/img/ai-gateway/standalone-ai-workspace/authentication/filebased-login.png)
 
 !!! tip "Browser trust warning?"
     The generated TLS certificates are self-signed. Click **Advanced > Proceed** to continue, then return to the workspace.

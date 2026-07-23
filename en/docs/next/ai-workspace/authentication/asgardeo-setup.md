@@ -154,7 +154,7 @@ Set it in the distribution's git-ignored `api-platform.env` file, which is loade
 
 Once configured, opening AI Workspace redirects you to the Asgardeo-hosted login page instead of the file-based login form:
 
-![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../../assets/img/ai-gateway/ai-workspace/authentication/oidc-login-redirect.png)
+![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../../assets/img/ai-gateway/standalone-ai-workspace/authentication/oidc-login-redirect.png)
 
 ## Claim flow summary
 
@@ -168,4 +168,4 @@ The Asgardeo token carries these claims through to the Platform API:
 | `org_handle` | Organization slug | `org_handle` in both |
 | `scope` | Space-separated `ap:*` scopes | Validated by the Platform API |
 
-Keep these claim names consistent across three places: the Asgardeo token mapper output, `[ai_workspace.auth.claim_mappings]`, and `[platform_api.auth.claim_mappings]` — all three live in the one `config.toml`.
+Keep these claim names consistent across three places: the Asgardeo token mapper output, and the `[ai_workspace.auth.claim_mappings]` and `[platform_api.auth.claim_mappings]` tables. Only the latter two are defined in `config.toml` — the token mapper output is configured in Asgardeo.
