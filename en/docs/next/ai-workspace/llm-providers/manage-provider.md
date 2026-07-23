@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - llm-providers
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-21
+last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
@@ -72,10 +72,20 @@ Manage upstream endpoint configuration and authentication credentials for the LL
 
 Configure how the gateway authenticates with the upstream provider:
 
-- **Authentication Type**: Usually `api-key` (set by template)
+| Authentication Type | Behavior |
+|----------------------|----------|
+| **api-key** | The gateway attaches an **Authentication Header** and **Credentials** value to every upstream request (set by template for built-in providers) |
+| **other** | No credentials are stored for this provider. Use a policy to configure upstream authentication instead |
+| **none** | No upstream authentication is sent |
+
+**To configure `api-key`:**
+
+- **Authentication Header**: The header name the gateway sends upstream
 - **Credentials**: Your provider API key
     - Click the 👁️ icon to show/hide the value
     - Update and click **Save** to change credentials
+
+Switching to **other** or **none** clears any stored authentication header and credentials for this provider.
 
 ### OpenAPI Specification
 
@@ -132,17 +142,19 @@ Set up the API key that client applications must provide:
 | Field | Description | Example |
 |-------|-------------|---------|
 | **Authentication Type** | Authentication method | `apiKey` (default) |
-| **API Key Name** | Header or query parameter name | `x-api-key`, `apikey`, `Authorization` |
+| **API Key** | Header or query parameter name | `x-api-key`, `apikey`, `Authorization` |
+| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, e.g. so clients send `Bearer <key>` | `Bearer` |
 | **Key Location** | Where clients send the key | `Header` (recommended) or `Query` |
 
 **To configure:**
 
 1. Select **Authentication Type**: `apiKey`
-2. Enter **API Key Name** that applications will use
-3. Choose **Key Location**:
+2. Enter the **API Key** header or query parameter name that applications will use
+3. Optionally set an **API Key Value Prefix** (for example `Bearer`) if clients should send the key with a scheme prefix
+4. Choose **Key Location**:
     - **Header** - Sent in HTTP request header (most secure)
     - **Query** - Sent as URL query parameter (less secure)
-4. Click **Save**
+5. Click **Save**
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - ai-gateways
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
@@ -252,13 +252,15 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command to install the gateway chart with the encryption key and control plane configurations:
 
     ```bash
-    helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version 1.0.0 \
+    helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version 1.2.0-beta \
     --set gateway.controller.encryptionKeys.enabled=true \
     --set gateway.controller.encryptionKeys.secretName=gateway-encryption-keys \
     --set gateway.controller.controlPlane.host="host.docker.internal" \
     --set gateway.controller.controlPlane.port=8443 \
     --set gateway.controller.controlPlane.token.value="your-gateway-token"
     ```
+
+    Use the Helm chart version that matches the gateway version shown on this page's **Get Started** section, not necessarily `1.2.0-beta`.
 
     Replace `your-gateway-token` with the token from the Get Started section.
 

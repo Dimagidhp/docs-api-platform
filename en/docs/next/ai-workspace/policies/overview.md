@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - policies
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-21
+last_updated: 2026-07-23
 content_type: "overview"
 ---
 
@@ -75,6 +75,10 @@ The difference is the *scope of the counter* for rate limits and the *breadth of
 - A **global** guardrail runs on every endpoint, while a **per-resource** guardrail runs only on the endpoints it is attached to.
 
 For each request, global policies are evaluated first, followed by per-resource policies. Because a global rate limit is evaluated first, it counts **every request attempt** — including requests that a tighter per-resource limit later rejects. A global limit is therefore a hard ceiling on total traffic through the provider or proxy.
+
+## Custom Policies
+
+Beyond the built-in policies above, you can write and deploy your own [custom AI policy](writing-an-ai-policy.md) to a gateway. Once a gateway runs a custom policy, it's synced into AI Workspace and listed under **Settings > Custom Policies**, where you can search, review, and delete the policies synced from your gateways. From there, a custom policy can be attached to a provider or proxy the same way a built-in policy is, through the guardrails/policy sidebar on the provider or proxy details page.
 
 ## Policy Hub
 

@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - llm-providers
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "overview"
 ---
 
@@ -33,7 +33,11 @@ API Platform AI Workspace supports the following LLM providers:
 | ![Azure AI Foundry](https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/azure.openai/icon.png){: style="width:32px; vertical-align:middle"} **Azure AI Foundry** | Access models through Azure AI Foundry platform | [Documentation](https://azure.microsoft.com/products/ai-studio) |
 | ![Gemini](https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg){: style="width:32px; vertical-align:middle"} **Gemini** | Integrate Google's Gemini language models | [Documentation](https://ai.google.dev/gemini-api) |
 | ![Mistral AI](https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/mistral/icon.png){: style="width:32px; vertical-align:middle"} **Mistral AI** | Access Mistral's open and commercial models | [Documentation](https://mistral.ai/) |
-| **AWS Bedrock (Coming Soon)** | Connect to Amazon Bedrock's managed AI service |  |
+| **AWS Bedrock** | Connect to Amazon Bedrock's managed AI service | [Documentation](https://aws.amazon.com/bedrock/) |
+
+## Connecting a Custom Provider
+
+If the LLM service you use isn't in the list above, an organization admin can define a reusable **LLM Provider Template** under **Settings > LLM Provider Templates**. A template captures the endpoint and authentication shape for a custom provider, and it then appears in the provider type selector alongside the built-in providers whenever you add a new provider. Built-in templates are read-only — you can't create new versions from them — but you can enable or disable any template to control whether it's offered when adding a provider.
 
 [//]: # (## Quick Start)
 

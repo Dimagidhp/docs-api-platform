@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - quickstart
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-08
+last_updated: 2026-07-23
 content_type: "quickstart"
 ---
 
@@ -19,7 +19,7 @@ The AI Workspace enables you to manage AI gateways and LLM providers. This guide
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) with the Compose plugin (`docker compose version`)
-- Ports **5380** and **9243** available on your machine
+- Ports **9643** and **9243** available on your machine
 - `curl` and `unzip` installed
 
 ## Step 1: Download AI Workspace
@@ -27,14 +27,14 @@ The AI Workspace enables you to manage AI gateways and LLM providers. This guide
 Run this command in your terminal to download and unzip AI Workspace:
 
 ```bash
-curl -sLO https://github.com/wso2/api-platform/releases/download/portals/ai-workspace/v1.0.0-alpha2/wso2apip-ai-workspace-1.0.0-alpha2.zip && \
-unzip wso2apip-ai-workspace-1.0.0-alpha2.zip
+curl -sLO https://github.com/wso2/api-platform/releases/download/portals/ai-workspace/v1.0.0-beta/wso2apip-ai-workspace-1.0.0-beta.zip && \
+unzip wso2apip-ai-workspace-1.0.0-beta.zip
 ```
 
 ## Step 2: Run the Setup Script
 
 ```bash
-cd wso2apip-ai-workspace-1.0.0-alpha2
+cd wso2apip-ai-workspace-1.0.0-beta
 ./scripts/setup.sh
 ```
 
@@ -51,9 +51,9 @@ docker compose up -d
 
 ## Step 4: Open AI Workspace
 
-Navigate to **https://localhost:5380** and sign in with the admin credentials printed by `setup.sh`:
+Navigate to **https://localhost:9643** and sign in with the admin credentials printed by `setup.sh`:
 
-![AI Workspace file-based login window with Username and Password fields](../../assets/img/ai-gateway/ai-workspace/authentication/filebased-login.png)
+![AI Workspace file-based login window with Username and Password fields](../../assets/img/ai-gateway/standalone-ai-workspace/authentication/filebased-login.png)
 
 !!! tip "Browser trust warning?"
     The generated TLS certificates are self-signed. Click **Advanced > Proceed** to continue, then return to the workspace.

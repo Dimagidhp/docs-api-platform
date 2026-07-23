@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - overview
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "overview"
 ---
 
@@ -88,6 +88,13 @@ Configure AI-specific governance controls for providers and proxies.
 
 Learn more in [Policies](policies/overview.md).
 
+### Settings
+
+Manage organization-wide assets from the **Settings** section:
+
+- **LLM Provider Templates** — Define reusable connection templates for custom LLM providers not covered by the built-in provider types, and enable or disable templates to control what's offered when adding a provider.
+- **Custom Policies** — Review and remove the [custom AI policies](policies/writing-an-ai-policy.md) synced from your connected gateways.
+
 ## How It Works
 
 1. Create an AI Gateway entry in AI Workspace.
@@ -95,6 +102,32 @@ Learn more in [Policies](policies/overview.md).
 3. Configure LLM providers or MCP proxies in the control plane.
 4. Deploy those configurations to one or more connected gateways.
 5. Manage runtime behavior through policies, guardrails, and gateway deployments.
+
+## Configuration Interpolation
+
+The AI Workspace control plane itself is configured through `config.toml`, resolved once at startup. Rather than writing values directly into the file, each key can hold an interpolation token that resolves them from the environment or a mounted file:
+
+{% raw %}
+- `{{ env "VARIABLE_NAME" "default" }}` — reads the named environment variable, falling back to `default` if it's unset. Omit the default to make the variable required; startup fails if it isn't set.
+- `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply secrets such as client secrets or passwords without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
+
+```toml
+[ai_workspace.logging]
+level = '{{ env "APIP_AIW_LOGGING_LEVEL" "info" }}'
+
+[ai_workspace.auth.oidc]
+client_secret = '{{ file "/secrets/ai-workspace/oidc_client_secret" }}'
+```
+{% endraw %}
+
+Resolution fails closed: an unset required variable, or an unreadable or disallowed file, aborts startup rather than running with an empty credential.
+
+For each {% raw %}`{{ file }}`{% endraw %} token, mount the referenced secret at that exact path in `docker-compose.yaml`:
+
+```yaml
+    volumes:
+      - ./secrets/oidc_client_secret:/secrets/ai-workspace/oidc_client_secret:ro
+```
 
 ## Relationship to AI Gateway
 
