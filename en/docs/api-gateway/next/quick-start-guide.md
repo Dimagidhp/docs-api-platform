@@ -36,14 +36,18 @@ docker compose version
 
 ```bash
 # Download distribution.
-wget https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-alpha/wso2apip-api-gateway-1.2.0-alpha.zip
+wget https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-beta/wso2apip-api-gateway-1.2.0-beta.zip
 
 # Unzip the downloaded distribution.
-unzip wso2apip-api-gateway-1.2.0-alpha.zip
+unzip wso2apip-api-gateway-1.2.0-beta.zip
 
+cd wso2apip-api-gateway-1.2.0-beta/
+
+# Run the one-time setup. This provisions the AES-256 at-rest encryption key,
+# the router HTTPS listener certificate, and api-platform.env
+./scripts/setup.sh
 
 # Start the complete stack
-cd wso2apip-api-gateway-1.2.0-alpha/
 docker compose up -d
 
 # Verify gateway controller admin endpoint is running
@@ -95,6 +99,9 @@ EOF
 curl -i http://localhost:8080/reading-list/v1.0/books
 curl -ik https://localhost:8443/reading-list/v1.0/books
 ```
+
+!!! tip "Customizing configuration"
+    `setup.sh` writes `api-platform.env`, which is loaded into the containers via Docker Compose `env_file`. To change the storage backend, connect to a control plane, or tune other settings, edit that file (or the `config.toml` interpolation tokens directly). See [Gateway Configuration and Environment Interpolation](./setup/configuration.md).
 
 ### Stopping the Gateway
 

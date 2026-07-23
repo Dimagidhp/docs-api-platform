@@ -86,12 +86,12 @@ Four AI artifact kinds sync from the gateway to the AI Workspace. You create the
 | `LlmProxy` | `/api/management/v1/llm-proxies` | Yes |
 | `Mcp` | `/api/management/v1/mcp-proxies` | Yes |
 
-All manifests use `apiVersion: gateway.api-platform.wso2.com/v1`. Project-scoped kinds name their project in an annotation:
+All manifests use `apiVersion: gateway.api-platform.wso2.com/v1`. Project-scoped kinds name their project in an annotation using the project handle:
 
 ```yaml
 metadata:
   annotations:
-    "gateway.api-platform.wso2.com/project-id": "Project 1"
+    "gateway.api-platform.wso2.com/project-id": "default"
 ```
 
 ### Calling the management API
@@ -118,7 +118,7 @@ Create them in dependency order so each reference resolves:
 LlmProviderTemplate ──(spec.template)──▶ LlmProvider ──(spec.provider.id)──▶ LlmProxy
 ```
 
-> The LLM Proxy and MCP Proxy reference **`Project 1`** - make sure that project exists in your organization in the AI Workspace first.
+> The LLM Proxy and MCP Proxy reference the project **`default`** - make sure that project exists in your organization in the AI Workspace first.
 
 ### Step 1 - Create the LLM Provider Template
 
@@ -130,7 +130,7 @@ kind: LlmProviderTemplate
 metadata:
   name: my-llm-provider-template
 spec:
-  displayName: OpenAI
+  displayName: Custom OpenAI Template
   promptTokens:     { location: payload, identifier: $.usage.inputTokens }
   completionTokens: { location: payload, identifier: $.usage.outputTokens }
   totalTokens:      { location: payload, identifier: $.usage.totalTokens }
@@ -146,7 +146,7 @@ curl --location 'http://localhost:9090/api/management/v1/llm-provider-templates'
 
 ### Step 2 - Create the LLM Provider
 
-The provider links to the template above via `spec.template`. `llm-provider.yaml`:
+The provider links to the LLM provider template above via `spec.template`. `llm-provider.yaml`:
 
 ```yaml
 apiVersion: gateway.api-platform.wso2.com/v1
@@ -174,7 +174,7 @@ curl --location 'http://localhost:9090/api/management/v1/llm-providers' \
 
 ### Step 3 - Create the LLM Proxy
 
-The proxy belongs to a project (the `project-id` annotation) and links to the provider via `spec.provider.id`. `llm-proxy.yaml`:
+The proxy belongs to a project (the `project-id` annotation) and links to the LLM provider via `spec.provider.id`. `llm-proxy.yaml`:
 
 ```yaml
 apiVersion: gateway.api-platform.wso2.com/v1
@@ -182,7 +182,7 @@ kind: LlmProxy
 metadata:
   name: wso2con-assistant
   annotations:
-    "gateway.api-platform.wso2.com/project-id": "Project 1"   # ← must be an existing project
+    "gateway.api-platform.wso2.com/project-id": "default"   # ← must be an existing project
 spec:
   displayName: WSO2 Con Assistant
   version: v1.0
@@ -210,7 +210,7 @@ kind: Mcp
 metadata:
   name: everything-mcp-v1.0
   annotations:
-    "gateway.api-platform.wso2.com/project-id": "Project 1"
+    "gateway.api-platform.wso2.com/project-id": "default"
 spec:
   displayName: Everything
   version: v1.0
@@ -233,19 +233,35 @@ curl --location 'http://localhost:9090/api/management/v1/mcp-proxies' \
 
 ## View them in the AI Workspace
 
-The gateway syncs each artifact up automatically. Shortly after you create them, all four appear in the AI Workspace as **read-only** copies. To find them:
+The gateway syncs each artifact up automatically. Shortly after you create them, all four appear in the AI Workspace as **read-only** copies, each keeping the name you gave it on the gateway.
 
-1. Open the **AI Workspace** for the organization your gateway is registered with.
-2. Locate each artifact in the sidebar - the copy keeps the same name you gave it on the gateway:
+Open the **AI Workspace** for the organization your gateway is registered with, then find each artifact in its section of the sidebar.
 
-   | Artifact | Where to find it in the AI Workspace | Name |
-   |----------|--------------------------------------|------|
-   | LLM Provider Template | **Settings → LLM Provider Templates** | `my-llm-provider-template` |
-   | LLM Provider | **LLM → LLM Providers** | `my-llm-provider` |
-   | LLM Proxy | **LLM → App LLM Proxies** (under **Project 1**) | `wso2con-assistant` |
-   | MCP Proxy | **MCP → MCP Proxies** (under **Project 1**) | `everything-mcp-v1.0` |
+### LLM Provider Template
 
-3. Open any of them to browse the full configuration. It opens in a read-only view - the edit and deploy actions are unavailable because the gateway owns the artifact.
+Under **Settings → LLM Provider Templates**:
+
+![LLM Provider Template synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider-template.png)
+
+### LLM Provider
+
+Under **LLM → LLM Providers**:
+
+![LLM Provider synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider.png)
+
+### LLM Proxy
+
+Under **LLM → App LLM Proxies** (in the **Default** project):
+
+![LLM Proxy synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-proxy.png)
+
+### MCP Proxy
+
+Under **MCP → MCP Proxies** (in the **Default** project):
+
+![MCP Proxy synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-mcp-proxy.png)
+
+Open any of them to browse the full configuration. It opens in a read-only view - the edit and deploy actions are unavailable because the gateway owns the artifact.
 
 If an artifact hasn't appeared after a short wait, see [Troubleshooting](#troubleshooting).
 
@@ -264,8 +280,17 @@ A gateway-created artifact is **read-only** in the AI Workspace because the gate
 **You _can't_ change what the gateway uses to run the artifact.** Make those changes on the gateway instead - they sync up automatically. This includes:
 
 - Upstreams, the auth/routing used to serve traffic, and policies
+
+    ![Access Control of DP origin LLM provider](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-access-control.png)
+
 - An LLM Provider Template's token-tracking settings
+
+    ![Token Mapping of DP origin LLM provider template](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-template-token-mapping.png)
+
 - Deploying, redeploying, or undeploying the artifact
+
+    ![Deployment of DP origin LLM Proxy](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-proxy-deployment.png)
+
 - Deleting it while it is still deployed on a gateway (undeploy it from all gateways first)
 
 The AI Workspace simply won't offer the actions it can't perform, and will decline an edit that would change how the gateway runs the artifact.

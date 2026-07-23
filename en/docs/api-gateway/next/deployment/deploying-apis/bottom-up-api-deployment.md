@@ -562,15 +562,15 @@ curl -X PUT http://localhost:9090/api/management/v0.9/rest-apis/PetStoreAPI \
 
 ```bash
 # Check if host is set
-echo $APIP_GW_CONTROLLER__CONTROLPLANE__HOST
+echo $APIP_GW_CONTROLLER_CONTROLPLANE_HOST
 # or check config.toml [controller.controlplane] section
 ```
 
-**Fix:** Set the on-prem APIM host:
+**Fix:** Set the on-prem APIM host. These variables are read by the `env` interpolation tokens in `config.toml` (there is no `APIP_GW_` prefix override — see [Configuration and Environment Interpolation](../../setup/configuration.md)); the shipped `config.toml` already carries tokens for these keys:
 ```bash
-export APIP_GW_CONTROLLER__CONTROLPLANE__HOST=192.168.0.102:9443
-export APIP_GW_CONTROLLER__CONTROLPLANE__APIM_OAUTH2__CLIENT_ID=...
-export APIP_GW_CONTROLLER__CONTROLPLANE__APIM_OAUTH2__CLIENT_SECRET=...
+export APIP_GW_CONTROLLER_CONTROLPLANE_HOST=192.168.0.102:9443
+export APIP_GW_CONTROLLER_CONTROLPLANE_APIM_OAUTH2_CLIENT_ID=...
+export APIP_GW_CONTROLLER_CONTROLPLANE_APIM_OAUTH2_CLIENT_SECRET=...
 ```
 
 #### 2. APIM Not Reachable
@@ -616,7 +616,7 @@ curl -X GET http://localhost:9090/api/management/v0.9/rest-apis/PetStoreAPI \
 
 ```bash
 # Look for connection logs
-export APIP_GW_LOG_LEVEL=debug
+export APIP_GW_CONTROLLER_LOGGING_LEVEL=debug
 # Restart gateway controller
 # Check logs for: "Bottom-up sync: starting"
 ```
@@ -648,7 +648,7 @@ Check gateway controller logs for:
 3. Enable debug logging to see the actual response
 
 ```bash
-export APIP_GW_LOG_LEVEL=debug
+export APIP_GW_CONTROLLER_LOGGING_LEVEL=debug
 ```
 
 ### Issue: "On-prem Control Plane Mode Not Enabled"
