@@ -107,6 +107,7 @@ Manage organization-wide assets from the **Settings** section:
 
 The AI Workspace control plane itself is configured through `config.toml`, resolved once at startup. Rather than writing values directly into the file, each key can hold an interpolation token that resolves them from the environment or a mounted file:
 
+{% raw %}
 - `{{ env "VARIABLE_NAME" "default" }}` — reads the named environment variable, falling back to `default` if it's unset. Omit the default to make the variable required; startup fails if it isn't set.
 - `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply secrets such as client secrets or passwords without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
 
@@ -117,10 +118,11 @@ level = '{{ env "APIP_AIW_LOGGING_LEVEL" "info" }}'
 [ai_workspace.auth.oidc]
 client_secret = '{{ file "/secrets/ai-workspace/oidc_client_secret" }}'
 ```
+{% endraw %}
 
 Resolution fails closed: an unset required variable, or an unreadable or disallowed file, aborts startup rather than running with an empty credential.
 
-For each `{{ file }}` token, mount the referenced secret at that exact path in `docker-compose.yaml`:
+For each {% raw %}`{{ file }}`{% endraw %} token, mount the referenced secret at that exact path in `docker-compose.yaml`:
 
 ```yaml
     volumes:
