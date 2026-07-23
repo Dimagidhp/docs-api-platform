@@ -233,24 +233,35 @@ curl --location 'http://localhost:9090/api/management/v1/mcp-proxies' \
 
 ## View them in the AI Workspace
 
-The gateway syncs each artifact up automatically. Shortly after you create them, all four appear in the AI Workspace as **read-only** copies. To find them:
+The gateway syncs each artifact up automatically. Shortly after you create them, all four appear in the AI Workspace as **read-only** copies, each keeping the name you gave it on the gateway.
 
-1. Open the **AI Workspace** for the organization your gateway is registered with.
-2. Locate each artifact in the sidebar - It keeps the same name you gave it on the gateway:
+Open the **AI Workspace** for the organization your gateway is registered with, then find each artifact in its section of the sidebar.
 
-   | Artifact | Where to find it in the AI Workspace |
-   |----------|--------------------------------------|
-   | LLM Provider Template | **Settings → LLM Provider Templates** |
+### LLM Provider Template
 
-   ![DP to CP LLM Provider Template](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider-template.png)
-   | LLM Provider | **LLM → LLM Providers** |
-   ![DP to CP LLM Provider](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider.png)
-   | LLM Proxy | **LLM → App LLM Proxies** (under **Default** project) |
-   ![DP to CP LLM Proxy](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-proxy.png)
-   | MCP Proxy | **MCP → MCP Proxies** (under **Default** project) |
-   ![DP to CP MCP Proxy](../../assets/img/ai-workspace/bottom-up/dp-to-cp-mcp-proxy.png)
+Under **Settings → LLM Provider Templates**:
 
-3. Open any of them to browse the full configuration. It opens in a read-only view - the edit and deploy actions are unavailable because the gateway owns the artifact.
+![LLM Provider Template synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider-template.png)
+
+### LLM Provider
+
+Under **LLM → LLM Providers**:
+
+![LLM Provider synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider.png)
+
+### LLM Proxy
+
+Under **LLM → App LLM Proxies** (in the **Default** project):
+
+![LLM Proxy synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-proxy.png)
+
+### MCP Proxy
+
+Under **MCP → MCP Proxies** (in the **Default** project):
+
+![MCP Proxy synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-mcp-proxy.png)
+
+Open any of them to browse the full configuration. It opens in a read-only view - the edit and deploy actions are unavailable because the gateway owns the artifact.
 
 If an artifact hasn't appeared after a short wait, see [Troubleshooting](#troubleshooting).
 
@@ -269,11 +280,17 @@ A gateway-created artifact is **read-only** in the AI Workspace because the gate
 **You _can't_ change what the gateway uses to run the artifact.** Make those changes on the gateway instead - they sync up automatically. This includes:
 
 - Upstreams, the auth/routing used to serve traffic, and policies
-![Access Control of DP origin LLM provider](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-access-control.png)
+
+    ![Access Control of DP origin LLM provider](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-access-control.png)
+
 - An LLM Provider Template's token-tracking settings
-![Token Mapping of DP origin LLM provider template](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-template-token-mapping.png)
+
+    ![Token Mapping of DP origin LLM provider template](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-template-token-mapping.png)
+
 - Deploying, redeploying, or undeploying the artifact
-![Deployment of DP origin LLM Proxy](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-proxy-deployment.png)
+
+    ![Deployment of DP origin LLM Proxy](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-proxy-deployment.png)
+
 - Deleting it while it is still deployed on a gateway (undeploy it from all gateways first)
 
 The AI Workspace simply won't offer the actions it can't perform, and will decline an edit that would change how the gateway runs the artifact.

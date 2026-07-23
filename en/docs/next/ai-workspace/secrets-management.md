@@ -349,30 +349,38 @@ Attempting to delete a secret that is still in use returns HTTP 409. To remove i
 
 ## Configuration
 
-The following environment variable controls encryption for the Platform API:
+Secrets are encrypted at rest with the Platform API's single at-rest encryption key (also used for subscription tokens and WebSub HMAC secrets). This key is **required** - the server refuses to start if it is missing or malformed, so it must be provisioned before startup and kept stable, so previously-encrypted secrets stay readable across restarts and replicas.
 
-| Env Var | Description |
-|---------|-------------|
-| `PLATFORM_SECRET_ENCRYPTION_KEY` | 32-byte AES-256 key as 64 hex characters or base64. If unset, a random ephemeral key is auto-generated at startup — secrets stored in that session will be unreadable after a restart. |
-
-Generate a stable key with:
+The key is a single 32-byte AES-256 value, supplied as **64 hex characters** or base64. Generate one with:
 
 ```sh
 openssl rand -hex 32
 ```
 
-For Docker Compose deployments, set the key in a `.env` file next to `docker-compose.yaml`. First generate a key:
+The Platform API does not read the key from an environment variable directly. It reads the `encryption_key` field in `config.toml`, which pulls the value from the environment (or a mounted file) through a config-interpolation token — environment variables never override config keys directly:
+
+{% raw %}
+```toml
+# config.toml — resolved from the APIP_CP_ENCRYPTION_KEY environment variable
+encryption_key = '{{ env "APIP_CP_ENCRYPTION_KEY" }}'
+
+# Files are preferred for secrets:
+# encryption_key = '{{ file "/secrets/platform-api/encryption_key" }}'
+```
+{% endraw %}
+
+For Docker Compose deployments, set `APIP_CP_ENCRYPTION_KEY` in `api-platform.env` (loaded into the container via the Compose `env_file:` directive). The AI Workspace setup script generates this key into `api-platform.env` for you (see [Getting Started](./getting-started.md)):
 
 ```sh
-openssl rand -hex 32
-# example output: a3f1e2d4b5c6...
+./scripts/setup.sh
 ```
 
-Then copy the output value into your `.env` file:
+To set it manually instead, add the generated value to `api-platform.env`:
 
 ```sh
-PLATFORM_SECRET_ENCRYPTION_KEY=a3f1e2d4b5c6...
+# api-platform.env
+APIP_CP_ENCRYPTION_KEY=a3f1e2d4b5c6...
 ```
 
 !!! warning
-    Always set a stable `PLATFORM_SECRET_ENCRYPTION_KEY` in any environment where secrets must persist across restarts or across multiple replicas. An ephemeral auto-generated key will make existing encrypted secrets unreadable after a restart.
+    Use the same `APIP_CP_ENCRYPTION_KEY` across restarts and across all replicas. Changing or rotating it makes previously-encrypted secrets unreadable.

@@ -129,7 +129,7 @@ url = "https://<platform-api-host>"
 [oidc]
 authority                = "https://api.asgardeo.io/t/<your-tenant>/oauth2/token"
 client_id                = "<ai-workspace-client-id>"
-client_secret            = '{% raw %}{{ env "APIP_AIW_OIDC_CLIENT_SECRET" }}{% endraw %}'
+client_secret            = '{{ env "APIP_AIW_OIDC_CLIENT_SECRET" }}'
 redirect_url             = "https://<your-domain>/api/auth/callback"
 post_logout_redirect_url = "https://<your-domain>/login"
 

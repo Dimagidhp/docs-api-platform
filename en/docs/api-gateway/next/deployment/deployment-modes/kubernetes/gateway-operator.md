@@ -268,15 +268,31 @@ kubectl get gatewayclass wso2-api-platform
 
 ```sh
 kubectl apply -f - <<'EOF'
+# Per-Gateway Helm values enabling at-rest encryption (mandatory, fail-closed).
+# Referenced by the Gateway below via the helm-values-configmap annotation.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: platform-gw-values
+  namespace: gateway-api-demo
+data:
+  # The operator loads ConfigMap.data["values.yaml"] and merges it into the gateway Helm values.
+  values.yaml: |
+    gateway:
+      controller:
+        encryptionKeys:
+          enabled: true
+          secretName: gateway-encryption-keys
+---
 # Triggers the operator: Helm installs release named platform-gw-gateway, then registers the gateway-controller Service.
-# Optional: set metadata.annotations["gateway.api-platform.wso2.com/helm-values-configmap"] to a ConfigMap name (key values.yaml)
-# for per-Gateway Helm overrides (TLS, auth, encryptionKeys). See operator chart defaults in gateway_values.yaml.
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: platform-gw
   namespace: gateway-api-demo
   annotations:
+    # Per-Gateway Helm overrides (here: mandatory at-rest encryption). ConfigMap key must be values.yaml.
+    gateway.api-platform.wso2.com/helm-values-configmap: platform-gw-values
     # Prevent this Gateway from matching RestApi CRs intended for APIGateway (CRD mode) in mixed demos.
     gateway.api-platform.wso2.com/api-selector: '{"scope":"LabelSelector","matchLabels":{"gateway.api-platform.wso2.com/restapi-target":"k8s"}}'
   labels:
