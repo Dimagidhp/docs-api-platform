@@ -55,8 +55,8 @@ Partial substitution works too — `'foo-{{ env "X" }}'` resolves to `"foo-bar"`
 
 ```toml
 [developer_portal.server]
-base_url = '{{ env "APIP_DP_SERVER_BASE_URL" "https://localhost:3000" }}'
-port = 3000
+base_url = '{{ env "APIP_DP_SERVER_BASE_URL" "https://localhost:9543" }}'
+port = 9543
 
 [developer_portal.server.https]
 enabled = false
@@ -66,8 +66,8 @@ key_file = "./resources/security/private-key.pem"
 
 | Key | Default | Description |
 |---|---|---|
-| `server.base_url` | `https://localhost:3000` | Canonical public origin, used only to build absolute URLs embedded in generated agent prompts |
-| `server.port` | `3000` | Single listener port |
+| `server.base_url` | `https://localhost:9543` | Canonical public origin, used only to build absolute URLs embedded in generated agent prompts |
+| `server.port` | `9543` | Single listener port |
 | `server.https.enabled` | `false` | Whether the listener terminates TLS itself. Set `false` only when a trusted upstream (proxy/LB/ingress) terminates TLS |
 | `server.https.cert_file` / `key_file` | — | Required only when `https.enabled = true` — no self-signed fallback |
 
@@ -146,10 +146,10 @@ user_info_url = "https://localhost:9443/oauth2/userinfo"
 client_id = ""
 client_secret = ""
 audience = ""
-callback_url = "http://localhost:3000/default/callback"
+callback_url = "http://localhost:9543/default/callback"
 scope = "openid profile email"
 logout_url = "https://localhost:9443/oidc/logout"
-logout_redirect_uri = "http://localhost:3000/default"
+logout_redirect_uri = "http://localhost:9543/default"
 certificate = ""
 jwks_url = "https://localhost:9443/oauth2/jwks"
 token_refresh_timeout_ms = 10000
