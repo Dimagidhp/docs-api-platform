@@ -24,7 +24,7 @@ content_type: "reference"
 
 ```shell
 
-curl -X POST https://localhost:3000/api/v0.9/mcp-servers/{mcpServerId}/assets \
+curl -X POST https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/assets \
   -u {username}:{password} \
   -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
@@ -146,7 +146,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 
 ```shell
 
-curl -X PUT https://localhost:3000/api/v0.9/mcp-servers/{mcpServerId}/assets \
+curl -X PUT https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/assets \
   -u {username}:{password} \
   -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
@@ -268,7 +268,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 
 ```shell
 
-curl -X GET https://localhost:3000/api/v0.9/mcp-servers/{mcpServerId}/assets?type=document&fileName=getting-started.md \
+curl -X GET https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/assets?type=document&fileName=getting-started.md \
   -u {username}:{password} \
   -H 'Accept: text/css' \
   -H 'Authorization: Bearer {access-token}'
@@ -369,7 +369,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 ```shell
 
-curl -X DELETE https://localhost:3000/api/v0.9/mcp-servers/{mcpServerId}/assets?type=document \
+curl -X DELETE https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/assets?type=document \
   -u {username}:{password} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'

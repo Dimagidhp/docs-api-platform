@@ -24,7 +24,7 @@ content_type: "reference"
 
 ```shell
 
-curl -X GET https://localhost:3000/api/v0.9/api-keys \
+curl -X GET https://localhost:9543/api/v0.9/api-keys \
   -u {username}:{password} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'
@@ -154,7 +154,7 @@ Status Code **200**
 
 ```shell
 
-curl -X POST https://localhost:3000/api/v0.9/apis/{apiId}/api-keys/generate \
+curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/api-keys/generate \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -282,7 +282,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 ```shell
 
-curl -X GET https://localhost:3000/api/v0.9/apis/{apiId}/api-keys \
+curl -X GET https://localhost:9543/api/v0.9/apis/{apiId}/api-keys \
   -u {username}:{password} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'
@@ -414,7 +414,7 @@ Status Code **200**
 
 ```shell
 
-curl -X POST https://localhost:3000/api/v0.9/apis/{apiId}/api-keys/regenerate \
+curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/api-keys/regenerate \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -526,7 +526,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 ```shell
 
-curl -X POST https://localhost:3000/api/v0.9/apis/{apiId}/api-keys/revoke \
+curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/api-keys/revoke \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -622,7 +622,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 ```shell
 
-curl -X POST https://localhost:3000/api/v0.9/apis/{apiId}/api-keys/associate \
+curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/api-keys/associate \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -756,7 +756,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 ```shell
 
-curl -X POST https://localhost:3000/api/v0.9/apis/{apiId}/api-keys/dissociate \
+curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/api-keys/dissociate \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -841,7 +841,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 ```shell
 
-curl -X GET https://localhost:3000/api/v0.9/applications/{applicationId}/api-keys \
+curl -X GET https://localhost:9543/api/v0.9/applications/{applicationId}/api-keys \
   -u {username}:{password} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'

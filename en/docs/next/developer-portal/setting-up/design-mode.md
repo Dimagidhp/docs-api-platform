@@ -45,7 +45,7 @@ Then start the portal normally:
 npm start
 ```
 
-Visit **http://localhost:3000/views/default**.
+Visit **http://localhost:9543/views/default**.
 
 !!! note
     The portal always starts on plain HTTP in design mode — no TLS certificate setup required.

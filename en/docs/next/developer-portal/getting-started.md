@@ -21,7 +21,7 @@ The Developer Portal is where developers discover, subscribe to, and consume the
 - [Docker](https://docs.docker.com/get-docker/) with the Compose plugin (`docker compose version`)
 - `openssl` on your `PATH` (used by the setup script to generate certificates and secrets)
 - `curl` and `unzip` installed
-- Ports **3000** (Developer Portal) and **9243** (Platform API) available on your machine
+- Ports **9543** (Developer Portal) and **9243** (Platform API) available on your machine
 
 ## Step 1: Download the Developer Portal
 
@@ -72,10 +72,14 @@ curl -fk https://localhost:9243/health
 Navigate to:
 
 ```
-https://localhost:3000/default/views/default
+https://localhost:9543/default/views/default
 ```
 
-and sign in with the admin username and password from Step 2.
+You'll see the Developer Portal home page.
+
+![Developer Portal home page with the heading "APIs, MCP servers & workflows built for Developers and AI Agents", Browse our APIs, Browse our MCP servers, and Discover with AI buttons, and a Log In button in the top right](../../assets/img/standalone-devportal/getting-started/home-page.png)
+
+Click **Log In** and sign in with the admin username and password from Step 2.
 
 !!! tip "Browser trust warning?"
     The generated TLS certificate is self-signed. Click **Advanced > Proceed** to continue.
@@ -97,7 +101,7 @@ This deploys everything under `resources/samples/` into the `default` organizati
 
 Refresh the catalog page and the sample APIs appear as a grid of cards, each showing the API's name, version, type, and a **Subscribe** button.
 
-![Developer Portal APIs list showing multiple API cards with name, version, type, and Subscribe button](../../assets/img/devportal/apis-list.png)
+![Developer Portal API listing page showing a search bar and four sample API cards — Catalog API, Countries GraphQL API, Navigation API, and Reading List API — each with type badges, tags, plan count, and a Subscribe button](../../assets/img/standalone-devportal/getting-started/api-listing-page.png)
 
 To publish an API of your own instead, continue below.
 
@@ -189,7 +193,7 @@ TOKEN=$(curl -sk -X POST "https://localhost:9243/api/portal/v0.9/auth/login" \
   -d "username=<admin-username>&password=<admin-password>" | jq -r .token)
 
 # Publish the API (the token's org_handle claim scopes this to the "default" org)
-curl -sk -X POST "https://localhost:3000/api/v0.9/apis" \
+curl -sk -X POST "https://localhost:9543/api/v0.9/apis" \
   -H "Authorization: Bearer $TOKEN" \
   -F "metadata=@api.yaml;type=application/yaml" \
   -F "definition=@openapi.yaml;type=application/yaml"
