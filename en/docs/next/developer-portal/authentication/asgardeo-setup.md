@@ -1,0 +1,158 @@
+---
+title: "Set up Asgardeo as your identity provider"
+description: "Configure WSO2 Asgardeo as the OIDC identity provider for a production Developer Portal deployment, from application registration to config.toml."
+canonical_url: https://wso2.com/api-platform/docs/cloud/devportal/authentication/asgardeo-setup/
+md_url: https://wso2.com/api-platform/docs/cloud/devportal/authentication/asgardeo-setup.md
+tags:
+  - cloud
+  - devportal
+  - authentication
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-24
+content_type: "how-to"
+---
+
+# Set up Asgardeo as your identity provider
+
+This guide walks you through configuring WSO2 Asgardeo as the identity provider for a production Developer Portal deployment. For background on how identity provider authentication works, see [Authentication in the Developer Portal](overview.md).
+
+The Developer Portal uses Asgardeo's sub-organization model: each Developer Portal organization maps to one Asgardeo sub-organization. A single Asgardeo application, shared across all portal organizations, handles login, but each session is scoped to a specific sub-organization:
+
+1. A portal organization has its `idpRefId` set to its Asgardeo sub-org handle.
+2. When a user clicks **Login**, the portal redirects to Asgardeo with `org=<identifier>`, scoping the authorization to that sub-organization.
+3. Asgardeo issues a JWT whose organization claim identifies the sub-organization. On every authenticated request, the portal verifies this claim matches the organization being accessed.
+4. Each session is bound to one sub-organization — accessing a different portal organization's protected pages requires logging out and back in on that organization.
+
+## Prerequisites
+
+- An Asgardeo account at [console.asgardeo.io](https://console.asgardeo.io)
+- The Developer Portal accessible at a known hostname
+- The [`register_asgardeo_scopes.sh`](https://github.com/wso2/api-platform/blob/main/portals/developer-portal/production/scripts/register_asgardeo_scopes.sh) helper script, downloaded from the WSO2 API Platform GitHub repository
+
+## Step 1: Set up your organization
+
+1. Log in to [console.asgardeo.io](https://console.asgardeo.io).
+2. Create or select your root organization.
+3. If you need multiple tenants, create sub-organizations at `https://console.asgardeo.io/t/<root-org>/app/organizations`.
+
+## Step 2: Register the Developer Portal application
+
+The Developer Portal is a server-side application that can hold a client secret, so register it as a confidential client. A single-page application is a public client and cannot complete the confidential authorization-code exchange the portal relies on.
+
+1. In the root organization, go to **Applications > New Application**.
+2. Choose **Traditional Web Application** and name it `Developer Portal`.
+3. Under **Authorized redirect URLs**, add both:
+      - `https://<your-domain>/<orgName>/callback` — the login callback
+      - `https://<your-domain>/<orgName>` — the post-logout redirect (Asgardeo validates `post_logout_redirect_uri` against this same list)
+4. Enable **Share with all organizations** so users in sub-organizations can log in.
+5. Under the **Protocol** tab, set **Access Token Type** to **JWT**.
+6. Under the **Login Flow** tab, remove the Username/Password authenticator and add **SSO Authentication** (organization SSO), which routes each user to their sub-organization's login experience.
+7. Under the **User Attributes** tab, add these attributes to the token: `given_name`, `family_name`, `email`, and `roles`.
+
+Note the client ID and client secret from the **Protocol** tab. The portal needs both, and the client ID is also used as the audience in the portal configuration.
+
+## Step 3: Register the `dp:*` scopes
+
+The Developer Portal enforces `dp:*` scopes per operation for machine API clients that call `/api/v0.9/*` directly with a Bearer token. Register these scopes in Asgardeo using a dedicated system application before assigning them to users.
+
+1. Create a new OIDC application, for example named `DevPortal System`.
+2. Under **API Authorization**, add the **API Resource Management API** and the **Application Management API**.
+3. Note the client ID and client secret.
+4. Download the scope registration script and run it:
+
+```bash
+curl -sLO https://raw.githubusercontent.com/wso2/api-platform/main/portals/developer-portal/production/scripts/register_asgardeo_scopes.sh
+chmod +x register_asgardeo_scopes.sh
+
+ASGARDEO_TENANT=<your-tenant> \
+ASGARDEO_CLIENT_ID=<system-app-client-id> \
+ASGARDEO_CLIENT_SECRET=<system-app-client-secret> \
+ASGARDEO_RESOURCE_IDENTIFIER=https://<your-domain> \
+./register_asgardeo_scopes.sh
+```
+
+This registers an API resource in Asgardeo that represents the Developer Portal, with all `dp:*` scopes registered under it. For local testing, the default `ASGARDEO_RESOURCE_IDENTIFIER=https://localhost:9543` works without changes.
+
+The system application is only needed to run this script. Once the `dp:*` API resource is registered, the system application can be deleted.
+
+!!! note
+    Browser login sessions are preauthorized — the portal trusts session-level authentication and skips per-operation scope checks for users signed in through the IdP. The `dp:*` scopes matter only for machine clients calling the REST API directly with a Bearer token, which is why `scope` in the configuration below does not need to request them.
+
+## Step 4: Link the scopes to the application
+
+1. Open the **Developer Portal** application you registered in step 2.
+2. Under **API Authorization**, add the API resource created in step 3.
+3. Create an application role, for example `dp_admin`, and assign all `dp:*` scopes to it.
+4. Assign the role to users in each sub-organization that needs access.
+
+## Step 5: Configure the Developer Portal
+
+Update the `[developer_portal.auth]` tables in `configs/config.toml`:
+
+{% raw %}
+```toml
+[developer_portal.auth]
+mode = "idp"
+
+[developer_portal.auth.idp]
+name              = "Asgardeo"
+issuer            = "https://api.asgardeo.io/t/<your-tenant>/oauth2/token"
+authorization_url = "https://api.asgardeo.io/t/<your-tenant>/oauth2/authorize"
+token_url         = "https://api.asgardeo.io/t/<your-tenant>/oauth2/token"
+user_info_url     = "https://api.asgardeo.io/t/<your-tenant>/oauth2/userinfo"
+jwks_url          = "https://api.asgardeo.io/t/<your-tenant>/oauth2/jwks"
+client_id         = "<devportal-app-client-id>"
+client_secret     = '{{ env "APIP_DP_AUTH_IDP_CLIENT_SECRET" }}'
+audience          = "<devportal-app-client-id>"   # Asgardeo sets the client ID as the aud claim
+callback_url      = "https://<your-domain>/default/callback"
+logout_url        = "https://api.asgardeo.io/t/<your-tenant>/oidc/logout"
+logout_redirect_uri = "https://<your-domain>/default"
+scope             = "openid profile email roles"
+
+# Which token claim carries each field. Asgardeo B2B puts the sub-org handle in org_name.
+[developer_portal.auth.claim_mappings]
+organization = "org_name"
+roles        = "roles"
+
+# Maps Asgardeo role values to the portal's internal roles.
+[developer_portal.auth.idp.roles]
+admin      = "admin"
+subscriber = "Internal/subscriber"
+super_admin = "superAdmin"
+```
+{% endraw %}
+
+`mode = "idp"` selects the identity provider backend and stops the local login form from being used. `callback_url` must exactly match one of the authorized redirect URLs you registered in step 2. A single `callback_url` is shared across all portal organizations — after the callback, the portal uses the session's stored return path to redirect the user to the correct organization, so you register only this one URL with Asgardeo.
+
+Never write the client secret as a literal in `config.toml` — the {% raw %}`{{ env }}`{% endraw %} placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
+
+```bash
+export APIP_DP_AUTH_IDP_CLIENT_SECRET=<devportal-app-client-secret>
+```
+
+In a production deployment, prefer supplying it from a mounted secret file instead, by swapping the token for {% raw %}`'{{ file "/secrets/devportal/oidc_client_secret" }}'`{% endraw %} and mounting the secret at that path — resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
+
+## Step 6: Map organizations to sub-organizations
+
+Each Developer Portal organization maps to one Asgardeo sub-organization. To enable org-scoped login and access isolation, set the organization's `idpRefId` field (managed through the Developer Portal's Organization admin API) to the Asgardeo sub-org's **handle** (the URL slug shown in the Asgardeo console).
+
+When a user clicks **Login**, the portal appends `org=<idpRefId>` to the Asgardeo authorization URL. Asgardeo scopes the login session to that sub-organization and issues a token whose organization claim identifies it. On every authenticated request, the portal verifies that the token's organization claim matches the organization's `idpRefId`; a mismatch blocks access to protected pages with a 403, and the user must log out and log in again on the correct organization.
+
+- One login session per organization — each session is scoped to one Asgardeo sub-organization.
+- Public pages (the API catalog and documentation) remain accessible across organizations without re-authentication.
+- Protected pages (applications, subscriptions, API keys) require a token matching the organization's `idpRefId`.
+
+Once configured, opening the Developer Portal and clicking **Login** redirects you to the Asgardeo-hosted login page instead of the built-in local login form:
+
+## Claim flow summary
+
+The Asgardeo token carries these claims through to the Developer Portal:
+
+| Claim | Purpose | Configured as |
+|-------|---------|----------------|
+| `sub` | User identity | N/A |
+| `org_name` | Sub-organization handle, compared against the organization's `idpRefId` | `organization` in `[developer_portal.auth.claim_mappings]` |
+| `roles` | Role list, used for the admin check | `roles` in `[developer_portal.auth.claim_mappings]`, mapped by `[developer_portal.auth.idp.roles]` |
+
+Keep the claim names consistent between the Asgardeo token attributes and the `[developer_portal.auth.claim_mappings]` table.
+

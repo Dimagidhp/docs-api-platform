@@ -698,7 +698,9 @@ nav:
         - Subscribe to an API: next/developer-portal/manage-subscriptions/subscribe-to-an-api.md
     - Manage API Keys: next/developer-portal/manage-api-keys.md
     - Setting Up:
-        - Integrate Third-Party Identity Providers: next/developer-portal/setting-up/integrate-identity-providers.md
+        - Authentication:
+          - Overview: next/developer-portal/authentication/overview.md
+          - Set up Asgardeo: next/developer-portal/authentication/asgardeo-setup.md
         - Devportal Mode: next/developer-portal/developer-portal-mode.md
         - Design Mode: next/developer-portal/setting-up/design-mode.md
     - Admin Settings:
