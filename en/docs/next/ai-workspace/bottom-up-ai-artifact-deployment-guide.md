@@ -338,7 +338,7 @@ The sync behaves exactly the same for these gateways: artifacts loaded from file
   ```yaml
   metadata:
     annotations:
-      "gateway.api-platform.wso2.com/project-id": "Project 1"
+      "gateway.api-platform.wso2.com/project-id": "default"
   ```
 - **A referenced artifact isn't there yet.** An LLM Provider needs its template, and an LLM Proxy needs its provider. Create them in order (template → provider → proxy); the dependent artifact catches up on its own once the one it references has synced.
 
