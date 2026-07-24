@@ -99,7 +99,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     **Step 2: Set up the Gateway**
 
-    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key or certificate is missing):
+    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
     ```bash
     cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
@@ -155,7 +155,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     **Step 2: Set up the Gateway**
 
-    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key or certificate is missing):
+    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
     ```bash
     cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
@@ -199,7 +199,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     **Step 2: Set up the Gateway**
 
-    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key or certificate is missing):
+    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
     ```bash
     cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh

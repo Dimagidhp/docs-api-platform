@@ -89,6 +89,7 @@ In bottom-up deployment, **REST APIs deployed directly to the gateway are automa
 
 **File:** `config.toml`
 
+{% raw %}
 ```toml
 [controller.server]
 gateway_id = "gateway-1"
@@ -114,10 +115,12 @@ gateway_name = "onprem-gw"
 enabled = true
 
 [[controller.auth.basic.users]]
-username = "admin"
-password = "admin"
-roles = ["admin"]
+username        = '{{ env "APIP_GW_CONTROLLER_AUTH_BASIC_ADMIN_USERNAME" "" }}'
+password        = '{{ env "APIP_GW_CONTROLLER_AUTH_BASIC_ADMIN_PASSWORD_HASH" "" }}'
+password_hashed = true
+roles           = ["admin"]
 ```
+{% endraw %}
 
 ---
 
@@ -334,9 +337,11 @@ spec:
 **Step 2: Deploy to Gateway**
 
 !!! note
-    The examples below use a `BASE64_CREDENTIALS` environment variable for the Basic auth header. Set it before running any `curl` command:
+    The examples below use a `BASE64_CREDENTIALS` environment variable for the Basic auth header. Set it from the admin credentials `scripts/setup.sh` provisioned — the username defaults to `admin`; use the password it printed:
     ```bash
-    export BASE64_CREDENTIALS=$(echo -n "admin:admin" | base64)
+    export ADMIN_USERNAME=admin
+    export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
+    export BASE64_CREDENTIALS=$(echo -n "$ADMIN_USERNAME:$ADMIN_PASSWORD" | base64)
     ```
 
 ```bash
