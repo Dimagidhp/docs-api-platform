@@ -1,0 +1,92 @@
+---
+title: "AI Workspace policies overview"
+description: "Apply built-in guardrail, rate-limiting, and traffic-management policies to LLM providers and App LLM proxies in AI Workspace."
+canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/overview/
+md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/overview.md
+tags:
+  - cloud
+  - ai-workspace
+  - policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "overview"
+---
+
+# Policies Overview
+
+The AI Workspace provides built-in policies that let you govern how traffic flows through your LLM Providers and App LLM Proxies. Policies can be applied at the provider level (affecting all proxies that use the provider) or at the proxy level (scoped to a specific proxy or individual endpoints).
+
+## Guardrails
+
+Guardrails enforce content safety and compliance on requests and responses.
+
+| Guardrail | Description |
+|-----------|-------------|
+| [Semantic Prompt Guard](guardrails/semantic-prompt-guard.md) | Block or allow prompts based on semantic similarity to configured phrases. |
+| [PII Masking Regex](guardrails/regex-pii-masking.md) | Detect and mask PII in requests and responses using regex patterns. |
+| [Azure Content Safety](guardrails/azure-content-safety.md) | Filter harmful content using Azure Content Safety moderation. |
+| [Word Count](guardrails/word-count-guardrail.md) | Enforce word count limits on prompts or responses. |
+| [Sentence Count](guardrails/sentence-count-guardrail.md) | Enforce sentence count limits on prompts or responses. |
+
+## Rate Limit
+
+Rate limit policies control how much LLM traffic — by token count or monetary cost — can flow through a provider or proxy.
+
+| Policy | Description |
+|--------|-------------|
+| [LLM Cost](rate-limit/llm-cost.md) | Calculate the USD cost of each LLM call and make it available to cost-based rate limiting. No configuration required. |
+| [Token-Based Rate Limit](rate-limit/token-based-rate-limit.md) | Limit prompt, completion, or total token consumption within a time window. |
+| [LLM Cost-Based Rate Limit](rate-limit/llm-cost-based-rate-limit.md) | Enforce monetary spending budgets (e.g., $10/hour). Requires the LLM Cost policy. |
+
+## Other Policies
+
+| Policy | Description |
+|--------|-------------|
+| [Token-Based Rate Limit](other-policies/token-based-rate-limit.md) | Limit request count and token consumption via the built-in Rate Limiting tab or the Token Based Rate Limit policy. |
+| [Rate Limit - Basic](other-policies/basic-rate-limit.md) | Enforce a simple request count limit within a time window. |
+| [Model Round Robin](other-policies/model-round-robin.md) | Distribute requests across multiple models in round-robin order. |
+| [Prompt Decorator](other-policies/prompt-decorator.md) | Prepend or append content to every request. |
+| [Prompt Template](other-policies/prompt-template.md) | Apply reusable parameterized prompt templates to requests. |
+| [Semantic Cache](other-policies/semantic-cache.md) | Cache LLM responses and serve them for semantically similar requests. |
+
+
+## Where Policies are Applied
+
+Policies are configured through the management tabs of your LLM Providers and App LLM Proxies:
+
+- **LLM Provider** — Rate limits and guardrails configured on a provider apply to all proxies that use it. Guardrails can be applied globally (all endpoints) or per resource (specific endpoints).
+- **App LLM Proxy** — Guardrails configured on a proxy can be applied globally (all endpoints) or per resource (specific endpoints) to specialize the behavior for a specific Gen AI application or agent.
+
+When both provider-level and proxy-level policies are active, they are both enforced. Provider-level policies act as a baseline, and proxy-level policies add additional protection.
+
+## Policy Scope: Global vs. Per Resource
+
+Within an LLM Provider or App LLM Proxy, each policy is attached at one of two scopes:
+
+| Scope | Applies To | Counter behavior |
+|-------|-----------|-------------------------------|
+| **Global** | Every endpoint of the provider or proxy | One shared counter across all endpoints |
+| **Per Resource** | A specific endpoint (path and method) | An independent counter per endpoint |
+
+The difference is the *scope of the counter* for rate limits and the *breadth of application* for guardrails:
+
+- A **global** rate limit maintains one shared bucket for the entire provider or proxy. Traffic on any endpoint draws down the same allowance — if a provider has a global limit of 100 requests/hour, then 60 requests to `/chat/completions` plus 40 to `/embeddings` exhausts it, and the next request to *either* endpoint is rejected.
+- A **per-resource** rate limit maintains an independent bucket per endpoint. A limit of 100 requests/hour attached to both `/chat/completions` and `/embeddings` allows 100 on each, counted separately.
+- A **global** guardrail runs on every endpoint, while a **per-resource** guardrail runs only on the endpoints it is attached to.
+
+For each request, global policies are evaluated first, followed by per-resource policies. Because a global rate limit is evaluated first, it counts **every request attempt** — including requests that a tighter per-resource limit later rejects. A global limit is therefore a hard ceiling on total traffic through the provider or proxy.
+
+## Custom Policies
+
+Beyond the built-in policies above, you can write and deploy your own [custom AI policy](writing-an-ai-policy.md) to a gateway. Once a gateway runs a custom policy, it's synced into AI Workspace and listed under **Settings > Custom Policies**, where you can search, review, and delete the policies synced from your gateways. From there, a custom policy can be attached to a provider or proxy the same way a built-in policy is, through the guardrails/policy sidebar on the provider or proxy details page.
+
+## Policy Hub
+
+All guardrail policies in the AI Workspace are powered by the [Policy Hub](https://wso2.com/api-platform/policy-hub/). The Policy Hub is a central registry of all available policies and their latest versions.
+
+Visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/) to explore all available guardrails, their documentation, and configuration schemas.
+
+## Next Steps
+
+- [Guardrails Overview](guardrails/overview.md) — Explore available guardrails and how to configure them
+- [Writing an AI Policy](writing-an-ai-policy.md) — Learn how to write a custom AI policy for the self-hosted gateway
