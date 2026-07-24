@@ -80,6 +80,12 @@ For each request, global policies are evaluated first, followed by per-resource 
 
 Beyond the built-in policies above, you can write and deploy your own [custom AI policy](writing-an-ai-policy.md) to a gateway. Once a gateway runs a custom policy, it's synced into AI Workspace and listed under **Settings > Custom Policies**, where you can search, review, and delete the policies synced from your gateways. From there, a custom policy can be attached to a provider or proxy the same way a built-in policy is, through the guardrails/policy sidebar on the provider or proxy details page.
 
+To build and roll out your own policy end to end, see:
+
+1. [Writing an AI Policy](writing-an-ai-policy.md) — Implement the policy using the gateway SDK
+2. [Building the Gateway with AI Policies](build-gateway-with-ai-policies.md) — Package the policy into a custom AI Gateway image
+3. [Apply AI Policies to Proxies](apply-ai-policies-to-proxies.md) — Sync the policy to the organization and attach it to a provider or proxy
+
 ## Policy Hub
 
 All guardrail policies in the AI Workspace are powered by the [Policy Hub](https://wso2.com/api-platform/policy-hub/). The Policy Hub is a central registry of all available policies and their latest versions.
@@ -90,3 +96,5 @@ Visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/) to explore all
 
 - [Guardrails Overview](guardrails/overview.md) — Explore available guardrails and how to configure them
 - [Writing an AI Policy](writing-an-ai-policy.md) — Learn how to write a custom AI policy for the self-hosted gateway
+- [Building the Gateway with AI Policies](build-gateway-with-ai-policies.md) — Build a custom AI Gateway image with your policy
+- [Apply AI Policies to Proxies](apply-ai-policies-to-proxies.md) — Sync and attach your custom AI policy to providers and proxies
