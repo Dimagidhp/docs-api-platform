@@ -18,6 +18,9 @@ content_type: "how-to"
 
 The Gateway Controller defaults to an embedded SQLite database, which is limited to a single replica. For high-availability, multi-replica deployments, configure an external database as the shared storage backend. Both **PostgreSQL** and **SQL Server** are supported.
 
+!!! important
+    The Gateway Controller does not create the schema in an external database. Create the database and apply the shipped schema scripts first — see [Setting Up the Database](./database-setup.md). The settings below only tell the controller how to connect to a database that is already provisioned.
+
 To configure the storage backend, update the `config.toml`:
 
 === "PostgreSQL"

@@ -338,13 +338,14 @@ nav:
   - API Gateway:
     - "next":
         - Overview: api-gateway/next/overview.md
+        - Quick Start Guide: api-gateway/next/quick-start-guide.md
         - Setup:
           - Configuration & Interpolation: api-gateway/next/setup/configuration.md
+          - Setting Up the Database: api-gateway/next/setup/database-setup.md
           - Storage & Backends: api-gateway/next/setup/storage-and-backends.md
           - Artifact Templating: api-gateway/next/setup/artifact-templating.md
         - Resiliency:
           - Timeouts: api-gateway/next/resiliency/timeouts.md
-        - Quick Start Guide: api-gateway/next/quick-start-guide.md
         - Policies:
           - Overview: api-gateway/next/policies/overview.md
           - Custom Policies:

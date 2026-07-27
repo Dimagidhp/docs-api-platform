@@ -63,6 +63,28 @@ An external database is required for high-availability production deployments. I
     GO
     ```
 
+## Apply the Schema
+
+Apply the schema script for your database before installing the chart.
+
+=== "PostgreSQL"
+
+    ```bash
+    psql "host=gateway-postgres.postgres.database.azure.com \
+    port=5432 dbname=gateway_controller user=<admin-user> sslmode=require" \
+      -v ON_ERROR_STOP=1 -f gateway-controller-db.postgres.sql
+    ```
+
+=== "SQL Server"
+
+    ```bash
+    sqlcmd -S gateway-sqlserver.database.windows.net,1433 \
+      -d gateway_controller -U <admin-user> -P '<admin-password>' -b \
+      -i gateway-controller-db.sqlserver.sql
+    ```
+
+The charts do not include a bootstrap job for this, so run it from a CI job, a bastion host, or a temporary pod with network access to the database. If you are also deploying the Event Gateway, apply its supplemental script as well. For the full walkthrough — where to get the scripts, verifying the tables, and restricting runtime privileges — see [Setting Up the Database](../../setup/database-setup.md).
+
 ## Store the Password in a Kubernetes Secret
 
 The database password is injected as an environment variable from a Kubernetes secret rather than stored in the chart values:
