@@ -361,26 +361,27 @@ The Platform API does not read the key from an environment variable directly. It
 
 {% raw %}
 ```toml
-# config.toml — resolved from the APIP_CP_ENCRYPTION_KEY environment variable
-encryption_key = '{{ env "APIP_CP_ENCRYPTION_KEY" }}'
+# config.toml - resolved from a mounted key file:
+encryption_key = '{{ file "/etc/platform-api/keys/encryption.key" }}'
 
-# Files are preferred for secrets:
-# encryption_key = '{{ file "/secrets/platform-api/encryption_key" }}'
+# Alternatively, from an environment variable:
+# encryption_key = '{{ env "APIP_CP_ENCRYPTION_KEY" }}'
 ```
 {% endraw %}
 
-For Docker Compose deployments, set `APIP_CP_ENCRYPTION_KEY` in `api-platform.env` (loaded into the container via the Compose `env_file:` directive). The AI Workspace setup script generates this key into `api-platform.env` for you (see [Getting Started](./getting-started.md)):
+For Docker Compose deployments, the AI Workspace setup script generates this key into a **file** — `resources/keys/encryption.key`, mounted into the container at `/etc/platform-api/keys` — for you (see [Getting Started](./getting-started.md)):
 
 ```sh
 ./scripts/setup.sh
 ```
 
-To set it manually instead, add the generated value to `api-platform.env`:
+To provision it manually instead, write the generated value to that file (the key is 32 bytes as 64 hex chars; a trailing newline is trimmed on load):
 
 ```sh
-# api-platform.env
-APIP_CP_ENCRYPTION_KEY=a3f1e2d4b5c6...
+openssl rand -hex 32 > resources/keys/encryption.key
 ```
 
+Or switch the token to the {% raw %}`{{ env "APIP_CP_ENCRYPTION_KEY" }}`{% endraw %} form and set the variable in `api-platform.env` instead.
+
 !!! warning
-    Use the same `APIP_CP_ENCRYPTION_KEY` across restarts and across all replicas. Changing or rotating it makes previously-encrypted secrets unreadable.
+    Use the same encryption key across restarts and across all replicas. Changing or rotating it makes previously-encrypted secrets unreadable.

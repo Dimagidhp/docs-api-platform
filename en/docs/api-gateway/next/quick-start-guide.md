@@ -44,8 +44,14 @@ unzip wso2apip-api-gateway-1.2.0-beta.zip
 cd wso2apip-api-gateway-1.2.0-beta/
 
 # Run the one-time setup. This provisions the AES-256 at-rest encryption key,
-# the router HTTPS listener certificate, and api-platform.env
+# the router HTTPS listener certificate, api-platform.env, and the gateway-controller
+# admin credentials. It prints the admin password once — copy it.
 ./scripts/setup.sh
+
+# Export the admin credentials so the management-API calls below can authenticate.
+# The username defaults to "admin"; use the password setup.sh just printed.
+export ADMIN_USERNAME=admin
+export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
 
 # Start the complete stack
 docker compose up -d
@@ -55,7 +61,7 @@ curl http://localhost:9094/api/admin/v1/health
 
 # Deploy an API configuration
 curl -X POST http://localhost:9090/api/management/v1/rest-apis \
-  -u admin:admin \
+  -u "$ADMIN_USERNAME:$ADMIN_PASSWORD" \
   -H "Content-Type: application/yaml" \
   --data-binary @- <<'EOF'
 apiVersion: gateway.api-platform.wso2.com/v1
