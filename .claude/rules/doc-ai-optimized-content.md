@@ -14,4 +14,10 @@ accurately, and improves discoverability in search engines and internal tools.
 Never bury a procedure inside a sentence.
 
 - Not this: "Creating an alert involves opening the alerts pane, selecting **Create alert**, and then configuring the alert criteria."
-- This: "To create an alert, follow these steps:" followed by numbered steps — "1. Open the **Alerts** pane. 2. Select **Create alert**. 3. Configure the alert criteria."
+- This:
+
+    To create an alert, follow these steps:
+
+    1. Open the **Alerts** pane.
+    2. Select **Create alert**.
+    3. Configure the alert criteria.

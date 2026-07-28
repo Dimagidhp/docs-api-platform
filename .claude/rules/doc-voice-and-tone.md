@@ -8,7 +8,7 @@
 
 ## Never
 
-- "quick", "simple", "easy", "simply", "quickly", "It's that simple".
+- Capability-marketing claims or difficulty modifiers: "quick", "simple", "easy", "simply", "quickly", "It's that simple".
 - Marketing adjectives for capability: "powerful", "seamless", "next-generation", "effortless".
 - Jargon, buzzwords, idioms, figurative language, metaphors, ableist language.
 - Cutesiness, zaniness, pop-culture references, phrasing that denigrates any group.
