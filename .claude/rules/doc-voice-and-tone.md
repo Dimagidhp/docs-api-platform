@@ -1,52 +1,27 @@
-# Rule: voice, tone, and audience
+# Rule: voice, tone, audience
 
-Applies to Markdown documentation under `en/docs/`.
+- Address the reader as "you" — never "the user" or "they".
+- Products and features in third person: "this lets the API Gateway route traffic", not "this lets us route traffic".
+- Active voice, present tense, indicative or imperative mood. No subjunctive, no passive ("The request is routed by the gateway").
+- Don't give software or tools human characteristics.
+- Tone: casual and approachable, yet succinct and direct — a professional acquaintance. Confident, friendly, comprehensive. Not insensitive, oversentimental, or complicated.
 
-## Person and voice
+## Never
 
-- Address the reader as **"you"**. Never "the user" or "they".
-- Describe WSO2 products and features in the **third person**. Write "this lets the API
-  Gateway route traffic", not "this lets us route traffic".
-- Use **active voice, present tense, indicative or imperative mood**. Write "The gateway
-  routes the request", not "The request is routed by the gateway". Avoid the subjunctive.
-- Don't attribute human characteristics to software or tools.
-
-## Qualitative and marketing language
-
-- Don't call anything "quick", "simple", or "easy".
-- Don't use "simply", "It's that simple", "It's easy", or "quickly" inside a procedure.
-- Don't use marketing adjectives for product capability ("powerful", "seamless",
-  "next-generation", "effortless").
-
-## Tone
-
-Aim for casual and approachable, yet succinct and direct — write to the reader as a
-professional acquaintance. Confident, friendly, comprehensive. Not insensitive,
-oversentimental, or complicated. Neither super-entertaining nor super-dry.
-
-## Never use
-
-- Jargon, idioms, buzzwords, technical jargon.
-- Figurative language, metaphors, ableist language.
-- Cutesiness, wackiness, zaniness, goofiness.
-- Current pop-culture references.
-- Phrasing that denigrates or insults any group of people.
-- "Let's do something" phrasing.
-- Internet slang or abbreviations (`tl;dr`, `ymmv`).
-- Exclamation marks, in general.
-- Filler phrases like "please note" and "at this time".
-- The same opening phrase on every sentence (always "You can...", always "To do...").
+- "quick", "simple", "easy", "simply", "quickly", "It's that simple".
+- Marketing adjectives for capability: "powerful", "seamless", "next-generation", "effortless".
+- Jargon, buzzwords, idioms, figurative language, metaphors, ableist language.
+- Cutesiness, zaniness, pop-culture references, phrasing that denigrates any group.
+- "Let's do X". Internet slang (`tl;dr`, `ymmv`). Exclamation marks.
+- Filler: "please note", "at this time".
+- The same opening phrase on every sentence (all "You can...", all "To do...").
 - Choppy or long-winded sentences.
 
 ## Global audience
 
-Documentation is US English but must stay readable for non-native speakers and machine
-translation:
+US English, readable for non-native speakers and machine translation.
 
-- Use present tense.
-- Provide context — don't assume the reader already knows the subject.
-- Prefer stating what the reader **can** do over what they can't.
-- Define abbreviations at first use.
-- Never use the same word to mean two different things in one document.
-- Make the intended audience clear (developer, sysadmin, and so on), with an explicit
-  audience sentence near the top where it helps.
+- Present tense. Provide context; don't assume the reader knows the subject.
+- Prefer what the reader can do over what they can't.
+- Define abbreviations at first use. One word, one meaning per document.
+- State the intended audience (developer, sysadmin) near the top where it helps.
