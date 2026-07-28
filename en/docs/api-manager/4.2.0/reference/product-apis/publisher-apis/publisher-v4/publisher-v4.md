@@ -1,0 +1,6 @@
+---
+template: templates/redoc.html
+---
+
+<redoc spec-url='../../../../../reference/product-apis/publisher-apis/publisher-v4/publisher-v4.yaml'></redoc>
+<script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
