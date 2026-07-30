@@ -8,7 +8,7 @@ tags:
   - llm
   - load-balancing
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-16
+last_updated: 2026-07-30
 content_type: "reference"
 ---
 
@@ -24,6 +24,7 @@ The Model Weighted Round Robin policy implements weighted round-robin load balan
 - Proportional request allocation (models with higher weights receive more requests)
 - Automatic model suspension on failures (5xx or 429 responses)
 - Configurable suspension duration for failed models
+- Multi-provider routing by assigning a provider to each weighted model
 - Support for extracting model identifier from payload, headers, query parameters, or path parameters
 - Dynamic model selection based on availability and weights
 
@@ -33,8 +34,8 @@ The Model Weighted Round Robin policy implements weighted round-robin load balan
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| `models` | array | Yes | - | List of models with weights for weighted round-robin distribution. Each model must have a `model` name and `weight`. |
-| `suspendDuration` | integer | No | `0` | Suspend duration in seconds for failed models. If set to 0, failed model knowledge is not persisted. Must be >= 0. |
+| `models` | array | Yes | - | List of models with weights for weighted round-robin distribution. Each entry must have a `model` name and `weight`, and can optionally select a `provider`. |
+| `suspendDuration` | integer | No | `30` | Suspend duration in seconds for failed models. If set to 0, failed model knowledge is not persisted. Must be >= 0. |
 
 ### Model Configuration
 
@@ -44,6 +45,7 @@ Each model in the `models` array is an object with the following properties:
 |----------|------|----------|-------------|
 | `model` | string | Yes | The AI model name to use for load balancing. |
 | `weight` | integer | Yes | The weight assigned to this model for distribution. Higher weights mean more requests will be routed to this model. Weight is relative to total weight of all models. Must be at least 1. |
+| `provider` | string | No | Effective provider name to route the selected model to. Omit this field to use the proxy's primary provider. When an additional provider has an `as` alias, use the alias instead of its provider ID. |
 
 ### LLM provider template
 
@@ -77,16 +79,42 @@ The weighted sequence would be: `[A, A, A, B, B, C]`, meaning:
 
 ## Examples
 
+### Multi-provider weighted round robin
+
+Configure the policy on an LLM proxy to distribute traffic by weight across models from its primary and additional providers:
+
+```yaml
+operationPolicies:
+  - name: model-weighted-round-robin
+    version: v1
+    paths:
+      - path: /chat/completions
+        methods: [POST]
+        params:
+          models:
+            - model: gpt-4o
+              weight: 5
+            - model: claude-sonnet-4-5-20250929
+              provider: anthropic-provider
+              weight: 3
+            - model: anthropic.claude-3-5-sonnet-20240620-v1:0
+              provider: bedrock-provider
+              weight: 2
+          suspendDuration: 60
+```
+
+The entry without `provider` uses the proxy's primary provider. The other entries route to providers declared under `spec.additionalProviders`. See [Multi-Provider Routing for LLM Proxies](../multi-provider-routing.md) for provider, authentication, transformer, and alias configuration.
+
 ### Example 1: Basic Weighted Round Robin with Payload-based Model
 
 Deploy an LLM provider with weighted round-robin load balancing:
 
 ```bash
-curl -X POST http://localhost:9090/api/management/v0.9/llm-providers \
+curl -X POST http://localhost:9090/api/management/v1/llm-providers \
   -H "Content-Type: application/yaml" \
   -u "$ADMIN_USERNAME:$ADMIN_PASSWORD" \
   --data-binary @- <<'EOF'
-apiVersion: gateway.api-platform.wso2.com/v1alpha1
+apiVersion: gateway.api-platform.wso2.com/v1
 kind: LlmProvider
 metadata:
   name: weighted-round-robin-provider
@@ -94,7 +122,7 @@ spec:
   displayName: Weighted Round Robin Provider
   version: v1.0
   template: openai
-  vhost: openai
+  context: /providers/weighted-round-robin
   upstream:
     url: "https://api.openai.com/v1"
     auth:
@@ -106,7 +134,7 @@ spec:
     exceptions:
       - path: /chat/completions
         methods: [POST]
-  policies:
+  operationPolicies:
     - name: model-weighted-round-robin
       version: v1
       paths:
@@ -126,13 +154,10 @@ EOF
 
 **Test the weighted round-robin distribution:**
 
-**Note**: Ensure that "openai" is mapped to the appropriate IP address (e.g., 127.0.0.1) in your `/etc/hosts` file, or remove the vhost from the LLM provider configuration and use localhost to invoke.
-
 ```bash
 # Requests will be distributed: 50% gpt-4, 33.3% gpt-3.5-turbo, 16.7% gpt-4-turbo
-curl -X POST http://openai:8080/chat/completions \
+curl -k -X POST https://localhost:8443/providers/weighted-round-robin/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Host: openai" \
   -d '{
     "model": "gpt-4",
     "messages": [
