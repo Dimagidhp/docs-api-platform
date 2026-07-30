@@ -115,8 +115,17 @@ curl -ik https://localhost:8443/reading-list/v1.0/books
 
     Then set the admin credentials with `$env:ADMIN_USERNAME='admin'` and `$env:ADMIN_PASSWORD='<the password setup.ps1 printed>'` in place of the `export` lines.
 
+    The `curl` command that deploys the API pipes its YAML payload in through a shell heredoc (`--data-binary @- <<'EOF'`), which PowerShell does not support. Either run it from Git Bash or WSL, or save the YAML between the `EOF` markers to a file and post that file explicitly — note the `.exe`, since `curl` is an alias for `Invoke-WebRequest` in Windows PowerShell:
+
+    ```powershell
+    curl.exe -X POST http://localhost:9090/api/management/v1/rest-apis `
+      -u "${env:ADMIN_USERNAME}:${env:ADMIN_PASSWORD}" `
+      -H "Content-Type: application/yaml" `
+      --data-binary "@reading-list-api.yaml"
+    ```
+
 !!! tip "Customizing configuration"
-    `setup.sh` writes `api-platform.env`, which is loaded into the containers via Docker Compose `env_file`. To change the storage backend, connect to a control plane, or tune other settings, edit that file (or the `config.toml` interpolation tokens directly). See [Gateway Configuration and Environment Interpolation](./setup/configuration.md).
+    The setup script (`setup.sh`, or `setup.ps1` on Windows) writes `api-platform.env`, which is loaded into the containers via Docker Compose `env_file`. To change the storage backend, connect to a control plane, or tune other settings, edit that file (or the `config.toml` interpolation tokens directly). See [Gateway Configuration and Environment Interpolation](./setup/configuration.md).
 
 ### Stopping the Gateway
 
