@@ -93,8 +93,8 @@ Deploy an LLM provider with round-robin load balancing across multiple models:
 
 ```bash
 curl -X POST http://localhost:9090/api/management/v1/llm-providers \
-  -u admin:admin \
   -H "Content-Type: application/yaml" \
+  -u "$ADMIN_USERNAME:$ADMIN_PASSWORD" \
   --data-binary @- <<'EOF'
 apiVersion: gateway.api-platform.wso2.com/v1
 kind: LlmProvider

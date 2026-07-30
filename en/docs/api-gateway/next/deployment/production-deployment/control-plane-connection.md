@@ -82,6 +82,8 @@ The WSO2 API Platform gateway supports two fundamentally different deployment ap
     Register a DCR client against your APIM instance to obtain the client ID and secret:
 
     ```bash
+    # Use your WSO2 APIM instance's admin credentials here (the APIM control plane's own
+    # superadmin — not the gateway-controller credential provisioned by setup.sh).
     curl -k -X POST https://<APIM_HOST>/client-registration/v0.17/register \
       -H "Content-Type: application/json" \
       -u admin:admin \

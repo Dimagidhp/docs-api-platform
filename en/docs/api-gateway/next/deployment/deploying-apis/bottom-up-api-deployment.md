@@ -89,6 +89,7 @@ In bottom-up deployment, **REST APIs deployed directly to the gateway are automa
 
 **File:** `config.toml`
 
+{% raw %}
 ```toml
 [controller.server]
 gateway_id = "gateway-1"
@@ -114,10 +115,12 @@ gateway_name = "onprem-gw"
 enabled = true
 
 [[controller.auth.basic.users]]
-username = "admin"
-password = "admin"
-roles = ["admin"]
+username        = '{{ env "APIP_GW_CONTROLLER_AUTH_BASIC_ADMIN_USERNAME" "" }}'
+password        = '{{ env "APIP_GW_CONTROLLER_AUTH_BASIC_ADMIN_PASSWORD_HASH" "" }}'
+password_hashed = true
+roles           = ["admin"]
 ```
+{% endraw %}
 
 ---
 
@@ -334,9 +337,11 @@ spec:
 **Step 2: Deploy to Gateway**
 
 !!! note
-    The examples below use a `BASE64_CREDENTIALS` environment variable for the Basic auth header. Set it before running any `curl` command:
+    The examples below use a `BASE64_CREDENTIALS` environment variable for the Basic auth header. Set it from the admin credentials `scripts/setup.sh` provisioned — the username defaults to `admin`; use the password it printed:
     ```bash
-    export BASE64_CREDENTIALS=$(echo -n "admin:admin" | base64)
+    export ADMIN_USERNAME=admin
+    export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
+    export BASE64_CREDENTIALS=$(echo -n "$ADMIN_USERNAME:$ADMIN_PASSWORD" | base64)
     ```
 
 ```bash
@@ -562,15 +567,15 @@ curl -X PUT http://localhost:9090/api/management/v0.9/rest-apis/PetStoreAPI \
 
 ```bash
 # Check if host is set
-echo $APIP_GW_CONTROLLER__CONTROLPLANE__HOST
+echo $APIP_GW_CONTROLLER_CONTROLPLANE_HOST
 # or check config.toml [controller.controlplane] section
 ```
 
-**Fix:** Set the on-prem APIM host:
+**Fix:** Set the on-prem APIM host. These variables are read by the `env` interpolation tokens in `config.toml` (there is no `APIP_GW_` prefix override — see [Configuration and Environment Interpolation](../../setup/configuration.md)); the shipped `config.toml` already carries tokens for these keys:
 ```bash
-export APIP_GW_CONTROLLER__CONTROLPLANE__HOST=192.168.0.102:9443
-export APIP_GW_CONTROLLER__CONTROLPLANE__APIM_OAUTH2__CLIENT_ID=...
-export APIP_GW_CONTROLLER__CONTROLPLANE__APIM_OAUTH2__CLIENT_SECRET=...
+export APIP_GW_CONTROLLER_CONTROLPLANE_HOST=192.168.0.102:9443
+export APIP_GW_CONTROLLER_CONTROLPLANE_APIM_OAUTH2_CLIENT_ID=...
+export APIP_GW_CONTROLLER_CONTROLPLANE_APIM_OAUTH2_CLIENT_SECRET=...
 ```
 
 #### 2. APIM Not Reachable
@@ -616,7 +621,7 @@ curl -X GET http://localhost:9090/api/management/v0.9/rest-apis/PetStoreAPI \
 
 ```bash
 # Look for connection logs
-export APIP_GW_LOG_LEVEL=debug
+export APIP_GW_CONTROLLER_LOGGING_LEVEL=debug
 # Restart gateway controller
 # Check logs for: "Bottom-up sync: starting"
 ```
@@ -648,7 +653,7 @@ Check gateway controller logs for:
 3. Enable debug logging to see the actual response
 
 ```bash
-export APIP_GW_LOG_LEVEL=debug
+export APIP_GW_CONTROLLER_LOGGING_LEVEL=debug
 ```
 
 ### Issue: "On-prem Control Plane Mode Not Enabled"

@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - ai-gateways
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
@@ -76,7 +76,10 @@ A **Gateway Registration Token** is displayed at the top of the Get Started sect
 
 ### Installation Methods
 
-The Get Started section provides setup instructions for multiple deployment options:
+The Get Started section provides setup instructions for multiple deployment options.
+
+!!! note "Gateway version"
+    The steps below apply to **gateway v1.2 and above**, which provision keys and certificates with `./scripts/setup.sh` and deliver configuration through `api-platform.env` (loaded automatically via the Compose `env_file:` directive). For gateways **below v1.2**, use the older flow instead: write `configs/keys.env` with `GATEWAY_CONTROLPLANE_HOST` / `GATEWAY_REGISTRATION_TOKEN` and start with `docker compose --env-file configs/keys.env up`. The Get Started section in the Console shows the correct commands for the version you registered.
 
 === "Quick Start"
     **Prerequisites:**
@@ -90,37 +93,38 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-M1/wso2apip-ai-gateway-1.2.0-M1.zip && \
-    unzip wso2apip-ai-gateway-1.2.0-M1.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip && \
+    unzip wso2apip-ai-gateway-1.2.0-beta.zip
     ```
 
-    **Step 2: Configure the Gateway**
+    **Step 2: Set up the Gateway**
 
-    Run this command to create the environment configuration file with the required environment variables:
+    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
     ```bash
-    cat > wso2apip-ai-gateway-1.2.0-M1/configs/keys.env << 'ENVFILE'
-    MOESIF_KEY=<your-moesif-key>
-    GATEWAY_CONTROLPLANE_HOST=connect.bijira.dev
-    GATEWAY_REGISTRATION_TOKEN=<your-gateway-token>
+    cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
+    ```
+
+    **Step 3: Configure the Gateway**
+
+    Append the control plane host and your registration token to `api-platform.env`:
+
+    ```bash
+    cat >> api-platform.env << 'ENVFILE'
+    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=connect.bijira.dev
+    APIP_GW_CONTROLLER_CONTROLPLANE_TOKEN=<your-gateway-token>
     ENVFILE
     ```
 
     Replace `<your-gateway-token>` with the token from the Get Started section.
 
-    **Step 3: Start the Gateway**
+    **Step 4: Start the Gateway**
 
-    1. Navigate to the gateway folder:
+    Start the gateway. `api-platform.env` is loaded automatically via the Compose `env_file:` directive:
 
-        ```bash
-        cd wso2apip-ai-gateway-1.2.0-M1
-        ```
-
-    2. Run this command to start the gateway using the environment file created in Step 2:
-
-        ```bash
-        docker compose --env-file configs/keys.env up
-        ```
+    ```bash
+    docker compose up
+    ```
 
 === "Virtual Machine"
     **Prerequisites:**
@@ -145,27 +149,38 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-M1/wso2apip-ai-gateway-1.2.0-M1.zip && \
-    unzip wso2apip-ai-gateway-1.2.0-M1.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip && \
+    unzip wso2apip-ai-gateway-1.2.0-beta.zip
     ```
 
-    **Step 2: Configure the Gateway**
+    **Step 2: Set up the Gateway**
 
-    The registration token is single-use. If you need to reconfigure the gateway, click **Reconfigure** to generate a new token — this will revoke the old token and disconnect the gateway from the control plane.
+    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
-    **Step 3: Start the Gateway**
+    ```bash
+    cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
+    ```
 
-    1. Navigate to the gateway folder:
+    **Step 3: Configure the Gateway**
 
-        ```bash
-        cd wso2apip-ai-gateway-1.2.0-M1
-        ```
+    Append the control plane host and your registration token to `api-platform.env`:
 
-    2. Run this command to start the gateway using the environment file created in Step 2:
+    ```bash
+    cat >> api-platform.env << 'ENVFILE'
+    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=connect.bijira.dev
+    APIP_GW_CONTROLLER_CONTROLPLANE_TOKEN=<your-gateway-token>
+    ENVFILE
+    ```
 
-        ```bash
-        docker compose --env-file configs/keys.env up
-        ```
+    Replace `<your-gateway-token>` with the token from the Get Started section. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
+
+    **Step 4: Start the Gateway**
+
+    Start the gateway. `api-platform.env` is loaded automatically via the Compose `env_file:` directive:
+
+    ```bash
+    docker compose up
+    ```
 
 === "Docker"
     **Prerequisites:**
@@ -178,27 +193,38 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-M1/wso2apip-ai-gateway-1.2.0-M1.zip && \
-    unzip wso2apip-ai-gateway-1.2.0-M1.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip && \
+    unzip wso2apip-ai-gateway-1.2.0-beta.zip
     ```
 
-    **Step 2: Configure the Gateway**
+    **Step 2: Set up the Gateway**
 
-    The registration token is single-use. If you need to reconfigure the gateway, click **Reconfigure** to generate a new token — this will revoke the old token and disconnect the gateway from the control plane.
+    Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
-    **Step 3: Start the Gateway**
+    ```bash
+    cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
+    ```
 
-    1. Navigate to the gateway folder:
+    **Step 3: Configure the Gateway**
 
-        ```bash
-        cd wso2apip-ai-gateway-1.2.0-M1
-        ```
+    Append the control plane host and your registration token to `api-platform.env`:
 
-    2. Run this command to start the gateway using the environment file created in Step 2:
+    ```bash
+    cat >> api-platform.env << 'ENVFILE'
+    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=connect.bijira.dev
+    APIP_GW_CONTROLLER_CONTROLPLANE_TOKEN=<your-gateway-token>
+    ENVFILE
+    ```
 
-        ```bash
-        docker compose --env-file configs/keys.env up
-        ```
+    Replace `<your-gateway-token>` with the token from the Get Started section. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
+
+    **Step 4: Start the Gateway**
+
+    Start the gateway. `api-platform.env` is loaded automatically via the Compose `env_file:` directive:
+
+    ```bash
+    docker compose up
+    ```
 
 === "Kubernetes"
     **Prerequisites:**
@@ -210,16 +236,31 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     The registration token is a one-time generated token for this gateway. If you need to install or update the gateway chart again, first reconfigure this gateway to generate a new registration token. Reconfiguring will revoke the previous token.
 
-    **Installing the Chart**
+    **Create the encryption key Secret**
 
-    Run this command to install the gateway chart with control plane configurations:
+    At-rest encryption is mandatory and fail-closed — nothing is auto-generated, and the chart will not render without an AES-256 key Secret. Create it in the install namespace before installing the chart:
 
     ```bash
-    helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version 1.0.0 \
+    openssl rand 32 > default-aesgcm256-v1.bin
+    kubectl create secret generic gateway-encryption-keys \
+      --from-file=default-aesgcm256-v1.bin=default-aesgcm256-v1.bin
+    rm default-aesgcm256-v1.bin   # don't leave the plaintext key on disk
+    ```
+
+    **Installing the Chart**
+
+    Run this command to install the gateway chart with the encryption key and control plane configurations:
+
+    ```bash
+    helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version 1.2.0-beta \
+    --set gateway.controller.encryptionKeys.enabled=true \
+    --set gateway.controller.encryptionKeys.secretName=gateway-encryption-keys \
     --set gateway.controller.controlPlane.host="host.docker.internal" \
     --set gateway.controller.controlPlane.port=8443 \
     --set gateway.controller.controlPlane.token.value="your-gateway-token"
     ```
+
+    Use the Helm chart version that matches the gateway version shown on this page's **Get Started** section, not necessarily `1.2.0-beta`.
 
     Replace `your-gateway-token` with the token from the Get Started section.
 

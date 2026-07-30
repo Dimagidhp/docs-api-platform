@@ -240,9 +240,17 @@ docker compose up -d
 
 ## Deploy the API
 
+The management API uses basic auth. Export the admin credentials `scripts/setup.sh` provisioned (the
+username defaults to `admin`; use the password it printed):
+
+```sh
+export ADMIN_USERNAME=admin
+export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
+```
+
 ```sh
 curl -X POST http://localhost:9090/api/management/v0.9/rest-apis \
-  -u admin:admin \
+  -u "$ADMIN_USERNAME:$ADMIN_PASSWORD" \
   -H "Content-Type: application/yaml" \
   --data-binary @- <<'EOF'
 apiVersion: gateway.api-platform.wso2.com/v1alpha1

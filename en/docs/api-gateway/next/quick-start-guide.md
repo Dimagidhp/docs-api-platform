@@ -36,25 +36,35 @@ docker compose version
 
 ```bash
 # Download distribution.
-wget https://github.com/wso2/api-platform/releases/download/gateway/v1.1.0/wso2apip-api-gateway-1.1.0.zip
+wget https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-beta/wso2apip-api-gateway-1.2.0-beta.zip
 
 # Unzip the downloaded distribution.
-unzip wso2apip-api-gateway-1.1.0.zip
+unzip wso2apip-api-gateway-1.2.0-beta.zip
 
+cd wso2apip-api-gateway-1.2.0-beta/
+
+# Run the one-time setup. This provisions the AES-256 at-rest encryption key,
+# the router HTTPS listener certificate, api-platform.env, and the gateway-controller
+# admin credentials. It prints the admin password once — copy it.
+./scripts/setup.sh
+
+# Export the admin credentials so the management-API calls below can authenticate.
+# The username defaults to "admin"; use the password setup.sh just printed.
+export ADMIN_USERNAME=admin
+export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
 
 # Start the complete stack
-cd wso2apip-api-gateway-1.1.0/
 docker compose up -d
 
 # Verify gateway controller admin endpoint is running
-curl http://localhost:9094/api/admin/v0.9/health
+curl http://localhost:9094/api/admin/v1/health
 
 # Deploy an API configuration
-curl -X POST http://localhost:9090/api/management/v0.9/rest-apis \
-  -u admin:admin \
+curl -X POST http://localhost:9090/api/management/v1/rest-apis \
+  -u "$ADMIN_USERNAME:$ADMIN_PASSWORD" \
   -H "Content-Type: application/yaml" \
   --data-binary @- <<'EOF'
-apiVersion: gateway.api-platform.wso2.com/v1alpha1
+apiVersion: gateway.api-platform.wso2.com/v1
 kind: RestApi
 metadata:
   name: reading-list-api-v1.0
@@ -95,6 +105,9 @@ EOF
 curl -i http://localhost:8080/reading-list/v1.0/books
 curl -ik https://localhost:8443/reading-list/v1.0/books
 ```
+
+!!! tip "Customizing configuration"
+    `setup.sh` writes `api-platform.env`, which is loaded into the containers via Docker Compose `env_file`. To change the storage backend, connect to a control plane, or tune other settings, edit that file (or the `config.toml` interpolation tokens directly). See [Gateway Configuration and Environment Interpolation](./setup/configuration.md).
 
 ### Stopping the Gateway
 

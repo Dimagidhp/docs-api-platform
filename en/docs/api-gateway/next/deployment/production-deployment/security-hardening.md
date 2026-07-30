@@ -18,7 +18,7 @@ This page covers the three security areas that must be configured before a produ
 
 ## Encryption Keys
 
-The controller uses AES-GCM 256-bit keys to encrypt sensitive data at rest. Providing at least one encryption key is required when `developmentMode` is set to `false`.
+The controller uses AES-GCM 256-bit keys to encrypt sensitive data at rest. Providing at least one encryption key is **mandatory**. The chart is fail-closed: it refuses to render unless `gateway.controller.encryptionKeys.enabled` is `true` with a `secretName`, and the controller will not start without its key.
 
 **Generate a 256-bit AES key:**
 

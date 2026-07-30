@@ -49,18 +49,28 @@ docker compose version
 <!-- Replace ${version} with the actual release version of the API Platform Gateway. -->
 ```bash
 # Download distribution.
-wget https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.1.0/wso2apip-ai-gateway-1.1.0.zip
+wget https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-beta/wso2apip-ai-gateway-1.2.0-beta.zip
 
 # Unzip the downloaded distribution.
-unzip wso2apip-ai-gateway-1.1.0.zip
+unzip wso2apip-ai-gateway-1.2.0-beta.zip
 
+cd wso2apip-ai-gateway-1.2.0-beta/
+
+# Run the one-time setup. This provisions the AES-256 at-rest encryption key, the router HTTPS
+# listener certificate, api-platform.env, and the gateway-controller admin credentials. It prints
+# the admin password once — copy it.
+./scripts/setup.sh
+
+# Export the admin credentials so the management-API calls below can authenticate.
+# The username defaults to "admin"; use the password setup.sh just printed.
+export ADMIN_USERNAME=admin
+export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
 
 # Start the complete stack
-cd wso2apip-ai-gateway-1.1.0/
 docker compose up -d
 
 # Verify gateway controller admin endpoint is running
-curl http://localhost:9094/health
+curl http://localhost:9094/api/admin/v1/health
 ```
 
 ## Deploy an OpenAI LLM provider configuration
@@ -68,11 +78,11 @@ curl http://localhost:9094/health
 The API Platform Gateway currently includes first-class support for the OpenAI LLM provider. As a platform administrator, replace `<openai-apikey>` with your openai API key and run the following command to deploy a sample OpenAI LLM provider.
 
 ```bash
-curl -X POST http://localhost:9090/api/management/v0.9/llm-providers \
+curl -X POST http://localhost:9090/api/management/v1/llm-providers \
   -H "Content-Type: application/yaml" \
-  -H "Authorization: Basic YWRtaW46YWRtaW4=" \
+  -u "$ADMIN_USERNAME:$ADMIN_PASSWORD" \
   --data-binary @- <<'EOF'
-apiVersion: gateway.api-platform.wso2.com/v1alpha1
+apiVersion: gateway.api-platform.wso2.com/v1
 kind: LlmProvider
 metadata:
   name: openai-provider
@@ -120,11 +130,11 @@ curl -X POST https://localhost:8443/openai/latest/chat/completions \
 The API Platform Gateway provides first-class support for configuring and deploying LLM proxies. As an AI developer, run the following command to deploy a sample LLM proxy that consumes the OpenAI LLM provider previously deployed by the platform administrator.
 
 ```bash
-curl -X POST http://localhost:9090/api/management/v0.9/llm-proxies \
+curl -X POST http://localhost:9090/api/management/v1/llm-proxies \
   -H "Content-Type: application/yaml" \
-  -H "Authorization: Basic YWRtaW46YWRtaW4=" \
+  -u "$ADMIN_USERNAME:$ADMIN_PASSWORD" \
   --data-binary @- <<'EOF'
-apiVersion: gateway.api-platform.wso2.com/v1alpha1
+apiVersion: gateway.api-platform.wso2.com/v1
 kind: LlmProxy
 metadata:
   name: openai-assistant

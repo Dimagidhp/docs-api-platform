@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - authentication
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-09
+last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
@@ -88,60 +88,73 @@ For each sub-organization that needs access:
 
 ## Step 7: Configure the Platform API
 
-Update `config-platform-api.toml`:
+AI Workspace and the Platform API now share a single `configs/config.toml` file — the Platform API reads its own `[platform_api.*]` tables from it and ignores the `[ai_workspace.*]` tables (and vice versa). Update the `[platform_api.auth]` section:
 
 ```toml
-[auth.jwt]
-enabled = false
+[platform_api.auth]
+mode = "idp"
 
-[auth.idp]
-enabled  = true
+[platform_api.auth.idp]
 name     = "asgardeo"
 jwks_url = "https://api.asgardeo.io/t/<your-tenant>/oauth2/jwks"
 issuer   = ["https://api.asgardeo.io/t/<your-tenant>/oauth2/token"]
 audience = ["<ai-workspace-client-id>"]
 
-[auth.idp.claim_mappings]
-organization_claim_name = "org_id"
-org_name_claim_name     = "org_name"
-org_handle_claim_name   = "org_handle"
-
-[auth.file_based]
-enabled = false
+[platform_api.auth.claim_mappings]
+organization = "org_id"
+org_name     = "org_name"
+org_handle   = "org_handle"
 ```
 
-Asgardeo uses `org_id` as the claim for the organization UUID, while the Platform API defaults to `organization`. The claim name override above is required to bridge the two.
+`mode` selects exactly one Platform API auth mode, so setting it to `"idp"` stops the file-based login endpoint from being used. Asgardeo uses `org_id` as the claim for the organization UUID, while the Platform API defaults to `organization`. The claim name override above is required to bridge the two.
 
 ## Step 8: Configure AI Workspace
 
-Update `config.toml`:
+In the same `configs/config.toml`, update the `[ai_workspace.auth]` tables:
 
+{% raw %}
 ```toml
-domain                = "<your-domain>"
-auth_mode              = "oidc"
-oidc_authority         = "https://api.asgardeo.io/t/<your-tenant>/oauth2/token"
-oidc_client_id         = "<ai-workspace-client-id>"
-oidc_org_id_claim      = "org_id"
-oidc_org_name_claim    = "org_name"
-oidc_org_handle_claim  = "org_handle"
-platform_api_base_url  = "https://<platform-api-host>/api/v1"
-controlplane_host      = "<platform-api-host>"
-default_org_region     = "us"
-```
+[ai_workspace]
+domain             = "<your-domain>"
+default_org_region = "us"
 
-The client secret and redirect URLs are BFF settings rather than `config.toml` keys, since the secret must never reach the browser. Set them as environment variables on the AI Workspace container instead:
+[ai_workspace.control_plane]
+url = "https://<platform-api-host>"
+
+[ai_workspace.gateway]
+controlplane_host = "<platform-api-host>"
+
+[ai_workspace.auth]
+mode = "oidc"
+
+[ai_workspace.auth.oidc]
+authority                = "https://api.asgardeo.io/t/<your-tenant>/oauth2/token"
+client_id                = "<ai-workspace-client-id>"
+client_secret            = '{{ env "APIP_AIW_AUTH_OIDC_CLIENT_SECRET" }}'
+redirect_url             = "https://<your-domain>/api/auth/callback"
+post_logout_redirect_url = "https://<your-domain>/login"
+
+# A sibling of [ai_workspace.auth.oidc], not nested in it — applies to both auth modes.
+[ai_workspace.auth.claim_mappings]
+organization = "org_id"
+org_name     = "org_name"
+org_handle   = "org_handle"
+```
+{% endraw %}
+
+`redirect_url` must exactly match the authorized redirect URL you registered in step 2.
+
+Never write the client secret as a literal in `config.toml` — the `{% raw %}{{ env }}{% endraw %}` placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
 
 ```bash
-OIDC_CLIENT_SECRET=<ai-workspace-client-secret>
-OIDC_REDIRECT_URL=https://<your-domain>/api/auth/callback        # the BFF callback from step 2
-OIDC_POST_LOGOUT_REDIRECT_URL=https://<your-domain>/login
+export APIP_AIW_AUTH_OIDC_CLIENT_SECRET=<ai-workspace-client-secret>
 ```
 
-`OIDC_REDIRECT_URL` must exactly match the authorized redirect URL you registered in step 2.
+Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers. In a production deployment, prefer supplying it from a mounted secret file instead, by swapping the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %} and mounting the secret at that path — resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
 
 Once configured, opening AI Workspace redirects you to the Asgardeo-hosted login page instead of the file-based login form:
 
-![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../../assets/img/ai-gateway/ai-workspace/authentication/oidc-login-redirect.png)
+![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../../assets/img/ai-gateway/standalone-ai-workspace/authentication/oidc-login-redirect.png)
 
 ## Claim flow summary
 
@@ -150,9 +163,9 @@ The Asgardeo token carries these claims through to the Platform API:
 | Claim | Purpose | Configured as |
 |-------|---------|----------------|
 | `sub` | User identity | N/A |
-| `org_id` | Organization UUID | `organization_claim_name` in the Platform API, `oidc_org_id_claim` in AI Workspace |
-| `org_name` | Organization display name | `org_name_claim_name` in the Platform API, `oidc_org_name_claim` in AI Workspace |
-| `org_handle` | Organization slug | `org_handle_claim_name` in the Platform API, `oidc_org_handle_claim` in AI Workspace |
+| `org_id` | Organization UUID | `organization` in both `[ai_workspace.auth.claim_mappings]` (AI Workspace) and `[platform_api.auth.claim_mappings]` (Platform API) |
+| `org_name` | Organization display name | `org_name` in both |
+| `org_handle` | Organization slug | `org_handle` in both |
 | `scope` | Space-separated `ap:*` scopes | Validated by the Platform API |
 
-Keep these claim names consistent across three places: the Asgardeo token mapper output, the `oidc_org_*_claim` settings in `config.toml`, and the `*_claim_name` settings in the Platform API's `[auth.idp.claim_mappings]`.
+Keep these claim names consistent across three places: the Asgardeo token mapper output, and the `[ai_workspace.auth.claim_mappings]` and `[platform_api.auth.claim_mappings]` tables. Only the latter two are defined in `config.toml` — the token mapper output is configured in Asgardeo.
