@@ -10,7 +10,7 @@ tags:
   - sqlserver
   - devops
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-26
+last_updated: 2026-07-30
 content_type: "how-to"
 ---
 
@@ -57,6 +57,7 @@ If you are deploying from container images or Helm rather than the distribution 
 ## Step 1 - Create the Database and User
 
 Create an empty database and a dedicated account for the gateway.
+(The schema should be applied by an account with DDL privileges.)
 
 === "PostgreSQL"
 
@@ -66,19 +67,11 @@ Create an empty database and a dedicated account for the gateway.
     psql "host=<db-host> port=5432 dbname=postgres user=<admin-user> sslmode=require"
     ```
 
-    Create the database and role:
+    Create the database and a login for the gateway.
 
     ```sql
     CREATE DATABASE gateway_controller;
     CREATE USER gateway WITH PASSWORD 'your-db-password';
-    GRANT ALL PRIVILEGES ON DATABASE gateway_controller TO gateway;
-    ```
-
-    Grant the role ownership of the schema the tables will live in, so it can read and write them once they exist:
-
-    ```sql
-    \c gateway_controller
-    GRANT ALL ON SCHEMA public TO gateway;
     ```
 
 === "SQL Server"
@@ -89,7 +82,7 @@ Create an empty database and a dedicated account for the gateway.
     sqlcmd -S <db-host>,1433 -U <admin-user> -P '<admin-password>'
     ```
 
-    Create the database, login, and user:
+    Create the database, login, and user.
 
     ```sql
     CREATE DATABASE gateway_controller;
@@ -99,7 +92,6 @@ Create an empty database and a dedicated account for the gateway.
     USE gateway_controller;
     GO
     CREATE USER gateway FOR LOGIN gateway;
-    ALTER ROLE db_owner ADD MEMBER gateway;
     GO
     ```
 
@@ -128,7 +120,7 @@ Run the script for your database against the database you just created.
     `-b` makes `sqlcmd` exit with an error code if any statement in the batch fails.
 
     !!! tip
-        `sqlcmd` v18 and later negotiate an encrypted connection by default and reject certificates they cannot validate. If your server uses a self-signed certificate, add `-C` to trust it, or `-N` together with a properly trusted certificate.
+        `sqlcmd` v18 and later negotiate an encrypted connection by default and reject certificates they cannot validate. For production, use `-N` with a properly trusted certificate so the connection is both encrypted and verified. Only add `-C` if you must connect to a server with a self-signed certificate — it disables certificate validation entirely, so treat it as a controlled, limited-use exception rather than a default troubleshooting flag.
 
 The scripts are idempotent — every object is guarded (`CREATE TABLE IF NOT EXISTS` on PostgreSQL, `IF OBJECT_ID(...) IS NULL` on SQL Server) — so re-running them is safe and creates only what is missing.
 
@@ -158,7 +150,35 @@ Apply the matching supplemental script after Step 2:
 
 Skip this step if you are not running the Event Gateway.
 
-## Step 4 - Verify the Schema
+## Step 4 - Grant Gateway Access
+
+With the tables in place give `gateway` the privileges the controller needs at runtime: `SELECT`, `INSERT`, `UPDATE`, and `DELETE`.
+
+=== "PostgreSQL"
+
+    ```bash
+    psql "host=<db-host> port=5432 dbname=gateway_controller user=<admin-user> sslmode=require"
+    ```
+
+    ```sql
+    GRANT CONNECT ON DATABASE gateway_controller TO gateway;
+    GRANT USAGE ON SCHEMA public TO gateway;
+    GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO gateway;
+    ```
+
+=== "SQL Server"
+
+    ```bash
+    sqlcmd -S <db-host>,1433 -d gateway_controller -U <admin-user> -P '<admin-password>'
+    ```
+
+    ```sql
+    ALTER ROLE db_datareader ADD MEMBER gateway;
+    ALTER ROLE db_datawriter ADD MEMBER gateway;
+    GO
+    ```
+
+## Step 5 - Verify the Schema
 
 Confirm the tables exist before starting the gateway.
 
@@ -189,7 +209,7 @@ secrets                 subscription_plans      subscriptions
 
 If you also applied the Event Gateway script, `websub_apis`, `webbroker_apis`, and `webhook_secrets` are present as well.
 
-## Step 5 - Point the Gateway Controller at the Database
+## Step 6 - Point the Gateway Controller at the Database
 
 With the schema in place, configure the connection in `configs/config.toml`.
 
@@ -204,13 +224,30 @@ With the schema in place, configure the connection in `configs/config.toml`.
     port = 5432
     database = "gateway_controller"
     user = "gateway"
-    password = "your-db-password"
+    password = '{% raw %}{{ env "APIP_GW_CONTROLLER_STORAGE_POSTGRES_PASSWORD" "" }}{% endraw %}'
     sslmode = "require" # disable, require, verify-ca, verify-full
     ```
 
 === "SQL Server"
 
-    SQL Server uses the unified `[controller.storage.database]` block. TLS behavior is controlled by `options` rather than PostgreSQL's `sslmode`.
+    SQL Server uses the unified `[controller.storage.database]` block. TLS behavior is controlled by `options` rather than PostgreSQL's `sslmode`. Two forms are supported — if `dsn` is set, the discrete fields below it are ignored.
+
+    The shipped Compose files use a single `dsn`, so no password is ever written into the file:
+
+    ```toml
+    [controller.storage]
+    type = "sqlserver"
+
+    [controller.storage.database]
+    driver = "sqlserver"
+    dsn = '{% raw %}{{ env "APIP_GW_CONTROLLER_STORAGE_DATABASE_DSN" "" }}{% endraw %}'
+
+    [controller.storage.database.options]
+    encrypt = "true" # disable, false, true, strict
+    trust_server_certificate = "false"
+    ```
+
+    Discrete fields, the same shape as PostgreSQL's, are also supported — useful outside the reference Compose setup, e.g. under Kubernetes/Helm:
 
     ```toml
     [controller.storage]
@@ -222,14 +259,16 @@ With the schema in place, configure the connection in `configs/config.toml`.
     port = 1433
     database = "gateway_controller"
     user = "gateway"
-    password = "your-db-password"
+    password = '{% raw %}{{ env "APIP_GW_CONTROLLER_STORAGE_DATABASE_PASSWORD" "" }}{% endraw %}'
 
     [controller.storage.database.options]
     encrypt = "true" # disable, false, true, strict
     trust_server_certificate = "false"
     ```
 
-Rather than writing the password into `config.toml`, supply it through the interpolation tokens the shipped config already uses, and set the values in `api-platform.env`:
+    Unlike `dsn` and PostgreSQL's fields, these discrete SQL Server fields don't ship with an interpolation token by default — add one following the pattern below rather than writing the password literally.
+
+The {% raw %}`{{ env "..." "" }}`{% endraw %} form is the interpolation token already used in the shipped `config.toml` — it reads the value from an environment variable at load time instead of storing it in the file. Set the actual values in `api-platform.env`:
 
 ```bash
 # api-platform.env
@@ -240,7 +279,7 @@ APIP_GW_CONTROLLER_STORAGE_POSTGRES_USER=gateway
 APIP_GW_CONTROLLER_STORAGE_POSTGRES_PASSWORD=your-db-password
 ```
 
-For SQL Server, the shipped Compose files supply the whole connection string through `APIP_GW_CONTROLLER_STORAGE_DATABASE_DSN`. See [Gateway Configuration and Environment Interpolation](./configuration.md) for how interpolation works, and [Configuring External Storage and Backends](./storage-and-backends.md) for the rest of the storage options.
+For SQL Server, the shipped Compose files supply the whole connection string through `APIP_GW_CONTROLLER_STORAGE_DATABASE_DSN`. See [Gateway Configuration and Environment Interpolation](./configuration.md) for how interpolation works. For the full list of storage configuration options for both databases, refer to the [config template](https://github.com/wso2/api-platform/blob/main/gateway/configs/config-template.toml).
 
 Start the gateway:
 
@@ -263,27 +302,24 @@ kubectl run psql-client --rm -it --restart=Never \
 
 Once the schema exists, follow [Database Configuration](../deployment/production-deployment/database-configuration.md) to wire the chart to the database and inject the password from a Kubernetes secret.
 
+## Redis for Distributed Rate Limiting (Optional)
 
-## Restricting Runtime Privileges
+To enable distributed rate limiting across multiple Gateway Runtime instances, configure the rate limiting policy to use Redis as the backend:
 
-Provisioning is the only step that needs schema-altering rights. Once the tables exist, the account the controller connects with only performs `SELECT`, `INSERT`, `UPDATE`, and `DELETE`. If your security policy calls for it, apply the schema with an administrative account and give the gateway's runtime account DML privileges only.
+```toml
+[policy_configurations.ratelimit_v1]
+algorithm = "fixed-window"
+backend = "redis"
 
-=== "PostgreSQL"
+[policy_configurations.ratelimit_v1.redis]
+host = "redis.example.com"
+port = 6379
+password = '{% raw %}{{ env "APIP_GW_RATELIMIT_REDIS_PASSWORD" "" }}{% endraw %}'
+```
 
-    ```sql
-    GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO gateway;
-    GRANT USAGE ON SCHEMA public TO gateway;
-    ```
+`config.toml` is interpolated the same way everywhere in the file, so the {% raw %}`{{ env "..." "" }}`{% endraw %} token above works here too — see [Gateway Configuration and Environment Interpolation](./configuration.md) rather than writing the password literally.
 
-=== "SQL Server"
-
-    ```sql
-    USE gateway_controller;
-    GO
-    ALTER ROLE db_datareader ADD MEMBER gateway;
-    ALTER ROLE db_datawriter ADD MEMBER gateway;
-    GO
-    ```
+For the full list of Redis configuration options, refer to the [Advanced Rate Limiting documentation](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit).
 
 ## Troubleshooting
 
@@ -292,10 +328,10 @@ Provisioning is the only step that needs schema-altering rights. Once the tables
 | PostgreSQL: `ERROR: relation "artifacts" does not exist` | The schema was never applied, or was applied to a different database | Re-run Step 2 against the database named in `[controller.storage.postgres].database` |
 | SQL Server: `Invalid object name 'dbo.artifacts'` | Same as above | Re-run Step 2 against the database named in `[controller.storage.database].database` |
 | SQL Server: `Msg 1934 ... CREATE INDEX failed ... 'QUOTED_IDENTIFIER'` | The script is from a release before the `SET` options were added | Use the script shipped with your gateway version |
-| `permission denied for table ...` at runtime | The runtime account lacks DML privileges on the provisioned tables | Grant the privileges shown in [Restricting Runtime Privileges](#restricting-runtime-privileges) |
-| Event Gateway fails on `websub_apis` / `webbroker_apis` / `webhook_secrets` | The supplemental Event Gateway script was not applied | Run Step 3 |
+| `permission denied for table ...` at runtime | Step 4 was skipped, or was run before Step 2/3 finished creating the tables it grants access to | Run [Step 4 - Grant Gateway Access](#step-4-grant-gateway-access) |
+| Event Gateway fails on `websub_apis` / `webbroker_apis` / `webhook_secrets` | The supplemental Event Gateway script was not applied | Run Step 3, then re-run Step 4 so `gateway` gets access to the new tables |
 | Controller connects but logs that schema auto-apply was skipped | Expected behavior for external databases | No action needed |
 
 ---
 
-[← Configuration & Interpolation](./configuration.md) &nbsp;|&nbsp; [Storage & Backends →](./storage-and-backends.md)
+[← Configuration & Interpolation](./configuration.md) &nbsp;|&nbsp; [Artifact Templating →](./artifact-templating.md)
