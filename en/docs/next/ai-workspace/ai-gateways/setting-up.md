@@ -193,7 +193,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-rc/wso2apip-ai-gateway-1.2.0-rc.zip && \
+    curl -sLO https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0-rc/wso2apip-ai-gateway-1.2.0-rc.zip && \
     unzip wso2apip-ai-gateway-1.2.0.zip
     ```
 
