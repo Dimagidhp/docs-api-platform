@@ -2,7 +2,7 @@
 language: "en-US"
 early_access: false
 reviews:
-  profile: "chill"
+  profile: "assertive"
   request_changes_workflow: true
   high_level_summary: false
   high_level_summary_in_walkthrough: false
@@ -12,6 +12,14 @@ reviews:
   auto_review:
     enabled: true
     drafts: false
+  tools:
+    languagetool:
+      level: "picky"
+  path_instructions:
+    - path: "en/docs/**/*.md"
+      instructions: >-
+        Apply the WSO2 documentation style rules in .claude/rules/doc-*.md strictly.
+        Report every violation, including low-severity ones.
 chat:
   auto_reply: true
 knowledge_base:
