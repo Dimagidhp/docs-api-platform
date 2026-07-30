@@ -132,17 +132,13 @@ Set up the API key that client applications must provide:
 | Field | Description | Example |
 |-------|-------------|---------|
 | **Authentication Type** | Authentication method | `apiKey` (default) |
-| **API Key Name** | Header or query parameter name | `x-api-key`, `apikey`, `Authorization` |
-| **Key Location** | Where clients send the key | `Header` (recommended) or `Query` |
+| **API Key Name** | Name of the request header that must carry the API key | `x-api-key`, `apikey`, `Authorization` |
 
 **To configure:**
 
-1. Select **Authentication Type**: `apiKey`
-2. Enter **API Key Name** that applications will use
-3. Choose **Key Location**:
-    - **Header** - Sent in HTTP request header (most secure)
-    - **Query** - Sent as URL query parameter (less secure)
-4. Click **Save**
+1. Select **Authentication Type**: `apiKey`.
+2. Enter the **API Key Name** header that applications will use.
+3. Click **Save**.
 
 ---
 
@@ -270,22 +266,22 @@ Configure which AI models are accessible through this provider.
 
 </div>
 
-### Add Models
+### Add and remove models
 
-**To add new models:**
+The **Models** tab displays a chip list of the models available through this provider. Each chip represents one model ID.
 
-1. Click **Add model provider**
-2. Select a provider from the list to import its model catalog
-3. Click **Add**
-4. The models are added and enabled by default
+**To add a model:**
 
-### Enable/Disable Models
+1. Type or paste the model ID into the input field and press <kbd>Enter</kbd>, or select it from the autocomplete list.
+2. The model chip appears in the list.
+3. Click **Save**, then **Deploy to Gateway** to apply the change.
 
-Control which models applications can access:
+**To remove a model:**
 
-- **Toggle switches**: Enable/disable individual models
-- **Effect**: Disabled models are blocked at the gateway
-- Applications attempting to use disabled models will receive an error
+1. Click the **×** on the model chip you want to remove.
+2. Click **Save**, then **Deploy to Gateway** to apply the change.
+
+Models not in the chip list are blocked at the gateway. Applications requesting a removed model receive an error.
 
 ---
 
@@ -301,7 +297,7 @@ Push configuration changes to deployed gateways.
 
 - After updating connection settings
 - After modifying rate limits or guardrails  
-- After enabling/disabling resources or models
+- After adding or removing models
 
 **To redeploy:**
 
