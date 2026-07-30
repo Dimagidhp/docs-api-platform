@@ -34,7 +34,7 @@ The cost is internal — it is never forwarded to the caller.
 |----------|-------|
 | **OpenAI** | All models including o-series reasoning tokens, batch API, and flex/priority service tiers |
 | **Anthropic** | Claude models including prompt caching (read/write tokens), extended thinking, and speed/geo routing |
-| **AWS Bedrock** | Supported Bedrock models, with the model ID extracted from the Bedrock request path |
+| **AWS Bedrock** | Supported Bedrock models; extracts the model ID from the request path |
 | **Google Gemini** | Google AI Studio and Vertex AI, including multi-modal (audio, image), web search grounding, and thinking models |
 | **Mistral** | All Mistral models including audio duration-based billing (Voxtral) |
 
