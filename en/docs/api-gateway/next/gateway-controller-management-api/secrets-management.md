@@ -26,7 +26,7 @@ CRUD operations for Secrets
 
 ```shell
 
-curl -X GET http://localhost:9090/api/management/v0.9/secrets \
+curl -X GET http://localhost:9090/api/management/v1/secrets \
   -u {username}:{password} \
   -H 'Accept: application/json'
 
@@ -54,7 +54,7 @@ Required roles: `admin`
   "count": 5,
   "secrets": [
     {
-      "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+      "apiVersion": "gateway.api-platform.wso2.com/v1",
       "kind": "Secret",
       "metadata": {
         "name": "database-password"
@@ -90,7 +90,7 @@ Required roles: `admin`
 
 ```shell
 
-curl -X POST http://localhost:9090/api/management/v0.9/secrets \
+curl -X POST http://localhost:9090/api/management/v1/secrets \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -105,7 +105,7 @@ The value is encrypted using the primary encryption provider before persistence.
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "Secret",
   "metadata": {
     "name": "database-password"
@@ -139,7 +139,7 @@ Required roles: `admin`
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "Secret",
   "metadata": {
     "name": "database-password"
@@ -191,7 +191,7 @@ Required roles: `admin`
 
 ```shell
 
-curl -X GET http://localhost:9090/api/management/v0.9/secrets/{id} \
+curl -X GET http://localhost:9090/api/management/v1/secrets/{id} \
   -u {username}:{password} \
   -H 'Accept: application/json'
 
@@ -222,7 +222,7 @@ Required roles: `admin`
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "Secret",
   "metadata": {
     "name": "database-password"
@@ -274,7 +274,7 @@ Required roles: `admin`
 
 ```shell
 
-curl -X PUT http://localhost:9090/api/management/v0.9/secrets/{id} \
+curl -X PUT http://localhost:9090/api/management/v1/secrets/{id} \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -290,7 +290,7 @@ to newer keys during updates. Old secrets remain readable via the provider chain
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "Secret",
   "metadata": {
     "name": "database-password"
@@ -325,7 +325,7 @@ Required roles: `admin`
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "Secret",
   "metadata": {
     "name": "database-password"
@@ -377,7 +377,7 @@ Required roles: `admin`
 
 ```shell
 
-curl -X DELETE http://localhost:9090/api/management/v0.9/secrets/{id} \
+curl -X DELETE http://localhost:9090/api/management/v1/secrets/{id} \
   -u {username}:{password} \
   -H 'Accept: application/json'
 
