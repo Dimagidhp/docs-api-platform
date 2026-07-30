@@ -106,6 +106,15 @@ curl -i http://localhost:8080/reading-list/v1.0/books
 curl -ik https://localhost:8443/reading-list/v1.0/books
 ```
 
+!!! note "Running on Windows"
+    The commands above assume a Linux/macOS shell. On Windows, run the one-time setup with the PowerShell script instead — it takes the same flags and provisions the same files:
+
+    ```powershell
+    powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+    ```
+
+    Then set the admin credentials with `$env:ADMIN_USERNAME='admin'` and `$env:ADMIN_PASSWORD='<the password setup.ps1 printed>'` in place of the `export` lines.
+
 !!! tip "Customizing configuration"
     `setup.sh` writes `api-platform.env`, which is loaded into the containers via Docker Compose `env_file`. To change the storage backend, connect to a control plane, or tune other settings, edit that file (or the `config.toml` interpolation tokens directly). See [Gateway Configuration and Environment Interpolation](./setup/configuration.md).
 

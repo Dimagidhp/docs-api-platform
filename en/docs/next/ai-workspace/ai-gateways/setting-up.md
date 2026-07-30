@@ -105,6 +105,13 @@ The Get Started section provides setup instructions for multiple deployment opti
     cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
     ```
 
+    On Windows, use the PowerShell setup script instead — it takes the same flags and provisions the same files:
+
+    ```powershell
+    cd wso2apip-ai-gateway-1.2.0-beta
+    powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+    ```
+
     **Step 3: Configure the Gateway**
 
     Append the control plane host and your registration token to `api-platform.env`:
@@ -161,6 +168,13 @@ The Get Started section provides setup instructions for multiple deployment opti
     cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
     ```
 
+    On Windows, use the PowerShell setup script instead — it takes the same flags and provisions the same files:
+
+    ```powershell
+    cd wso2apip-ai-gateway-1.2.0-beta
+    powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+    ```
+
     **Step 3: Configure the Gateway**
 
     Append the control plane host and your registration token to `api-platform.env`:
@@ -203,6 +217,13 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     ```bash
     cd wso2apip-ai-gateway-1.2.0-beta && ./scripts/setup.sh
+    ```
+
+    On Windows, use the PowerShell setup script instead — it takes the same flags and provisions the same files:
+
+    ```powershell
+    cd wso2apip-ai-gateway-1.2.0-beta
+    powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
     ```
 
     **Step 3: Configure the Gateway**
