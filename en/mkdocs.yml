@@ -543,6 +543,7 @@ nav:
         - Overview: ai-gateway/next/overview.md
         - Setup:
             - Configuration & Interpolation: ai-gateway/next/setup/configuration.md
+            - Setting Up the Database: ai-gateway/next/setup/database-setup.md
         - LLM Proxy:
             - Quick Start Guide: ai-gateway/next/llm-proxy/quick-start-guide.md
             - LLM Provider Templates: ai-gateway/next/llm-proxy/llm-templates.md
