@@ -15,7 +15,7 @@
 
 ## Emphasis and lists
 
-- **Bold:** UI element names and run-in headings, including the lead-in word of a notice. Not for emphasis in body text.
+- **Bold:** every UI element name a reader interacts with — panes, buttons, menu items, fields — plus run-in headings and the lead-in word of a notice. An unbolded UI element name is an error. Not for emphasis in body text.
 - *Italics:* two uses only — first mention of a term you define immediately after (not bold, not quotation marks), and words-as-words ("Use the word *and* instead").
 - Numbered lists when order matters, bulleted otherwise, description lists for pairs of related data.
 
