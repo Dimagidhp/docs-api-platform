@@ -26,6 +26,7 @@ The **Organization** tab in the Developer Portal's Settings page manages the det
 |---|---|
 | **Name** | The display name shown throughout the portal UI |
 | **Handle** | The URL-safe identifier used in every portal URL (`/<orgHandle>/views/<viewName>`). Read-only — it can't be changed after the organization is created |
+| **Developer portal mode** | Controls which catalogs the portal exposes — **APIs and MCP servers** (default), **APIs only**, or **MCP servers only**. Pages for a hidden type return 404. See [Developer Portal Mode](../developer-portal-mode.md) |
 | **Business owner** | Contact name for the organization owner |
 | **Business owner contact** | The owner's phone number or other contact string |
 | **Business owner email** | The owner's email address |
