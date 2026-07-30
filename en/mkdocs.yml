@@ -686,6 +686,7 @@ nav:
     - AI Agent Discovery: next/developer-portal/discover-apis/ai-agent-discovery.md
     - Discover APIs:
         - Search APIs: next/developer-portal/discover-apis/api-search.md
+        - API Overview: next/developer-portal/discover-apis/api-overview.md
         - Documentations: next/developer-portal/discover-apis/api-documentations.md
     - API Workflows:
         - Consuming API Workflows: next/developer-portal/api-workflows/consuming-api-workflows.md

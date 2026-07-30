@@ -26,7 +26,7 @@ Each workflow is listed with its name and a short description that explains the 
 - **Step-by-step instructions** — the ordered sequence of API calls, inputs, and expected outputs
 - **Arazzo specification** — the machine readable workflow definition, available to download or copy
 
-![Specialist Treatment Booking Workflow detail page with flow diagram, description, and source API links](../../../assets/img/devportal/view-api-flow.png)
+![Specialist Treatment Booking Workflow detail page showing the workflow description, a flow diagram with a START node and validatePatient step, version and Arazzo badges, and the source Healthcare API OpenAPI link](../../../assets/img/standalone-devportal/api-workflows/consuming-api-workflows/workflow-overview.png)
 
 ## How AI Agents Discover Workflows
 
