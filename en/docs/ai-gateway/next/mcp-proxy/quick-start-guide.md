@@ -72,6 +72,24 @@ docker compose -p ai-gateway up -d
 curl http://localhost:9094/api/admin/v1/health
 ```
 
+!!! note "Running on Windows"
+    The commands above assume a Linux/macOS shell. On Windows, run the one-time setup with the PowerShell script instead — it takes the same flags and provisions the same files:
+
+    ```powershell
+    powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+    ```
+
+    Then set the admin credentials with `$env:ADMIN_USERNAME='admin'` and `$env:ADMIN_PASSWORD='<the password setup.ps1 printed>'` in place of the `export` lines.
+
+    The remaining `curl` commands on this page pipe their YAML payload in through a shell heredoc (`--data-binary @- <<'EOF'`), which PowerShell does not support. Either run them from Git Bash or WSL, or save the YAML between `EOF` markers to a file and post that file explicitly — note the `.exe`, since `curl` is an alias for `Invoke-WebRequest` in Windows PowerShell:
+
+    ```powershell
+    curl.exe -X POST http://localhost:9090/api/management/v1/mcp-proxies `
+      -H "Content-Type: application/yaml" `
+      -u "${env:ADMIN_USERNAME}:${env:ADMIN_PASSWORD}" `
+      --data-binary "@mcp-proxy.yaml"
+    ```
+
 ## Deploy an MCP proxy configuration
 
 Start the sample MCP server

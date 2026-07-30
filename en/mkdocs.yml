@@ -799,6 +799,7 @@ nav:
             - Writing an AI Policy: next/ai-workspace/policies/writing-an-ai-policy.md
             - Building the Gateway with AI Policies: next/ai-workspace/policies/build-gateway-with-ai-policies.md
             - Apply AI Policies to Proxies: next/ai-workspace/policies/apply-ai-policies-to-proxies.md
+    - Insights: next/ai-workspace/insights.md
   - Analytics:
     - Overview: analytics/overview.md
   - Monetization:
