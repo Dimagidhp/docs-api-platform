@@ -133,7 +133,6 @@ Set up the API key that client applications must provide:
 |-------|-------------|---------|
 | **Authentication Type** | Authentication method | `apiKey` (default) |
 | **API Key Name** | Name of the request header that must carry the API key | `x-api-key`, `apikey`, `Authorization` |
-| **Key Location** | Currently, `header` is the only supported option. | — |
 
 **To configure:**
 
@@ -273,8 +272,8 @@ The **Models** tab displays a chip list of the models available through this pro
 
 **To add a model:**
 
-1. Click **Add model provider**, select a provider from the list, and click **Add** to import its model catalog.
-2. Type or paste individual model IDs into the input field and press <kbd>Enter</kbd> to add them as chips.
+1. Type or paste the model ID into the input field and press <kbd>Enter</kbd>, or select it from the autocomplete list.
+2. The model chip appears in the list.
 3. Click **Save**, then **Deploy to Gateway** to apply the change.
 
 **To remove a model:**
