@@ -93,8 +93,8 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-rc/wso2apip-api-gateway-1.2.0-rc.zip && \
-    unzip wso2apip-api-gateway-1.2.0.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-rc/wso2apip-ai-gateway-1.2.0-rc.zip && \
+    unzip wso2apip-ai-gateway-1.2.0.zip
     ```
 
     **Step 2: Set up the Gateway**
@@ -102,7 +102,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key or certificate is missing):
 
     ```bash
-    cd wso2apip-api-gateway-1.2.0-rc && ./scripts/setup.sh
+    cd wso2apip-ai-gateway-1.2.0 && ./scripts/setup.sh
     ```
 
     **Step 3: Configure the Gateway**
@@ -149,8 +149,8 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-rc/wso2apip-api-gateway-1.2.0-rc.zip && \
-    unzip wso2apip-api-gateway-1.2.0.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-rc/wso2apip-ai-gateway-1.2.0-rc.zip && \
+    unzip wso2apip-ai-gateway-1.2.0.zip
     ```
 
     **Step 2: Set up the Gateway**
@@ -158,7 +158,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key or certificate is missing):
 
     ```bash
-    cd wso2apip-api-gateway-1.2.0 && ./scripts/setup.sh
+    cd wso2apip-ai-gateway-1.2.0 && ./scripts/setup.sh
     ```
 
     **Step 3: Configure the Gateway**
@@ -193,8 +193,8 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run this command in your terminal to download the gateway:
 
     ```bash
-    curl -sLO https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-rc/wso2apip-api-gateway-1.2.0-rc.zip && \
-    unzip wso2apip-api-gateway-1.2.0.zip
+    curl -sLO https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0-rc/wso2apip-ai-gateway-1.2.0-rc.zip && \
+    unzip wso2apip-ai-gateway-1.2.0.zip
     ```
 
     **Step 2: Set up the Gateway**
@@ -202,7 +202,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key or certificate is missing):
 
     ```bash
-    cd wso2apip-api-gateway-1.2.0 && ./scripts/setup.sh
+    cd wso2apip-ai-gateway-1.2.0 && ./scripts/setup.sh
     ```
 
     **Step 3: Configure the Gateway**
