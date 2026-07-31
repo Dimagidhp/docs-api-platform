@@ -12,9 +12,9 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Manage Subscriptions
+# Manage subscriptions
 
-A subscription grants you access to one API or MCP server under a chosen plan, which sets your rate limits and quota. It also issues a **subscription token** — a credential you send with every call so the gateway knows which plan to enforce.
+A subscription grants you access to one API or MCP server under a chosen plan, which sets your rate limits and quota. It also issues a **subscription token**—a credential you send with every call so the gateway knows which plan to enforce.
 
 Subscriptions belong to you, not to an application. You don't need to create an application first, and the same subscription works from anywhere you call the API.
 
@@ -23,16 +23,16 @@ Subscriptions belong to you, not to an application. You don't need to create an 
 1. Sign in to the API Portal & MCP Hub.
 2. Click **APIs** in the sidebar and open the API you want.
 3. Click **Subscribe** in the header, or scroll to the **Subscription plans** panel.
-4. Click **Subscribe** on the plan you want.
+4. Select **Subscribe** for the plan you want.
 
-The subscription is created the moment you click — there's no confirmation step. A dialog then shows your subscription token.
+The subscription is created the moment you click—there's no confirmation step. A dialog then shows your subscription token.
 
 !!! warning
-    Copy the token before closing the dialog. You can retrieve it again later from the manage dialog, but nothing on screen tells you that at the time.
+    Copy the token before closing the dialog. You can retrieve it again later from **Subscriptions** in the sidebar, but nothing on screen tells you that at the time.
 
-You hold at most one subscription per API. Once you have one, the other plan cards relabel their buttons to **Switch plan** — see [Switch to a different plan](#switch-to-a-different-plan).
+You hold at most one subscription per API. Once you have one, the other plan cards relabel their buttons to **Switch plan**—see [Switch to a different plan](#switch-to-a-different-plan).
 
-## Use the Subscription Token
+## Use the subscription token
 
 Send the token in the header the API's specification names, commonly `Subscription-Key`:
 
@@ -43,7 +43,7 @@ curl -X GET "https://api.example.com/orders/v1/orders" \
 
 The subscription token is not a substitute for authentication. Most APIs also expect an API key or an OAuth2 access token, and you send both headers together. See [Consume an API](consume-an-api/overview.md) for which credentials an API expects and how to tell.
 
-## View and Manage a Subscription
+## View and manage a subscription
 
 Every subscription you hold is listed under **Subscriptions** in the sidebar, in a table showing the API, version, plan, and status. Click the **Manage subscription** button on a row to open the manage dialog. The same dialog opens from **View subscription** on the plan card on the API's overview page.
 
@@ -54,7 +54,7 @@ From the dialog you can:
 - **Suspend** the subscription. It goes inactive and the button becomes **Resume**. Use this to stop traffic without giving up the subscription or its token.
 - **Unsubscribe**, after a confirmation.
 
-## Switch to a Different Plan
+## Switch to a different plan
 
 To move to a different plan on an API you're already subscribed to:
 
@@ -64,7 +64,7 @@ To move to a different plan on an API you're already subscribed to:
 
 Your subscription token stays the same, so nothing you've already configured breaks. Only the rate limits change.
 
-## Cancel a Subscription
+## Cancel a subscription
 
 1. Go to **Subscriptions** in the sidebar.
 2. Click **Manage subscription** on the row you want to cancel.
@@ -72,13 +72,13 @@ Your subscription token stays the same, so nothing you've already configured bre
 
 Cancelling invalidates the subscription token. Anything calling the API with it stops working. You can subscribe again at any time, and you'll get a new token.
 
-## APIs Without Plans
+## APIs without plans
 
-Not every API has subscription plans. When an API doesn't, its overview page shows no **Subscription plans** panel and no **Subscribe** button, and there's nothing to subscribe to — call it with whatever authentication its specification requires.
+Not every API has subscription plans. When an API doesn't, its overview page shows no **Subscription plans** panel and no **Subscribe** button, and there's nothing to subscribe to—call it with whatever authentication its specification requires.
 
 To try an API before wiring it into your code, use the **Try It** console on the [documentation page](discover-apis/api-documentations.md) rather than looking for a subscription.
 
-## Subscription Plans
+## Subscription plans
 
 Plans set how much of an API you can consume. The API publisher decides which plans an API offers, and each plan's rate limit appears on its card. For how admins define them, see [Subscription Plans](admin-settings/subscription-plans.md).
 

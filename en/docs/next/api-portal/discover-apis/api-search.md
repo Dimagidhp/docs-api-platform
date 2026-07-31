@@ -16,11 +16,13 @@ content_type: "how-to"
 
 The API listing page is where you browse everything published to the API Portal & MCP Hub and narrow it down to the API you need.
 
-## Browse the API Listing
+## Browse the API listing
 
 Click **APIs** in the sidebar. The listing page shows a card for every published API, above a count of how many are listed.
 
-![API Portal API listing page showing a search bar and four sample API cards — Catalog API, Countries GraphQL API, Navigation API, and Reading List API — each with type badges, tags, plan count, and a Subscribe button](../../../assets/img/standalone-devportal/discover-apis/api-search/api-listing-page.png)
+The listing shows one card per API, with the search bar above it:
+
+![API listing page with a search bar and four API cards, each showing type badges, tags, plan count, and a Subscribe button](../../../assets/img/standalone-devportal/discover-apis/api-search/api-listing-page.png)
 
 Each card shows:
 
@@ -47,7 +49,7 @@ The page reloads with your term applied as a `query` parameter, and the results 
 
 ![Search bar with "Naviga" query returning a single matching APIs count of 1 and the Navigation API WebSocket card](../../../assets/img/standalone-devportal/discover-apis/api-search/search-result.png)
 
-### What a Search Term Matches
+### What a search term matches
 
 A search takes one free-text term rather than a set of separate fields, and compares it against everything the portal holds about an API:
 

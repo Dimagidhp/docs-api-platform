@@ -114,7 +114,7 @@ Required scopes (the token must carry at least one of): `dp:label:create`, `dp:l
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-label-responseschema">Response Schema</h3>
+<h3 id="create-a-label-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -217,7 +217,7 @@ Required scopes (the token must carry at least one of): `dp:label:read`, `dp:lab
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-labels-responseschema">Response Schema</h3>
+<h3 id="list-labels-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -422,7 +422,7 @@ Required scopes (the token must carry at least one of): `dp:label:update`, `dp:l
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-label-responseschema">Response Schema</h3>
+<h3 id="update-a-label-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

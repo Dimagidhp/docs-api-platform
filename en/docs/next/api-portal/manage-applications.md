@@ -12,16 +12,16 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Manage Applications
+# Manage applications
 
-An application is a logical stand-in for a physical one — a mobile app, web app, device, or CLI tool. In the API Portal & MCP Hub it does one job: it holds the OAuth2 client IDs, created in a key manager, that you use to call OAuth2-secured APIs.
+An application is a logical stand-in for a physical one—a mobile app, web app, device, or CLI tool. In the API Portal & MCP Hub it does one job: it holds the OAuth2 client IDs, created in a key manager, that you use to call OAuth2-secured APIs.
 
-Applications belong to you. Each developer sees only their own, and you can keep as many as you need — a `MyApp-Production` application and a `MyApp-Staging` application, say, linked to different OAuth applications in the key manager.
+Applications belong to you. Each developer sees only their own, and you can keep as many as you need—a `MyApp-Production` application and a `MyApp-Staging` application, say, linked to different OAuth applications in the key manager.
 
 !!! note
-    Applications are **not** required for subscriptions or API keys. [Subscriptions](manage-subscriptions.md) are made directly to an API, and [API keys](manage-api-keys.md) are bound to an API. Applications matter only for OAuth2-secured APIs. You can associate an existing API key with an application afterwards, but that's for usage analytics and changes nothing about the key.
+    Applications are **not** required for subscriptions or API keys. [Subscriptions](manage-subscriptions.md) are made directly to an API, and [API keys](manage-api-keys.md) are bound to an API. Applications matter only for OAuth2-secured APIs. You can associate an existing API key with an application afterward, but that's for usage analytics and changes nothing about the key.
 
-## Create an Application
+## Create an application
 
 1. Sign in to the API Portal & MCP Hub.
 2. Click **Applications** in the sidebar.
@@ -30,9 +30,9 @@ Applications belong to you. Each developer sees only their own, and you can keep
 5. Optionally add a **Description**, up to 256 characters.
 6. Click **Create**.
 
-The new application appears in the list. The portal derives a URL handle from the name — lowercased, with spaces and underscores turned into hyphens — and that handle has to be unique in your organization, so creating a second application with the same name fails.
+The new application appears in the list. The portal derives a URL handle from the name—lowercased, with spaces and underscores turned into hyphens—and that handle has to be unique in your organization, so creating a second application with the same name fails.
 
-## Open an Application
+## Open an application
 
 Click an application's card. The detail page is one scrolling page with three sections:
 
@@ -42,7 +42,7 @@ Click an application's card. The detail page is one scrolling page with three se
 | **Manage Keys** | Per-environment OAuth2 credentials, one card per key manager, with **Credentials**, **Generate Token**, and **cURL** tabs |
 | **API keys** | Existing API keys associated with this application, for analytics |
 
-## Edit the Name or Description
+## Edit the name or description
 
 Both fields edit in place on the detail page:
 
@@ -50,11 +50,11 @@ Both fields edit in place on the detail page:
 2. Type your change.
 3. Click the checkmark to save, or the cross to cancel.
 
-## Link OAuth2 Credentials
+## Link OAuth2 credentials
 
-The **Manage Keys** section is where you paste a client ID from your key manager and generate access tokens against it. That's the whole reason applications exist — see [Consume an API Secured with OAuth2](consume-an-api/oauth2.md) for the full sequence.
+The **Manage Keys** section is where you paste a client ID from your key manager and generate access tokens against it. That's the whole reason applications exist—see [Consume an API Secured with OAuth2](consume-an-api/oauth2.md) for the full sequence.
 
-## Associate an API Key
+## Associate an API key
 
 Associating a key with an application attributes its usage in analytics. It has no effect on whether the key works, and no effect on what the application can do.
 
@@ -65,7 +65,7 @@ Associating a key with an application attributes its usage in analytics. It has 
 
 The key appears in the table with its name, API, and status. Click **Remove** on a row to drop the association; the key itself keeps working. See [Manage API Keys](manage-api-keys.md) for generating keys in the first place.
 
-## Delete an Application
+## Delete an application
 
 1. Go to **Applications** in the sidebar.
 2. Click the trash icon on the application's card.
@@ -74,7 +74,7 @@ The key appears in the table with its name, API, and status. Click **Remove** on
 Deleting is irreversible, and it's narrower than the confirmation dialog suggests. What it actually does:
 
 - **Removes the client ID mappings** the portal held for that application. Any of your APIs that relied on tokens from those credentials stop working once the tokens expire.
-- **Dissociates any API keys** that were linked to it. The keys themselves survive and keep working — only the analytics association goes.
+- **Dissociates any API keys** that were linked to it. The keys themselves survive and keep working—only the analytics association goes.
 - **Leaves your subscriptions untouched.** Subscriptions are held against the API, not the application, so they're unaffected either way.
 - **Doesn't contact the key manager.** The OAuth application there stays exactly as it was, and access tokens already issued stay valid until they expire. To invalidate those, use the key manager's own console or revocation endpoint.
 

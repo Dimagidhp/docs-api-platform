@@ -39,7 +39,7 @@ Retrieves a single organization theme asset (CSS, image, etc.) by `fileType` and
 |fileType|query|string|true|Organization content file type, such as style, image, text, template, or partial.|
 |fileName|query|string|true|Stored organization content file name.|
 |filePath|query|string|false|Optional relative content path used together with `fileType` and `fileName`.|
-|orgId|query|string|false|DEPRECATED and ignored. Accepted only so existing callers (the portal's own style-URL rewrite appends it) are not rejected. The organization is always this instance's own — from the session when there is one, otherwise from `organization.handle` configuration. It was previously honoured on this unauthenticated endpoint, which made it a selector for any organization's branding in a shared database.|
+|orgId|query|string|false|Deprecated and ignored. Accepted only so existing callers (the portal's own style-URL rewrite appends it) are not rejected. The organization is always this instance's own—from the session when there is one, otherwise from `organization.handle` configuration. It was previously honoured on this unauthenticated endpoint, which made it a selector for any organization's branding in a shared database.|
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
@@ -95,7 +95,7 @@ Retrieves a single organization theme asset (CSS, image, etc.) by `fileType` and
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-a-theme-asset-responseschema">Response Schema</h3>
+<h3 id="get-a-theme-asset-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -115,9 +115,8 @@ Retrieves a single organization theme asset (CSS, image, etc.) by `fileType` and
 
 curl -X POST https://localhost:9543/api/v0.9/views/{viewId}/apply-theme \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'file=string'
+  -F 'file=@theme.zip'
 
 ```
 
@@ -185,7 +184,7 @@ Required scopes (the token must carry at least one of): `dp:organization_content
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="apply-a-theme-responseschema">Response Schema</h3>
+<h3 id="apply-a-theme-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

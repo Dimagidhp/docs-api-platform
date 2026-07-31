@@ -26,16 +26,15 @@ content_type: "reference"
 
 curl -X POST https://localhost:9543/api/v0.9/apis \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'definition=string' \
-  -F 'artifact=string' \
+  -F 'definition=@definition.yaml' \
+  -F 'artifact=@artifact.zip' \
   -F 'metadata={"name":"Weather API","version":"v1","description":"Weather forecast API","type":"REST","agentVisibility":"VISIBLE", "status":"PUBLISHED","tags":["weather"],"labels":["default"],"endPoints":{ "productionURL":"https://api.example.com/weather", "sandboxURL":"https://sandbox.example.com/weather"},"subscriptionPlans":[{"id":"Gold"}]}'
 
 ```
 
-Creates API metadata from either a full API artifact ZIP, an API metadata YAML file (`api.yaml` / `metadata.yaml` / `mcp.yaml`), or a `metadata` JSON string. An API definition file is required unless supplied by the artifact ZIP. The YAML `spec` block accepts: `displayName`, `version`, `description`, `type`, `status`, `agentVisibility`, `tags`, `labels`, `referenceId`, `endpoints` (sandboxUrl, productionUrl), `businessInformation` (owners), and `subscriptionPlans`. The service also stores labels, subscription plan mappings, image metadata, and schema definitions for GraphQL APIs when provided. Via the JSON `metadata` field, `type` is required — an omitted type is rejected with `400` (via YAML, an omitted `spec.type` defaults to `REST`). MCP servers must be created via `POST /api/v0.9/mcp-servers` instead — a request whose resolved `type` is `MCP` is rejected with `400`.
-`subscriptionPlans` links existing org-level plans to this API by name — it does not create plans. In YAML it is a string array (`["Gold", "Silver"]`). In the JSON `metadata` field it is an object array where only `id` is used (`[{"id":"Gold"}]`); extra fields such as `planId`, `displayName`, or `requestCount` are ignored.
+Creates API metadata from either a full API artifact ZIP, an API metadata YAML file (`api.yaml` / `metadata.yaml` / `mcp.yaml`), or a `metadata` JSON string. An API definition file is required unless supplied by the artifact ZIP. The YAML `spec` block accepts: `displayName`, `version`, `description`, `type`, `status`, `agentVisibility`, `tags`, `labels`, `referenceId`, `endpoints` (sandboxUrl, productionUrl), `businessInformation` (owners), and `subscriptionPlans`. The service also stores labels, subscription plan mappings, image metadata, and schema definitions for GraphQL APIs when provided. Via the JSON `metadata` field, `type` is required—an omitted type is rejected with `400` (via YAML, an omitted `spec.type` defaults to `REST`). MCP servers must be created via `POST /api/v0.9/mcp-servers` instead—a request whose resolved `type` is `MCP` is rejected with `400`.
+`subscriptionPlans` links existing org-level plans to this API by name—it does not create plans. In YAML it is a string array (`["Gold", "Silver"]`). In the JSON `metadata` field it is an object array where only `id` is used (`[{"id":"Gold"}]`); extra fields such as `planId`, `displayName`, or `requestCount` are ignored.
 
 ### Authentication
 
@@ -53,7 +52,27 @@ Required scopes (the token must carry at least one of): `dp:api:create`, `dp:api
 |body|body|object|true|API metadata upload. Send either `artifact`, or `metadata` with `definition`. For a GraphQL API the `definition` field carries the SDL schema. (MCP servers are created via `/mcp-servers` with the dedicated `McpServerMultipartBody`, not this body.)|
 |» definition|body|string(binary)|false|API definition file. For REST/SOAP/etc. this is the OpenAPI/WSDL/AsyncAPI contract; for a GraphQL API it is the SDL schema.|
 |» artifact|body|string(binary)|false|Full API ZIP artifact containing metadata and definition files.|
-|» metadata|body|string|false|API metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document with `kind`, `metadata.name`, and a `spec` block; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the API's stored handle; when the API is created from a YAML artifact instead, the handle is always taken from `metadata.name`.|
+|» metadata|body|string|false|API metadata. Supply it in either of two forms:|
+
+#### Detailed descriptions
+
+**» metadata**: API metadata. Supply it in either of two forms:
+
+- A JSON string field.
+- An uploaded YAML or JSON file—a Kubernetes-style document with `kind`,
+  `metadata.name`, and a `spec` block. Accepted file names are
+  `metadata.yaml`, `.yml`, `.json`, `api.yaml`, or `mcp.yaml`.
+
+As a JSON string, these top-level fields are read: `name`, `version`,
+`description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`,
+`labels`, `owners`, `endPoints` (`productionURL`, `sandboxURL`), and
+`subscriptionPlans`.
+
+`subscriptionPlans` is an array of `{ id }` objects. Only `id` is read, and the
+plan must already exist in the organization.
+
+The stored handle comes from `id`. When the API is created from a YAML artifact
+instead, the handle always comes from `metadata.name`.
 
 > Example responses
 >
@@ -144,7 +163,7 @@ Required scopes (the token must carry at least one of): `dp:api:create`, `dp:api
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-api-metadata-responseschema">Response Schema</h3>
+<h3 id="create-api-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -174,7 +193,7 @@ curl -X GET https://localhost:9543/api/v0.9/apis \
 
 ```
 
-Lists API metadata for an organization. The service supports exact filters by API name, version, and tags, free-text search with `query`, and view filtering. Unknown query parameters are rejected. MCP-typed records are never returned here — use `GET /api/v0.9/mcp-servers`.
+Lists API metadata for an organization. The service supports exact filters by API name, version, and tags, free-text search with `query`, and view filtering. Unknown query parameters are rejected. MCP-typed records are never returned here—use `GET /api/v0.9/mcp-servers`.
 
 ### Authentication
 
@@ -265,7 +284,7 @@ Required scopes (the token must carry at least one of): `dp:api:read`, `dp:api:m
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-api-metadata-responseschema">Response Schema</h3>
+<h3 id="list-api-metadata-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -277,15 +296,15 @@ Status Code **200**
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|»» *anonymous*|[ApiInfoResponse](schemas.md#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key) — this schema exists only to share the field set between the two via `allOf`.|
+|»» *anonymous*|[ApiInfoResponse](schemas.md#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key)—this schema exists only to share the field set between the two via `allOf`.|
 |»»» name|string|false|none|none|
 |»»» title|string¦null|false|none|none|
 |»»» remotes|[object]|false|none|none|
 |»»» version|string|false|none|none|
 |»»» status|string|false|none|API lifecycle status.|
 |»»» description|string|false|none|none|
-|»»» type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE) — distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
-|»»» referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId` — the create response echoes the parsed YAML back.|
+|»»» type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE)—distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
+|»»» referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId`—the create response echoes the parsed YAML back.|
 |»»» agentVisibility|string|false|none|none|
 |»»» addedLabels|[string]|false|none|none|
 |»»» removedLabels|[string]|false|none|none|
@@ -305,8 +324,8 @@ Status Code **200**
 |---|---|---|---|---|
 |»» *anonymous*|object|false|none|none|
 |»»» id|string|false|none|The API's handle (unique per org). Not the internal database uuid.|
-|»»» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API — e.g. MCP servers published via the registry.|
-|»»» dataSource|string¦null|false|none|Indicates which content matched the search term: `METADATA` if the match was in the API's own metadata, or a content type (e.g. a value from the API Content `type` field) if the match was inside an uploaded content file. Only computed by getAllApiMetadataForOrganization when both the `query` search parameter is supplied and the database is PostgreSQL — absent on SQLite (the dev default) and absent from every other operation (get/create/update single API).|
+|»»» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API—e.g. MCP servers published via the registry.|
+|»»» dataSource|string¦null|false|none|Indicates which content matched the search term: `METADATA` if the match was in the API's own metadata, or a content type (e.g. a value from the API Content `type` field) if the match was inside an uploaded content file. Only computed by getAllApiMetadataForOrganization when both the `query` search parameter is supplied and the database is PostgreSQL—absent on SQLite (the dev default) and absent from every other operation (get/create/update single API).|
 |»»» planId|string|false|none|none|
 |»»» endPoints|[ApiEndpointsResponse](schemas.md#schemaapiendpointsresponse)|false|none|none|
 |»»»» sandboxURL|string|false|none|none|
@@ -317,7 +336,7 @@ Status Code **200**
 |»»»» description|string|false|none|none|
 |»»»» limits|[object]|false|none|Rate/quota limits enforced for this plan. Empty when the plan is unlimited.|
 |»»»»» limitType|string|false|none|none|
-|»»»»» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries — the `limits` array is empty.|
+|»»»»» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries—the `limits` array is empty.|
 
 *oneOf*
 
@@ -414,7 +433,7 @@ Required scopes (the token must carry at least one of): `dp:api:read`, `dp:api:m
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -492,7 +511,7 @@ Required scopes (the token must carry at least one of): `dp:api:read`, `dp:api:m
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-api-metadata-responseschema">Response Schema</h3>
+<h3 id="get-api-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -512,15 +531,14 @@ Required scopes (the token must carry at least one of): `dp:api:read`, `dp:api:m
 
 curl -X PUT https://localhost:9543/api/v0.9/apis/{apiId} \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'definition=string' \
-  -F 'artifact=string' \
+  -F 'definition=@definition.yaml' \
+  -F 'artifact=@artifact.zip' \
   -F 'metadata={"name":"Weather API","version":"v1","description":"Weather forecast API","type":"REST","agentVisibility":"VISIBLE", "status":"PUBLISHED","tags":["weather"],"labels":["default"],"endPoints":{ "productionURL":"https://api.example.com/weather", "sandboxURL":"https://sandbox.example.com/weather"},"subscriptionPlans":[{"id":"Gold"}]}'
 
 ```
 
-Updates API metadata and its stored definition. Accepts the same YAML spec fields and `metadata` JSON format as the create operation. The update flow can also adjust label mappings, subscription plan mappings, schema definitions, and image metadata. Status changes to unpublished are rejected when active subscriptions exist. `type` is required (see the create operation) and is immutable — it must match the API's existing type; a different value is rejected with `409`.
+Updates API metadata and its stored definition. Accepts the same YAML spec fields and `metadata` JSON format as the create operation. The update flow can also adjust label mappings, subscription plan mappings, schema definitions, and image metadata. Status changes to unpublished are rejected when active subscriptions exist. `type` is required (see the create operation) and is immutable—it must match the API's existing type; a different value is rejected with `409`.
 
 ### Authentication
 
@@ -538,8 +556,28 @@ Required scopes (the token must carry at least one of): `dp:api:update`, `dp:api
 |body|body|object|true|API metadata upload. Send either `artifact`, or `metadata` with `definition`. For a GraphQL API the `definition` field carries the SDL schema. (MCP servers are created via `/mcp-servers` with the dedicated `McpServerMultipartBody`, not this body.)|
 |» definition|body|string(binary)|false|API definition file. For REST/SOAP/etc. this is the OpenAPI/WSDL/AsyncAPI contract; for a GraphQL API it is the SDL schema.|
 |» artifact|body|string(binary)|false|Full API ZIP artifact containing metadata and definition files.|
-|» metadata|body|string|false|API metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document with `kind`, `metadata.name`, and a `spec` block; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the API's stored handle; when the API is created from a YAML artifact instead, the handle is always taken from `metadata.name`.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
+|» metadata|body|string|false|API metadata. Supply it in either of two forms:|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+
+#### Detailed descriptions
+
+**» metadata**: API metadata. Supply it in either of two forms:
+
+- A JSON string field.
+- An uploaded YAML or JSON file—a Kubernetes-style document with `kind`,
+  `metadata.name`, and a `spec` block. Accepted file names are
+  `metadata.yaml`, `.yml`, `.json`, `api.yaml`, or `mcp.yaml`.
+
+As a JSON string, these top-level fields are read: `name`, `version`,
+`description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`,
+`labels`, `owners`, `endPoints` (`productionURL`, `sandboxURL`), and
+`subscriptionPlans`.
+
+`subscriptionPlans` is an array of `{ id }` objects. Only `id` is read, and the
+plan must already exist in the organization.
+
+The stored handle comes from `id`. When the API is created from a YAML artifact
+instead, the handle always comes from `metadata.name`.
 
 > Example responses
 >
@@ -632,7 +670,7 @@ Required scopes (the token must carry at least one of): `dp:api:update`, `dp:api
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-api-metadata-responseschema">Response Schema</h3>
+<h3 id="update-api-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -671,7 +709,7 @@ Required scopes (the token must carry at least one of): `dp:api:delete`, `dp:api
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -737,7 +775,7 @@ Required scopes (the token must carry at least one of): `dp:api:delete`, `dp:api
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="delete-api-metadata-responseschema">Response Schema</h3>
+<h3 id="delete-api-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

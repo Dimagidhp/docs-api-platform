@@ -13,13 +13,13 @@ last_updated: 2026-07-31
 content_type: "tutorial"
 ---
 
-# End to End: a Secured API from Gateway to Portal
+# End to end: a secured API from gateway to portal
 
-This tutorial wires up the whole platform and follows one credential from end to end. You'll publish an API that requires **two** credentials on every call — a subscription token *and* an API key — then generate both in the API Portal and watch the gateway accept them.
+This tutorial wires up the whole platform and follows one credential from end to end. You'll publish an API that requires **two** credentials on every call—a subscription token *and* an API key—then generate both in the API Portal and watch the gateway accept them.
 
 The point of the exercise is the seam in the middle. The portal never talks to the gateway. When a developer subscribes or generates a key, the portal fires a **signed webhook** to the Platform API, which persists the credential and pushes it to every gateway where the API is deployed. Getting that seam right is most of the work, and most of this tutorial.
 
-## What You'll Build
+## What you'll build
 
 ```text
 API Portal  ──signed webhook──▶  Platform API  ──control plane──▶  Gateway
@@ -35,7 +35,7 @@ API Portal  ──signed webhook──▶  Platform API  ──control plane─�
 - Docker with the Compose plugin, `curl`, `unzip`, `jq`, and `openssl`
 - Free ports: **9543** (portal), **9243** (Platform API), **9090** and **9094** (gateway management and admin), **8081** (gateway API listener)
 
-## Step 1: Start the Control Plane and Portal
+## Step 1: Start the control plane and portal
 
 The API Portal distribution ships the Platform API alongside it, so one compose file gives you both.
 
@@ -47,7 +47,7 @@ cd wso2apip-api-portal-1.0.0
 docker compose up -d
 ```
 
-`setup.sh` provisions the TLS certificate, encryption keys, the RS256 JWT keypair the two services share, and your admin credentials. **Copy the admin password it prints** — it's shown once.
+`setup.sh` provisions the TLS certificate, encryption keys, the RS256 JWT keypair the two services share, and your admin credentials. **Copy the admin password it prints**—it's shown once.
 
 Confirm both are up:
 
@@ -56,7 +56,7 @@ curl -fsk https://localhost:9243/health && echo " platform-api ok"
 curl -fsk -o /dev/null https://localhost:9543/default/views/default && echo "api-portal ok"
 ```
 
-Now get a Platform API token and create a project to hold the API. Every Platform API call below uses this token, and the portal accepts the same one — it verifies it against the shared public key.
+Now get a Platform API token and create a project to hold the API. Every Platform API call below uses this token, and the portal accepts the same one—it verifies it against the shared public key.
 
 ```bash
 export ADMIN_USERNAME=admin
@@ -72,7 +72,7 @@ export PROJECT_ID=$(curl -sk -X POST https://localhost:9243/api/v0.9/projects \
 echo "project: $PROJECT_ID"
 ```
 
-## Step 2: Register the Gateway, Then Start It
+## Step 2: Register the gateway, then start it
 
 A gateway has to be registered with the Platform API before it can join. Registration returns an id; a second call mints the token the gateway authenticates with.
 
@@ -116,7 +116,7 @@ curl -fs http://localhost:9094/api/admin/v1/health && echo " gateway ok"
 !!! note
     `host.docker.internal` lets the gateway containers reach the Platform API published on your host. On Linux without that alias, put both stacks on one Docker network and use the service name instead.
 
-## Step 3: Connect the Portal's Webhooks to the Platform API
+## Step 3: Connect the portal's webhooks to the Platform API
 
 This is the seam. Two things have to be true before a portal-issued credential can reach the gateway.
 
@@ -146,12 +146,16 @@ Set the same value as `APIP_CP_WEBHOOK_SECRET` in the portal distribution's `api
 ```bash
 cd ../wso2apip-api-portal-1.0.0
 echo "APIP_CP_WEBHOOK_SECRET=$WEBHOOK_SECRET" >> api-platform.env
+chmod 600 api-platform.env
 docker compose up -d platform-api
 ```
 
+!!! warning
+    `api-platform.env` now holds a live shared secret, alongside the admin password hash. Keep it readable only by its owner, and never commit it to source control.
+
 `targetUrl` uses the container name because the portal reaches the Platform API across the Docker network, not through your host's published port.
 
-## Step 4: Create the Secured API
+## Step 4: Create the secured API
 
 Create a subscription plan on the Platform API:
 
@@ -165,7 +169,7 @@ curl -sk -X POST https://localhost:9243/api/v0.9/subscription-plans \
 ```
 
 !!! warning "Give each plan a unique display name"
-    The gateway stores plans keyed by gateway and **display name**. Two plans sharing one display name collide, and the second one — along with its subscriptions — silently fails to sync.
+    The gateway stores plans keyed by gateway and **display name**. Two plans sharing one display name collide, and the second one—along with its subscriptions—silently fails to sync.
 
 Now the API. Two policies do the enforcing: `api-key-auth` reads the key from a header you name, and `subscription-validation` reads the subscription token from another.
 
@@ -184,7 +188,7 @@ export API_ID=$(curl -sk -X POST https://localhost:9243/api/v0.9/rest-apis \
        ]}" | jq -r .id)
 ```
 
-The header names are the gateway's, set here — `API-Key` and `Subscription-Key` are the policy defaults, and changing these params changes what consumers must send.
+The header names are the gateway's, set here—`API-Key` and `Subscription-Key` are the policy defaults, and changing these params changes what consumers must send.
 
 Deploy it to the gateway, then confirm the route is live and enforcing:
 
@@ -196,12 +200,12 @@ curl -sk -X POST https://localhost:9243/api/v0.9/rest-apis/$API_ID/deployments \
 curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8081/reading-list/v1/books
 ```
 
-Expect **401** or **403**. A **404** means the route isn't programmed yet — wait a few seconds and retry.
+Expect **401** or **403**. A **404** means the route isn't programmed yet—wait a few seconds and retry.
 
 !!! important "Deploy before issuing credentials"
-    Do not create the subscription or key first. The Platform API only broadcasts credential events to gateways where the API is **already deployed**, and issuing an API key while no gateway is connected returns `503`. Once the API is deployed, credentials propagate live over the control-plane connection — no restart needed.
+    Do not create the subscription or key first. The Platform API only broadcasts credential events to gateways where the API is **already deployed**, and issuing an API key while no gateway is connected returns `503`. Once the API is deployed, credentials propagate live over the control-plane connection—no restart needed.
 
-## Step 5: Mirror the API and Plan into the Portal
+## Step 5: Mirror the API and plan into the portal
 
 The Platform API resolves each event's API and plan by **handle**, so the portal's copies have to carry matching references. Together with the organization link from step 3, that's three linkages that must line up:
 
@@ -221,7 +225,7 @@ curl -sk -X PUT https://localhost:9543/api/v0.9/subscription-plans \
                      \"timeUnit\":\"HOUR\",\"timeAmount\":1}]}]"
 ```
 
-Then publish the API to the portal with `referenceId` set to the Platform API handle, and its specification attached. Write `api.yaml` and `definition.yaml` as shown in [Getting Started](../getting-started.md#step-6-publish-your-first-api), setting `referenceID` to the value of `$API_ID` and listing `$PLAN` under `subscriptionPlans`, then:
+Then publish the API to the portal with `referenceId` set to the Platform API handle, and its specification attached. Write `api.yaml` and `definition.yaml` as shown in [Getting Started](../getting-started.md#step-6-publish-your-first-api), setting `referenceId` to the value of `$API_ID` and listing `$PLAN` under `subscriptionPlans`, then:
 
 ```bash
 curl -sk -X POST https://localhost:9543/api/v0.9/apis \
@@ -232,16 +236,16 @@ curl -sk -X POST https://localhost:9543/api/v0.9/apis \
 
 Open `https://localhost:9543/default/views/default/apis` and the API is in the catalog with its plan showing.
 
-## Step 6: Get Both Credentials in the Portal
+## Step 6: Get both credentials in the portal
 
-Do this part in the portal UI — it's what a developer would actually do. Sign in with the admin credentials.
+Do this part in the portal UI—it's what a developer would actually do. Sign in with the admin credentials.
 
 1. Open the API and click **Subscribe** on the plan. Copy the **subscription token** from the dialog.
 2. Click **API Keys**, then **Generate API key**. Give it a name and copy the key.
 
 Each action fires a webhook the Platform API turns into gateway state. For the equivalent REST calls, see [Subscriptions](../rest-api/subscriptions.md) and [API Keys](../rest-api/api-keys.md).
 
-## Step 7: Invoke Through the Gateway
+## Step 7: Invoke through the gateway
 
 Send both credentials, in the headers the policies named:
 
@@ -260,7 +264,7 @@ Propagation takes a moment. If you get a 401 or 403 immediately after generating
 
 ### Confirm each credential is really being checked
 
-Drop one header at a time — each should be rejected:
+Drop one header at a time—each should be rejected:
 
 ```bash
 curl -s -o /dev/null -w 'no credentials:      %{http_code}\n' http://localhost:8081/reading-list/v1/books
@@ -268,7 +272,7 @@ curl -s -o /dev/null -w 'key only:            %{http_code}\n' http://localhost:8
 curl -s -o /dev/null -w 'subscription only:   %{http_code}\n' http://localhost:8081/reading-list/v1/books -H "Subscription-Key: $SUB_TOKEN"
 ```
 
-## Step 8: Watch a Lifecycle Change Propagate
+## Step 8: Watch a lifecycle change propagate
 
 Credential changes travel the same path. In the portal, revoke the API key, then call again with it:
 
@@ -277,7 +281,7 @@ curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8081/reading-list/v1/b
   -H "API-Key: $API_KEY" -H "Subscription-Key: $SUB_TOKEN"
 ```
 
-Once the webhook lands you get **401** — the key is gone from the gateway without anyone touching the gateway. Generate a new key and the call succeeds again.
+Once the webhook lands you get **401**—the key is gone from the gateway without anyone touching the gateway. Generate a new key and the call succeeds again.
 
 The same holds for the subscription side, where a rejection reads as **403** rather than 401: suspending the subscription blocks calls, resuming restores them, and regenerating the token invalidates the old one while the new one works. See [Manage Subscriptions](../manage-subscriptions.md).
 
@@ -286,11 +290,11 @@ The same holds for the subscription side, where a rejection reads as **403** rat
 | Symptom | Likely cause |
 |---|---|
 | `404` at the gateway | The route isn't programmed yet, or the API wasn't deployed to this gateway |
-| `503` when generating an API key | No gateway is connected for that API — deploy it first |
+| `503` when generating an API key | No gateway is connected for that API—deploy it first |
 | Credentials never start working | The webhook secret differs between the portal subscriber and `APIP_CP_WEBHOOK_SECRET`, so signatures fail and credential fields can't be decrypted |
 | Only the subscription fails (`403`) | The portal plan's `refId` doesn't match the Platform API plan handle, or two plans share a display name |
 | Nothing arrives at all | The organization's `cpRefId` doesn't match the Platform API organization handle |
-| Deliveries fail once and stop | Webhook delivery is attempted exactly once with no retry — check delivery history, see [Webhook Events](../rest-api/webhook-events.md) |
+| Deliveries fail once and stop | Webhook delivery is attempted exactly once with no retry—check delivery history, see [Webhook Events](../rest-api/webhook-events.md) |
 
 ## Related
 

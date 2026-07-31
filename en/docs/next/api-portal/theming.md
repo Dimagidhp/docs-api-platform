@@ -1,6 +1,6 @@
 ---
 title: "Theming the API Portal & MCP Hub"
-description: "Build a custom theme for a view — override styles, layouts, partials, and pages, re-colour the portal from a few seed variables, and package it for upload."
+description: "Build a custom theme for a view—override styles, layouts, partials, and pages, re-color the portal from a few seed variables, and package it for upload."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/theming/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/theming.md
 tags:
@@ -14,25 +14,25 @@ content_type: "how-to"
 
 # Theming
 
-A theme changes how a [view](admin-settings/manage-views.md) looks and behaves: its colours, page shell, header and footer, and the markup of individual pages. You build one as a directory of files, package it as a ZIP, and an admin applies it to a view.
+A theme changes how a [view](admin-settings/manage-views.md) looks and behaves: its colors, page shell, header and footer, and the markup of individual pages. You build one as a directory of files, package it as a ZIP, and an admin applies it to a view.
 
 Theming is scoped **per view**, so one organization can serve a branded partner portal and a plain internal one from the same catalog.
 
-## How a Theme Works
+## How a theme works
 
 The portal renders every page from a complete default template tree at `src/defaultContent/`. A theme is a **partial copy of that tree**: include only the files you want to change, and every file you leave out is served from the default automatically.
 
 That has two consequences worth internalizing:
 
-- **A theme is not just colours.** Any file under `src/defaultContent` can be overridden — the page shell, partials, and the markup of individual pages included.
-- **You never fork the whole tree.** A colour-only theme is one file. Adding a custom API listing is two.
+- **A theme is not just colors.** Any file under `src/defaultContent` can be overridden—this includes the page shell, partials, and the markup of individual pages.
+- **You never fork the whole tree.** A color-only theme is one file. Adding a custom API listing is two.
 
-### What You Can Override
+### What you can override
 
 | Path in the theme | Controls |
 |---|---|
-| `styles/main.css` | The portal-wide stylesheet, including the colour tokens |
-| `layout/main.hbs` | The outer HTML shell — `<head>`, page `<title>`, nav frame |
+| `styles/main.css` | The portal-wide stylesheet, including the color tokens |
+| `layout/main.hbs` | The outer HTML shell—`<head>`, page `<title>`, nav frame |
 | `partials/header.hbs` | The top bar |
 | `partials/footer.hbs` | The footer |
 | `pages/home/partials/home.hbs` | The home page body |
@@ -40,14 +40,14 @@ That has two consequences worth internalizing:
 | `pages/api-landing/partials/api-detail-banner.hbs` | The header block on an API's overview page |
 | `images/` | Logo and other image assets |
 
-Any other `pages/**/partials/*.hbs` file from the default tree works the same way — those are just the ones the example below uses.
+Any other `pages/**/partials/*.hbs` file from the default tree works the same way—those are just the ones the example below uses.
 
 !!! note
     JavaScript can't be added as a theme asset, and templates are validated on upload. Portal behavior comes from the portal's own scripts; a theme covers CSS, Handlebars templates, and images.
 
-## Colours Come from a Few Seeds
+## Colors come from a few seeds
 
-`styles/main.css` defines its palette as a small set of **seed** variables, with everything else **derived** from them through `color-mix()`. Change the seeds and the whole portal re-colours — text ramp, borders, surfaces, gradients, the dark hero and sidebar included.
+`styles/main.css` defines its palette as a small set of **seed** variables, with everything else **derived** from them through `color-mix()`. Change the seeds and the whole portal re-colors—text ramp, borders, surfaces, gradients, the dark hero and sidebar included.
 
 The seeds are:
 
@@ -64,7 +64,7 @@ The seeds are:
   /* SEEDS · neutral foundation */
   --ink:     #1a2433;   /* darkest text — generates the whole grey ramp */
   --surface: #ffffff;   /* page background — the ramp mixes toward this */
-  --white:   #ffffff;   /* fills on coloured or dark surfaces */
+  --white:   #ffffff;   /* fills on colored or dark surfaces */
 
   /* SEEDS · semantic — deliberately independent of the brand */
   --success: #2e7d32;
@@ -82,14 +82,14 @@ Everything below them in the file is derived, for example:
 --focus-ring: color-mix(in srgb, var(--primary) 40%, transparent);
 ```
 
-So a re-colour means editing the seed block and nothing else.
+So a re-color means editing the seed block and nothing else.
 
 !!! important "Copy `main.css` whole"
-    Don't replace `main.css` with just a `:root` override. It carries both the variables *and* the rule definitions, plus the `@import` statements that pull in the other stylesheets (`home.css`, `header.css`, and the rest). Those imported files are served from the defaults and don't need copying — but the file that imports them does.
+    Don't replace `main.css` with just a `:root` override. It carries both the variables *and* the rule definitions, plus the `@import` statements that pull in the other stylesheets (`home.css`, `header.css`, and the rest). Those imported files are served from the defaults and don't need copying—but the file that imports them does.
 
-## Example: a Teal and Coral Theme
+## Example: a teal and coral theme
 
-Here's a complete theme that re-colours the portal and replaces the wordmark, home hero, and API listing. It's seven files:
+Here's a complete theme that re-colors the portal and replaces the wordmark, home hero, and API listing. It's seven files:
 
 ```text
 my-theme/
@@ -103,11 +103,11 @@ my-theme/
     └── api-landing/partials/api-detail-banner.hbs   # custom API overview header
 ```
 
-Everything else — the other pages, the sidebar, the imported stylesheets — is served from the defaults untouched.
+Everything else—the other pages, the sidebar, the imported stylesheets—is served from the defaults untouched.
 
-### The colour change
+### The color change
 
-`styles/main.css` is a copy of the default with its seed block swapped. That single edit is the whole re-colour:
+`styles/main.css` is a copy of the default with its seed block swapped. That single edit is the whole re-color:
 
 ```css
 :root {
@@ -149,7 +149,7 @@ A working copy of this theme sits at [`samples/layouts/green-theme/`](https://gi
 cp -r samples/layouts/green-theme/ my-theme/
 ```
 
-## Build and Preview
+## Build and preview
 
 [Design Mode](setting-up/design-mode.md) is the fastest way to iterate: it serves the portal from a theme directory on disk with sample data, no database or identity provider needed, and picks up file edits on reload.
 
@@ -163,7 +163,7 @@ path_to_layout = "./my-theme/"
 
 To preview the example above before editing it, point `path_to_layout` at `./samples/layouts/green-theme/`.
 
-## Package the Theme
+## Package the theme
 
 The ZIP must contain **one wrapper directory** holding the theme, not the theme's folders at the root. Zip the directory from its parent:
 
@@ -180,17 +180,17 @@ zip -r my-theme.zip my-theme/
 ```
 
 !!! warning "A wrapper directory is required"
-    The portal classifies each file by the path *below* the first segment. Zipping from inside the theme directory — so that `layout/` and `styles/` sit at the ZIP root — makes `layout/main.hbs` register as a generic template rather than the page shell, and your layout silently won't apply.
+    The portal classifies each file by the path *below* the first segment. Zipping from inside the theme directory—so that `layout/` and `styles/` sit at the ZIP root—makes `layout/main.hbs` register as a generic template rather than the page shell, and your layout silently won't apply.
 
 Uploads are size-limited; see `uploads.max_bytes` in [Configurations](references/configurations.md#uploads).
 
-## Apply It
+## Apply it
 
 An admin uploads the ZIP to a view under **Settings** → **Theming**. Applying a theme replaces that view's existing theme files entirely rather than merging with them. See [Apply a Theme](admin-settings/theming.md) for the panel, and for downloading the current theme or resetting to the default.
 
-## Theming vs. API Content
+## Theming vs. API content
 
-A theme applies to every page in a view. To change one API's overview body — or set its icon, or attach documents — you upload content against that API instead, which leaves the rest of the view alone. See [Customize an API's Content](admin-settings/api-content.md).
+A theme applies to every page in a view. To change one API's overview body—or set its icon, or attach documents—you upload content against that API instead, which leaves the rest of the view alone. See [Customize an API's Content](admin-settings/api-content.md).
 
 ## Related
 

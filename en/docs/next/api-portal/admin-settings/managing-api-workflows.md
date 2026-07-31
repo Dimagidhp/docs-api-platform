@@ -12,13 +12,13 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Managing API Workflows
+# Managing API workflows
 
-As a portal admin you author API workflows, generate the prompt that lets AI agents execute them, and publish them to a view. This page covers the admin side; for what consumers and agents then see, read [API Workflows](../api-workflows.md).
+As a portal admin, you author API workflows, generate the prompt that lets AI agents execute them, and publish them to a view. This page covers the admin side; for what consumers and agents then see, read [API Workflows](../api-workflows.md).
 
-## Open the Workflows Panel
+## Open the workflows panel
 
-Go to **Settings** and select **API Workflows** under **AI & DISCOVERY**. The panel lists every workflow in the selected view — use the view selector above the list to switch views, since workflows are scoped to one view.
+Go to **Settings** and select **API Workflows** under **AI & DISCOVERY**. The panel lists every workflow in the selected view—use the view selector above the list to switch views, since workflows are scoped to one view.
 
 Each card shows:
 
@@ -29,7 +29,7 @@ Each card shows:
 
 Click **Create** to open the authoring wizard.
 
-## Author a Workflow
+## Author a workflow
 
 The wizard has three steps, with a live preview beside each one.
 
@@ -42,20 +42,20 @@ The wizard has three steps, with a live preview beside each one.
 | **Description** | Required. This is what agents read when deciding whether the workflow fits their task, so describe the goal, not the mechanics |
 | **Agent visibility** | **Visible to agents** or **Hidden from agents** |
 
-The right pane shows an **Agent Preview** — the name and description exactly as they'll appear in agent discovery.
+The right pane shows an **Agent Preview**—the name and description exactly as they'll appear in agent discovery.
 
 ### Step 2: Define the API workflow
 
 Choose one of two authoring paths.
 
-**Upload file** — drop in a workflow you already have. Arazzo specs go in as `.yaml`, `.yml`, or `.json`; a natural-language workflow goes in as `.md`. After upload, an Arazzo file gets its source descriptions validated and listed, and a Markdown file gets a summary strip.
+**Upload file**—drop in a workflow you already have. Arazzo specs go in as `.yaml`, `.yml`, or `.json`; a natural-language workflow goes in as `.md`. After upload, an Arazzo file gets its source descriptions validated and listed, and a Markdown file gets a summary strip..
 
-**From template** — pick the APIs that take part in the workflow and let the portal generate a starter Arazzo spec from their specifications. Filter the API list by name, type, or description, or narrow it to selected, AI Ready, or AI Restricted APIs. MCP servers appear in this list alongside APIs.
+**From template**—pick the APIs that take part in the workflow and let the portal generate a starter Arazzo spec from their specifications. Filter the API list by name, type, or description, or narrow it to selected, AI Ready, or AI Restricted APIs. MCP servers appear in this list alongside APIs.
 
 Either way, the right pane holds the definition editor:
 
 - A **Format** toggle between **Arazzo Spec** (`workflow.arazzo.yaml`) and **Markdown** (`workflow.md`)
-- **Open in Claude**, **Download .arazzo.yaml**, and **Copy Prompt** — for refining the generated template outside the portal. All three need at least one API selected
+- **Open in Claude**, **Download .arazzo.yaml**, and **Copy Prompt**—for refining the generated template outside the portal. All three need at least one API selected
 - An **Upload** control to bring an edited file back in
 
 !!! tip
@@ -69,18 +69,18 @@ The right pane shows the Markdown file agents will fetch, plus a **Readiness** c
 
 If you set the workflow to hidden from agents in step 1, this step shows a banner saying so, with a shortcut back to change it.
 
-## Publish or Save as a Draft
+## Publish or save as a draft
 
 The wizard's footer carries a split button:
 
 - **Publish Flow** makes the workflow live in its view immediately.
 - **Save as Draft**, from the dropdown, saves it without exposing it to consumers.
 
-Draft workflows appear nowhere outside this panel — not in the portal gallery, not in `llms.txt`, not in `api-workflows.md`.
+Draft workflows appear nowhere outside this panel—not in the portal gallery, not in `llms.txt`, not in `api-workflows.md`.
 
 To unpublish, reopen the workflow and save it as a draft again. There's no separate unpublish action.
 
-## Control Visibility
+## Control visibility
 
 A workflow has exactly one visibility setting, plus its publication status. The two combine like this:
 
@@ -90,14 +90,14 @@ A workflow has exactly one visibility setting, plus its publication status. The 
 | Published | Hidden | Yes | No |
 | Draft | Either | No | No |
 
-Hiding a workflow from agents is how you ship it to human developers while its automated execution is still being validated. There is no separate control for hiding a published workflow from people — publishing it makes it visible in the gallery for that view.
+Hiding a workflow from agents is how you ship it to human developers while its automated execution is still being validated. There is no separate control for hiding a published workflow from people—publishing it makes it visible in the gallery for that view.
 
 !!! note
-    The portal-wide **Portal is AI-discoverable** toggle overrides all of this. With it off, no workflow reaches an agent whatever its own setting says. See [LLM Instructions](llm-instructions.md).
+    The portal-wide **Portal is AI-discoverable** toggle overrides all of this. With it off, no workflow reaches an agent regardless of its setting. See [LLM Instructions](llm-instructions.md).
 
-## Edit and Delete
+## Edit and delete
 
-Click the pencil on a card to reopen the wizard with the workflow's current values. The handle is fixed; everything else can change, including the content type — you can replace an Arazzo definition with Markdown or the reverse.
+Click the pencil on a card to reopen the wizard with the workflow's current values. The handle is fixed; everything else can change, including the content type—you can replace an Arazzo definition with Markdown or the reverse.
 
 Click the trash icon to delete a workflow. Deleting removes it from the gallery and from every agent-facing endpoint.
 

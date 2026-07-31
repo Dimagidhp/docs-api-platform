@@ -135,7 +135,7 @@ Required scopes (the token must carry at least one of): `dp:webhook_subscriber:c
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-webhook-subscriber-responseschema">Response Schema</h3>
+<h3 id="create-a-webhook-subscriber-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -234,7 +234,7 @@ Required scopes (the token must carry at least one of): `dp:webhook_subscriber:r
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|List of webhook subscriber configurations.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-webhook-subscribers-responseschema">Response Schema</h3>
+<h3 id="list-webhook-subscribers-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -477,7 +477,7 @@ Required scopes (the token must carry at least one of): `dp:webhook_subscriber:u
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-webhook-subscriber-responseschema">Response Schema</h3>
+<h3 id="update-a-webhook-subscriber-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -630,7 +630,7 @@ Required scopes (the token must carry at least one of): `dp:webhook_subscriber:r
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-recent-deliveries-for-a-webhook-subscriber-responseschema">Response Schema</h3>
+<h3 id="list-recent-deliveries-for-a-webhook-subscriber-responseschema">Response schema</h3>
 
 Status Code **200**
 

@@ -94,7 +94,7 @@ Required scopes (the token must carry at least one of): `dp:application:read`, `
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|List of application DTOs.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-applications-for-the-authenticated-user-responseschema">Response Schema</h3>
+<h3 id="list-applications-for-the-authenticated-user-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -175,7 +175,7 @@ Required scopes (the token must carry at least one of): `dp:application:create`,
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[ApplicationRequest](schemas.md#schemaapplicationrequest)|true|Application payload. Send JSON, multipart form fields, or an application YAML file in the `application` field. The JSON example below (`displayName`, `id`, `description`) applies only to the `application/json` content type. When an application YAML **file** is uploaded instead, its content must use the nested shape `metadata.name` (handle) and `spec.displayName` / `spec.description` — any top-level `id` inside that YAML file is ignored.|
+|body|body|[ApplicationRequest](schemas.md#schemaapplicationrequest)|true|Application payload. Send JSON, multipart form fields, or an application YAML file in the `application` field. The JSON example below (`displayName`, `id`, `description`) applies only to the `application/json` content type. When an application YAML **file** is uploaded instead, its content must use the nested shape `metadata.name` (handle) and `spec.displayName` / `spec.description`—any top-level `id` inside that YAML file is ignored.|
 
 > Example responses
 >
@@ -235,7 +235,7 @@ Required scopes (the token must carry at least one of): `dp:application:create`,
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-an-application-responseschema">Response Schema</h3>
+<h3 id="create-an-application-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -377,7 +377,7 @@ Required scopes (the token must carry at least one of): `dp:application:update`,
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[ApplicationRequest](schemas.md#schemaapplicationrequest)|true|Application payload. Send JSON, multipart form fields, or an application YAML file in the `application` field. The JSON example below (`displayName`, `id`, `description`) applies only to the `application/json` content type. When an application YAML **file** is uploaded instead, its content must use the nested shape `metadata.name` (handle) and `spec.displayName` / `spec.description` — any top-level `id` inside that YAML file is ignored.|
+|body|body|[ApplicationRequest](schemas.md#schemaapplicationrequest)|true|Application payload. Send JSON, multipart form fields, or an application YAML file in the `application` field. The JSON example below (`displayName`, `id`, `description`) applies only to the `application/json` content type. When an application YAML **file** is uploaded instead, its content must use the nested shape `metadata.name` (handle) and `spec.displayName` / `spec.description`—any top-level `id` inside that YAML file is ignored.|
 |applicationId|path|string|true|The application's handle (unique per org).|
 
 > Example responses
@@ -453,7 +453,7 @@ Required scopes (the token must carry at least one of): `dp:application:update`,
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-an-application-responseschema">Response Schema</h3>
+<h3 id="update-an-application-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

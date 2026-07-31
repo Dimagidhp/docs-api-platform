@@ -13,19 +13,19 @@ last_updated: 2026-07-24
 content_type: "how-to"
 ---
 
-# Design Mode
+# Design mode
 
-Design mode lets you develop and preview API page layouts and org-level themes without a running database or an identity provider. The portal starts with sample data loaded from disk and serves all pages anonymously — login, API key generation, and subscription management are disabled.
+Design mode lets you develop and preview API page layouts and org-level themes without a running database or an identity provider. The portal starts with sample data loaded from disk and serves all pages anonymously—login, API key generation, and subscription management are disabled.
 
-## When to Use Design Mode
+## When to use design mode
 
 Use design mode when you want to:
 
-- Iterate on a [theme](../theming.md) — styles, layout, partials, or page templates — and see each change on reload
+- Iterate on a [theme](../theming.md)—styles, layout, partials, or page templates—and see each change on reload
 - Work on a page design without standing up a database, an identity provider, or a gateway
 - Demo the portal against a fixed set of sample APIs, MCP servers, and applications
 
-## Enable Design Mode
+## Enable design mode
 
 The section is commented out in `configs/config-template.toml`. Copy the whole block into your active `configs/config.toml` and uncomment it:
 
@@ -39,7 +39,7 @@ subscription_plans_path = "./samples/subscription-plans.yaml"
 applications_path = "./samples/applications.yaml"
 ```
 
-The sample paths are relative to the app's working directory, where the bundled `samples/` already lives — leave them as they are unless you're pointing at your own sample set.
+The sample paths are relative to the app's working directory, where the bundled `samples/` already lives—leave them as they are unless you're pointing at your own sample set.
 
 Then start the portal normally:
 
@@ -50,9 +50,9 @@ npm start
 Visit **http://localhost:9543/views/default**.
 
 !!! note
-    The portal always starts on plain HTTP in design mode — no TLS certificate setup required.
+    The portal always starts on plain HTTP in design mode—no TLS certificate setup required.
 
-## Configuration Options
+## Configuration options
 
 | Option (TOML) | Default | Description |
 |---|---|---|
@@ -64,11 +64,11 @@ Visit **http://localhost:9543/views/default**.
 | `path_to_layout` | `./src/defaultContent/` | Layout directory used to render pages |
 
 !!! note
-    There's no `APIP_AP_*` environment variable that maps onto these keys. To drive one from the environment, write an interpolation token into `config.toml` — {% raw %}`path_to_layout = '{{ env "MY_THEME_DIR" "./src/defaultContent/" }}'`{% endraw %}. See [Configurations](../references/configurations.md).
+    There's no `APIP_AP_*` environment variable that maps onto these keys. To drive one from the environment, write an interpolation token into `config.toml`—{% raw %}`path_to_layout = '{{ env "MY_THEME_DIR" "./src/defaultContent/" }}'`{% endraw %}. See [Configurations](../references/configurations.md).
 
-## Working on a Theme
+## Working on a theme
 
-Design mode exists mainly to iterate on a theme without a running stack. Point `path_to_layout` at your theme directory, edit files, and reload the browser — no server restart needed.
+Design mode exists mainly to iterate on a theme without a running stack. Point `path_to_layout` at your theme directory, edit files, and reload the browser—no server restart needed.
 
 ```toml
 [api_portal.design_mode]
@@ -78,9 +78,9 @@ path_to_layout = "./my-theme/"
 
 To preview the example theme from [Theming](../theming.md#example-a-teal-and-coral-theme), use `./samples/layouts/green-theme/`.
 
-For what a theme contains, which files you can override, how the colour tokens work, and how to package one for upload, see [Theming](../theming.md). Design mode and the production theme upload use the same directory structure, so a theme built here deploys without conversion.
+For what a theme contains, which files you can override, how the color tokens work, and how to package one for upload, see [Theming](../theming.md). Design mode and the production theme upload use the same directory structure, so a theme built here deploys without conversion.
 
-## Sample APIs and MCP Servers
+## Sample APIs and MCP servers
 
 APIs and MCP servers live in separate directories. The directory name becomes the handle used in the URL.
 
@@ -100,7 +100,7 @@ samples/
     └── …
 ```
 
-### `api.yaml` Format (REST API)
+### `api.yaml` format (REST API)
 
 ```yaml
 apiVersion: api-portal.api-platform.wso2.com/v1
@@ -128,7 +128,7 @@ spec:
     productionUrl: https://api.example.com/my-api
 ```
 
-### `api.yaml` Format (MCP Server)
+### `api.yaml` format (MCP server)
 
 ```yaml
 apiVersion: api-portal.api-platform.wso2.com/v1
@@ -167,11 +167,11 @@ The `definition.yaml` alongside `api.yaml` defines the tools, resources, and pro
       destination: { type: string }
 ```
 
-### Live Reload
+### Live reload
 
-The portal re-reads API definitions from disk on every page request. Edit `api.yaml` or any doc file, then reload the browser — no server restart needed.
+The portal re-reads API definitions from disk on every page request. Edit `api.yaml` or any doc file, then reload the browser—no server restart needed.
 
-## Sample Applications
+## Sample applications
 
 The Applications page is available in design mode and shows entries from `applications_path`. The format follows the same Kubernetes-style manifest used across all sample files:
 
@@ -190,19 +190,19 @@ items:
 
 `metadata.name` becomes the application ID. Creating new applications, viewing individual application details, and managing keys aren't available in design mode.
 
-## What Is Disabled in Design Mode
+## What is disabled in design mode
 
 | Feature | Status |
 |---|---|
-| Login / IDP authentication | Disabled — all pages are served anonymously |
+| Login / IDP authentication | Disabled—all pages are served anonymously |
 | API subscriptions | Disabled |
-| Creating / deleting applications | Disabled — Applications page is read-only |
+| Creating / deleting applications | Disabled—Applications page is read-only |
 | Individual application details | Disabled |
 | API key generation | Disabled |
-| Database | Not required — no connection is attempted |
-| TLS / HTTPS | Not used — server always starts on plain HTTP |
+| Database | Not required—no connection is attempted |
+| TLS / HTTPS | Not used—server always starts on plain HTTP |
 
-## Turning Design Mode Off
+## Turning design mode off
 
 Set `enabled = false` (or remove the section entirely) and restart:
 
@@ -215,6 +215,6 @@ The portal returns to production mode, requiring a database and (if configured) 
 
 ## Related
 
-- [Theming](../theming.md): what a theme contains, the colour tokens, and how to package one
+- [Theming](../theming.md): what a theme contains, the color tokens, and how to package one
 - [Apply a Theme](../admin-settings/theming.md): upload a finished theme to a view
 - [Configurations](../references/configurations.md): the full `config.toml` reference

@@ -13,29 +13,29 @@ last_updated: 2026-07-24
 content_type: "how-to"
 ---
 
-# Getting a Bearer Token via curl (IDP Mode)
+# Getting a bearer token via curl (IDP mode)
 
 When the API Portal & MCP Hub is configured with an external IDP (e.g. Asgardeo), REST API calls to `/api/v0.9/*` must include an `Authorization: Bearer <token>` header. This guide shows how to obtain that token from the terminal, without a browser.
 
 !!! note
-    If you're running in **local auth mode** instead (the default for local development), get a token from the Platform API directly — see [Getting Started](../getting-started.md) — no PKCE flow needed.
+    If you're running in **local auth mode** instead (the default for local development), get a token from the Platform API directly—see [Getting Started](../getting-started.md)—no PKCE flow needed.
 
 ## Prerequisites
 
-- IDP is configured (`idp.client_id` is set in `config.toml` — see [Authentication](../setting-up/authentication/overview.md))
+- IDP is configured (`idp.client_id` is set in `config.toml`—see [Authentication](../setting-up/authentication/overview.md))
 - The `dp:*` scopes are registered in the IDP and assigned to your user (see [Set up Asgardeo](../setting-up/authentication/asgardeo-setup.md) steps 3–4)
 - You have the **client ID** and **client secret** from your IDP application
 - You know your org's identifier (the `ORGANIZATION_IDENTIFIER` value used to scope the login, e.g. `sub`)
 
-## Flow: Authorization Code + PKCE
+## Flow: Authorization code + PKCE
 
-The API Portal application is a confidential Traditional Web App — it uses authorization code flow with PKCE and a client secret. You need to:
+The API Portal application is a confidential Traditional Web App—it uses authorization code flow with PKCE and a client secret. You need to:
 
 1. Generate a PKCE code verifier and challenge
 2. Open the authorization URL (paste into a browser)
 3. Exchange the authorization code for a token
 
-## Step 1 — Generate PKCE Values
+## Step 1—generate PKCE values
 
 ```bash
 # Code verifier: 43–128 random URL-safe characters
@@ -48,7 +48,7 @@ echo "CODE_VERIFIER=$CODE_VERIFIER"
 echo "CODE_CHALLENGE=$CODE_CHALLENGE"
 ```
 
-## Step 2 — Start a Local Redirect Listener
+## Step 2—start a local redirect listener
 
 The IDP redirects back to a callback URI with the authorization code. Use `nc` to capture it:
 
@@ -61,7 +61,7 @@ NC_PID=$!
 !!! note
     Register `http://localhost:8080` as an authorized redirect URI in your IDP application before proceeding.
 
-## Step 3 — Build the Authorization URL and Open It
+## Step 3—build the authorization URL and open it
 
 ```bash
 TENANT=<your-tenant>                           # e.g. dev1234
@@ -83,9 +83,9 @@ echo "Open this URL in your browser:"
 echo "$AUTH_URL"
 ```
 
-Open the URL, log in, and approve. The browser is redirected to `http://localhost:8080?code=...&state=...` — the `nc` process captures the raw HTTP request.
+Open the URL, log in, and approve. The browser is redirected to `http://localhost:8080?code=...&state=...`—the `nc` process captures the raw HTTP request.
 
-## Step 4 — Extract the Authorization Code
+## Step 4—extract the authorization code
 
 ```bash
 # nc prints something like:
@@ -95,7 +95,7 @@ CODE=<paste-code-value-here>
 kill $NC_PID 2>/dev/null
 ```
 
-## Step 5 — Exchange the Code for a Token
+## Step 5—exchange the code for a token
 
 ```bash
 TOKEN_URL="https://api.asgardeo.io/t/${TENANT}/oauth2/token"
@@ -114,7 +114,7 @@ TOKEN=$(echo "$RESPONSE" | jq -r '.access_token')
 echo "TOKEN=$TOKEN"
 ```
 
-## Step 6 — Call the API
+## Step 6—call the API
 
 ```bash
 # The org is resolved from the token's org claim (set via ORGANIZATION_IDENTIFIER
@@ -143,9 +143,9 @@ See the [Management API](../rest-api/overview.md) for the full set of available 
 | Token has no `dp:*` scopes | Role not assigned to the user | In the Asgardeo console, assign the appropriate role (`admin` for full access, or the subscriber role) to the user |
 | `nc` gets no output | Redirect URI not registered in IDP | Add `http://localhost:8080` to authorized redirect URIs |
 
-## Token Lifetime
+## Token lifetime
 
-Asgardeo access tokens typically expire in 3600 seconds (1 hour). Re-run steps 1–5 for a new one — the API Portal & MCP Hub also supports refresh tokens, but from the terminal it's simpler to just re-authenticate.
+Asgardeo access tokens typically expire in 3600 seconds (1 hour). Re-run steps 1–5 for a new one—the API Portal & MCP Hub also supports refresh tokens, but from the terminal it's simpler to just re-authenticate.
 
 ## Related
 

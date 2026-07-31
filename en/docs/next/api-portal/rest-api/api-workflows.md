@@ -172,7 +172,7 @@ Required scopes (the token must carry at least one of): `dp:api_workflow:read`, 
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|List of API workflow DTOs.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|JSON message response.|[MessageResponse](schemas.md#schemamessageresponse)|
 
-<h3 id="list-api-workflows-responseschema">Response Schema</h3>
+<h3 id="list-api-workflows-responseschema">Response schema</h3>
 
 Status Code **200**
 

@@ -12,11 +12,11 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Manage Labels
+# Manage labels
 
 A **label** is a tag assigned to APIs so that [views](manage-views.md) can control which APIs they make visible. An API tagged `internal` only appears in views that include the `internal` label.
 
-## Adding a Label
+## Adding a label
 
 1. Navigate to **Settings** and select the **Labels** tab under **ORGANIZATION**.
 2. Click **+ Add label**.
@@ -29,14 +29,14 @@ A **label** is a tag assigned to APIs so that [views](manage-views.md) can contr
 
 4. Click **Add label**.
 
-## Editing a Label
+## Editing a label
 
 Click a label's display name (or the pencil icon) in the **Labels** table, update the display name or name, and save.
 
-## Deleting a Label
+## Deleting a label
 
-Click the trash icon next to a label and confirm. Deleting a label removes it from every API it's currently assigned to — this can't be undone.
+Click the trash icon next to a label and confirm. Deleting a label removes it from every API it's currently assigned to—this can't be undone.
 
-## Applying Labels
+## Applying labels
 
 Assign labels to an API from the **Labels & Visibility** section of the [Manage APIs](manage-apis.md) wizard, then attach the same labels to a view under [Manage Views](manage-views.md) to control where the API appears.

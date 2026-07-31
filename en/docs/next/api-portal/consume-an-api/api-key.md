@@ -12,9 +12,9 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Consume an API Secured with an API Key
+# Consume an API secured with an API key
 
-An API key is bound to one API. You generate it from that API's own **API Keys** page, and it authenticates your requests to that API only. Unlike OAuth2, no application and no key manager are involved.
+An API key is bound to one API or MCP server. You generate it from that artifact's own **API Keys** page, and it authenticates your requests to that artifact only. No key manager is involved, and an application is optional—you can associate a key with one for usage analytics, which changes nothing about how the key works.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ An API key is bound to one API. You generate it from that API's own **API Keys**
 - You have a key. See [Manage API Keys](../manage-api-keys.md) for the generate, rotate, and revoke lifecycle.
 
     !!! note
-        The portal generates keys for REST and WebSocket APIs only. GraphQL, SOAP, and MCP artifacts get no **API Keys** button even when their specification declares an `apiKey` scheme — for those, obtain the key from whoever operates the API and send it the same way.
+        The portal generates keys for REST and WebSocket APIs only. GraphQL, SOAP, and MCP artifacts get no **API Keys** button even when their specification declares an `apiKey` scheme—for those, obtain the key from whoever operates the API and send it the same way.
 
 - If the API has subscription plans, [subscribe to one](../manage-subscriptions.md). The subscription is a separate credential from the key, and you send both.
 
@@ -40,7 +40,7 @@ Replace `<YOUR_API_KEY>` with the key you copied when generating it, and the URL
 !!! important
     The header name comes from the API, not from the portal. Read the `name` field of the `apiKey` scheme in the API's specification and use exactly that. Some APIs expect `apikey`, some `api-key`, some a name of their own.
 
-### When the API Also Requires a Subscription
+### When the API also requires a subscription
 
 Send the subscription token alongside the key:
 
@@ -50,9 +50,9 @@ curl -X GET "https://api.example.com/orders/v1/orders" \
   -H "Subscription-Key: <YOUR_SUBSCRIPTION_TOKEN>"
 ```
 
-The two answer different questions: the key says who you are, and the subscription token says which plan's rate limit applies to you. The subscription header name also comes from the specification — `Subscription-Key` is the common case.
+The two answer different questions: the key says who you are, and the subscription token says which plan's rate limit applies to you. The subscription header name also comes from the specification—`Subscription-Key` is the common case.
 
-## Check It Before Writing Code
+## Check it before writing code
 
 Open the API's [documentation page](../discover-apis/api-documentations.md) and use the **Try It** console on a REST API, or **Tryout** on a GraphQL API, which has a dedicated **API Key** tab with fields for the header name and value. A call that succeeds there confirms both the header names and the key itself.
 

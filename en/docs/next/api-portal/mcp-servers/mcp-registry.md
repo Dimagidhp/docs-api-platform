@@ -13,13 +13,13 @@ last_updated: 2026-07-31
 content_type: "reference"
 ---
 
-# MCP Registry API
+# MCP registry API
 
 The portal implements the [Model Context Protocol registry specification](https://modelcontextprotocol.io/), so MCP-aware tooling can discover the servers it publishes and push new ones without going through the portal UI or the Management API.
 
 A server published through the registry becomes an ordinary catalog artifact: it appears under **MCP Servers**, can be subscribed to, and shows up in the portal's agent-facing endpoints. See [MCP Servers](overview.md).
 
-## Base Path
+## Base path
 
 Every endpoint is scoped to an organization handle, and two mount paths serve the same router:
 
@@ -32,7 +32,7 @@ Requests naming an organization this instance doesn't serve get a JSON `404`. Re
 
 Cross-origin `GET` requests are allowed from any origin, so a browser-based MCP client can read the discovery endpoints directly.
 
-## Discovery Endpoints
+## Discovery endpoints
 
 These three need no authentication.
 
@@ -41,6 +41,8 @@ These three need no authentication.
 ```text
 GET /registry/{orgHandle}/v0.1/servers
 ```
+
+Four query parameters control paging and filtering:
 
 | Query parameter | Effect |
 |---|---|
@@ -69,7 +71,7 @@ Servers come back newest-published first, with servers that have no publish time
 GET /registry/{orgHandle}/v0.1/servers/{serverName}/versions
 ```
 
-Returns every version of one server, newest first. `include_deleted` works as above. URL-encode the slash in `{serverName}` — `example.com/travel-assistant` becomes `example.com%2Ftravel-assistant`.
+Returns every version of one server, newest first. `include_deleted` works as above. URL-encode the slash in `{serverName}`—`example.com/travel-assistant` becomes `example.com%2Ftravel-assistant`.
 
 ### Get one version
 
@@ -79,7 +81,7 @@ GET /registry/{orgHandle}/v0.1/servers/{serverName}/versions/{version}
 
 Returns a single version, including its tools, resources, and prompts. Deleted versions return `404` unless you pass `include_deleted=true`.
 
-## Response Shape
+## Response shape
 
 Every endpoint returns the same object per server:
 
@@ -115,19 +117,19 @@ Notes on the fields:
 
 - `remotes` falls back to a single `streamable-http` entry built from the server's production URL when the stored payload declares none.
 - `status` is one of `active`, `deprecated`, or `deleted`, mapping to the portal's published, deprecated, and deleted states.
-- `io.api-platform/mcp-capabilities` is a WSO2 extension and is present only on responses that load the server's schema — the list endpoint omits it, so fetch a specific version when you need the tool list.
+- `io.api-platform/mcp-capabilities` is a WSO2 extension and is present only on responses that load the server's schema—the list endpoint omits it, so fetch a specific version when you need the tool list.
 
-## Publishing Endpoints
+## Publishing endpoints
 
 These require a bearer token or an authenticated local-auth session, and the same `dp:mcp_server:*` scopes as the equivalent Management API operations. `dp:mcp_server:manage` satisfies any of them.
 
 | Endpoint | Scope |
 |---|---|
-| `POST /v0.1/publish` | `dp:mcp_server:create` to create, `dp:mcp_server:update` to update |
-| `PUT /v0.1/servers/{serverName}/versions/{version}` | `dp:mcp_server:update` |
-| `DELETE /v0.1/servers/{serverName}/versions/{version}` | `dp:mcp_server:delete` |
-| `PATCH /v0.1/servers/{serverName}/versions/{version}/status` | `dp:mcp_server:update` |
-| `PATCH /v0.1/servers/{serverName}/status` | `dp:mcp_server:update` |
+| `POST /registry/{orgHandle}/v0.1/publish` | `dp:mcp_server:create` to create, `dp:mcp_server:update` to update |
+| `PUT /registry/{orgHandle}/v0.1/servers/{serverName}/versions/{version}` | `dp:mcp_server:update` |
+| `DELETE /registry/{orgHandle}/v0.1/servers/{serverName}/versions/{version}` | `dp:mcp_server:delete` |
+| `PATCH /registry/{orgHandle}/v0.1/servers/{serverName}/versions/{version}/status` | `dp:mcp_server:update` |
+| `PATCH /registry/{orgHandle}/v0.1/servers/{serverName}/status` | `dp:mcp_server:update` |
 
 ### Publish a server
 
@@ -135,7 +137,7 @@ These require a bearer token or an authenticated local-auth session, and the sam
 POST /registry/{orgHandle}/v0.1/publish
 ```
 
-`publish` is an upsert, keyed on the server name and version. It returns `201` when it creates a server and `200` when it updates one — and it checks the scope for the operation it's actually about to perform, so a token holding only `dp:mcp_server:create` gets `403` when the target version already exists.
+`publish` is an upsert, keyed on the server name and version. It returns `201` when it creates a server and `200` when it updates one—and it checks the scope for the operation it's actually about to perform, so a token holding only `dp:mcp_server:create` gets `403` when the target version already exists.
 
 ```json
 {
@@ -167,7 +169,7 @@ The payload is validated before anything is written. A `400` comes back when:
 
 - `name` is missing, isn't a string, is shorter than 3 or longer than 200 characters, or doesn't match the reverse-DNS `namespace/server` pattern
 - `description` is missing or isn't a string
-- `version` is missing, is the reserved value `latest`, or looks like a range rather than a specific version — anything starting with `^`, `~`, `>`, `<`, or `>=`, or containing `*` or an `x` placeholder
+- `version` is missing, is the reserved value `latest`, or looks like a range rather than a specific version—anything starting with `^`, `~`, `>`, `<`, or `>=`, or containing `*` or an `x` placeholder
 
 Both `_meta` entries are optional. Omitting `io.api-platform/mcp-capabilities` on an update leaves the stored tool schema untouched; omitting it on a create stores an empty one. `io.api-platform/proxy-info.id` is an additional identifier the portal matches on, alongside the name.
 
@@ -179,7 +181,7 @@ Newly published servers are mapped to the `default` label, so they appear in eve
 PUT /registry/{orgHandle}/v0.1/servers/{serverName}/versions/{version}
 ```
 
-Takes the same body as `publish`, and the `version` field in the body has to match the one in the path — a mismatch returns `400`.
+Takes the same body as `publish`, and the `version` field in the body has to match the one in the path—a mismatch returns `400`.
 
 ### Delete a version
 
@@ -198,7 +200,7 @@ PATCH /registry/{orgHandle}/v0.1/servers/{serverName}/status
 
 Both take `{"status": "active" | "deprecated" | "deleted"}`. The first changes one version; the second changes every version of the server at once. Any other value returns `400`, and so does setting a version to the status it already has.
 
-## Registry vs. the Management API
+## Registry vs. the management API
 
 The portal exposes MCP servers through two different APIs, and they aren't interchangeable:
 

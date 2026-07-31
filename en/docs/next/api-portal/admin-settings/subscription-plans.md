@@ -12,11 +12,11 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Subscription Plans
+# Subscription plans
 
 A **subscription plan** is a named usage tier that controls how much of an API a developer can consume. You attach one or more plans to each API you publish, and developers choose a plan when they subscribe.
 
-## Adding a Plan
+## Adding a plan
 
 1. Navigate to **Settings** and select the **Subscription Plans** tab under **ORGANIZATION**.
 2. Click **+ Add plan**.
@@ -29,7 +29,7 @@ A **subscription plan** is a named usage tier that controls how much of an API a
 | **Limits** | One or more usage limits (see below). Leave empty for an unlimited plan |
 | **External reference ID** | Optional UUID linking this plan to an external billing or quota system |
 
-The portal generates the plan's internal identifier itself — there's no handle to choose. A plan created through the [Management API](../rest-api/subscription-plans.md) can supply one as `id`; one created here gets a UUID.
+The portal generates the plan's internal identifier itself—there's no handle to choose. A plan created through the [Management API](../rest-api/subscription-plans.md) can supply one as `id`; one created here gets a UUID.
 
 4. Click **+ Add limit** for each limit you want to enforce, and configure:
 
@@ -41,10 +41,10 @@ The portal generates the plan's internal identifier itself — there's no handle
 
 5. Click **Add plan**.
 
-## Editing or Deleting a Plan
+## Editing or deleting a plan
 
-Click a plan's display name (or the pencil icon) to edit its fields and limits. Click the trash icon to delete a plan — this can't be undone, and any application subscribed under a deleted plan will need to be moved to a different plan before its subscription can renew.
+Click a plan's name (or the pencil icon) to edit its fields and limits. Click the trash icon to delete a plan—this can't be undone, and any application subscribed under a deleted plan will need to be moved to a different plan before its subscription can renew.
 
-## Attaching Plans to an API
+## Attaching plans to an API
 
 Subscription plans aren't automatically available on every API. When creating or editing an API in [Manage APIs](manage-apis.md), select which plans apply under **Applicable Subscription Plans**. If no plans are attached, the API is accessible without a subscription plan.

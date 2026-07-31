@@ -12,17 +12,17 @@ last_updated: 2026-07-31
 content_type: "concept"
 ---
 
-# AI Agent API Discovery
+# AI agent API discovery
 
-The API Portal & MCP Hub has built-in support for AI agent discoverability. Every published API, MCP server, and API workflow is exposed through a set of machine-readable endpoints that AI agents, LLM-powered assistants, and agentic frameworks can use to discover, understand, and invoke them without human assistance.
+The API Portal & MCP Hub has built-in support for AI agent discoverability. Every published API, MCP server, and API workflow is exposed through a set of machine-readable endpoints that AI agents, large language model (LLM) powered assistants, and agentic frameworks can use to discover, understand, and invoke them without human assistance.
 
 This page explains what those endpoints return and how agents navigate the portal.
 
-Every endpoint below is scoped to an organization handle (`{orgName}`) and a [view](../admin-settings/manage-views.md) (`{viewName}`, which is `default` unless an admin has created more views). Responses are plain text or JSON, so agents can fetch them without authentication, JavaScript rendering, or a browser.
+Every endpoint below is scoped to an organization handle (`{orgName}`) and a [view](../admin-settings/manage-views.md) (`{viewName}`, which is `default` unless an admin has created more views). Responses are plain text or JSON, so agents can fetch them without authentication, JavaScript rendering, or a browser. Only discovery is unauthenticated—invoking an API or MCP server still requires its credentials, a subscription where one applies, and the scopes it declares.
 
-## `llms.txt`: The Entry Point for Agents
+## `llms.txt`: The entry point for agents
 
-The portal generates an `llms.txt` file on every request — a Markdown index designed as the entry point for AI agents. It gives a structured overview of everything the portal exposes for AI consumption.
+The portal generates an `llms.txt` file on every request—a Markdown index designed as the entry point for AI agents. It gives a structured overview of everything the portal exposes for AI consumption.
 
 **Endpoint:**
 
@@ -46,18 +46,18 @@ A section is omitted when it holds no agent-visible artifacts. An agent that sta
 !!! tip
     Portal admins set the name and description that head `llms.txt` under [LLM Instructions](../admin-settings/llm-instructions.md). The same page carries the toggle that turns AI discoverability on or off for the whole portal.
 
-## Machine-Readable Endpoints
+## Machine-readable endpoints
 
 Beyond `llms.txt`, the portal serves its catalog, documentation, and specifications as Markdown and raw specification files.
 
-### API and MCP Server Catalogs
+### API and MCP server catalogs
 
 | Endpoint | Description |
 |---|---|
 | `/{orgName}/views/{viewName}/apis.md` | Every agent-visible API, grouped by type, as a single Markdown document |
 | `/{orgName}/views/{viewName}/mcps.md` | Every agent-visible MCP server as a single Markdown document |
 
-### Per-API and Per-MCP-Server Documentation
+### Per-API and per-MCP-server documentation
 
 | Endpoint | Description |
 |---|---|
@@ -76,7 +76,7 @@ A per-API Markdown document is self-contained. It carries:
 
 An agent that fetches this one document usually has everything it needs to make a call.
 
-### API Specifications
+### API specifications
 
 The specification format follows the API type, so each API serves exactly one extension. Requesting any other extension returns `404`.
 
@@ -90,7 +90,7 @@ The specification format follows the API type, so each API serves exactly one ex
 
 For REST, WebSocket, and WebSub APIs, the portal substitutes the API's live production and sandbox URLs into the specification it serves, so an agent doesn't have to resolve placeholder server entries.
 
-### API Workflows
+### API workflows
 
 | Endpoint | Description |
 |---|---|
@@ -99,22 +99,22 @@ For REST, WebSocket, and WebSub APIs, the portal substitutes the API's live prod
 | `/{orgName}/views/{viewName}/api-workflows/{handle}/arazzo.json` | The raw [Arazzo](https://spec.openapis.org/arazzo/latest.html) specification for one workflow |
 | `/{orgName}/views/{viewName}/api-workflows/{handle}/prompt` | A JSON object holding the workflow's agent prompt, description, raw content, and source APIs |
 
-The `arazzo.json` endpoint returns `404` for a workflow authored in a format other than Arazzo.
+The `arazzo.json` endpoint returns `404` for a non-Arazzo workflow.
 
-## How Agents Navigate the Portal
+## How agents navigate the portal
 
 A typical agent discovery flow looks like this:
 
 1. **Start at `llms.txt`.** The agent fetches the portal's `llms.txt` for an overview of the available APIs, MCP servers, and workflows.
 2. **Browse a catalog.** If the index isn't detailed enough, the agent fetches `apis.md` or `mcps.md` to read every description at once.
 3. **Retrieve per-artifact documentation.** Once the agent identifies a relevant API, it fetches `/api/{apiHandle}.md` for the endpoints, authentication steps, plans, and inlined specification.
-4. **Read an attached document.** For prose the specification can't express — a getting-started guide, an authentication walkthrough, known limitations — the agent follows the document links in that Markdown file.
+4. **Read an attached document.** For prose the specification can't express—a getting-started guide, an authentication walkthrough, known limitations—the agent follows the document links in that Markdown file.
 5. **Fetch the specification separately.** When the agent needs the specification as a parseable file rather than as inlined text, it retrieves the `specification.*` endpoint for the API's type.
 6. **Follow a workflow.** If a published workflow matches the task, the agent retrieves the Arazzo specification and agent prompt, then follows a vetted, step-by-step call sequence instead of reasoning from scratch.
 
 The **Try with AI** button on an [API's overview page](api-overview.md) hands this flow to an agent directly. It produces a prompt that points the agent at that API's `.md` URL and asks it to summarize the API before doing anything else.
 
-## Visibility Controls
+## Visibility controls
 
 Three separate controls decide what agents see:
 

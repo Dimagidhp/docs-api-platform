@@ -26,9 +26,8 @@ content_type: "reference"
 
 curl -X POST https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/assets \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'content=string' \
+  -F 'content=@content.zip' \
   -F 'docMetadata=[{"name":"External guide","url":"https://example.com/docs/guide","type":"LINK"}]' \
   -F 'imageMetadata={"api-icon":"icon.png"}'
 
@@ -121,7 +120,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="upload-mcp-server-content-responseschema">Response Schema</h3>
+<h3 id="upload-mcp-server-content-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -141,9 +140,8 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 
 curl -X PUT https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/assets \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'content=string' \
+  -F 'content=@content.zip' \
   -F 'docMetadata=[{"name":"External guide","url":"https://example.com/docs/guide","type":"LINK"}]' \
   -F 'imageMetadata={"api-icon":"icon.png"}'
 
@@ -236,7 +234,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="replace-mcp-server-content-responseschema">Response Schema</h3>
+<h3 id="replace-mcp-server-content-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -338,7 +336,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_content:r
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-an-mcp-server-content-file-responseschema">Response Schema</h3>
+<h3 id="get-an-mcp-server-content-file-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -424,7 +422,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_content:d
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="delete-mcp-server-content-files-responseschema">Response Schema</h3>
+<h3 id="delete-mcp-server-content-files-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

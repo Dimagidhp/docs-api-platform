@@ -26,15 +26,14 @@ content_type: "reference"
 
 curl -X POST https://localhost:9543/api/v0.9/mcp-servers \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'artifact=string' \
-  -F 'definition=string' \
+  -F 'artifact=@artifact.zip' \
+  -F 'definition=@definition.yaml' \
   -F 'metadata={"name":"Travel Assistant MCP","version":"v1","description":"MCP server for travel planning tools","type":"MCP","agentVisibility":"VISIBLE","status":"PUBLISHED", "tags":["mcp"],"labels":["default"],"endPoints":{"productionURL":"https://mcp.example.com", "sandboxURL":"https://mcp.example.com"},"subscriptionPlans":[{"id":"Gold"}]}'
 
 ```
 
-Creates API Portal MCP server metadata. Accepts the same metadata input formats as `POST /api/v0.9/apis` (artifact ZIP, `api.yaml` / `mcp.yaml`, or `metadata` JSON), but the created record is always typed `MCP`. An MCP server's contract is its `definition` (tools schema) — the tools, resources, and prompts it exposes — not an OpenAPI-style API contract; a `definition` is required. Via the JSON `metadata` field, `type` must be explicitly `MCP`; an omitted type or any other value is rejected with a 400 (use `POST /api/v0.9/apis`).
+Creates API Portal MCP server metadata. Accepts the same metadata input formats as `POST /api/v0.9/apis` (artifact ZIP, `api.yaml` / `mcp.yaml`, or `metadata` JSON), but the created record is always typed `MCP`. An MCP server's contract is its `definition` (tools schema)—the tools, resources, and prompts it exposes—not an OpenAPI-style API contract; a `definition` is required. Via the JSON `metadata` field, `type` must be explicitly `MCP`; an omitted type or any other value is rejected with a 400 (use `POST /api/v0.9/apis`).
 
 ### Authentication
 
@@ -49,10 +48,10 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:create`, 
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|object|true|MCP server upload. Provide the server metadata via `metadata` (a JSON string or an uploaded YAML/JSON file), or a full `artifact` ZIP, together with its `definition` — the tools, resources, and prompts the server exposes. An MCP server has no OpenAPI-style API contract; its `definition` (tools schema) IS its contract, so it is required on create (and replaces the stored schema when supplied on update).|
+|body|body|object|true|MCP server upload. Provide the server metadata via `metadata` (a JSON string or an uploaded YAML/JSON file), or a full `artifact` ZIP, together with its `definition`—the tools, resources, and prompts the server exposes. An MCP server has no OpenAPI-style API contract; its `definition` (tools schema) IS its contract, so it is required on create (and replaces the stored schema when supplied on update).|
 |» artifact|body|string(binary)|false|Full MCP server ZIP artifact containing the metadata and the definition.|
 |» definition|body|string(binary)|false|MCP tools schema (YAML or JSON) listing the tools, resources, and prompts the server exposes. Required on create; when supplied on update it replaces the stored schema.|
-|» metadata|body|string|false|MCP server metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document of kind `MCP`; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type` (must be `MCP`), `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the MCP server's stored handle.|
+|» metadata|body|string|false|MCP server metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a Kubernetes-style document of kind `MCP`; file names `metadata.yaml`/`.yml`/`.json`, or `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type` (must be `MCP`), `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects—only `id` is read; the plan must already exist in the organization). `id` becomes the MCP server's stored handle.|
 
 > Example responses
 >
@@ -143,7 +142,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:create`, 
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-mcp-server-metadata-responseschema">Response Schema</h3>
+<h3 id="create-mcp-server-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -264,7 +263,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:read`, `d
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-mcp-server-metadata-responseschema">Response Schema</h3>
+<h3 id="list-mcp-server-metadata-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -276,15 +275,15 @@ Status Code **200**
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|»» *anonymous*|[ApiInfoResponse](schemas.md#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key) — this schema exists only to share the field set between the two via `allOf`.|
+|»» *anonymous*|[ApiInfoResponse](schemas.md#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key)—this schema exists only to share the field set between the two via `allOf`.|
 |»»» name|string|false|none|none|
 |»»» title|string¦null|false|none|none|
 |»»» remotes|[object]|false|none|none|
 |»»» version|string|false|none|none|
 |»»» status|string|false|none|API lifecycle status.|
 |»»» description|string|false|none|none|
-|»»» type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE) — distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
-|»»» referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId` — the create response echoes the parsed YAML back.|
+|»»» type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE)—distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
+|»»» referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId`—the create response echoes the parsed YAML back.|
 |»»» agentVisibility|string|false|none|none|
 |»»» addedLabels|[string]|false|none|none|
 |»»» removedLabels|[string]|false|none|none|
@@ -304,8 +303,8 @@ Status Code **200**
 |---|---|---|---|---|
 |»» *anonymous*|object|false|none|none|
 |»»» id|string|false|none|The API's handle (unique per org). Not the internal database uuid.|
-|»»» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API — e.g. MCP servers published via the registry.|
-|»»» dataSource|string¦null|false|none|Indicates which content matched the search term: `METADATA` if the match was in the API's own metadata, or a content type (e.g. a value from the API Content `type` field) if the match was inside an uploaded content file. Only computed by getAllApiMetadataForOrganization when both the `query` search parameter is supplied and the database is PostgreSQL — absent on SQLite (the dev default) and absent from every other operation (get/create/update single API).|
+|»»» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API—e.g. MCP servers published via the registry.|
+|»»» dataSource|string¦null|false|none|Indicates which content matched the search term: `METADATA` if the match was in the API's own metadata, or a content type (e.g. a value from the API Content `type` field) if the match was inside an uploaded content file. Only computed by getAllApiMetadataForOrganization when both the `query` search parameter is supplied and the database is PostgreSQL—absent on SQLite (the dev default) and absent from every other operation (get/create/update single API).|
 |»»» planId|string|false|none|none|
 |»»» endPoints|[ApiEndpointsResponse](schemas.md#schemaapiendpointsresponse)|false|none|none|
 |»»»» sandboxURL|string|false|none|none|
@@ -316,7 +315,7 @@ Status Code **200**
 |»»»» description|string|false|none|none|
 |»»»» limits|[object]|false|none|Rate/quota limits enforced for this plan. Empty when the plan is unlimited.|
 |»»»»» limitType|string|false|none|none|
-|»»»»» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries — the `limits` array is empty.|
+|»»»»» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries—the `limits` array is empty.|
 
 *oneOf*
 
@@ -487,7 +486,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:read`, `d
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-mcp-server-metadata-responseschema">Response Schema</h3>
+<h3 id="get-mcp-server-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -507,15 +506,14 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:read`, `d
 
 curl -X PUT https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId} \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'artifact=string' \
-  -F 'definition=string' \
+  -F 'artifact=@artifact.zip' \
+  -F 'definition=@definition.yaml' \
   -F 'metadata={"name":"Travel Assistant MCP","version":"v1","description":"MCP server for travel planning tools","type":"MCP","agentVisibility":"VISIBLE","status":"PUBLISHED", "tags":["mcp"],"labels":["default"],"endPoints":{"productionURL":"https://mcp.example.com", "sandboxURL":"https://mcp.example.com"},"subscriptionPlans":[{"id":"Gold"}]}'
 
 ```
 
-Updates API Portal MCP server metadata and, when a `definition` is supplied, its stored tools schema. `type` is required and immutable — it must stay `MCP`; any other value is rejected with `400` via the same resolveTypeOrReject check `POST /mcp-servers` uses. An MCP server's `definition` is its tools schema, not an OpenAPI-style API contract.
+Updates API Portal MCP server metadata and, when a `definition` is supplied, its stored tools schema. `type` is required and immutable—it must stay `MCP`; any other value is rejected with `400` via the same resolveTypeOrReject check `POST /mcp-servers` uses. An MCP server's `definition` is its tools schema, not an OpenAPI-style API contract.
 
 ### Authentication
 
@@ -530,10 +528,10 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:update`, 
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|object|true|MCP server upload. Provide the server metadata via `metadata` (a JSON string or an uploaded YAML/JSON file), or a full `artifact` ZIP, together with its `definition` — the tools, resources, and prompts the server exposes. An MCP server has no OpenAPI-style API contract; its `definition` (tools schema) IS its contract, so it is required on create (and replaces the stored schema when supplied on update).|
+|body|body|object|true|MCP server upload. Provide the server metadata via `metadata` (a JSON string or an uploaded YAML/JSON file), or a full `artifact` ZIP, together with its `definition`—the tools, resources, and prompts the server exposes. An MCP server has no OpenAPI-style API contract; its `definition` (tools schema) IS its contract, so it is required on create (and replaces the stored schema when supplied on update).|
 |» artifact|body|string(binary)|false|Full MCP server ZIP artifact containing the metadata and the definition.|
 |» definition|body|string(binary)|false|MCP tools schema (YAML or JSON) listing the tools, resources, and prompts the server exposes. Required on create; when supplied on update it replaces the stored schema.|
-|» metadata|body|string|false|MCP server metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document of kind `MCP`; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type` (must be `MCP`), `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the MCP server's stored handle.|
+|» metadata|body|string|false|MCP server metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a Kubernetes-style document of kind `MCP`; file names `metadata.yaml`/`.yml`/`.json`, or `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type` (must be `MCP`), `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects—only `id` is read; the plan must already exist in the organization). `id` becomes the MCP server's stored handle.|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
@@ -623,7 +621,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:update`, 
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-mcp-server-metadata-responseschema">Response Schema</h3>
+<h3 id="update-mcp-server-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -728,7 +726,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server:delete`, 
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="delete-mcp-server-metadata-responseschema">Response Schema</h3>
+<h3 id="delete-mcp-server-metadata-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

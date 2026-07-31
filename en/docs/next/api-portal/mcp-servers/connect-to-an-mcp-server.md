@@ -13,7 +13,7 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Connect to an MCP Server
+# Connect to an MCP server
 
 Connecting an MCP client to a server published in the hub takes three things: the server's URL, a credential, and a config block your client understands. The server page gives you all three.
 
@@ -25,13 +25,13 @@ If the server has subscription plans, subscribe before you connect:
 2. Click **Subscribe** in the header, or go to the **Subscription plans** panel in the sidebar.
 3. Click **Subscribe** on the plan you want.
 
-The subscription is created immediately and a dialog shows your **subscription token**. Copy it before closing — send it as the `Subscription-Key` header when calling the server.
+The subscription is created immediately and a dialog shows your **subscription token**. Copy it before closing—send it as the `Subscription-Key` header when calling the server.
 
 Subscriptions to MCP servers work exactly as they do for APIs: one per server, switchable between plans without changing the token, suspendable, and manageable from **Subscriptions** in the sidebar. See [Manage Subscriptions](../manage-subscriptions.md).
 
 Servers with no plans need no subscription. Connect with whatever authentication the server itself expects.
 
-## Get a Bearer Token
+## Get a bearer token
 
 The configuration snippet expects an OAuth2 access token in an `Authorization: Bearer` header. Get one the same way you would for an OAuth2-secured API:
 
@@ -42,9 +42,9 @@ The configuration snippet expects an OAuth2 access token in an `Authorization: B
 [Consume an API Secured with OAuth2](../consume-an-api/oauth2.md) walks through the whole sequence.
 
 !!! note
-    The portal's **API Keys** pages don't cover MCP servers — the button never appears on a server page, and there's no MCP equivalent of the API Keys screen. MCP server keys exist only through the [Management API](../rest-api/mcp-server-keys.md). For everything driven from the UI, use an OAuth2 bearer token.
+    The portal's **API Keys** pages don't cover MCP servers—the button never appears on a server page, and there's no MCP equivalent of the API Keys screen. MCP server keys exist only through the [Management API](../rest-api/mcp-server-keys.md). For everything driven from the UI, use an OAuth2 bearer token.
 
-## Configure Your Client
+## Configure your client
 
 The sidebar on every server page holds an **MCP Server Configuration** block, pre-filled with the server's name and URL:
 
@@ -77,11 +77,11 @@ The sidebar on every server page holds an **MCP Server Configuration** block, pr
 The `type` is `http`, so the client speaks streamable HTTP to the URL rather than launching a local process.
 
 !!! important
-    The snippet uses the server's URL exactly as the publisher registered it. The MCP Playground doesn't — it appends `/mcp` to that URL unless it already ends that way. If the snippet's URL doesn't connect, try it with `/mcp` on the end, and check the URL the playground reports.
+    The snippet uses the server's URL exactly as the publisher registered it. The MCP Playground doesn't—it appends `/mcp` to that URL unless it already ends that way. If the snippet's URL doesn't connect, try it with `/mcp` on the end, and check the URL the playground reports.
 
-## Check the Connection
+## Check the connection
 
-Before wiring the server into an agent, confirm the credentials work: open the server's **Documentation** page and use the **MCP Playground**. It connects to the same URL with a bearer token you supply, and lists and invokes the server's tools. A tool that returns a result there will work from your client with the same token.
+Before wiring the server into an agent, confirm the credentials work: open the server's **Documentation** page and use the **MCP Playground**. It connects with a bearer token you supply and invokes the server's tools. A successful call there confirms the token and the server, for that one request—it doesn't prove your client is configured correctly, so check your client's URL, transport, headers, and how it interpolates the token separately.
 
 ## Related
 

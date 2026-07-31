@@ -1,6 +1,6 @@
 ---
 title: "Artifact types"
-description: "Choose which artifact types — APIs, MCP servers, and API workflows — the API Portal & MCP Hub serves, via the [api_portal.artifacts] table in config.toml."
+description: "Choose which artifact types—APIs, MCP servers, and API workflows—the API Portal & MCP Hub serves, via the [api_portal.artifacts] table in config.toml."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/artifact-types/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/artifact-types.md
 tags:
@@ -14,7 +14,7 @@ content_type: "concept"
 
 # Artifact types
 
-The API Portal & MCP Hub can serve three artifact types — **APIs**, **MCP servers**, and **API workflows**. Which of them a portal serves is set by the operator in `configs/config.toml`, under the `[api_portal.artifacts]` table:
+The API Portal & MCP Hub can serve three artifact types—**APIs**, **MCP servers**, and **API workflows**. Which of them a portal serves is set by the operator in `configs/config.toml`, under the `[api_portal.artifacts]` table:
 
 ```toml
 [api_portal.artifacts]
@@ -29,7 +29,7 @@ enabled_types = ["apis", "mcp-servers", "api-workflows"]
 | `mcp-servers` | MCP servers |
 | `api-workflows` | API workflows |
 
-Any combination is valid. Omit the `[api_portal.artifacts]` section entirely to serve all three — that is the default.
+Any combination is valid. Omit the `[api_portal.artifacts]` section entirely to serve all three—that is the default.
 
 ## How it behaves
 
@@ -62,4 +62,4 @@ enabled_types = ["apis", "mcp-servers"]
 
 ## Checking the current setting
 
-In the portal's organization settings, the **Configuration** tab shows an **Artifact types served** field. It is read-only — the value comes from `[api_portal.artifacts]` in `config.toml` and can only be changed there.
+In the portal's organization settings, the **Configuration** tab shows an **Artifact types served** field. It is read-only—the value comes from `[api_portal.artifacts]` in `config.toml` and can only be changed there.

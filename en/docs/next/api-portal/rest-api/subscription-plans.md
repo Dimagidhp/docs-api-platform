@@ -116,7 +116,7 @@ Required scopes (the token must carry at least one of): `dp:subscription_plan:re
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-subscription-plans-responseschema">Response Schema</h3>
+<h3 id="list-subscription-plans-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -128,7 +128,7 @@ Status Code **200**
 |»» description|string|false|none|none|
 |»» limits|[object]|false|none|Rate/quota limits enforced for this plan. Empty when the plan is unlimited.|
 |»»» limitType|string|false|none|none|
-|»»» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries — the `limits` array is empty.|
+|»»» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries—the `limits` array is empty.|
 
 *oneOf*
 
@@ -245,7 +245,7 @@ Required scopes (the token must carry at least one of): `dp:subscription_plan:cr
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|any|true|Subscription plan payload. Send a single object for single create/upsert, or a non-empty array for bulk create/upsert; each object carries its rate/quota rules in `limits`. Alternatively, upload a YAML file in the `subscriptionPlan` multipart field; use `kind: SubscriptionPlan` for a single plan or `kind: SubscriptionPlanList` with an `items` array for bulk operations. YAML uploads may use the legacy `type: requestcount` or `type: eventcount` shorthand, which is converted into `limits` before storage.|
+|body|body|any|true|Subscription plan payload. Send a single object for single create/upsert, or a non-empty array for bulk create/upsert; each object carries its rate/quota rules in `limits`. Alternatively, upload a YAML file in the `subscriptionPlan` multipart field; use `kind: SubscriptionPlan` for a single plan or `kind: SubscriptionPlanList` with an `items` array for bulk operations. YAML uploads may also use the shorthand `type: requestcount` or `type: eventcount` shorthand, which is converted into `limits` before storage.|
 
 > Example responses
 >
@@ -303,7 +303,7 @@ Required scopes (the token must carry at least one of): `dp:subscription_plan:cr
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-subscription-plans-responseschema">Response Schema</h3>
+<h3 id="create-subscription-plans-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -390,7 +390,7 @@ Required scopes (the token must carry at least one of): `dp:subscription_plan:up
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|any|true|Subscription plan payload. Send a single object for single create/upsert, or a non-empty array for bulk create/upsert; each object carries its rate/quota rules in `limits`. Alternatively, upload a YAML file in the `subscriptionPlan` multipart field; use `kind: SubscriptionPlan` for a single plan or `kind: SubscriptionPlanList` with an `items` array for bulk operations. YAML uploads may use the legacy `type: requestcount` or `type: eventcount` shorthand, which is converted into `limits` before storage.|
+|body|body|any|true|Subscription plan payload. Send a single object for single create/upsert, or a non-empty array for bulk create/upsert; each object carries its rate/quota rules in `limits`. Alternatively, upload a YAML file in the `subscriptionPlan` multipart field; use `kind: SubscriptionPlan` for a single plan or `kind: SubscriptionPlanList` with an `items` array for bulk operations. YAML uploads may also use the shorthand `type: requestcount` or `type: eventcount` shorthand, which is converted into `limits` before storage.|
 
 > Example responses
 >
@@ -475,7 +475,7 @@ Required scopes (the token must carry at least one of): `dp:subscription_plan:up
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="upsert-subscription-plans-responseschema">Response Schema</h3>
+<h3 id="upsert-subscription-plans-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -615,7 +615,7 @@ Required scopes (the token must carry at least one of): `dp:subscription_plan:re
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-a-subscription-plan-responseschema">Response Schema</h3>
+<h3 id="get-a-subscription-plan-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -703,7 +703,7 @@ Required scopes (the token must carry at least one of): `dp:subscription_plan:de
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="delete-a-subscription-plan-responseschema">Response Schema</h3>
+<h3 id="delete-a-subscription-plan-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

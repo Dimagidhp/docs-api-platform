@@ -12,27 +12,29 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# LLM Instructions
+# LLM instructions
 
-**LLM Instructions** controls how AI agents see your portal as a whole. It sets the name and description at the top of `llms.txt` — the first thing an agent reads before it navigates anything else — and carries the switch that turns AI discoverability on or off for the entire portal.
+**LLM Instructions** controls how AI agents see your portal as a whole. It sets the name and description at the top of `llms.txt`—the first thing an agent reads before it navigates anything else—and carries the switch that turns AI discoverability on or off for the entire portal.
 
 Everything on this page is scoped to one [view](manage-views.md). Use the view selector to switch.
 
-## Open the Page
+## Open the page
 
 Go to **Settings** and select **LLM Instructions** under **AI & DISCOVERY**.
 
-![LLM Instructions page with the Portal is AI-discoverable toggle, Portal name and Description fields, a Publish button, and a live preview of the generated llms.txt](../../../assets/img/devportal/llm-instructions.png)
+The page puts the editable fields beside a live preview of the file they produce:
 
-## Turn AI Discoverability On or Off
+![LLM Instructions page with the AI-discoverable toggle, portal name and description fields, and a live llms.txt preview](../../../assets/img/devportal/llm-instructions.png)
+
+## Turn AI discoverability on or off
 
 The **Portal is AI-discoverable** card at the top shows the view's live `llms.txt` path and a toggle.
 
-Switching it off makes every agent-facing endpoint return `404` — `llms.txt` itself, the API and MCP catalogs, per-artifact Markdown, raw specifications, and every workflow endpoint. It overrides each artifact's own agent-visibility setting, so nothing reaches an agent while it's off.
+Switching it off makes every agent-facing endpoint return `404`—`llms.txt` itself, the API and MCP catalogs, per-artifact Markdown, raw specifications, and every workflow endpoint. It overrides each artifact's own agent-visibility setting, so nothing reaches an agent while it's off.
 
 The **Publish** button stays clickable when the toggle is off, so you can save the change.
 
-## Set the Portal Identity
+## Set the portal identity
 
 Two fields make up the instructions, and both appear verbatim at the top of `llms.txt`.
 
@@ -44,16 +46,16 @@ Two fields make up the instructions, and both appear verbatim at the top of `llm
 The description is a free-text area, not a one-liner. Use it for the context an agent can't infer from individual API specs:
 
 - What the portal covers and what kinds of APIs it exposes
-- How the catalog is organized — by domain, team, or lifecycle stage
+- How the catalog is organized—by domain, team, or lifecycle stage
 - Authentication conventions that apply across APIs
 - Which workflows are the recommended starting points for common tasks
 - Usage policies or limitations agents should respect
 
 Leave either field empty and the portal falls back to its defaults: `{orgName} API Portal` for the heading, and a generic one-line description.
 
-Click **Publish** to save. Changes take effect immediately — the next request for `llms.txt` reflects them.
+Click **Publish** to save. Changes take effect immediately—the next request for `llms.txt` reflects them.
 
-## Preview the Result
+## Preview the result
 
 The pane beside the fields renders the `llms.txt` your settings produce, and refreshes as you type, so you can see the header in context above the generated API and workflow index. The icon in its corner opens the live `llms.txt` in a new tab.
 
@@ -63,9 +65,11 @@ To fetch it yourself:
 GET /{orgName}/views/{viewName}/llms.txt
 ```
 
-![llms.txt file showing API Workflows section with workflow names, descriptions, and spec links](../../../assets/img/devportal/llms-txt.png)
+The generated file lists each agent-visible artifact under its own section:
 
-Only your name and description are editable. Everything below them — the API Workflows, APIs, MCPs, GraphQL, WebSocket, and WebSub sections — is generated from the catalog and reflects each artifact's own agent visibility. See [AI Agent Discovery](../discover-apis/ai-agent-discovery.md) for how that index is built.
+![Generated llms.txt showing an API Workflows section with workflow names, descriptions, and links](../../../assets/img/devportal/llms-txt.png)
+
+Only your name and description are editable. Everything below them—the API Workflows, APIs, MCPs, GraphQL, WebSocket, and WebSub sections—is generated from the catalog and reflects each artifact's own agent visibility. See [AI Agent Discovery](../discover-apis/ai-agent-discovery.md) for how that index is built.
 
 ## Related
 

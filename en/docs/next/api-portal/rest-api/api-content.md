@@ -26,9 +26,8 @@ content_type: "reference"
 
 curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/assets \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'content=string' \
+  -F 'content=@content.zip' \
   -F 'docMetadata=[{"name":"External guide","url":"https://example.com/docs/guide","type":"LINK"}]' \
   -F 'imageMetadata={"api-icon":"icon.png"}'
 
@@ -60,7 +59,7 @@ Required scopes (the token must carry at least one of): `dp:api_content:create`,
 |» content|body|string(binary)|true|ZIP upload field named `content`.|
 |» docMetadata|body|string|false|Optional JSON string containing API document link metadata.|
 |» imageMetadata|body|string|false|Optional JSON string containing API image metadata.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
 
 #### Detailed descriptions
 
@@ -128,7 +127,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="upload-api-content-responseschema">Response Schema</h3>
+<h3 id="upload-api-content-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -148,9 +147,8 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 
 curl -X PUT https://localhost:9543/api/v0.9/apis/{apiId}/assets \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -F 'content=string' \
+  -F 'content=@content.zip' \
   -F 'docMetadata=[{"name":"External guide","url":"https://example.com/docs/guide","type":"LINK"}]' \
   -F 'imageMetadata={"api-icon":"icon.png"}'
 
@@ -179,7 +177,7 @@ Required scopes (the token must carry at least one of): `dp:api_content:update`,
 |» content|body|string(binary)|true|ZIP upload field named `content`.|
 |» docMetadata|body|string|false|Optional JSON string containing API document link metadata.|
 |» imageMetadata|body|string|false|Optional JSON string containing API image metadata.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
 
 #### Detailed descriptions
 
@@ -247,7 +245,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="replace-api-content-responseschema">Response Schema</h3>
+<h3 id="replace-api-content-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -288,8 +286,8 @@ session: an anonymous request for a non-image type is rejected.
 |---|---|---|---|---|
 |type|query|string|true|Stored API content type selector. Common values are `web`, `document`, `image`, and `link`, depending on how the uploaded ZIP content was classified.|
 |fileName|query|string|true|Stored API content file name to retrieve.|
-|orgId|query|string|false|DEPRECATED and ignored. Accepted only so existing callers (the portal's own image-URL rewrite appends it) are not rejected. The organization is always this instance's own — from the session when there is one, otherwise from `organization.handle` configuration. It was previously honoured on this unauthenticated endpoint, which made it a selector for any organization's API icons in a shared database.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
+|orgId|query|string|false|Deprecated and ignored. Accepted only so existing callers (the portal's own image-URL rewrite appends it) are not rejected. The organization is always this instance's own—from the session when there is one, otherwise from `organization.handle` configuration. It was previously honoured on this unauthenticated endpoint, which made it a selector for any organization's API icons in a shared database.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -350,7 +348,7 @@ session: an anonymous request for a non-image type is rejected.
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-an-api-content-file-responseschema">Response Schema</h3>
+<h3 id="get-an-api-content-file-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -394,7 +392,7 @@ Required scopes (the token must carry at least one of): `dp:api_content:delete`,
 |---|---|---|---|---|
 |type|query|string|true|Stored API content type selector. Common values are `web`, `document`, `image`, and `link`, depending on how the uploaded ZIP content was classified.|
 |fileName|query|string|false|File name selector used to delete a single stored API content file.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -439,7 +437,7 @@ Required scopes (the token must carry at least one of): `dp:api_content:delete`,
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="delete-api-content-files-responseschema">Response Schema</h3>
+<h3 id="delete-api-content-files-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

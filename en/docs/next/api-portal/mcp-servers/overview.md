@@ -12,11 +12,11 @@ last_updated: 2026-07-31
 content_type: "concept"
 ---
 
-# MCP Servers
+# MCP servers
 
-A Model Context Protocol (MCP) server exposes capabilities an AI agent can call directly: **tools** it can invoke, **resources** it can read, and **prompts** it can reuse. The API Portal & MCP Hub publishes MCP servers next to your APIs, with the same catalog, subscription, and credential machinery — the "MCP Hub" half of the product.
+A Model Context Protocol (MCP) server exposes capabilities an AI agent can call directly: **tools** it can invoke, **resources** it can read, and **prompts** it can reuse. The API Portal & MCP Hub publishes MCP servers next to your APIs, with the same catalog, subscription, and credential machinery—the "MCP Hub" half of the product.
 
-## How MCP Servers Differ from APIs
+## How MCP servers differ from APIs
 
 An MCP server is stored as another artifact in the same catalog, so most of what you know about APIs carries over. The differences that matter:
 
@@ -34,7 +34,7 @@ Everything else works the same way. MCP servers carry tags, labels, icons, subsc
 !!! note
     A portal only serves MCP servers when its operator lists `mcp-servers` in `enabled_types`. Leave it out and the sidebar entry, the catalog, and every MCP route disappear. See [Artifact types](../artifact-types.md).
 
-## How Servers Reach the Hub
+## How servers reach the hub
 
 Two routes put an MCP server in the catalog, and which one was used affects what you see.
 
@@ -42,9 +42,9 @@ Two routes put an MCP server in the catalog, and which one was used affects what
 
 An admin adds the server through **Settings** → **MCP Servers**, using the same wizard as an API with the type preset to MCP. They supply the details, upload the definition listing the tools, resources, and prompts, and attach documentation. See [Manage MCP Servers](../admin-settings/manage-mcp-servers.md).
 
-The same thing happens when a server is created on a gateway and pushed to the portal — the artifact carries a reference back to that gateway proxy.
+The same thing happens when a server is created on a gateway and pushed to the portal—the artifact carries a reference back to that gateway proxy.
 
-### Published through the MCP Registry
+### Published through the MCP registry
 
 A client posts the server to the portal's registry API, an implementation of the Model Context Protocol registry specification. The portal stores the result as a catalog artifact exactly like any other MCP server, mapped to the `default` label so it shows up in views that include it.
 
@@ -52,7 +52,7 @@ Registry-published servers are identified by a reverse-DNS name such as `example
 
 See [MCP Registry API](mcp-registry.md).
 
-## Where to Go Next
+## Where to go next
 
 - [Discover MCP Servers](discover-mcp-servers.md): browse the catalog, read a server's tools, and try them in the playground
 - [Connect to an MCP Server](connect-to-an-mcp-server.md): subscribe, get credentials, and point an MCP client at the server

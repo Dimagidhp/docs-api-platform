@@ -30,10 +30,10 @@ The **APIs** tab in the API Portal's Settings page is where you add, edit, publi
 | **Handle (URL slug)** | Auto-generated from name and version; edit to override |
 | **API type** | `REST`, `WebSocket`, `GraphQL`, `WebSub`, or `MCP` |
 | **Agent visibility** | **Visible** includes the API in `llms.txt` and AI-agent discovery surfaces; **Hidden** excludes it while still showing it to human users |
-| **Description** | Required — shown in the catalog and used as context for AI agents |
+| **Description** | Required—shown in the catalog and used as context for AI agents |
 | **Production URL** | Required for most API types |
 | **Sandbox URL** | Optional |
-| **Labels** | A toggle picker of the labels defined in your organization. The ones you select control which [views](manage-views.md) show this API. Empty until you create labels under [Manage Labels](manage-labels.md) |
+| **Labels** | A toggle picker of the labels defined in your organization. Selected labels control which [views](manage-views.md) show this API. Empty until you create labels under [Manage Labels](manage-labels.md) |
 | **Tags** | Comma-separated free-text keywords for search and discovery. Unlike labels, they don't affect visibility |
 | **Status** | **Published** or **Deprecated** |
 | **Technical owner / email**, **Business owner / email** | Ownership contacts shown on the API's detail page |
@@ -43,7 +43,7 @@ Click **Next**.
 
 ### Step 2: Spec
 
-Upload the contract that defines the API — required. One file, accepted as `.json`, `.yaml`, `.yml`, `.graphql`, `.gql`, `.wsdl`, or `.xml`, depending on the API type: OpenAPI or AsyncAPI for REST, WebSocket, and WebSub; GraphQL SDL for GraphQL; WSDL for SOAP.
+Upload the contract that defines the API—required. One file, accepted as `.json`, `.yaml`, `.yml`, `.graphql`, `.gql`, `.wsdl`, or `.xml`, depending on the API type: OpenAPI or AsyncAPI for REST, WebSocket, and WebSub; GraphQL SDL for GraphQL; WSDL for SOAP.
 
 Click **Next**.
 
@@ -55,9 +55,9 @@ Click **Next** to create the API, or continue to Step 4 if you're editing an exi
 
 ### Step 4: Content (edit mode only)
 
-Once an API exists, you can upload a ZIP holding a `web/` folder (the overview body and images) and/or a `docs/` folder (downloadable documents). Files with a matching name are replaced; others are added.
+Once an API exists, you can upload a ZIP holding a `web/` folder (the overview body and images), a `docs/` folder (downloadable documents), or both. Files with a matching name are replaced; others are added.
 
-Click **Upload content** — this uploads immediately and is independent of **Save changes**.
+Click **Upload content**—this uploads immediately and is independent of **Save changes**.
 
 For the file names the portal looks for, how the API icon is set, and how `docs/` subdirectories become documentation sections, see [Customize an API's Content](api-content.md).
 
@@ -65,13 +65,13 @@ For the file names the portal looks for, how the API icon is set, and how `docs/
 
 Click the **⋮** menu on an API's row and select **Edit** to reopen the wizard, prefilled with its current details, spec, documentation, and content.
 
-## Publishing and Deprecating
+## Publishing and deprecating
 
 Use the **⋮** menu on an API's row:
 
-- **Publish** — makes a draft or deprecated API live in the catalog
-- **Deprecate** — keeps the API visible but marked as deprecated; you can publish it again at any time
+- **Publish**—makes a draft or deprecated API live in the catalog
+- **Deprecate**—keeps the API visible but marked as deprecated; you can publish it again at any time
 
 ## Deleting APIs
 
-Use the **⋮** menu's **Delete** action to remove a single API, or select multiple rows with the checkboxes to reveal a bulk action bar with **Delete selected**. Deleting an API removes it from the portal along with its spec and documentation — this can't be undone.
+Use the **⋮** menu's **Delete** action to remove a single API, or select multiple rows with the checkboxes to reveal a bulk action bar with **Delete selected**. Deleting an API removes it from the portal along with its spec and documentation—this can't be undone.

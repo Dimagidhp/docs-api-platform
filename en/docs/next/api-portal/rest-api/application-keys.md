@@ -14,7 +14,7 @@ content_type: "reference"
 
 # Application Keys
 
-## Map an OAuth client_id to an API Portal application
+## Map an OAuth `client_id` to an API Portal application
 
 <a id="opIdgenerateApplicationKeys"></a>
 
@@ -32,7 +32,7 @@ curl -X POST https://localhost:9543/api/v0.9/applications/{applicationId}/genera
 
 ```
 
-Maps an OAuth client_id — created directly in the selected key manager — to the specified application. The portal does not create or register OAuth clients; it only stores the client_id reference and later proxies token requests for it.
+Maps an OAuth client_id—created directly in the selected key manager—to the specified application. The portal does not create or register OAuth clients; it only stores the client_id reference and later proxies token requests for it.
 
 > Payload
 
@@ -53,11 +53,11 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 
 </aside>
 
-<h3 id="map-an-oauth-client_id-to-an-api-portal-application-parameters">Parameters</h3>
+<h3 id="map-an-oauth-`client_id`-to-an-api-portal-application-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[AppKeyMappingRequest](schemas.md#schemaappkeymappingrequest)|true|Maps an OAuth client_id — created directly in the key manager — to this application. The application is identified by the `applicationId` path parameter.|
+|body|body|[AppKeyMappingRequest](schemas.md#schemaappkeymappingrequest)|true|Maps an OAuth client_id—created directly in the key manager—to this application. The application is identified by the `applicationId` path parameter.|
 |applicationId|path|string|true|The application's handle (unique per org).|
 
 > Example responses
@@ -120,7 +120,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 }
 ```
 
-<h3 id="map-an-oauth-client_id-to-an-api-portal-application-responses">Responses</h3>
+<h3 id="map-an-oauth-`client_id`-to-an-api-portal-application-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -130,7 +130,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="map-an-oauth-client_id-to-an-api-portal-application-responseschema">Response Schema</h3>
+<h3 id="map-an-oauth-`client_id`-to-an-api-portal-application-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -246,7 +246,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="generate-an-oauth-access-token-responseschema">Response Schema</h3>
+<h3 id="generate-an-oauth-access-token-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -254,7 +254,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 |---|---|
 |status|error|
 
-## Remove an OAuth client_id mapping
+## Remove an OAuth `client_id` mapping
 
 <a id="opIdrevokeOAuthKeys"></a>
 
@@ -270,7 +270,7 @@ curl -X DELETE https://localhost:9543/api/v0.9/applications/{applicationId}/oaut
 
 ```
 
-Removes the local client_id mapping for an application. This does not affect the OAuth client in the key manager — that client is owned and managed externally.
+Removes the local client_id mapping for an application. This does not affect the OAuth client in the key manager—that client is owned and managed externally.
 
 ### Authentication
 
@@ -281,7 +281,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:revo
 
 </aside>
 
-<h3 id="remove-an-oauth-client_id-mapping-parameters">Parameters</h3>
+<h3 id="remove-an-oauth-`client_id`-mapping-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -318,7 +318,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:revo
 }
 ```
 
-<h3 id="remove-an-oauth-client_id-mapping-responses">Responses</h3>
+<h3 id="remove-an-oauth-`client_id`-mapping-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -326,4 +326,4 @@ Required scopes (the token must carry at least one of): `dp:application_key:revo
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="remove-an-oauth-client_id-mapping-responseschema">Response Schema</h3>
+<h3 id="remove-an-oauth-`client_id`-mapping-responseschema">Response schema</h3>

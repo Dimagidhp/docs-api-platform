@@ -125,11 +125,11 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:creat
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Generated API key. The plaintext `key` is returned exactly once.|[ApiKeyResponse](schemas.md#schemaapikeyresponse)|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden — because the caller lacks the required permission, because the current runtime mode disallows the operation (read-only mode), or because an organization was named that is not the single one this instance serves. In that last case an organization that does not exist is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="generate-an-mcp-server-api-key-responseschema">Response Schema</h3>
+<h3 id="generate-an-mcp-server-api-key-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -241,7 +241,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:read`
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-mcp-server-api-keys-responseschema">Response Schema</h3>
+<h3 id="list-mcp-server-api-keys-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -319,7 +319,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to regenerate by its `keyId`. `expiresAt` is optional and, if provided, updates the key's expiry; the key's `id`/`displayName` cannot be changed by this operation.|
-|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
 |» expiresAt|body|any|false|New expiry for the key. Can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. Omit to leave the current expiry unchanged.|
 |»» *anonymous*|body|string(date-time)|false|none|
 |»» *anonymous*|body|number|false|none|
@@ -384,7 +384,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Generated or regenerated API key. The plaintext `key` is returned exactly once.|[ApiKeyResponse](schemas.md#schemaapikeyresponse)|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden — because the caller lacks the required permission, because the current runtime mode disallows the operation (read-only mode), or because an organization was named that is not the single one this instance serves. In that last case an organization that does not exist is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The key has already been revoked and cannot be regenerated.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
@@ -431,7 +431,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:revok
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to revoke by its `keyId`.|
-|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
@@ -481,7 +481,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:revok
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|API key revoked successfully.|None|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden — because the caller lacks the required permission, because the current runtime mode disallows the operation (read-only mode), or because an organization was named that is not the single one this instance serves. In that last case an organization that does not exist is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The key has already been revoked.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
@@ -529,7 +529,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key and the application to associate it with.|
-|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
 |» appId|body|string|true|API Portal application ID to associate the key with.|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
@@ -608,12 +608,12 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Association updated.|[ApiKeyApplicationResponse](schemas.md#schemaapikeyapplicationresponse)|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden — because the caller lacks the required permission, because the current runtime mode disallows the operation (read-only mode), or because an organization was named that is not the single one this instance serves. In that last case an organization that does not exist is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The key has already been revoked and cannot be associated with an application.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="associate-an-mcp-server-api-key-with-an-application-responseschema">Response Schema</h3>
+<h3 id="associate-an-mcp-server-api-key-with-an-application-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -663,7 +663,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to remove the application association from.|
-|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
@@ -703,6 +703,6 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|Association removed (or none existed).|None|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden — because the caller lacks the required permission, because the current runtime mode disallows the operation (read-only mode), or because an organization was named that is not the single one this instance serves. In that last case an organization that does not exist is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|

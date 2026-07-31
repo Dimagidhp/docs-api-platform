@@ -12,23 +12,23 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# API Documentation
+# API documentation
 
 The documentation page holds everything the publisher wrote about an API: its full specification, an interactive console for calling operations, and any guides attached alongside. Where the [overview page](api-overview.md) summarizes the API, this is where you work out how to call it.
 
-## Open the Documentation Page
+## Open the documentation page
 
 1. Go to **APIs** in the sidebar and open the API you want.
 2. Click **Documentation** in the header, or select **Documentation** under **APIs** in the sidebar.
 
-    ![API sidebar navigation showing Home, APIs expanded with Overview, Documentation, and API Keys menu items, with Documentation highlighted](../../../assets/img/standalone-devportal/discover-apis/api-documentations/menu-api-doc.png){style="max-width:250px;"}
+    ![](../../../assets/img/standalone-devportal/discover-apis/api-documentations/menu-api-doc.png){style="max-width:250px;"}
 
 The page opens on the API's specification. A navigation pane on the left lists everything else available.
 
 !!! note
     SOAP APIs have no **Documentation** button. Their overview page offers a **Download** button for the WSDL file instead.
 
-## Navigate the Documentation
+## Navigate the documentation
 
 The left pane groups entries under a heading per section:
 
@@ -37,7 +37,7 @@ The left pane groups entries under a heading per section:
 
 Select any entry to load it in the content pane on the right. A badge above the content names the file you're reading, such as `openapi.yaml` or `getting-started.md`.
 
-## Read the API Specification
+## Read the API specification
 
 **API Definition** renders the specification in a viewer chosen for the API type:
 
@@ -48,13 +48,15 @@ Select any entry to load it in the content pane on the right. A badge above the 
 | WebSocket, WebSub | AsyncAPI viewer | Read the channels and message payloads. **Tryout** opens a client that connects to the endpoint |
 | MCP server | MCP Playground | Inspect the server's tools and invoke them with a bearer token |
 
-The **Try It** console on a REST API calls the endpoint straight from your browser, so the API's gateway has to return CORS headers for the portal's origin. Supply credentials in the console the same way your client would: an `Authorization: Bearer` header for OAuth2, or the API key header for key-secured APIs.
+The **Try It** console on a REST API calls the endpoint straight from your browser, so the API's gateway has to return CORS headers for the portal's origin. Supply every credential the operation requires, the same way your client would: an `Authorization: Bearer` header for OAuth2, the API key header for key-secured APIs, and—where the API declares one—the subscription header its specification names.
 
-## Read an Attached Document
+## Read an attached document
 
-Publishers attach guides to an API to cover what a specification can't express — authentication walkthroughs, worked examples, known limitations. Select a document in the left pane to read it.
+Publishers attach guides to an API to cover what a specification can't express—authentication walkthroughs, worked examples, known limitations. Select a document in the left pane to read it.
 
-![Catalog API documentation page titled "Catalog API — Token based subscription Sample" showing an Authentication headers table, a Subscription Plans table with Gold and Bronze tiers, and How to consume steps](../../../assets/img/standalone-devportal/discover-apis/api-documentations/api-doc-md.png)
+An attached document renders in the content pane, as in this example covering a token-based subscription:
+
+![Attached document showing an authentication headers table, a subscription plans table, and numbered steps for consuming the API](../../../assets/img/standalone-devportal/discover-apis/api-documentations/api-doc-md.png)
 
 Every document is also served as raw Markdown for AI agents. See [AI Agent Discovery](ai-agent-discovery.md) for the endpoints.
 

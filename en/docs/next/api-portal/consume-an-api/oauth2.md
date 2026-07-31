@@ -12,9 +12,9 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Consume an API Secured with OAuth2
+# Consume an API secured with OAuth2
 
-OAuth2-secured APIs expect a bearer token issued by a key manager. The OAuth application that issues it lives in the key manager, not in the portal — the portal holds a reference to its client ID and proxies token requests on your behalf. It never asks for or stores the client secret.
+OAuth2-secured APIs expect a bearer token issued by a key manager. The OAuth application that issues it lives in the key manager, not in the portal—the portal stores only its client ID and proxies token requests on your behalf. It asks for the consumer secret each time you generate a token through the UI, uses it for that one request, and doesn't retain it.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Three things have to exist before you can generate a token:
 2. **An application in the portal.** This is the container that holds the client ID. See [Manage Applications](../manage-applications.md).
 3. **A subscription, if the API has plans.** Subscriptions are made directly to the API, independently of your application. See [Manage Subscriptions](../manage-subscriptions.md).
 
-## Link a Client ID
+## Link a client ID
 
 1. Sign in to the API Portal & MCP Hub.
 2. Click **Applications** in the sidebar, then open your application.
@@ -37,11 +37,11 @@ Three things have to exist before you can generate a token:
 
 The card now shows three tabs: **Credentials**, **Generate Token**, and **cURL**. The **Credentials** tab holds the consumer key (client ID) with a copy button. No secret appears there, because the portal never received one.
 
-## Generate an Access Token
+## Generate an access token
 
 You have two routes, and they produce the same token.
 
-### From the Portal
+### From the portal
 
 1. On the key manager's card, open the **Generate Token** tab.
 2. Add scopes under **Request Permissions (Scopes)** if the API needs them. Type each scope and press <kbd>Enter</kbd>. The field starts pre-filled with the scopes your subscriptions grant.
@@ -50,9 +50,9 @@ You have two routes, and they produce the same token.
 5. Copy the token from the dialog.
 
     !!! warning
-        The token is shown once and can't be retrieved afterwards. Copy it before closing the dialog. The dialog's **Regenerate** button issues a fresh one if you lose it.
+        The token is shown once and can't be retrieved afterward. Copy it before closing the dialog. The dialog's **Regenerate** button issues a fresh one if you lose it.
 
-The dialog also shows **Response Permissions (Scopes)** — the scopes the key manager actually granted, which can be narrower than what you asked for.
+The dialog also shows **Response Permissions (Scopes)**—the scopes the key manager actually granted, which can be narrower than what you asked for.
 
 ### With curl
 
@@ -75,7 +75,7 @@ The response carries the token:
 }
 ```
 
-This route goes straight to the key manager and doesn't involve the portal, which makes it the one to script in CI.
+This route goes straight to the key manager and doesn't involve the portal, which makes it the one to script in continuous integration (CI).
 
 ## Invoke the API
 
@@ -97,11 +97,11 @@ curl -X GET "https://api.example.com/orders/v1/orders" \
 !!! note
     Both header names come from the API's specification. Check its `securitySchemes` section for the authorization scheme, and its subscription-key parameter for the second header, rather than assuming the names above.
 
-## Revoke a Client ID
+## Revoke a client ID
 
 On the **Credentials** tab, click **Revoke keys**. This removes every credential the portal holds for that key manager and key type.
 
-Two things it doesn't do: it doesn't deregister or delete the OAuth application in the key manager, and it doesn't invalidate tokens already issued — those stay valid until they expire. To kill the OAuth application itself or revoke a live token, use the key manager's own console or revocation endpoint.
+Two things it doesn't do: it doesn't deregister or delete the OAuth application in the key manager, and it doesn't invalidate tokens already issued—those stay valid until they expire. To kill the OAuth application itself or revoke a live token, use the key manager's own console or revocation endpoint.
 
 ## Related
 

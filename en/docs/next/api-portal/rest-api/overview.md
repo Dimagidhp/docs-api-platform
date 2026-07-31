@@ -138,9 +138,9 @@ Base URLs:
 
 ### [Application Keys](application-keys.md)
 
-- [Map an OAuth client_id to an API Portal application](application-keys.md#map-an-oauth-client_id-to-an-api-portal-application)
+- [Map an OAuth `client_id` to an API Portal application](application-keys.md#map-an-oauth-client_id-to-an-api-portal-application)
 - [Generate an OAuth access token](application-keys.md#generate-an-oauth-access-token)
-- [Remove an OAuth client_id mapping](application-keys.md#remove-an-oauth-client_id-mapping)
+- [Remove an OAuth `client_id` mapping](application-keys.md#remove-an-oauth-client_id-mapping)
 
 ### [API Workflows](api-workflows.md)
 

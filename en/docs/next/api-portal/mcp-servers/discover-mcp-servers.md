@@ -12,16 +12,16 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Discover MCP Servers
+# Discover MCP servers
 
 MCP servers have their own catalog, separate from the API listing but laid out the same way.
 
-## Browse the Catalog
+## Browse the catalog
 
 Click **MCP Servers** in the sidebar. Each published server gets a card showing:
 
 - Its icon (or initials), title, and version
-- An **MCP** badge, and an **AI Ready** badge — every MCP server in the catalog is agent-discoverable
+- An **MCP** badge, and an **AI Ready** badge—every MCP server in the catalog is agent-discoverable
 - A **Deprecated** badge, when the server has been deprecated
 - The description and any tags
 - The number of subscription plans and a **Subscribe** button, when the server has plans
@@ -31,15 +31,17 @@ Click a card to open the server.
 
 ## Search
 
-Type a term into the search bar and press <kbd>Enter</kbd>. Search works exactly as it does for APIs — one free-text term matched against the server's metadata and tags, and on PostgreSQL against its attached documents too. See [Search APIs](../discover-apis/api-search.md#what-a-search-term-matches) for the details and the per-database differences.
+Type a term into the search bar and press <kbd>Enter</kbd>. Search works exactly as it does for APIs—one free-text term matched against the server's metadata and tags, and on PostgreSQL against its attached documents too. See [Search APIs](../discover-apis/api-search.md#what-a-search-term-matches) for the details and the per-database differences.
 
 Like the API listing, a catalog covers one [view](../admin-settings/manage-views.md), and a server appears only if one of its labels is mapped to that view.
 
-## Read a Server
+## Read a server
 
 The server page opens with a header carrying the title, version, **MCP** badge, description, and tags, then splits into a main column and a sidebar.
 
 ### Main column
+
+The main column stacks the server's identity and everything it exposes:
 
 | Section | Contents |
 |---|---|
@@ -52,22 +54,22 @@ Each section shows a count in its header and is omitted when the server declares
 
 ### Sidebar
 
-The sidebar holds an **MCP Server Configuration** snippet — a ready-made JSON block naming the server, its URL, and a bearer token placeholder — with a copy button. Subscription plans appear below it when the server has any. See [Connect to an MCP Server](connect-to-an-mcp-server.md) for what to do with both.
+The sidebar holds an **MCP Server Configuration** snippet—a ready-made JSON block naming the server, its URL, and a bearer token placeholder—with a copy button. Subscription plans appear below it when the server has any. See [Connect to an MCP Server](connect-to-an-mcp-server.md) for what to do with both.
 
 ### Header buttons
 
 - **Subscribe**: jumps to the plans in the sidebar. Shown when the server has plans and you aren't subscribed yet
 - **Documentation**: opens the documentation page
 
-## Try Tools in the Playground
+## Try tools in the Playground
 
 Click **Documentation** on a server to open its documentation page. The left pane lists a **SPECIFICATION** group containing **MCP Playground**, plus a group for each type of document the publisher attached.
 
-The playground connects to the server's URL and lets you list and invoke its tools interactively. It expects a bearer token, so have one ready — see [Connect to an MCP Server](connect-to-an-mcp-server.md).
+The playground connects to the server's URL and lets you list and invoke its tools interactively. It expects a bearer token, so have one ready—see [Connect to an MCP Server](connect-to-an-mcp-server.md).
 
 Attached documents render in the same pane, exactly as they do for an API. See [API Documentation](../discover-apis/api-documentations.md) for how that pane works.
 
-## What Agents See
+## What agents see
 
 Every MCP server in the catalog is exposed through the portal's machine-readable endpoints:
 

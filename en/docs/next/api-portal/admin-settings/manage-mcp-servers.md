@@ -12,17 +12,17 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Manage MCP Servers
+# Manage MCP servers
 
 The **MCP Servers** tab in the API Portal's Settings page is where you add, edit, publish, deprecate, and delete the Model Context Protocol (MCP) servers exposed in the portal, alongside your REST/Async/GraphQL/SOAP APIs.
 
-## Adding an MCP Server
+## Adding an MCP server
 
 1. Navigate to **Settings** and select the **MCP Servers** tab under **CONTENT**.
 2. Click **+ Add MCP Server**. This opens the same four-step wizard used for [Manage APIs](manage-apis.md), with **API type** preset to **MCP**.
 3. Complete the **Details**, **Spec**, and **Documentation** steps as described in [Manage APIs](manage-apis.md#adding-an-api).
 
-One step differs from a regular API. At **Spec**, an MCP server's contract isn't an OpenAPI document — it's a flat, type-tagged list of the tools, resources, and prompts the server exposes:
+One step differs from a regular API. At **Spec**, an MCP server's contract isn't an OpenAPI document—it's a flat, type-tagged list of the tools, resources, and prompts the server exposes:
 
 ```yaml
 - type: TOOL
@@ -39,7 +39,7 @@ One step differs from a regular API. At **Spec**, an MCP server's contract isn't
 
 Once the server is created, an additional **Content** step lets you upload a ZIP for its landing-page content, exactly as with a regular API.
 
-## Editing, Publishing, and Deleting
+## Editing, publishing, and deleting
 
 MCP servers share the same row-level actions as APIs:
 
@@ -47,7 +47,7 @@ MCP servers share the same row-level actions as APIs:
 - Select **Publish** or **Deprecate** to control its catalog visibility.
 - Select **Delete** to remove a single server, or use the checkboxes to select multiple servers and **Delete selected** from the bulk action bar. This removes the server along with its spec and documentation and can't be undone.
 
-## What Developers See
+## What developers see
 
 Once published, a server appears in the **MCP Servers** catalog with its tools, resources, and prompts listed, an MCP Playground for trying them, and a client configuration snippet. See [MCP Servers](../mcp-servers/overview.md).
 

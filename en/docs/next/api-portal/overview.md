@@ -12,15 +12,15 @@ last_updated: 2026-07-24
 content_type: "overview"
 ---
 
-# API Portal & MCP Hub Overview
+# API Portal & MCP Hub overview
 
-The API Portal & MCP Hub is a self-hosted web application that acts as the front door between your APIs and the developers who consume them. API publishers register APIs and MCP servers in the portal, and developers discover, subscribe, and generate credentials — all without needing direct access to the underlying gateway or infrastructure.
+The API Portal & MCP Hub is a self-hosted web application that acts as the front door between your APIs and the developers who consume them. API publishers register APIs and MCP servers in the portal, and developers discover, subscribe, and generate credentials—all without needing direct access to the underlying gateway or infrastructure.
 
 New to the portal's building blocks? See [Concepts](concepts.md) for a glossary of the organization, views, labels, APIs, MCP servers, API workflows, subscription plans, applications, subscriptions, and API keys.
 
-## What the API Portal & MCP Hub Manages
+## What the API Portal & MCP Hub manages
 
-### API and MCP Catalog
+### API and MCP catalog
 
 Browse and search REST, GraphQL, SOAP, WebSocket, and WebSub APIs, as well as MCP servers, with full documentation and a try-out console.
 
@@ -30,31 +30,31 @@ Browse and search REST, GraphQL, SOAP, WebSocket, and WebSub APIs, as well as MC
 
 Learn more in [Discover APIs](discover-apis/api-search.md), [MCP Servers](mcp-servers/overview.md), and [AI Agent Discovery](discover-apis/ai-agent-discovery.md).
 
-### MCP Servers
+### MCP servers
 
 Publish Model Context Protocol servers alongside your APIs, each with its tools, resources, and prompts listed, an MCP Playground for invoking them, and a ready-made client configuration snippet. Servers arrive either through the admin UI or through the portal's implementation of the MCP registry specification.
 
 Learn more in [MCP Servers](mcp-servers/overview.md) and the [MCP Registry API](mcp-servers/mcp-registry.md).
 
-### Developer Applications
+### Developer applications
 
-Logical containers for OAuth2 credentials. A developer can create multiple applications — for example, one per client or environment — each linked to independent OAuth2 client IDs.
+Logical containers for OAuth2 credentials. A developer can create multiple applications—for example, one per client or environment—each linked to independent OAuth2 client IDs.
 
 Learn more in [Manage Applications](manage-applications.md).
 
-### Subscriptions and Plans
+### Subscriptions and plans
 
 Developers subscribe directly to an API or MCP server under a named plan (for example, Gold or Bronze) that enforces rate limits and quotas. No application is required to subscribe.
 
 Learn more in [Manage Subscriptions](manage-subscriptions.md) and, for admins, [Subscription Plans](admin-settings/subscription-plans.md).
 
-### API Keys and OAuth2 Credentials
+### API keys and OAuth2 credentials
 
 Generate, rotate, and revoke API keys bound to a specific API or MCP server. For OAuth2-secured APIs, link a client ID created in a key manager to an application and generate access tokens through the portal.
 
 Learn more in [Manage API Keys](manage-api-keys.md), [Consume an API Secured with OAuth2](consume-an-api/oauth2.md), and, for admins, [Key Manager Integration](admin-settings/key-manager-integration.md).
 
-### API Workflows
+### API workflows
 
 Multi-step API call sequences authored in [Arazzo format](https://spec.openapis.org/arazzo/latest.html) and published for both human developers and AI agents to discover and follow.
 
@@ -62,11 +62,11 @@ Learn more in [API Workflows](api-workflows.md).
 
 ### Theming
 
-Give a view its own colours, page shell, header, footer, and page markup by uploading a theme. A theme is a partial copy of the default template tree, so a re-colour is one file and everything you omit falls back to the default.
+Give a view its own colors, page shell, header, footer, and page markup by uploading a theme. A theme is a partial copy of the default template tree, so a re-color is one file and everything you omit falls back to the default.
 
 Learn more in [Theming](theming.md), and [Apply a Theme](admin-settings/theming.md) for the upload panel.
 
-### Admin Settings
+### Admin settings
 
 The **Settings** page is where admins configure everything above from one place: organization details, views, labels, subscription plans, key managers, the API and MCP catalog, webhooks, LLM instructions, and API workflows.
 
@@ -84,7 +84,7 @@ The **Settings** page is where admins configure everything above from one place:
 | [Managing API Workflows](admin-settings/managing-api-workflows.md) | Author, publish, and control visibility of API workflows |
 | [Apply a Theme](admin-settings/theming.md) | Upload, download, and reset a view's custom theme |
 
-## Gateway-Agnostic, Unified Developer Experience
+## Gateway-agnostic, unified developer experience
 
 The portal doesn't embed gateway-specific logic. Instead, it emits signed webhook events: whenever a developer generates an API key, subscribes, or revokes a key, the portal fires a signed HTTP POST to every registered gateway subscriber, and each gateway adapter enforces access in its own way.
 
@@ -96,16 +96,16 @@ This means you can:
 
 ## Views
 
-Within your [organization](admin-settings/organization-settings.md) you can define multiple [views](admin-settings/manage-views.md) for different audiences — for example, one for internal teams and one for external partners.
+Within your [organization](admin-settings/organization-settings.md) you can define multiple [views](admin-settings/manage-views.md) for different audiences—for example, one for internal teams and one for external partners.
 
-## Setting Up
+## Setting up
 
 Beyond the Docker Compose quick start, a production deployment typically needs:
 
 | Topic | Covers |
 |---|---|
 | [Authentication](setting-up/authentication/overview.md) | Local and OIDC authentication modes, with an Asgardeo identity-provider walkthrough |
-| [Artifact types](artifact-types.md) | Choose which artifact types — APIs, MCP servers, and API workflows — the portal serves |
+| [Artifact types](artifact-types.md) | Choose which artifact types—APIs, MCP servers, and API workflows—the portal serves |
 | [Design Mode](setting-up/design-mode.md) | Develop and preview themes/layouts offline, without a database or IDP |
 
 ## References
@@ -116,6 +116,6 @@ Beyond the Docker Compose quick start, a production deployment typically needs:
 | [Get a Bearer Token via curl](references/get-a-bearer-token-via-curl.md) | Scripted/CI access to the REST API under IDP mode |
 | [Configurations](references/configurations.md) | Full `config.toml` field reference and environment interpolation |
 
-## Getting Started
+## Getting started
 
 To start using the API Portal & MCP Hub, follow the [Getting Started](getting-started.md) guide.

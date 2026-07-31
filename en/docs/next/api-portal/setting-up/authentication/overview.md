@@ -29,9 +29,9 @@ The two modes present users with different login experiences:
 
 - **Local mode** (`mode = "local"`): clicking **Login** on any portal page shows a built-in username and password form. Credentials are validated against the Platform API.
 
-- **Identity provider mode** (`mode = "idp"`): clicking **Login** redirects the user directly to the identity provider's authorization endpoint — no intermediate login page is shown. After authenticating, the user is returned to the page they originally requested.
+- **Identity provider mode** (`mode = "idp"`): clicking **Login** redirects the user directly to the identity provider's authorization endpoint—no intermediate login page is shown. After authenticating, the user is returned to the page they originally requested.
 
-Public pages (the API catalog and documentation) are always accessible without authentication in either mode. Only protected pages — applications, subscriptions, and API keys — require login.
+Public pages (the API catalog and documentation) are always accessible without authentication in either mode. Only protected pages—applications, subscriptions, and API keys—require login.
 
 ## Local authentication
 
@@ -58,7 +58,7 @@ Local authentication is intended for development and local testing only. Move to
 
 ## Identity provider authentication
 
-For production, configure the portal to delegate login to an identity provider (IdP) over OIDC. The API Portal & MCP Hub works with any OIDC-compliant IdP — such as Asgardeo, Keycloak, Auth0, or Okta — that meets these requirements:
+For production, configure the portal to delegate login to an identity provider (IdP) over OIDC. The API Portal & MCP Hub works with any OIDC-compliant IdP—such as Asgardeo, Keycloak, Auth0, or Okta—that meets these requirements:
 
 | Requirement | Details |
 |-------------|---------|
@@ -72,9 +72,9 @@ When `mode = "idp"`, the portal reads the `[api_portal.auth.idp]` block for the 
 
 [Set up Asgardeo as your identity provider](asgardeo-setup.md) walks through a complete configuration using WSO2 Asgardeo. The same concepts apply to any OIDC-compliant IdP.
 
-## Authorization is Configured Separately
+## Authorization is configured separately
 
-Authentication decides who a caller is; authorization decides what they may do. The two are configured in different places, and `[api_portal.auth.authorization]` applies in **both** modes — the portal verifies a token the same way whether it came from an IdP's JWKS endpoint or the Platform API's public key.
+Authentication decides who a caller is; authorization decides what they may do. The two are configured in different places, and `[api_portal.auth.authorization]` applies in **both** modes—the portal verifies a token the same way whether it came from an IdP's JWKS endpoint or the Platform API's public key.
 
 That section holds the role-to-scope mapping, the switch for Management API scope enforcement, per-page role gating, and the role names granting the admin and subscriber tiers. See [Authorization](../../references/configurations.md#authorization).
 

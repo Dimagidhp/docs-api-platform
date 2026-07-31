@@ -130,7 +130,7 @@ Required scopes (the token must carry at least one of): `dp:subscription:create`
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-subscription-responseschema">Response Schema</h3>
+<h3 id="create-a-subscription-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -234,7 +234,7 @@ Required scopes (the token must carry at least one of): `dp:subscription:read`, 
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Returned when `artifactId` is provided but does not match an existing API.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-subscriptions-responseschema">Response Schema</h3>
+<h3 id="list-subscriptions-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -449,7 +449,7 @@ Required scopes (the token must carry at least one of): `dp:subscription:update`
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-subscription-responseschema">Response Schema</h3>
+<h3 id="update-a-subscription-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -636,7 +636,7 @@ Required scopes (the token must carry at least one of): `dp:subscription:update`
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="change-subscription-plan-responseschema">Response Schema</h3>
+<h3 id="change-subscription-plan-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

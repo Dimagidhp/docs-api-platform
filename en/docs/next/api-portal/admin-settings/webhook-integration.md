@@ -14,35 +14,35 @@ content_type: "how-to"
 
 # Webhooks
 
-The API Portal & MCP Hub doesn't talk to a gateway directly. Instead it publishes a signed HTTP POST to every endpoint you register whenever an application, API key, or subscription changes. A handler behind that endpoint decides what to do next — typically propagating the change to your API Gateway so access is enforced immediately, rejecting a key the moment a developer revokes it.
+The API Portal & MCP Hub doesn't talk to a gateway directly. Instead it publishes a signed HTTP POST to every endpoint you register whenever an application, API key, or subscription changes. A handler behind that endpoint decides what to do next—typically propagating the change to your API Gateway so access is enforced immediately, rejecting a key the moment a developer revokes it.
 
 This page covers registering a subscriber. For the payload of every event, the delivery envelope, and how to verify and decrypt one, see the [Webhook Event Catalog](../references/webhook-event-catalog.md).
 
-## Add a Webhook
+## Add a webhook
 
 1. Go to **Settings** and select **Webhooks** under **INTEGRATIONS**.
 2. Click **+ Add webhook**.
 3. Fill in the fields:
 
-| Field | Description |
-|---|---|
-| **Display name** | Required. The name shown in the Webhooks table |
-| **Target URL** | Required. The endpoint that receives the POSTs |
-| **Secret** | Required. Used both to sign each delivery and to derive the key that encrypts credential fields. Never shown again after saving — leave it blank when editing to keep the existing value |
-| **Timeout (ms)** | How long to wait for a response before giving up. Defaults to 5000 |
-| **Events** | **All events**, or **Select events** to pick an explicit allowlist. The picker groups them as Subscriptions, API keys, and Applications |
-| **Enabled** | Turn a subscriber off without deleting it |
+    - **Display name**—required. The name shown in the Webhooks table.
+    - **Target URL**—required. The endpoint that receives the POSTs.
+    - **Secret**—required by this form. Used both to sign each delivery and to derive the key that encrypts credential fields. Never shown again after saving; leave it blank when editing to keep the existing value.
+    - **Timeout (ms)**—how long to wait for a response before giving up. Defaults to 5000.
+    - **Events**—**All events**, or **Select events** to pick an explicit allowlist. The picker groups them as Subscriptions, API keys, and Applications.
+    - **Enabled**—turn a subscriber off without deleting it.
 
 4. Click **Add webhook**.
 
-!!! warning
-    The secret does double duty. Without one, deliveries arrive unsigned — you can't verify they came from the portal — and the four events that carry a credential arrive **without it**: the field is dropped rather than sent in plaintext. Set a secret before relying on `apikey.generated`, `apikey.regenerated`, `subscription.created`, or `subscription.token_regenerated`.
+!!! warning "Always set a secret"
+    The secret does double duty: it signs each delivery and derives the key that encrypts credential fields. This form requires one, but the [Management API](../rest-api/webhook-subscribers.md) does not—only `displayName` and `targetUrl` are mandatory there, so a subscriber created programmatically can end up without a secret.
 
-## Edit or Delete a Webhook
+    Such a subscriber still receives events, with two consequences. Deliveries arrive unsigned, so you can't verify they came from the portal. And the four events that carry a credential arrive **without it**—the field is dropped rather than sent in plaintext. Set a secret before relying on `apikey.generated`, `apikey.regenerated`, `subscription.created`, or `subscription.token_regenerated`.
 
-Click a webhook's display name, or the pencil icon, to edit it. Click the trash icon to delete it — that can't be undone.
+## Edit or delete a webhook
 
-## What Gets Delivered
+Click a webhook's display name, or the pencil icon, to edit it. Click the trash icon to delete it—that can't be undone.
+
+## What gets delivered
 
 The portal publishes twelve event types across three groups:
 
@@ -56,14 +56,14 @@ Four of them carry a credential, encrypted with a key derived from your secret: 
 
 Each delivery carries an `X-Api-Portal-Signature` header and, where relevant, an `encrypted_fields` list naming the fields in `data` that hold an encrypted envelope. The [Webhook Event Catalog](../references/webhook-event-catalog.md) has the full payload for each event, the signature algorithm, and the decryption steps.
 
-## Delivery Behavior
+## Delivery behavior
 
 Two things to design your endpoint around:
 
-- **A delivery is attempted once.** Any non-2xx response, connection error, or timeout is terminal — there's no automatic retry. Make the endpoint reliable, and answer within the configured timeout.
+- **A delivery is attempted once.** Any non-2xx response, connection error, or timeout is terminal—there's no automatic retry. Make the endpoint reliable, and answer within the configured timeout.
 - **Acknowledge fast, work later.** Return a 2xx and do the propagation asynchronously, rather than holding the connection open while you call a gateway.
 
-You can read delivery history, including failures and their HTTP status, through the Management API — see [Webhook Events](../rest-api/webhook-events.md).
+You can read delivery history, including failures and their HTTP status, through the Management API—see [Webhook Events](../rest-api/webhook-events.md).
 
 ## Related
 

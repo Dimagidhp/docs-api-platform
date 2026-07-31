@@ -12,11 +12,11 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Key Managers
+# Key managers
 
-A **key manager** is the OAuth2 authorization server used to issue access tokens for OAuth2-secured APIs. The API Portal & MCP Hub never creates or stores OAuth applications — developers create their OAuth application directly in the key manager, then link its client ID to an application in the portal. The portal only proxies `client_credentials` token requests to the key manager's token endpoint; it never sees or stores a client secret.
+A **key manager** is the OAuth2 authorization server used to issue access tokens for OAuth2-secured APIs. The API Portal & MCP Hub never creates or stores OAuth applications—developers create their OAuth application directly in the key manager, then link its client ID to an application in the portal. The portal only proxies `client_credentials` token requests to the key manager's token endpoint; it never sees or stores a client secret.
 
-## Adding a Key Manager
+## Adding a key manager
 
 1. Navigate to **Settings** and select the **Key Managers** tab under **ORGANIZATION**.
 2. Click **+ Add key manager**.
@@ -32,14 +32,14 @@ The portal generates the key manager's internal identifier itself. A key manager
 
 4. Click **Add key manager**.
 
-## Editing or Deleting a Key Manager
+## Editing or deleting a key manager
 
-Click a key manager's display name (or the pencil icon) to edit it. Click the trash icon to delete it — applications relying on it will no longer be able to obtain tokens through the portal; this can't be undone.
+Click a key manager's name (or the pencil icon) to edit it. Click the trash icon to delete it—applications relying on it will no longer be able to obtain tokens through the portal; this can't be undone.
 
-## How Developers Use Key Managers
+## How developers use key managers
 
 1. The developer creates an OAuth application directly in the key manager's own console (outside the portal) and obtains a client ID.
-2. In the portal, the developer opens their application's **Manage Keys** view, picks a key manager, and pastes the client ID. The portal stores only the client ID — never a secret.
+2. In the portal, the developer opens their application's **Manage Keys** view, picks a key manager, and pastes the client ID. The portal stores only the client ID—never a secret.
 3. To get an access token, the developer clicks **Generate access token**, enters the client secret when prompted, and the portal proxies a `client_credentials` request to the key manager's token endpoint. The secret is never stored.
 
-When an application is deleted, the portal removes the stored client ID mappings — it doesn't contact the key manager, since the OAuth application itself is owned and managed there independently.
+When an application is deleted, the portal removes the stored client ID mappings—it doesn't contact the key manager, since the OAuth application itself is owned and managed there independently.

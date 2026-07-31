@@ -117,7 +117,7 @@ Required scopes (the token must carry at least one of): `dp:view:create`, `dp:vi
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-view-responseschema">Response Schema</h3>
+<h3 id="create-a-view-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -212,7 +212,7 @@ Required scopes (the token must carry at least one of): `dp:view:read`, `dp:view
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-views-responseschema">Response Schema</h3>
+<h3 id="list-views-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -250,7 +250,7 @@ curl -X PUT https://localhost:9543/api/v0.9/views/{viewId} \
 
 ```
 
-Updates the view display name and/or label associations. When `labels` is supplied, it fully replaces the view's label set — labels present in the list are attached and any others are detached. The service returns the accepted request payload.
+Updates the view display name and/or label associations. When `labels` is supplied, it fully replaces the view's label set—labels present in the list are attached and any others are detached. The service returns the accepted request payload.
 
 > Payload
 
@@ -350,7 +350,7 @@ Required scopes (the token must carry at least one of): `dp:view:update`, `dp:vi
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-view-responseschema">Response Schema</h3>
+<h3 id="update-a-view-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -451,7 +451,7 @@ Required scopes (the token must carry at least one of): `dp:view:read`, `dp:view
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Plain text success response.|string|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-a-view-responseschema">Response Schema</h3>
+<h3 id="get-a-view-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -539,7 +539,7 @@ Required scopes (the token must carry at least one of): `dp:view:delete`, `dp:vi
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="delete-a-view-responseschema">Response Schema</h3>
+<h3 id="delete-a-view-responseschema">Response schema</h3>
 
 #### Enumerated Values
 

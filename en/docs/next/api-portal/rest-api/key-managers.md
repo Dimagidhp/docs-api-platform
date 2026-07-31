@@ -32,7 +32,7 @@ curl -X POST https://localhost:9543/api/v0.9/key-managers \
 
 ```
 
-Creates a key manager configuration for the organization. If `id` is omitted, the service generates a UUID handle. Accepts either a `application/json` body or a `multipart/form-data` upload with a `keymanager` field containing the KeyManager YAML file. OAuth applications are created directly in the key manager itself, outside the portal — the portal only needs the token endpoint to proxy `client_appKeyMappings` token requests.
+Creates a key manager configuration for the organization. If `id` is omitted, the service generates a UUID handle. Accepts either a `application/json` body or a `multipart/form-data` upload with a `keymanager` field containing the KeyManager YAML file. OAuth applications are created directly in the key manager itself, outside the portal—the portal only needs the token endpoint to proxy `client_appKeyMappings` token requests.
 
 > Payload
 
@@ -131,7 +131,7 @@ Required scopes (the token must carry at least one of): `dp:key_manager:create`,
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-key-manager-responseschema">Response Schema</h3>
+<h3 id="create-a-key-manager-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -223,7 +223,7 @@ Required scopes (the token must carry at least one of): `dp:key_manager:read`, `
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|List of key manager configurations. Admins receive KeyManagerResponseSchema items; other callers receive the minimal KeyManagerPublicResponseSchema items.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-key-managers-responseschema">Response Schema</h3>
+<h3 id="list-key-managers-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -473,7 +473,7 @@ Required scopes (the token must carry at least one of): `dp:key_manager:update`,
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-key-manager-responseschema">Response Schema</h3>
+<h3 id="update-a-key-manager-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
