@@ -4,6 +4,7 @@
 
 - **Sentence case, always:** only the first word plus proper nouns and acronyms. "Configure rate limiting", not "Configure Rate Limiting".
 - Descriptive and unique, so a reader can navigate by heading alone.
+- Maintain logical order and never skip a heading level — an H3 belongs only under an H2.
 - **After a colon, semicolon, or hyphen:** capitalize only the first word, then continue lowercase — `Example 1: Basic object validation`, `Optional - Second HTTPRoute`. Don't re-capitalize every word after the mark, and don't lowercase the word right after it.
 
 ## Code font (backticks)
@@ -15,7 +16,7 @@
 
 ## Emphasis and lists
 
-- **Bold:** UI element names and run-in headings, including the lead-in word of a notice. Not for emphasis in body text.
+- **Bold:** every UI element name a reader interacts with — panes, buttons, menu items, fields — plus run-in headings and the lead-in word of a notice. An unbolded UI element name is an error. Not for emphasis in body text.
 - *Italics:* two uses only — first mention of a term you define immediately after (not bold, not quotation marks), and words-as-words ("Use the word *and* instead").
 - Numbered lists when order matters, bulleted otherwise, description lists for pairs of related data.
 

@@ -2,7 +2,8 @@
 
 - Address the reader as "you" — never "the user" or "they".
 - Products and features in third person: "this lets the API Gateway route traffic", not "this lets us route traffic".
-- Active voice, present tense, indicative or imperative mood. No subjunctive, no passive ("The request is routed by the gateway").
+- **Active voice:** the subject performs the action. Rewrite passive constructions — "the request is routed by the gateway" becomes "the gateway routes the request".
+- Present tense, indicative or imperative mood. No subjunctive.
 - Don't give software or tools human characteristics.
 - Tone: casual and approachable, yet succinct and direct — a professional acquaintance. Confident, friendly, comprehensive. Not insensitive, oversentimental, or complicated.
 
@@ -12,7 +13,9 @@
 - Marketing adjectives for capability: "powerful", "seamless", "next-generation", "effortless".
 - Jargon, buzzwords, idioms, figurative language, metaphors, ableist language.
 - Cutesiness, zaniness, pop-culture references, phrasing that denigrates any group.
-- "Let's do X". Internet slang (`tl;dr`, `ymmv`). Exclamation marks.
+- "Let's do X" — write the instruction directly instead: "Create an API", not "Let's create an API".
+- Exclamation marks.
+- Internet slang (`tl;dr`, `ymmv`).
 - Filler: "please note", "at this time".
 - The same opening phrase on every sentence (all "You can...", all "To do...").
 - Choppy or long-winded sentences.

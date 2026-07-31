@@ -24,5 +24,6 @@ Also covers image assets under `en/docs/assets/img/`.
 
 ## Layout
 
-- **High-resolution:** use `srcset` alongside `src`. The 2x image must be exactly double the 1x width and height. Set `width` in CSS pixels with no explicit `height`. Point `src` at the 1x. Never upscale a 1x to fake a 2x.
-- No inline `style` margin or alignment tweaks. Don't center or shrink images unnecessarily, and don't let them exceed the main content column width.
+- **Never use an inline `style` attribute** for margin or alignment. Don't center or shrink images unnecessarily, and don't let them exceed the main content column width.
+- **Set `width` in CSS pixels, never an explicit `height`.**
+- **High-resolution:** use `srcset` alongside `src`. The 2x image must be exactly double the 1x width and height. Point `src` at the 1x. Never upscale a 1x to fake a 2x.
