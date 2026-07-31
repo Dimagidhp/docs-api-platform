@@ -71,7 +71,7 @@ When guardrails are active, you can use Moesif analytics to:
 
 See [Policies overview](policies/overview.md) for more on configuring guardrails.
 
-## Related
+## Related resources
 
 - [Setting up an AI Gateway](ai-gateways/setting-up.md) — Configure `MOESIF_KEY` on the gateway runtime
 - [Token-based rate limiting](policies/overview.md#token-based-rate-limit) — Set token limits and use analytics to monitor usage

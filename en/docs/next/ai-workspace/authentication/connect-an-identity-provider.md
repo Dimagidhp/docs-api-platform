@@ -148,9 +148,13 @@ post_logout_redirect_url = "https://<your-domain>/login"
 
 # A sibling of [ai_workspace.auth.oidc], not nested in it — applies to both auth modes.
 [ai_workspace.auth.claim_mappings]
-organization = "org_id"
-org_name     = "org_name"
-org_handle   = "org_handle"
+organization = "org_id"        # claim carrying the org ID
+org_name     = "org_name"      # org display name
+org_handle   = "org_handle"    # org URL slug
+username     = "username"
+email        = "email"
+scope        = "scope"         # space-separated scope string
+roles        = "roles"
 ```
 
 {% endraw %}
@@ -159,9 +163,9 @@ Three things to get right:
 
 - **`authority`** is the issuer URL. Endpoints are discovered from it, so it must be the URL whose `/.well-known/openid-configuration` describes your IdP.
 - **`redirect_url`** must match the URL registered in Step 1 exactly, character for character.
-- **`[ai_workspace.auth.claim_mappings]`** must mirror `[platform_api.auth.claim_mappings]` key for key. Both services read the same token, so a mismatch means one of them reads the wrong claim.
+- **`[ai_workspace.auth.claim_mappings]`** must give every key it shares with `[platform_api.auth.claim_mappings]` the same value. Both services read the same token, so a mismatch means one of them reads the wrong claim. AI Workspace uses `username` and `email` to render the signed-in user, so they matter here as much as the organization claims. The table has no `user_id` key — only the Platform API maps that claim.
 
-Every `[ai_workspace.auth.oidc]` key except `scope` defaults to empty, and the server refuses to start in OIDC mode until each is set — a misconfiguration fails at startup rather than at a user's first login.
+Every `[ai_workspace.auth.oidc]` key except `scope` defaults to empty. In OIDC mode the server refuses to start until each one is set, so a misconfiguration fails at startup rather than at a user's first login.
 
 Leave `scope` unset to request the full `ap:*` scope set the Platform API authorizes against, which is the recommended starting point. If you trim it, keep `offline_access`, or token refresh stops working.
 
@@ -173,7 +177,7 @@ Never write the client secret as a literal in `config.toml`. The token above rea
 APIP_AIW_AUTH_OIDC_CLIENT_SECRET=<ai-workspace-client-secret>
 ```
 
-In the Docker Compose distribution, set it in the git-ignored `api-platform.env`, which is the file Compose loads into both containers. In production, prefer a mounted secret file — swap the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %} and mount the secret at that path. Both forms fail closed: a missing variable or unreadable file aborts startup rather than falling back to an empty credential. See [Sensitive values in `config.toml`](../configuration.md#sensitive-values-in-configtoml).
+In the Docker Compose distribution, set it in the git-ignored `api-platform.env`, which is the file Compose loads into both containers. In production, prefer a mounted secret file. Swap the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %}, then mount the secret at that path. Both forms fail closed: a missing variable or unreadable file aborts startup rather than falling back to an empty credential. See [Sensitive values in `config.toml`](../configuration.md#sensitive-values-in-configtoml).
 
 ## Step 6: Restart and verify
 

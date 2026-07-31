@@ -15,7 +15,7 @@ content_type: "overview"
 
 # Policies overview
 
-AI Workspace is where you attach policies to your LLM providers and App LLM proxies and deploy them. The AI Gateway is what enforces them at request time.
+AI Workspace is where you attach policies to your large language model (LLM) providers and App LLM proxies and deploy them. The AI Gateway is what enforces them at request time.
 
 That split runs through this section. This page covers what's available to attach and where it takes effect in the workspace. For what a policy does to a request, its configuration fields, and its error behavior, follow each policy through to the [Policy Hub](https://wso2.com/api-platform/policy-hub/), the registry that holds the specification and version history for every policy listed here.
 
@@ -150,6 +150,9 @@ Caps request count like the basic policy, with more control over how requests ar
 - Stores counters in memory, in Redis, or in Redis with a local async cache. If Redis is unreachable, it fails open and lets requests through.
 - Returns `X-RateLimit-*`, IETF `RateLimit-*`, and `Retry-After` response headers.
 
+!!! warning "Redis failures disable quota enforcement"
+    With a Redis-backed counter, a Redis outage stops quotas being enforced rather than blocking traffic. Requests pass through unrestricted for as long as Redis is unreachable, which can drive unbounded upstream traffic and LLM spend. Alert on Redis availability, and pair the policy with a limit that doesn't depend on Redis — an in-memory rate limit, or a [token-based](#token-based-rate-limit) or [LLM cost-based](#llm-cost-based-rate-limit) limit — if you need a ceiling that survives the outage.
+
 For the full configuration schema, see [Rate limit — advanced](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) in the Policy Hub.
 
 ### Token-based rate limit
@@ -260,7 +263,7 @@ These two limits apply at once. Both must be satisfied for a request to proceed,
 
 ## MCP policies
 
-These policies attach to MCP proxies. To attach them in the workspace, see [Apply policies for MCP proxy](../mcp-proxies/apply-policies.md).
+These policies attach to Model Context Protocol (MCP) proxies. To attach them in the workspace, see [Apply policies for MCP proxy](../mcp-proxies/apply-policies.md).
 
 | Policy | What it does |
 |--------|--------------|

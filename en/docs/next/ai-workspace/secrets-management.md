@@ -20,7 +20,7 @@ AI Workspace lets you store sensitive credentials as **secrets** and reference t
 Use secrets to avoid embedding raw API keys, tokens, or passwords directly in LLM provider configurations, MCP proxy configs, or API backend settings.
 
 !!! important "Not the same as `config.toml` interpolation"
-    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services' own startup credentials — database password, OIDC client secret, at-rest encryption key — are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](./configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
+    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services' own startup credentials — database password, OpenID Connect (OIDC) client secret, at-rest encryption key — are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](./configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
 
 ## How It Works
 
@@ -352,7 +352,7 @@ Attempting to delete a secret that is still in use returns HTTP 409. To remove i
 
 ## Encryption Key
 
-Secrets are encrypted at rest with the Platform API's at-rest encryption key, which also protects subscription tokens and WebSub HMAC secrets. The setup script provisions this key for Docker Compose deployments. For how to generate, mount, and reference it, see [Provision the at-rest encryption key manually](./getting-started.md#provision-the-at-rest-encryption-key-manually).
+Secrets are encrypted at rest with the Platform API's at-rest encryption key, which also protects subscription tokens and WebSub hash-based message authentication code (HMAC) secrets. The setup script provisions this key for Docker Compose deployments. For how to generate, mount, and reference it, see [Provision the at-rest encryption key manually](./getting-started.md#provision-the-at-rest-encryption-key-manually).
 
 !!! warning
     Use the same encryption key across restarts and across all replicas. Changing or rotating it makes previously-encrypted secrets unreadable.

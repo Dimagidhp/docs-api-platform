@@ -109,7 +109,7 @@ The AI Workspace control plane itself is configured through `config.toml`, resol
 
 {% raw %}
 - `{{ env "VARIABLE_NAME" "default" }}` — reads the named environment variable, falling back to `default` if it's unset. Omit the default to make the variable required; startup fails if it isn't set.
-- `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply sensitive values such as the OIDC client secret or a database password without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
+- `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply sensitive values such as the OpenID Connect (OIDC) client secret or a database password without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
 
 ```toml
 [ai_workspace.logging]
@@ -118,6 +118,7 @@ level = '{{ env "APIP_AIW_LOGGING_LEVEL" "info" }}'
 [ai_workspace.auth.oidc]
 client_secret = '{{ file "/secrets/ai-workspace/oidc_client_secret" }}'
 ```
+
 {% endraw %}
 
 Resolution fails closed: an unset required variable, or an unreadable or disallowed file, aborts startup rather than running with an empty credential.
@@ -130,6 +131,8 @@ For each {% raw %}`{{ file }}`{% endraw %} token, mount the referenced value at 
     volumes:
       - ./secrets/oidc_client_secret:/secrets/ai-workspace/oidc_client_secret:ro
 ```
+
+Keep `./secrets/oidc_client_secret` out of source control, and restrict it to its owner with `chmod 600 ./secrets/oidc_client_secret`.
 
 ## Relationship to AI Gateway
 

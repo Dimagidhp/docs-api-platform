@@ -98,7 +98,7 @@ Once synced, a custom AI policy is attached the same way for LLM providers, App 
 
 For more detail on the global and per-resource scopes, see [Policy scope: Global or per resource](overview.md#policy-scope-global-or-per-resource).
 
-## What's Next?
+## Next steps
 
 - [LLM providers overview](../llm-providers/overview.md): configure LLM providers
 - [App LLM proxies overview](../llm-proxies/overview.md): configure App LLM proxies for GenAI applications and agents

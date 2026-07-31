@@ -43,9 +43,9 @@ After selecting your provider type, fill in the provider configuration form:
 
 ### Basic Information
 
-1. **Name*** (Required): Enter a unique name for the provider (for example, `openai-production`, `anthropic-dev`).
+1. **Name** (required): Enter a unique name for the provider (for example, `openai-production`, `anthropic-dev`).
 
-2. **Version*** (Required): The version is pre-filled (for example, `v1.0`). You can edit this if needed.
+2. **Version** (required): The version is pre-filled (for example, `v1.0`). You can edit this if needed.
 
 3. **Description** (Optional): Add a description to identify the provider's purpose.
 
@@ -56,40 +56,40 @@ After selecting your provider type, fill in the provider configuration form:
 The authentication fields vary depending on the provider you selected:
 
 === "OpenAI"
-    **API Key*** (Required): Enter your OpenAI API key (starts with `sk-proj-` or `sk-`).
+    **API Key** (required): Enter your OpenAI API key (starts with `sk-proj-` or `sk-`).
     
     !!! info
         OpenAI's endpoint URL is pre-configured automatically.
 
 === "Anthropic"
-    **API Key*** (Required): Enter your Anthropic API key (starts with `sk-ant-`).
+    **API Key** (required): Enter your Anthropic API key (starts with `sk-ant-`).
     
     !!! info
         Anthropic's endpoint URL is pre-configured automatically.
 
 === "Gemini"
-    **API Key*** (Required): Enter your Google AI API key.
+    **API Key** (required): Enter your Google AI API key.
     
     !!! info
         Gemini's endpoint URL is pre-configured automatically.
 
 === "Mistral AI"
-    **API Key*** (Required): Enter your Mistral AI API key.
+    **API Key** (required): Enter your Mistral AI API key.
     
     !!! info
         Mistral AI's endpoint URL is pre-configured automatically.
 
 === "Azure OpenAI"
-    1. **Upstream URL*** (Required): Enter your Azure OpenAI resource endpoint (for example, `https://your-resource.openai.azure.com/`).
-    2. **API Key*** (Required): Enter your Azure OpenAI API key.
+    1. **Upstream URL** (required): Enter your Azure OpenAI resource endpoint (for example, `https://your-resource.openai.azure.com/`).
+    2. **API Key** (required): Enter your Azure OpenAI API key.
 
 === "Azure AI Foundry"
-    1. **Upstream URL*** (Required): Enter your Azure AI Foundry endpoint URL.
-    2. **API Key*** (Required): Enter your Azure AI Foundry API key.
+    1. **Upstream URL** (required): Enter your Azure AI Foundry endpoint URL.
+    2. **API Key** (required): Enter your Azure AI Foundry API key.
 
 === "AWS Bedrock"
-    1. **Upstream URL*** (Required): Enter the Bedrock runtime endpoint for your region, in the form `https://bedrock-runtime.<region>.amazonaws.com` (for example, `https://bedrock-runtime.us-east-1.amazonaws.com`).
-    2. **API Key*** (Required): Enter your Amazon Bedrock API key. Paste the raw key — AI Workspace sends it as `Authorization: Bearer <key>` and adds the `Bearer ` prefix for you.
+    1. **Upstream URL** (required): Enter the Bedrock runtime endpoint for your region, in the form `https://bedrock-runtime.<region>.amazonaws.com` (for example, `https://bedrock-runtime.us-east-1.amazonaws.com`).
+    2. **API Key** (required): Enter your Amazon Bedrock API key. Paste the raw key — AI Workspace sends it as `Authorization: Bearer <key>` and adds the `Bearer ` prefix for you.
 
     !!! info
         Bedrock's endpoint isn't pre-configured, because the runtime host is region-specific. Use the region your API key and model access live in — a key issued in one region doesn't work against another region's endpoint.

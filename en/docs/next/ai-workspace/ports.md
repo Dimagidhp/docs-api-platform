@@ -43,14 +43,14 @@ The containers keep listening on 9643 and 9243, and Docker publishes them on hos
 
     Leave the container side and the `healthcheck` entries alone. Both run inside the container, where the original ports still apply.
 
-2. In `configs/config.toml`, point `controlplane_host` at the new Platform API host port, so the gateway setup commands the workspace shows carry the published port:
+2. In `configs/config.toml`, point `controlplane_host` at the new Platform API host port, so the gateway setup commands the workspace shows carry the published port. Use an address that your gateway can reach:
 
     ```toml
     [ai_workspace.gateway]
-    controlplane_host = "host.docker.internal:8244"
+    controlplane_host = "<gateway-reachable-host>:8244"
     ```
 
-    Leave `[ai_workspace.control_plane] url` on `https://platform-api:9243` — see [Two keys that aren't interchangeable](#two-keys-that-arent-interchangeable).
+    For a gateway in another container on the same machine, `host.docker.internal:8244` works. From anywhere else, use the machine's hostname or IP address. Leave `[ai_workspace.control_plane] url` on `https://platform-api:9243` — see [Two keys that aren't interchangeable](#two-keys-that-arent-interchangeable).
 
 3. Set `APIP_AIW_DOMAIN=localhost:8443` in `api-platform.env`, so the startup log banner prints an address you can open.
 
@@ -70,15 +70,17 @@ The services bind to different ports themselves. Choose this when something insi
     key_file  = "/app/data/certs/key.pem"
     ```
 
-3. Point the AI Workspace at the new Platform API port, and give gateways the matching host address:
+3. Point the AI Workspace at the new Platform API port, and give gateways a host address they can reach on the new port:
 
     ```toml
     [ai_workspace.control_plane]
     url = "https://platform-api:8244"
 
     [ai_workspace.gateway]
-    controlplane_host = "host.docker.internal:8244"
+    controlplane_host = "<gateway-reachable-host>:8244"
     ```
+
+    As in the previous approach, `host.docker.internal:8244` works for a gateway in another container on the same machine.
 
 4. In `docker-compose.yaml`, update both sides of each mapping, and the health check URLs, which run inside the container against the new listener ports:
 
@@ -120,7 +122,7 @@ Recreate the containers so they pick up the new values:
 docker compose up -d --force-recreate
 ```
 
-!!! note "Ports in an OIDC setup"
+!!! note "Ports in an OpenID Connect (OIDC) setup"
     OIDC redirect URLs carry the port. Update `APIP_AIW_AUTH_OIDC_REDIRECT_URL` and `APIP_AIW_AUTH_OIDC_POST_LOGOUT_REDIRECT_URL`, and the matching URLs registered in your identity provider. See [Connect an identity provider](authentication/connect-an-identity-provider.md).
 
 ## Related

@@ -14,7 +14,7 @@ content_type: "reference"
 
 # AI Workspace Configuration and Environment Interpolation
 
-The AI Workspace stack — the AI Workspace BFF and the Platform API it proxies to — reads its configuration from TOML files (`config.toml`) layered over built-in defaults. This page explains how each service loads its config file, how environment values and mounted files are injected through interpolation tokens, and how to keep sensitive values out of the file. For provisioning the keys, certificates, and credentials those tokens resolve to, see [Get started with AI Workspace](./getting-started.md).
+The AI Workspace stack — the AI Workspace Backend-for-Frontend (BFF) and the Platform API it proxies to — reads its configuration from TOML files (`config.toml`) layered over built-in defaults. This page explains how each service loads its config file, how environment values and mounted files are injected through interpolation tokens, and how to keep sensitive values out of the file. For provisioning the keys, certificates, and credentials those tokens resolve to, see [Get started with AI Workspace](./getting-started.md).
 
 ## How configuration is loaded
 
@@ -64,7 +64,7 @@ For every configurable option and the tokens the shipped files carry, refer to t
 
 ## Sensitive values in `config.toml`
 
-This section covers credentials the services need to start — database passwords, the OIDC client secret, the at-rest encryption key. It's a separate mechanism from the [AI Workspace secrets](./secrets-management.md) feature, which stores encrypted credentials you reference from artifacts.
+This section covers credentials the services need to start — database passwords, the OpenID Connect (OIDC) client secret, the at-rest encryption key. It's a separate mechanism from the [AI Workspace secrets](./secrets-management.md) feature, which stores encrypted credentials you reference from artifacts.
 
 Never write a sensitive value as a literal in `config.toml`, and never hardcode one in `docker-compose.yaml`. Reference each with an interpolation token — from an environment variable or, preferably, from a mounted file:
 

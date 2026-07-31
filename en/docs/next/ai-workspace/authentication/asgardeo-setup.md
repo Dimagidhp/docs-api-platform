@@ -30,7 +30,7 @@ This guide walks you through configuring Asgardeo as the identity provider for a
 
 ## Step 2: Register the AI Workspace application
 
-AI Workspace runs a backend-for-frontend (BFF) that acts as a confidential OIDC client: it holds the client secret and completes the authorization-code and PKCE exchange on the back channel. Register it as a confidential web application, not a single-page application. A single-page application is a public client, and the token endpoint rejects the BFF's exchange with "The authenticated client is not authorized to use the requested grant type."
+AI Workspace runs a backend-for-frontend (BFF) that acts as a confidential OIDC client: it holds the client secret and completes the authorization-code and PKCE exchange on the back channel. Register it as a confidential web application, not a single-page application. A single-page application is a public client. The token endpoint rejects the BFF's exchange with this error: "The authenticated client is not authorized to use the requested grant type."
 
 1. In the root organization, go to **Applications > New Application**.
 2. Choose **Standard-Based Application > OpenID Connect** (Traditional Web Application) and name it `AI Workspace`.
@@ -88,7 +88,7 @@ For each sub-organization that needs access:
 
 ## Step 7: Configure the Platform API
 
-AI Workspace and the Platform API now share a single `configs/config.toml` file — the Platform API reads its own `[platform_api.*]` tables from it and ignores the `[ai_workspace.*]` tables (and vice versa). Update the `[platform_api.auth]` section:
+AI Workspace and the Platform API share a single `configs/config.toml` file. The Platform API reads its own `[platform_api.*]` tables from it and ignores the `[ai_workspace.*]` tables, and AI Workspace does the reverse. Update the `[platform_api.auth]` section:
 
 ```toml
 [platform_api.auth]
@@ -113,6 +113,7 @@ org_handle   = "org_handle"
 In the same `configs/config.toml`, update the `[ai_workspace.auth]` tables:
 
 {% raw %}
+
 ```toml
 [ai_workspace]
 domain             = "<your-domain>"
@@ -140,17 +141,18 @@ organization = "org_id"
 org_name     = "org_name"
 org_handle   = "org_handle"
 ```
+
 {% endraw %}
 
 `redirect_url` must exactly match the authorized redirect URL you registered in Step 2.
 
-Never write the client secret as a literal in `config.toml` — the `{% raw %}{{ env }}{% endraw %}` placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
+Never write the client secret as a literal in `config.toml`. The `{% raw %}{{ env }}{% endraw %}` placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
 
 ```bash
 export APIP_AIW_AUTH_OIDC_CLIENT_SECRET=<ai-workspace-client-secret>
 ```
 
-Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers. In a production deployment, prefer supplying it from a mounted secret file instead, by swapping the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %} and mounting the secret at that path — resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
+Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers. In a production deployment, prefer supplying it from a mounted secret file. Swap the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %}, then mount the secret at that path. Resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
 
 Once configured, opening AI Workspace redirects you to the Asgardeo-hosted login page instead of the file-based login form:
 

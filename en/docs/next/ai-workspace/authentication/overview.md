@@ -14,7 +14,7 @@ content_type: "concept"
 
 # Authentication in AI Workspace
 
-AI Workspace and the Platform API read their settings from a single `config.toml` file, with AI Workspace's `[ai_workspace.*]` tables and the Platform API's `[platform_api.*]` tables living side by side. Authentication is set independently in each service's table, though both must agree for a given mode to work end to end. A running instance uses one mode at a time.
+AI Workspace and the Platform API read their settings from a single `config.toml` file. AI Workspace's `[ai_workspace.*]` tables and the Platform API's `[platform_api.*]` tables live side by side in it. Authentication is set independently in each service's table, though both must agree for a given mode to work end to end. A running instance uses one mode at a time.
 
 | Mode | `[ai_workspace.auth] mode` | `[platform_api.auth] mode` | Best for |
 |------|------------------------------|-------------------------------|----------|
@@ -66,7 +66,12 @@ password_hash = "$2a$12$..."
 roles         = ["ap_viewer"]
 ```
 
-A user's `roles` are its entire grant — there's no per-user scope list. Each name comes from the role-to-scope mapping file at `[platform_api.auth.authorization] role_to_scope_mapping`, which the distributions mount at `/etc/platform-api/role-to-scope-mapping.yaml`. The login endpoint expands those roles into the token's scope claim, and naming several unions what they grant, as `developer` does above. A user with no roles, or one naming a role the mapping file doesn't define, fails startup rather than signing in and then being denied every request.
+A user's `roles` define their complete grant. There's no per-user scope list.
+
+- Each role maps to a set of scopes through the role-to-scope mapping file at `[platform_api.auth.authorization] role_to_scope_mapping`. The distributions mount it at `/etc/platform-api/role-to-scope-mapping.yaml`.
+- The login endpoint expands those roles into the token's scope claim.
+- Assigning several roles combines their grants, as `developer` does above.
+- A user with no roles fails startup, and so does a user naming a role the mapping file doesn't define. The failure comes at startup rather than after signing in and being denied every request.
 
 The mapping file ships with these roles:
 
@@ -80,7 +85,7 @@ The mapping file ships with these roles:
 
 Edit that file to change what a role grants, or to add your own.
 
-The `setup.sh` script bundled with the Docker Compose distribution generates the admin username and password for you and prints them to the terminal once — see [Getting Started](../getting-started.md).
+The `setup.sh` script bundled with the Docker Compose distribution provisions the Platform API's admin credentials. It prompts for the username and password, generates the password if you accept the default, and prints that password to the terminal once. See [Getting Started](../getting-started.md).
 
 File-based authentication has two limitations:
 

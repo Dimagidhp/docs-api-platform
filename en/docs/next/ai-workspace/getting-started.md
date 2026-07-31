@@ -42,8 +42,8 @@ Run the script once before the first start. The stack never auto-generates keys 
 
 | Artifact | Location | Purpose |
 |----------|----------|---------|
-| TLS certificate | `resources/certificates/cert.pem` and `key.pem` | Self-signed HTTPS pair shared by the services. |
-| RS256 JWT signing keypair | `resources/keys/jwt_private.pem` and `jwt_public.pem` | The Platform API signs login tokens with the private key; AI Workspace and the API Portal verify them with the public key. There's no shared HMAC secret. |
+| Transport Layer Security (TLS) certificate | `resources/certificates/cert.pem` and `key.pem` | Self-signed HTTPS pair shared by the services. |
+| RS256 JSON Web Token (JWT) signing keypair | `resources/keys/jwt_private.pem` and `jwt_public.pem` | The Platform API signs login tokens with the private key; AI Workspace and the API Portal verify them with the public key. There's no shared hash-based message authentication code (HMAC) secret. |
 | At-rest encryption key | `resources/keys/encryption.key` | The Platform API's 32-byte key for encrypting stored secrets, subscription tokens, and WebSub HMAC secrets. **Retain it** — losing or changing it makes previously-encrypted data unreadable. |
 | API Portal encryption key | `resources/keys/api-portal-encryption.key` | Encrypts the API Portal's subscription and webhook secrets at rest. Retain it for the same reason. |
 | API Portal session secret | `resources/keys/api-portal-session-secret` | Signs API Portal session cookies. Rotating it only signs users out. |
@@ -56,7 +56,7 @@ To skip both prompts — in CI, for example — set the credentials in the envir
     The admin password is shown only once, and `api-platform.env` holds only its bcrypt hash. To set a new one, delete both `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` from `api-platform.env` and rerun `./scripts/setup.sh`. Deleting only one of the two makes the script stop with an error, because a username without its matching hash can never authenticate.
 
 !!! warning "Don't delete or edit `COMPOSE_PROJECT_NAME`"
-    The project name is pinned on the first run and never changes afterwards — not on a rerun, not under any flag. The stack's data lives in volumes prefixed with it, so a different name starts the stack with an empty database. To choose the name yourself, set `COMPOSE_PROJECT_NAME` in the environment for the first run.
+    The project name is pinned on the first run and never changes afterward — not on a rerun, not under any flag. The stack's data lives in volumes prefixed with it, so a different name starts the stack with an empty database. To choose the name yourself, set `COMPOSE_PROJECT_NAME` in the environment for the first run.
 
 ## Step 3: Start the Stack
 
@@ -117,21 +117,23 @@ Rerunning `./scripts/setup.sh` is safe. By default it fills in only what's missi
 To rotate a single value by hand, delete it from `api-platform.env` — or delete the file under `resources/certificates` or `resources/keys` — and rerun the script.
 
 !!! warning "Rotating an encryption key destroys encrypted data"
-    `--rotate-encryption-key` makes everything encrypted under the old key permanently unreadable, including stored [AI Workspace secrets](secrets-management.md). At an interactive terminal the script asks you to type `rotate` to confirm; in a non-interactive run, passing the flag is itself the confirmation. Rotating the JWT keypair with `--force` is milder — it only invalidates issued login tokens, so everyone signs in again.
+    `--rotate-encryption-key` replaces both encryption keys, which makes everything encrypted under the old keys permanently unreadable. That covers stored [AI Workspace secrets](secrets-management.md), subscription tokens, and WebSub HMAC secrets held by the Platform API, plus the API Portal's subscription secrets and webhook secrets. At an interactive terminal the script asks you to type `rotate` to confirm; in a non-interactive run, passing the flag is itself the confirmation. Rotating the JWT keypair with `--force` is milder — it only invalidates issued login tokens, so everyone signs in again.
 
 ## Provision the at-rest encryption key manually
 
 If you don't run `setup.sh`, provision the at-rest encryption key yourself before the first start. It protects [AI Workspace secrets](secrets-management.md), subscription tokens, and WebSub HMAC secrets, and the Platform API refuses to start if it's missing or malformed. Keep it stable across restarts and replicas.
 
-The key is a single 32-byte AES-256 value, supplied as 64 hex characters or base64. Generate it and write it to the file the container mounts at `/etc/platform-api/keys`:
+The key is a single 32-byte AES-256 value, supplied as 64 hex characters or base64. Generate it and write it to the file the container mounts at `/etc/platform-api/keys`. Create the file so that only its owner can read it:
 
 ```sh
-openssl rand -hex 32 > resources/keys/encryption.key
+(umask 077 && openssl rand -hex 32 > resources/keys/encryption.key)
+chmod 600 resources/keys/encryption.key
 ```
 
-A trailing newline is trimmed on load. The Platform API doesn't read the key from an environment variable directly. It reads the `encryption_key` field in `config.toml`, which pulls the value in through an interpolation token:
+Keep the key out of source control, alongside `api-platform.env`. A trailing newline is trimmed on load. The Platform API doesn't read the key from an environment variable directly. It reads the `encryption_key` field in `config.toml`, which pulls the value in through an interpolation token:
 
 {% raw %}
+
 ```toml
 # config.toml - resolved from a mounted key file:
 encryption_key = '{{ file "/etc/platform-api/keys/encryption.key" }}'
@@ -139,6 +141,7 @@ encryption_key = '{{ file "/etc/platform-api/keys/encryption.key" }}'
 # Alternatively, from an environment variable:
 # encryption_key = '{{ env "APIP_CP_ENCRYPTION_KEY" }}'
 ```
+
 {% endraw %}
 
 To use the environment variable form instead, switch the token to {% raw %}`{{ env "APIP_CP_ENCRYPTION_KEY" }}`{% endraw %} and set the variable in `api-platform.env`. For how these tokens work, see [AI Workspace configuration and environment interpolation](configuration.md).
