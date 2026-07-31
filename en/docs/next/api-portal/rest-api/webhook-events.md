@@ -25,18 +25,19 @@ content_type: "reference"
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/webhook-events \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
-Returns a paginated list of webhook events for the organization. Each event includes a summary of its delivery rows. Requires dp:event_read scope.
+Returns a paginated list of webhook events for the organization. Each event includes a summary of its delivery rows. Requires dp:event:read scope.
 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:event:read`
 
 </aside>
 
@@ -58,7 +59,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |status|FAILED|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -101,7 +102,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 {
   "status": "error",
   "code": "FORBIDDEN",
-  "message": "Write operations are disabled in read-only mode."
+  "message": "Forbidden"
 }
 ```
 
@@ -120,7 +121,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Paginated list of webhook events.|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden for the current runtime mode or caller permissions.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden — because the caller lacks the required permission, because the current runtime mode disallows the operation (read-only mode), or because an organization was named that is not the single one this instance serves. In that last case an organization that does not exist is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
 <h3 id="list-webhook-events-responseschema">Response Schema</h3>
@@ -176,18 +177,19 @@ Status Code **200**
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/webhook-events/{eventId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
-Returns a single webhook event with the full details of all its delivery rows. Requires dp:event_read scope.
+Returns a single webhook event with the full details of all its delivery rows. Requires dp:event:read scope.
 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:event:read`
 
 </aside>
 
@@ -198,7 +200,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |eventId|path|string|true|Webhook event identifier.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -231,7 +233,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 {
   "status": "error",
   "code": "FORBIDDEN",
-  "message": "Write operations are disabled in read-only mode."
+  "message": "Forbidden"
 }
 ```
 
@@ -260,6 +262,6 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Single webhook event with full delivery details.|[WebhookEvent](schemas.md#schemawebhookevent)|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden for the current runtime mode or caller permissions.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden — because the caller lacks the required permission, because the current runtime mode disallows the operation (read-only mode), or because an organization was named that is not the single one this instance serves. In that last case an organization that does not exist is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|

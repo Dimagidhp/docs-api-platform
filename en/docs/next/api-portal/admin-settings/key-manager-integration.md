@@ -24,10 +24,11 @@ A **key manager** is the OAuth2 authorization server used to issue access tokens
 
 | Field | Description |
 |---|---|
-| **Display name** | Name shown to developers (for example, "Asgardeo") |
-| **Handle** | Lowercase identifier used internally |
-| **Token endpoint** | The OAuth2 token endpoint the portal proxies `client_credentials` requests to |
-| **Enabled** | Whether the key manager is available for developers to select. Disable instead of deleting to temporarily take it out of use |
+| **Name** | Required. The name shown to developers on the Manage Keys card, for example `Production` |
+| **Token endpoint** | Required. The OAuth2 token endpoint the portal proxies `client_credentials` requests to |
+| **Enabled** | Whether the key manager is available for developers to select. Disable instead of deleting to take it out of use temporarily |
+
+The portal generates the key manager's internal identifier itself. A key manager created through the [Management API](../rest-api/key-managers.md) can supply one as `id`; one created here gets a UUID.
 
 4. Click **Add key manager**.
 

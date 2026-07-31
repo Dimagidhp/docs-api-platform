@@ -1,6 +1,6 @@
 ---
-title: "Theme the API Portal & MCP Hub"
-description: "Upload, download, and reset a custom theme (styles, layout, partials, and images) for a view in the API Portal & MCP Hub."
+title: "Apply a theme to a view"
+description: "Upload a theme ZIP to a view in the API Portal & MCP Hub, download the current theme, or reset to the built-in default."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/theming/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/theming.md
 tags:
@@ -12,9 +12,11 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Theming
+# Apply a Theme
 
-The **Theming** tab in the API Portal's Settings page lets you replace a view's look and feel — colors, layout, partials, and images — by uploading a ZIP archive, and roll back to the built-in default at any time.
+The **Theming** tab in the API Portal's Settings page is where you upload a theme to a view, download what's currently applied, and roll back to the built-in default.
+
+This page covers the panel. To build the theme in the first place — which files you can override, how the colour tokens work, and how to package the ZIP — see [Theming](../theming.md).
 
 Theming is configured **per view**: if your organization has more than one [view](manage-views.md), use the view switcher at the top of the panel to pick which one you're theming.
 
@@ -22,14 +24,9 @@ Theming is configured **per view**: if your organization has more than one [view
 
 1. Navigate to **Settings** and select the **Theming** tab under **APPEARANCE**.
 2. Pick the view you want to theme, if you have more than one.
-3. Under **Upload Theme**, drag and drop (or browse to) a single ZIP archive containing any of:
+3. Under **Upload Theme**, drag and drop (or browse to) a single ZIP archive, up to 10 MB.
 
-    - `styles/` — CSS
-    - `layout/` — the Handlebars layout template controlling page structure
-    - `partials/` — Handlebars partials
-    - `images/` — logo and other image assets
-
-    Up to 10 MB.
+    The archive must hold **one wrapper directory** containing the theme's folders — `my-theme/styles/`, `my-theme/layout/`, `my-theme/partials/`, `my-theme/pages/`, `my-theme/images/` — not those folders at the archive root. See [Package the theme](../theming.md#package-the-theme); getting this wrong makes the layout silently not apply.
 
 4. Click **Apply theme**.
 
@@ -48,4 +45,10 @@ Click **Reset to default** to discard the view's custom theme files and revert t
 
 ## API-Level Content
 
-Theming here controls the view-wide look and feel. To customize an individual API's landing page content (its own documentation, description, and assets), see [Manage APIs](manage-apis.md#step-3-documentation).
+Theming here controls the view-wide look and feel. To change one API's overview body, set its icon, or attach documents, see [Customize an API's Content](api-content.md).
+
+## Related
+
+- [Theming](../theming.md): build a theme, and the sample you can start from
+- [Design Mode](../setting-up/design-mode.md): preview a theme before uploading it
+- [Manage Views](manage-views.md): themes are scoped per view

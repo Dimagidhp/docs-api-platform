@@ -25,10 +25,9 @@ content_type: "reference"
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/views/{viewId}/api-workflows \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -57,7 +56,9 @@ Creates an API workflow in the selected view. If `id` is omitted, the service ge
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api_workflow:create`, `dp:api_workflow:manage`
 
 </aside>
 
@@ -69,7 +70,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
-
+>
 > 201 Response
 
 ```json
@@ -108,9 +109,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/views/{viewId}/api-workflows \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -119,7 +119,9 @@ Lists all API workflows for the selected organization view.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api_workflow:read`, `dp:api_workflow:manage`
 
 </aside>
 
@@ -132,7 +134,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -218,9 +220,8 @@ Status Code **200**
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/views/{viewId}/api-workflows/{apiWorkflowId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -229,7 +230,9 @@ Retrieves a single API workflow by ID from the selected view.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api_workflow:read`, `dp:api_workflow:manage`
 
 </aside>
 
@@ -241,7 +244,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |apiWorkflowId|path|string|true|The API workflow's handle (unique per org and view).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -287,10 +290,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X PUT https://localhost:9543/api/v0.9/views/{viewId}/api-workflows/{apiWorkflowId} \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -316,7 +318,9 @@ Updates API workflow metadata and content for the selected view. Duplicate handl
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api_workflow:update`, `dp:api_workflow:manage`
 
 </aside>
 
@@ -329,7 +333,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |apiWorkflowId|path|string|true|The API workflow's handle (unique per org and view).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -359,9 +363,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X DELETE https://localhost:9543/api/v0.9/views/{viewId}/api-workflows/{apiWorkflowId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -370,7 +373,9 @@ Deletes an API workflow from the selected view.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api_workflow:delete`, `dp:api_workflow:manage`
 
 </aside>
 
@@ -382,7 +387,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |apiWorkflowId|path|string|true|The API workflow's handle (unique per org and view).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -410,10 +415,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/views/{viewId}/api-workflows/generate-prompt \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -438,7 +442,9 @@ Generates the default agent prompt text for a proposed API workflow using the su
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api_workflow:create`, `dp:api_workflow:manage`
 
 </aside>
 
@@ -450,7 +456,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json

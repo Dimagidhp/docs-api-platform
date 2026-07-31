@@ -1,6 +1,6 @@
 ---
 title: "Configure LLM instructions for the API Portal & MCP Hub"
-description: "Give AI agents portal-level context, conventions, and recommended workflows by publishing LLM instructions to llms.txt."
+description: "Set the portal name and description that head llms.txt, and turn AI discoverability on or off for the whole portal."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/llm-instructions/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/llm-instructions.md
 tags:
@@ -8,52 +8,68 @@ tags:
   - api-portal
   - ai-discovery
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
 # LLM Instructions
 
-LLM Instructions allow portal admins to provide AI agents with high level context about the developer portal, what APIs are available, how the portal is organized, and any conventions or constraints agents should follow when interacting with it.
+**LLM Instructions** controls how AI agents see your portal as a whole. It sets the name and description at the top of `llms.txt` — the first thing an agent reads before it navigates anything else — and carries the switch that turns AI discoverability on or off for the entire portal.
 
-These instructions are published as part of the portal's `llms.txt` file, which is the primary entry point for AI agents discovering the portal's capabilities.
+Everything on this page is scoped to one [view](manage-views.md). Use the view selector to switch.
 
-## What Are LLM Instructions?
+## Open the Page
 
-LLM Instructions are free form natural language text written by the portal admin. They appear at the top of `llms.txt` and are read by agents before they navigate the rest of the portal's content.
+Go to **Settings** and select **LLM Instructions** under **AI & DISCOVERY**.
 
-Use this space to tell agents:
+![LLM Instructions page with the Portal is AI-discoverable toggle, Portal name and Description fields, a Publish button, and a live preview of the generated llms.txt](../../../assets/img/devportal/llm-instructions.png)
 
-- What the portal covers and what kind of APIs it exposes
-- How APIs are organized (by product area, team, lifecycle stage, etc.)
-- Any authentication conventions agents should be aware of
+## Turn AI Discoverability On or Off
+
+The **Portal is AI-discoverable** card at the top shows the view's live `llms.txt` path and a toggle.
+
+Switching it off makes every agent-facing endpoint return `404` — `llms.txt` itself, the API and MCP catalogs, per-artifact Markdown, raw specifications, and every workflow endpoint. It overrides each artifact's own agent-visibility setting, so nothing reaches an agent while it's off.
+
+The **Publish** button stays clickable when the toggle is off, so you can save the change.
+
+## Set the Portal Identity
+
+Two fields make up the instructions, and both appear verbatim at the top of `llms.txt`.
+
+| Field | What it does |
+|---|---|
+| **Portal name** | Replaces the default `{orgName} API Portal` heading |
+| **Description** | The paragraph below the name. This is the orientation text agents read first |
+
+The description is a free-text area, not a one-liner. Use it for the context an agent can't infer from individual API specs:
+
+- What the portal covers and what kinds of APIs it exposes
+- How the catalog is organized — by domain, team, or lifecycle stage
+- Authentication conventions that apply across APIs
 - Which workflows are the recommended starting points for common tasks
-- Any limitations or usage policies agents should respect
+- Usage policies or limitations agents should respect
 
-Well written LLM instructions reduce agent errors and improve the quality of AI-assisted integrations by giving agents the orientation they need upfront, rather than leaving them to infer context from individual API specs.
+Leave either field empty and the portal falls back to its defaults: `{orgName} API Portal` for the heading, and a generic one-line description.
 
+Click **Publish** to save. Changes take effect immediately — the next request for `llms.txt` reflects them.
 
-## Configuring LLM Instructions
+## Preview the Result
 
-LLM Instructions are configured at the portal (view) level in the admin settings.
+The pane beside the fields renders the `llms.txt` your settings produce, and refreshes as you type, so you can see the header in context above the generated API and workflow index. The icon in its corner opens the live `llms.txt` in a new tab.
 
-1. Log in to the API Portal & MCP Hub as an admin and navigate to **Admin Settings**.
-2. Select **LLM Instructions** tab.
-3. Enter your instructions in the text editor.
-4. Click **Publish**.
-
-![LLM Instructions page with Portal Identity fields, text editor, and Publish button](../../../assets/img/devportal/llm-instructions.png)
-
-Changes take effect immediately, the updated instructions are reflected in `llms.txt` as soon as you save.
-
-## Previewing the Output
-
-To verify how your instructions appear to agents, fetch the portal's `llms.txt` directly:
+To fetch it yourself:
 
 ```text
 GET /{orgName}/views/{viewName}/llms.txt
 ```
 
-Your LLM Instructions will appear at the top of the file, followed by the portal's API and workflow index.
-
 ![llms.txt file showing API Workflows section with workflow names, descriptions, and spec links](../../../assets/img/devportal/llms-txt.png)
+
+Only your name and description are editable. Everything below them — the API Workflows, APIs, MCPs, GraphQL, WebSocket, and WebSub sections — is generated from the catalog and reflects each artifact's own agent visibility. See [AI Agent Discovery](../discover-apis/ai-agent-discovery.md) for how that index is built.
+
+## Related
+
+- [AI Agent Discovery](../discover-apis/ai-agent-discovery.md): every agent-facing endpoint, and what `llms.txt` contains
+- [Managing API Workflows](managing-api-workflows.md): per-workflow agent visibility
+- [Make an API AI-Ready](../../../cloud/develop-api-proxy/make-api-ai-ready.md): per-API agent visibility, and writing descriptions agents can use
+- [Manage Views](manage-views.md): why these settings are per-view

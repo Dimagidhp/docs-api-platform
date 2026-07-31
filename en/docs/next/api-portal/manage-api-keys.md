@@ -18,7 +18,7 @@ API keys are bound to a specific API. You generate a key directly for an API, an
 
 ## Prerequisites
 
-The API must have API key authentication enabled — check the API's documentation or the security section of its specification to confirm. If the API requires a subscription, [subscribe to it](manage-subscriptions/subscribe-to-an-api.md) first.
+The API must have API key authentication enabled — check the API's documentation or the security section of its specification to confirm. If the API requires a subscription, [subscribe to it](manage-subscriptions.md) first.
 
 ## Generate an API Key
 
@@ -31,7 +31,7 @@ The API must have API key authentication enabled — check the API's documentati
 7. **Copy the API key immediately.** The key won't be visible in the UI after you close this dialog.
 8. Click **Done**.
 
-Once you have a key, see [Consume an API Secured with API Key](consuming-services/consume-an-api-secured-with-api-key.md) for how to use it.
+Once you have a key, see [Consume an API Secured with an API Key](consume-an-api/api-key.md) for how to use it.
 
 ## Rotate an API Key
 
@@ -39,7 +39,7 @@ If a key is compromised, or you want to rotate it as a security practice:
 
 1. Navigate to the API's **API Keys** page.
 2. Click **Regenerate** next to the key.
-3. Confirm the regeneration. The old key is immediately invalidated.
+3. Adjust the **Name** or **Expires at** in the dialog if you want to, then confirm. The old key is immediately invalidated.
 4. Copy the new key from the dialog.
 
 !!! warning
@@ -55,9 +55,17 @@ To permanently invalidate a key:
 
 Revoked keys can't be recovered. Generate a new key if you need access again.
 
+## What the API Keys Page Shows
+
+The page lists every key for the API, with its name, status, expiry (or **Never**), and the application it's attributed to. Above the table, a dropdown filters the list by application.
+
+Each row carries three actions: **Associate app** (or **Change app** when one is already set), **Regenerate**, and **Revoke**.
+
 ## Associate an API Key with an Application
 
 API keys are always generated for an API directly — never for an application. Associating a key with an application afterward is optional and exists purely for **usage analytics attribution**: it groups a key's request metrics under an application in reporting. It has no effect on the key's validity or authorization, and a key works identically whether or not it's associated with an application.
+
+You can do this from either side. From the key's own row, click **Associate app** or **Change app**. Or, from the application:
 
 1. Sign in to the API Portal and open **Applications** in the sidebar.
 2. Select the application you want to attribute usage to.
@@ -75,11 +83,14 @@ To remove the association later, click **Remove** next to the key in the same li
 
 ## Key Lifecycle Events
 
-When you generate, regenerate, or revoke an API key, the portal publishes a real-time webhook event to the organization's configured webhook subscriber(s). If the organization has a subscriber wired up to its API Gateway, the change is enforced immediately — there's no propagation delay. See [Webhook Integration](admin-settings/webhook-integration.md).
+When you generate, regenerate, or revoke an API key — or change its application association — the portal publishes a webhook event to every subscriber configured for it. A subscriber wired up to your API Gateway enforces the change immediately, with no propagation delay.
+
+The key itself travels encrypted on `apikey.generated` and `apikey.regenerated`. For the payload of each event, see the [Webhook Event Catalog](references/webhook-event-catalog.md); to register a subscriber, see [Webhook Integration](admin-settings/webhook-integration.md).
 
 ## Related
 
-- [Subscribe to an API](manage-subscriptions/subscribe-to-an-api.md) — subscribe if the API requires a subscription
-- [Consume an API Secured with API Key](consuming-services/consume-an-api-secured-with-api-key.md) — use the key to invoke the API
-- [Consume an API Secured with OAuth2](consuming-services/consume-an-api-secured-with-oauth2.md) — alternative for OAuth2-secured APIs
-- [Create an Application](manage-applications/create-an-application.md) — set up an application to associate keys with
+- [Manage Subscriptions](manage-subscriptions.md) — subscribe if the API requires a subscription
+- [Consume an API Secured with an API Key](consume-an-api/api-key.md) — use the key to invoke the API
+- [Consume an API Secured with OAuth2](consume-an-api/oauth2.md) — alternative for OAuth2-secured APIs
+- [Manage Applications](manage-applications.md) — set up an application to associate keys with
+- [Webhook Event Catalog](references/webhook-event-catalog.md) — the `apikey.*` events this lifecycle publishes

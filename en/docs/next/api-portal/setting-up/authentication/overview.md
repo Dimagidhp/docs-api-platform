@@ -70,8 +70,16 @@ For production, configure the portal to delegate login to an identity provider (
 
 When `mode = "idp"`, the portal reads the `[api_portal.auth.idp]` block for the OIDC endpoints and client credentials, and the `[api_portal.auth.claim_mappings]` block for the claim names that carry organization and role information.
 
-!!! note
-    We're expanding our step-by-step setup guides to cover more identity providers. For now, [Set up Asgardeo as your identity provider](asgardeo-setup.md) walks through a complete configuration using WSO2 Asgardeo. The same concepts apply to any OIDC-compliant IdP.
+[Set up Asgardeo as your identity provider](asgardeo-setup.md) walks through a complete configuration using WSO2 Asgardeo. The same concepts apply to any OIDC-compliant IdP.
+
+## Authorization is Configured Separately
+
+Authentication decides who a caller is; authorization decides what they may do. The two are configured in different places, and `[api_portal.auth.authorization]` applies in **both** modes — the portal verifies a token the same way whether it came from an IdP's JWKS endpoint or the Platform API's public key.
+
+That section holds the role-to-scope mapping, the switch for Management API scope enforcement, per-page role gating, and the role names granting the admin and subscriber tiers. See [Authorization](../../references/configurations.md#authorization).
+
+!!! important
+    Two keys that used to live here are retired, and leaving either in `config.toml` aborts startup: `auth.role_validation` is now `auth.authorization.page_role_validation`, and `auth.idp.roles` is now `auth.authorization.portal_roles`.
 
 ## Choosing a mode
 

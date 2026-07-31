@@ -14,7 +14,7 @@ content_type: "reference"
 
 # API Portal Management API
 
-Fine-grained API Portal API for managing organizations,
+Fine-grained API Portal REST API for managing organizations,
 API metadata and content, applications, subscriptions, application appKeyMappings, and API flows.
 
 All resources, including organization lifecycle endpoints
@@ -31,11 +31,11 @@ Base URLs:
 
 ### [Organizations](organizations.md)
 
-- [Create an organization](organizations.md#create-an-organization)
-- [List organizations](organizations.md#list-organizations)
+- [Create an organization (not supported)](organizations.md#create-an-organization-not-supported)
+- [List organizations (not supported)](organizations.md#list-organizations-not-supported)
 - [Update an organization](organizations.md#update-an-organization)
 - [Get an organization](organizations.md#get-an-organization)
-- [Delete an organization](organizations.md#delete-an-organization)
+- [Delete an organization (not supported)](organizations.md#delete-an-organization-not-supported)
 
 ### [Organization Content](organization-content.md)
 
@@ -138,9 +138,9 @@ Base URLs:
 
 ### [Application Keys](application-keys.md)
 
-- [Map an OAuth client_id to a API Portal application](application-keys.md#map-an-oauth-clientid-to-a-developer-portal-application)
+- [Map an OAuth client_id to an API Portal application](application-keys.md#map-an-oauth-client_id-to-an-api-portal-application)
 - [Generate an OAuth access token](application-keys.md#generate-an-oauth-access-token)
-- [Remove an OAuth client_id mapping](application-keys.md#remove-an-oauth-clientid-mapping)
+- [Remove an OAuth client_id mapping](application-keys.md#remove-an-oauth-client_id-mapping)
 
 ### [API Workflows](api-workflows.md)
 

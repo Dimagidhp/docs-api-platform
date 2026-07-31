@@ -1,0 +1,68 @@
+---
+title: "Consume an API: which credentials you need"
+description: "Work out which of the three credentials an API expects — a subscription token, an API key, or an OAuth2 access token — and how to get each one."
+canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/consume-an-api/overview/
+md_url: https://wso2.com/api-platform/docs/cloud/api-portal/consume-an-api/overview.md
+tags:
+  - cloud
+  - api-portal
+  - authentication
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-31
+content_type: "concept"
+---
+
+# Consume an API
+
+Calling an API published in the API Portal & MCP Hub takes two things: the endpoint URL, and the right credentials in the right headers. This page covers the credentials — which ones exist, how to tell which an API expects, and where to get each.
+
+The portal issues three distinct credentials. They aren't alternatives to each other. An API can expect one, two, or all three at once.
+
+| Credential | What it proves | Where it comes from | Header |
+|---|---|---|---|
+| Subscription token | You're subscribed to this API under a plan, so the gateway knows which rate limit to apply | Subscribing to a plan on the API's overview page | The header named in the API's specification, commonly `Subscription-Key` |
+| API key | You're an authorized caller of this specific API | The **API Keys** page for that API | `apikey`, or the header named in the specification |
+| OAuth2 access token | Your application holds valid client credentials from a key manager | A key manager, through your application's **Manage Keys** page | `Authorization: Bearer <token>` |
+
+## Work Out What an API Expects
+
+Read the API's own specification — it's authoritative, and the portal derives its UI from it.
+
+1. Open the API and click **Documentation**, then **API Definition**.
+2. Find the `securitySchemes` section. A scheme of type `oauth2` means you need an access token; a scheme of type `apiKey` means you need an API key, and its `name` field gives you the exact header.
+3. Check whether the specification declares a subscription-key parameter. When it does, the portal shows a subscription token after you subscribe, along with the header to send it in.
+
+Two shortcuts on the API's [overview page](../discover-apis/api-overview.md) tell you the same thing faster:
+
+- An **API Keys** button appears for REST and WebSocket APIs whose specification declares API key security. The portal doesn't offer key generation for GraphQL, SOAP, or MCP artifacts, even when their specification declares an `apiKey` scheme — get a key for those from whoever operates the API.
+- A **Subscription plans** panel appears only for APIs with plans, which is what a subscription token comes from.
+
+The per-API Markdown document at `/{orgName}/views/{viewName}/api/{apiHandle}.md` spells out the authentication steps in prose, generated from the same specification. It's the quickest read of the three.
+
+## Get Each Credential
+
+### Subscription token
+
+[Subscribe to the API](../manage-subscriptions.md) under a plan. The portal shows the token once, in a dialog, right after the subscription is created.
+
+You can come back to it later: on the API's overview page, click **View subscription** on the plan you hold, then reveal or copy the token. The same dialog lets you regenerate the token — which invalidates the old one immediately — suspend the subscription, or unsubscribe.
+
+### API key
+
+Generate one from the **API Keys** page for that API, reachable from the **API Keys** button on the overview page or the sidebar submenu. See [Manage API Keys](../manage-api-keys.md) for the generate, rotate, and revoke lifecycle, and [Consume an API Secured with an API Key](api-key.md) for using it in a request.
+
+### OAuth2 access token
+
+This one needs the most setup, because the OAuth application lives in a key manager rather than in the portal. In outline: create the OAuth application in your key manager, [create an application](../manage-applications.md) in the portal, link the client ID to it, then generate a token. See [Consume an API Secured with OAuth2](oauth2.md) for the full sequence.
+
+## Try Before You Wire It Up
+
+For REST APIs, the **Try It** console on the [documentation page](../discover-apis/api-documentations.md) sends real requests from your browser. Paste the same credentials you'd use from code — it's the fastest way to confirm you have the right header names before writing a client.
+
+## Related
+
+- [Consume an API Secured with OAuth2](oauth2.md)
+- [Consume an API Secured with an API Key](api-key.md)
+- [Manage Subscriptions](../manage-subscriptions.md): where the subscription token comes from
+- [Manage API Keys](../manage-api-keys.md): generate, rotate, and revoke keys
+- [Manage Applications](../manage-applications.md): the container for OAuth2 client IDs

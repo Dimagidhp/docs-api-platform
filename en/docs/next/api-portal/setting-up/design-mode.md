@@ -21,23 +21,25 @@ Design mode lets you develop and preview API page layouts and org-level themes w
 
 Use design mode when you want to:
 
-- Build or customize the portal layout, CSS, header, and footer
-- Iterate on Handlebars templates for API overview pages
-- Work on a new API page design without needing a full portal stack running
+- Iterate on a [theme](../theming.md) — styles, layout, partials, or page templates — and see each change on reload
+- Work on a page design without standing up a database, an identity provider, or a gateway
+- Demo the portal against a fixed set of sample APIs, MCP servers, and applications
 
 ## Enable Design Mode
 
-In `configs/config.toml`, add or update the `[design_mode]` section:
+The section is commented out in `configs/config-template.toml`. Copy the whole block into your active `configs/config.toml` and uncomment it:
 
 ```toml
-[design_mode]
+[api_portal.design_mode]
 enabled = true
+path_to_layout = "./src/defaultContent/"      # Handlebars templates and static assets
 api_samples_path = "./samples/apis/"          # directory of sample API definitions
 mcp_samples_path = "./samples/mcps/"          # directory of sample MCP server definitions
-subscription_plans_path = "./samples/subscriptionPlans.yaml"
+subscription_plans_path = "./samples/subscription-plans.yaml"
 applications_path = "./samples/applications.yaml"
-path_to_layout = "./src/defaultContent/"      # Handlebars templates and static assets
 ```
+
+The sample paths are relative to the app's working directory, where the bundled `samples/` already lives — leave them as they are unless you're pointing at your own sample set.
 
 Then start the portal normally:
 
@@ -57,98 +59,26 @@ Visit **http://localhost:9543/views/default**.
 | `enabled` | `false` | Set to `true` to activate design mode |
 | `api_samples_path` | `./samples/apis/` | Directory of sample REST/GraphQL/SOAP/WS API definitions |
 | `mcp_samples_path` | `./samples/mcps/` | Directory of sample MCP server definitions |
-| `subscription_plans_path` | `./samples/subscriptionPlans.yaml` | YAML file with org-level subscription plan details |
+| `subscription_plans_path` | `./samples/subscription-plans.yaml` | YAML file with org-level subscription plan details |
 | `applications_path` | `./samples/applications.yaml` | YAML file with sample applications shown on the Applications page |
 | `path_to_layout` | `./src/defaultContent/` | Layout directory used to render pages |
 
-All options can also be set via environment variables:
+!!! note
+    There's no `APIP_AP_*` environment variable that maps onto these keys. To drive one from the environment, write an interpolation token into `config.toml` — {% raw %}`path_to_layout = '{{ env "MY_THEME_DIR" "./src/defaultContent/" }}'`{% endraw %}. See [Configurations](../references/configurations.md).
 
-```
-APIP_AP_DESIGNMODE_ENABLED=true
-APIP_AP_DESIGNMODE_APISAMPLESPATH=./my-samples/apis/
-APIP_AP_DESIGNMODE_MCPSAMPLESPATH=./my-samples/mcps/
-APIP_AP_DESIGNMODE_SUBSCRIPTIONPLANSPATH=./my-samples/plans.yaml
-APIP_AP_DESIGNMODE_APPLICATIONSPATH=./my-samples/applications.yaml
-APIP_AP_DESIGNMODE_PATHTOLAYOUT=./my-layout/
-```
+## Working on a Theme
 
-## Customizing the Theme
-
-`path_to_layout` is your working theme directory. It mirrors the structure used by the production theme ZIP upload (see [Theming](../admin-settings/theming.md)), so a theme built here can be deployed to production without any conversion.
-
-### What Can Be Customized
-
-| Asset | Path in `path_to_layout` | Effect |
-|---|---|---|
-| Page shell | `layout/main.hbs` | Controls the outer HTML, `<head>`, nav frame |
-| Header | `partials/header.hbs` | Top navigation bar |
-| Footer | `partials/footer.hbs` | Footer content |
-| Home page content | `pages/home/partials/home.hbs` | Home page body section |
-| API landing body | `pages/api-landing/partials/api-content.hbs` | Default body for API overview pages |
-| API listing extras | `pages/apis/partials/apis-md.hbs` | Markdown injected above the API list |
-| API landing extras | `pages/api-landing/partials/api-landing-md.hbs` | Markdown injected on API overview pages |
-| Stylesheet | `styles/main.css` | Portal-wide CSS (can `@import` other CSS files) |
-| Images | `images/` | Custom logo and other images |
-
-You only need to include the files you want to override — everything else falls back to the defaults in `src/defaultContent/` automatically.
-
-### Getting Started
-
-Copy only the files you want to change from `src/defaultContent/`:
-
-```bash
-mkdir -p my-theme/partials my-theme/styles my-theme/images
-cp src/defaultContent/partials/header.hbs my-theme/partials/
-cp src/defaultContent/styles/main.css my-theme/styles/
-```
-
-Then point `path_to_layout` at your directory:
+Design mode exists mainly to iterate on a theme without a running stack. Point `path_to_layout` at your theme directory, edit files, and reload the browser — no server restart needed.
 
 ```toml
-[design_mode]
+[api_portal.design_mode]
 enabled = true
 path_to_layout = "./my-theme/"
 ```
 
-Reload the browser after editing any file — changes appear immediately without a server restart.
+To preview the example theme from [Theming](../theming.md#example-a-teal-and-coral-theme), use `./samples/layouts/green-theme/`.
 
-!!! note "About `main.css`"
-    This file must be copied in full, not replaced with just `:root` overrides. It contains both the CSS variables and the actual rule definitions (buttons, layout, containers). The other CSS files (`home.css`, `header.css`, etc.) referenced in its `@import` statements are served from the defaults automatically and don't need to be copied.
-
-### Color-Only Theme Example
-
-`samples/layouts/green-theme/` shows the minimal change needed: a full copy of `main.css` with only the `:root` color palette swapped:
-
-```bash
-cp -r samples/layouts/green-theme/ my-theme/
-```
-
-!!! note
-    JavaScript files can't be added as theme assets. Portal behavior is controlled by the portal's own scripts in `src/scripts/`. Only CSS, Handlebars templates, and images are customizable.
-
-### Per-API Custom Layout
-
-To customize the layout of a specific API's overview page, add an `api-content.hbs` file inside that API's `web/` directory under `api_samples_path`:
-
-```
-samples/apis/my-api-v1.0/
-├── api.yaml
-├── definition.yml
-├── docs/
-└── web/
-    └── api-content.hbs   ← custom HBS for this API's overview body
-```
-
-### Deploying to Production
-
-When the theme is ready, zip the `path_to_layout` directory and upload it through [Theming](../admin-settings/theming.md):
-
-```bash
-# from inside your path_to_layout directory
-zip -r my-theme.zip layout/ partials/ styles/ images/
-```
-
-The ZIP structure is identical to what design mode uses, so no conversion is needed.
+For what a theme contains, which files you can override, how the colour tokens work, and how to package one for upload, see [Theming](../theming.md). Design mode and the production theme upload use the same directory structure, so a theme built here deploys without conversion.
 
 ## Sample APIs and MCP Servers
 
@@ -165,7 +95,7 @@ samples/
 └── mcps/                          # MCP servers  →  /views/default/mcps
     ├── travel-assistant-mcp-v1/
     │   ├── api.yaml
-    │   ├── schemaDefinition.yaml
+    │   ├── definition.yaml
     │   └── docs/
     └── …
 ```
@@ -173,7 +103,7 @@ samples/
 ### `api.yaml` Format (REST API)
 
 ```yaml
-apiVersion: api-portal.api-platform.wso2.com/v1alpha2
+apiVersion: api-portal.api-platform.wso2.com/v1
 kind: RestApi
 
 metadata:
@@ -201,7 +131,7 @@ spec:
 ### `api.yaml` Format (MCP Server)
 
 ```yaml
-apiVersion: api-portal.api-platform.wso2.com/v1alpha2
+apiVersion: api-portal.api-platform.wso2.com/v1
 kind: MCP
 
 metadata:
@@ -224,7 +154,7 @@ spec:
     productionUrl: https://mcp.example.com
 ```
 
-The `schemaDefinition.yaml` alongside `api.yaml` defines the tools, resources, and prompts exposed by the server:
+The `definition.yaml` alongside `api.yaml` defines the tools, resources, and prompts the server exposes, as a flat list of type-tagged entries:
 
 ```yaml
 - type: TOOL
@@ -246,7 +176,7 @@ The portal re-reads API definitions from disk on every page request. Edit `api.y
 The Applications page is available in design mode and shows entries from `applications_path`. The format follows the same Kubernetes-style manifest used across all sample files:
 
 ```yaml
-apiVersion: api-portal.api-platform.wso2.com/v1alpha2
+apiVersion: api-portal.api-platform.wso2.com/v1
 kind: ApplicationList
 items:
 
@@ -277,8 +207,14 @@ items:
 Set `enabled = false` (or remove the section entirely) and restart:
 
 ```toml
-[design_mode]
+[api_portal.design_mode]
 enabled = false
 ```
 
 The portal returns to production mode, requiring a database and (if configured) an IDP.
+
+## Related
+
+- [Theming](../theming.md): what a theme contains, the colour tokens, and how to package one
+- [Apply a Theme](../admin-settings/theming.md): upload a finished theme to a view
+- [Configurations](../references/configurations.md): the full `config.toml` reference

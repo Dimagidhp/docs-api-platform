@@ -48,7 +48,7 @@ A **label** is a tag you assign to an API or MCP server to control which views e
 
 ## Layout
 
-A **layout** is a custom Handlebars template that defines the structure and styling of a view's pages (home, listing, detail). Layouts let you give each view its own branding, navigation, and page structure beyond what the theme color settings allow. See [Theming](admin-settings/theming.md) and [Design Mode](setting-up/design-mode.md) for building one offline.
+A **layout** is a custom Handlebars template that defines the structure of a view's pages. It's one part of a **theme** — a partial copy of the portal's default template tree, holding only the styles, layouts, partials, and page templates you want to change. Anything a theme omits is served from the default. See [Theming](theming.md), and [Design Mode](setting-up/design-mode.md) for building one offline.
 
 ## Artifact types
 
@@ -70,11 +70,11 @@ Each API can have its own landing page content, documentation sections, icon, an
 
 ## MCP Server
 
-An **MCP server** is a Model Context Protocol server published in the portal alongside your APIs — the "MCP Hub" half of the portal. Its contract is its **definition** — the tools, resources, and prompts it exposes — rather than an OpenAPI-style specification. MCP servers are managed, subscribed to, and secured with keys the same way APIs are, and can be marked agent-visible for AI agent discovery. See [Manage MCP Servers](admin-settings/manage-mcp-servers.md).
+An **MCP server** is a Model Context Protocol server published in the portal alongside your APIs — the "MCP Hub" half of the portal. Its contract is its **definition** — the tools, resources, and prompts it exposes — rather than an OpenAPI-style specification. MCP servers are managed and subscribed to the same way APIs are, and every one of them is agent-discoverable. See [MCP Servers](mcp-servers/overview.md) and, for the admin side, [Manage MCP Servers](admin-settings/manage-mcp-servers.md).
 
 ## API Workflow
 
-An **API workflow** is a published, multi-step sequence of API calls defined in [Arazzo format](https://spec.openapis.org/arazzo/latest.html). Workflows are authored by admins and published per view for both human developers and AI agents to discover and follow. See [Managing API Workflows](admin-settings/managing-api-workflows.md) and [Consuming API Workflows](api-workflows/consuming-api-workflows.md).
+An **API workflow** is a published, multi-step sequence of API calls defined in [Arazzo format](https://spec.openapis.org/arazzo/latest.html). Workflows are authored by admins and published per view for both human developers and AI agents to discover and follow. See [Managing API Workflows](admin-settings/managing-api-workflows.md) and [API Workflows](api-workflows.md).
 
 ## Subscription Plan
 
@@ -86,7 +86,7 @@ Plans can define rate limits — a request count (or event count, for async APIs
 
 An **application** is a logical container — representing a mobile app, web app, device, or script — that a developer creates in the portal. For OAuth2-secured APIs, an application holds the client ID(s) that link to OAuth applications created directly in a key manager; the portal never generates or stores consumer key/secret pairs.
 
-A developer can have multiple applications, each with independent OAuth2 client IDs. See [Create an Application](manage-applications/create-an-application.md).
+A developer can have multiple applications, each with independent OAuth2 client IDs. See [Manage Applications](manage-applications.md).
 
 !!! note
     Applications are not required for subscriptions or API key generation. Subscriptions are made directly to an API or MCP server, and API keys are bound to an API or MCP server — not to an application.
@@ -95,17 +95,20 @@ A developer can have multiple applications, each with independent OAuth2 client 
 
 A **subscription** is a developer's access grant to a specific API or MCP server under a chosen subscription plan. The plan determines the developer's rate limits and quota for that artifact.
 
-Subscriptions are made directly to the artifact — no application is involved. Once subscribed, the developer can invoke it under the terms of the chosen plan. See [Subscribe to an API](manage-subscriptions/subscribe-to-an-api.md).
+Subscriptions are made directly to the artifact — no application is involved. Once subscribed, the developer can invoke it under the terms of the chosen plan. See [Manage Subscriptions](manage-subscriptions.md).
 
 ## API Key
 
 An **API key** is a simple token bound to a specific API or MCP server, used to authenticate requests to artifacts that use API key-based authentication. API keys are generated per artifact — not per application or per subscription.
 
-API keys can be generated, regenerated (rotated), or revoked. Key lifecycle events are published in real time as [webhooks](admin-settings/webhook-integration.md) to your configured subscriber endpoint(s), so whatever system you have listening — typically a handler in front of your API Gateway — can enforce access immediately. See [Manage API Keys](manage-api-keys.md).
+API keys can be generated, regenerated (rotated), or revoked. Each of those publishes a webhook event, so a handler in front of your API Gateway can enforce the change immediately — see the [Webhook Event Catalog](references/webhook-event-catalog.md). See [Manage API Keys](manage-api-keys.md).
+
+!!! note
+    The portal generates keys through the UI for REST and WebSocket APIs only. Keys for GraphQL, SOAP, and MCP artifacts exist solely through the [Management API](rest-api/mcp-server-keys.md).
 
 ## OAuth2 Credentials
 
-For APIs that use OAuth2, developers create an OAuth application directly in a [key manager](admin-settings/key-manager-integration.md), then link the resulting **client ID** to an application in the portal. The portal never sees or stores the client secret — it's supplied by the developer each time they generate an access token, and the portal proxies that token request to the key manager. See [Consume an API Secured with OAuth2](consuming-services/consume-an-api-secured-with-oauth2.md).
+For APIs that use OAuth2, developers create an OAuth application directly in a [key manager](admin-settings/key-manager-integration.md), then link the resulting **client ID** to an application in the portal. The portal never sees or stores the client secret — it's supplied by the developer each time they generate an access token, and the portal proxies that token request to the key manager. See [Consume an API Secured with OAuth2](consume-an-api/oauth2.md).
 
 ## Key Manager
 
@@ -113,4 +116,4 @@ A **key manager** is an external OAuth2 authorization server configured for the 
 
 ## Webhook Subscriber
 
-A **webhook subscriber** is an HTTPS endpoint you register to receive real-time event notifications from the portal. When a developer generates an API key or changes a subscription, the portal fires a signed HTTP POST to all matching subscribers; what the subscriber does with that event — for example, propagating the change to an API Gateway — is entirely up to whatever you run behind that endpoint. See [Webhook Integration](admin-settings/webhook-integration.md).
+A **webhook subscriber** is an HTTPS endpoint you register to receive real-time event notifications from the portal. When an application, API key, or subscription changes, the portal fires a signed HTTP POST to every matching subscriber; what the subscriber does with it — for example, propagating the change to an API Gateway — is up to whatever you run behind that endpoint. See [Webhook Integration](admin-settings/webhook-integration.md) to register one, and the [Webhook Event Catalog](references/webhook-event-catalog.md) for the twelve events and their payloads.

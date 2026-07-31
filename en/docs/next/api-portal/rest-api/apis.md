@@ -25,34 +25,24 @@ content_type: "reference"
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/apis \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
-  -d @payload.json
+  -F 'definition=string' \
+  -F 'artifact=string' \
+  -F 'metadata={"name":"Weather API","version":"v1","description":"Weather forecast API","type":"REST","agentVisibility":"VISIBLE", "status":"PUBLISHED","tags":["weather"],"labels":["default"],"endPoints":{ "productionURL":"https://api.example.com/weather", "sandboxURL":"https://sandbox.example.com/weather"},"subscriptionPlans":[{"id":"Gold"}]}'
 
 ```
 
-Creates API Portal API metadata from either a full API artifact ZIP, an API metadata YAML file (`api.yaml` / `devportal.yaml` / `mcp.yaml`), or a `metadata` JSON string. An API definition file is required unless supplied by the artifact ZIP. The YAML `spec` block accepts: `displayName`, `version`, `description`, `type`, `status`, `agentVisibility`, `tags`, `labels`, `referenceId`, `endpoints` (sandboxUrl, productionUrl), `businessInformation` (owners), and `subscriptionPlans`. The service also stores labels, subscription plan mappings, image metadata, and schema definitions for GraphQL APIs when provided. Via the JSON `metadata` field, `type` is required — an omitted type is rejected with `400` (via YAML, an omitted `spec.type` defaults to `REST`). MCP servers must be created via `POST /api/v0.9/mcp-servers` instead — a request whose resolved `type` is `MCP` is rejected with `400`.
+Creates API metadata from either a full API artifact ZIP, an API metadata YAML file (`api.yaml` / `metadata.yaml` / `mcp.yaml`), or a `metadata` JSON string. An API definition file is required unless supplied by the artifact ZIP. The YAML `spec` block accepts: `displayName`, `version`, `description`, `type`, `status`, `agentVisibility`, `tags`, `labels`, `referenceId`, `endpoints` (sandboxUrl, productionUrl), `businessInformation` (owners), and `subscriptionPlans`. The service also stores labels, subscription plan mappings, image metadata, and schema definitions for GraphQL APIs when provided. Via the JSON `metadata` field, `type` is required — an omitted type is rejected with `400` (via YAML, an omitted `spec.type` defaults to `REST`). MCP servers must be created via `POST /api/v0.9/mcp-servers` instead — a request whose resolved `type` is `MCP` is rejected with `400`.
 `subscriptionPlans` links existing org-level plans to this API by name — it does not create plans. In YAML it is a string array (`["Gold", "Silver"]`). In the JSON `metadata` field it is an object array where only `id` is used (`[{"id":"Gold"}]`); extra fields such as `planId`, `displayName`, or `requestCount` are ignored.
-
-> Payload
-
-```yaml
-definition: string
-artifact: string
-metadata: '{"name":"Weather API","version":"v1","description":"Weather forecast
-  API","type":"REST","agentVisibility":"VISIBLE",
-  "status":"PUBLISHED","tags":["weather"],"labels":["default"],"endPoints":{
-  "productionURL":"https://api.example.com/weather",
-  "sandboxURL":"https://sandbox.example.com/weather"},"subscriptionPlans":[{"id":"Gold"}]}'
-
-```
 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api:create`, `dp:api:manage`
 
 </aside>
 
@@ -63,10 +53,10 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |body|body|object|true|API metadata upload. Send either `artifact`, or `metadata` with `definition`. For a GraphQL API the `definition` field carries the SDL schema. (MCP servers are created via `/mcp-servers` with the dedicated `McpServerMultipartBody`, not this body.)|
 |» definition|body|string(binary)|false|API definition file. For REST/SOAP/etc. this is the OpenAPI/WSDL/AsyncAPI contract; for a GraphQL API it is the SDL schema.|
 |» artifact|body|string(binary)|false|Full API ZIP artifact containing metadata and definition files.|
-|» metadata|body|string|false|API metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document with `kind`, `metadata.name`, and a `spec` block; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`/`devportal.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the API's stored handle; when the API is created from a YAML artifact instead, the handle is always taken from `metadata.name`.|
+|» metadata|body|string|false|API metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document with `kind`, `metadata.name`, and a `spec` block; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the API's stored handle; when the API is created from a YAML artifact instead, the handle is always taken from `metadata.name`.|
 
 > Example responses
-
+>
 > 201 Response
 
 ```json
@@ -179,9 +169,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/apis \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -190,7 +179,9 @@ Lists API metadata for an organization. The service supports exact filters by AP
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api:read`, `dp:api:manage`
 
 </aside>
 
@@ -207,7 +198,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |offset|query|integer|false|Number of records to skip before returning results.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -294,7 +285,7 @@ Status Code **200**
 |»»» status|string|false|none|API lifecycle status.|
 |»»» description|string|false|none|none|
 |»»» type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE) — distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
-|»»» referenceId|string¦null|false|none|External reference ID. Present when the API was created from a `devportal.yaml` artifact whose `spec` block sets `referenceId` — the create response echoes the parsed YAML back.|
+|»»» referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId` — the create response echoes the parsed YAML back.|
 |»»» agentVisibility|string|false|none|none|
 |»»» addedLabels|[string]|false|none|none|
 |»»» removedLabels|[string]|false|none|none|
@@ -403,18 +394,19 @@ Status Code **200**
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/apis/{apiId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
-Retrieves a single API metadata record by API Portal API ID.
+Retrieves a single API metadata record by API ID.
 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api:read`, `dp:api:manage`
 
 </aside>
 
@@ -425,7 +417,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -519,33 +511,23 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X PUT https://localhost:9543/api/v0.9/apis/{apiId} \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
-  -d @payload.json
+  -F 'definition=string' \
+  -F 'artifact=string' \
+  -F 'metadata={"name":"Weather API","version":"v1","description":"Weather forecast API","type":"REST","agentVisibility":"VISIBLE", "status":"PUBLISHED","tags":["weather"],"labels":["default"],"endPoints":{ "productionURL":"https://api.example.com/weather", "sandboxURL":"https://sandbox.example.com/weather"},"subscriptionPlans":[{"id":"Gold"}]}'
 
 ```
 
-Updates API Portal API metadata and its stored definition. Accepts the same YAML spec fields and `metadata` JSON format as the create operation. The update flow can also adjust label mappings, subscription plan mappings, schema definitions, and image metadata. Status changes to unpublished are rejected when active subscriptions exist. `type` is required (see the create operation) and is immutable — it must match the API's existing type; a different value is rejected with `409`.
-
-> Payload
-
-```yaml
-definition: string
-artifact: string
-metadata: '{"name":"Weather API","version":"v1","description":"Weather forecast
-  API","type":"REST","agentVisibility":"VISIBLE",
-  "status":"PUBLISHED","tags":["weather"],"labels":["default"],"endPoints":{
-  "productionURL":"https://api.example.com/weather",
-  "sandboxURL":"https://sandbox.example.com/weather"},"subscriptionPlans":[{"id":"Gold"}]}'
-
-```
+Updates API metadata and its stored definition. Accepts the same YAML spec fields and `metadata` JSON format as the create operation. The update flow can also adjust label mappings, subscription plan mappings, schema definitions, and image metadata. Status changes to unpublished are rejected when active subscriptions exist. `type` is required (see the create operation) and is immutable — it must match the API's existing type; a different value is rejected with `409`.
 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api:update`, `dp:api:manage`
 
 </aside>
 
@@ -556,11 +538,11 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |body|body|object|true|API metadata upload. Send either `artifact`, or `metadata` with `definition`. For a GraphQL API the `definition` field carries the SDL schema. (MCP servers are created via `/mcp-servers` with the dedicated `McpServerMultipartBody`, not this body.)|
 |» definition|body|string(binary)|false|API definition file. For REST/SOAP/etc. this is the OpenAPI/WSDL/AsyncAPI contract; for a GraphQL API it is the SDL schema.|
 |» artifact|body|string(binary)|false|Full API ZIP artifact containing metadata and definition files.|
-|» metadata|body|string|false|API metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document with `kind`, `metadata.name`, and a `spec` block; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`/`devportal.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the API's stored handle; when the API is created from a YAML artifact instead, the handle is always taken from `metadata.name`.|
+|» metadata|body|string|false|API metadata, supplied either as a JSON string field or as an uploaded YAML/JSON file (a k8s-style document with `kind`, `metadata.name`, and a `spec` block; file names `metadata.yaml`/`.yml`/`.json`, or the legacy `api.yaml`/`mcp.yaml`). As a JSON string it accepts these top-level fields: `name`, `version`, `description`, `type`, `agentVisibility`, `status`, `referenceId`, `id`, `tags`, `labels`, `owners`, `endPoints` (productionURL, sandboxURL), and `subscriptionPlans` (array of `{ id }` objects — only `id` is read; the plan must already exist in the organization). `id` becomes the API's stored handle; when the API is created from a YAML artifact instead, the handle is always taken from `metadata.name`.|
 |apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -669,9 +651,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X DELETE https://localhost:9543/api/v0.9/apis/{apiId} \
-  -u {username}:{password} \
-  -H 'Accept: text/plain' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: text/plain'
 
 ```
 
@@ -680,7 +661,9 @@ Deletes API metadata when the API has no active subscriptions.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:api:delete`, `dp:api:manage`
 
 </aside>
 
@@ -691,7 +674,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs — MCP servers are addressed via `/mcp-servers`.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```

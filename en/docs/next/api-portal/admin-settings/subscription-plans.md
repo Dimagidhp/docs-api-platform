@@ -24,11 +24,12 @@ A **subscription plan** is a named usage tier that controls how much of an API a
 
 | Field | Description |
 |---|---|
-| **Display name** | Human-friendly name shown to developers (for example, "Gold") |
-| **Name** | Unique plan identifier |
+| **Name** | Required. The name shown to developers on the plan card, for example `Gold` |
 | **Description** | Optional description of the tier shown to developers |
 | **Limits** | One or more usage limits (see below). Leave empty for an unlimited plan |
 | **External reference ID** | Optional UUID linking this plan to an external billing or quota system |
+
+The portal generates the plan's internal identifier itself — there's no handle to choose. A plan created through the [Management API](../rest-api/subscription-plans.md) can supply one as `id`; one created here gets a UUID.
 
 4. Click **+ Add limit** for each limit you want to enforce, and configure:
 

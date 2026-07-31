@@ -1,6 +1,6 @@
 ---
-title: "Manage API workflows in the API Portal & MCP Hub"
-description: "Create, edit, publish, and control the visibility of API workflows for human users and AI agents."
+title: "Managing API workflows in the API Portal & MCP Hub"
+description: "Author an API workflow as an Arazzo spec or Markdown, generate its agent prompt, and publish it to a view."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/managing-api-workflows/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/managing-api-workflows.md
 tags:
@@ -8,72 +8,102 @@ tags:
   - api-portal
   - api-workflows
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
 # Managing API Workflows
 
-As a portal admin, you can create, edit, publish, and control the visibility of API Workflows. This page covers the full workflow lifecycle from an admin perspective.
+As a portal admin you author API workflows, generate the prompt that lets AI agents execute them, and publish them to a view. This page covers the admin side; for what consumers and agents then see, read [API Workflows](../api-workflows.md).
 
+## Open the Workflows Panel
 
-## Creating a Workflow
+Go to **Settings** and select **API Workflows** under **AI & DISCOVERY**. The panel lists every workflow in the selected view — use the view selector above the list to switch views, since workflows are scoped to one view.
 
-1. In the API Portal & MCP Hub, navigate to **Admin - Settings** and select the portal.
-2. Open the **API Workflows** section.
-3. Click **Create**.
-4. Fill in the workflow details:
+Each card shows:
 
-| Field | Description |
+- A status dot and label: **DRAFT** or **PUBLISHED**
+- A content type badge: **ARAZZO** or **MD**
+- The name and description
+- Hover actions: view the agent prompt (only when the workflow is agent-visible), edit, and delete
+
+Click **Create** to open the authoring wizard.
+
+## Author a Workflow
+
+The wizard has three steps, with a live preview beside each one.
+
+### Step 1: Basic information
+
+| Field | Notes |
 |---|---|
-| **Name** | A short, task-oriented name (e.g., "Place an Order", "Register a Webhook") |
-| **Description** | One to two sentences explaining the goal of the workflow and when to use it |
-| **Arazzo Specification** | The machine readable workflow definition in Arazzo format |
-| **Agent Prompt** | Natural language guidance for AI agents on when and how to invoke the workflow |
-| **Agent Visibility** | Controls whether the workflow is surfaced to AI agents. Set to **Visible** to include it in `llms.txt` and `api-workflows.md`, or **Hidden** to exclude it from agent facing surfaces while keeping it accessible to human users in the portal |
+| **Name** | Required, up to 120 characters |
+| **Handle** | The lowercase identifier used in URLs. Auto-generated from the name; edit it here if you want a specific one. **It can't be changed after the workflow is created** |
+| **Description** | Required. This is what agents read when deciding whether the workflow fits their task, so describe the goal, not the mechanics |
+| **Agent visibility** | **Visible to agents** or **Hidden from agents** |
 
-![API workflow creation form showing Basic info step with Name, Description, Portal visibility, and Agent visibility fields](../../../assets/img/devportal/api-workflow-creation.png)
+The right pane shows an **Agent Preview** — the name and description exactly as they'll appear in agent discovery.
 
-5. Click **Save as Draft** to save without publishing, or **Publish** to make the workflow live immediately.
+### Step 2: Define the API workflow
 
+Choose one of two authoring paths.
 
-## Editing a Workflow
+**Upload file** — drop in a workflow you already have. Arazzo specs go in as `.yaml`, `.yml`, or `.json`; a natural-language workflow goes in as `.md`. After upload, an Arazzo file gets its source descriptions validated and listed, and a Markdown file gets a summary strip.
 
-1. Navigate to **API Workflows** in the admin settings.
-2. Select the workflow you want to edit.
-3. Make your changes in the editor.
-4. Click **Save** to update a published workflow, or **Save as Draft** to unpublish it while editing.
+**From template** — pick the APIs that take part in the workflow and let the portal generate a starter Arazzo spec from their specifications. Filter the API list by name, type, or description, or narrow it to selected, AI Ready, or AI Restricted APIs. MCP servers appear in this list alongside APIs.
 
+Either way, the right pane holds the definition editor:
 
-## Publishing and Unpublishing
+- A **Format** toggle between **Arazzo Spec** (`workflow.arazzo.yaml`) and **Markdown** (`workflow.md`)
+- **Open in Claude**, **Download .arazzo.yaml**, and **Copy Prompt** — for refining the generated template outside the portal. All three need at least one API selected
+- An **Upload** control to bring an edited file back in
 
-Workflows must be explicitly published to become visible to consumers. Draft workflows are only visible within the admin console.
+!!! tip
+    Source descriptions are what let an agent find each API's specification while following the workflow. Generating from a template fills them in with the specs of APIs published in this portal; a hand-written Arazzo file has to declare them itself.
 
-To publish a workflow:
+### Step 3: Agent prompt
 
-1. Open the workflow in the admin settings console.
-2. Click **Publish**.
+The agent prompt is **generated from the workflow**, not written from scratch. Click **Regenerate** to rebuild it after changing the definition, edit the text directly if you want to adjust it, and **Copy prompt** to take it elsewhere.
 
-To unpublish:
+The right pane shows the Markdown file agents will fetch, plus a **Readiness** checklist covering name and description, workflow definition, and agent prompt.
 
-1. Open the workflow.
-2. Click **Unpublish** (or **Save as Draft**). The workflow is removed from the portal and from `llms.txt` / `api-workflows.md` immediately.
+If you set the workflow to hidden from agents in step 1, this step shows a banner saying so, with a shortcut back to change it.
 
+## Publish or Save as a Draft
 
-## Controlling Visibility
+The wizard's footer carries a split button:
 
-Visibility is controlled independently for human users and AI agents.
+- **Publish Flow** makes the workflow live in its view immediately.
+- **Save as Draft**, from the dropdown, saves it without exposing it to consumers.
 
-### Portal UI Visibility
+Draft workflows appear nowhere outside this panel — not in the portal gallery, not in `llms.txt`, not in `api-workflows.md`.
 
-Determines whether the workflow appears in the developer portal for human users.
+To unpublish, reopen the workflow and save it as a draft again. There's no separate unpublish action.
 
-- **Visible** — appears in the portal's API Workflows section and in search results
-- **Hidden** — not shown in the portal UI; still accessible via direct URL if the consumer has the handle
+## Control Visibility
 
-### Agent Visibility
+A workflow has exactly one visibility setting, plus its publication status. The two combine like this:
 
-Determines whether the workflow is exposed to AI agents via machine readable surfaces.
+| Status | Agent visibility | In the portal gallery | In `llms.txt` and the agent endpoints |
+|---|---|---|---|
+| Published | Visible | Yes | Yes |
+| Published | Hidden | Yes | No |
+| Draft | Either | No | No |
 
-- **Visible** — included in `llms.txt` and `api-workflows.md`
-- **Hidden** — excluded from agent-facing surfaces; human users can still see it in the portal UI
+Hiding a workflow from agents is how you ship it to human developers while its automated execution is still being validated. There is no separate control for hiding a published workflow from people — publishing it makes it visible in the gallery for that view.
+
+!!! note
+    The portal-wide **Portal is AI-discoverable** toggle overrides all of this. With it off, no workflow reaches an agent whatever its own setting says. See [LLM Instructions](llm-instructions.md).
+
+## Edit and Delete
+
+Click the pencil on a card to reopen the wizard with the workflow's current values. The handle is fixed; everything else can change, including the content type — you can replace an Arazzo definition with Markdown or the reverse.
+
+Click the trash icon to delete a workflow. Deleting removes it from the gallery and from every agent-facing endpoint.
+
+## Related
+
+- [API Workflows](../api-workflows.md): what consumers and agents see, and the endpoints they use
+- [LLM Instructions](llm-instructions.md): the portal-wide AI discoverability toggle and the `llms.txt` header
+- [AI Agent Discovery](../discover-apis/ai-agent-discovery.md): every agent-facing endpoint the portal serves
+- [Artifact types](../artifact-types.md): whether this deployment serves API workflows at all

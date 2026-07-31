@@ -25,9 +25,8 @@ content_type: "reference"
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/applications \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -36,7 +35,9 @@ Returns all applications owned by the authenticated user in the specified organi
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:application:read`, `dp:application:manage`
 
 </aside>
 
@@ -48,7 +49,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |offset|query|integer|false|Number of records to skip before returning results.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -135,15 +136,14 @@ Status Code **200**
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/applications \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
 
-Creates a API Portal application in the specified organization. The request may be JSON, multipart form fields, or an application YAML file in the `application` multipart field. An `application.created` webhook event is published to the organization's configured webhook subscribers.
+Creates an API Portal application in the specified organization. The request may be JSON, multipart form fields, or an application YAML file in the `application` multipart field. An `application.created` webhook event is published to the organization's configured webhook subscribers.
 
 > Payload
 
@@ -165,7 +165,9 @@ description: Application used to call Weather APIs.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:application:create`, `dp:application:manage`
 
 </aside>
 
@@ -176,7 +178,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |body|body|[ApplicationRequest](schemas.md#schemaapplicationrequest)|true|Application payload. Send JSON, multipart form fields, or an application YAML file in the `application` field. The JSON example below (`displayName`, `id`, `description`) applies only to the `application/json` content type. When an application YAML **file** is uploaded instead, its content must use the nested shape `metadata.name` (handle) and `spec.displayName` / `spec.description` — any top-level `id` inside that YAML file is ignored.|
 
 > Example responses
-
+>
 > 201 Response
 
 ```json
@@ -258,9 +260,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/applications/{applicationId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -269,7 +270,9 @@ Returns the details of a single application owned by the authenticated user.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:application:read`, `dp:application:manage`
 
 </aside>
 
@@ -280,7 +283,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |applicationId|path|string|true|The application's handle (unique per org).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -335,10 +338,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X PUT https://localhost:9543/api/v0.9/applications/{applicationId} \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -365,7 +367,9 @@ description: Application used to call Weather APIs.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:application:update`, `dp:application:manage`
 
 </aside>
 
@@ -377,7 +381,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |applicationId|path|string|true|The application's handle (unique per org).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -468,9 +472,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X DELETE https://localhost:9543/api/v0.9/applications/{applicationId} \
-  -u {username}:{password} \
-  -H 'Accept: text/plain' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: text/plain'
 
 ```
 
@@ -479,7 +482,9 @@ Deletes an application owned by the authenticated user. Before removing the appl
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:application:delete`, `dp:application:manage`
 
 </aside>
 
@@ -490,7 +495,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |applicationId|path|string|true|The application's handle (unique per org).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```

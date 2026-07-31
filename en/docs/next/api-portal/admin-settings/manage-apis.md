@@ -33,7 +33,8 @@ The **APIs** tab in the API Portal's Settings page is where you add, edit, publi
 | **Description** | Required — shown in the catalog and used as context for AI agents |
 | **Production URL** | Required for most API types |
 | **Sandbox URL** | Optional |
-| **Labels** | Comma-separated labels controlling which [views](manage-views.md) show this API |
+| **Labels** | A toggle picker of the labels defined in your organization. The ones you select control which [views](manage-views.md) show this API. Empty until you create labels under [Manage Labels](manage-labels.md) |
+| **Tags** | Comma-separated free-text keywords for search and discovery. Unlike labels, they don't affect visibility |
 | **Status** | **Published** or **Deprecated** |
 | **Technical owner / email**, **Business owner / email** | Ownership contacts shown on the API's detail page |
 | **Applicable Subscription Plans** | Search and select which [subscription plans](subscription-plans.md) developers can subscribe under. Leave empty to make the API accessible without a plan |
@@ -42,21 +43,23 @@ Click **Next**.
 
 ### Step 2: Spec
 
-Upload the contract that defines the API — required. Accepted formats: OpenAPI (`.json`/`.yaml`), AsyncAPI, GraphQL SDL (`.graphql`), or WSDL (`.wsdl`/`.xml`). Single file, up to 10 MB.
+Upload the contract that defines the API — required. One file, accepted as `.json`, `.yaml`, `.yml`, `.graphql`, `.gql`, `.wsdl`, or `.xml`, depending on the API type: OpenAPI or AsyncAPI for REST, WebSocket, and WebSub; GraphQL SDL for GraphQL; WSDL for SOAP.
 
 Click **Next**.
 
 ### Step 3: Documentation
 
-Optionally upload one or more Markdown (`.md`) files as guides or reference docs for developers.
+Optionally upload one or more Markdown files (`.md` or `.markdown`) as guides or reference docs for developers. These are what the portal serves as attached documents, both on the API's documentation page and to AI agents.
 
 Click **Next** to create the API, or continue to Step 4 if you're editing an existing API.
 
 ### Step 4: Content (edit mode only)
 
-Once an API exists, you can upload a ZIP to set its landing-page content: include a `web/` folder for landing-page assets (Markdown, HTML, CSS, JS, images) and/or a `docs/` folder for downloadable documents. Files with a matching name are replaced; others are added.
+Once an API exists, you can upload a ZIP holding a `web/` folder (the overview body and images) and/or a `docs/` folder (downloadable documents). Files with a matching name are replaced; others are added.
 
 Click **Upload content** — this uploads immediately and is independent of **Save changes**.
+
+For the file names the portal looks for, how the API icon is set, and how `docs/` subdirectories become documentation sections, see [Customize an API's Content](api-content.md).
 
 ## Editing an API
 
