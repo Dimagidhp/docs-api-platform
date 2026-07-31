@@ -34,7 +34,7 @@ The console fetches the manifest from the gateway and displays a table of all po
 | **Version** | Installed version |
 | **Description** | Policy description |
 | **Policy Type** | `Policy Hub` for policy hub managed policies, `Custom` for your own AI policies |
-| **Sync Status** | Whether the policy is synced to the organization — shows a **Sync** button if not yet synced or a newer version is available, or **Latest Version Available**/**N/A** if already up to date |
+| **Sync Status** | Whether the policy is synced to the organization — shows a **Sync** button when the policy is unsynced or a later version is available, or **Latest Version Available**/**N/A** if already up to date |
 
 ![AI Gateway detail page showing the Policies tab with a table of installed policies, their Policy Type, and Sync Status](../../../assets/img/custom-policies/ViewGatewayPolicies.svg)
 
@@ -44,7 +44,7 @@ Custom AI policies must be synced to the organization before they can be applied
 
 In the **Sync Status** column, each custom AI policy shows one of the following:
 
-- **Sync button** — the policy has not been synced yet, or a newer version is available. Click **Sync** to register it in the organization.
+- **Sync button** — the policy is unsynced, or a later version is available. Click **Sync** to register it in the organization.
 - **Latest Version Available** — the policy is already synced and up to date. No action needed.
 
 !!! note
@@ -56,7 +56,7 @@ Once synced, the custom AI policy is available organization-wide and can be appl
 
 !!! note
     - Each major version of a custom AI policy is maintained as a separate policy entry with the same name.
-    - A minor version update re-enables the Sync button, allowing the newer version to be synced to the organization.
+    - A minor version update re-enables the Sync button, so you can sync the later version to the organization.
     - Patch version updates are not supported.
     - Version downgrades are not allowed.
 
@@ -96,11 +96,11 @@ Once synced, a custom AI policy is attached the same way for LLM Providers, App 
 
 ![Guardrails & Policies sidebar showing the synced custom policy listed alongside built-in policies](../../../assets/img/custom-policies/SyncedCustomPolicyinPoliciesSection.svg)
 
-For more detail on the global vs. per-resource scope referenced above, see [Policy Scope: Global vs. Per Resource](overview.md#policy-scope-global-vs-per-resource).
+For more detail on the global vs. per-resource scope referenced above, see [Policy Scope: Global vs. Per Resource](overview.md#policy-scope-global-or-per-resource).
 
 ## What's Next?
 
 - [LLM Providers Overview](../llm-providers/overview.md): Learn about configuring LLM Providers
 - [App LLM Proxies Overview](../llm-proxies/overview.md): Learn about configuring App LLM Proxies for Gen AI applications and agents
 - [MCP Proxies Overview](../mcp-proxies/overview.md): Learn about configuring MCP Proxies
-- [Guardrails Overview](guardrails/overview.md): Explore the built-in guardrails available alongside your custom AI policies
+- [Policies overview](overview.md): Explore the built-in guardrails available alongside your custom AI policies

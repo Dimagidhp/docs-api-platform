@@ -21,7 +21,7 @@ This guide walks you through creating an App LLM Proxy, optionally attaching gua
 ## Prerequisites
 
 !!! info "Before You Begin"
-    - Access to API Platform Console with **Admin** or **Developer** role
+    - A user whose token carries the scopes these steps need: `ap:llm_proxy:manage` to create and edit proxies, `ap:llm_proxy:deployment:manage` to deploy one, `ap:llm_provider:read` to choose the provider behind it, and `ap:gateway:read` to choose the target gateway. A proxy that carries its own upstream credential also needs `ap:secret:create`. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all of these, and `ap_publisher` grants every one except `ap:secret:create`.
     - At least one [configured and deployed LLM Provider](../llm-providers/configure-provider.md)
 
 ---
@@ -64,7 +64,7 @@ You can attach policies and guardrails to your proxy that apply to all requests:
     Each guardrail includes advanced configuration options that allow you to fine-tune its behavior. After selecting a guardrail, you can configure these settings before attaching it to the proxy.
 
 !!! info
-    Learn more about available guardrails in the [Guardrails Overview](../policies/guardrails/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
+    Learn more about available guardrails in the [Policies overview](../policies/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
 
 ---
 

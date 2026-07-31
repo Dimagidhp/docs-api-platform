@@ -19,6 +19,9 @@ AI Workspace lets you store sensitive credentials as **secrets** and reference t
 
 Use secrets to avoid embedding raw API keys, tokens, or passwords directly in LLM provider configurations, MCP proxy configs, or API backend settings.
 
+!!! important "Not the same as `config.toml` interpolation"
+    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services' own startup credentials - database password, OIDC client secret, at-rest encryption key - are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](./configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
+
 ## How It Works
 
 1. Create a secret via the Platform API with a unique `handle` and the plaintext `value`.
@@ -271,7 +274,7 @@ Rotated on 2026-06-26 — old key decommissioned
 DELETE /api/v0.9/secrets/{handle}
 ```
 
-Soft-deletes a secret by setting its status to `DEPRECATED`. Deletion is blocked with `409 Conflict` if the secret is currently referenced by any artifact — either in its saved configuration or in a snapshot currently deployed to a gateway.
+Soft-deletes a secret by setting its status to `DEPRECATED`. Deletion is blocked with `409 Conflict` if any artifact references the secret — either in its saved configuration or in a snapshot deployed to a gateway.
 
 **Response — 204 No Content**
 
@@ -347,41 +350,9 @@ Attempting to delete a secret that is still in use returns HTTP 409. To remove i
 
 ---
 
-## Configuration
+## Encryption Key
 
-Secrets are encrypted at rest with the Platform API's single at-rest encryption key (also used for subscription tokens and WebSub HMAC secrets). This key is **required** - the server refuses to start if it is missing or malformed, so it must be provisioned before startup and kept stable, so previously-encrypted secrets stay readable across restarts and replicas.
-
-The key is a single 32-byte AES-256 value, supplied as **64 hex characters** or base64. Generate one with:
-
-```sh
-openssl rand -hex 32
-```
-
-The Platform API does not read the key from an environment variable directly. It reads the `encryption_key` field in `config.toml`, which pulls the value from the environment (or a mounted file) through a config-interpolation token — environment variables never override config keys directly:
-
-{% raw %}
-```toml
-# config.toml - resolved from a mounted key file:
-encryption_key = '{{ file "/etc/platform-api/keys/encryption.key" }}'
-
-# Alternatively, from an environment variable:
-# encryption_key = '{{ env "APIP_CP_ENCRYPTION_KEY" }}'
-```
-{% endraw %}
-
-For Docker Compose deployments, the AI Workspace setup script generates this key into a **file** — `resources/keys/encryption.key`, mounted into the container at `/etc/platform-api/keys` — for you (see [Getting Started](./getting-started.md)):
-
-```sh
-./scripts/setup.sh
-```
-
-To provision it manually instead, write the generated value to that file (the key is 32 bytes as 64 hex chars; a trailing newline is trimmed on load):
-
-```sh
-openssl rand -hex 32 > resources/keys/encryption.key
-```
-
-Or switch the token to the {% raw %}`{{ env "APIP_CP_ENCRYPTION_KEY" }}`{% endraw %} form and set the variable in `api-platform.env` instead.
+Secrets are encrypted at rest with the Platform API's at-rest encryption key, which also protects subscription tokens and WebSub HMAC secrets. The setup script provisions this key for Docker Compose deployments. For how to generate, mount, and reference it, see [Provision the at-rest encryption key manually](./getting-started.md#provision-the-at-rest-encryption-key-manually).
 
 !!! warning
     Use the same encryption key across restarts and across all replicas. Changing or rotating it makes previously-encrypted secrets unreadable.

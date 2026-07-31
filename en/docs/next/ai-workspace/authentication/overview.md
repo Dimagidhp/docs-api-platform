@@ -18,7 +18,7 @@ AI Workspace and the Platform API read their settings from a single `config.toml
 
 | Mode | `[ai_workspace.auth] mode` | `[platform_api.auth] mode` | Best for |
 |------|------------------------------|-------------------------------|----------|
-| File-based | `basic` | `file` | Local use and quick demos, no identity provider required |
+| File-based | `basic` | `file` | Local use and demos, no identity provider required |
 | Identity provider | `oidc` | `idp` | Production, where a dedicated identity provider manages user login |
 
 ## File-based authentication
@@ -35,17 +35,52 @@ mode = "file"
 
 [[platform_api.auth.file.users]]
 username      = "admin"
-password_hash = "$2a$10$..."   # bcrypt hash of the password
-scopes        = "ap:organization:manage ap:gateway:manage ..."
+password_hash = "$2a$12$..."   # bcrypt hash of the password
+roles         = ["ap_admin"]
 ```
 
 Generate a bcrypt hash for the password with any standard tool, for example:
 
 ```bash
-htpasswd -bnBC 10 "" "your-password" | tr -d ':\n'
+htpasswd -bnBC 12 "" "your-password" | tr -d ':\n'
 ```
 
-The `setup.sh` script bundled with the Docker Compose distribution generates the admin username and password for you and prints them to the terminal once — see [Getting Started](../getting-started.md). Change this password before sharing the deployment with anyone else.
+### Add more users
+
+`[[platform_api.auth.file.users]]` is an array of tables, so repeating the whole block — double brackets and all — defines another user. Give each one the roles that match what that person does:
+
+```toml
+[[platform_api.auth.file.users]]
+username      = "admin"
+password_hash = "$2a$12$..."
+roles         = ["ap_admin"]
+
+[[platform_api.auth.file.users]]
+username      = "developer"
+password_hash = "$2a$12$..."
+roles         = ["ap_publisher", "ap_subscriber"]
+
+[[platform_api.auth.file.users]]
+username      = "auditor"
+password_hash = "$2a$12$..."
+roles         = ["ap_viewer"]
+```
+
+A user's `roles` are its entire grant — there's no per-user scope list. Each name comes from the role-to-scope mapping file at `[platform_api.auth.authorization] role_to_scope_mapping`, which the distributions mount at `/etc/platform-api/role-to-scope-mapping.yaml`. The login endpoint expands those roles into the token's scope claim, and naming several unions what they grant, as `developer` does above. A user with no roles, or one naming a role the mapping file doesn't define, fails startup rather than signing in and then being denied every request.
+
+The mapping file ships with these roles:
+
+| Role | Grants |
+|------|--------|
+| `ap_admin` | Full access to every resource and operation |
+| `ap_operator` | Gateway and deployment operations |
+| `ap_publisher` | Creating and publishing APIs and proxies |
+| `ap_subscriber` | Applications and subscriptions |
+| `ap_viewer` | Read-only access |
+
+Edit that file to change what a role grants, or to add your own.
+
+The `setup.sh` script bundled with the Docker Compose distribution generates the admin username and password for you and prints them to the terminal once — see [Getting Started](../getting-started.md).
 
 File-based authentication has two limitations:
 
@@ -66,8 +101,7 @@ For production, configure AI Workspace to delegate login to an identity provider
 | Custom claims | Tokens carry organization identity as custom claims (claim names are configurable) |
 | Confidential client | AI Workspace is registered as a confidential client with a client secret, not a public or single-page application client |
 
-!!! note
-    We're expanding our step-by-step setup guides to cover more identity providers. For now, [Set up Asgardeo as your identity provider](asgardeo-setup.md) walks through a complete configuration using Asgardeo. The same concepts apply to any OIDC-compliant IdP, such as Keycloak, Auth0, or Okta.
+[Connect an identity provider to AI Workspace](connect-an-identity-provider.md) covers the configuration for any such IdP: client registration, claim mappings, and the choice between scope and role authorization. [Set up Asgardeo as your identity provider](asgardeo-setup.md) is an example of those steps, applied to one specific IdP.
 
 ## Choosing a mode
 

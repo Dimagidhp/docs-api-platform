@@ -82,7 +82,7 @@ Only existing keys are mapped. This workflow does not create new keys. It links 
 
 ## View and Manage Attached Keys
 
-The GenAI Application details page shows the keys currently mapped to the application.
+The GenAI Application details page shows the keys mapped to the application.
 
 For each mapped key, you can view details such as:
 

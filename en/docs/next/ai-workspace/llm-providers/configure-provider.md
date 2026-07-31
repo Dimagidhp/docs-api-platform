@@ -21,7 +21,7 @@ LLM Providers allow you to connect AI service platforms like OpenAI, Anthropic, 
 
 ## Prerequisites
 
-- Access to API Platform Console with **Admin** role
+- A user whose token carries the scopes these steps need: `ap:llm_provider:manage` to add and edit providers, `ap:llm_provider:deployment:manage` to deploy one, `ap:gateway:read` to choose the target gateway, and `ap:secret:create` because AI Workspace stores the upstream API key as an encrypted [secret](../secrets-management.md) on your behalf. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all four. `ap_publisher` grants every one except `ap:secret:create`, so saving a provider with a new API key is rejected until you add that scope to the role.
 - At least one [AI Gateway created and set up](../ai-gateways/setting-up.md)
 - API credentials for your LLM provider (API key, access tokens, etc.)
 
@@ -87,6 +87,16 @@ The authentication fields vary depending on the provider you selected:
     1. **Upstream URL*** (Required): Enter your Azure AI Foundry endpoint URL.
     2. **API Key*** (Required): Enter your Azure AI Foundry API key.
 
+=== "AWS Bedrock"
+    1. **Upstream URL*** (Required): Enter the Bedrock runtime endpoint for your region, in the form `https://bedrock-runtime.<region>.amazonaws.com` (e.g., `https://bedrock-runtime.us-east-1.amazonaws.com`).
+    2. **API Key*** (Required): Enter your Amazon Bedrock API key. Paste the raw key — AI Workspace sends it as `Authorization: Bearer <key>` and adds the `Bearer ` prefix for you.
+
+    !!! info
+        Bedrock's endpoint isn't pre-configured, because the runtime host is region-specific. Use the region your API key and model access live in — a key issued in one region doesn't work against another region's endpoint.
+
+!!! info "How the API key is stored"
+    AI Workspace stores the upstream API key as an encrypted secret and keeps only a {% raw %}`{{ secret "handle" }}`{% endraw %} reference in the provider configuration. The plaintext key never lands in the provider configuration or in an API response. See [Secrets Management](../secrets-management.md).
+
 !!! note "Custom provider templates"
     If you're adding a provider from a custom [LLM Provider Template](overview.md#connecting-a-custom-provider) (**Settings > LLM Provider Templates**), the **Authentication Type** can also be set to **other** (no credentials stored — use a policy to handle upstream auth) or **none** (no upstream authentication sent), in addition to **api-key**.
 
@@ -106,7 +116,7 @@ You can attach policies and guardrails to your provider that apply to all reques
     Each guardrail includes advanced configuration options that allow you to fine-tune its behavior. After selecting a guardrail, you can configure these settings before attaching it to the provider.
 
 !!! info
-    Learn more about available guardrails in the [Guardrails Overview](../policies/guardrails/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
+    Learn more about available guardrails in the [Policies overview](../policies/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
 
 ## Save Provider
 

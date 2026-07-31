@@ -61,7 +61,7 @@ Manage upstream endpoint configuration and authentication credentials for the LL
 | Provider Type | URL Configuration |
 |---------------|-------------------|
 | OpenAI, Anthropic, Gemini, Mistral AI | Pre-configured (read-only) |
-| Azure OpenAI, Azure AI Foundry | Custom URL (editable) |
+| Azure OpenAI, Azure AI Foundry, AWS Bedrock | Custom URL (editable) |
 
 **To update:**
 

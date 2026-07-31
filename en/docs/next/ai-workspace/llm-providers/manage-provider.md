@@ -16,23 +16,6 @@ content_type: "how-to"
 
 After deploying your LLM Provider, manage its configuration through the provider details page. This guide covers all management operations organized by tab.
 
-!!! info "On This Page"
-    **Provider Configuration:**
-    
-    - [Connection](#connection) - Endpoint and authentication settings
-    - [Access Control](#access-control) - Enable/disable API endpoints
-    - [Security](#security) - Application authentication setup
-    - [Rate Limiting](#rate-limiting) - Token usage controls
-    - [Guardrails](#guardrails) - Content safety and compliance
-    - [Models](#models) - Available AI models
-    
-    **Lifecycle Operations:**
-    
-    - [Redeploy Provider](#redeploy-provider) - Push configuration updates
-    - [Delete Provider](#delete-provider) - Remove provider permanently
-
----
-
 ## Access Provider Details
 
 1. Navigate to **AI Workspace** > **LLM Providers**.
@@ -61,7 +44,7 @@ Manage upstream endpoint configuration and authentication credentials for the LL
 | Provider Type | URL Configuration |
 |---------------|-------------------|
 | OpenAI, Anthropic, Gemini, Mistral AI | Pre-configured (read-only) |
-| Azure OpenAI, Azure AI Foundry | Custom URL (editable) |
+| Azure OpenAI, Azure AI Foundry, AWS Bedrock | Custom URL (editable) |
 
 **To update:**
 
@@ -166,17 +149,9 @@ Control request and token consumption to prevent cost overruns and ensure fair u
 
 </div>
 
-The Rate Limiting tab provides two independent sections: **Backend** and **Per Consumer**.
+Configure rate limits in the **Backend** section, which controls requests from the gateway to the upstream LLM provider. Limiting that traffic protects your provider API credentials and caps total spend.
 
-| Section | Controls | Protects | Status |
-|---------|----------|----------|--------|
-| **Backend** | Requests from the gateway to the upstream LLM provider | Your provider API credentials and total spend | Available |
-| **Per Consumer** | Requests from client applications to the gateway | Fair usage across all consumers | *Coming soon* |
-
-!!! info "Per Consumer Rate Limiting — Coming Soon"
-    Per consumer rate limiting is not yet available. Only the **Backend** section is currently configurable.
-
-Both sections support two configuration modes:
+The Backend section supports two configuration modes:
 
 - **Provider-wide** — A single limit applied across all API endpoints. The limit maintains **one shared counter**: traffic on any endpoint draws down the same allowance, so exhausting the limit via one endpoint rejects requests on all endpoints.
 - **Per Resource** — Individual limits per API endpoint (e.g., chat completions vs. embeddings). Each endpoint maintains its **own independent counter**.
@@ -184,20 +159,19 @@ Both sections support two configuration modes:
 ![Rate Limiting tab showing Provider-wide and Per Resource configuration modes in the Backend section](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider/rate-limiting-tab.png)
 
 !!! note
-    Provider-wide and Per Resource modes are mutually exclusive per section. Clear existing limits before switching modes.
+    Provider-wide and Per Resource modes are mutually exclusive. Clear existing limits before switching modes.
 
 !!! info "Provider-wide limits are a hard ceiling"
-    A provider-wide limit is evaluated before any per-resource policy and counts **every request attempt** — including requests that a stricter per-resource policy later rejects. When the shared allowance is exhausted, requests to every endpoint receive HTTP `429`. See [Policy Scope: Global vs. Per Resource](../policies/overview.md#policy-scope-global-vs-per-resource) for details.
+    A provider-wide limit is evaluated before any per-resource policy and counts **every request attempt** — including requests that a stricter per-resource policy later rejects. When the shared allowance is exhausted, requests to every endpoint receive HTTP `429`. See [Policy Scope: Global vs. Per Resource](../policies/overview.md#policy-scope-global-or-per-resource) for details.
 
 ### Limit Criteria
 
-Each section lets you configure:
+Configure either of these criteria, or both:
 
 | Criterion | Description |
 |-----------|-------------|
 | **Request Count** | Maximum number of requests within the reset duration |
-| **Token Count** | Maximum number of tokens (prompt + completion) within the reset duration |
-| **Cost** | Cost-based limiting *(Coming soon)* |
+| **Token Count** | Maximum number of tokens (prompt plus completion) within the reset duration |
 
 For each enabled criterion, set the **Quota** and **Reset Duration** (`second`, `minute`, or `hour`).
 
@@ -219,7 +193,7 @@ For each enabled criterion, set the **Quota** and **Reset Duration** (`second`, 
 !!! tip "Cost Control Best Practices"
     Set conservative backend limits first to protect your provider credentials. Monitor actual usage via the Insights dashboard before increasing limits. Use Per Resource mode only when endpoints have significantly different usage patterns.
 
-**Learn more:** [Token-Based Rate Limiting](../policies/other-policies/token-based-rate-limit.md)
+**Learn more:** [Token-Based Rate Limiting](../policies/overview.md#token-based-rate-limit)
 
 ---
 
@@ -233,15 +207,15 @@ Attach guardrails to enforce content safety, compliance, and quality standards. 
 
 ### View Attached Guardrails
 
-The tab displays all guardrails currently attached to the provider:
+The tab displays the guardrails attached to the provider:
 
 - **Guardrail name** and type
 - **Configuration status** and parameters
-- **Enable/disable toggles** for quick activation control
+- **Enable/disable toggles** to activate or deactivate a guardrail
 
 ### Add a Guardrail
 
-Guardrails can be added globally (applying to all endpoints) or per resource (applying to a specific endpoint). A global guardrail runs on every request regardless of the endpoint called; a resource-level guardrail runs only on the endpoint it is attached to. When both are configured, global guardrails are evaluated first, followed by resource-level guardrails. See [Policy Scope: Global vs. Per Resource](../policies/overview.md#policy-scope-global-vs-per-resource).
+Guardrails can be added globally (applying to all endpoints) or per resource (applying to a specific endpoint). A global guardrail runs on every request regardless of the endpoint called; a resource-level guardrail runs only on the endpoint it is attached to. When both are configured, global guardrails are evaluated first, followed by resource-level guardrails. See [Policy Scope: Global vs. Per Resource](../policies/overview.md#policy-scope-global-or-per-resource).
 
 **To add a global guardrail:**
 
@@ -275,7 +249,7 @@ Guardrail parameters cannot be edited in place. To change a guardrail's configur
 !!! warning "Production Impact"
     Guardrail changes require a manual redeploy to take effect on deployed gateways. Test thoroughly in a non-production environment before enabling strict guardrails.
 
-**Learn more:** [Guardrails Overview](../policies/guardrails/overview.md). For the full policy catalog, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
+**Learn more:** [Policies overview](../policies/overview.md). For the full policy catalog, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
 
 ---
 
@@ -337,7 +311,7 @@ Push configuration changes to deployed gateways.
 Permanently remove the provider and all its configurations.
 
 !!! warning "Prerequisite"
-    A provider cannot be deleted if any App LLM Proxy is currently using it. Delete or reassign all dependent proxies before proceeding.
+    You can't delete a provider while an App LLM Proxy uses it. Delete or reassign all dependent proxies before proceeding.
 
 **To delete:**
 

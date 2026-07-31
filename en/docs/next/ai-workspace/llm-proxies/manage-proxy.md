@@ -16,20 +16,6 @@ content_type: "how-to"
 
 Once you create an App LLM Proxy, you can manage its configuration through the proxy details page. This guide covers all management operations available for your specialized application or agent proxy.
 
-!!! info "On This Page"
-    **Proxy Configuration:**
-
-    - [Provider Settings](#provider-settings) - LLM service provider and authentication
-    - [Resources](#resources) - OpenAPI specification and endpoints
-    - [Security](#security) - Client application authentication
-    - [Guardrails](#guardrails) - Content protection and policies
-    - [Get Started](#get-started) - API keys and gateway deployments
-
-    **Lifecycle Operations:**
-
-    - [Save Changes](#save-changes) - Apply configuration updates
-    - [Delete Proxy](#delete-proxy) - Remove proxy permanently
-
 ---
 
 ## Access Proxy Details
@@ -143,7 +129,7 @@ Configure how client applications authenticate when accessing your proxy endpoin
 
 | Field | Description |
 |-------|-------------|
-| **Authentication type** | Select the authentication method from the dropdown. Currently, **API Key** is available. |
+| **Authentication type** | Select the authentication method from the dropdown. **API Key** is the available method. |
 | **Key name** | The name of the key that clients must provide (e.g., `X-API-Key`). |
 | **API Key Value Prefix** | Optional prefix prepended to the value clients must send, e.g. `Bearer` so clients send `Bearer <key>`. |
 | **Sent in** | Choose how clients send the authentication key: **Header** (recommended) or **Query Parameter**. |
@@ -206,7 +192,7 @@ Resource-wise guardrails apply to **specific endpoints** only. This section list
     After adding or removing guardrails, you must redeploy the proxy for the changes to take effect. Click **Deploy to Gateway** to apply your changes.
 
 !!! info
-    Learn more about available guardrails in the [Guardrails Overview](../policies/guardrails/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
+    Learn more about available guardrails in the [Policies overview](../policies/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
 
 ---
 

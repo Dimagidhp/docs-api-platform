@@ -18,7 +18,7 @@ When the built-in templates do not cover the upstream LLM service you want to us
 
 ## Prerequisites
 
-- Access to API Platform Console with the **Admin** role
+- A user whose token carries `ap:llm_template:manage`, the scope for creating, editing, and deleting templates. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` and `ap_operator` grant it; `ap_publisher` and `ap_viewer` hold `ap:llm_template:read`, which only lists templates.
 - At least one [AI Gateway created and set up](../ai-gateways/setting-up.md)
 - The endpoint URL and OpenAPI specification of the upstream service
 

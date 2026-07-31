@@ -15,22 +15,6 @@ Because the gateway owns these artifacts, they keep serving traffic even if the 
 
 ---
 
-## Table of Contents
-
-1. [Prerequisites](#prerequisites)
-2. [Enabling the sync](#enabling-the-sync)
-3. [How the sync works](#how-the-sync-works)
-4. [Supported artifacts](#supported-artifacts)
-5. [Create the artifacts on the gateway](#create-the-artifacts-on-the-gateway)
-6. [View them in the AI Workspace](#view-them-in-the-ai-workspace)
-7. [What you can and can't change in the AI Workspace](#what-you-can-and-cant-change-in-the-ai-workspace)
-8. [Updating and deleting](#updating-and-deleting)
-9. [If the AI Workspace is temporarily unavailable](#if-the-ai-workspace-is-temporarily-unavailable)
-10. [Immutable gateways](#immutable-gateways)
-11. [Troubleshooting](#troubleshooting)
-
----
-
 ## Prerequisites
 
 - A gateway that is registered with, and can reach, your AI Workspace.
@@ -293,7 +277,7 @@ A gateway-created artifact is **read-only** in the AI Workspace because the gate
 
 - Deleting it while it is still deployed on a gateway (undeploy it from all gateways first)
 
-The AI Workspace simply won't offer the actions it can't perform, and will decline an edit that would change how the gateway runs the artifact.
+The AI Workspace won't offer the actions it can't perform, and will decline an edit that would change how the gateway runs the artifact.
 
 ---
 

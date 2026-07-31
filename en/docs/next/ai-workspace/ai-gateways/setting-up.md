@@ -18,7 +18,7 @@ AI Gateways are the runtime components that process and route requests between y
 
 ## Prerequisites
 
-- Access to API Platform Console with **Admin** role
+- A user whose token carries the scopes these steps need: `ap:gateway:read` to view gateways, `ap:gateway:manage` to add, edit, or delete one, and `ap:gateway:token:manage` to issue a registration token. `ap:gateway:manage` also covers the token operations on its own. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` and `ap_operator` grant all of these; `ap_viewer` and `ap_publisher` can only view gateways.
 
 ---
 
@@ -78,8 +78,13 @@ A **Gateway Registration Token** is displayed at the top of the Get Started sect
 
 The Get Started section provides setup instructions for multiple deployment options.
 
+!!! note "Where the control plane address comes from"
+    Every method below needs two values from the **Get Started** section: the control plane address the gateway connects to, and this gateway's registration token.
+
+    Self-hosted AI Workspace fills that address into the commands it shows from `[ai_workspace.gateway] controlplane_host` in its own `config.toml`. The key is display-only - AI Workspace never connects to it - so the address has to be reachable from the machine running the gateway, not from the workspace. If the commands carry an address your gateway can't reach, correct that key and reload the page rather than editing the value into the gateway. For the Helm method, put the hostname in `controlPlane.host` and any port in `controlPlane.port`. See [Two keys that aren't interchangeable](../ports.md#two-keys-that-arent-interchangeable).
+
 !!! note "Gateway version"
-    The steps below apply to **gateway v1.2 and above**, which provision keys and certificates with `./scripts/setup.sh` and deliver configuration through `api-platform.env` (loaded automatically via the Compose `env_file:` directive). For gateways **below v1.2**, use the older flow instead: write `configs/keys.env` with `GATEWAY_CONTROLPLANE_HOST` / `GATEWAY_REGISTRATION_TOKEN` and start with `docker compose --env-file configs/keys.env up`. The Get Started section in the Console shows the correct commands for the version you registered.
+    AI Workspace works with **gateway v1.2 and above**. Those gateways provision their keys and certificates with `./scripts/setup.sh` and take their configuration from `api-platform.env`, which Compose loads through the `env_file:` directive. The **Get Started** section offers the gateway versions AI Workspace supports and shows the commands for the version you register.
 
 === "Quick Start"
     **Prerequisites:**
@@ -108,7 +113,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     On Windows, use the PowerShell setup script instead — it takes the same flags and provisions the same files:
 
     ```powershell
-    cd wso2apip-ai-gateway-1.2.0-beta
+    cd wso2apip-ai-gateway-1.2.0
     powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
     ```
 
@@ -118,12 +123,12 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     ```bash
     cat >> api-platform.env << 'ENVFILE'
-    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=connect.bijira.dev
+    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=<control-plane-host>
     APIP_GW_CONTROLLER_CONTROLPLANE_TOKEN=<your-gateway-token>
     ENVFILE
     ```
 
-    Replace `<your-gateway-token>` with the token from the Get Started section.
+    Replace both placeholders with the values the Get Started section shows: the control plane address, as `host:port` with no scheme, and this gateway's registration token.
 
     **Step 4: Start the Gateway**
 
@@ -171,7 +176,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     On Windows, use the PowerShell setup script instead — it takes the same flags and provisions the same files:
 
     ```powershell
-    cd wso2apip-ai-gateway-1.2.0-beta
+    cd wso2apip-ai-gateway-1.2.0
     powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
     ```
 
@@ -181,12 +186,12 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     ```bash
     cat >> api-platform.env << 'ENVFILE'
-    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=connect.bijira.dev
+    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=<control-plane-host>
     APIP_GW_CONTROLLER_CONTROLPLANE_TOKEN=<your-gateway-token>
     ENVFILE
     ```
 
-    Replace `<your-gateway-token>` with the token from the Get Started section. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
+    Replace both placeholders with the values the Get Started section shows: the control plane address, as `host:port` with no scheme, and this gateway's registration token. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
 
     **Step 4: Start the Gateway**
 
@@ -222,7 +227,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     On Windows, use the PowerShell setup script instead — it takes the same flags and provisions the same files:
 
     ```powershell
-    cd wso2apip-ai-gateway-1.2.0-beta
+    cd wso2apip-ai-gateway-1.2.0
     powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
     ```
 
@@ -232,12 +237,12 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     ```bash
     cat >> api-platform.env << 'ENVFILE'
-    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=connect.bijira.dev
+    APIP_GW_CONTROLLER_CONTROLPLANE_HOST=<control-plane-host>
     APIP_GW_CONTROLLER_CONTROLPLANE_TOKEN=<your-gateway-token>
     ENVFILE
     ```
 
-    Replace `<your-gateway-token>` with the token from the Get Started section. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
+    Replace both placeholders with the values the Get Started section shows: the control plane address, as `host:port` with no scheme, and this gateway's registration token. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
 
     **Step 4: Start the Gateway**
 
@@ -276,14 +281,14 @@ The Get Started section provides setup instructions for multiple deployment opti
     helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version 1.2.0 \
     --set gateway.controller.encryptionKeys.enabled=true \
     --set gateway.controller.encryptionKeys.secretName=gateway-encryption-keys \
-    --set gateway.controller.controlPlane.host="host.docker.internal" \
-    --set gateway.controller.controlPlane.port=8443 \
-    --set gateway.controller.controlPlane.token.value="your-gateway-token"
+    --set gateway.controller.controlPlane.host="<control-plane-host>" \
+    --set gateway.controller.controlPlane.port=<control-plane-port> \
+    --set gateway.controller.controlPlane.token.value="<your-gateway-token>"
     ```
 
     Use the Helm chart version that matches the gateway version shown on this page's **Get Started** section, not necessarily `1.2.0`.
 
-    Replace `your-gateway-token` with the token from the Get Started section.
+    Replace the placeholders with the values the Get Started section shows. Split the control plane address across the two flags: the hostname in `controlPlane.host`, its port in `controlPlane.port`. `<your-gateway-token>` is this gateway's registration token.
 
 Once the gateway runtime is running and connected, the gateway status will change from **Inactive** to **Active**.
 

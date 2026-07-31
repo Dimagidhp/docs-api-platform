@@ -109,7 +109,7 @@ The AI Workspace control plane itself is configured through `config.toml`, resol
 
 {% raw %}
 - `{{ env "VARIABLE_NAME" "default" }}` — reads the named environment variable, falling back to `default` if it's unset. Omit the default to make the variable required; startup fails if it isn't set.
-- `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply secrets such as client secrets or passwords without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
+- `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply sensitive values such as the OIDC client secret or a database password without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
 
 ```toml
 [ai_workspace.logging]
@@ -122,7 +122,9 @@ client_secret = '{{ file "/secrets/ai-workspace/oidc_client_secret" }}'
 
 Resolution fails closed: an unset required variable, or an unreadable or disallowed file, aborts startup rather than running with an empty credential.
 
-For each {% raw %}`{{ file }}`{% endraw %} token, mount the referenced secret at that exact path in `docker-compose.yaml`:
+These tokens apply to `config.toml` only. They are a separate mechanism from the [AI Workspace secrets](secrets-management.md) you store in the control plane and reference from artifacts.
+
+For each {% raw %}`{{ file }}`{% endraw %} token, mount the referenced value at that exact path in `docker-compose.yaml`:
 
 ```yaml
     volumes:
