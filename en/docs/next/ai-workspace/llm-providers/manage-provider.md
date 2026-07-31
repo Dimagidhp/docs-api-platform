@@ -113,19 +113,16 @@ Set the API key that client applications must provide:
 | Field | Description | Example |
 |-------|-------------|---------|
 | **Authentication Type** | Authentication method | `apiKey` (default) |
-| **API Key** | Header or query parameter name | `x-api-key`, `apikey`, `Authorization` |
-| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, for example, so clients send `Bearer <key>` | `Bearer` |
-| **Key Location** | Where clients send the key | `Header` (recommended) or `Query` |
+| **API Key** | The name of the request header that must carry the API key | `x-api-key`, `apikey`, `Authorization` |
+| **Key Location** | Where clients send the key. `header` is the only supported option. | `header` |
+| **API Key Value Prefix** | An optional prefix prepended to the value clients must send, so that clients send `Bearer <key>` | `Bearer` |
 
 **To configure:**
 
 1. Select **Authentication Type**: `apiKey`
-2. Enter the **API Key** header or query parameter name your applications use
-3. Optionally set an **API Key Value Prefix** (for example `Bearer`) if clients should send the key with a scheme prefix
-4. Choose **Key Location**:
-    - **Header**: clients send the key in an HTTP request header. This is the more secure choice.
-    - **Query**: clients send the key as a URL query parameter. This is less secure.
-5. Click **Save**
+2. Enter the **API Key** header name your applications use.
+3. Optionally set an **API Key Value Prefix**, for example `Bearer`, if clients send the key with a scheme prefix.
+4. Click **Save**.
 
 ---
 
@@ -237,22 +234,22 @@ You can't edit guardrail parameters in place. To change a guardrail's configurat
 
 Configure which AI models are accessible through this provider.
 
-### Add Models
+### Add and remove models
 
-**To add new models:**
+The **Models** tab displays a chip list of the models available through this provider. Each chip represents one model ID.
 
-1. Click **Add model provider**
-2. Select a provider from the list to import its model catalog
-3. Click **Add**
-4. The models are added and enabled by default
+**To add a model:**
 
-### Enable/Disable Models
+1. Click **Add model provider**, select a provider from the list, and click **Add** to import its model catalog.
+2. Type or paste individual model IDs into the input field and press <kbd>Enter</kbd> to add them as chips.
+3. Click **Save**, then **Deploy to Gateway** to apply the change.
 
-Control which models applications can access:
+**To remove a model:**
 
-- **Toggle switches**: Turn an individual model on or off
-- **Effect**: The gateway blocks disabled models
-- An application that calls a disabled model receives an error
+1. Click the remove icon on the model chip you want to remove.
+2. Click **Save**, then **Deploy to Gateway** to apply the change.
+
+The gateway blocks any model that isn't in the chip list. An application that requests a removed model receives an error.
 
 ---
 
@@ -268,7 +265,7 @@ Push configuration changes to deployed gateways.
 
 - After updating connection settings
 - After modifying rate limits or guardrails
-- After enabling/disabling resources or models
+- After adding or removing models
 
 **To redeploy:**
 

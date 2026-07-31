@@ -95,7 +95,7 @@ For detailed instructions, see [AI Gateways](ai-gateways/setting-up.md).
 
 An LLM provider connects AI Workspace to an AI service platform such as OpenAI, Anthropic, or Azure OpenAI.
 
-1. Navigate to **LLM** > **Service Provider**.
+1. Navigate to **LLM** > **LLM Providers**.
 2. Click **+ Add New Provider** and select your provider type.
 3. Fill in the **Name**, **Version**, and **API Key**, then click **Add Provider**.
 4. Configure how applications authenticate when they access this provider through the gateway.

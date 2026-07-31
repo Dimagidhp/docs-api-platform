@@ -257,6 +257,7 @@
 
 - [API Gateway Overview](https://wso2.com/api-platform/docs/api-gateway/overview.md): Overview of the standalone Go-based gateway for REST, WebSocket, and GraphQL APIs
 - [API Gateway Quick Start](https://wso2.com/api-platform/docs/api-gateway/quick-start-guide.md): Configure your first API Proxy using YAML and start routing traffic
+- [Setting Up the Database](https://wso2.com/api-platform/docs/api-gateway/setup/database-setup.md): Create the database and apply the Gateway Controller schema scripts for PostgreSQL or SQL Server before starting the gateway
 - [Storage and Backends](https://wso2.com/api-platform/docs/api-gateway/setup/storage-and-backends.md): Configure PostgreSQL as the Gateway Controller storage backend and Redis for distributed rate limiting
 - [Artifact Templating](https://wso2.com/api-platform/docs/api-gateway/setup/artifact-templating.md): Use Go text template expressions in API Platform Gateway YAML artifacts to inject environment variables and dynamic values at startup
 - [Upstream Timeouts](https://wso2.com/api-platform/docs/api-gateway/setup/upstream-timeouts.md): Configure the upstream TCP connection timeout in API Platform Gateway to protect against slow or unreachable backend services

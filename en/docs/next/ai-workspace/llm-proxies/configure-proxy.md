@@ -36,7 +36,7 @@ This guide walks you through creating an App LLM proxy, optionally attaching gua
 
     1. **Name*** (Required): Enter a unique name for the proxy (for example, `support-chat-api`, `sales-agent-proxy`). The Proxy ID is auto-generated from the name (lowercase, hyphen-separated).
 
-    2. **LLM Service Provider*** (Required): Select the LLM provider this proxy will route to from the dropdown (defaults to the most recently updated provider).
+    2. **LLM Service Provider*** (Required): Select the LLM provider this proxy routes to from the dropdown. It defaults to the most recently updated provider.
 
     3. **Version*** (Required): The version is pre-filled (for example, `v1.0`). You can edit this if needed.
 

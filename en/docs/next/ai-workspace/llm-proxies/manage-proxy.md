@@ -117,15 +117,12 @@ Configure how client applications authenticate when accessing your proxy endpoin
 
 | Field | Description |
 |-------|-------------|
-| **Authentication type** | Select the authentication method from the dropdown. **API Key** is the available method. |
-| **Key name** | The name of the key that clients must provide (for example, `X-API-Key`). |
-| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, for example, `Bearer` so clients send `Bearer <key>`. |
-| **Sent in** | Choose how clients send the authentication key: **Header** (recommended) or **Query Parameter**. |
+| **Authentication type** | Select the authentication method from the dropdown. **API Key** is the only available method. |
+| **Key name** | The name of the request header that clients must provide, for example `X-API-Key`. |
+| **Sent in** | Where clients send the key. `header` is the only supported option. |
+| **API Key Value Prefix** | An optional prefix prepended to the value clients must send, for example `Bearer`, so that clients send `Bearer <key>`. |
 
 3. Click **Save** to apply the security configuration.
-
-!!! tip "Best practice"
-    Use **Header** authentication for production environments. Server access logs and browser history can record query parameters.
 
 ---
 

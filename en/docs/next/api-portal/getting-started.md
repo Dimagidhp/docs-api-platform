@@ -28,7 +28,7 @@ The API Portal & MCP Hub is where developers discover, subscribe to, and consume
 Run this command in your terminal to download and unzip the standalone API Portal distribution:
 
 ```bash
-curl -sLO https://github.com/wso2/api-platform/releases/download/api-portal%2Fv1.0.0/wso2apip-api-portal-1.0.0-rc.zip && \
+curl -sLO https://github.com/wso2/api-platform/releases/download/api-portal%2Fv1.0.0-rc/wso2apip-api-portal-1.0.0-rc.zip && \
 unzip wso2apip-api-portal-1.0.0-rc.zip
 ```
 
@@ -42,8 +42,8 @@ cd wso2apip-api-portal-1.0.0
 This one-time script provisions everything the containers need to start:
 
 - a self-signed TLS certificate under `resources/certificates/`
-- the portal's encryption/session secrets and the shared JWT signing key, written to `api-platform.env`
-- the Platform API sidecar config that validates login credentials and issues signed tokens
+- the API Portal and Platform API secrets — the encryption keys, the session secret, and the RS256 JWT signing keypair — written as files under `resources/keys/`
+- your admin credentials, bcrypt-hashed into `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` in `api-platform.env`
 
 It also prompts you for an **admin username and password**. Press Enter at the password prompt to have a strong one generated for you — it's printed once at the end, so copy it before continuing.
 
@@ -51,7 +51,7 @@ It also prompts you for an **admin username and password**. Press Enter at the p
     The admin password is shown only once and is never stored in plaintext — only its bcrypt hash is written to `api-platform.env`. If you lose it, remove `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` from `api-platform.env` and rerun `./scripts/setup.sh` to generate a new one.
 
 !!! note "Re-running the script"
-    The script is idempotent — re-running it only fills in what's missing and never overwrites an existing value. To rotate a secret, remove it from `api-platform.env` (or delete `resources/certificates/` for the TLS certificate) and re-run.
+    The script is idempotent — re-running it only fills in what's missing and never overwrites an existing value. To rotate a secret, remove it from `api-platform.env`, or delete the relevant file under `resources/certificates/` or `resources/keys/`, then re-run.
 
 ## Step 3: Start the Portal
 
@@ -107,35 +107,36 @@ To publish an API of your own instead, continue below.
 
 ## Step 6: Publish Your First API
 
-Create an API manifest and an OpenAPI definition:
+Publish an API by uploading a manifest and an OpenAPI definition. This example uses the **Reading List API**, whose backend is already hosted, so it works without deploying a gateway of your own.
+
+Create the API manifest:
 
 ```yaml
 # api.yaml
-apiVersion: api-portal.api-platform.wso2.com/v1alpha2
+apiVersion: api-portal.api-platform.wso2.com/v1
 kind: RestApi
 
 metadata:
-  name: ping-api-v1.0
+  name: reading-list-api-v1.0
 
 spec:
   type: REST
-  displayName: Ping API
+  displayName: Reading List API
   version: v1.0
-  description: Sample HTTP echo/probe API. Requires API key authentication. No subscription plans.
+  description: Sample reading-list API for tracking books and their reading status. Open access — no API key or subscription required.
   status: PUBLISHED
-  referenceID: ping-api-v1.0
+  referenceID: reading-list-api-v1.0
 
   tags:
-    - ping
-    - api-key
+    - reading-list
+    - books
 
   labels:
     - default
 
   subscriptionPlans: []
 
-  visibility: PUBLIC
-  visibleGroups: []
+  agentVisibility: VISIBLE
 
   businessInformation:
     businessOwner: Platform Owner
@@ -143,63 +144,97 @@ spec:
     technicalOwner: API Team
     technicalOwnerEmail: architecture@example.com
 
+  # Points at the hosted sample backend, so the API works in a fresh portal with
+  # no gateway deployed. Front it with a gateway by swapping these for its URL.
   endpoints:
-    sandboxUrl: http://localhost:8080/ping
-    productionUrl: http://localhost:8080/ping
+    sandboxUrl: https://apis.bijira.dev/samples/reading-list-api-service/v1.0
+    productionUrl: https://apis.bijira.dev/samples/reading-list-api-service/v1.0
 ```
 
+Create the OpenAPI definition:
+
 ```yaml
-# openapi.yaml
+# definition.yaml
 openapi: 3.0.1
 info:
-  title: Ping API
-  version: 1.0.0
+  title: Reading List API
+  version: v1.0
   description: |
-    HTTP echo/probe API secured with an API key (`X-API-Key` header).
+    Track a personal reading list — add books, update their reading status, and
+    remove them when you're done. Open access: no API key required.
 servers:
-  - url: /ping
-security:
-  - ApiKeyHeader: []
+  - url: https://apis.bijira.dev/samples/reading-list-api-service/v1.0
 components:
-  securitySchemes:
-    ApiKeyHeader:
-      type: apiKey
-      in: header
-      name: X-API-Key
   schemas:
-    PingResponse:
+    Book:
       type: object
-      description: Response returned by the ping/echo service
-      additionalProperties: true
-
+      required: [title, author, status]
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          example: The Great Gatsby
+        author:
+          type: string
+          example: F. Scott Fitzgerald
+        status:
+          type: string
+          enum: [to_read, reading, read]
 paths:
-  /get:
+  /books:
     get:
-      summary: Echo a GET request
+      summary: List books
       responses:
         '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PingResponse'
+          description: OK. The reading list.
+    post:
+      summary: Add a book
+      responses:
+        '201':
+          description: Created. The newly added book.
+  /books/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    get:
+      summary: Get a book
+      responses:
+        '200':
+          description: OK. The requested book.
+    put:
+      summary: Update a book
+      responses:
+        '200':
+          description: OK. The updated book.
+    delete:
+      summary: Remove a book
+      responses:
+        '204':
+          description: No Content. The book was removed.
 ```
 
 Then get a bearer token from the Platform API using the admin credentials from Step 2, and publish:
 
 ```bash
-# Get a token from the Platform API (runs alongside the devportal)
+# Get a token from the Platform API (runs alongside the API Portal)
 TOKEN=$(curl -sk -X POST "https://localhost:9243/api/portal/v0.9/auth/login" \
   -d "username=<admin-username>&password=<admin-password>" | jq -r .token)
 
-# Publish the API (the token's org_handle claim scopes this to the "default" org)
-curl -sk -X POST "https://localhost:9543/api/v0.9/apis" \
+# Publish the API — the login is scoped to the "default" organization
+curl -k -X POST "https://localhost:9543/api/v0.9/apis" \
   -H "Authorization: Bearer $TOKEN" \
   -F "metadata=@api.yaml;type=application/yaml" \
-  -F "definition=@openapi.yaml;type=application/yaml"
+  -F "definition=@definition.yaml;type=application/yaml"
 ```
 
-Refresh the portal — the Ping API now appears in the catalog. Click it to view its documentation and try-out console.
+Refresh the portal — the Reading List API now appears in the catalog. Click it to view its documentation and try-out console.
 
 ## What's Next
 
