@@ -160,7 +160,7 @@ subscriber = "Internal/subscriber"
 super_admin = "superAdmin"
 ```
 
-See [Integrate Third-Party Identity Providers](../setting-up/integrate-identity-providers.md) for the full field-by-field reference and Asgardeo/Keycloak walkthroughs.
+See [Authentication](../setting-up/authentication/overview.md) for the authentication modes and the Asgardeo identity-provider walkthrough.
 
 ## Page Access Rules
 
@@ -211,7 +211,7 @@ Global delivery tuning only — subscribers themselves are per-organization, man
 
 ## Related
 
-- [Integrate Third-Party Identity Providers](../setting-up/integrate-identity-providers.md)
+- [Authentication](../setting-up/authentication/overview.md)
 - [Design Mode](../setting-up/design-mode.md)
 - [Get a Bearer Token via curl](get-a-bearer-token-via-curl.md)
 - [Management API](../rest-api/overview.md)
