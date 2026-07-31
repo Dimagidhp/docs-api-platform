@@ -26,7 +26,7 @@ CRUD operations for LLM Provider Template configurations
 
 ```shell
 
-curl -X POST http://localhost:9090/api/management/v0.9/llm-provider-templates \
+curl -X POST http://localhost:9090/api/management/v1/llm-provider-templates \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -40,7 +40,7 @@ Add a new LLM provider template to the Gateway. A template defines token trackin
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "LlmProviderTemplate",
   "metadata": {
     "name": "openai-template"
@@ -75,6 +75,20 @@ Add a new LLM provider template to the Gateway. A template defines token trackin
 }
 ```
 
+!!! note "Using a YAML downloaded from AI Workspace"
+    If you downloaded the template YAML from AI Workspace, you have two options to use it with this endpoint:
+
+    - **Convert to JSON:** Convert the YAML file to JSON before passing it as the request body with `-H 'Content-Type: application/json'`.
+    - **Send as YAML:** Pass the YAML file directly and change the content type header to `application/yaml`:
+
+    ```shell
+    curl -X POST http://localhost:9090/api/management/v1/llm-provider-templates \
+      -u {username}:{password} \
+      -H 'Content-Type: application/yaml' \
+      -H 'Accept: application/json' \
+      --data-binary @template.yaml
+    ```
+
 ### Authentication
 
 <aside class="warning">
@@ -96,7 +110,7 @@ Required roles: `admin`
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "LlmProviderTemplate",
   "metadata": {
     "name": "openai-template"
@@ -155,7 +169,7 @@ Required roles: `admin`
 
 ```shell
 
-curl -X GET http://localhost:9090/api/management/v0.9/llm-provider-templates \
+curl -X GET http://localhost:9090/api/management/v1/llm-provider-templates \
   -u {username}:{password} \
   -H 'Accept: application/json'
 
@@ -188,7 +202,7 @@ Required roles: `admin`
   "count": 3,
   "templates": [
     {
-      "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+      "apiVersion": "gateway.api-platform.wso2.com/v1",
       "kind": "LlmProviderTemplate",
       "metadata": {
         "name": "openai-template"
@@ -296,7 +310,7 @@ Status Code **200**
 
 |Property|Value|
 |---|---|
-|apiVersion|gateway.api-platform.wso2.com/v1alpha1|
+|apiVersion|gateway.api-platform.wso2.com/v1|
 |kind|LlmProviderTemplate|
 |location|payload|
 |location|header|
@@ -315,7 +329,7 @@ Status Code **200**
 
 ```shell
 
-curl -X GET http://localhost:9090/api/management/v0.9/llm-provider-templates/{id} \
+curl -X GET http://localhost:9090/api/management/v1/llm-provider-templates/{id} \
   -u {username}:{password} \
   -H 'Accept: application/json'
 
@@ -344,7 +358,7 @@ Required roles: `admin`
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "LlmProviderTemplate",
   "metadata": {
     "name": "openai-template"
@@ -402,7 +416,7 @@ Required roles: `admin`
 
 ```shell
 
-curl -X PUT http://localhost:9090/api/management/v0.9/llm-provider-templates/{id} \
+curl -X PUT http://localhost:9090/api/management/v1/llm-provider-templates/{id} \
   -u {username}:{password} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -416,7 +430,7 @@ Update an existing LLM provider template in the Gateway.
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "LlmProviderTemplate",
   "metadata": {
     "name": "openai-template"
@@ -473,7 +487,7 @@ Required roles: `admin`
 
 ```json
 {
-  "apiVersion": "gateway.api-platform.wso2.com/v1alpha1",
+  "apiVersion": "gateway.api-platform.wso2.com/v1",
   "kind": "LlmProviderTemplate",
   "metadata": {
     "name": "openai-template"
@@ -532,7 +546,7 @@ Required roles: `admin`
 
 ```shell
 
-curl -X DELETE http://localhost:9090/api/management/v0.9/llm-provider-templates/{id} \
+curl -X DELETE http://localhost:9090/api/management/v1/llm-provider-templates/{id} \
   -u {username}:{password} \
   -H 'Accept: application/json'
 

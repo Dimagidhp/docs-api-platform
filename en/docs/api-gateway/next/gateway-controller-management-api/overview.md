@@ -11,14 +11,14 @@ last_updated: 2026-06-17
 content_type: "overview"
 ---
 
-# Gateway Controller Management API v0.9.0
+# Gateway Controller Management API v1.0
 
 The Gateway Controller Management API is a RESTful API for managing configurations in the WSO2 API Platform Gateway.
 
 The API exposes the following endpoints:
 
-* `http://localhost:9090/api/management/v0.9`
-* `http://gateway-controller:9090/api/management/v0.9`
+* `http://localhost:9090/api/management/v1`
+* `http://gateway-controller:9090/api/management/v1`
 
 ## Table of Contents
 
