@@ -49,7 +49,7 @@ The next question is: **who runs the infrastructure?**
 
     * **Best for:** Startups, mid-market companies, AI POCs, and teams that want to ship fast without managing infrastructure.
 
-    * **What is included:** API Control Plane, AI Workspace, Developer Portal, Moesif Analytics, API Gateway, and AI Gateway, all managed by WSO2.
+    * **What is included:** API Control Plane, AI Workspace, API Portal & MCP Hub, Moesif Analytics, API Gateway, and AI Gateway, all managed by WSO2.
 
     * [Cloud documentation](../cloud/introduction/what-is-bijira.md)
 
@@ -62,7 +62,7 @@ The next question is: **who runs the infrastructure?**
 
     * **Best for:** Mid-market and enterprise customers who need governance with data privacy. Organizations that want managed convenience but cannot allow traffic to flow through third-party infrastructure.
 
-    * **What is included:** Cloud control plane (AI Workspace, Developer Portal, Moesif) managed by WSO2, plus self-hosted gateways (API Gateway, AI Gateway) in your environment. You can also federate third-party gateways (AWS, Azure, Kong, Envoy) under the same control plane.
+    * **What is included:** Cloud control plane (AI Workspace, API Portal & MCP Hub, Moesif) managed by WSO2, plus self-hosted gateways (API Gateway, AI Gateway) in your environment. You can also federate third-party gateways (AWS, Azure, Kong, Envoy) under the same control plane.
 
     * [Set up hybrid deployment](../cloud/api-platform-gateway/getting-started.md)
 
@@ -77,7 +77,7 @@ The next question is: **who runs the infrastructure?**
     
     * **Best for:** Enterprises with strict data residency requirements, government agencies, regulated industries, air-gapped environments, and organizations that require complete control of the infrastructure.
     
-    * **What is included:** Self-hosted control plane (Publisher, Developer Portal), self-hosted gateways (API Gateway, AI Gateway). Moesif analytics can be connected separately. Third-party gateways can be federated.
+    * **What is included:** Self-hosted control plane (Publisher, API Portal & MCP Hub), self-hosted gateways (API Gateway, AI Gateway). Moesif analytics can be connected separately. Third-party gateways can be federated.
     
     * [API Manager documentation](../api-manager/overview.md)
 
@@ -139,7 +139,7 @@ The following is a complete view of all components and where to find their docum
 | :--- | :--- | :--- |
 | **API Control Plane** | Design, publish, version, and govern APIs through the web UI and configuration files. Enforce policies across all connected gateways. | Part of [Cloud](../cloud/introduction/what-is-bijira.md) and [API Manager](../api-manager/overview.md) |
 | **AI Workspace** | The enterprise control plane for AI. Manage LLM providers, MCP servers, and GenAI applications. Configure cost and token-based rate limits, enforce guardrails, and view AI consumption insights at the organizational level. Connected to one or more AI Gateways. | [AI Workspace docs](ai-workspace/overview.md) |
-| **API Portal and MCP Hub** | Developer facing portal for API discovery, subscription management, SDK generation, and theming. Includes agentic consumption capabilities for AI agents, such as the llms.txt endpoint, MCP registry, and Arazzo workflow support. | [API Portal docs](developer-portal/overview.md) |
+| **API Portal & MCP Hub** | Developer facing portal for API discovery, subscription management, SDK generation, and theming. Includes agentic consumption capabilities for AI agents, such as the llms.txt endpoint, MCP registry, and Arazzo workflow support. | [API Portal docs](api-portal/overview.md) |
 | **Analytics and Monetization** | Traffic monitoring, runtime and audit logs, usage tracking, and API monetization with usage-based billing. Powered by Moesif. | <ul><li>[Analytics docs](../analytics/overview.md)</li><li>[Monetization docs](../monetization/overview.md)</li></ul> |
 
 ### Gateway components
@@ -162,7 +162,7 @@ The following is a complete view of all components and where to find their docum
 | Expose my APIs as MCP tools for AI agents | [AI Gateway MCP Proxy](../ai-gateway/next/mcp-proxy/quick-start-guide.md) |
 | Govern MCP traffic (inbound + outbound) | [AI Gateway MCP Proxy](../ai-gateway/next/mcp-proxy/quick-start-guide.md) |
 | Manage LLM providers and AI policies at the organizational level | [AI Workspace](ai-workspace/overview.md) |
-| Set up a developer portal for API discovery | [API Portal](developer-portal/overview.md) |
+| Set up an API Portal & MCP Hub for API discovery | [API Portal](api-portal/overview.md) |
 | Monitor traffic and monetize my APIs | [Analytics](../analytics/overview.md) and [Monetization](../monetization/overview.md) |
 | Follow end-to-end scenario walkthroughs | [Guides](../guides/ai-and-mcp/convert-rest-api-to-mcp-server.md) |
 
