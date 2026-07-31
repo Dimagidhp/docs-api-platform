@@ -154,7 +154,7 @@ spec:
 Create the OpenAPI definition:
 
 ```yaml
-# definition.yml
+# definition.yaml
 openapi: 3.0.1
 info:
   title: Reading List API
@@ -228,10 +228,10 @@ TOKEN=$(curl -sk -X POST "https://localhost:9243/api/portal/v0.9/auth/login" \
   -d "username=<admin-username>&password=<admin-password>" | jq -r .token)
 
 # Publish the API — the login is scoped to the "default" organization
-curl -sk -X POST "https://localhost:9543/api/v0.9/apis" \
+curl -k -X POST "https://localhost:9543/api/v0.9/apis" \
   -H "Authorization: Bearer $TOKEN" \
   -F "metadata=@api.yaml;type=application/yaml" \
-  -F "definition=@definition.yml;type=application/octet-stream"
+  -F "definition=@definition.yaml;type=application/yaml"
 ```
 
 Refresh the portal — the Reading List API now appears in the catalog. Click it to view its documentation and try-out console.
