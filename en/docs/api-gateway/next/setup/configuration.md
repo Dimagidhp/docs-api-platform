@@ -159,4 +159,4 @@ The script is **idempotent** — existing files are kept, not overwritten. Flags
 
 ---
 
-[← Artifact Templating](./artifact-templating.md) &nbsp;|&nbsp; [Storage & Backends →](./storage-and-backends.md)
+[← Artifact Templating](./artifact-templating.md) &nbsp;|&nbsp; [Setting Up the Database →](./database-setup.md)
