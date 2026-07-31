@@ -16,13 +16,13 @@ content_type: "overview"
 
 The API Portal & MCP Hub is a self-hosted web application that acts as the front door between your APIs and the developers who consume them. API publishers register APIs and MCP servers in the portal, and developers discover, subscribe, and generate credentials — all without needing direct access to the underlying gateway or infrastructure.
 
-New to the portal's building blocks? See [Concepts](concepts.md) for a glossary of organizations, views, APIs, subscription plans, applications, subscriptions, and API keys.
+New to the portal's building blocks? See [Concepts](concepts.md) for a glossary of the organization, views, labels, APIs, MCP servers, API workflows, subscription plans, applications, subscriptions, and API keys.
 
 ## What the API Portal & MCP Hub Manages
 
 ### API and MCP Catalog
 
-Browse and search REST, AsyncAPI, GraphQL, and SOAP APIs, as well as MCP servers, with full documentation and a try-out console.
+Browse and search REST, GraphQL, SOAP, WebSocket, and WebSub APIs, as well as MCP servers, with full documentation and a try-out console.
 
 - Full-text search by name, type, version, and description
 - Per-API documentation, landing page content, icons, and banners
@@ -38,13 +38,13 @@ Learn more in [Manage Applications](manage-applications/create-an-application.md
 
 ### Subscriptions and Plans
 
-Developers subscribe directly to an API under a named plan (for example, Gold or Free) that enforces rate limits and quotas. No application is required to subscribe.
+Developers subscribe directly to an API or MCP server under a named plan (for example, Gold or Bronze) that enforces rate limits and quotas. No application is required to subscribe.
 
 Learn more in [Manage Subscriptions](manage-subscriptions/subscribe-to-an-api.md) and, for admins, [Subscription Plans](admin-settings/subscription-plans.md).
 
 ### API Keys and OAuth2 Credentials
 
-Generate, rotate, and revoke API keys bound to a specific API. For OAuth2-secured APIs, link a client ID created in a key manager to an application and generate access tokens through the portal.
+Generate, rotate, and revoke API keys bound to a specific API or MCP server. For OAuth2-secured APIs, link a client ID created in a key manager to an application and generate access tokens through the portal.
 
 Learn more in [Manage API Keys](manage-api-keys.md), [Consume an API Secured with OAuth2](consuming-services/consume-an-api-secured-with-oauth2.md), and, for admins, [Key Manager Integration](admin-settings/key-manager-integration.md).
 
@@ -68,7 +68,7 @@ The **Settings** page is where admins configure everything above from one place:
 |---|---|
 | [Organization Settings](admin-settings/organization-settings.md) | Display name, business owner contact, IDP reference ID |
 | [Manage Views](admin-settings/manage-views.md) | Filtered, branded subsets of the catalog for different audiences |
-| [Manage Labels](admin-settings/manage-labels.md) | Tags that control which views an API appears in |
+| [Manage Labels](admin-settings/manage-labels.md) | Tags that control which views an API or MCP server appears in |
 | [Subscription Plans](admin-settings/subscription-plans.md) | Rate/quota tiers applications can subscribe to |
 | [Key Manager Integration](admin-settings/key-manager-integration.md) | OAuth2 authorization servers used to issue access tokens |
 | [Manage APIs](admin-settings/manage-apis.md) | Add, edit, publish, deprecate, and delete APIs |
@@ -80,13 +80,13 @@ The **Settings** page is where admins configure everything above from one place:
 
 ## Gateway-Agnostic, Unified Developer Experience
 
-The portal doesn't embed gateway-specific logic. Instead, it communicates with gateways through a generic webhook event outbox: whenever a developer generates an API key, subscribes, or revokes a key, the portal fires a signed event to every registered gateway subscriber, and each gateway adapter enforces access in its own way.
+The portal doesn't embed gateway-specific logic. Instead, it emits signed webhook events: whenever a developer generates an API key, subscribes, or revokes a key, the portal fires a signed HTTP POST to every registered gateway subscriber, and each gateway adapter enforces access in its own way.
 
 This means you can:
 
 - Connect multiple gateways of different types to the same portal simultaneously
 - Replace or swap a gateway without changing how developers interact with the portal
-- Run the portal in a fully standalone mode (no live gateway required) and replay events later
+- Run the portal standalone, with no live gateway required
 
 ## Views
 
