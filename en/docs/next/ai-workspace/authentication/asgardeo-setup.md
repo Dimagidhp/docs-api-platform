@@ -1,7 +1,7 @@
 ---
 title: "Set up Asgardeo as your identity provider"
 description: "Configure Asgardeo as the identity provider for a production AI Workspace deployment, from application registration to Platform API configuration."
-canonical_url: ""
+canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/authentication/asgardeo-setup/
 md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/authentication/asgardeo-setup.md
 tags:
   - cloud
@@ -74,8 +74,8 @@ This registers an API resource in Asgardeo that represents the Platform API, wit
 
 ## Step 5: Link scopes to the AI Workspace application
 
-1. Open the AI Workspace application you registered in step 2.
-2. Under **API Authorization**, add the API resource you created in step 4.
+1. Open the AI Workspace application you registered in Step 2.
+2. Under **API Authorization**, add the API resource you created in Step 4.
 3. Create an application role, for example `ap_admin`.
 4. Assign all `ap:*` scopes to that role.
 
@@ -142,7 +142,7 @@ org_handle   = "org_handle"
 ```
 {% endraw %}
 
-`redirect_url` must exactly match the authorized redirect URL you registered in step 2.
+`redirect_url` must exactly match the authorized redirect URL you registered in Step 2.
 
 Never write the client secret as a literal in `config.toml` — the `{% raw %}{{ env }}{% endraw %}` placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
 

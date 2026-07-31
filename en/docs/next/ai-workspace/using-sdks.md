@@ -14,13 +14,13 @@ content_type: "how-to"
 
 # Invoke Providers and Proxies via SDKs
 
-Once you have deployed an LLM Provider or App LLM Proxy in the AI Workspace, you can invoke it using any supported AI SDK by pointing it at the gateway's Invoke URL and authenticating with your generated API key.
+Once you have deployed an LLM provider or App LLM proxy in the AI Workspace, you can invoke it using any supported AI SDK by pointing it at the gateway's Invoke URL and authenticating with your generated API key.
 
 The examples below apply to both providers and proxies — the only difference between the two is the Invoke URL you supply.
 
 ## Prerequisites
 
-- An LLM [Provider](llm-providers/configure-provider.md) or [App LLM Proxy](llm-proxies/configure-proxy.md) deployed to a gateway
+- An LLM [Provider](llm-providers/configure-provider.md) or [App LLM proxy](llm-proxies/configure-proxy.md) deployed to a gateway
 - The **Invoke URL** for the deployed endpoint
 - A generated **API key**
 

@@ -15,31 +15,30 @@ content_type: "how-to"
 
 # Apply Policies for MCP Proxy
 
-Once you create an MCP proxy, you can apply various policies through the Policies page.
+Once you create an MCP proxy, you apply policies to it from the Policies page.
 
-The AI Workspace provides a set of built-in policies that let you govern how traffic flows through your MCP Proxies. These policies are applied at the policy level.
-However, you have the option to define rules per tools, prompts, etc. inside MCP specific policies if required. This will essentially apply the policies at each capability level.
+AI Workspace provides built-in policies that govern how traffic flows through your MCP proxies. A policy applies to the whole proxy by default. Inside an MCP-specific policy you can also define rules per tool or per prompt, which applies the policy at each capability level.
 
 ## Access Control Policies
 
-There are several policies that enforce security for MCP Proxies.
+These policies enforce security for MCP proxies.
 
 | Policy | Description |
 |-----------|-------------|
-| [MCP Authentication](https://wso2.com/api-platform/policy-hub/policies/mcp-auth) | Apply authentication as defined in the MCP Specification. |
-| [MCP Authorization](https://wso2.com/api-platform/policy-hub/policies/mcp-authz) | Apply fine-grained authorization for MCP capabilities and JSON RPC methods. |
-| [MCP Access Control](https://wso2.com/api-platform/policy-hub/policies/mcp-acl-list) | Allow or deny access to MCP capabilities. |
+| [MCP authentication](https://wso2.com/api-platform/policy-hub/policies/mcp-auth) | Applies authentication as defined in the MCP specification. |
+| [MCP authorization](https://wso2.com/api-platform/policy-hub/policies/mcp-authz) | Applies fine-grained authorization for MCP capabilities and JSON-RPC methods. |
+| [MCP access control](https://wso2.com/api-platform/policy-hub/policies/mcp-acl-list) | Allows or denies access to MCP capabilities. |
 
 ## Other Policies
 
 | Policy | Description |
 |-----------|-------------|
-| [MCP Rewrite](https://wso2.com/api-platform/policy-hub/policies/mcp-rewrite) | Rewrite MCP capabilities returned through the proxy. This will only return the modified ones if used. |
+| [MCP rewrite](https://wso2.com/api-platform/policy-hub/policies/mcp-rewrite) | Rewrites the MCP capabilities returned through the proxy. When applied, the proxy returns only the modified capabilities. |
 
-You can apply other standard policies as well to MCP Proxies. Some policies might not be compatible with MCP. Hence the behavior will vary based on the policy.
+You can apply the other standard policies to MCP proxies too. Some of them aren't compatible with MCP, so behavior varies by policy.
 
 ## Policy Hub
 
-All policies in the AI Workspace are powered by the [Policy Hub](https://wso2.com/api-platform/policy-hub/). The Policy Hub is a central registry of all available policies and their latest versions.
+The policies in AI Workspace are powered by the [Policy Hub](https://wso2.com/api-platform/policy-hub/), a central registry of the available policies and their versions.
 
 Visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/) to explore all available guardrails, their documentation, and configuration schemas.

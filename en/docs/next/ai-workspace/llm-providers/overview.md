@@ -14,29 +14,29 @@ content_type: "overview"
 
 # LLM Providers Overview
 
-LLM Providers are integrations with AI service platforms that offer language models. By configuring providers in the AI Workspace, you can:
+An LLM provider is an integration with an AI service platform that offers language models. By configuring providers in AI Workspace, you can:
 
 - **Centralize credential management**: Store API keys and authentication details securely
 - **Connect multiple providers**: Integrate with leading LLM services
 - **Monitor provider status**: Track availability and health of connected services
-- **Simplify configuration**: Use providers across multiple proxies without duplicating credentials
+- **Reuse configuration**: Use one provider across multiple proxies without duplicating credentials
 
 ## Supported Providers
 
 API Platform AI Workspace supports the following LLM providers:
 
-| Provider | Description | Learn More |
+| Provider | Description | Learn more |
 |----------|-------------|-----------|
-| ![OpenAI](https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/openai/icon.png){: style="width:32px; vertical-align:middle"} **OpenAI** | Access GPT-4, GPT-3.5, and other OpenAI models | [Documentation](https://developers.openai.com/api/docs) |
-| ![Anthropic](https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/anthropic.claude/icon.png){: style="width:32px; vertical-align:middle"} **Anthropic** | Integrate Claude models for advanced AI capabilities | [Documentation](https://docs.anthropic.com/) |
-| ![Azure OpenAI](https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/azure.openai/icon.png){: style="width:32px; vertical-align:middle"} **Azure OpenAI** | Use OpenAI models hosted on Microsoft Azure | [Documentation](https://azure.microsoft.com/products/ai-services/openai-service) |
-| ![Azure AI Foundry](https://raw.githubusercontent.com/wso2/api-platform/main/llm-provider-specs/azureai-foundry/icon.png){: style="width:32px; vertical-align:middle"} **Azure AI Foundry** | Access models through Azure AI Foundry platform | [Documentation](https://azure.microsoft.com/products/ai-studio) |
-| ![Gemini](https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg){: style="width:32px; vertical-align:middle"} **Gemini** | Integrate Google's Gemini language models | [Documentation](https://ai.google.dev/gemini-api) |
-| ![Mistral AI](https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/mistral/icon.png){: style="width:32px; vertical-align:middle"} **Mistral AI** | Access Mistral's open and commercial models | [Documentation](https://mistral.ai/) |
-| ![AWS Bedrock](https://raw.githubusercontent.com/wso2/api-platform/main/llm-provider-specs/awsbedrock/icon.png){: style="width:32px; vertical-align:middle"} **AWS Bedrock** | Access Anthropic, Meta, Mistral, and Amazon models through Amazon Bedrock | [Documentation](https://aws.amazon.com/bedrock/) |
+| <img src="https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/openai/icon.png" width="32" alt=""> **OpenAI** | Access GPT-4, GPT-3.5, and other OpenAI models | [Documentation](https://developers.openai.com/api/docs) |
+| <img src="https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/anthropic.claude/icon.png" width="32" alt=""> **Anthropic** | Integrate Anthropic Claude models | [Documentation](https://docs.anthropic.com/) |
+| <img src="https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/azure.openai/icon.png" width="32" alt=""> **Azure OpenAI** | Use OpenAI models hosted on Microsoft Azure | [Documentation](https://azure.microsoft.com/products/ai-services/openai-service) |
+| <img src="https://raw.githubusercontent.com/wso2/api-platform/main/llm-provider-specs/azureai-foundry/icon.png" width="32" alt=""> **Azure AI Foundry** | Access models through Azure AI Foundry platform | [Documentation](https://azure.microsoft.com/products/ai-studio) |
+| <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" width="32" alt=""> **Gemini** | Integrate Google's Gemini language models | [Documentation](https://ai.google.dev/gemini-api) |
+| <img src="https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/mistral/icon.png" width="32" alt=""> **Mistral AI** | Access Mistral's open and commercial models | [Documentation](https://mistral.ai/) |
+| <img src="https://raw.githubusercontent.com/wso2/api-platform/main/llm-provider-specs/awsbedrock/icon.png" width="32" alt=""> **AWS Bedrock** | Access Anthropic, Meta, Mistral, and Amazon models through Amazon Bedrock | [Documentation](https://aws.amazon.com/bedrock/) |
 
 ## Connecting a Custom Provider
 
 If the LLM service you use isn't in the list above, an organization admin can define a reusable **LLM Provider Template** under **Settings > LLM Provider Templates**. A template captures the endpoint and authentication shape for a custom provider, and it then appears in the provider type selector alongside the built-in providers whenever you add a new provider. Built-in templates are read-only — you can't create new versions from them — but you can enable or disable any template to control whether it's offered when adding a provider.
 
-**Next:** [Configure LLM Provider](configure-provider.md) - Step-by-step guide to set up your first provider
+**Next:** [Configure an LLM provider](configure-provider.md), to set up your first provider.

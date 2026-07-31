@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # Setting up an AI Gateway
 
-AI Gateways are the runtime components that process and route requests between your applications and LLM providers. You can create and manage AI gateways directly within the AI Workspace to deploy your LLM providers and proxies.
+An AI Gateway is the runtime component that processes and routes requests between your applications and LLM providers. Create and manage AI gateways in AI Workspace, then deploy your LLM providers and proxies to them.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ The AI Gateways page displays a list of all configured gateways with the followi
 |--------|-------------|
 | **Name** | The gateway name |
 | **Description** | A brief description of the gateway |
-| **Status** | Current status (Active or Not Active) |
+| **Status** | The current status, either Active or Not Active |
 | **Last Updated** | Timestamp of the most recent change |
 | **Actions** | Edit and delete options |
 
@@ -44,19 +44,17 @@ The AI Gateways page displays a list of all configured gateways with the followi
 
 2. Click **+ Add AI Gateway**.
 
-   3. Fill in the gateway details:
+3. Fill in the gateway details:
 
-       1. **Name*** (Required): Enter a unique name for the gateway (e.g., `production-gateway`, `dev-gateway`).
-
-       2. **Description** (Optional): Add a brief description to identify the gateway's purpose.
-
-       3. **URL*** (Required): Enter the gateway URL (e.g., `https://localhost:8443`). This is the endpoint where the gateway runtime is accessible.
+    - **Name** (required): a unique name for the gateway, for example `production-gateway` or `dev-gateway`.
+    - **Description** (optional): a brief description that identifies the gateway's purpose.
+    - **URL** (required): the gateway URL, for example `https://localhost:8443`. This is the endpoint where the gateway runtime is accessible.
 
     ![Add AI Gateway form showing Name, Description, URL pre-filled with localhost:8443](../../../assets/img/ai-gateway/standalone-ai-workspace/ai-gateway/ai-gateway-form.png)
 
 4. Click **Add Gateway** to create the gateway.
 
-5. After creation, the gateway detail page opens showing the gateway name, status (**Inactive** initially), vhost, and creation timestamp.
+5. The gateway detail page opens showing the gateway name, status (**Inactive** initially), vhost, and creation timestamp.
 
 ---
 
@@ -69,10 +67,10 @@ After creating an AI gateway, you need to set up the gateway runtime. The detail
 A **Gateway Registration Token** is displayed at the top of the Get Started section. This token is required to connect your gateway runtime to the control plane.
 
 !!! danger "Important"
-    This token is shown only once. Ensure it is securely saved before leaving this page.
+    The token is shown only once. Save it securely before you leave this page.
 
 !!! tip "Lost your token?"
-    The registration token is single-use. If you need to reconfigure the gateway, click the **Reconfigure** button to generate a new token. This will revoke the old token and disconnect the gateway from the control plane.
+    The registration token is single-use. If you need to reconfigure the gateway, click the **Reconfigure** button to generate a new token. The new token revokes the old one and disconnects the gateway from the control plane.
 
 ### Installation Methods
 
@@ -81,7 +79,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 !!! note "Where the control plane address comes from"
     Every method below needs two values from the **Get Started** section: the control plane address the gateway connects to, and this gateway's registration token.
 
-    Self-hosted AI Workspace fills that address into the commands it shows from `[ai_workspace.gateway] controlplane_host` in its own `config.toml`. The key is display-only - AI Workspace never connects to it - so the address has to be reachable from the machine running the gateway, not from the workspace. If the commands carry an address your gateway can't reach, correct that key and reload the page rather than editing the value into the gateway. For the Helm method, put the hostname in `controlPlane.host` and any port in `controlPlane.port`. See [Two keys that aren't interchangeable](../ports.md#two-keys-that-arent-interchangeable).
+    Self-hosted AI Workspace fills that address into the commands it shows from `[ai_workspace.gateway] controlplane_host` in its own `config.toml`. The key is display-only — AI Workspace never connects to it — so the address has to be reachable from the machine running the gateway, not from the workspace. If the commands carry an address your gateway can't reach, correct that key and reload the page rather than editing the value into the gateway. For the Helm method, put the hostname in `controlPlane.host` and any port in `controlPlane.port`. See [Two keys that aren't interchangeable](../ports.md#two-keys-that-arent-interchangeable).
 
 !!! note "Gateway version"
     AI Workspace works with **gateway v1.2 and above**. Those gateways provision their keys and certificates with `./scripts/setup.sh` and take their configuration from `api-platform.env`, which Compose loads through the `env_file:` directive. The **Get Started** section offers the gateway versions AI Workspace supports and shows the commands for the version you register.
@@ -260,11 +258,11 @@ The Get Started section provides setup instructions for multiple deployment opti
     - Kubernetes 1.32+
     - Helm 3.18+
 
-    The registration token is a one-time generated token for this gateway. If you need to install or update the gateway chart again, first reconfigure this gateway to generate a new registration token. Reconfiguring will revoke the previous token.
+    The registration token is a one-time generated token for this gateway. If you need to install or update the gateway chart again, first reconfigure this gateway to generate a new registration token. Reconfiguring revokes the previous token.
 
     **Create the encryption key Secret**
 
-    At-rest encryption is mandatory and fail-closed — nothing is auto-generated, and the chart will not render without an AES-256 key Secret. Create it in the install namespace before installing the chart:
+    At-rest encryption is mandatory and fail-closed — nothing is auto-generated, and the chart doesn't render without an AES-256 key Secret. Create it in the install namespace before installing the chart:
 
     ```bash
     openssl rand 32 > default-aesgcm256-v1.bin
@@ -290,7 +288,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     Replace the placeholders with the values the Get Started section shows. Split the control plane address across the two flags: the hostname in `controlPlane.host`, its port in `controlPlane.port`. `<your-gateway-token>` is this gateway's registration token.
 
-Once the gateway runtime is running and connected, the gateway status will change from **Inactive** to **Active**.
+Once the gateway runtime is running and connected, the gateway status changes from **Inactive** to **Active**.
 
 ---
 
@@ -298,7 +296,7 @@ Once the gateway runtime is running and connected, the gateway status will chang
 
 ### Edit a Gateway
 
-1. In the AI Gateways list, click the **edit** icon next to the gateway you want to modify.
+1. In the AI Gateways list, click the edit icon next to the gateway you want to modify.
 
 2. Update the gateway details as needed.
 
@@ -306,16 +304,16 @@ Once the gateway runtime is running and connected, the gateway status will chang
 
 ### Delete a Gateway
 
-1. In the AI Gateways list, click the **delete** icon (trash icon) next to the gateway you want to remove.
+1. In the AI Gateways list, click the delete icon next to the gateway you want to remove.
 
 2. Confirm the deletion when prompted.
 
-!!! danger "Irreversible Action"
-    Deleting a gateway is permanent. All providers and proxies deployed to this gateway will be undeployed immediately.
+!!! danger "Irreversible action"
+    Deleting a gateway is permanent, and it undeploys every provider and proxy on that gateway immediately.
 
 ---
 
 ## Next Steps
 
-- [Configure LLM Provider](../llm-providers/configure-provider.md) - Set up an LLM provider and deploy it to your gateway
-- [Configure App LLM Proxy](../llm-proxies/configure-proxy.md) - Create a specialized LLM proxy for a Gen AI application or agent and deploy it to your gateway
+- [Configure an LLM provider](../llm-providers/configure-provider.md): set up an LLM provider and deploy it to your gateway
+- [Configure an App LLM proxy](../llm-proxies/configure-proxy.md): create a specialized proxy for a GenAI application or agent and deploy it to your gateway

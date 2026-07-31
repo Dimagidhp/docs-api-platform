@@ -14,32 +14,28 @@ content_type: "how-to"
 
 # Manage LLM Provider
 
-After deploying your LLM Provider, manage its configuration through the provider details page. This guide covers all management operations organized by tab.
+After deploying your LLM provider, manage its configuration through the provider details page. This guide covers all management operations organized by tab.
 
 ## Access Provider Details
 
 1. Navigate to **AI Workspace** > **LLM Providers**.
 
-2. Click on a provider name to open its details page.
+2. Click a provider name to open its details page.
 
 The provider details page shows:
 
-- Provider name, version, and template type
-- Creation and last updated timestamps  
-- Six management tabs (Connection, Access Control, Security, Rate Limiting, Guardrails, Models)
-- **Deploy to Gateway** button in the top right
+- The provider name, version, and template type
+- The creation and last-updated timestamps
+- Six management tabs: Connection, Access Control, Security, Rate Limiting, Guardrails, and Models
+- The **Deploy to Gateway** button in the top right
 
 ## Connection
 
-<div style="border-left: 4px solid #2196F3; padding-left: 16px; margin-bottom: 24px;">
-
 Manage upstream endpoint configuration and authentication credentials for the LLM provider.
-
-</div>
 
 ### Provider Endpoint
 
-**Upstream URL** - Where API requests are forwarded to:
+The **Upstream URL** field sets where the gateway forwards API requests:
 
 | Provider Type | URL Configuration |
 |---------------|-------------------|
@@ -57,36 +53,32 @@ Configure how the gateway authenticates with the upstream provider:
 
 | Authentication Type | Behavior |
 |----------------------|----------|
-| **api-key** | The gateway attaches an **Authentication Header** and **Credentials** value to every upstream request (set by template for built-in providers) |
-| **other** | No credentials are stored for this provider. Use a policy to configure upstream authentication instead |
-| **none** | No upstream authentication is sent |
+| **api-key** | The gateway attaches an **Authentication Header** and **Credentials** value to every upstream request. For built-in providers, the template sets both. |
+| **other** | The workspace stores no credentials for this provider. Use a policy to configure upstream authentication instead. |
+| **none** | The gateway sends no upstream authentication. |
 
 **To configure `api-key`:**
 
 - **Authentication Header**: The header name the gateway sends upstream
 - **Credentials**: Your provider API key
-    - Click the 👁️ icon to show/hide the value
+    - Click the show icon to reveal or hide the value
     - Update and click **Save** to change credentials
 
-Switching to **other** or **none** clears any stored authentication header and credentials for this provider.
+Switching to **other** or **none** clears the stored authentication header and credentials for this provider.
 
 ### OpenAPI Specification
 
-**Spec URL** - The OpenAPI specification for importing API resources:
+The **Spec URL** field holds the OpenAPI specification the resource list is imported from:
 
-- Can be a URL or file upload
-- Automatically populates the Access Control resources list
-- Re-import to refresh available endpoints
+- Supply either a URL or a file upload
+- The specification populates the Access Control resources list
+- Re-import it to refresh the available endpoints
 
 ---
 
 ## Access Control
 
-<div style="border-left: 4px solid #4CAF50; padding-left: 16px; margin-bottom: 24px;">
-
 Control which API endpoints are accessible through this provider.
-
-</div>
 
 ### Mode
 
@@ -100,8 +92,8 @@ Select the access control mode at the top of the tab:
 Use the arrow buttons between the two panels to move resources:
 
 - **`>>`** — Move all resources to the other panel
-- **`>`** — Move selected resource(s) to the other panel
-- **`<`** — Move selected resource(s) back
+- **`>`** — Move the selected resources to the other panel
+- **`<`** — Move the selected resources back
 - **`<<`** — Move all resources back
 
 ### Import Resources
@@ -112,49 +104,41 @@ Click **Import resources from specification** to load or refresh the resource li
 
 ## Security
 
-<div style="border-left: 4px solid #FF9800; padding-left: 16px; margin-bottom: 24px;">
-
 Configure how applications authenticate when accessing this provider through the gateway.
-
-</div>
 
 ### API Key Authentication
 
-Set up the API key that client applications must provide:
+Set the API key that client applications must provide:
 
 | Field | Description | Example |
 |-------|-------------|---------|
 | **Authentication Type** | Authentication method | `apiKey` (default) |
 | **API Key** | Header or query parameter name | `x-api-key`, `apikey`, `Authorization` |
-| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, e.g. so clients send `Bearer <key>` | `Bearer` |
+| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, for example, so clients send `Bearer <key>` | `Bearer` |
 | **Key Location** | Where clients send the key | `Header` (recommended) or `Query` |
 
 **To configure:**
 
 1. Select **Authentication Type**: `apiKey`
-2. Enter the **API Key** header or query parameter name that applications will use
+2. Enter the **API Key** header or query parameter name your applications use
 3. Optionally set an **API Key Value Prefix** (for example `Bearer`) if clients should send the key with a scheme prefix
 4. Choose **Key Location**:
-    - **Header** - Sent in HTTP request header (most secure)
-    - **Query** - Sent as URL query parameter (less secure)
+    - **Header**: clients send the key in an HTTP request header. This is the more secure choice.
+    - **Query**: clients send the key as a URL query parameter. This is less secure.
 5. Click **Save**
 
 ---
 
 ## Rate Limiting
 
-<div style="border-left: 4px solid #9C27B0; padding-left: 16px; margin-bottom: 24px;">
-
-Control request and token consumption to prevent cost overruns and ensure fair usage across all consumers.
-
-</div>
+Control request and token consumption, to prevent cost overruns and keep usage fair across all consumers.
 
 Configure rate limits in the **Backend** section, which controls requests from the gateway to the upstream LLM provider. Limiting that traffic protects your provider API credentials and caps total spend.
 
 The Backend section supports two configuration modes:
 
 - **Provider-wide** — A single limit applied across all API endpoints. The limit maintains **one shared counter**: traffic on any endpoint draws down the same allowance, so exhausting the limit via one endpoint rejects requests on all endpoints.
-- **Per Resource** — Individual limits per API endpoint (e.g., chat completions vs. embeddings). Each endpoint maintains its **own independent counter**.
+- **Per Resource** — Individual limits per API endpoint (for example, chat completions vs. embeddings). Each endpoint maintains its **own independent counter**.
 
 ![Rate Limiting tab showing Provider-wide and Per Resource configuration modes in the Backend section](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider/rate-limiting-tab.png)
 
@@ -162,7 +146,7 @@ The Backend section supports two configuration modes:
     Provider-wide and Per Resource modes are mutually exclusive. Clear existing limits before switching modes.
 
 !!! info "Provider-wide limits are a hard ceiling"
-    A provider-wide limit is evaluated before any per-resource policy and counts **every request attempt** — including requests that a stricter per-resource policy later rejects. When the shared allowance is exhausted, requests to every endpoint receive HTTP `429`. See [Policy Scope: Global vs. Per Resource](../policies/overview.md#policy-scope-global-or-per-resource) for details.
+    A provider-wide limit is evaluated before any per-resource policy and counts **every request attempt** — including requests that a stricter per-resource policy later rejects. When the shared allowance is exhausted, requests to every endpoint receive HTTP `429`. See [Policy scope: Global or per resource](../policies/overview.md#policy-scope-global-or-per-resource) for details.
 
 ### Limit Criteria
 
@@ -190,20 +174,16 @@ For each enabled criterion, set the **Quota** and **Reset Duration** (`second`, 
 3. To override limits for a specific endpoint, expand that resource row and configure it separately.
 4. Click **Save**.
 
-!!! tip "Cost Control Best Practices"
+!!! tip "Cost control best practices"
     Set conservative backend limits first to protect your provider credentials. Monitor actual usage via the Insights dashboard before increasing limits. Use Per Resource mode only when endpoints have significantly different usage patterns.
 
-**Learn more:** [Token-Based Rate Limiting](../policies/overview.md#token-based-rate-limit)
+**Learn more:** [Token-based rate limiting](../policies/overview.md#token-based-rate-limit)
 
 ---
 
 ## Guardrails
 
-<div style="border-left: 4px solid #F44336; padding-left: 16px; margin-bottom: 24px;">
-
-Attach guardrails to enforce content safety, compliance, and quality standards. Guardrails on a provider can be applied globally (all endpoints) or per resource (specific endpoints), and affect all proxies that use this provider.
-
-</div>
+Attach guardrails to enforce content safety, compliance, and quality standards. Attach a guardrail on a provider globally, to all endpoints, or per resource, to specific endpoints. Either way it affects every proxy that uses this provider.
 
 ### View Attached Guardrails
 
@@ -215,7 +195,7 @@ The tab displays the guardrails attached to the provider:
 
 ### Add a Guardrail
 
-Guardrails can be added globally (applying to all endpoints) or per resource (applying to a specific endpoint). A global guardrail runs on every request regardless of the endpoint called; a resource-level guardrail runs only on the endpoint it is attached to. When both are configured, global guardrails are evaluated first, followed by resource-level guardrails. See [Policy Scope: Global vs. Per Resource](../policies/overview.md#policy-scope-global-or-per-resource).
+Attach a guardrail globally, to all endpoints, or per resource, to one endpoint. A global guardrail runs on every request regardless of the endpoint called; a resource-level guardrail runs only on the endpoint you attach it to. If you configure both, the gateway evaluates the global guardrails first, then the resource-level ones. See [Policy scope: Global or per resource](../policies/overview.md#policy-scope-global-or-per-resource).
 
 **To add a global guardrail:**
 
@@ -235,7 +215,7 @@ Guardrails can be added globally (applying to all endpoints) or per resource (ap
 
 ### Configure Guardrails
 
-Guardrail parameters cannot be edited in place. To change a guardrail's configuration, you must delete it and add it again with the updated settings.
+You can't edit guardrail parameters in place. To change a guardrail's configuration, delete it and add it again with the updated settings.
 
 **To update a guardrail:**
 
@@ -243,10 +223,10 @@ Guardrail parameters cannot be edited in place. To change a guardrail's configur
 2. Click **+ Add Guardrail** and re-add it with the updated configuration.
 3. Redeploy the provider to apply the changes.
 
-!!! tip "Advanced Settings"
+!!! tip "Advanced settings"
     Each guardrail includes advanced configuration options such as custom thresholds, severity levels, and execution phases. Click **Advanced Settings** when adding a guardrail.
 
-!!! warning "Production Impact"
+!!! warning "Production impact"
     Guardrail changes require a manual redeploy to take effect on deployed gateways. Test thoroughly in a non-production environment before enabling strict guardrails.
 
 **Learn more:** [Policies overview](../policies/overview.md). For the full policy catalog, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
@@ -255,11 +235,7 @@ Guardrail parameters cannot be edited in place. To change a guardrail's configur
 
 ## Models
 
-<div style="border-left: 4px solid #00BCD4; padding-left: 16px; margin-bottom: 24px;">
-
 Configure which AI models are accessible through this provider.
-
-</div>
 
 ### Add Models
 
@@ -274,9 +250,9 @@ Configure which AI models are accessible through this provider.
 
 Control which models applications can access:
 
-- **Toggle switches**: Enable/disable individual models
-- **Effect**: Disabled models are blocked at the gateway
-- Applications attempting to use disabled models will receive an error
+- **Toggle switches**: Turn an individual model on or off
+- **Effect**: The gateway blocks disabled models
+- An application that calls a disabled model receives an error
 
 ---
 
@@ -291,17 +267,17 @@ Push configuration changes to deployed gateways.
 **When to redeploy:**
 
 - After updating connection settings
-- After modifying rate limits or guardrails  
+- After modifying rate limits or guardrails
 - After enabling/disabling resources or models
 
 **To redeploy:**
 
 1. Click **Deploy to Gateway** (top right corner)
-2. Select the gateway(s) to deploy to
+2. Select the gateways to deploy to
 3. Review the changes summary
 4. Click **Deploy**
 
-!!! info "Deployment Status"
+!!! info "Deployment status"
     Monitor deployment progress in the notification panel. Changes take effect within seconds of successful deployment.
 
 ---
@@ -311,7 +287,7 @@ Push configuration changes to deployed gateways.
 Permanently remove the provider and all its configurations.
 
 !!! warning "Prerequisite"
-    You can't delete a provider while an App LLM Proxy uses it. Delete or reassign all dependent proxies before proceeding.
+    You can't delete a provider while an App LLM proxy uses it. Delete or reassign all dependent proxies before proceeding.
 
 **To delete:**
 
@@ -320,17 +296,17 @@ Permanently remove the provider and all its configurations.
 3. Click the **Delete** icon
 4. Review the warning and confirm deletion
 
-!!! danger "Warning: Irreversible Action"
-    Deleting a provider will:
+!!! danger "Irreversible action"
+    Deleting a provider:
 
-    - ❌ Remove it from all deployed gateways **immediately**
-    - ❌ Break applications consuming this provider
-    - ❌ Delete all configuration (guardrails, rate limits, models)
-    - ❌ **Cannot be undone**
+    - Removes it from all deployed gateways **immediately**
+    - Breaks applications consuming this provider
+    - Deletes all configuration, including guardrails, rate limits, and models
+    - **Cannot be undone**
 
 ---
 
 ## Next Steps
 
-- [Configure App LLM Proxy](../llm-proxies/configure-proxy.md) - Configure and deploy specialized proxy endpoints for Gen AI applications or agents using your provider
-- [Policies Overview](../policies/overview.md) - Explore all available guardrails and policies
+- [Configure App LLM proxy](../llm-proxies/configure-proxy.md) — Configure and deploy specialized proxy endpoints for GenAI applications or agents using your provider
+- [Policies overview](../policies/overview.md) — Explore all available guardrails and policies

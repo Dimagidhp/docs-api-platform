@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # Configure LLM Provider Template
 
-When the built-in templates do not cover the upstream LLM service you want to use, you can create a custom template for it. This guide shows how to create a custom template, complete its configuration, manage its versions, and deploy it to a gateway.
+When the built-in templates don't cover the upstream LLM service you want to use, create a custom template for it. This guide shows how to create a custom template, complete its configuration, manage its versions, and deploy it to a gateway.
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ When the built-in templates do not cover the upstream LLM service you want to us
 
 1. Navigate to **AI Workspace** > **Settings** > **LLM Provider Templates**.
 2. Click **Create**.
-3. Enter the relevant details, including the template **name** and the upstream **endpoint URL** (e.g., `https://api.example.com`).
+3. Enter the relevant details, including the template **name** and the upstream **endpoint URL** (for example, `https://api.example.com`).
 4. Click **Create**.
 
 The new template starts at version **v1.0**. Open it to complete the rest of the configuration.
@@ -44,7 +44,7 @@ The template details page has an overview, a version selector, and the tabs desc
 Shows the template's logo, description, current version, and when it was last updated. For custom templates, you can edit details such as the logo URL and description here. From here you can also:
 
 - **Download YAML**: export the current version as a manifest you can apply to a gateway.
-- **Enable / Disable** the current version (built-in templates only).
+- **Enable** or **Disable** the current version (built-in templates only).
 - **Delete** the current version (custom templates only).
 
 ### Connection
@@ -72,9 +72,9 @@ Built-in template versions are read-only. Custom template versions can be change
 
 **To create a new version:**
 
-1. Open the template and click the **version selector** (e.g., **v1.0**).
+1. Open the template and click the **version selector** (for example, **v1.0**).
 2. Click **Create new version**.
-3. Enter the new version (e.g., `v2.0`) and adjust the configuration as needed.
+3. Enter the new version (for example, `v2.0`) and adjust the configuration as needed.
 4. Click **Create**.
 
 ![Version selector dropdown with the Create new version option](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/create-new-version.png)
@@ -89,15 +89,15 @@ Built-in templates are already available on the gateway, but a custom template h
 1. Open the template's **Overview** tab and click **Download YAML**.
 2. Apply the downloaded manifest to the target gateway.
 
-!!! warning "Required Step"
+!!! warning "Required step"
     A provider created from a custom template only works after the template is deployed to the gateway that serves the provider.
 
 !!! info
-    You can apply the template manifest through the gateway's management API. See the [LLM Provider Template Management API reference](../../../api-gateway/next/gateway-controller-management-api/llm-provider-template-management.md) for details.
+    You can apply the template manifest through the gateway's management API. See the [LLM provider template Management API reference](../../../api-gateway/next/gateway-controller-management-api/llm-provider-template-management.md) for details.
 
 ---
 
 ## Next Steps
 
-- [Manage Template](manage-template.md) - Use templates to create providers, and edit, enable/disable, or delete templates
-- [Configure LLM Provider](../llm-providers/configure-provider.md) - Create a provider from your template
+- [Manage an LLM provider template](manage-template.md): create providers from a template, and edit, enable, disable, or delete templates
+- [Configure an LLM provider](../llm-providers/configure-provider.md): create a provider from your template

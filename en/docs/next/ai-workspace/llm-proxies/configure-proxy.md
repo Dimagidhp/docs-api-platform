@@ -14,15 +14,15 @@ content_type: "how-to"
 
 # Configure App LLM Proxy
 
-An App LLM Proxy exposes a managed endpoint that your Gen AI applications or agents use to reach an LLM Provider. Once deployed, the proxy handles authentication and enforces any guardrails you configure. While the provider can be called directly, the proxy lets you create specialized endpoints for different applications, agents, or environments with independent keys, guardrails, and access controls on top of the same provider.
+An App LLM proxy exposes a managed endpoint that your GenAI applications or agents use to reach an LLM provider. Once deployed, the proxy handles authentication and enforces any guardrails you configure. While the provider can be called directly, the proxy lets you create specialized endpoints for different applications, agents, or environments with independent keys, guardrails, and access controls on top of the same provider.
 
-This guide walks you through creating an App LLM Proxy, optionally attaching guardrails, and deploying it to a gateway.
+This guide walks you through creating an App LLM proxy, optionally attaching guardrails, and deploying it to a gateway.
 
 ## Prerequisites
 
-!!! info "Before You Begin"
+!!! info "Before you begin"
     - A user whose token carries the scopes these steps need: `ap:llm_proxy:manage` to create and edit proxies, `ap:llm_proxy:deployment:manage` to deploy one, `ap:llm_provider:read` to choose the provider behind it, and `ap:gateway:read` to choose the target gateway. A proxy that carries its own upstream credential also needs `ap:secret:create`. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all of these, and `ap_publisher` grants every one except `ap:secret:create`.
-    - At least one [configured and deployed LLM Provider](../llm-providers/configure-provider.md)
+    - At least one [configured and deployed LLM provider](../llm-providers/configure-provider.md)
 
 ---
 
@@ -30,17 +30,17 @@ This guide walks you through creating an App LLM Proxy, optionally attaching gua
 
 1. Navigate to **LLM** > **Proxies** in the left navigation menu.
 
-2. Click **+ Create Proxy** button.
+2. Click **+ Create Proxy**.
 
 3. Fill in the required proxy details:
 
-    1. **Name*** (Required): Enter a unique name for the proxy (e.g., `support-chat-api`, `sales-agent-proxy`). The Proxy ID is auto-generated from the name (lowercase, hyphen-separated).
+    1. **Name*** (Required): Enter a unique name for the proxy (for example, `support-chat-api`, `sales-agent-proxy`). The Proxy ID is auto-generated from the name (lowercase, hyphen-separated).
 
-    2. **LLM Service Provider*** (Required): Select the LLM provider this proxy will route to from the dropdown (defaults to the latest updated provider).
+    2. **LLM Service Provider*** (Required): Select the LLM provider this proxy will route to from the dropdown (defaults to the most recently updated provider).
 
-    3. **Version*** (Required): The version is pre-filled (e.g., `v1.0`). You can edit this if needed.
+    3. **Version*** (Required): The version is pre-filled (for example, `v1.0`). You can edit this if needed.
 
-    4. **Description** (Optional): Add a brief description to identify the Gen AI application or agent use case this proxy is created for.
+    4. **Description** (Optional): Add a brief description to identify the GenAI application or agent use case this proxy is created for.
 
     5. **Context** (Optional): Enter the context path (default: `/`). This is the base path for proxy endpoints (normalized with "/" prefix).
 
@@ -54,13 +54,13 @@ You can attach policies and guardrails to your proxy that apply to all requests:
 
 1. In the **Guardrails** tab, click **+ Add Guardrail**.
 
-2. A sidebar will open showing available guardrails and policies.
+2. A sidebar opens showing the available guardrails and policies.
 
-3. Click on a guardrail to select it and configure its settings.
+3. Click a guardrail to select it and configure its settings.
 
 4. Click **Submit** to attach it to the proxy.
 
-!!! tip "Advanced Settings"
+!!! tip "Advanced settings"
     Each guardrail includes advanced configuration options that allow you to fine-tune its behavior. After selecting a guardrail, you can configure these settings before attaching it to the proxy.
 
 !!! info
@@ -72,8 +72,8 @@ You can attach policies and guardrails to your proxy that apply to all requests:
 
 After creating your proxy, you must deploy it to a gateway before it can be used.
 
-!!! warning "Required Step"
-    Your proxy will not be functional until it is deployed to at least one gateway.
+!!! warning "Required step"
+    The proxy isn't functional until you deploy it to at least one gateway.
 
 1. Click the **Deploy to Gateway** button in the top-right corner of the proxy details page.
 
@@ -89,9 +89,9 @@ After creating your proxy, you must deploy it to a gateway before it can be used
 
     | Field | Description |
     |-------|-------------|
-    | **Deployment Status** | Active or Inactive |
+    | **Deployment Status** | Either Active or Inactive |
     | **Deployment ID** | Unique identifier for the deployment |
-    | **Deployed** | Time since deployment |
+    | **Deployed** | The time since deployment |
     | **Stop** | Button to stop an active deployment |
 
 6. The **API Deployment History** panel on the right shows the deployment timeline:
@@ -104,7 +104,7 @@ Click the **Stop** button next to an active deployment to undeploy the proxy fro
 
 Click **Back to App LLM Proxy** to return to the proxy details page.
 
-!!! info "Deployment Status"
+!!! info "Deployment status"
     Monitor deployment progress on this page. Changes take effect within seconds of successful deployment.
 
 ---
@@ -137,7 +137,7 @@ Generate an API key to authenticate requests to the deployed gateway.
 2. Copy and save your API key immediately.
 
 !!! danger "Important"
-    API keys are only displayed once. Store it in a secure location immediately — you will not be able to retrieve it again.
+    An API key is displayed only once. Store it in a secure location immediately, because you can't retrieve it again.
 
 ### Deployed Gateways
 
@@ -147,6 +147,6 @@ The **Deployed Gateways** section lists all gateways this proxy is deployed to, 
 
 ## Next Steps
 
-- [Invoke via SDKs](../using-sdks.md) - Connect to your proxy from Python using provider-native SDKs
-- [Manage Your App LLM Proxy](manage-proxy.md) - Configure provider, resources, security, and guardrails
-- [Apply Policies](../policies/overview.md) - Learn about available policies for rate limiting and caching
+- [Invoke providers and proxies via SDKs](../using-sdks.md): connect to your proxy from Python using provider-native SDKs
+- [Manage an App LLM proxy](manage-proxy.md): configure the provider, resources, security, and guardrails
+- [Policies overview](../policies/overview.md): learn about the policies available for rate limiting and caching

@@ -18,9 +18,9 @@ AI Workspace CI/CD lets you manage AI Workspace artifacts as version-controlled 
 
 You can use this flow for:
 
-- **LLM providers** - reusable connections to model providers such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral AI
-- **App LLM proxies** - application-facing proxy endpoints with their own security, guardrails, policies, and provider reference
-- **MCP proxies** - managed proxy endpoints for upstream MCP servers
+- **LLM providers** — reusable connections to model providers such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral AI
+- **App LLM proxies** — application-facing proxy endpoints with their own security, guardrails, policies, and provider reference
+- **MCP proxies** — managed proxy endpoints for upstream MCP servers
 
 ## How the CI/CD Flow Works
 
@@ -36,9 +36,9 @@ The high-level flow is:
 6. Apply the artifact to AI Workspace with `ap ai-workspace apply`.
 7. Deploy the runtime artifact to a gateway with `ap gateway apply -f runtime.yaml` so the declarative runtime changes are propagated to the gateway.
 
-The AI Workspace control plane and gateway runtime do not depend on each other during artifact application. Each operation in the flow is executed synchronously from the project files without relying on output from another service or on asynchronous synchronization. AI Workspace stores the artifact and its intended gateway associations, while the gateway runtime receives runtime artifacts through `ap gateway apply`.
+The AI Workspace control plane and the gateway runtime don't depend on each other during artifact application. Each operation in the flow runs synchronously from the project files, without relying on output from another service or on asynchronous synchronization. AI Workspace stores the artifact and its intended gateway associations, while the gateway runtime receives runtime artifacts through `ap gateway apply`.
 
-For this declarative flow, start the AI Gateway with deployment synchronization disabled so the gateway does not try to synchronize deployed artifacts back to AI Workspace:
+For this declarative flow, start the AI Gateway with deployment synchronization disabled, so the gateway doesn't synchronize deployed artifacts back to AI Workspace:
 
 ```toml
 [controller.controlplane]
@@ -92,14 +92,14 @@ AI Workspace validates gateway associations within the organization context of t
 
 ## CI/CD Benefits
 
-- **Git-based lifecycle** - Review, version, and promote AI Workspace artifacts through pull requests.
-- **Repeatable deployments** - Apply the same project files across environments using pipeline variables.
-- **Reduced drift** - Keep UI-managed artifacts aligned with the project files used by CI/CD.
-- **Future extensibility** - Use the same build and apply model as more API Platform artifact types are added.
+- **Git-based lifecycle** — Review, version, and promote AI Workspace artifacts through pull requests.
+- **Repeatable deployments** — Apply the same project files across environments using pipeline variables.
+- **Reduced drift** — Keep UI-managed artifacts aligned with the project files used by CI/CD.
+- **One model across artifact types** — Use the same build and apply model for every supported API Platform artifact type.
 
 ## Next Steps
 
-- [Configure an AI Workspace CI/CD Workflow](configure-ci-cd-workflow.md) - Build and apply an AI Workspace artifact with the `ap` CLI
-- [Configure LLM Provider](../llm-providers/configure-provider.md) - Create a provider from the AI Workspace UI
-- [Configure App LLM Proxy](../llm-proxies/configure-proxy.md) - Create an App LLM proxy from the AI Workspace UI
-- [Configure MCP Proxy](../mcp-proxies/configure-proxy.md) - Create an MCP proxy from the AI Workspace UI
+- [Configure an AI Workspace CI/CD workflow](configure-ci-cd-workflow.md): build and apply an AI Workspace artifact with the `ap` CLI
+- [Configure an LLM provider](../llm-providers/configure-provider.md): create a provider from the AI Workspace UI
+- [Configure an App LLM proxy](../llm-proxies/configure-proxy.md): create an App LLM proxy from the AI Workspace UI
+- [Configure an MCP proxy](../mcp-proxies/configure-proxy.md): create an MCP proxy from the AI Workspace UI

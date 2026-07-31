@@ -14,14 +14,14 @@ content_type: "overview"
 
 # LLM Provider Templates Overview
 
-An LLM Provider Template is a reusable blueprint that holds everything needed to connect to an upstream LLM service:
+An LLM provider template is a reusable blueprint that holds everything needed to connect to an upstream LLM service:
 
 - The upstream **endpoint URL**
 - The **inbound authentication** settings (auth type, header or parameter name, and value prefix)
 - The provider's **OpenAPI specification**
 - The **token and model mappings** used for usage tracking
 
-Once a template holds this configuration, you can create any number of [LLM Providers](../llm-providers/overview.md) from it without entering the same details again.
+Once a template holds this configuration, you can create any number of [LLM providers](../llm-providers/overview.md) from it without entering the same details again.
 
 ## Template Types
 
@@ -35,8 +35,8 @@ Once a template holds this configuration, you can create any number of [LLM Prov
 1. Navigate to **AI Workspace** in your API Platform dashboard.
 2. Go to **Settings** > **LLM Provider Templates**.
 
-Custom and built-in templates appear in separate sections, and each template card shows its latest version. Disabled templates appear dimmed.
+Custom and built-in templates appear in separate sections, and each template card shows its most recent version. Disabled templates appear dimmed.
 
-![LLM Provider Templates listing showing custom and built-in template sections](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/template-listing.png)
+![LLM provider templates listing showing custom and built-in template sections](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/template-listing.png)
 
-**Next:** [Configure LLM Provider Template](configure-template.md) - Create a custom template, configure it, and deploy it to a gateway
+**Next:** [Configure an LLM provider template](configure-template.md), to create a custom template, configure it, and deploy it to a gateway.

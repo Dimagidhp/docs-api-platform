@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # Manage App LLM Proxy
 
-Once you create an App LLM Proxy, you can manage its configuration through the proxy details page. This guide covers all management operations available for your specialized application or agent proxy.
+Once you create an App LLM proxy, manage its configuration through the proxy details page. This guide covers every management operation available for your specialized application or agent proxy.
 
 ---
 
@@ -22,14 +22,14 @@ Once you create an App LLM Proxy, you can manage its configuration through the p
 
 1. Navigate to **LLM** > **Proxies** in the left navigation menu.
 
-2. Click on a proxy name to open its details page.
+2. Click a proxy name to open its details page.
 
 The proxy details page displays the following information at the top:
 
-- **Proxy name** (e.g., Test-Openai)
-- **Provider** - The linked LLM service provider
-- **Version** - The proxy version
-- **Last updated** - Timestamp of the most recent change
+- **Proxy name**, for example `Test-Openai`
+- **Provider**: the linked LLM service provider
+- **Version**: the proxy version
+- **Last updated**: the timestamp of the most recent change
 
 The page is organized into four configuration tabs: **Provider**, **Resources**, **Security**, and **Guardrails**. On the right side, you'll find the **Get Started** panel with API key generation and deployed gateway information.
 
@@ -39,11 +39,7 @@ The **Deploy to Gateway** button and a **delete** icon are located in the top-ri
 
 ## Provider Settings
 
-<div style="border-left: 4px solid #1976d2; padding-left: 16px; margin-bottom: 24px;">
-
 Configure which LLM service provider the proxy connects to and how it authenticates with the provider.
-
-</div>
 
 ### LLM Service Provider
 
@@ -62,7 +58,7 @@ If your selected provider uses API key authentication, you'll see the **API Key 
 
 | Field | Description |
 |-------|-------------|
-| **Header Name** | The authentication header required by the provider (e.g., `X-API-Key`). This field is read-only and is defined by the provider template. |
+| **Header Name** | The authentication header required by the provider (for example, `X-API-Key`). This field is read-only and is defined by the provider template. |
 | **API Key** | Enter your provider's API key in this field. |
 
 **To configure:**
@@ -70,25 +66,21 @@ If your selected provider uses API key authentication, you'll see the **API Key 
 1. Enter the API key in the **API Key** field.
 2. Click **Save API Key** to store the credential securely.
 
-!!! warning "Security Best Practices"
-    - API keys are encrypted and stored securely
-    - Keys are not displayed after saving
+!!! warning "Security best practices"
+    - The workspace encrypts API keys and stores them securely
+    - Keys aren't displayed after saving
     - Store a backup copy in a secure location
-    - Rotate keys regularly for security
+    - Rotate keys regularly
 
 ---
 
 ## Resources
 
-<div style="border-left: 4px solid #388e3c; padding-left: 16px; margin-bottom: 24px;">
-
 Define which API endpoints (resources) are available through this proxy by importing an OpenAPI specification.
-
-</div>
 
 ### OpenAPI Specification
 
-The OpenAPI specification defines the resources (API endpoints) available through your proxy. Depending on the provider, the specification may be automatically populated.
+The OpenAPI specification defines the resources, or API endpoints, available through your proxy. For some providers, the workspace populates the specification for you.
 
 **To import manually:**
 
@@ -100,26 +92,22 @@ The OpenAPI specification defines the resources (API endpoints) available throug
 
 4. The proxy automatically parses the file and displays the extracted resources.
 
-!!! tip "OpenAPI Format"
-    Supports OpenAPI 3.0 and 3.1 specifications in both JSON and YAML formats.
+!!! tip "OpenAPI format"
+    The proxy accepts OpenAPI 3.0 and 3.1 specifications in both JSON and YAML formats.
 
 ### View Resources
 
 After importing, the **Resources** section displays the count and list of parsed resources. Each resource shows:
 
-- **HTTP Method** - The HTTP method (GET, POST, PUT, DELETE, PATCH)
-- **Resource Path** - The endpoint path (e.g., `/v1/chat/completions`)
-- **Description** - A description extracted from the OpenAPI spec
+- **HTTP Method**: the HTTP method (GET, POST, PUT, DELETE, or PATCH)
+- **Resource Path**: the endpoint path, for example `/v1/chat/completions`
+- **Description**: the description extracted from the OpenAPI specification
 
 ---
 
 ## Security
 
-<div style="border-left: 4px solid #f57c00; padding-left: 16px; margin-bottom: 24px;">
-
 Configure how client applications authenticate when accessing your proxy endpoints.
-
-</div>
 
 ### Authentication
 
@@ -130,24 +118,20 @@ Configure how client applications authenticate when accessing your proxy endpoin
 | Field | Description |
 |-------|-------------|
 | **Authentication type** | Select the authentication method from the dropdown. **API Key** is the available method. |
-| **Key name** | The name of the key that clients must provide (e.g., `X-API-Key`). |
-| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, e.g. `Bearer` so clients send `Bearer <key>`. |
+| **Key name** | The name of the key that clients must provide (for example, `X-API-Key`). |
+| **API Key Value Prefix** | Optional prefix prepended to the value clients must send, for example, `Bearer` so clients send `Bearer <key>`. |
 | **Sent in** | Choose how clients send the authentication key: **Header** (recommended) or **Query Parameter**. |
 
 3. Click **Save** to apply the security configuration.
 
-!!! tip "Best Practice"
-    Use **Header** authentication for production environments. Query parameters may be logged in server access logs and browser history.
+!!! tip "Best practice"
+    Use **Header** authentication for production environments. Server access logs and browser history can record query parameters.
 
 ---
 
 ## Guardrails
 
-<div style="border-left: 4px solid #d32f2f; padding-left: 16px; margin-bottom: 24px;">
-
 Attach guardrails to enforce content safety, compliance, and quality standards on this proxy.
-
-</div>
 
 ### Global Guardrails
 
@@ -167,11 +151,11 @@ Global guardrails apply to **all resources** in the proxy.
 
 6. Click **Submit** to add the guardrail.
 
-Added guardrails appear as pills showing the guardrail name and version.
+Each guardrail you add appears as a pill showing its name and version.
 
 ### Resource-wise Guardrails
 
-Resource-wise guardrails apply to **specific endpoints** only. This section lists each resource from your OpenAPI specification, allowing you to attach guardrails to individual endpoints.
+Resource-wise guardrails apply to **specific endpoints** only. This section lists each resource from your OpenAPI specification, so you can attach guardrails to individual endpoints.
 
 **To add a resource-specific guardrail:**
 
@@ -211,14 +195,14 @@ Use the **Cancel** button to discard all unsaved changes and revert to the last 
 
 To delete a proxy, click the **delete** icon (trash icon) in the top-right corner of the proxy details page, next to the Deploy to Gateway button.
 
-!!! danger "Irreversible Action"
+!!! danger "Irreversible action"
     Deleting a proxy is permanent and cannot be undone.
 
-    - The proxy is immediately removed from all gateways
+    - The workspace removes the proxy from all gateways immediately
     - All generated API keys stop working
-    - All configuration (resources, security, guardrails) is deleted
+    - All configuration, including resources, security, and guardrails, is deleted
 
-!!! warning "Before Deleting"
+!!! warning "Before deleting"
     - Ensure no applications are actively using the proxy
     - Back up any important configuration settings
     - Notify teams that depend on the proxy endpoints
@@ -227,5 +211,5 @@ To delete a proxy, click the **delete** icon (trash icon) in the top-right corne
 
 ## Next Steps
 
-- [Policies Overview](../policies/overview.md) - Learn about all available policies for proxies
-- [Policy Hub](https://wso2.com/api-platform/policy-hub/) - Browse the full catalog of available guardrails and policies
+- [Policies overview](../policies/overview.md) — Learn about all available policies for proxies
+- [Policy Hub](https://wso2.com/api-platform/policy-hub/) — Browse the full catalog of available guardrails and policies

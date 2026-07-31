@@ -16,7 +16,7 @@ content_type: "concept"
 
 The **Insights** page in the AI Workspace links to your [Moesif](https://www.moesif.com/) analytics workspace, where you can view traffic, token usage, latency, and consumer behavior for the requests flowing through your AI Gateways. Moesif is an AI-native API analytics platform.
 
-The AI Workspace does not embed or proxy Moesif content. The Insights page provides a button that opens your Moesif workspace in a new tab, and all analytics are viewed in Moesif itself.
+AI Workspace doesn't embed or proxy Moesif content. The Insights page provides a button that opens your Moesif workspace in a new tab, and all analytics are viewed in Moesif itself.
 
 ## How It Works
 
@@ -39,7 +39,7 @@ Once the key is set and the gateway is running, the gateway publishes events to 
 For the full gateway setup procedure, see [Setting up an AI Gateway](ai-gateways/setting-up.md).
 
 !!! note
-    If `MOESIF_KEY` is not configured, the gateway does not publish telemetry and your Moesif workspace will not show any data.
+    If `MOESIF_KEY` isn't configured, the gateway doesn't publish telemetry, and your Moesif workspace shows no data.
 
 ## What Moesif Tracks
 
@@ -49,13 +49,13 @@ With the gateway Moesif integration active, your Moesif workspace shows:
 - **Token usage** — Prompt, completion, and total tokens by model and provider.
 - **Estimated LLM cost** — Cost estimates based on token consumption.
 - **Guardrail policy triggers** — How often guardrails intervene.
-- **Per-application and per-consumer breakdowns** — Usage for mapped [GenAI Applications](genai-applications.md) and consumers.
+- **Per-application and per-consumer breakdowns** — Usage for mapped [GenAI applications](genai-applications.md) and consumers.
 
 Filtering, segmentation, and dashboarding are done entirely within Moesif.
 
 ## Using Insights for Cost and Rate Limit Management
 
-Moesif analytics are useful for tuning your [token-based rate limits](policies/overview.md#token-based-rate-limit):
+Use Moesif analytics to tune your [token-based rate limits](policies/overview.md#token-based-rate-limit):
 
 1. Use token usage trends to understand actual consumption patterns before setting rate limits.
 2. Check per-consumer traffic to determine appropriate per-consumer limits.
@@ -74,6 +74,6 @@ See [Policies overview](policies/overview.md) for more on configuring guardrails
 ## Related
 
 - [Setting up an AI Gateway](ai-gateways/setting-up.md) — Configure `MOESIF_KEY` on the gateway runtime
-- [Token-Based Rate Limiting](policies/overview.md#token-based-rate-limit) — Set token limits and use analytics to monitor usage
+- [Token-based rate limiting](policies/overview.md#token-based-rate-limit) — Set token limits and use analytics to monitor usage
 - [Policies overview](policies/overview.md) — Monitor guardrail interventions through analytics
 - [Integrate API Platform with Moesif](../../cloud/monitoring-and-insights/integrate-bijira-with-moesif.md) — Advanced Moesif integration options for the broader API Platform

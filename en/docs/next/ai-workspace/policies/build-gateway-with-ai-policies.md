@@ -18,7 +18,7 @@ After [writing a custom AI policy](writing-an-ai-policy.md), build it into the A
 
 ## Install the AP CLI Tool
 
-The `ap` CLI tool is used to build a custom gateway image with your own policies. This is the same `ap` CLI used for [AI Workspace CI/CD](../ci-cd/overview.md) (`ap gateway apply`, `ap ai-workspace build`, etc.) — if you already have it installed for that workflow, you can skip ahead to [Configure the Build File](#configure-the-build-file). Otherwise, download the binary for your platform from the [AP CLI releases page](https://github.com/wso2/api-platform/releases/tag/ap%2Fv0.7.0) and follow the steps below to install it.
+The `ap` CLI builds a custom gateway image that carries your own policies. It's the same `ap` CLI that [AI Workspace CI/CD](../ci-cd/overview.md) uses for commands such as `ap gateway apply` and `ap ai-workspace build`. If you already have it installed for that workflow, skip ahead to [Configure the build file](#configure-the-build-file). Otherwise, download the binary for your platform from the [AP CLI releases page](https://github.com/wso2/api-platform/releases/tag/ap%2Fv0.7.0) and follow the steps below to install it.
 
 === "macOS / Linux"
 
@@ -96,8 +96,8 @@ The `ap` CLI tool is used to build a custom gateway image with your own policies
 
 The `build.yaml` file is included in the AI Gateway package you downloaded when [setting up the AI Gateway](../ai-gateways/setting-up.md). It declares the gateway version and the list of policies to include. Edit this file to add your custom AI policies before building the gateway image.
 
-!!! tip "Sample Custom Policies"
-    WSO2 provides a set of sample custom policies to help you get started, including AI-specific examples. You can find them in the [api-platform sample policies repository](https://github.com/wso2/api-platform/tree/main/gateway/sample-policies).
+!!! tip "Sample custom policies"
+    WSO2 provides sample custom policies, including AI-specific examples, in the [api-platform sample policies repository](https://github.com/wso2/api-platform/tree/main/gateway/sample-policies).
 
 ### Structure
 
@@ -116,8 +116,8 @@ Each policy entry uses one of two source types:
 
 | Field | Description |
 |---|---|
-| `gomodule` | Go module reference for policy hub managed policies (e.g., `github.com/wso2/gateway-controllers/policies/pii-masking@v1`) |
-| `filePath` | Relative path from `build.yaml` to a local custom AI policy directory |
+| `gomodule` | The Go module reference for a Policy Hub managed policy, for example `github.com/wso2/gateway-controllers/policies/pii-masking@v1` |
+| `filePath` | The path from `build.yaml` to a local custom AI policy directory |
 
 ### Adding a Custom AI Policy
 
@@ -152,7 +152,7 @@ Once `build.yaml` is ready, run the following command from the directory contain
 ap gateway image build
 ```
 
-This packages the gateway runtime together with all listed policies — built-in and custom — into a container image that can be used in place of the standard AI Gateway image.
+This packages the gateway runtime together with every listed policy, built-in and custom, into a container image you use in place of the standard AI Gateway image.
 
 Once the build completes, the output lists the two image names produced. For example:
 
@@ -190,4 +190,4 @@ docker compose up
 
 ## What's Next?
 
-- [Apply AI Policies to Proxies](apply-ai-policies-to-proxies.md): Sync your custom AI policy to the organization and apply it to LLM Providers and App LLM Proxies
+- [Apply AI policies to proxies](apply-ai-policies-to-proxies.md): sync your custom AI policy to the organization and apply it to LLM providers and App LLM proxies

@@ -15,9 +15,9 @@ content_type: "how-to"
 
 # Writing an AI Policy for the AI Gateway
 
-AI policies allow you to inspect, control, and modify traffic going to and from Large Language Models (LLMs), such as OpenAI, Anthropic, or other providers.
+An AI policy inspects, controls, and modifies the traffic going to and from a large language model (LLM) provider such as OpenAI or Anthropic.
 
-AI policies use the same `Policy` interface as standard gateway policies. For full API details, see the [SDK Documentation](https://pkg.go.dev/github.com/wso2/api-platform/sdk/core/policy/v1alpha2).
+AI policies use the same `Policy` interface as standard gateway policies. For full API details, see the [policy SDK reference](https://pkg.go.dev/github.com/wso2/api-platform/sdk/core/policy/v1alpha2).
 
 The key difference is how you handle LLM request and response bodies, especially:
 
@@ -51,7 +51,7 @@ Incoming Request
 ```
 
 !!! note
-    A **policy chain** is an ordered sequence of policies that the gateway runs on every request and response for a given LLM Provider or App LLM Proxy. Policies execute in the order they are listed in the runtime configuration — each policy sees the modifications made by the ones before it.
+    A **policy chain** is an ordered sequence of policies that the gateway runs on every request and response for a given LLM provider or App LLM proxy. Policies run in the order the runtime configuration lists them, and each policy sees the modifications the ones before it made.
 
 ## Key Idea
 
@@ -62,7 +62,7 @@ LLM responses come in two formats:
 | Non-streaming | Single JSON object |
 | Streaming | SSE events (`data: {...}`) |
 
-Your policy must be implemented to handle **both formats**.
+Your policy must handle **both formats**.
 
 ## Which Interfaces to Implement
 
@@ -112,7 +112,7 @@ func (p *MyAIPolicy) Mode() policy.ProcessingMode {
 ```
 
 !!! tip
-    If your policy does not need to inspect a phase, explicitly set it to `HeaderModeSkip` or `BodyModeSkip`.
+    If your policy doesn't need to inspect a phase, set that phase to `HeaderModeSkip` or `BodyModeSkip`.
 
 ### Step 3: Implement Request Inspection
 
@@ -133,11 +133,11 @@ func (p *MyAIPolicy) OnRequestBody(
 
 For most AI policies, implement both:
 
-- **`ResponsePolicy`** - Handles buffered responses where the entire response is available at once. This could be a non-streaming JSON response or concatenated SSE events.
-- **`StreamingResponsePolicy`** - Handles streaming responses, which could be JSON or SSE events.
+- **`ResponsePolicy`**: handles buffered responses, where the entire response is available at once. That's either a non-streaming JSON response or concatenated SSE events.
+- **`StreamingResponsePolicy`**: handles streaming responses, either JSON or SSE events.
 
 !!! tip
-    The gateway automatically chooses which handler to call. `OnResponseBodyChunk` is invoked only if the entire policy chain is streaming-compatible. If any policy in the chain does not support streaming, `OnResponseBody` is used as a fallback — implement both even if streaming is your primary target.
+    The gateway automatically chooses which handler to call. The gateway calls `OnResponseBodyChunk` only when the entire policy chain is streaming-compatible. If any policy in the chain doesn't support streaming, the gateway falls back to `OnResponseBody`, so implement both even when streaming is your primary target.
 
 ```go
 // Streaming Response Handling
@@ -246,13 +246,13 @@ policies:
 
 ## Best Practices
 
-- **Always handle both streaming and non-streaming** - The gateway may fall back to buffered mode if any policy in the chain does not support streaming.
-- **Use Metadata to share state** - Pass data between request and response phases using the `Metadata` map.
-- **Implement streaming + fallback for compatibility** - Ensure your policy works correctly regardless of whether the chain runs in streaming or buffered mode.
-- **Parse SSE incrementally** - When gating on streaming responses, buffer only until you have a complete SSE event (`\n\n`-terminated) rather than the entire response, to keep latency low.
+- **Always handle both streaming and non-streaming.** The gateway falls back to buffered mode when any policy in the chain doesn't support streaming.
+- **Use the `Metadata` map to share state.** Pass data between the request and response phases through it.
+- **Implement streaming and the buffered fallback.** Your policy then works whether the chain runs in streaming or buffered mode.
+- **Parse SSE incrementally.** When gating on streaming responses, buffer only until you have a complete SSE event, terminated by `\n\n`, rather than the entire response. This keeps latency low.
 
 ## What's Next?
 
-- [Building the Gateway with AI Policies](build-gateway-with-ai-policies.md): Build a gateway image that includes your custom AI policy
-- [Apply AI Policies to Proxies](apply-ai-policies-to-proxies.md): Sync your custom AI policy to the organization and apply it to LLM Providers and App LLM Proxies
-- [Writing a Custom Policy for the Self-Hosted Gateway](../../../cloud/api-platform-gateway/writing-a-custom-policy.md): Learn about the general-purpose policy SDK that the AI Gateway's policy engine builds on
+- [Building the gateway with AI policies](build-gateway-with-ai-policies.md): build a gateway image that includes your custom AI policy
+- [Apply AI policies to proxies](apply-ai-policies-to-proxies.md): sync your custom AI policy to the organization and apply it to LLM providers and App LLM proxies
+- [Writing a custom policy for the self-hosted gateway](../../../cloud/api-platform-gateway/writing-a-custom-policy.md): the general-purpose policy SDK that the AI Gateway's policy engine builds on

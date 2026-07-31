@@ -18,7 +18,7 @@ This guide shows how to validate and apply AI Workspace artifacts from project f
 
 ## Prerequisites
 
-!!! info "Before You Begin"
+!!! info "Before you begin"
     - Install the `ap` CLI and make it available on your `PATH`.
     - Configure access to the target AI Workspace.
     - Configure access to the target gateway.
@@ -87,11 +87,11 @@ When using this CI/CD flow, start the AI Gateway with control-plane deployment s
 deployment_sync_enabled = false
 ```
 
-In **declarative CI/CD**, AI Workspace artifacts and gateway runtime artifacts are **applied independently** from the project files. Each operation runs **synchronously** and does not rely on output from another service or on **asynchronous gateway-to-control-plane synchronization**. Disabling deployment synchronization prevents the gateway from trying to synchronize deployed artifacts back to AI Workspace while CI/CD owns the artifact lifecycle.
+In **declarative CI/CD**, AI Workspace artifacts and gateway runtime artifacts are **applied independently** from the project files. Each operation runs **synchronously** and doesn't rely on output from another service or on **asynchronous gateway-to-control-plane synchronization**. Disabling deployment synchronization prevents the gateway from trying to synchronize deployed artifacts back to AI Workspace while CI/CD owns the artifact lifecycle.
 
 ## Create or Update the Project
 
-Create a project if you do not already have one.
+Create a project if you don't already have one.
 
 === "Template"
     ```shell
@@ -423,6 +423,6 @@ ap ai-workspace app-llm-proxy list --help
 
 ## Next Steps
 
-- [AI Workspace CI/CD Overview](overview.md) - Learn how the Git-based flow works
-- [Configure LLM Provider](../llm-providers/configure-provider.md) - Create and deploy providers from the UI
-- [Manage App LLM Proxy](../llm-proxies/manage-proxy.md) - Manage an App LLM proxy after it is created
+- [AI Workspace CI/CD overview](overview.md): how the Git-based flow works
+- [Configure an LLM provider](../llm-providers/configure-provider.md): create and deploy providers from the UI
+- [Manage an App LLM proxy](../llm-proxies/manage-proxy.md): manage an App LLM proxy after you create it

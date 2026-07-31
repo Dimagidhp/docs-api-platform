@@ -14,7 +14,7 @@ content_type: "quickstart"
 
 # Getting Started
 
-The AI Workspace enables you to manage AI gateways and LLM providers. This guide gets AI Workspace running locally with Docker Compose in under five minutes, then walks you through creating your first AI gateway and LLM provider.
+The AI Workspace enables you to manage AI gateways and LLM providers. This guide gets AI Workspace running locally with Docker Compose, then walks you through creating your first AI gateway and LLM provider.
 
 ## Prerequisites
 
@@ -38,25 +38,25 @@ cd wso2apip-ai-workspace-1.0.0
 ./scripts/setup.sh
 ```
 
-Run the script once before the first start. The stack never auto-generates keys or certificates: every service fails closed with a descriptive error if something it needs is missing, rather than starting with a weaker value. The script prompts for the admin username and password - press <kbd>Enter</kbd> at each prompt to accept `admin` and a randomly generated password - and provisions the following:
+Run the script once before the first start. The stack never auto-generates keys or certificates: every service fails closed with a descriptive error if something it needs is missing, rather than starting with a weaker value. The script prompts for the admin username and password — press <kbd>Enter</kbd> at each prompt to accept `admin` and a randomly generated password — and provisions the following:
 
 | Artifact | Location | Purpose |
 |----------|----------|---------|
 | TLS certificate | `resources/certificates/cert.pem` and `key.pem` | Self-signed HTTPS pair shared by the services. |
 | RS256 JWT signing keypair | `resources/keys/jwt_private.pem` and `jwt_public.pem` | The Platform API signs login tokens with the private key; AI Workspace and the API Portal verify them with the public key. There's no shared HMAC secret. |
-| At-rest encryption key | `resources/keys/encryption.key` | The Platform API's 32-byte key for encrypting stored secrets, subscription tokens, and WebSub HMAC secrets. **Retain it** - losing or changing it makes previously-encrypted data unreadable. |
+| At-rest encryption key | `resources/keys/encryption.key` | The Platform API's 32-byte key for encrypting stored secrets, subscription tokens, and WebSub HMAC secrets. **Retain it** — losing or changing it makes previously-encrypted data unreadable. |
 | API Portal encryption key | `resources/keys/api-portal-encryption.key` | Encrypts the API Portal's subscription and webhook secrets at rest. Retain it for the same reason. |
 | API Portal session secret | `resources/keys/api-portal-session-secret` | Signs API Portal session cookies. Rotating it only signs users out. |
 | Admin credentials | `api-platform.env` | The Platform API's basic-auth admin user: `APIP_CP_ADMIN_USERNAME` plus the bcrypt `APIP_CP_ADMIN_PASSWORD_HASH`. |
 | Compose defaults | `.env` | `COMPOSE_PROFILES`, which decides the services a plain `docker compose up -d` starts, and `COMPOSE_PROJECT_NAME`, which namespaces this copy's containers, networks, and volumes. |
 
-To skip both prompts - in CI, for example - set the credentials in the environment instead: `ADMIN_USERNAME=admin ADMIN_PASSWORD='…' ./scripts/setup.sh`.
+To skip both prompts — in CI, for example — set the credentials in the environment instead: `ADMIN_USERNAME=admin ADMIN_PASSWORD='…' ./scripts/setup.sh`.
 
 !!! warning "Save the printed admin username and password"
     The admin password is shown only once, and `api-platform.env` holds only its bcrypt hash. To set a new one, delete both `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` from `api-platform.env` and rerun `./scripts/setup.sh`. Deleting only one of the two makes the script stop with an error, because a username without its matching hash can never authenticate.
 
 !!! warning "Don't delete or edit `COMPOSE_PROJECT_NAME`"
-    The project name is pinned on the first run and never changes afterwards - not on a rerun, not under any flag. The stack's data lives in volumes prefixed with it, so a different name starts the stack with an empty database. To choose the name yourself, set `COMPOSE_PROJECT_NAME` in the environment for the first run.
+    The project name is pinned on the first run and never changes afterwards — not on a rerun, not under any flag. The stack's data lives in volumes prefixed with it, so a different name starts the stack with an empty database. To choose the name yourself, set `COMPOSE_PROJECT_NAME` in the environment for the first run.
 
 ## Step 3: Start the Stack
 
@@ -69,7 +69,7 @@ docker compose up -d
 
 ## Step 4: Open AI Workspace
 
-Navigate to **https://localhost:9643** and sign in with the admin credentials printed by `setup.sh`:
+Open `https://localhost:9643` and sign in with the admin credentials that `setup.sh` printed:
 
 ![AI Workspace file-based login window with Username and Password fields](../../assets/img/ai-gateway/standalone-ai-workspace/authentication/filebased-login.png)
 
@@ -77,7 +77,7 @@ Navigate to **https://localhost:9643** and sign in with the admin credentials pr
     The generated TLS certificates are self-signed. Click **Advanced > Proceed** to continue, then return to the workspace.
 
 !!! note "About this login"
-    These credentials come from file-based authentication, generated by the setup script and stored in your local environment configuration. It's the quickest way to try AI Workspace, but before you move to a production or shared environment, connect a real identity provider to manage user login. See [Authentication in AI Workspace](authentication/overview.md).
+    These credentials come from file-based authentication, generated by the setup script and stored in your local environment configuration. Use them to try AI Workspace locally. Before you move to a production or shared environment, connect an identity provider to manage user login. See [Authentication in AI Workspace](authentication/overview.md).
 
 ## Step 5: Create an AI Gateway
 
@@ -101,7 +101,7 @@ An LLM provider connects AI Workspace to an AI service platform such as OpenAI, 
 4. Configure how applications authenticate when they access this provider through the gateway.
 5. Click **Deploy to Gateway** and select your active gateway.
 
-For detailed instructions, see [Configure LLM Provider](llm-providers/configure-provider.md).
+For detailed instructions, see [Configure LLM provider](llm-providers/configure-provider.md).
 
 ## Rerun the setup script
 
@@ -110,14 +110,14 @@ Rerunning `./scripts/setup.sh` is safe. By default it fills in only what's missi
 | Flag | Effect |
 |------|--------|
 | `--force` | Regenerate the TLS certificate, the JWT keypair, and the API Portal session secret, and rotate the admin credentials. Never touches either encryption key. |
-| `--rotate-encryption-key` | Replace `resources/keys/encryption.key` and `resources/keys/api-portal-encryption.key`, even though they exist. Destructive - see the warning below. |
+| `--rotate-encryption-key` | Replace `resources/keys/encryption.key` and `resources/keys/api-portal-encryption.key`, even though they exist. Destructive — see the warning below. |
 | `--certs-only` | Generate only the TLS certificate. Skips the keys, the admin credentials, and `api-platform.env`. |
 | `--profiles=<a,b,...>` | Write a different `COMPOSE_PROFILES` value to `.env`, for example `--profiles=all` or `--profiles=platform-api`. |
 
-To rotate a single value by hand, delete it from `api-platform.env` - or delete the file under `resources/certificates` or `resources/keys` - and rerun the script.
+To rotate a single value by hand, delete it from `api-platform.env` — or delete the file under `resources/certificates` or `resources/keys` — and rerun the script.
 
 !!! warning "Rotating an encryption key destroys encrypted data"
-    `--rotate-encryption-key` makes everything encrypted under the old key permanently unreadable, including stored [AI Workspace secrets](secrets-management.md). At an interactive terminal the script asks you to type `rotate` to confirm; in a non-interactive run, passing the flag is itself the confirmation. Rotating the JWT keypair with `--force` is milder - it only invalidates issued login tokens, so everyone signs in again.
+    `--rotate-encryption-key` makes everything encrypted under the old key permanently unreadable, including stored [AI Workspace secrets](secrets-management.md). At an interactive terminal the script asks you to type `rotate` to confirm; in a non-interactive run, passing the flag is itself the confirmation. Rotating the JWT keypair with `--force` is milder — it only invalidates issued login tokens, so everyone signs in again.
 
 ## Provision the at-rest encryption key manually
 
@@ -145,7 +145,7 @@ To use the environment variable form instead, switch the token to {% raw %}`{{ e
 
 ## Change environment values after setup
 
-`api-platform.env` holds the values the containers read at startup - the admin credentials the setup script wrote, and anything else your `config.toml` pulls in through an {% raw %}`{{ env }}`{% endraw %} token. Edit that file to change a setting, for example to switch the AI Workspace login mode or point at a different control plane, then restart the stack.
+`api-platform.env` holds the values the containers read at startup — the admin credentials the setup script wrote, and anything else your `config.toml` pulls in through an {% raw %}`{{ env }}`{% endraw %} token. Edit that file to change a setting, for example to switch the AI Workspace login mode or point at a different control plane, then restart the stack.
 
 The sample `docker-compose.yaml` loads the file with the `env_file:` directive. It sets `format: raw` so that the `$` characters in a bcrypt password hash aren't treated as Compose interpolation:
 
@@ -165,8 +165,8 @@ Keep `api-platform.env` out of source control. It's git-ignored in the distribut
 - [Manage your provider](llm-providers/manage-provider.md): configure connection, access control, security, rate limiting, guardrails, and models
 
 !!! note
-	You can optionally create an LLM proxy if a specific Gen AI application or agent needs its own guardrails, authentication, exposed resources, routing, or other app-specific controls on top of providers.
+    Create an App LLM proxy only when a specific GenAI application or agent needs its own guardrails, authentication, exposed resources, or routing on top of a provider.
 
-- [Configure App LLM Proxy](llm-proxies/configure-proxy.md): create a specialized endpoint only when you need app-specific or agent-specific controls on top of a provider
-- [Manage your App LLM Proxy](llm-proxies/manage-proxy.md): configure provider settings, resources, security, and guardrails
+- [Configure App LLM proxy](llm-proxies/configure-proxy.md): create a specialized endpoint only when you need app-specific or agent-specific controls on top of a provider
+- [Manage your App LLM proxy](llm-proxies/manage-proxy.md): configure provider settings, resources, security, and guardrails
 

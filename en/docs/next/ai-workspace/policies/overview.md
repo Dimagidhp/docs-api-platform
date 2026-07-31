@@ -26,7 +26,7 @@ Rate limiting is the exception: it's documented in full on this page, under [Rat
 Policies are configured through the management tabs of your LLM providers and App LLM proxies:
 
 - **LLM provider** — rate limits and guardrails configured on a provider apply to every proxy that uses it.
-- **App LLM proxy** — guardrails configured on a proxy specialize the behavior for one Gen AI application or agent.
+- **App LLM proxy** — guardrails configured on a proxy specialize the behavior for one GenAI application or agent.
 
 When both provider-level and proxy-level policies are active, both are enforced. Provider-level policies act as a baseline, and proxy-level policies add to it.
 
@@ -104,8 +104,8 @@ AI services bill per token, so uncontrolled usage turns into unexpected cost. AI
 
 | Policy | Caps | Specification |
 |--------|------|---------------|
-| [Rate limit - basic](#rate-limit-basic) | Request count | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/basic-ratelimit) |
-| [Rate limit - advanced](#rate-limit-advanced) | Request count, with multi-dimensional and weighted quotas | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) |
+| [Rate limit — basic](#rate-limit-basic) | Request count | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/basic-ratelimit) |
+| [Rate limit — advanced](#rate-limit-advanced) | Request count, with multi-dimensional and weighted quotas | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) |
 | [Token-based rate limit](#token-based-rate-limit) | Prompt, completion, or total tokens | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/token-based-ratelimit) |
 | [LLM cost](#llm-cost) | Nothing on its own — calculates the cost other policies spend against | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/llm-cost) |
 | [LLM cost-based rate limit](#llm-cost-based-rate-limit) | Monetary spend in USD | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/llm-cost-based-ratelimit) |
@@ -150,7 +150,7 @@ Caps request count like the basic policy, with more control over how requests ar
 - Stores counters in memory, in Redis, or in Redis with a local async cache. If Redis is unreachable, it fails open and lets requests through.
 - Returns `X-RateLimit-*`, IETF `RateLimit-*`, and `Retry-After` response headers.
 
-For the full configuration schema, see [Rate limit - advanced](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) in the Policy Hub.
+For the full configuration schema, see [Rate limit — advanced](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) in the Policy Hub.
 
 ### Token-based rate limit
 

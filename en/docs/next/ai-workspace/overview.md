@@ -36,27 +36,27 @@ Define reusable connections to upstream AI services such as OpenAI, Anthropic, A
 - Control which upstream resources are exposed
 - Apply provider-level security, rate limits, and guardrails
 
-Learn more in [LLM Providers](llm-providers/overview.md).
+Learn more in [LLM providers](llm-providers/overview.md).
 
 ### App LLM Proxies
 
-Create optional, application-facing endpoints for Gen AI applications and agents when they need controls that differ from the underlying provider.
+Create optional, application-facing endpoints for GenAI applications and agents when they need controls that differ from the underlying provider.
 
-- Publish specialized proxy endpoints for distinct Gen AI apps, copilots, or agents
+- Publish specialized proxy endpoints for distinct GenAI apps, copilots, or agents
 - Isolate consumers with separate API keys and policies
 - Apply proxy-level resources, security settings, and guardrails
 
-Learn more in [App LLM Proxies](llm-proxies/overview.md).
+Learn more in [App LLM proxies](llm-proxies/overview.md).
 
 ### GenAI Applications
 
-Represent the actual AI applications/Agents in your project and map existing API keys to them for application-level visibility.
+Represent the AI applications and agents in your project, and map API keys to them for application-level visibility.
 
 - Group multiple API keys under one named application
 - Track usage, tokens, and cost per application
 - Improve governance and accountability for shared GenAI workloads
 
-Learn more in [GenAI Applications](genai-applications.md).
+Learn more in [GenAI applications](genai-applications.md).
 
 ### MCP Proxies
 
@@ -66,7 +66,7 @@ Expose and govern Model Context Protocol servers through connected gateways.
 - Apply MCP-specific authentication, authorization, rewrite, and access-control policies
 - Control how MCP capabilities are exposed to clients
 
-Learn more in [MCP Proxies](mcp-proxies/overview.md).
+Learn more in [MCP proxies](mcp-proxies/overview.md).
 
 ### CI/CD
 

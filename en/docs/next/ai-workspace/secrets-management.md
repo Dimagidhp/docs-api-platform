@@ -20,7 +20,7 @@ AI Workspace lets you store sensitive credentials as **secrets** and reference t
 Use secrets to avoid embedding raw API keys, tokens, or passwords directly in LLM provider configurations, MCP proxy configs, or API backend settings.
 
 !!! important "Not the same as `config.toml` interpolation"
-    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services' own startup credentials - database password, OIDC client secret, at-rest encryption key - are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](./configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
+    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services' own startup credentials — database password, OIDC client secret, at-rest encryption key — are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](./configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
 
 ## How It Works
 
@@ -38,7 +38,7 @@ Use secrets to avoid embedding raw API keys, tokens, or passwords directly in LL
 
 When you create or update an **LLM Provider** or **MCP Proxy** through the AI Workspace UI and fill in an upstream API key or auth value, the UI automatically:
 
-1. Creates a secret via `POST /api/v0.9/secrets` using a deterministic handle derived from the resource ID (e.g. `wso2-openai-provider-api-key`).
+1. Creates a secret via `POST /api/v0.9/secrets` using a deterministic handle derived from the resource ID (for example, `wso2-openai-provider-api-key`).
 2. Substitutes the credential with the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder before saving the resource.
 
 The raw credential is sent to the secrets API only once and is never stored in the artifact configuration. Re-saving a resource that already contains a placeholder skips the secret creation step.
@@ -69,7 +69,7 @@ Content-Type: multipart/form-data
 Stores a new encrypted secret. The plaintext value is never returned — not even in this response.
 
 !!! note "Why multipart/form-data?"
-    The `value` field is designed to carry arbitrary binary content in a future release (e.g. TLS certificates, SSH private keys). Using `multipart/form-data` now avoids a breaking content-type change when file-based secrets are introduced.
+    `multipart/form-data` carries the `value` field as arbitrary content, so the same endpoint accepts text and binary secrets under one content type.
 
 **Request fields**
 
@@ -257,7 +257,7 @@ Rotated on 2026-06-26 — old key decommissioned
 
 **Notes**
 
-- If the secret's status is `DEPRECATED` (previously soft-deleted), a successful rotation sets it back to `ACTIVE`. The secret can again be referenced by new resources and will be included in gateway sync.
+- If the secret's status is `DEPRECATED` (previously soft-deleted), a successful rotation sets it back to `ACTIVE`. New resources can reference the secret again, and the gateway includes it in the next sync.
 - The gateway picks up the updated value on its next sync cycle — no redeployment of referencing artifacts is required.
 
 **Error responses**
