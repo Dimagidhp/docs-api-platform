@@ -1,8 +1,8 @@
 ---
 title: "Set up Asgardeo as your identity provider"
 description: "Configure WSO2 Asgardeo as the OIDC identity provider for a production Developer Portal deployment, from application registration to config.toml."
-canonical_url: https://wso2.com/api-platform/docs/cloud/devportal/authentication/asgardeo-setup/
-md_url: https://wso2.com/api-platform/docs/cloud/devportal/authentication/asgardeo-setup.md
+canonical_url: https://wso2.com/api-platform/docs/cloud/devportal/setting-up/authentication/asgardeo-setup/
+md_url: https://wso2.com/api-platform/docs/cloud/devportal/setting-up/authentication/asgardeo-setup.md
 tags:
   - cloud
   - devportal
@@ -42,8 +42,10 @@ The Developer Portal is a server-side application that can hold a client secret,
 1. In the root organization, go to **Applications > New Application**.
 2. Choose **Traditional Web Application** and name it `Developer Portal`.
 3. Under **Authorized redirect URLs**, add both:
-      - `https://<your-domain>/<orgName>/callback` — the login callback
-      - `https://<your-domain>/<orgName>` — the post-logout redirect (Asgardeo validates `post_logout_redirect_uri` against this same list)
+      - `https://<your-domain>/default/callback` — the login callback
+      - `https://<your-domain>/default` — the post-logout redirect (Asgardeo validates `post_logout_redirect_uri` against this same list)
+
+    This single shared URI pair is the only one you register. It matches the `callback_url` and `logout_redirect_uri` you set in step 5 — after the callback, the portal uses the session's stored return path to route the user to the correct organization, so no per-organization redirect URLs are needed.
 4. Enable **Share with all organizations** so users in sub-organizations can log in.
 5. Under the **Protocol** tab, set **Access Token Type** to **JWT**.
 6. Under the **Login Flow** tab, remove the Username/Password authenticator and add **SSO Authentication** (organization SSO), which routes each user to their sub-organization's login experience.
@@ -82,8 +84,9 @@ The system application is only needed to run this script. Once the `dp:*` API re
 
 1. Open the **Developer Portal** application you registered in step 2.
 2. Under **API Authorization**, add the API resource created in step 3.
-3. Create an application role, for example `dp_admin`, and assign all `dp:*` scopes to it.
-4. Assign the role to users in each sub-organization that needs access.
+3. Create an **admin** application role and assign all `dp:*` scopes to it. The role's name must match the value the portal maps to its `admin` role in `[developer_portal.auth.idp.roles]` — `admin`, per the mapping in step 5. Assign this full-scope role **only to administrators**.
+4. Create a separate least-privilege role for regular subscribers, granting only the `dp:*` scopes needed for everyday subscriber operations — for example `dp:app_manage` and `dp:subscription_manage` to manage their own applications and subscriptions, plus the `dp:*_read` scopes for browsing APIs. Name it to match the value mapped to the portal's `subscriber` role (`Internal/subscriber` below).
+5. Assign the admin role to administrators only, and the subscriber role to regular users in each sub-organization that needs access.
 
 ## Step 5: Configure the Developer Portal
 

@@ -98,7 +98,7 @@ Beyond the Docker Compose quick start, a production deployment typically needs:
 
 | Topic | Covers |
 |---|---|
-| [Integrate Third-Party Identity Providers](setting-up/integrate-identity-providers.md) | OIDC configuration reference, Asgardeo and Keycloak walkthroughs |
+| [Authentication](setting-up/authentication/overview.md) | Local and OIDC authentication modes, with an Asgardeo identity-provider walkthrough |
 | [Devportal Mode](developer-portal-mode.md) | Run in **API Portal**, **MCP Hub**, or **API & MCP Portal** mode |
 | [Design Mode](setting-up/design-mode.md) | Develop and preview themes/layouts offline, without a database or IDP |
 

@@ -22,8 +22,8 @@ When the Developer Portal is configured with an external IDP (e.g. Asgardeo), RE
 
 ## Prerequisites
 
-- IDP is configured (`idp.client_id` is set in `config.toml` — see [Integrate Third-Party Identity Providers](../setting-up/integrate-identity-providers.md))
-- The `dp:*` scopes are registered in the IDP and assigned to your user (see [Asgardeo Setup](../setting-up/integrate-identity-providers.md#asgardeo-setup) sections 3–4)
+- IDP is configured (`idp.client_id` is set in `config.toml` — see [Authentication](../setting-up/authentication/overview.md))
+- The `dp:*` scopes are registered in the IDP and assigned to your user (see [Set up Asgardeo](../setting-up/authentication/asgardeo-setup.md) steps 3–4)
 - You have the **client ID** and **client secret** from your IDP application
 - You know your org's identifier (the `ORGANIZATION_IDENTIFIER` value used to scope the login, e.g. `sub`)
 
@@ -140,7 +140,7 @@ See the [Management API](../rest-api/overview.md) for the full set of available 
 | `404 Organization not found` | Token's org claim doesn't match any known org | Verify `ORGANIZATION_IDENTIFIER` matches an org's `idpRefId` |
 | `403 Forbidden` (scope error) | Token is missing required `dp:*` scopes | Complete Asgardeo Setup sections 3–4: register scopes and assign the role to your user |
 | `401 Authentication required` | Token expired or invalid | Re-run steps 1–5 for a fresh token |
-| Token has no `dp:*` scopes | Role not assigned to the user | In the Asgardeo console, assign the `dp_admin` role to the user |
+| Token has no `dp:*` scopes | Role not assigned to the user | In the Asgardeo console, assign the appropriate role (`admin` for full access, or the subscriber role) to the user |
 | `nc` gets no output | Redirect URI not registered in IDP | Add `http://localhost:8080` to authorized redirect URIs |
 
 ## Token Lifetime
@@ -149,6 +149,6 @@ Asgardeo access tokens typically expire in 3600 seconds (1 hour). Re-run steps 1
 
 ## Related
 
-- [Integrate Third-Party Identity Providers](../setting-up/integrate-identity-providers.md)
+- [Authentication](../setting-up/authentication/overview.md)
 - [Management API](../rest-api/overview.md)
 - [Configurations](configurations.md)

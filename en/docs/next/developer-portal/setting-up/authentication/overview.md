@@ -1,8 +1,8 @@
 ---
 title: "Authentication in the Developer Portal"
 description: "Understand the two ways users sign in to the Developer Portal: local authentication against the Platform API for development, and an OIDC identity provider for production."
-canonical_url: https://wso2.com/api-platform/docs/cloud/devportal/authentication/overview/
-md_url: https://wso2.com/api-platform/docs/cloud/devportal/authentication/overview.md
+canonical_url: https://wso2.com/api-platform/docs/cloud/devportal/setting-up/authentication/overview/
+md_url: https://wso2.com/api-platform/docs/cloud/devportal/setting-up/authentication/overview.md
 tags:
   - cloud
   - devportal
