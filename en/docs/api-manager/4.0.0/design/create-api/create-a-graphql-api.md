@@ -24,15 +24,15 @@ Follow the instructions below to design a GraphQL API.
 2. Click **CREATE API** and then click **I Have a GraphQL SDL schema**.
 
      <html>
-     <img src="{{base_path}}/assets/img/learn/create-graphql-schema-option.png" alt="Create GraphQL schema option" title="Create GraphQL schema option" width="600"/>
+     <img src="../../assets/img/learn/create-graphql-schema-option.png" alt="Create GraphQL schema option" title="Create GraphQL schema option" width="600"/>
      </html>
 
 
 3. Import the schema and click **Next**.  
 
-     [![Import a graphQL schema by adding a file]({{base_path}}/assets/img/learn/import-graphql-schema.png)]({{base_path}}/assets/img/learn/import-graphql-schema.png)
+     [![Import a graphQL schema by adding a file](../../assets/img/learn/import-graphql-schema.png)](../../assets/img/learn/import-graphql-schema.png)
 
-     Let's use the [StarWarsAPI schema definition]({{base_path}}/assets/attachments/learn/schema_graphql.graphql) to create the schema file. 
+     Let's use the [StarWarsAPI schema definition](../../assets/attachments/learn/schema_graphql.graphql) to create the schema file. 
    
 
       <div class="admonition note">
@@ -43,7 +43,7 @@ Follow the instructions below to design a GraphQL API.
       </div>
 
 
-      [![Import a graphQL schema by adding a file]({{base_path}}/assets/img/learn/import-graphql-schema-via-file.png)]({{base_path}}/assets/img/learn/import-graphql-schema-via-file.png)
+      [![Import a graphQL schema by adding a file](../../assets/img/learn/import-graphql-schema-via-file.png)](../../assets/img/learn/import-graphql-schema-via-file.png)
 
 4. Enter the GraphQL API related details and click **Create**.
 
@@ -119,7 +119,7 @@ Follow the instructions below to design a GraphQL API.
     </tr>
     </table>
       
-    [![Add GraphQL API details]({{base_path}}/assets/img/learn/create-graphql-api-details.png)]({{base_path}}/assets/img/learn/create-graphql-api-details.png)
+    [![Add GraphQL API details](../../assets/img/learn/create-graphql-api-details.png)](../../assets/img/learn/create-graphql-api-details.png)
 
 5. Optionally, modify the existing GraphQL schema definition.
 
@@ -129,7 +129,7 @@ Follow the instructions below to design a GraphQL API.
 
          The existing GraphQL API schema gets downloaded.
 
-         [![Add schema definition]({{base_path}}/assets/img/learn/download-schema-definition.png)]({{base_path}}/assets/img/learn/download-schema-definition.png)   
+         [![Add schema definition](../../assets/img/learn/download-schema-definition.png)](../../assets/img/learn/download-schema-definition.png)   
 
      3. Update the schema definition as required.
 
@@ -142,7 +142,7 @@ Follow the instructions below to design a GraphQL API.
      1. Click **Show More** under the **Operations** section in the **OVERVIEW** page to navigate to the operations page.
 
        
-         [![GraphQL API operations]({{base_path}}/assets/img/learn/operations.png)]({{base_path}}/assets/img/learn/operations.png)
+         [![GraphQL API operations](../../assets/img/learn/operations.png)](../../assets/img/learn/operations.png)
      
      2. Update the operations as required.
          
@@ -154,7 +154,7 @@ Follow the instructions below to design a GraphQL API.
 
              1. Click **Scopes** > **ADD NEW SCOPE**.
 
-                [![Add a scope page]({{base_path}}/assets/img/learn/add-scope.png)]({{base_path}}/assets/img/learn/add-scope.png)
+                [![Add a scope page](../../assets/img/learn/add-scope.png)](../../assets/img/learn/add-scope.png)
 
              2. Enter the required details.
 
@@ -168,13 +168,13 @@ Follow the instructions below to design a GraphQL API.
                 Create a role named `FilmSubscriber` and assign it to the `admin` user for this example scenario. For more information, see [Adding Users]({{base_path}}/administer/product-administration/managing-users-and-roles/adding-users) and [Adding User Roles]({{base_path}}/administer/product-administration/managing-users-and-roles/adding-user-roles).
                
 
-                [![Create a scope]({{base_path}}/assets/img/learn/create-scope.png)]({{base_path}}/assets/img/learn/create-scope.png)
+                [![Create a scope](../../assets/img/learn/create-scope.png)](../../assets/img/learn/create-scope.png)
 
              3. Press `Enter` to add each scope. 
 
              4. Click **SAVE**.
 
-                 [![List of added scopes]({{base_path}}/assets/img/learn/starwars-scope-list.png)]({{base_path}}/assets/img/learn/starwars-scope-list.png) 
+                 [![List of added scopes](../../assets/img/learn/starwars-scope-list.png)](../../assets/img/learn/starwars-scope-list.png) 
 
          2. Define the operation level configurations.
 
@@ -182,7 +182,7 @@ Follow the instructions below to design a GraphQL API.
             
              2. Click **Operation Level** to apply rate limiting for operations.
 
-                 [![Update GraphQL API operations]({{base_path}}/assets/img/learn/update-operations.png)]({{base_path}}/assets/img/learn/update-operations.png) 
+                 [![Update GraphQL API operations](../../assets/img/learn/update-operations.png)](../../assets/img/learn/update-operations.png) 
 
             3. Select a throttling policy, scope, and enable or disable security for each of the operations.
 
@@ -194,9 +194,9 @@ Follow the instructions below to design a GraphQL API.
 
                  If you check the list of scopes, it should appear as follows:
 
-                 [![Scope list]({{base_path}}/assets/img/learn/scope-list.png)]({{base_path}}/assets/img/learn/scope-list.png)
+                 [![Scope list](../../assets/img/learn/scope-list.png)](../../assets/img/learn/scope-list.png)
 
-Now, you have successfully created and configured a GraphQL API. Next, let's [Publish your API]({{base_path}}/deploy-and-publish/publish-on-dev-portal/publish-an-api).
+Now, you have successfully created and configured a GraphQL API. Next, let's [Publish your API](../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ### GraphQL operations
 
@@ -239,13 +239,13 @@ Rate limiting is set to unlimited, and thereby disabled by default.
 
 Learn more on the concepts that you need to know when creating a GraphQL API:
 
--   [Endpoints]({{base_path}}/design/endpoints/endpoint-types/)
--   [API Security]({{base_path}}/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
--   [Rate Limiting]({{base_path}}/design/rate-limiting/graphql-api/overview-query-limits-for-graphql/)
--   [Life Cycle Management]({{base_path}}/design/lifecycle-management/api-lifecycle/)
--   [API Monetization]({{base_path}}/design/api-monetization/monetizing-an-api/)
--   [API Visibility]({{base_path}}/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation]({{base_path}}/design/api-documentation/add-api-documentation/)
--   [Custom Properties]({{base_path}}/design/create-api/adding-custom-properties-to-apis/)
+-   [Endpoints](../endpoints/endpoint-types.md)
+-   [API Security](../api-security/api-authentication/secure-apis-using-oauth2-tokens.md)
+-   [Rate Limiting](../rate-limiting/graphql-api/overview-query-limits-for-graphql.md)
+-   [Life Cycle Management](../lifecycle-management/api-lifecycle.md)
+-   [API Monetization](../api-monetization/monetizing-an-api.md)
+-   [API Visibility](../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+-   [API Documentation](../api-documentation/add-api-documentation.md)
+-   [Custom Properties](adding-custom-properties-to-apis.md)
 
-- Try out the tutorial on <a href="{{base_path}}/tutorials/create-and-publish-a-graphql-api">Creating and Publishing a GraphQL API</a>.
+- Try out the tutorial on <a href="../../tutorials/create-and-publish-a-graphql-api.md">Creating and Publishing a GraphQL API</a>.

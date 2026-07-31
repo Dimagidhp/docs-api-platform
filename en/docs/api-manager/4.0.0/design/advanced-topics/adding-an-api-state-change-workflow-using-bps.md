@@ -1,6 +1,6 @@
 # Adding an API State Change Workflow
 
-This section explains how to add a custom workflow to control the API state changes in the API Manager. Before you begin, see [Workflow Extensions]({{base_path}}/reference/extending-the-api-manager/extendingh-workflows/invoking-the-api-manager-from-the-bpel-engine) for more information on the different types of workflow executors, and also, see [API Lifecycle]({{base_path}}/getting-started/key-concepts#api-lifecycle) to get a better understanding on the API states.
+This section explains how to add a custom workflow to control the API state changes in the API Manager. Before you begin, see [Workflow Extensions](../../reference/customize-product/extending-api-manager/extending-workflows/invoking-the-api-manager-from-the-bpel-engine.md) for more information on the different types of workflow executors, and also, see [API Lifecycle](../../get-started/key-concepts.md#api-lifecycle) to get a better understanding on the API states.
 
 !!! Note
 
@@ -11,7 +11,7 @@ This section explains how to add a custom workflow to control the API state chan
 1.  Download [WSO2 Enterprise Integrator (WSO2 EI)](https://wso2.com/integration).
 2.  Set an offset of 2 to the default BPS port in `<EI_HOME>/conf/carbon.xml` file. 
 
-     This prevents port conflicts that occur when you start more than one WSO2 product on the same server. For more information, see [Changing the Default Ports with Offset]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset).
+     This prevents port conflicts that occur when you start more than one WSO2 product on the same server. For more information, see [Changing the Default Ports with Offset](../../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset.md).
 
     ``` xml
     <Offset>2</Offset>
@@ -36,14 +36,14 @@ This section explains how to add a custom workflow to control the API state chan
 
 
 4.  Select **Processes &gt; Add &gt; BPMN** and upload the `<APIM_HOME>/business-processes/api-state-change/APIStateChangeApprovalProcess.bar` file to EI. 
-![]({{base_path}}/assets/img/learn/learn-state-change-workflow-add-bpmn.png)
+![](../../assets/img/learn/learn-state-change-workflow-add-bpmn.png)
 
 ##Configuring WSO2 BPS
 
 1.  Download [WSO2 Business Process Server](https://wso2.com/api-manager/).
 2.  Set an offset of 2 to the default BPS port in the `<BPS_HOME>/repository/conf/carbon.xml` file. 
 
-     This prevents port conflicts that occur when you start more than one WSO2 product on the same server. For more information, see [Changing the Default Ports with Offset]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset).
+     This prevents port conflicts that occur when you start more than one WSO2 product on the same server. For more information, see [Changing the Default Ports with Offset](../../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset.md).
 
     ``` xml
     <Offset>2</Offset>
@@ -68,7 +68,7 @@ This section explains how to add a custom workflow to control the API state chan
 
 
 4.  Select **Processes &gt; Add &gt; BPMN** and upload the `<APIM_HOME>/business-processes/api-state-change/APIStateChangeApprovalProcess.bar` file to BPS. 
-![]({{base_path}}/assets/img/learn/learn-state-change-workflow-add-bpmn.png)
+![](../../assets/img/learn/learn-state-change-workflow-add-bpmn.png)
 
 ## Configuring the API Manager
 
@@ -95,7 +95,7 @@ First, enable the API state change workflow.
 
 2. Click **Resources** > **Browse**.
      
-     [![Resources Browse Menu]({{base_path}}/assets/img/learn/learn-state-change-workflow-browse.png)]({{base_path}}/assets/img/learn/learn-state-change-workflow-browse.png)
+     [![Resources Browse Menu](../../assets/img/learn/learn-state-change-workflow-browse.png)](../../assets/img/learn/learn-state-change-workflow-browse.png)
 
 3.  Go to the `/_system/governance/apimgt/applicationdata/workflow-extensions.xml` resource, disable the Simple Workflow Executor and enable WS Workflow Executor.
 
@@ -116,33 +116,33 @@ First, enable the API state change workflow.
 
 4.  Sign in to the API Publisher (`https://<Server Host>:9443/publisher`) and publish an API. 
 
-     For more information, see [Create a REST API]({{base_path}}/design/create-api/create-rest-api/create-a-rest-api/) and [Publish an API]({{base_path}}/deploy-and-publish/publish-on-dev-portal/publish-an-api/). 
+     For more information, see [Create a REST API](../create-api/create-rest-api/create-a-rest-api.md) and [Publish an API](../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md). 
      
 5. Click **Lifecycle**.
 
      A message related to the publish workflow will be displayed because the workflow is enabled for **Created to Publish** state change. 
      
-     ![Lifecycle]({{base_path}}/assets/img/learn/learn-state-change-workflow-pending.png)
+     ![Lifecycle](../../assets/img/learn/learn-state-change-workflow-pending.png)
 
     !!! info
         Note that the **publish** button will be disabled in the overview page until the workflow task is completed or deleted. 
-        ![Publish button]({{base_path}}/assets/img/learn/learn-state-change-workflow-publish-pending.png)
+        ![Publish button](../../assets/img/learn/learn-state-change-workflow-publish-pending.png)
 
 6.  You can revoke the state change by clicking **Delete Task**.
 
-     ![Delete task button]({{base_path}}/assets/img/learn/learn-state-change-workflow-delete-task.png)
+     ![Delete task button](../../assets/img/learn/learn-state-change-workflow-delete-task.png)
 
 7.  Sign in to the Admin Portal (`https://<Server Host>:9443/admin`) 
 
 8. Click **API State Change** to see the list of tasks awaiting for approval.
 
-     ![]({{base_path}}/assets/img/learn/learn-state-change-workflow-admin-assign.png)
+     ![](../../assets/img/learn/learn-state-change-workflow-admin-assign.png)
 
 9. Click **Assign to Me** to approve the task.
 
 10. Select **Approve** and click **Complete** to resume and complete the API state change. 
 
-     ![]({{base_path}}/assets/img/learn/learn-state-change-workflow-admin-approve.png)
+     ![](../../assets/img/learn/learn-state-change-workflow-admin-approve.png)
 
 
 ## Configuring the BPS for tenants

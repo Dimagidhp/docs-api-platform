@@ -20,11 +20,11 @@ An Integration project is a maven multi module project, which will contain all t
 1.  Open **WSO2 Integration Studio**.
 2.  Click **New Integration Project** in the **Getting Started** tab as shown below. 
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/create-integration-project.jpg" width="700">
+    <img src="../../assets/img/integrate/tutorials/common/create-integration-project.jpg" width="700">
 
     This will open the <b>New Integration Project</b> dialog box.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/create-simple-message-project.jpg" width="500">
+    <img src="../../assets/img/integrate/tutorials/common/create-simple-message-project.jpg" width="500">
 
 3.  Enter `SampleServices` as the project name and select the following check boxes to create the required modules.
     -   **Create ESB Configs**
@@ -97,7 +97,7 @@ You will now see the projects listed in the **Project Explorer**.
     </tr>
     </table>
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/119132164.png">
+    <img src="../../assets/img/integrate/tutorials/119132155/119132164.png">
 
 #### Create the Message Store
 
@@ -329,7 +329,7 @@ Let's update the REST API so that the client request is forwarded to the message
          <td>
             <div class="content-wrapper">
               <p>Follow the steps given below to specify the expression value:</p>
-              <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/expression-value.png">
+              <img src="../../assets/img/integrate/tutorials/119132155/expression-value.png">
             <ol>
                 <li>Click the <strong>Ex</strong> button before the <b>Value</b> field. This specifies the value type as <i>expression</i>.</li>
                 <li>
@@ -416,9 +416,9 @@ Let's send a request to the API resource. You can use the embedded <b>HTTP Clien
     !!! Tip
         If you don't see the <b>HTTP Client</b> pane, go to <b>Window -> Show View - Other</b> and select <b>HTTP Client</b> to enable the client pane.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
+    <img src="../../assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
     
-2. Enter the request information as given below and click the <b>Send</b> icon (<img src="{{base_path}}/assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
+2. Enter the request information as given below and click the <b>Send</b> icon (<img src="../../assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
     
     <table>
         <tr>

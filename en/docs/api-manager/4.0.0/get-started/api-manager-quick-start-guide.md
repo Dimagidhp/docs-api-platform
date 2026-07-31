@@ -6,7 +6,7 @@ This section is a step-by-step guide to create, publish, and invoke an API using
 
 1. Install [Oracle Java SE Development Kit (JDK)](http://java.sun.com/javase/downloads/index.jsp) version 11 and set the `JAVA_HOME` environment variable.
      
-     For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install]({{base_path}}/install-and-setup/install/installing-the-product/installing-api-m-runtime/).
+     For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install](../install-and-setup/install/installing-the-product/installing-api-m-runtime.md).
 
 2. [Download version 4.0.0 of WSO2 API-M](https://wso2.com/api-management/).
 
@@ -34,7 +34,7 @@ This section is a step-by-step guide to create, publish, and invoke an API using
 
 In this sample scenario, you implement a full lifecycle of an API using WSO2 API Manager.
 
-<a href="{{base_path}}/assets/img/get_started/apim-qsg-diagram.png"><img src="{{base_path}}/assets/img/get_started/apim-qsg-diagram.png" width="60%"></a>
+<a href="../assets/img/get_started/apim-qsg-diagram.png"><img src="../assets/img/get_started/apim-qsg-diagram.png" width="60%"></a>
 
 1. Creating and publishing an API via the Publisher Portal of WSO2 API-M.
 2. Deploy the API in a Gateway environment.
@@ -54,7 +54,7 @@ Follow the instructions below to create and publish an API via the Publisher Por
      
 2. Sign in with **`admin/admin`** as the credentials.
                                                  
-     [![Publisher portal home page]({{base_path}}/assets/img/get_started/api-publisher-home.png)]({{base_path}}/assets/img/get_started/api-publisher-home.png)
+     [![Publisher portal home page](../assets/img/get_started/api-publisher-home.png)](../assets/img/get_started/api-publisher-home.png)
 
 3. Create an API.
 
@@ -69,7 +69,7 @@ Follow the instructions below to create and publish an API via the Publisher Por
     
 4. Select **REST API** from the home screen and then click **Start From Scratch**.
    
-    [![Design a new REST API]({{base_path}}/assets/img/get_started/design-new-rest-api.png)]({{base_path}}/assets/img/get_started/design-new-rest-api.png)
+    [![Design a new REST API](../assets/img/get_started/design-new-rest-api.png)](../assets/img/get_started/design-new-rest-api.png)
 
 
 5. Enter the API details.
@@ -107,7 +107,7 @@ Follow the instructions below to create and publish an API via the Publisher Por
      </tr>
      </table>
      
-     [![Create an API]({{base_path}}/assets/img/get_started/api-create.png){: style="width:60%"}]({{base_path}}/assets/img/get_started/api-create.png)
+     [![Create an API](../assets/img/get_started/api-create.png){: style="width:60%"}](../assets/img/get_started/api-create.png)
         
 6. Click **Create & Publish**.
 
@@ -125,25 +125,25 @@ Follow the instructions below to subscribe to the API and generate the keys via 
     
      The published `HelloWorld` API is listed in the Developer Portal as shown below.
 
-     [![Developer Portal home page]({{base_path}}/assets/img/get_started/dev-portal-landing-page.png)]({{base_path}}/assets/img/get_started/dev-portal-landing-page.png)
+     [![Developer Portal home page](../assets/img/get_started/dev-portal-landing-page.png)](../assets/img/get_started/dev-portal-landing-page.png)
 
 2. Click **Sign-In** and enter **`admin/admin`** as your credentials to sign in to the Developer Portal.
 
 3. Click on the API thumbnail to view the overview of the API.
 
-     [![API overview]({{base_path}}/assets/img/get_started/api-overview.png)]({{base_path}}/assets/img/get_started/api-overview.png)
+     [![API overview](../assets/img/get_started/api-overview.png)](../assets/img/get_started/api-overview.png)
  
 4. Register an OAuth 2.0 application.
 
     1. Click **Subscriptions** on the left menu bar of the screen.
     
-        [![Subscription Card]({{base_path}}/assets/img/get_started/subscriptions-menu.png)]({{base_path}}/assets/img/get_started/subscriptions-menu.png)
+        [![Subscription Card](../assets/img/get_started/subscriptions-menu.png)](../assets/img/get_started/subscriptions-menu.png)
     
     2. Click **SUBSCRIPTION & KEY GENERATION WIZARD** in the above screen.
     
          This wizard walks you through 5 steps that will register an OAuth 2.0 application which you will use to consume the `HelloWorld` API.
 
-         [![Key generation wizard]({{base_path}}/assets/img/get_started/key-gen-wizard.png)]({{base_path}}/assets/img/get_started/key-gen-wizard.png)
+         [![Key generation wizard](../assets/img/get_started/key-gen-wizard.png)](../assets/img/get_started/key-gen-wizard.png)
 
     3.  Create the OAuth 2.0 application.
     
@@ -166,29 +166,29 @@ Follow the instructions below to subscribe to the API and generate the keys via 
          </tr>
          </table>
 
-         [![Wizard - Create application]({{base_path}}/assets/img/get_started/key-gen-wizard-1.png)]({{base_path}}/assets/img/get_started/key-gen-wizard-1.png)
+         [![Wizard - Create application](../assets/img/get_started/key-gen-wizard-1.png)](../assets/img/get_started/key-gen-wizard-1.png)
 
      3. Subscribe the application to the API.
         
          This subscribes the `Greetings` application to the `HelloWorld` API on the selected Business Plan. Click **Next** without changing any of the default values.
 
-         [![Wizard - Subscribe to new application]({{base_path}}/assets/img/get_started/key-gen-wizard-2.png)]({{base_path}}/assets/img/get_started/key-gen-wizard-2.png)
+         [![Wizard - Subscribe to new application](../assets/img/get_started/key-gen-wizard-2.png)](../assets/img/get_started/key-gen-wizard-2.png)
 
      4. Generate the credentials for the **Greetings** OAuth2.0 application.
      
          The Grant Types define the various protocols, which will be allowed by the system, from which your application will be allowed to request tokens. Click **Next**.
 
-         [![Wizard - Generate Keys]({{base_path}}/assets/img/get_started/key-gen-wizard-3.png)]({{base_path}}/assets/img/get_started/key-gen-wizard-3.png)
+         [![Wizard - Generate Keys](../assets/img/get_started/key-gen-wizard-3.png)](../assets/img/get_started/key-gen-wizard-3.png)
 
      5. Generate a test access token for the **Greetings** application to access the **HelloWorld** API.
      
          This step allows you to specify the permissions (scopes) for the token. Click **Next** without changing any of the default values.
 
-         [![Wizard - Generate Access Token]({{base_path}}/assets/img/get_started/key-gen-wizard-4.png)]({{base_path}}/assets/img/get_started/key-gen-wizard-4.png)
+         [![Wizard - Generate Access Token](../assets/img/get_started/key-gen-wizard-4.png)](../assets/img/get_started/key-gen-wizard-4.png)
 
      6. Click the **copy** icon, as shown below, to copy the generated test access token to the clipboard.
 
-         [![Wizard - Copy Access Token]({{base_path}}/assets/img/get_started/key-gen-wizard-5.png)]({{base_path}}/assets/img/get_started/key-gen-wizard-5.png)
+         [![Wizard - Copy Access Token](../assets/img/get_started/key-gen-wizard-5.png)](../assets/img/get_started/key-gen-wizard-5.png)
     
      7.  Click **Finish**.
 
@@ -206,7 +206,7 @@ Follow the instructions below to invoke the previously created API with the gene
 
 2. Paste the access token that you previously copied in the **Access Token** field.
 
-    [![Paste the access token]({{base_path}}/assets/img/get_started/test-api.png)]({{base_path}}/assets/img/get_started/test-api.png)
+    [![Paste the access token](../assets/img/get_started/test-api.png)](../assets/img/get_started/test-api.png)
 
 3. **If this is the first time you are using the API test console** from your browser,  open a new tab and navigate to the [https://localhost:8243/](https://localhost:8243/) URL.
 
@@ -218,15 +218,15 @@ Follow the instructions below to invoke the previously created API with the gene
 
 4. Click on the `GET` resource of the API to expand the resource and Click **Try It Out**.
    
-     [![GET resource]({{base_path}}/assets/img/get_started/expanded-get-resource.png)]({{base_path}}/assets/img/get_started/expanded-get-resource.png)
+     [![GET resource](../assets/img/get_started/expanded-get-resource.png)](../assets/img/get_started/expanded-get-resource.png)
 
 5. Click **Execute**.
 
-     [![GET resource]({{base_path}}/assets/img/get_started/try-api.png)]({{base_path}}/assets/img/get_started/try-api.png)
+     [![GET resource](../assets/img/get_started/try-api.png)](../assets/img/get_started/try-api.png)
 
      You should see the `{"hello" : "world"}` response from the API. 
 
-     [![Successful response]({{base_path}}/assets/img/get_started/try-it-success.png)]({{base_path}}/assets/img/get_started/try-it-success.png)
+     [![Successful response](../assets/img/get_started/try-it-success.png)](../assets/img/get_started/try-it-success.png)
 
 __Congratulations!__ You have successfully created your first API, subscribed to it through an OAuth 2.0 application, obtained an access token for testing, and invoked your API with the access token.
  
@@ -237,7 +237,7 @@ API Products, and Applications across WSO2 API-M environments and to perform CI/
 
 ### Before you begin...
 
-1. [Make sure that you run WSO2 API Manager (WSO2 API-M) 4.0.0]({{base_path}}/get-started/api-manager-quick-start-guide/#before-you-begin).
+1. [Make sure that you run WSO2 API Manager (WSO2 API-M) 4.0.0](api-manager-quick-start-guide.md#before-you-begin).
 
 2. Download the apictl.
 
@@ -266,7 +266,7 @@ API Products, and Applications across WSO2 API-M environments and to perform CI/
      
     !!! note
         - In the following command it is assumed that WSO2 API-M is run locally (localhost) using the default ports.
-        - For more information on adding environments using different flag combinations, see [Add an environment]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#add-an-environment).
+        - For more information on adding environments using different flag combinations, see [Add an environment](../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller.md#add-an-environment).
     
     ``` bash
     ./apictl add env dev \
@@ -354,11 +354,11 @@ API Products, and Applications across WSO2 API-M environments and to perform CI/
 
      - Publisher - [https://localhost:9443/publisher](https://localhost:9443/publisher)
 
-         [![API in the Publisher]({{base_path}}/assets/img/get_started/qsg-publisher.png)]({{base_path}}/assets/img/get_started/qsg-publisher.png)
+         [![API in the Publisher](../assets/img/get_started/qsg-publisher.png)](../assets/img/get_started/qsg-publisher.png)
 
      - Developer Portals - [https://localhost:9443/devportal](https://localhost:9443/devportal)
 
-         [![API in the Developer Portal]({{base_path}}/assets/img/get_started/qsg-devportal.png)]({{base_path}}/assets/img/get_started/qsg-devportal.png)
+         [![API in the Developer Portal](../assets/img/get_started/qsg-devportal.png)](../assets/img/get_started/qsg-devportal.png)
 
 ### Step 3 - Invoke the API
 
@@ -376,7 +376,7 @@ API Products, and Applications across WSO2 API-M environments and to perform CI/
      
      
     !!! info
-        For more information on generating keys using apictl, see [Get keys for an API/API Product]({{base_path}}/install-and-setup/setup/api-controller/ci-cd-with-wso2-api-management/#g-get-keys-for-an-apiapi-product).
+        For more information on generating keys using apictl, see [Get keys for an API/API Product](../install-and-setup/setup/api-controller/ci-cd-with-wso2-api-management.md#g-get-keys-for-an-apiapi-product).
 
 2. Invoke the API.
 
@@ -400,5 +400,5 @@ API Products, and Applications across WSO2 API-M environments and to perform CI/
          - [Subscribe to the API via the Developer Portal and generate keys](#subscribe)
          - [Invoke the API with the generated keys](#invoke)
 
-    [![PetStore response]({{base_path}}/assets/img/get_started/qsg-petstore-response.png)]({{base_path}}/assets/img/get_started/qsg-petstore-response.png)
+    [![PetStore response](../assets/img/get_started/qsg-petstore-response.png)](../assets/img/get_started/qsg-petstore-response.png)
    

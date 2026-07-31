@@ -41,7 +41,7 @@ If you have already installed and set up WSO2 Integration Studio, you can get th
 1.  Open WSO2 Integration Studio on your computer.
 2.  Go to **Help** -> **Check for Updates**.
 
-    <a href="{{base_path}}/assets/img/integrate/get-tooling-updates.png"><img src="{{base_path}}/assets/img/integrate/get-tooling-updates.png" alt="get tooling updates" width="300"></a>
+    <a href="../../assets/img/integrate/get-tooling-updates.png"><img src="../../assets/img/integrate/get-tooling-updates.png" alt="get tooling updates" width="300"></a>
 
 3.  Once the update check is completed, you can select all the available updates and install.
 
@@ -52,7 +52,7 @@ You can check the version of the Integration Studio as below.
 * For MacOS : Integration Studio > About Integration Studio
 * For Windows/Linux : Help > About Integration Studio
 
-    <a href="{{base_path}}/assets/img/integrate/about-integration-studio.jpg"><img src="{{base_path}}/assets/img/integrate/about-integration-studio.jpg" alt="get studio information" width="400"></a>
+    <a href="../../assets/img/integrate/about-integration-studio.jpg"><img src="../../assets/img/integrate/about-integration-studio.jpg" alt="get studio information" width="400"></a>
 
 ### Troubleshooting
 
@@ -66,6 +66,6 @@ MacOS security settings as described below.
 
 ## What's next?
 
--   Take a [quick tour]({{base_path}}/integrate/develop/wso2-integration-studio) of the WSO2 Integration Studio interface.
--   [Build a simple integration use case]({{base_path}}/integrate/develop/integration-development-kickstart) to get familiar with the development workflow. 
--   Build [integration use cases]({{base_path}}/integrate/integration-overview) with WSO2 Integration Studio.
+-   Take a [quick tour](wso2-integration-studio.md) of the WSO2 Integration Studio interface.
+-   [Build a simple integration use case](integration-development-kickstart.md) to get familiar with the development workflow. 
+-   Build [integration use cases](../integration-overview.md) with WSO2 Integration Studio.

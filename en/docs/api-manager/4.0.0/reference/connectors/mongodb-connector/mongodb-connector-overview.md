@@ -8,7 +8,7 @@ To download the MongoDB Connector, go to the [connector store](https://store.wso
 
 It is always recommended to download the latest version of the connector.
 
-<img src="{{base_path}}/assets/img/integrate/connectors/mongodb-connector-store.png" title="MongoDB Connector Store" width="200" alt="MongoDB Connector Store"/>
+<img src="../../../assets/img/integrate/connectors/mongodb-connector-store.png" title="MongoDB Connector Store" width="200" alt="MongoDB Connector Store"/>
 
 ## Compatibility
 
@@ -20,9 +20,9 @@ This connector was tested with MongoDB version 4.4.3.
 
 ## MongoDB Connector documentation
 
-- **[MongoDB Connector Example]({{base_path}}/reference/connectors/mongodb-connector/mongodb-connector-example/)**: This example demonstrates how to use MongoDB connector to connect to the MongoDB database and perform CRUD operations on it.
+- **[MongoDB Connector Example](mongodb-connector-example.md)**: This example demonstrates how to use MongoDB connector to connect to the MongoDB database and perform CRUD operations on it.
 
-- **[MongoDB Connector Reference]({{base_path}}/reference/connectors/mongodb-connector/mongodb-connector-config/)**: This documentation provides a reference guide for the MongoDB Connector.
+- **[MongoDB Connector Reference](mongodb-connector-config.md)**: This documentation provides a reference guide for the MongoDB Connector.
 
 ## How to contribute
 

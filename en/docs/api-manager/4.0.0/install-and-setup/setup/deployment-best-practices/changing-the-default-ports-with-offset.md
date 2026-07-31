@@ -8,7 +8,7 @@ There are two ways to set an offset to a port: Update the server configurations,
 
 ## Before you begin
 
-See the complete list of [default ports]({{base_path}}/install-and-setup/setup/reference/default-product-ports) in all the API Manager components.
+See the complete list of [default ports](../reference/default-product-ports.md) in all the API Manager components.
 
 Note that most of the **runtime ports** change automatically based on the offset you specify here.
 
@@ -35,7 +35,7 @@ The default port offset in the WSO2 API-M runtime is `0`. Use one of the followi
     offset=1
     ```
 
-4. [Restart the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/).
+4. [Restart the server](../../install/installing-the-product/running-the-api-m.md).
 
 #### Pass the port offset during server startup
 
@@ -94,7 +94,7 @@ The default port offset in the WSO2 Micro Integrator runtime is `10`. Use one of
     offset = 3
     ```
 
-4. [Restart the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-mi).
+4. [Restart the server](../../install/installing-the-product/running-the-mi.md).
 
 #### Pass the port offset during server startup
 
@@ -150,7 +150,7 @@ listenerConfigurations:
 
 ## Changing the default SI ports
 
-The default port offset in the WSO2 Streaming Integrator (SI) runtime and the SI Tooling runtime are `0` and `3` respectively. Setting a port offset changes the **thrift**, **binary**, and **management** [ports of the SI runtimes]({{base_path}}/install-and-setup/setup/reference/default-product-ports/#streaming-integrator-ports).
+The default port offset in the WSO2 Streaming Integrator (SI) runtime and the SI Tooling runtime are `0` and `3` respectively. Setting a port offset changes the **thrift**, **binary**, and **management** [ports of the SI runtimes](../reference/default-product-ports.md#streaming-integrator-ports).
 
 Follow the steps given below.
 

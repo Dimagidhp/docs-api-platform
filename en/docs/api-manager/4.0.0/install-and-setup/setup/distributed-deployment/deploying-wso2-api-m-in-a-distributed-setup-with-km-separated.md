@@ -7,9 +7,9 @@ This document describes how to configure a distributed WSO2 API Manager deployme
 
 The following diagram shows the communications between the Control Plane, Gateway, Key Manager and the Traffic Manager nodes in the distributed deployment of API Manager for a migrated environment using Opaque (Reference) tokens.
 
-<a href="{{base_path}}/assets/img/setup-and-install/distributed-deployment-km.png"><img src="{{base_path}}/assets/img/setup-and-install/distributed-deployment-km.png" width="100%"></a>
+<a href="../../../assets/img/setup-and-install/distributed-deployment-km.png"><img src="../../../assets/img/setup-and-install/distributed-deployment-km.png" width="100%"></a>
 
-For more information on the distributed deployment patterns, refer to the [Understanding Distributed Deployment of WSO2 API Manager]({{base_path}}/install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m) page.
+For more information on the distributed deployment patterns, refer to the [Understanding Distributed Deployment of WSO2 API Manager](understanding-the-distributed-deployment-of-wso2-api-m.md) page.
 
 ## Configuring the Gateway Nodes
 
@@ -145,9 +145,9 @@ Configure the Gateway to communicate with the Key Manager, Control Plane and the
     
     ```
 
-4. Enable JSON Web Token (JWT) if required. For instructions, see [Generating JSON Web Token]({{base_path}}/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway).
+4. Enable JSON Web Token (JWT) if required. For instructions, see [Generating JSON Web Token](../../../deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md).
 
-5. Add the public certificate of the private key (that is used for signing the tokens) to the truststore under the "gateway_certificate_alias" alias. For instructions, see [Create and import SSL certificates]({{base_path}}/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores).
+5. Add the public certificate of the private key (that is used for signing the tokens) to the truststore under the "gateway_certificate_alias" alias. For instructions, see [Create and import SSL certificates](../security/configuring-keystores/keystore-basics/creating-new-keystores.md).
 
     !!! Note
         This is not applicable if you use the default certificates, which are the certificates that are shipped with the product itself.
@@ -156,7 +156,7 @@ Configure the Gateway to communicate with the Key Manager, Control Plane and the
 
     1. Create a copy of the API-M Gateway node that you just configured. This is the second node of the API-M Gateway cluster.
 
-    2. Configure a load balancer fronting the two Gateway nodes in your deployment. For instructions, see [Configuring the Proxy Server and the Load Balancer]({{base_path}}/install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer).
+    2. Configure a load balancer fronting the two Gateway nodes in your deployment. For instructions, see [Configuring the Proxy Server and the Load Balancer](../setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer.md).
 
         !!! Note
             To keep custom runtime artifacts deployed in the Gateway, add the following configuration in the `<API-M_HOME>/repository/conf/deployment.toml` file of the Gateway nodes.
@@ -472,7 +472,7 @@ Configure the Control Plane to communicate with the Key Manager, Gateway and the
 
     ```
 
-3. If required, encrypt the Auth Keys (access tokens, client secrets, and authorization codes), see [Encrypting OAuth Keys]({{base_path}}/design/api-security/oauth2/encrypting-oauth2-tokens).
+3. If required, encrypt the Auth Keys (access tokens, client secrets, and authorization codes), see [Encrypting OAuth Keys](../../../design/api-security/oauth2/encrypting-oauth2-tokens.md).
 
 4. Optionally, add the following configuration to enable distributed cache invalidation within the Control Plane nodes.
 
@@ -488,7 +488,7 @@ Configure the Control Plane to communicate with the Key Manager, Gateway and the
 
     1. Create a copy of the API-M Control Plane node that you just configured. This is the second node of the API-M Control Plane cluster.
 
-    2. Configure a load balancer fronting the two Control Plane nodes in your deployment. For instructions, see [Configuring the Proxy Server and the Load Balancer]({{base_path}}/install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer).
+    2. Configure a load balancer fronting the two Control Plane nodes in your deployment. For instructions, see [Configuring the Proxy Server and the Load Balancer](../setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer.md).
 
 ### Sample configuration for the Control Plane
 
@@ -816,7 +816,7 @@ Follow the steps below to configure the Key Manager to communicate with the Cont
 
     ```
 
-3. If required, encrypt the Auth Keys (access tokens, client secrets, and authorization codes), see [Encrypting OAuth Keys]({{base_path}}/design/api-security/oauth2/encrypting-oauth2-tokens).
+3. If required, encrypt the Auth Keys (access tokens, client secrets, and authorization codes), see [Encrypting OAuth Keys](../../../design/api-security/oauth2/encrypting-oauth2-tokens.md).
 
 4. Optionally, add the following configuration to enable distributed cache invalidation within the Control Plane nodes.
 
@@ -832,7 +832,7 @@ Follow the steps below to configure the Key Manager to communicate with the Cont
 
     1. Create a copy of the API-M Key Manager node that you just configured. This is the second node of the API-M Key Manager cluster.
 
-    2. Configure a load balancer fronting the two Key Manager nodes in your deployment. For instructions, see [Configuring the Proxy Server and the Load Balancer]({{base_path}}/install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer).
+    2. Configure a load balancer fronting the two Key Manager nodes in your deployment. For instructions, see [Configuring the Proxy Server and the Load Balancer](../setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer.md).
 
 ### Sample configuration for the Key Manager
 

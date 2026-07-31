@@ -8,7 +8,7 @@ The versions 2.0.0 and above allow you to access the AWS component via AWS [SDK]
 
 To see the Amazon S3 connector, navigate to the [connector store](https://store.wso2.com/store/assets/esbconnector/list) and search for "Amazon".
 
-<img src="{{base_path}}/assets/img/integrate/connectors/amazon-s3-store.png" title="Amazon S3 Connector Store" width="200" alt="Amazon S3 Connector Store"/>
+<img src="../../../assets/img/integrate/connectors/amazon-s3-store.png" title="Amazon S3 Connector Store" width="200" alt="Amazon S3 Connector Store"/>
 
 ## Compatibility
 
@@ -21,9 +21,9 @@ For older versions, see the details in the connector store.
 
 ## Amazon S3 Connector documentation (latest - 2.x version)
 
-* **[Amazon S3 Connector Example]({{base_path}}/reference/connectors/amazons3-connector/amazons3-connector-example/)**: This example demonstrates how to use the Amazon S3 Connector to create an S3 bucket, upload a text message into the bucket, retrieve it, and convert it into a message in the integration runtime. 
+* **[Amazon S3 Connector Example](amazons3-connector-example.md)**: This example demonstrates how to use the Amazon S3 Connector to create an S3 bucket, upload a text message into the bucket, retrieve it, and convert it into a message in the integration runtime. 
 
-* **[Amazon S3 Connector Reference]({{base_path}}/reference/connectors/amazons3-connector/amazons3-connector-reference/)**: This documentation provides a reference guide for the Amazon S3 Connector.
+* **[Amazon S3 Connector Reference](amazons3-connector-reference.md)**: This documentation provides a reference guide for the Amazon S3 Connector.
 
 ## How to contribute
 

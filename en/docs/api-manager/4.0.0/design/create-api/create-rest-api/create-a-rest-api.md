@@ -1,6 +1,6 @@
 # Create a REST API
 
-**API creation** is the process of linking an existing backend API implementation to the [API Publisher]({{base_path}}/get-started/apim-architecture/#api-publisher), so that you can manage and monitor the [API's lifecycle]({{base_path}}/design/lifecycle-management/api-lifecycle/), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher]({{base_path}}/get-started/apim-architecture/#api-publisher) itself.
+**API creation** is the process of linking an existing backend API implementation to the [API Publisher](../../../get-started/apim-architecture.md#api-publisher), so that you can manage and monitor the [API's lifecycle](../../lifecycle-management/api-lifecycle.md), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../../../get-started/apim-architecture.md#api-publisher) itself.
 
 Follow the instructions below to create a REST API using the basic flow:
 
@@ -18,11 +18,11 @@ Follow the instructions below to create a REST API using the basic flow:
 
 2. Select **REST API** from the options available.
 
-    [![Select REST API]({{base_path}}/assets/img/learn/select-rest-api.png){: style="width:90%"}]({{base_path}}/assets/img/learn/select-rest-api.png)
+    [![Select REST API](../../../assets/img/learn/select-rest-api.png){: style="width:90%"}](../../../assets/img/learn/select-rest-api.png)
 
 3.  Click **Start from Scratch**.
 
-    [![Select Start from Scratch]({{base_path}}/assets/img/learn/create-a-rest-api.png){: style="width:30%"}]({{base_path}}/assets/img/learn/create-a-rest-api.png)
+    [![Select Start from Scratch](../../../assets/img/learn/create-a-rest-api.png){: style="width:30%"}](../../../assets/img/learn/create-a-rest-api.png)
 
 4.  Enter API details. 
     
@@ -33,30 +33,30 @@ Follow the instructions below to create a REST API using the basic flow:
      <p>The <b>Create & Publish</b> option will only appear when a user who has <code>publisher</code> permission adds the details for the <b>Endpoint</b> which is an optional field.</p>
      </div>
      
-      [![Create an API page]({{base_path}}/assets/img/learn/create-rest-api-form.png){: style="width:70%"}]({{base_path}}/assets/img/learn/create-rest-api-form.png)
+      [![Create an API page](../../../assets/img/learn/create-rest-api-form.png){: style="width:70%"}](../../../assets/img/learn/create-rest-api-form.png)
 
 5.  Click **Create** to create the API.
     
     ??? note "If you click Create & Publish"
         If you click **Create & Publish**, WSO2 API Manager will automatically create a revision for the API, deploy the revision on the Gateway, and also publish your API to the Developer Portal.
-        [![API overview page]({{base_path}}/assets/img/learn/rest-api-create-publish.png)]({{base_path}}/assets/img/learn/rest-api-create-publish.png)
+        [![API overview page](../../../assets/img/learn/rest-api-create-publish.png)](../../../assets/img/learn/rest-api-create-publish.png)
 
     The overview page of the newly created API appears. 
     
-    [![API overview page]({{base_path}}/assets/img/learn/overviewpage-rest-api.png)]({{base_path}}/assets/img/learn/overviewpage-rest-api.png)
+    [![API overview page](../../../assets/img/learn/overviewpage-rest-api.png)](../../../assets/img/learn/overviewpage-rest-api.png)
 
 6. Go to **Develop**, **Portal Configurations**, and click **Basic Info**.
 
-     <a href="{{base_path}}/assets/img/learn/click-basic-info.png">
-     <img src="{{base_path}}/assets/img/learn/click-basic-info.png" width="20%"></a>
+     <a href="../../../assets/img/learn/click-basic-info.png">
+     <img src="../../../assets/img/learn/click-basic-info.png" width="20%"></a>
 
      1. Configure the API design configurations.
 
-        [![Design configurations]({{base_path}}/assets/img/learn/design-configuration.png){: style="width:80%"}]({{base_path}}/assets/img/learn/design-configuration.png)
+        [![Design configurations](../../../assets/img/learn/design-configuration.png){: style="width:80%"}](../../../assets/img/learn/design-configuration.png)
 
          <html><div class="admonition note">
          <p class="admonition-title">Note</p>
-         <p>By default, **All** users who have `creator` permission are allowed **<a href='{{base_path}}/design/advanced-topics/enable-publisher-access-control-in-api-publisher-portal/'>Publisher Access Control</a>** and public **<a href='{{base_path}}/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/'> 
+         <p>By default, **All** users who have `creator` permission are allowed **<a href='../../advanced-topics/enable-publisher-access-control-in-api-publisher-portal.md'>Publisher Access Control</a>** and public **<a href='../../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md'> 
          Developer Portal visibility</a>**.</p>
          <p>
          </div>
@@ -94,7 +94,7 @@ Follow the instructions below to create a REST API using the basic flow:
 
          Transport Level Security defines the transport protocol on which the API is exposed.  
 
-         [![Transport-level security]({{base_path}}/assets/img/learn/runtime-configs.png)]({{base_path}}/assets/img/learn/runtime-configs.png)
+         [![Transport-level security](../../../assets/img/learn/runtime-configs.png)](../../../assets/img/learn/runtime-configs.png)
 
     2. If you wish to limit the API availability to only one transport (e.g., HTTPS), deselect the **Transport Level Security** checkbox.
            
@@ -106,21 +106,21 @@ Follow the instructions below to create a REST API using the basic flow:
 
      1. Click **Resources**, which is under the **API Configurations** section.
         
-        [![Resources overview page]({{base_path}}/assets/img/learn/resources-overview-page.png)]({{base_path}}/assets/img/learn/resources-overview-page.png)
+        [![Resources overview page](../../../assets/img/learn/resources-overview-page.png)](../../../assets/img/learn/resources-overview-page.png)
 
      2. Modify the resources as follows and click **Save** to update the resources.
 
           1. Click delete, as shown below, to remove all the existing resources.
 
-              [![Delete all existing resources]({{base_path}}/assets/img/learn/delete-all-existing-resources.png)]({{base_path}}/assets/img/learn/delete-all-existing-resources.png)
+              [![Delete all existing resources](../../../assets/img/learn/delete-all-existing-resources.png)](../../../assets/img/learn/delete-all-existing-resources.png)
 
           2. Select an appropriate **HTTP Verb** from the dropdown and click **(+)** to add a new resource.
          
-             [![Add new resource]({{base_path}}/assets/img/learn/add-new-resource.png)]({{base_path}}/assets/img/learn/add-new-resource.png)
+             [![Add new resource](../../../assets/img/learn/add-new-resource.png)](../../../assets/img/learn/add-new-resource.png)
       
              The newly added resource is displayed as follows.
          
-             [![Newly added resource]({{base_path}}/assets/img/learn/newly-added-resource.png)]({{base_path}}/assets/img/learn/newly-added-resource.png)
+             [![Newly added resource](../../../assets/img/learn/newly-added-resource.png)](../../../assets/img/learn/newly-added-resource.png)
 
           3. Expand the created **GET** operation to add details for the **Summary and Description** and **Operation governance** sections.
              
@@ -129,11 +129,11 @@ Follow the instructions below to create a REST API using the basic flow:
                 - Turn the security setting **off** if you want to **make a certain operation of the API non-secured** and accessible without passing an access token.
                 - To make the **whole API non-secured** and fully accessible without an access token, turn  the security setting **off** in **all the operations** of the API.
              
-                [![Invoke API without Access Token]({{base_path}}/assets/img/learn/invoke-api-without-access-token.png)]({{base_path}}/assets/img/learn/invoke-api-without-access-token.png)
+                [![Invoke API without Access Token](../../../assets/img/learn/invoke-api-without-access-token.png)](../../../assets/img/learn/invoke-api-without-access-token.png)
              
              3. Add resource parameters if required using the **Parameters** section.
 
-                [![Adding params to resources]({{base_path}}/assets/img/learn/adding-params-to-resources.png)]({{base_path}}/assets/img/learn/adding-params-to-resources.png)
+                [![Adding params to resources](../../../assets/img/learn/adding-params-to-resources.png)](../../../assets/img/learn/adding-params-to-resources.png)
 
                 You can define the following parameter types based on the resource parameters that you add.
 
@@ -150,19 +150,19 @@ Follow the instructions below to create a REST API using the basic flow:
      
      The OpenAPI Specification (a.k.a Swagger definition) for the PizzaShack API appears.
 
-     [![REST API definition]({{base_path}}/assets/img/learn/api-definition-rest.png)]({{base_path}}/assets/img/learn/api-definition-rest.png)
+     [![REST API definition](../../../assets/img/learn/api-definition-rest.png)](../../../assets/img/learn/api-definition-rest.png)
 
-Now, you have successfully created and configured a REST API. Next, [deploy the API]({{base_path}}/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API]({{base_path}}/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API]({{base_path}}/deploy-and-publish/publish-on-dev-portal/publish-an-api).
+Now, you have successfully created and configured a REST API. Next, [deploy the API](../../../deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md), [test the API](test-a-rest-api.md), and finally [publish the API](../../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ## See Also
 
 Learn more on the concepts that you need to know when creating a REST API:
 
--   [Endpoints]({{base_path}}/design/endpoints/endpoint-types/)
--   [API Security]({{base_path}}/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
--   [Rate Limiting]({{base_path}}/design/rate-limiting/introducing-throttling-use-cases/)
--   [Life Cycle Management]({{base_path}}/design/lifecycle-management/api-lifecycle/)
--   [API Monetization]({{base_path}}/design/api-monetization/monetizing-an-api/)
--   [API Visibility]({{base_path}}/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation]({{base_path}}/design/api-documentation/add-api-documentation/)
--   [Custom Properties]({{base_path}}/design/create-api/adding-custom-properties-to-apis/)
+-   [Endpoints](../../endpoints/endpoint-types.md)
+-   [API Security](../../api-security/api-authentication/secure-apis-using-oauth2-tokens.md)
+-   [Rate Limiting](../../rate-limiting/introducing-throttling-use-cases.md)
+-   [Life Cycle Management](../../lifecycle-management/api-lifecycle.md)
+-   [API Monetization](../../api-monetization/monetizing-an-api.md)
+-   [API Visibility](../../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+-   [API Documentation](../../api-documentation/add-api-documentation.md)
+-   [Custom Properties](../adding-custom-properties-to-apis.md)

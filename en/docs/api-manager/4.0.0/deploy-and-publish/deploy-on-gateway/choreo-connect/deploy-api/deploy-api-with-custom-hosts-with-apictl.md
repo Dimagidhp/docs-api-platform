@@ -5,9 +5,9 @@ Follow the instructions below to deploy an API with a custom hostname in Choreo 
 !!! info
     **Before you begin**
 
-    This guide assumes that you already have a Choreo Connect instance that is up and running. If not, checkout the [Quick Start Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-docker-with-api-controller) on how to install and run Choreo Connect. To learn more about Choreo Connect, have a look at the [Overview of Choreo Connect]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/choreo-connect-overview).
+    This guide assumes that you already have a Choreo Connect instance that is up and running. If not, checkout the [Quick Start Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-docker-with-api-controller) on how to install and run Choreo Connect. To learn more about Choreo Connect, have a look at the [Overview of Choreo Connect](../getting-started/choreo-connect-overview.md).
 
-Follow the all steps except **Deploy API** in the (Deploy an API via apictl documentation)[{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/deploy-api/deploy-api-via-apictl/].
+Follow the all steps except **Deploy API** in the (Deploy an API via apictl documentation)[deploy-api-via-apictl.md].
 
 Before deploying the API project, edit the file `deployment_environments.yaml`.
 

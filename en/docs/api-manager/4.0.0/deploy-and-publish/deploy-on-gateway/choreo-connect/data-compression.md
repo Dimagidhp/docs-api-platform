@@ -9,7 +9,7 @@ application/xhtml+xml, image/svg+xml, text/css, text/html, text/plain, text/xml 
 !!! attention "Update Level 13"
     This feature is available only as an update. After the Update of level 1.0.0.13 (released on 07th October 2022) and further. 
 For more information regarding Choreo Connect updates, 
-see [here]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/update-choreo-connect/).
+see [here](update-choreo-connect.md).
 
 ## Configuring HTTP request data with Choreo Connect
 

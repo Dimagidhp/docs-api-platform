@@ -26,7 +26,7 @@ Follow the instructions below to enable notifications for new API versions:
     | signature              | Signature of the sender account.
                                                                                 |
     
-    For more information, see [Enable Notifications]({{base_path}}/reference/config-catalog/#enable-notifications).    
+    For more information, see [Enable Notifications](../../reference/config-catalog.md#enable-notifications).    
 
 
 2.  Sign in to the Management Console.
@@ -37,7 +37,7 @@ Follow the instructions below to enable notifications for new API versions:
 
 3. Click **Main &gt; Resource &gt; Browse**.
 
-    [![Browser option]({{base_path}}/assets/img/learn/browse-option.png)]({{base_path}}/assets/img/learn/browse-option.png)
+    [![Browser option](../../assets/img/learn/browse-option.png)](../../assets/img/learn/browse-option.png)
 
 
 4.  Enter `/_system/config/apimgt/applicationdata/tenant-conf.json`, click **Go**, and click **Edit as Text**.

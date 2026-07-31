@@ -2,7 +2,7 @@
 
 This sample demonstrates how the WSO2 Micro Integrator can guarantee message delivery to an endpoint by controlling the number of delivery retries during errors. You can also configure a delay in message delivery from the RabbitMQ broker.
 
-<img src="{{base_path}}/assets/img/integrate/rabbitmq/rabbitmq-retry-delay-messages.png">
+<img src="../../../assets/img/integrate/rabbitmq/rabbitmq-retry-delay-messages.png">
 
 1.  The Micro Integrator first consumes a message from RabbitMQ and attempts to deliver it to the endpoint. 
 2.  When there is an error in delivery, the `SET_ROLLBACK_ONLY` property in the Micro Integrator moves the message to the dead letter exchange (DLX) configured in RabbitMQ.
@@ -88,12 +88,12 @@ See the instructions on how to [build and run](#build-and-run) this example.
     rabbitmqadmin declare binding --vhost=/ --user=guest --password=guest source=enrollment-error-exchange destination=enrollment-error routing_key=enrollment-error
     ```
 
-8. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-9. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an ESB Configs module and an Composite Exporter.
-10. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) with the configurations given above.
+8. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+9. [Create an integration project](../../develop/create-integration-project.md) with an ESB Configs module and an Composite Exporter.
+10. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md) with the configurations given above.
 11. Enable the RabbitMQ sender and receiver in the Micro-Integrator from the deployment.toml. Refer the 
- [configuring RabbitMQ documentation]({{base_path}}/install-and-setup/setup/mi-setup/brokers/configure-with-rabbitmq) for more information.
-12. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+ [configuring RabbitMQ documentation](../../../install-and-setup/setup/mi-setup/brokers/configure-with-rabbitmq.md) for more information.
+12. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 13. Make the `http://localhost:8280/enrollment` endpoint unavailable temporarily. 
 14. Publish a message to the enrollment queue.
 15. You will see that the failed message will be retried 3 times for delivery by the EnrollmentService proxy and then be discarded.

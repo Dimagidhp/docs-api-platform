@@ -6,8 +6,8 @@ Select one of the methods given below to enable API Key Authentication for an AP
 
 |**Mode**         | **Method**    |
 |--------------|-----------|
-|[Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/)   | [Secure APIs with API Keys via API-M]({{base_path}}/design/api-security/api-authentication/secure-apis-using-api-keys)  |
-|[Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway/)  |[Update the OpenAPI definition of the API](#update-the-openapi-definition-of-the-api) |
+|[Choreo Connect with WSO2 API Manager as a Control Plane](../../concepts/apim-as-control-plane.md)   | [Secure APIs with API Keys via API-M](../../../../../design/api-security/api-authentication/secure-apis-using-api-keys.md)  |
+|[Choreo Connect as a Standalone Gateway](../../concepts/as-a-standalone-gateway.md)  |[Update the OpenAPI definition of the API](#update-the-openapi-definition-of-the-api) |
 
 ## Update the OpenAPI definition of the API
 
@@ -82,7 +82,7 @@ The following code snippet is an example of how the API key can be applied globa
 
 Currently, only API Keys issued by WSO2 API Manager are allowed. 
 Hence, you need a valid API Key issued for the particular API Name and the version from WSO2 API Manager.
-Follow the steps mentioned on [generating the API Key documentation]({{base_path}}/design/api-security/api-authentication/secure-apis-using-api-keys/#using-api-keys-to-secure-an-api) to generate an API Key from API Manager.
+Follow the steps mentioned on [generating the API Key documentation](../../../../../design/api-security/api-authentication/secure-apis-using-api-keys.md#using-api-keys-to-secure-an-api) to generate an API Key from API Manager.
 
 ### Step 4 - Invoke the API using the API Key
 
@@ -121,6 +121,6 @@ certificateFilePath = "/home/wso2/security/truststore/wso2carbon.pem"
 
 ## See also
 
-- [OAuth 2.0 Authentication]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/api-authentication/oauth2-access-tokens/)
-- [Configuring an External Key Manager]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/api-authentication/configuring-an-external-key-manager/)
-- [Subscription Validation]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/api-authorization/subscription-validation)
+- [OAuth 2.0 Authentication](oauth2-access-tokens.md)
+- [Configuring an External Key Manager](configuring-an-external-key-manager.md)
+- [Subscription Validation](../api-authorization/subscription-validation.md)

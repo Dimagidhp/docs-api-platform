@@ -174,14 +174,14 @@ x-wso2-endpoints:
 
 Choreo Connect supports the following endpoint features.
 
-- [Load Balanced Endpoints]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/load-balanced-endpoints/): Provides load balancing for the whole API or for a given resource.
+- [Load Balanced Endpoints](load-balanced-endpoints.md): Provides load balancing for the whole API or for a given resource.
 
-- [Failover Endpoints]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/failover-endpoints/): Handles failover scenarios for the whole API or for a given resource.
+- [Failover Endpoints](failover-endpoints.md): Handles failover scenarios for the whole API or for a given resource.
 
 !!! info
-        -   [Overriding Endpoint Information]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/overriding-endpoints-for-imported-apis/)
+        -   [Overriding Endpoint Information](overriding-endpoints-for-imported-apis.md)
         This link will be useful when you need to override the endpoint URL of an API just before starting Choreo Connect, since the original endpoint that was added while it was in a different environment does not suit the current environment.
-        -   [Defining a Backend Security Scheme]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/defining-a-backend-security-scheme/)
+        -   [Defining a Backend Security Scheme](defining-a-backend-security-scheme.md)
         This link provides information on how to setup Choreo Connect to support BasicAuth Authentication.
-        -   [Service Discovery]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/service-discovery/choreo-connect-and-service-discovery/)
+        -   [Service Discovery](../service-discovery/choreo-connect-and-service-discovery.md)
         There can be endpoints that change dynamically over time. In such situations, you can use Service Discovery with Consul service registry to make sure that Choreo Connect is aware of the latest endpoint.

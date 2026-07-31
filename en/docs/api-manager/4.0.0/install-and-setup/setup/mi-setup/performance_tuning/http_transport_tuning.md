@@ -17,12 +17,12 @@ max_http_connection_per_host_port = 32767
 preserve_http_user_agent = false
 preserve_http_headers = ["Content-Type"]
 ```
-See the [descriptions]({{base_path}}/reference/config-catalog-mi) of these parameters.
+See the [descriptions](../../../../reference/config-catalog-mi.md) of these parameters.
 
 ## Tuning blocking invocations
 
-The [Callout mediator]({{base_path}}/reference/mediators/callout-mediator) as well
-as the [Call mediator]({{base_path}}/reference/mediators/call-mediator) in blocking
+The [Callout mediator](../../../../reference/mediators/callout-mediator.md) as well
+as the [Call mediator](../../../../reference/mediators/call-mediator.md) in blocking
 mode uses the axis2 `CommonsHTTPTransportSender`
 internally to invoke services. It uses the
 `MultiThreadedHttpConnectionManager` to handle
@@ -53,4 +53,4 @@ sender.default_connections_per_host = 100
 ```
 -->
 
-See the [descriptions]({{base_path}}/reference/config-catalog-mi#http-transport) of these parameters.
+See the [descriptions](../../../../reference/config-catalog-mi.md#http-transport) of these parameters.

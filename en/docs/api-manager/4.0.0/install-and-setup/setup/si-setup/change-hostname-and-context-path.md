@@ -1,6 +1,6 @@
 # Changing the Host Name and Context Path of Web UI Applications
 
-When you start any web application of the WSO2 Streaming Integrator (i.e., [Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview), the [Template Editor]({{base_path}}/use-cases/streaming-tutorials/creating-business-rules-templates/#creating-a-business-rules-template), [Business Rules]({{base_path}}/use-cases/streaming-tutorials/creating-business-rules-templates), or Policies) the URL to access its user interface is displayed in the start up logs as follows.
+When you start any web application of the WSO2 Streaming Integrator (i.e., [Streaming Integrator Tooling](../../../develop/streaming-apps/streaming-integrator-studio-overview.md), the [Template Editor](../../../use-cases/streaming-tutorials/creating-business-rules-templates.md#creating-a-business-rules-template), [Business Rules](../../../use-cases/streaming-tutorials/creating-business-rules-templates.md), or Policies) the URL to access its user interface is displayed in the start up logs as follows.
 
 ```text
 INFO {org.wso2.carbon.siddhi.editor.core.internal.StartupComponent} - Editor Started on : http://<IP_ADDRESS>:<PORT>/<WEB_UI_APPLICATION_NAME>

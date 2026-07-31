@@ -5,11 +5,11 @@ WSO2 API Controller, **apictl** allows you to monitor the Synapse artifacts (dep
 !!! info
     **Before you begin** 
 
-    -  Ensure that WSO2 Micro Integrator is started. See the instructions on [installing the Micro Integrator]({{base_path}}/install-and-setup/install/installing-the-product/installing-mi).
+    -  Ensure that WSO2 Micro Integrator is started. See the instructions on [installing the Micro Integrator](../../../install/installing-the-product/installing-mi.md).
 
-    -  Make sure the apictl is downloaded and initialized, if not follow the steps in [Download and Initialize the apictl]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl).
+    -  Make sure the apictl is downloaded and initialized, if not follow the steps in [Download and Initialize the apictl](../getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl).
 
-    -  Ensure that the Micro Integrator management endpoint is added to the environment configurations of CTL, before you start working with the following CTL commands. For more information, see [Add an Environment]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#add-an-environment).
+    -  Ensure that the Micro Integrator management endpoint is added to the environment configurations of CTL, before you start working with the following CTL commands. For more information, see [Add an Environment](../getting-started-with-wso2-api-controller.md#add-an-environment).
 
 ## Login to a Micro Integrator
 
@@ -98,7 +98,7 @@ After adding an environment, you can login to the Micro Integrator instance of t
 
 ## Manage Users
 
-You can view details of users stored in the [external user store]({{base_path}}/install-and-setup/setup/mi-setup/user_stores/managing_users). If you are logged in to the apictl with administrator credentials, you can also add new users, and remove users from the user store.
+You can view details of users stored in the [external user store](../../mi-setup/user_stores/managing_users.md). If you are logged in to the apictl with administrator credentials, you can also add new users, and remove users from the user store.
 
 ### Get information about users
 
@@ -1406,7 +1406,7 @@ You can use the command below to update the HashiCorp AppRole Pull secret ID tha
     - The HashiCorp secret ID is only applicable when **AppRole Pull** authentication is used between the Micro Integrator and HashiCorp.
     - This command only updates the SecretId for the current session of the Micro Integrator. To persist the Secret Id, you need to update the `deployment.toml` file and restart the Micro Integrator.
     
-    See [Using HashiCorp Secrets]({{base_path}}/install-and-setup/setup/mi-setup/security/using-hashicorp-secrets) for details.
+    See [Using HashiCorp Secrets](../../mi-setup/security/using-hashicorp-secrets.md) for details.
 
 -   **Command**
     ``` bash

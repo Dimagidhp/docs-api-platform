@@ -3,7 +3,7 @@
 Siddhi applications are files that define the Siddhi logic to process
 the events sent to the Streaming Integrator. They are written in the [Siddhi Query
 Language](https://siddhi-io.github.io/siddhi/documentation/siddhi-4.x/query-guide-4.x/)
-using the [Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview).
+using the [Streaming Integrator Tooling](streaming-integrator-studio-overview.md).
 
 A Siddhi file contains the following configurations:
 
@@ -59,11 +59,11 @@ To create a Siddhi application via the source view of the Streaming Integrator T
 
    The Streaming Integration Tooling opens as shown below.
 
-  ![Welcome Page]({{base_path}}/assets/img/streaming/creating-siddhi-applications/welcome-page.png)
+  ![Welcome Page](../../assets/img/streaming/creating-siddhi-applications/welcome-page.png)
 
 3. Click **New** to start defining a new Siddhi application. A new file opens as shown below.
 
-    ![New Siddhi File]({{base_path}}/assets/img/streaming/creating-siddhi-applications/new-siddhi-file.png)
+    ![New Siddhi File](../../assets/img/streaming/creating-siddhi-applications/new-siddhi-file.png)
 
 4.  Add the following sample Siddhi application to the file.
 
@@ -152,25 +152,25 @@ To create a Siddhi application via the source view of the Streaming Integrator T
                        <ol>
                           <li>
                              <p>Click the <strong>Operator Finder</strong> icon to open the Operator Finder.</p>
-                             <p><img src="{{base_path}}/assets/img/streaming/creating-siddhi-applications/operator-finder.png" /></p>
+                             <p><img src="../../assets/img/streaming/creating-siddhi-applications/operator-finder.png" /></p>
                           </li>
                           <li>
                              <p>Move the cursor to the location in the Siddhi application where you want to add the source.<br />
-                                <img src="{{base_path}}/assets/img/streaming/creating-siddhi-applications/move-cursor.png" />
+                                <img src="../../assets/img/streaming/creating-siddhi-applications/move-cursor.png" />
                              </p>
                           </li>
                           <li>
                              <p>Search for the required transport type. Once it appears in the search results, click the <strong>Add to Source</strong> icon on it.<br />
-                                <img src="{{base_path}}/assets/img/streaming/creating-siddhi-applications/search-and-add-extension.png"/>
+                                <img src="../../assets/img/streaming/creating-siddhi-applications/search-and-add-extension.png"/>
                              </p>
                           </li>
                           <li>
                              <p>Similarly, search for the mapping type you want to include in the source configuration, and add it.</p>
-                             <p><img src="{{base_path}}/assets/img/streaming/creating-siddhi-applications/search-and-add-map-extension.png"></p>
+                             <p><img src="../../assets/img/streaming/creating-siddhi-applications/search-and-add-map-extension.png"></p>
                           </li>
                           <li>
                              <p>The source annotation is now displayed as follows. You can add the other properties as required, and save your changes.<br />
-                                <img src="{{base_path}}/assets/img/streaming/creating-siddhi-applications/selected-extensions.png">
+                                <img src="../../assets/img/streaming/creating-siddhi-applications/selected-extensions.png">
                              </p>
                           </li>
                        </ol>
@@ -232,11 +232,11 @@ To create a Siddhi application via the source view of the Streaming Integrator T
 7.  To see a graphical view of the event flow you defined in your Siddhi
     application, click **Design View**.
 
-    ![Switch to Design View]({{base_path}}/assets/img/streaming/creating-siddhi-applications/design-view.png)
+    ![Switch to Design View](../../assets/img/streaming/creating-siddhi-applications/design-view.png)
 
     The event flow is displayed as follows.
 
-    ![Siddhi Application in Design View]({{base_path}}/assets/img/streaming/creating-siddhi-applications/siddhi-application-design-view.png)
+    ![Siddhi Application in Design View](../../assets/img/streaming/creating-siddhi-applications/siddhi-application-design-view.png)
 
 ### Creating a Siddhi application in the design view
 
@@ -248,27 +248,27 @@ To create a Siddhi application via the design view of the Streaming Integrator T
     - For Linux: `./tooling.sh`
 
     Streaming Integrator Tooling opens as shown below.
-    ![Welcome Page]({{base_path}}/assets/img/streaming/creating-siddhi-applications/welcome-page.png)
+    ![Welcome Page](../../assets/img/streaming/creating-siddhi-applications/welcome-page.png)
 
 2.  Click **New** to start defining a new Siddhi application. A new file
     opens as shown below.
 
-    ![New Siddhi File]({{base_path}}/assets/img/streaming/creating-siddhi-applications/new-siddhi-file.png)
+    ![New Siddhi File](../../assets/img/streaming/creating-siddhi-applications/new-siddhi-file.png)
 
 3.  To open the design view, click **Design View**.
 
 4.  To define the input stream into which the events to be processed via
     the Siddhi application should be received, drag and drop the stream
     icon (shown below) into the grid.
-    ![Stream Icon]({{base_path}}/assets/img/streaming/creating-siddhi-applications/stream-icon.png)
+    ![Stream Icon](../../assets/img/streaming/creating-siddhi-applications/stream-icon.png)
 
     Once the stream component is added to the grid, move the cursor over
     it, and then click on the settings icon as shown below.
 
-    ![Stream Settings]({{base_path}}/assets/img/streaming/creating-siddhi-applications/stream-settings.png)
+    ![Stream Settings](../../assets/img/streaming/creating-siddhi-applications/stream-settings.png)
 
     As as result, the Stream Configuration form opens as follows.
-    ![Stream Configuration form]({{base_path}}/assets/img/streaming/creating-siddhi-applications/stream-configuration-form.png)
+    ![Stream Configuration form](../../assets/img/streaming/creating-siddhi-applications/stream-configuration-form.png)
 
     Fill this form as follows to define a stream named `SweetProductionStream` with two attributes named
     `name` and `amount`:
@@ -285,7 +285,7 @@ To create a Siddhi application via the design view of the Streaming Integrator T
 
     3.  Click **Submit** to save the new stream definition. As a result,
         the stream is displayed on the grid with the `SweetProductionStream` label as shown below.
-        ![New stream added to the grid]({{base_path}}/assets/img/streaming/creating-siddhi-applications/stream-component.png)
+        ![New stream added to the grid](../../assets/img/streaming/creating-siddhi-applications/stream-component.png)
 
 5.  To define the output stream to which the processed events need to be directed, drag and drop the
     stream icon again. Place it after the `SweetProductionStream` stream. This stream
@@ -301,15 +301,15 @@ To create a Siddhi application via the design view of the Streaming Integrator T
     the **SweetProductionStream** input stream component. Therefore,
     place this source component to the left of the input stream
     component in the grid.<br/>
-    ![Source Icon]({{base_path}}/assets/img/streaming/creating-siddhi-applications/source-icon.png)
+    ![Source Icon](../../assets/img/streaming/creating-siddhi-applications/source-icon.png)
     Once you add the source component, draw a line from it to the
     **SweetProductionStream** input stream component by dragging the
     cursor as demonstrated below.
-    ![Connect source]({{base_path}}/assets/img/streaming/creating-siddhi-applications/connect-source-component.gif)
+    ![Connect source](../../assets/img/streaming/creating-siddhi-applications/connect-source-component.gif)
     Click the settings icon on the source component you added to open
     the **Source Configuration** form. Then enter information as
     follows.
-    ![Source Configuration form]({{base_path}}/assets/img/streaming/creating-siddhi-applications/source-configuration.png)
+    ![Source Configuration form](../../assets/img/streaming/creating-siddhi-applications/source-configuration.png)
     1.  In the **Source Type** field, select **tcp** .
 
     2.  For this example, assume that events are received in the `binary` format. To indicate that
@@ -322,15 +322,15 @@ To create a Siddhi application via the design view of the Streaming Integrator T
 
 7.  To add a query that defines the execution logic, drag and drop the
     projection query icon (shown below) to the grid.
-    ![Projection Query Icon]({{base_path}}/assets/img/streaming/creating-siddhi-applications/projection-query-icon.png)
+    ![Projection Query Icon](../../assets/img/streaming/creating-siddhi-applications/projection-query-icon.png)
     The query uses the events in the `SweetProductionStream` input stream as inputs and directs the
     processed events (which are its output) to the `ProductionAlertStream` output stream. Therefore,
     create two connections as demonstrated below.
-    ![Connecting the projection query]({{base_path}}/assets/img/streaming/creating-siddhi-applications/connect-projection-query.gif)
+    ![Connecting the projection query](../../assets/img/streaming/creating-siddhi-applications/connect-projection-query.gif)
 8.  To define the execution logic, move the cursor over the query in the
     grid, and click on the settings icon that appears. This opens the
     **Query Configuration** form. Enter information in it as follows:
-    ![Configuring the projection query]({{base_path}}/assets/img/streaming/creating-siddhi-applications/projection-query-configuration.png)
+    ![Configuring the projection query](../../assets/img/streaming/creating-siddhi-applications/projection-query-configuration.png)
     1.  Enter a name for the query in the **Name** field. In this example, let's enter `query` as the name.
     2.  In order to specify how each user defined attribute in the input
         stream is converted to generate the output events, select **User
@@ -351,13 +351,13 @@ To create a Siddhi application via the design view of the Streaming Integrator T
 
 9.  To add a sink to publish the output events that are directed to the `ProductionAlertStream` output stream, drag and
     drop the sink icon (shown below) into the grid.
-    ![Sink icon]({{base_path}}/assets/img/streaming/creating-siddhi-applications/sink-icon.png) <br/>
+    ![Sink icon](../../assets/img/streaming/creating-siddhi-applications/sink-icon.png) <br/>
     Draw an arrow from the `ProductionAlertStream` output stream to the sink component to connect them.
 
     Click the settings icon on the sink component you added to open the
     **Sink Configuration** form. Then enter information as follows.
 
-    ![Configuring the sink]({{base_path}}/assets/img/streaming/creating-siddhi-applications/sink-configuration.png)
+    ![Configuring the sink](../../assets/img/streaming/creating-siddhi-applications/sink-configuration.png)
 
     1.  In this example, let's assume that output needs to be generated
         as logs in the console. To indicate this, select `log` in the **Sink Type** field.
@@ -370,13 +370,13 @@ To create a Siddhi application via the design view of the Streaming Integrator T
     click **Edit** and then click **Auto-Align**. As a result, all the
     components are horizontally aligned as shown below.
 
-    ![Aligned Siddhi components]({{base_path}}/assets/img/streaming/creating-siddhi-applications/siddhi-application-design-view.png)
+    ![Aligned Siddhi components](../../assets/img/streaming/creating-siddhi-applications/siddhi-application-design-view.png)
 
 11. Click **Source View**. The Siddhi application is displayed as follows.
 
-    ![Source view]({{base_path}}/assets/img/streaming/creating-siddhi-applications/siddhi-application-source-view.png)
+    ![Source view](../../assets/img/streaming/creating-siddhi-applications/siddhi-application-source-view.png)
 
 12. Click **File** and then click **Save as**. The **Save to Workspace** dialog box appears. In the **File Name**
     field, enter `SweetProductionAnalysis` and click **Save**.
 
-    ![Saving the Siddhi application]({{base_path}}/assets/img/streaming/creating-siddhi-applications/save-siddhi-application.png)
+    ![Saving the Siddhi application](../../assets/img/streaming/creating-siddhi-applications/save-siddhi-application.png)

@@ -13,7 +13,7 @@ A refresh token has to be obtained before using it with a grant type such as the
 
 The diagram below illustrates the refresh token grant flow.
 
-![]({{base_path}}/assets/img/learn/oauth-refresh-token-diagram.png)
+![](../../../../assets/img/learn/oauth-refresh-token-diagram.png)
 
 - [Refresh Token Grant](#refresh-token-grant)
       - [Flow](#flow)

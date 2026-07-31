@@ -6,16 +6,16 @@ Follow the instructions given below to create a new Datasource connection in WSO
 
 Follow the steps given below to create the datasource file:
 
-1.  Select the already created [**Datasource Config module**]({{base_path}}/integrate/develop/create-integration-project/#datasource-project) in the project
+1.  Select the already created [**Datasource Config module**](../../create-integration-project.md#datasource-project) in the project
     navigator, right-click, and go to **New -> Datasource**.
 
-    <img src="{{base_path}}/assets/img/integrate/data-services/create-datasource.png">
+    <img src="../../../../assets/img/integrate/data-services/create-datasource.png">
 
     The **New Datasource** window will open as shown below. 
 
-    <img src="{{base_path}}/assets/img/integrate/data-services/create-datasource-dialog.png"> 
+    <img src="../../../../assets/img/integrate/data-services/create-datasource-dialog.png"> 
 
-2.  Select your [**datasource config module**]({{base_path}}/integrate/develop/create-integration-project/#datasource-project) as the **Container**, add the file name for your datasource, and click **Finish**.
+2.  Select your [**datasource config module**](../../create-integration-project.md#datasource-project) as the **Container**, add the file name for your datasource, and click **Finish**.
 
 A datasource file will now be created in your datasource config module. 
 Shown below is the sample configuration that is created. You can now update the values in this configuration.
@@ -40,4 +40,4 @@ Shown below is the sample configuration that is created. You can now update the 
 
 ## Examples
 
--	<a href="{{base_path}}/integrate/examples/data_integration/carbon-data-service">Exposing a Carbon Datasource</a>
+-	<a href="../../../examples/data_integration/carbon-data-service.md">Exposing a Carbon Datasource</a>

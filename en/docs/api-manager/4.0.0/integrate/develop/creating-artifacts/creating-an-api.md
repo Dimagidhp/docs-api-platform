@@ -1,6 +1,6 @@
 # Creating a REST API
 
-Follow the instructions given below to create a new [REST API]({{base_path}}/reference/synapse-properties/rest-api-properties) artifact in WSO2 Integration Studio.
+Follow the instructions given below to create a new [REST API](../../../reference/synapse-properties/rest-api-properties.md) artifact in WSO2 Integration Studio.
 
 ## Instructions
 
@@ -8,11 +8,11 @@ Follow the instructions given below to create a new [REST API]({{base_path}}/ref
 
 1.  Right-click the **Config** project in the project explorer and go to **New → REST API**.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/new-artifact.png" width="700">
+    <img src="../../../assets/img/integrate/create_artifacts/new-artifact.png" width="700">
 
 2.  In the dialog box that opens, select one of the given options for creating the API artifact:
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/create-new-api-option.png" width="500">
+    <img src="../../../assets/img/integrate/create_artifacts/new_api/create-new-api-option.png" width="500">
 
     <table>
         <tr>
@@ -45,7 +45,7 @@ Follow the instructions given below to create a new [REST API]({{base_path}}/ref
 
     -   If you selected **Create a New API** in the previous step, enter the basic details that are required for creating the synapse configuration (XML) of the API:
 
-        <img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/new-api-artifact-dialog.png" width="500">
+        <img src="../../../assets/img/integrate/create_artifacts/new_api/new-api-artifact-dialog.png" width="500">
 
         <table>
             <tr>
@@ -87,7 +87,7 @@ Follow the instructions given below to create a new [REST API]({{base_path}}/ref
 
     -   If you selected **Generate API using Swagger Definition** in the previous step, enter the details of your custom Swagger file:
 
-        <img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/new-api-swagger-dialog.png" width="500">
+        <img src="../../../assets/img/integrate/create_artifacts/new_api/new-api-swagger-dialog.png" width="500">
 
         <table>
             <tr>
@@ -120,7 +120,7 @@ Follow the instructions given below to create a new [REST API]({{base_path}}/ref
 
     -   If you selected **Import API Artifact** in the previous step, enter the following information:
 
-        <img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/import-api-dialog.png" width="500">
+        <img src="../../../assets/img/integrate/create_artifacts/new_api/import-api-dialog.png" width="500">
 
         <table>
             <tr>
@@ -146,17 +146,17 @@ Follow the instructions given below to create a new [REST API]({{base_path}}/ref
     -   The REST API is created inside the `src/main/synapse-config/api` folder of your **Config** project.
     -   If you provided a custom Swagger definition file (YAML), it is now stored in the registry project.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/project-explorer.png" width="400">
+    <img src="../../../assets/img/integrate/create_artifacts/new_api/project-explorer.png" width="400">
 
 ### Designing the integration
 
 When you open the REST API from the **Config** project in the project explorer, you will see the default **Design** view as shown below.
 
-<img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/api-artifact-design-view.jpg" width="800">
+<img src="../../../assets/img/integrate/create_artifacts/new_api/api-artifact-design-view.jpg" width="800">
 
 Drag and drop the required integration artifacts from the **Palette** to the API resource and design the integration flow.
 
-<img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/graphical-editor.jpg" width="800">
+<img src="../../../assets/img/integrate/create_artifacts/new_api/graphical-editor.jpg" width="800">
 
 You can also use the [**Source** view](#using-the-source-view) or the [**Swagger** editor](#using-the-swagger-editor) to update the API configuration.
 
@@ -164,7 +164,7 @@ You can also use the [**Source** view](#using-the-source-view) or the [**Swagger
 
 When you create the API, an API resource is created by default. If you want to add a new resource, click **API Resource** in the **Pallet** and simply drag and drop the resource to the REST API.
 
-<img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/add-new-api-resource.png" width="700">
+<img src="../../../assets/img/integrate/create_artifacts/new_api/add-new-api-resource.png" width="700">
 
 !!! Info
     **About the default API Resource**
@@ -194,7 +194,7 @@ When you create the API, an API resource is created by default. If you want to a
 
 When you create the API artifact from WSO2 Integration Studio, a **resources** folder with metadata files is created as shown below.
 
-<img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/new-api-meta-data-folder.png" width="350">
+<img src="../../../assets/img/integrate/create_artifacts/new_api/new-api-meta-data-folder.png" width="350">
 
 The service's metadata is used by the API management runtime to generate the API proxy for the integration service (which is this API).
 
@@ -238,7 +238,7 @@ The service's metadata is used by the API management runtime to generate the API
 </table>
 
 !!! Tip
-    See the [Service Catalog API documentation]({{base_path}}/reference/product-apis/service-catalog-apis/service-catalog-v1/service-catalog-v1/) for more information on the metadata in the YAML file.
+    See the [Service Catalog API documentation](../../../reference/product-apis/service-catalog-apis/service-catalog-v1/service-catalog-v1.md) for more information on the metadata in the YAML file.
 
 ### Updating properties
 
@@ -246,23 +246,23 @@ To update API-level properties from the **Design** view:
 
 1.  Double-click the **API** icon to open the <b>Properties</b> tab for the API.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/api-properties.png" width="700">
+    <img src="../../../assets/img/integrate/create_artifacts/new_api/api-properties.png" width="700">
 
-2.  See the complete list of [optional REST API properties]({{base_path}}/reference/synapse-properties/rest-api-properties/#rest-api-properties-optional) you can configure.
+2.  See the complete list of [optional REST API properties](../../../reference/synapse-properties/rest-api-properties.md#rest-api-properties-optional) you can configure.
 
 To update API resource properties from the **Design** view:
 
 1.  Double-click the **Resource** icon to enable the <b>Properties</b> tab for the resource.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/api-resource-properties.png" width="700">
+    <img src="../../../assets/img/integrate/create_artifacts/new_api/api-resource-properties.png" width="700">
 
-2.  See the complete list of [API Resource properties]({{base_path}}/reference/synapse-properties/rest-api-properties/#rest-api-resource-properties) you can configure.
+2.  See the complete list of [API Resource properties](../../../reference/synapse-properties/rest-api-properties.md#rest-api-resource-properties) you can configure.
 
 ### Using the Source View
 
 Click the **Source** tab to view the XML-based synapse configuration (source code) of the API. You can update the API using this view.
 
-<img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/api-artifact-source-view.png" width="800">
+<img src="../../../assets/img/integrate/create_artifacts/new_api/api-artifact-source-view.png" width="800">
 
 ### Using the Swagger Editor
 
@@ -271,16 +271,16 @@ Click the **Swagger Editor** tab to view the Swagger definition of your API. You
 !!! Note
     If you have added a custom Swagger definition to the API, note that this view displays the API's default Swagger definition and not the custom Swagger definition that you added.
 
-<img src="{{base_path}}/assets/img/integrate/create_artifacts/new_api/api-artifact-swagger-view.jpg" width="800">
+<img src="../../../assets/img/integrate/create_artifacts/new_api/api-artifact-swagger-view.jpg" width="800">
 
 ## Examples
 
--   [Using a Simple Rest API]({{base_path}}/integrate/examples/rest_api_examples/introduction-rest-api)
--   [Working with Query Parameters]({{base_path}}/integrate/examples/rest_api_examples/setting-query-params-outgoing-messages)
--   [Exposing a SOAP Endpoint as a RESTful API]({{base_path}}/integrate/examples/rest_api_examples/enabling-rest-to-soap)
--   [Exposing Non-HTTP Services as RESTful APIs]({{base_path}}/integrate/examples/rest_api_examples/configuring-non-http-endpoints)
--   [Handling Non Matching Resources]({{base_path}}/integrate/examples/rest_api_examples/handling-non-matching-resources)
--   [Handling HTTP Status Codes]({{base_path}}/integrate/examples/rest_api_examples/setting-https-status-codes)
--   [Manipulating Content Types]({{base_path}}/integrate/examples/rest_api_examples/transforming-content-type)
--   [Securing a REST API]({{base_path}}/integrate/examples/rest_api_examples/securing-rest-apis)
--   [Special Cases]({{base_path}}/integrate/examples/rest_api_examples/special-cases)
+-   [Using a Simple Rest API](../../examples/rest_api_examples/introduction-rest-api.md)
+-   [Working with Query Parameters](../../examples/rest_api_examples/setting-query-params-outgoing-messages.md)
+-   [Exposing a SOAP Endpoint as a RESTful API](../../examples/rest_api_examples/enabling-rest-to-soap.md)
+-   [Exposing Non-HTTP Services as RESTful APIs](../../examples/rest_api_examples/configuring-non-http-endpoints.md)
+-   [Handling Non Matching Resources](../../examples/rest_api_examples/handling-non-matching-resources.md)
+-   [Handling HTTP Status Codes](../../examples/rest_api_examples/setting-https-status-codes.md)
+-   [Manipulating Content Types](../../examples/rest_api_examples/transforming-content-type.md)
+-   [Securing a REST API](../../examples/rest_api_examples/securing-rest-apis.md)
+-   [Special Cases](../../examples/rest_api_examples/special-cases.md)

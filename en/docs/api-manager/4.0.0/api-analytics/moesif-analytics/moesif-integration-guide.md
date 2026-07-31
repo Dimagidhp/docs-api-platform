@@ -4,9 +4,9 @@ This guide outlines the steps required to integrate **Moesif Analytics** with **
 
 !!! Note
     Moesif Analytics integration is supported starting from WSO2 API Manager 4.0.0 Update Level 377 and onwards. Ensure that you are using a compatible update level of WSO2 API Manager 4.0.0.
-    Refer to this [guide]({{base_path}}/administer/updating-wso2-api-manager/) to update your WSO2 API Manager to the required or latest update level.
+    Refer to this [guide](../../administer/updating-wso2-api-manager.md) to update your WSO2 API Manager to the required or latest update level.
 
-<a href="{{base_path}}/assets/img/analytics/moesif/moesif-data-flow.png"><img src="{{base_path}}/assets/img/analytics/moesif/moesif-data-flow.png" alt="Moesif integration diagram"></a>
+<a href="../../assets/img/analytics/moesif/moesif-data-flow.png"><img src="../../assets/img/analytics/moesif/moesif-data-flow.png" alt="Moesif integration diagram"></a>
 
 ### Analytics Data Flow
 
@@ -180,4 +180,4 @@ moesifKey = "MOESIF_APPLICATION_ID"
 
 Users can create a variety of dashboards in Moesif using the analytics data published from the WSO2 API Gateway. The sample dashboard below illustrates API usage segmented by different users.
 
-<a href="{{base_path}}/assets/img/analytics/moesif/sample-dashboard-img.png"><img src="{{base_path}}/assets/img/analytics/moesif/sample-dashboard-img.png" alt="Sample Moesif dashboard diagram"></a>
+<a href="../../assets/img/analytics/moesif/sample-dashboard-img.png"><img src="../../assets/img/analytics/moesif/sample-dashboard-img.png" alt="Sample Moesif dashboard diagram"></a>

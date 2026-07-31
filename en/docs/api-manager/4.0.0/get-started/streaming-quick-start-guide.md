@@ -6,7 +6,7 @@ Let's get started with WSO2 Streaming Integrator(SI) by running a simple streami
 
 1. Install [Oracle Java SE Development Kit (JDK)](http://java.sun.com/javase/downloads/index.jsp) version 11 and set the `JAVA_HOME` environment variable.
 
-     For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install]({{base_path}}/install-and-setup/install/installing-the-product/installing-api-m-runtime/).
+     For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install](../install-and-setup/install/installing-the-product/installing-api-m-runtime.md).
 
 2. Download the [Streaming Integrator and Streaming Integrator Tooling distributions](https://wso2.com/integration/streaming-integrator/) and extract them to a location of your choice. 
    
@@ -18,7 +18,7 @@ Let's get started with WSO2 Streaming Integrator(SI) by running a simple streami
 
 In this sample scenario, you aggregate the data relating to the raw material purchases of a sweet production factory and publish the data to a WebSocket server.
                                 
-[![Scenario]({{base_path}}/assets/img/streaming/qsg/streaming-integration-qsg-diagram.png){: style="width:70%"}]({{base_path}}/assets/img/streaming/qsg/streaming-integration-qsg-diagram.png)
+[![Scenario](../assets/img/streaming/qsg/streaming-integration-qsg-diagram.png){: style="width:70%"}](../assets/img/streaming/qsg/streaming-integration-qsg-diagram.png)
 
 ### Step 1 - Start the Streaming Integrator
 
@@ -40,7 +40,7 @@ To start the sample, navigate to the `<SIT_HOME>/bin` directory from the CLI, an
 
 Let's create a simple Siddhi application that reads data from a XML file, does a simple transformation to the data, and then writes the results to the WebSocket receiver running.
 
-1. Download `sampledata.xml` file from [here]({{base_path}}/assets/attachments/quick-start-guide/sampledata.xml) and save it in a location of your choice.
+1. Download `sampledata.xml` file from [here](../assets/attachments/quick-start-guide/sampledata.xml) and save it in a location of your choice.
 
     !!! info
         In this example, the file is located in the `/Users/foo` directory.
@@ -53,7 +53,7 @@ Let's create a simple Siddhi application that reads data from a XML file, does a
 3. Click on **New**, and copy and paste the content given below.
     
     !!! tip
-        Here, a sample Siddhi application is provided to minimize the time spent following this guide. However, WSO2 recommends that you use the Streaming Integration Tooling that offers features such as syntax checking, event simulation for testing purposes, reformatting code, the option to design applications in a graphical interface or by writing code, and many more. For more information on designing Siddhi applications, see [Streaming Integrator Tooling Overview]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview).
+        Here, a sample Siddhi application is provided to minimize the time spent following this guide. However, WSO2 recommends that you use the Streaming Integration Tooling that offers features such as syntax checking, event simulation for testing purposes, reformatting code, the option to design applications in a graphical interface or by writing code, and many more. For more information on designing Siddhi applications, see [Streaming Integrator Tooling Overview](../develop/streaming-apps/streaming-integrator-studio-overview.md).
 
     ```
     @App:name('ManageProductionStats')
@@ -173,7 +173,7 @@ Follow the instructions below to generate an AsyncAPI Definition via the Streami
 
      The AsyncAPI Generation form appears.
 
-     [![Async API View button]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
+     [![Async API View button](../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)](../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
 
 2. Enter the WebSocket Streaming API related details.
     
@@ -189,21 +189,21 @@ Follow the instructions below to generate an AsyncAPI Definition via the Streami
      | **Select Source or Sink type to Generate Async API** | Select **websocket-server**           |
      | **Sources**                                          | Select **ProductionAlertStream**      |
 
-     [![Design View of Async API]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-form.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-form.png)
+     [![Design View of Async API](../assets/img/streaming/working-with-async-api/async-api-form.png){: style="width:80%"}](../assets/img/streaming/working-with-async-api/async-api-form.png)
 
 3. Click **Generate Async API** to generate the AsyncAPI definition.
 
-     [![Generate AsyncAPI button]({{base_path}}/assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)]({{base_path}}/assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)
+     [![Generate AsyncAPI button](../assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)](../assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)
 
      After the AsyncAPI is generated as described above, the Async API specifications will be visible in the **Async API View**.
 
-     [![Async API view]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-spec-view.png)]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-spec-view.png)
+     [![Async API view](../assets/img/streaming/working-with-async-api/async-api-spec-view.png)](../assets/img/streaming/working-with-async-api/async-api-spec-view.png)
 
 4. Add the generated AsyncAPI definition to the Streaming backend.
 
      Click **Add Async API** to add the generated AsyncAPI definition to the Siddhi application.
 
-     <a href="{{base_path}}/assets/img/streaming/working-with-async-api/add-async-api-button.png"><img src="{{base_path}}/assets/img/streaming/working-with-async-api/add-async-api-button.png" width="20%" alt="Add Async API"></a>
+     <a href="../assets/img/streaming/working-with-async-api/add-async-api-button.png"><img src="../assets/img/streaming/working-with-async-api/add-async-api-button.png" width="20%" alt="Add Async API"></a>
 
 5. Click **Code View** to view the Siddhi application with the AsyncAPI definition that was generated and save it so that it can be deployed on SI server.
 
@@ -215,7 +215,7 @@ Follow the instructions below to publish the AsyncAPI definition to the service 
 
 1. Click **Deploy**, and then click **Deploy to Server** in Streaming Integrator Tooling. 
 
-     [![Deploy To Server]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png)
+     [![Deploy To Server](../assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png){: style="width:80%"}](../assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png)
 
      This opens the **Deploy Siddhi Apps to Server** dialog box. 
 
@@ -223,7 +223,7 @@ Follow the instructions below to publish the AsyncAPI definition to the service 
 
 3. Click **Deploy**.
 
-     [![Deploy Button]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy.png)
+     [![Deploy Button](../assets/img/streaming/working-with-async-api/async-api-deploy.png){: style="width:80%"}](../assets/img/streaming/working-with-async-api/async-api-deploy.png)
 
      After the Siddhi application is successfully deployed, the following log messages appear in the Streaming Integrator and API Manager server logs to indicate that the AsyncAPI definition is successfully published in the Service Catalog.
 
@@ -246,7 +246,7 @@ Access the streaming service via the **API Publisher** as follows:
 
 2. You can also click the **hamburger** icon on the upper-left and click **Services** to see the available services.
 
-     <a href="{{base_path}}/assets/img/streaming/qsg/streaming-service-catalog.png"><img src="{{base_path}}/assets/img/streaming/qsg/streaming-service-catalog.png" width="40%"></a>
+     <a href="../assets/img/streaming/qsg/streaming-service-catalog.png"><img src="../assets/img/streaming/qsg/streaming-service-catalog.png" width="40%"></a>
 
 3. See that the `SweetProductionApplication` is listed as a service.
 
@@ -258,7 +258,7 @@ Access the streaming service via the **API Publisher** as follows:
 
      This opens the **Create API** dialog box with the API details that are generated based on the service.
 
-     <a href="{{base_path}}/assets/img/streaming/qsg/create-api-from-streaming-service.png"><img src="{{base_path}}/assets/img/streaming/qsg/create-api-from-streaming-service.png" width="80%"></a>
+     <a href="../assets/img/streaming/qsg/create-api-from-streaming-service.png"><img src="../assets/img/streaming/qsg/create-api-from-streaming-service.png" width="80%"></a>
 
 3. Update the API name, context, and version if required, and click **Create API**. 
 
@@ -288,7 +288,7 @@ Access the streaming service via the **API Publisher** as follows:
 
      This creates a subscription to the API using the `DefaultApplication`.
 
-     <a href="{{base_path}}/assets/img/streaming/qsg/streaming-api-subscribe.png"><img src="{{base_path}}/assets/img/streaming/qsg/streaming-api-subscribe.png" size="70%"></a>
+     <a href="../assets/img/streaming/qsg/streaming-api-subscribe.png"><img src="../assets/img/streaming/qsg/streaming-api-subscribe.png" size="70%"></a>
 
 5. Click **PROD KEYS** to generate keys for the application and click **GENERATE  KEYS**.
 
@@ -316,9 +316,9 @@ Access the streaming service via the **API Publisher** as follows:
 !!! tip "What's Next?"
     Once you try out this quick start guide, you can proceed to one of the following sections.
 
-    - Learn more about the Streaming Integrator by trying out [Streaming Integrator Tutorials]({{base_path}}/use-cases/streaming-tutorials/tutorials-overview).
+    - Learn more about the Streaming Integrator by trying out [Streaming Integrator Tutorials](../use-cases/streaming-tutorials/tutorials-overview.md).
 
-    - Start using the Streaming Integrator. For more information and instructions about Streaming Integration functionality, see [Streaming Integrator Use Cases]({{base_path}}/use-cases/streaming-usecase/use-cases).
+    - Start using the Streaming Integrator. For more information and instructions about Streaming Integration functionality, see [Streaming Integrator Use Cases](../use-cases/streaming-usecase/use-cases.md).
 
-    - Manage and expose streaming backends via [Streaming APIs]({{base_path}}/use-cases/streaming-usecase/create-streaming-api/streaming-api-overview).
+    - Manage and expose streaming backends via [Streaming APIs](../use-cases/streaming-usecase/create-streaming-api/streaming-api-overview.md).
 

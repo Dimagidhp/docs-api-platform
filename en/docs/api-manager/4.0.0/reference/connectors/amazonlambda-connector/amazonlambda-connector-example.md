@@ -15,7 +15,7 @@ To create a function, you need a deployment package and an execution role. The d
 
 The following diagram illustrates all the required functionality of the Amazon Lambda Service that you are going to build.
 
-<img src="{{base_path}}/assets/img/integrate/connectors/amazonlambdaconnectorsample.png" title="Amazon Lambda Connector" width="800" alt="Amazon Lambda Connector"/>
+<img src="../../../assets/img/integrate/connectors/amazonlambdaconnectorsample.png" title="Amazon Lambda Connector" width="800" alt="Amazon Lambda Connector"/>
 
 This example demonstrates, how to create an Amazon Lambda function easily using the WSO2 Amazon Lambda Connector. Before creating an Amazon Lambda function inside the AWS Lambda service, you need to implement the required deployment package (ZIP Archive) locally.
 
@@ -140,14 +140,14 @@ Please use command line terminal or shell to run following commands. Commands ar
 
 ## Create Execution Role
 
-You need to create an Execution Role by referring to the [Setting up the Amazon Lambda Environment]({{base_path}}/reference/connectors/amazonlambda-connector/setting-up-amazonlambda/) documentation.  
+You need to create an Execution Role by referring to the [Setting up the Amazon Lambda Environment](setting-up-amazonlambda.md) documentation.  
 
 ## Get the project
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/amazon-lamda-connector.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/amazon-lamda-connector.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 !!! tip
@@ -226,18 +226,18 @@ Follow these steps to deploy the exported CApp in the integration runtime.
 6. Log in to the AWS Management Console.
 
 7. Navigate to the AWS Lambda and Functions tab.
-   <img src="{{base_path}}/assets/img/integrate/connectors/awslambdafunction.png" title="Amazon Lambda Function" width="800" alt="Amazon Lambda Function"/>
+   <img src="../../../assets/img/integrate/connectors/awslambdafunction.png" title="Amazon Lambda Function" width="800" alt="Amazon Lambda Function"/>
    
 8. Next you need to execute the function. Navigate to **Configure test events**. <br>
-   <img src="{{base_path}}/assets/img/integrate/connectors/configuretestevent.png" title="Configure Test Event" width="800" alt="Configure Test Event"/>
+   <img src="../../../assets/img/integrate/connectors/configuretestevent.png" title="Configure Test Event" width="800" alt="Configure Test Event"/>
    
 9. Click **Create new test event**.
-   <img src="{{base_path}}/assets/img/integrate/connectors/createtestevent.png" title="Create Test Event" width="800" alt="Create Test Event"/>
+   <img src="../../../assets/img/integrate/connectors/createtestevent.png" title="Create Test Event" width="800" alt="Create Test Event"/>
    
 10. Navigate and select the created test event from the dropdown in the top right corner. Click the **Test** button and execute the test event.
-   <img src="{{base_path}}/assets/img/integrate/connectors/executecreatedevent.png" title="Execute Test Event" width="800" alt="Execute Test Event"/>
+   <img src="../../../assets/img/integrate/connectors/executecreatedevent.png" title="Execute Test Event" width="800" alt="Execute Test Event"/>
  
 ## What's next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/integrate/develop/deploy-artifacts/).
-* To customize this example for your own scenario, see [Amazon Lambda Connector Configuration]({{base_path}}/reference/connectors/amazonlambda-connector/amazonlambda-connector-config/) documentation.
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).
+* To customize this example for your own scenario, see [Amazon Lambda Connector Configuration](amazonlambda-connector-config.md) documentation.

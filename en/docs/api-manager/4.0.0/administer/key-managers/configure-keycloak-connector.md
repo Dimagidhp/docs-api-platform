@@ -19,7 +19,7 @@ Follow the instructions given below to configure Keycloak as a third-party Key M
     
 2. Click **Client Scopes** and create client scope named "default".
 
-     [![add default client scope]({{base_path}}/assets/img/administer/keycloak-add-client-scope-default.png)]({{base_path}}/assets/img/administer/keycloak-add-client-scope-default.png)
+     [![add default client scope](../../assets/img/administer/keycloak-add-client-scope-default.png)](../../assets/img/administer/keycloak-add-client-scope-default.png)
 
 3. Click **Clients** and create a client with the following information.
 
@@ -28,25 +28,25 @@ Follow the instructions given below to configure Keycloak as a third-party Key M
      <td> Redirect URIs </td><td> https://localhost:9443/ </td></tr>
      </table>
 
-    [![Keycloak add client]({{base_path}}/assets/img/administer/keycloak-add-client.png)]({{base_path}}/assets/img/administer/keycloak-add-client.png)
+    [![Keycloak add client](../../assets/img/administer/keycloak-add-client.png)](../../assets/img/administer/keycloak-add-client.png)
 
 4. Define a longer value as the **Access Token Lifespan** under the **Advanced Settings** settings section.
 
-     [![Set expiry time]({{base_path}}/assets/img/administer/keycloak-set-expiry-time.png)]({{base_path}}/assets/img/administer/keycloak-set-expiry-time.png)
+     [![Set expiry time](../../assets/img/administer/keycloak-set-expiry-time.png)](../../assets/img/administer/keycloak-set-expiry-time.png)
 
 5. Click **Client Scopes** and select the scope named `default` as the **Default Client scope**.
 
-     [![Add scope to client scopes]({{base_path}}/assets/img/administer/keycloak-add-to-client-scopes.png)]({{base_path}}/assets/img/administer/keycloak-add-to-client-scopes.png)
+     [![Add scope to client scopes](../../assets/img/administer/keycloak-add-to-client-scopes.png)](../../assets/img/administer/keycloak-add-to-client-scopes.png)
 
 6. Click **Service Account Roles** and assign the `admin` role an assigned role.
 
-     [![Assign service account roles]({{base_path}}/assets/img/administer/keycloak-serviceaccount-assign-admin.png)]({{base_path}}/assets/img/administer/keycloak-serviceaccount-assign-admin.png)
+     [![Assign service account roles](../../assets/img/administer/keycloak-serviceaccount-assign-admin.png)](../../assets/img/administer/keycloak-serviceaccount-assign-admin.png)
 
     <a name="confidentialclient"></a>
 
 7. Copy the client credentials.
 
-     [![Keycloak client secret]({{base_path}}/assets/img/administer/keycloak-client-secret.png)]({{base_path}}/assets/img/administer/keycloak-client-secret.png)
+     [![Keycloak client secret](../../assets/img/administer/keycloak-client-secret.png)](../../assets/img/administer/keycloak-client-secret.png)
 
 ## Step 2 - Configure WSO2 API Manager
 
@@ -91,11 +91,11 @@ Follow the instructions given below to configure Keycloak as a third-party Key M
 
     2. Click Key Manager and then click **Add Key Manager**.
         
-         [![Add new Key Manager]({{base_path}}/assets/img/administer/add-new-key-manager.png)]({{base_path}}/assets/img/administer/add-new-key-manager.png)
+         [![Add new Key Manager](../../assets/img/administer/add-new-key-manager.png)](../../assets/img/administer/add-new-key-manager.png)
 
     3. Add the following configuration to add a new Key Manager.
     
-         [![Add Keycloak configurations]({{base_path}}/assets/img/administer/keycloak-endpoints.png)]({{base_path}}/assets/img/administer/keycloak-endpoints.png)
+         [![Add Keycloak configurations](../../assets/img/administer/keycloak-endpoints.png)](../../assets/img/administer/keycloak-endpoints.png)
          
          !!! tip
              * Configuring the well-known URL populates all the default configurations in the table once you click **Import**. 
@@ -325,7 +325,7 @@ Follow the instructions given below to configure Keycloak as a third-party Key M
 
 4. Click **Sandbox Keys**.
 
-     ![Keycloak Developer Portal generate keys]({{base_path}}/assets/img/administer/keycloak-devportal-generate-keys.png)
+     ![Keycloak Developer Portal generate keys](../../assets/img/administer/keycloak-devportal-generate-keys.png)
 
 5. Select the **Response Type**.
 

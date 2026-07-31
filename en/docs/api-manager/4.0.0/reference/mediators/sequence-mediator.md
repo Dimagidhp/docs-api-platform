@@ -16,7 +16,7 @@ two options are described in the table below.
 | Applying changes done to the predefined sequence | Any changes done to the sequence saved in the **Registry** after it was selected as the in/out/fault sequence will not be considered when carrying out mediation. | Any changes done to the sequence saved in the **Registry** after it was selected as the in/out/fault sequence will be considered when carrying out mediation. |
 
 !!! Info
-    The Sequence mediator is a [content-unaware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    The Sequence mediator is a [content-unaware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -64,7 +64,7 @@ The parameters available to configure the Sequence mediator are as follows.
 
 ## Examples
 
-In this example, the following sequence named `         StoreSend        ` is saved in the Configuration registry. It includes a [Store Mediator]({{base_path}}/reference/mediators/store-Mediator) to store the request in a message store named `         JMSMS        ` and a [Send Mediator]({{base_path}}/reference/mediators/send-Mediator) to send it to an endpoint afterwards.
+In this example, the following sequence named `         StoreSend        ` is saved in the Configuration registry. It includes a [Store Mediator](store-Mediator.md) to store the request in a message store named `         JMSMS        ` and a [Send Mediator](send-Mediator.md) to send it to an endpoint afterwards.
 
 ``` xml
 <sequence xmlns="http://ws.apache.org/ns/synapse" name="conf:/StoreSend">
@@ -77,7 +77,7 @@ In this example, the following sequence named `         StoreSend        ` is sa
 </sequence>
 ```
 
-The Sequence mediator configuration can be as follows to invoke the `StoreSend` sequence after using a [PayloadFactory mediator]({{base_path}}/reference/mediators/payloadFactory-Mediator) to transform the contents of the request.
+The Sequence mediator configuration can be as follows to invoke the `StoreSend` sequence after using a [PayloadFactory mediator](payloadFactory-Mediator.md) to transform the contents of the request.
 
 ``` 
 <inSequence xmlns="http://ws.apache.org/ns/synapse">

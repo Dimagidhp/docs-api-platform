@@ -10,7 +10,7 @@ Instead of redirecting the user to the authorization server, the client itself w
 
 The diagram below illustrates the resource owner password credentials grant flow.
 
-![]({{base_path}}/assets/img/learn/oauth-resource-owner-diagram.png)
+![](../../../../assets/img/learn/oauth-resource-owner-diagram.png)
 
 #### Prerequisites
 
@@ -25,7 +25,7 @@ The diagram below illustrates the resource owner password credentials grant flow
 configuration.ServerURL = "<key-manager-server-url>"
 
 ```
-If you have multiple Carbon servers running on the same computer, [change the port with an offset]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-ports-with-offset) to avoid port conflicts.
+If you have multiple Carbon servers running on the same computer, [change the port with an offset](../../../../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset.md#changing-the-default-ports-with-offset) to avoid port conflicts.
 
 #### Invoking the Token API to generate tokens
 
@@ -52,7 +52,7 @@ If you have multiple Carbon servers running on the same computer, [change the po
         !!! tip
             **`<scope>` is optional.**
     
-            If you define a [scope]({{base_path}}/design/api-security/oauth2/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) for an API's resource, the API can only be accessed through a token that is issued for the scope of the said resource. For example, if you define a scope named 'update' and issue one token for the scopes 'read' and 'update', the token is allowed to access the resource. However, if you issue the token for the scope named 'read', the request to the API will be blocked.
+            If you define a [scope](../oauth2-scopes/fine-grained-access-control-with-oauth-scopes.md) for an API's resource, the API can only be accessed through a token that is issued for the scope of the said resource. For example, if you define a scope named 'update' and issue one token for the scopes 'read' and 'update', the token is allowed to access the resource. However, if you issue the token for the scope named 'read', the request to the API will be blocked.
 
 
     -   Headers 

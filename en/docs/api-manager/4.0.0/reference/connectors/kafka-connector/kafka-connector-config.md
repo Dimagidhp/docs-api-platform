@@ -485,7 +485,7 @@ To use the Kafka connector, add the `<kafkaTransport.init>` element in your conf
 ### Error codes related to Kafka Connector
 
 !!! note
-    With Kafka connector v3.1.2 and above, when an error occurs, one of the following errors will get set to the message context. For details on how to access these error properties, refer [Generic Properties]({{base_path}}/reference/mediators/property-reference/generic-properties/#error_code).
+    With Kafka connector v3.1.2 and above, when an error occurs, one of the following errors will get set to the message context. For details on how to access these error properties, refer [Generic Properties](../../mediators/property-reference/generic-properties.md#error_code).
 
 
 | **Error Code** |   **Detail**                                             |

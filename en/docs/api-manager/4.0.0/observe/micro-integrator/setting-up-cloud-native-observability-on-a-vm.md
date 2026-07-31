@@ -90,7 +90,7 @@ These dashboards are provided as JSON files that can be manually imported to Gra
 
     The **Import** dialog box opens as follows.
     
-    [![Import Dashboards dialog box]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-import-dialog-box.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-import-dialog-box.png)
+    [![Import Dashboards dialog box](../../assets/img/integrate/monitoring-dashboard/grafana-import-dialog-box.png)](../../assets/img/integrate/monitoring-dashboard/grafana-import-dialog-box.png)
     
 3. Click **Upload.json file**. Then browse for one of the dashboards that you downloaded as a JSON file.
 
@@ -101,7 +101,7 @@ These dashboards are provided as JSON files that can be manually imported to Gra
 
 ### Scaling Prometheus
 
-In a [clustered deployment]({{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei), you can add the IP address and the port of each server in the respective `prometheus.yml` file.
+In a [clustered deployment](../../install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei.md), you can add the IP address and the port of each server in the respective `prometheus.yml` file.
 
 ### Scaling Grafana
 
@@ -314,7 +314,7 @@ You need to do this in order to configure Grafana to display logs.
 
 3. In the **Data Sources** section, click **Add your first data source**. In the **Add data source** page that appears, click **Select** for **Loki**.
 
-     [![Select Loki as Data Source]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-select-datasource.png){: style="width:80%"}]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-select-datasource.png)
+     [![Select Loki as Data Source](../../assets/img/integrate/monitoring-dashboard/grafana-select-datasource.png){: style="width:80%"}](../../assets/img/integrate/monitoring-dashboard/grafana-select-datasource.png)
 
 4. In the **Add data source** page -> **Settings** tab, update the configurations for Loki.
     
@@ -381,17 +381,17 @@ In order to configure Grafana to display tracing information, follow the steps g
     
     2. Click the **Configuration** icon in the left menu and then click **Data Sources**.
     
-        [![Open Data sources]({{base_path}}/assets/img/integrate/monitoring-dashboard/open-datasources.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/open-datasources.png)
+        [![Open Data sources](../../assets/img/integrate/monitoring-dashboard/open-datasources.png)](../../assets/img/integrate/monitoring-dashboard/open-datasources.png)
         
     3. Click **Add data source** to open the **Add data source** page where all the available data source types are displayed. Here, click **Jaeger**.
     
-        [![Select Jaeger]({{base_path}}/assets/img/integrate/monitoring-dashboard/select-jaeger.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/select-jaeger.png)
+        [![Select Jaeger](../../assets/img/integrate/monitoring-dashboard/select-jaeger.png)](../../assets/img/integrate/monitoring-dashboard/select-jaeger.png)
         
         This opens the **Data Sources/Jaeger** dialog box. 
         
     4. In the **Data Sources/Jaeger** dialog box, enter the URL of the Jaeger query component in the **URL** field in the `http://host:port` format as shown below.
     
-        [![Enter Basic Jaeger Information]({{base_path}}/assets/img/integrate/monitoring-dashboard/enter-basic-jaeger-information.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/enter-basic-jaeger-information.png)
+        [![Enter Basic Jaeger Information](../../assets/img/integrate/monitoring-dashboard/enter-basic-jaeger-information.png)](../../assets/img/integrate/monitoring-dashboard/enter-basic-jaeger-information.png)
         
     5. Click **Save and Test**. If the data source is successfully configured, it is indicated via a message.
   
@@ -402,11 +402,11 @@ In order to configure Grafana to display tracing information, follow the steps g
     
     2. Click **Variable**. This opens the following view.
     
-         [![Variables view]({{base_path}}/assets/img/integrate/monitoring-dashboard/variables.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/variables.png)
+         [![Variables view](../../assets/img/integrate/monitoring-dashboard/variables.png)](../../assets/img/integrate/monitoring-dashboard/variables.png)
         
     3. Edit the JaegerHost variable and provide your Jaeger query component hostname and port in the `host:port` syntax as shown below.
     
-        [![Constant options]({{base_path}}/assets/img/integrate/monitoring-dashboard/constant-options.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/constant-options.png)
+        [![Constant options](../../assets/img/integrate/monitoring-dashboard/constant-options.png)](../../assets/img/integrate/monitoring-dashboard/constant-options.png)
         
     4. Click **Save**
     
@@ -414,8 +414,8 @@ In order to configure Grafana to display tracing information, follow the steps g
     
 Once Grafana is successfully configured to visualize statistics, you should be correctly redirected to the Jaeger UI from the Response Time widget of each service-level dashboard as shown below.
     
-[![jaeger ui]({{base_path}}/assets/img/integrate/monitoring-dashboard/jaeger-ui.png){: style="width:40%"}]({{base_path}}/assets/img/integrate/monitoring-dashboard/jaeger-ui.png)
+[![jaeger ui](../../assets/img/integrate/monitoring-dashboard/jaeger-ui.png){: style="width:40%"}](../../assets/img/integrate/monitoring-dashboard/jaeger-ui.png)
 
 ## What's Next?
 
-If you have successfully set up your analytics deployment, see the instructions on [viewing cloud native observability statistics]({{base_path}}/observe/micro-integrator/viewing-cloud-native-observability-statistics/).
+If you have successfully set up your analytics deployment, see the instructions on [viewing cloud native observability statistics](viewing-cloud-native-observability-statistics.md).

@@ -258,7 +258,7 @@ Follow [Command line options]({{envoy_path}}/operations/cli) for more informatio
 
 ### Enable Wire Logs
 
-To enable wire logs, follow the instructions provided in [Router Wire Logs]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configurations/configure-logs-router).
+To enable wire logs, follow the instructions provided in [Router Wire Logs](../configurations/configure-logs-router.md).
 
 ### Admin portal
 

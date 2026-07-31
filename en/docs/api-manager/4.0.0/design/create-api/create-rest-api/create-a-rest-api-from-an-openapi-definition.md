@@ -18,7 +18,7 @@ Follow the instructions below to create a REST API using an OpenAPI definition f
 
 2. Click **Create API** and then click **Import OpenAPI**.
 
-    [![Create an API]({{base_path}}/assets/img/learn/import-open-api.png)]({{base_path}}/assets/img/learn/import-open-api.png)
+    [![Create an API](../../../assets/img/learn/import-open-api.png)](../../../assets/img/learn/import-open-api.png)
 
 3. Select one of the following options:
 
@@ -61,7 +61,7 @@ Follow the instructions below to create a REST API using an OpenAPI definition f
     ??? tip "If you want to work with the Swagger 2.0 definition instead of the OpenAPI 3.0 definition"
         If you want to work with a Swagger 2.0 definition, use `http://petstore.swagger.io/v2/swagger.json` as the OpenAPI URL.
 
-     [![Create a REST API using swagger definition]({{base_path}}/assets/img/learn/create-rest-api-using-swagger-def-form1.png){: style="width:70%"}]({{base_path}}/assets/img/learn/create-rest-api-using-swagger-def-form1.png)
+     [![Create a REST API using swagger definition](../../../assets/img/learn/create-rest-api-using-swagger-def-form1.png){: style="width:70%"}](../../../assets/img/learn/create-rest-api-using-swagger-def-form1.png)
 
 5.  Edit the information as given below and click **Create**.
     
@@ -84,11 +84,11 @@ Follow the instructions below to create a REST API using an OpenAPI definition f
      | Version  | 1.0.6                               |
      | Endpoint | https://petstore3.swagger.io/api/v3 |
  
-     [![Create a REST API using swagger definition]({{base_path}}/assets/img/learn/create-rest-api-using-swagger-def-form2.png){: style="width:70%"}]({{base_path}}/assets/img/learn/create-rest-api-using-swagger-def-form2.png)
+     [![Create a REST API using swagger definition](../../../assets/img/learn/create-rest-api-using-swagger-def-form2.png){: style="width:70%"}](../../../assets/img/learn/create-rest-api-using-swagger-def-form2.png)
 
      The Petstore API overview page appears.
 
-     [![Overview of created API]({{base_path}}/assets/img/learn/overviewpage-rest-api-creating-by-swagger-def.png)]({{base_path}}/assets/img/learn/overviewpage-rest-api-creating-by-swagger-def.png)
+     [![Overview of created API](../../../assets/img/learn/overviewpage-rest-api-creating-by-swagger-def.png)](../../../assets/img/learn/overviewpage-rest-api-creating-by-swagger-def.png)
 
 ### Resources
    
@@ -96,7 +96,7 @@ Click **API Configurations** and then click **Resources** to navigate to the Res
 
 You will notice that all the API resources are created automatically when the OpenAPI URL is specified.
    
-[![]({{base_path}}/assets/img/learn/resource-of-pet-store-api.png)]({{base_path}}/assets/img/learn/resource-of-pet-store-api.png)
+[![](../../../assets/img/learn/resource-of-pet-store-api.png)](../../../assets/img/learn/resource-of-pet-store-api.png)
 
 ### API Definition
 
@@ -104,7 +104,7 @@ You will notice that all the API resources are created automatically when the Op
 
      This is required to invoke the API in the Developer Portal using the OpenAPI UI.
     
-     [![]({{base_path}}/assets/img/learn/edit-api-definition-pet-store.png)]({{base_path}}/assets/img/learn/edit-api-definition-pet-store.png)
+     [![](../../../assets/img/learn/edit-api-definition-pet-store.png)](../../../assets/img/learn/edit-api-definition-pet-store.png)
 
 
 2. Remove the `petstore_auth` tag related configuration that appears under the `security` tag from the `/pet` POST resource given below. 
@@ -136,7 +136,7 @@ You will notice that all the API resources are created automatically when the Op
 
 4.  After removing the security tags, click **Update Content**.
      
-     [![Update OpenAPI definition]({{base_path}}/assets/img/learn/update-content-pet-store.png)]({{base_path}}/assets/img/learn/update-content-pet-store.png)
+     [![Update OpenAPI definition](../../../assets/img/learn/update-content-pet-store.png)](../../../assets/img/learn/update-content-pet-store.png)
 
 5. Click **Save** to save the changes.
    
@@ -156,7 +156,7 @@ You will notice that all the API resources are created automatically when the Op
      | Sandbox endpoint    | Let's only work with the production endpoint for this sample. Therefore, deselect the sandbox endpoint option. |
 
      <html>
-     <img src="{{base_path}}/assets/img/learn/endpoint-menu.png" width="200">
+     <img src="../../../assets/img/learn/endpoint-menu.png" width="200">
      </html>
 
 3. Click **Save** to save the changes.
@@ -164,7 +164,7 @@ You will notice that all the API resources are created automatically when the Op
     !!! note
         If you have already deployed your API, click on the dropdown option, and click **Save and deploy** so that your API will be redeployed, and your changes will appear in the API Gateway.
 
-     [![]({{base_path}}/assets/img/learn/add-endpoint-configuration-for-pet-store-api.png)]({{base_path}}/assets/img/learn/add-endpoint-configuration-for-pet-store-api.png)
+     [![](../../../assets/img/learn/add-endpoint-configuration-for-pet-store-api.png)](../../../assets/img/learn/add-endpoint-configuration-for-pet-store-api.png)
 
 ### Runtime Configuration
 
@@ -172,9 +172,9 @@ Click **API Configurations** and click **Runtime** to navigate to the Runtime Co
      
 The Transport Level Security defines the transport protocol on which the API is exposed.
 
-<a href="{{base_path}}/assets/img/learn/runtime-config-menu.png"><img src="{{base_path}}/assets/img/learn/runtime-config-menu.png" width="20%"></a>
+<a href="../../../assets/img/learn/runtime-config-menu.png"><img src="../../../assets/img/learn/runtime-config-menu.png" width="20%"></a>
 
-<a href="{{base_path}}/assets/img/learn/transport-level-security-pet-store.png"><img src="{{base_path}}/assets/img/learn/transport-level-security-pet-store.png" width="90%">
+<a href="../../../assets/img/learn/transport-level-security-pet-store.png"><img src="../../../assets/img/learn/transport-level-security-pet-store.png" width="90%">
 </a>
 
 <html><div class="admonition note">
@@ -198,8 +198,8 @@ The Transport Level Security defines the transport protocol on which the API is 
 
 1. Click **Portal Configurations** and click **Subscriptions** to navigate to the Business Plans page.
 
-     <a href="{{base_path}}/assets/img/learn/subscriptions-menu.png">
-     <img src="{{base_path}}/assets/img/learn/subscriptions-menu.png" alt="subscriptions menu" width="20%">
+     <a href="../../../assets/img/learn/subscriptions-menu.png">
+     <img src="../../../assets/img/learn/subscriptions-menu.png" alt="subscriptions menu" width="20%">
      </a>
 
 2. Select **Gold** and **Silver** as the Business Plans.
@@ -212,23 +212,23 @@ The Transport Level Security defines the transport protocol on which the API is 
 
 3. Click **Save**
 
-    [![Business Plans page]({{base_path}}/assets/img/learn/add-bussiness-plans-for-pet-store-api.png)]({{base_path}}/assets/img/learn/add-bussiness-plans-for-pet-store-api.png)
+    [![Business Plans page](../../../assets/img/learn/add-bussiness-plans-for-pet-store-api.png)](../../../assets/img/learn/add-bussiness-plans-for-pet-store-api.png)
 
 
 Now, a REST API from an OpenAPI Definition has been created and configured successfully. 
 
-Next, [deploy the API]({{base_path}}/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API]({{base_path}}/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API]({{base_path}}/deploy-and-publish/publish-on-dev-portal/publish-an-api).
+Next, [deploy the API](../../../deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md), [test the API](test-a-rest-api.md), and finally [publish the API](../../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ## See Also
 
 Learn more on the concepts that you need to know when creating a REST API:
 
--   [Endpoints]({{base_path}}/design/endpoints/endpoint-types/)
--   [API Security]({{base_path}}/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
--   [Rate Limiting]({{base_path}}/design/rate-limiting/introducing-throttling-use-cases/)
--   [Life Cycle Management]({{base_path}}/design/lifecycle-management/api-lifecycle/)
--   [API Monetization]({{base_path}}/design/api-monetization/monetizing-an-api/)
--   [API Visibility]({{base_path}}/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation]({{base_path}}/design/api-documentation/add-api-documentation/)
--   [Custom Properties]({{base_path}}/design/create-api/adding-custom-properties-to-apis/)
--   [Template Patterns]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/template-patterns-for-choreo-connect/) - You can use these template patterns when defining OpenAPI (Swagger) definitions for APIs deployed on Choreo Connect.
+-   [Endpoints](../../endpoints/endpoint-types.md)
+-   [API Security](../../api-security/api-authentication/secure-apis-using-oauth2-tokens.md)
+-   [Rate Limiting](../../rate-limiting/introducing-throttling-use-cases.md)
+-   [Life Cycle Management](../../lifecycle-management/api-lifecycle.md)
+-   [API Monetization](../../api-monetization/monetizing-an-api.md)
+-   [API Visibility](../../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+-   [API Documentation](../../api-documentation/add-api-documentation.md)
+-   [Custom Properties](../adding-custom-properties-to-apis.md)
+-   [Template Patterns](../../../deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/template-patterns-for-choreo-connect.md) - You can use these template patterns when defining OpenAPI (Swagger) definitions for APIs deployed on Choreo Connect.

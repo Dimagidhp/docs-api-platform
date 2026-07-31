@@ -47,7 +47,7 @@ If you have configured logs with PII to be saved in another location, you can ad
 }
 ```
 
-For information on changing these configurations, see [Configuring the config.json file]({{base_path}}/administer/product-security/general-data-protection-regulation-gdpr-for-wso2-api-manager/#configuring-the-master-configuration-file) in the Product Administration Guide.
+For information on changing these configurations, see [Configuring the config.json file](../../install-and-setup/setup/security/general-data-protection-regulation-gdpr-for-wso2-api-manager.md#configuring-the-master-configuration-file) in the Product Administration Guide.
 
 **Step 2: Execute the Forget-me tool**
 

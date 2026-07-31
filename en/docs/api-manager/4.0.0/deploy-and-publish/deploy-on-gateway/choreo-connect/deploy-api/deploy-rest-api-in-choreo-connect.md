@@ -11,16 +11,16 @@ Follow the instructions below to use Choreo Connect with WSO2 API Manager as the
 
 ### Step 1 - Configure Choreo Connect with API Manager
 
-- To start Choreo Connect with an existing API Manager instance, follow the steps mentioned in the [Using Choreo Connect Deployed on Docker Compose with WSO2 API Manager Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-docker-with-apim-as-control-plane)
+- To start Choreo Connect with an existing API Manager instance, follow the steps mentioned in the [Using Choreo Connect Deployed on Docker Compose with WSO2 API Manager Guide](../getting-started/deploy/cc-on-docker-with-apim-as-control-plane.md)
 
-- To start a complete deployment setup that includes a WSO2 API Manager instance and a Choreo Connect instance already configured to work with API Manager, follow the steps in the [Quick Start Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim).
+- To start a complete deployment setup that includes a WSO2 API Manager instance and a Choreo Connect instance already configured to work with API Manager, follow the steps in the [Quick Start Guide](../getting-started/quick-start-guide-docker-with-apim.md).
 
 ### Step 2 - Create an API in API Manager
 
 Create a REST type API using one of the following methods:
 
-- [Create a REST API via the WSO2 API Manager Publsiher Portal]({{base_path}}/design/create-api/create-rest-api/create-a-rest-api/)
-- [Import a REST API to WSO2 API Manager using WSO2 API Controller (apiclt)]({{base_path}}/install-and-setup/setup/api-controller/managing-apis-api-products/importing-apis-via-dev-first-approach/)
+- [Create a REST API via the WSO2 API Manager Publsiher Portal](../../../../design/create-api/create-rest-api/create-a-rest-api.md)
+- [Import a REST API to WSO2 API Manager using WSO2 API Controller (apiclt)](../../../../install-and-setup/setup/api-controller/managing-apis-api-products/importing-apis-via-dev-first-approach.md)
      
      You need to initially initialize the API project and thereafter import the API project in order to be able to import the API to WSO2 API Manager using the apiclt.
 
@@ -28,7 +28,7 @@ For this example, let's create an API via the WSO2 API Manager Publsiher Portal.
 
 ### Step 3 - Deploy the API in API Manager
 
- The guide [here]({{base_path}}/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api) will explain how you could easily deploy the API you just created.
+ The guide [here](../../deploy-api/deploy-an-api.md) will explain how you could easily deploy the API you just created.
 
 That's it! To invoke the API follow the steps [here](#step-4-invoke-the-api).
 
@@ -43,8 +43,8 @@ Whenever a new event occurs in API Manager such as an API being deployed, API Ma
 
     You might find the following content useful here onwards,
 
-    - [Choreo Connect with API Manager as Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane) 
-    - [Publish an API on the Developer Portal]({{base_path}}/deploy-and-publish/publish-on-dev-portal/publish-an-api)
+    - [Choreo Connect with API Manager as Control Plane](../concepts/apim-as-control-plane.md) 
+    - [Publish an API on the Developer Portal](../../../publish-on-dev-portal/publish-an-api.md)
 
 ###  Step 4 - Invoke the API
 
@@ -52,7 +52,7 @@ Whenever a new event occurs in API Manager such as an API being deployed, API Ma
 {! ./includes/invoke-api-with-jwt.md !}
 
 <!-- brought the following here because the path becomes relative when included in the includes folder -->
-Refer to [Generate a Test JWT]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/generate-a-test-jwt) for more details.
+Refer to [Generate a Test JWT](../security/generate-a-test-jwt.md) for more details.
 
 ## Choreo Connect as a Standalone Gateway
 
@@ -61,7 +61,7 @@ Follow the instructions below to use Choreo Connect as a Standalone Gateway to d
 !!! info
     **Before you begin**
 
-    This guide assumes that you already have a Choreo Connect instance that is up and running. If not, checkout the [Using Choreo Connect Deployed on Docker Compose with WSO2 API Controller Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-docker) on how to install and run Choreo Connect. To learn more about Choreo Connect, have a look at the [Overview of Choreo Connect]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/choreo-connect-overview). 
+    This guide assumes that you already have a Choreo Connect instance that is up and running. If not, checkout the [Using Choreo Connect Deployed on Docker Compose with WSO2 API Controller Guide](../getting-started/deploy/cc-as-a-standalone-gateway-on-docker.md) on how to install and run Choreo Connect. To learn more about Choreo Connect, have a look at the [Overview of Choreo Connect](../getting-started/choreo-connect-overview.md). 
 
 ### Step 1 - Download apictl and Set the Path Variable 
 
@@ -127,8 +127,8 @@ apictl mg deploy api -f <path_to_the_API_project_just_created>/petstore -e dev -
 
     Refer to the following content to learn more,
 
-    - [Managing Choreo Connect with apictl]({{base_path}}/install-and-setup/setup/api-controller/managing-choreo-connect/managing-choreo-connect-with-ctl)
-    - [Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway)
+    - [Managing Choreo Connect with apictl](../../../../install-and-setup/setup/api-controller/managing-choreo-connect/managing-choreo-connect-with-ctl.md)
+    - [Choreo Connect as a Standalone Gateway](../concepts/as-a-standalone-gateway.md)
 
 ###  Step 6 - Invoke the API
 
@@ -136,4 +136,4 @@ apictl mg deploy api -f <path_to_the_API_project_just_created>/petstore -e dev -
 {! ./includes/invoke-api-with-jwt.md !}
 
 <!-- brought the following here because the path becomes relative when included in the includes folder -->
-Refer to [Generate a Test JWT]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/generate-a-test-jwt) for more details.
+Refer to [Generate a Test JWT](../security/generate-a-test-jwt.md) for more details.

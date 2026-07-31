@@ -53,7 +53,7 @@ Follow the instructions below to use Kubernetes (K8s) and Helm resources for con
 
 3.  Deploy WSO2 API Manager with WSO2 API Manager Analytics.
 
-     Refer the [Getting Started Guide]({{base_path}}/api-analytics/getting-started-guide) to setup the cloud Analytics solution and obtain an on-prem key.
+     Refer the [Getting Started Guide](../../api-analytics/getting-started-guide.md) to setup the cloud Analytics solution and obtain an on-prem key.
 
     ```
     helm install --dependency-update --name <RELEASE_NAME> <HELM_HOME>/am-single --namespace <NAMESPACE> --set wso2.choreoAnalytics.enabled=true --set wso2.choreoAnalytics.endpoint=<CHOREO_ANALYTICS_ENDPOINT> --set wso2.choreoAnalytics.onpremKey=<ONPREM_KEY>
@@ -95,7 +95,7 @@ Follow the instructions below to use Kubernetes (K8s) and Helm resources for con
 !!! note
     You can read the [README guide](https://github.com/wso2/kubernetes-apim/blob/v4.0.0.3/simple/am-single/README.md) of WSO2 API Manager Git repository for further details on other dependencies and configurations.
 
-For more information, see the deployment configurations with regard to the [Advanced Deployment Patterns]({{base_path}}/install-and-setup/setup/deployment-overview/).
+For more information, see the deployment configurations with regard to the [Advanced Deployment Patterns](../setup/deployment-overview.md).
 
 - [Standard HA Deployment](https://github.com/wso2/kubernetes-apim/blob/v4.0.0.3/advanced/am-pattern-1/README.md)
 - [Standard HA Deployment with Multitenancy](https://github.com/wso2/kubernetes-apim/blob/v4.0.0.3/advanced/am-pattern-2/README.md)

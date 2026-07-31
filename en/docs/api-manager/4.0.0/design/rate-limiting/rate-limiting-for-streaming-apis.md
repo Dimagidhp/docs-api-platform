@@ -42,7 +42,7 @@ The API Creators need to select a minimum of one Business Plan when creating a S
 
 ### Default Business Plans
 
-[![Streaming API Business Plans]({{base_path}}/assets/img/design/rate-limiting/stream-api-business-plans.png)]({{base_path}}/assets/img/design/rate-limiting/stream-api-business-plans.png)
+[![Streaming API Business Plans](../../assets/img/design/rate-limiting/stream-api-business-plans.png)](../../assets/img/design/rate-limiting/stream-api-business-plans.png)
 
 The following is the list of default Business Plans that are related to Streaming APIs.
 
@@ -58,4 +58,4 @@ The following is the list of default Business Plans that are related to Streamin
 
 ### Custom Business Plans
 
-Instead of using the default Business Plans, a user who has the admin role, with access to the Admin Portal, can create Custom Business Plans, which API Creators can use. For more information, see [Adding a new subscription-level rate limiting tier]({{base_path}}/design/rate-limiting/adding-new-throttling-policies/#adding-a-new-subscription-level-throttling-tier).
+Instead of using the default Business Plans, a user who has the admin role, with access to the Admin Portal, can create Custom Business Plans, which API Creators can use. For more information, see [Adding a new subscription-level rate limiting tier](adding-new-throttling-policies.md#adding-a-new-subscription-level-throttling-tier).

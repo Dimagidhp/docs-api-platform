@@ -12,7 +12,7 @@ This example demonstrates how to calculate the distance between two locations vi
 
 To execute the sample open the saved Siddhi application in Streaming Integrator Tooling, and start it by clicking the **Start** button (shown below) or by clicking **Run** => **Run**.
 
-![Start button]({{base_path}}/assets/img/streaming/amazon-s3-sink-sample/start.png)
+![Start button](../../../assets/img/streaming/amazon-s3-sink-sample/start.png)
 
 If the Siddhi application starts successfully, the following message appears in the console.
 
@@ -24,7 +24,7 @@ To test the sample application, simulate a single event for it as follows:
 
 1. To open the Event Simulator, click the **Event Simulator** icon.
 
-    ![Event Simulator Icon]({{base_path}}/assets/img/streaming/testing-siddhi-applications/event-simulation-icon.png)
+    ![Event Simulator Icon](../../../assets/img/streaming/testing-siddhi-applications/event-simulation-icon.png)
 
     This opens the event simulation panel.
 
@@ -35,13 +35,13 @@ To test the sample application, simulate a single event for it as follows:
     | **Siddhi App Name**    | `GeoDistanceCalculation`   |
     | **StreamName**         | `LocationPointsStream`     |
 
-    ![Select Siddhi Application and Stream]({{base_path}}/assets/img/streaming/aggregate-data-incrementally-sample/aggregate-data-incrementally-event-simulation.png)
+    ![Select Siddhi Application and Stream](../../../assets/img/streaming/aggregate-data-incrementally-sample/aggregate-data-incrementally-event-simulation.png)
 
     As a result, the attributes of the `GeoDistanceCalculation` stream appear in the panel.
 
 3. Enter attribute values as follows.
 
-   ![Attribute Values]({{base_path}}/assets/img/streaming/execution-geo-sample/attribute-values.png).
+   ![Attribute Values](../../../assets/img/streaming/execution-geo-sample/attribute-values.png).
 
    | **Attribute**         | **Value**      |
    |-----------------------|----------------|

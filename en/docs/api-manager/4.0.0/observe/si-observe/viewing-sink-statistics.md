@@ -1,12 +1,12 @@
 # Viewing Query Statistics
 
-![Sink statistics dashboard]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/sink_statistics_dashboard.jpg)
+![Sink statistics dashboard](../../assets/img/streaming/streaming-integrator-grafana-dashboard/sink_statistics_dashboard.jpg)
 
 This dashboard displays the following information for your current WSO2 Streaming Integrator deployment:
 
 ## Sink Mapper Statistics Summary Table
 
-![Sink Statistics Summary]({{base_path}}/assets/img/streaming/sink-statistics/sink-statistics-summary.png)
+![Sink Statistics Summary](../../assets/img/streaming/sink-statistics/sink-statistics-summary.png)
 
 This lists all the sink mappers from all the Siddhi applications in your Streaming Integrator server. The table displays the following for each sink mapper:
 
@@ -24,12 +24,12 @@ This lists all the sink mappers from all the Siddhi applications in your Streami
    
 ## Sink Throughput
 
-![Sink Throughput]({{base_path}}/assets/img/streaming/sink-statistics/sink-throughput.png)
+![Sink Throughput](../../assets/img/streaming/sink-statistics/sink-throughput.png)
 
 This shows the throughput of each sink mapper in your Streaming Integrator server.
 
 ## Sink Mapper Latency
 
-![Sink Latency]({{base_path}}/assets/img/streaming/sink-statistics/sink-latency.png)
+![Sink Latency](../../assets/img/streaming/sink-statistics/sink-latency.png)
 
 This shows the latency of each sink mapper in your Streaming Integrator server.

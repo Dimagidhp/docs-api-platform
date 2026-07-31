@@ -6,13 +6,13 @@ title: Micro Integrator Observability Overview - WSO2 API Manager 4.0.0
 
 The following diagram depicts the complete **cloud native** observability solution for your Micro Integrator deployment, which includes **metrics monitoring**, **log monitoring**, and **message tracing** capabilities.
 
-[![Cloud Native Deployment Architecture]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-deployment-architecture.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-deployment-architecture.png)
+[![Cloud Native Deployment Architecture](../../assets/img/integrate/monitoring-dashboard/cloud-native-deployment-architecture.png)](../../assets/img/integrate/monitoring-dashboard/cloud-native-deployment-architecture.png)
 
 ## Minimum cloud native observability
 
 The basic deployment offers you metrics capabilities. You can set up the basic deployment with only Prometheus and Grafana to view and explore with the available Prometheus metrics.
 
-[![Cloud Native Deployment - Minimum]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-observability-metrics.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-observability-metrics.png)
+[![Cloud Native Deployment - Minimum](../../assets/img/integrate/monitoring-dashboard/cloud-native-observability-metrics.png)](../../assets/img/integrate/monitoring-dashboard/cloud-native-observability-metrics.png)
 
 ## Cloud native observability add ons
 
@@ -22,19 +22,19 @@ You can also set up different flavors of the observability solution depending on
  
 Once you set up the basic deployment, you can integrate log-processing capabilities. To use this, you need to install **Fluent-Bit** as the logging agent and **Grafana Loki** as the log aggregator.
 
-[![Cloud Native Deployment with Logs]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-observability-logs.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-observability-logs.png)
+[![Cloud Native Deployment with Logs](../../assets/img/integrate/monitoring-dashboard/cloud-native-observability-logs.png)](../../assets/img/integrate/monitoring-dashboard/cloud-native-observability-logs.png)
 
 ### Message tracing add on
 
 Once you set up the basic deployment, you can integrate message tracing capabilities. To use this you need to install **Jaeger**.  
 
-[![Cloud Native Deployment with Tracing]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-observability-tracing.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/cloud-native-observability-tracing.png)
+[![Cloud Native Deployment with Tracing](../../assets/img/integrate/monitoring-dashboard/cloud-native-observability-tracing.png)](../../assets/img/integrate/monitoring-dashboard/cloud-native-observability-tracing.png)
 
 ## Observability solutions
 
 There are two cloud native observability solutions for the Micro Integrator; The Kubernetes based deployment and the VM based deployment.
 
-<a href="{{base_path}}/assets/img/integrate/observability/observability-mi.png"><img src="{{base_path}}/assets/img/integrate/observability/observability-mi.png" title="Observability Solution" width="50%" alt="Observability Solution"/></a>
+<a href="../../assets/img/integrate/observability/observability-mi.png"><img src="../../assets/img/integrate/observability/observability-mi.png" title="Observability Solution" width="50%" alt="Observability Solution"/></a>
 
 These solutions are suitable for the following combination of operations.
 
@@ -66,7 +66,7 @@ These solutions are suitable for the following combination of operations.
             </ul>
         </li>
         <li>
-        For more information, see the <a href="{{base_path}}/observe/micro-integrator/setting-up-cloud-native-observability-in-kubernetes">Kubernetes Deployment Getting Started Guide</a>.
+        For more information, see the <a href="setting-up-cloud-native-observability-in-kubernetes.md">Kubernetes Deployment Getting Started Guide</a>.
         </li>
         </ul>
         </td>
@@ -90,7 +90,7 @@ These solutions are suitable for the following combination of operations.
             This solution is ideal if you want a complete cloud native solution for observability, but you need to set this up on a VM. Ideally, you would already have Prometheus, Grafana, and Jaeger as your in-house monitoring and observability tools.
             </li>
             <li>
-            For more information, see the <a href="{{base_path}}/observe/micro-integrator/setting-up-cloud-native-observability-on-a-vm">VM Deployment Getting Started Guide</a>.
+            For more information, see the <a href="setting-up-cloud-native-observability-on-a-vm.md">VM Deployment Getting Started Guide</a>.
             </li>
         </ul>
         </td>
@@ -110,5 +110,5 @@ The cloud native observability solution is based on proven projects from the **C
 
 ## What's Next?
 
--	Set up <a href="{{base_path}}/observe/micro-integrator/setting-up-cloud-native-observability-on-a-vm">cloud-native observability on a VM</a>.
--	Set up <a href="{{base_path}}/observe/micro-integrator/setting-up-cloud-native-observability-in-kubernetes/">cloud-native observability on Kubernetes</a>.
+-	Set up <a href="setting-up-cloud-native-observability-on-a-vm.md">cloud-native observability on a VM</a>.
+-	Set up <a href="setting-up-cloud-native-observability-in-kubernetes.md">cloud-native observability on Kubernetes</a>.

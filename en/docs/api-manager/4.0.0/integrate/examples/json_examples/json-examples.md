@@ -305,7 +305,7 @@ The response payload will look like this:
 }
 ```
 
-Note that we have used the [Property mediator]({{base_path}}/reference/mediators/property-mediator) to mark the outgoing payload to be formatted as JSON:
+Note that we have used the [Property mediator](../../../reference/mediators/property-mediator.md) to mark the outgoing payload to be formatted as JSON:
 
 ```
 <property name="messageType" value="application/json" scope="axis2"/>
@@ -315,7 +315,7 @@ Note that we have used the [Property mediator]({{base_path}}/reference/mediators
     JSON requests cannot be converted to XML if it contains invalid XML characters.
 
 !!! Info
-    If you need to convert complex XML responses (e.g., XML with with `         xsi:type        ` values), you will need to set the message type using the [Property mediator]({{base_path}}/reference/mediators/property-mediator) as follows:
+    If you need to convert complex XML responses (e.g., XML with with `         xsi:type        ` values), you will need to set the message type using the [Property mediator](../../../reference/mediators/property-mediator.md) as follows:
     `<property name="messageType" value="application/json/badgerfish" scope="axis2" type="STRING"/>`
     You will also need to ensure you register the following message builder and formatter as specified in [Message Builders and Formatters](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/message_builders_formatters/message-builders-and-formatters/).
     ```
@@ -348,7 +348,7 @@ You can use JSON path expressions with following mediators:
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="{{base_path}}/reference/mediators/log-mediator/">Log</a></td>
+<td><a href="../../../reference/mediators/log-mediator.md">Log</a></td>
 <td><div class="content-wrapper">
 <p>As a log property:</p>
 <div class="code panel pdl" style="border-width: 1px;">
@@ -362,7 +362,7 @@ You can use JSON path expressions with following mediators:
 </div></td>
 </tr>
 <tr class="even">
-<td><a href="{{base_path}}/reference/mediators/property-mediator/">Property</a></td>
+<td><a href="../../../reference/mediators/property-mediator.md">Property</a></td>
 <td><div class="content-wrapper">
 <p>As a standalone property:</p>
 <div class="code panel pdl" style="border-width: 1px;">
@@ -374,7 +374,7 @@ You can use JSON path expressions with following mediators:
 </div></td>
 </tr>
 <tr class="odd">
-<td><a href="{{base_path}}/reference/mediators/payloadfactory-mediator/">PayloadFactory</a></td>
+<td><a href="../../../reference/mediators/payloadfactory-mediator.md">PayloadFactory</a></td>
 <td><div class="content-wrapper">
 <p>As the payload arguments:</p>
 <div class="code panel pdl" style="border-width: 1px;">
@@ -391,7 +391,7 @@ You can use JSON path expressions with following mediators:
 </div></td>
 </tr>
 <tr class="even">
-<td><a href="{{base_path}}/reference/mediators/switch-mediator/">Switch</a></td>
+<td><a href="../../../reference/mediators/switch-mediator.md">Switch</a></td>
 <td><div class="content-wrapper">
 <p>As the switch source:</p>
 <div class="code panel pdl" style="border-width: 1px;">
@@ -402,7 +402,7 @@ You can use JSON path expressions with following mediators:
 </div></td>
 </tr>
 <tr class="odd">
-<td><a href="{{base_path}}/reference/mediators/filter-mediator/">Filter</a></td>
+<td><a href="../../../reference/mediators/filter-mediator.md">Filter</a></td>
 <td><div class="content-wrapper">
 <p>As the filter source:</p>
 <div class="code panel pdl" style="border-width: 1px;">
@@ -511,7 +511,7 @@ Learn more about [JSONPath syntax](http://goessner.net/articles/JsonPath/).
 ### Logging JSON payloads
 
 To log JSON payloads as JSON, use the [Log
-mediator]({{base_path}}/reference/mediators/log-mediator) as shown
+mediator](../../../reference/mediators/log-mediator.md) as shown
 below. The `         json-eval()        ` method returns the
 `         java.lang.String        ` representation of the existing JSON
 payload.
@@ -528,7 +528,7 @@ To log JSON payloads as XML, use the Log mediator as shown below:
 <log level="full"/>
 ```
 
-For more information on logging, see [Troubleshooting, debugging, and logging]({{base_path}}/integrate/examples/json_examples/json-examples/#validating-json-messages) below.
+For more information on logging, see [Troubleshooting, debugging, and logging](json-examples.md#validating-json-messages) below.
 
 ### Constructing and transforming JSON payloads
 
@@ -537,7 +537,7 @@ mediator or Script mediator as described in the rest of this section.
 
 #### PayloadFactory mediator
 
-The [PayloadFactory mediator]({{base_path}}/reference/mediators/payloadfactory-mediator) provides the simplest way to work with JSON payloads. Suppose we have a service that returns the following response for a search query:
+The [PayloadFactory mediator](../../../reference/mediators/payloadfactory-mediator.md) provides the simplest way to work with JSON payloads. Suppose we have a service that returns the following response for a search query:
 
 ``` javascript
 {
@@ -674,7 +674,7 @@ to the registry resource key):
 
 #### Script mediator
 
-The [Script mediator]({{base_path}}/reference/mediators/script-mediator) in
+The [Script mediator](../../../reference/mediators/script-mediator.md) in
 JavaScript is useful when you need to create payloads that have
 recurring structures such as arrays of objects. The Script mediator
 defines the following important methods that can be used to manipulate
@@ -1054,7 +1054,7 @@ descriptions:
 
 ### Validating JSON messages
 
-You can use the [Validate mediator]({{base_path}}/reference/mediators/validate-mediator)
+You can use the [Validate mediator](../../../reference/mediators/validate-mediator.md)
 to validate JSON messages against a specified JSON schema as described
 in the rest of this section.
 
@@ -1073,7 +1073,7 @@ file (i.e. `         StockQuoteSchema.json        ` ) to the following
 Registry path:
 `                   conf:/schema/StockQuoteSchema                  .        `
 json. For instructions on adding the schema file to the Registry path,
-see [Adding a Resource]({{base_path}}/integrate/develop/creating-artifacts/registry/creating-local-registry-entries).
+see [Adding a Resource](../../develop/creating-artifacts/registry/creating-local-registry-entries.md).
 
 !!! Tip
     When adding this sample schema file to the Registry, specify the **Media Type** as application/json.
@@ -1110,7 +1110,7 @@ see [Adding a Resource]({{base_path}}/integrate/develop/creating-artifacts/regis
 ```
 
 In this example, the required schema for validating messages going through the Validate mediator is given as a registry key (i.e.
-`         schema\StockQuoteSchema.json        ` ). You do not have any source attributes specified. Therefore, the schema will be used to validate the complete JSON body. The mediation logic to follow if the validation fails is defined within the on-fail element. In this example, the [PayloadFactory mediator]({{base_path}}/reference/mediators/payloadfactory-mediator) creates a fault to be sent back to the party, which sends the message.
+`         schema\StockQuoteSchema.json        ` ). You do not have any source attributes specified. Therefore, the schema will be used to validate the complete JSON body. The mediation logic to follow if the validation fails is defined within the on-fail element. In this example, the [PayloadFactory mediator](../../../reference/mediators/payloadfactory-mediator.md) creates a fault to be sent back to the party, which sends the message.
 
 ```
 <validate>
@@ -1178,4 +1178,4 @@ For example:
  logger.JsonStreamBuilder.name = org.apache.synapse.commons.json.JsonStreamBuilder
  logger.JsonStreamBuilder.level = DEBUG
  ```
-For more instructions on adding loggers, see [Configuring Log4j Properties]({{base_path}}/observe/micro-integrator/classic-observability-logs/configuring-log4j2-properties).
+For more instructions on adding loggers, see [Configuring Log4j Properties](../../../observe/micro-integrator/classic-observability-logs/configuring-log4j2-properties.md).

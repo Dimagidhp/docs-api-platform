@@ -6,7 +6,7 @@ However, this model becomes a problem when the respective token is revoked by th
 
 Choreo Connect uses Real-time and Persistent Notifications to identify tokens that are revoked before their expiry. Real-time Notifications help you identify such revoked tokens in real-time after Choreo Connect server has spun up. In contrast, when using Persistent notifications, the persistent storage maintains a current list of the revoked tokens. This will help new Choreo Connect servers that spin up to obtain information about the previously revoked tokens, which still have not expired.
 
-[![Revoked Tokens in Choreo Connect]({{base_path}}/assets/img/deploy/mgw/choreo-connect-jwt-revocation.png){: style="width:80%"}]({{base_path}}/assets/img/deploy/mgw/choreo-connect-jwt-revocation.png)
+[![Revoked Tokens in Choreo Connect](../../../../assets/img/deploy/mgw/choreo-connect-jwt-revocation.png){: style="width:80%"}](../../../../assets/img/deploy/mgw/choreo-connect-jwt-revocation.png)
 
 ## Methods to detect JWT token revocation
 

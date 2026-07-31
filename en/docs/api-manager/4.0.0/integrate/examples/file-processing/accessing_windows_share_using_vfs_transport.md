@@ -1,6 +1,6 @@
 # Accessing a Windows Share using VFS
 
-This example demonstrates how the [VFS transport]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transports) in WSO2 Micro Integrator can be used to access a windows share.
+This example demonstrates how the [VFS transport](../../../install-and-setup/setup/mi-setup/transport_configurations/configuring-transports.md) in WSO2 Micro Integrator can be used to access a windows share.
 
 
 ## Synapse configuration
@@ -63,7 +63,7 @@ To test this sample, the following files and directories should be created:
     -   You need to set both `transport.vfs.MoveAfterProcess` and `transport.vfs.MoveAfterFailure` parameter values to point to the **original** directory location.
     -   Be sure that the endpoint in the `<outSequence>` points to the **out** directory location. Make sure that the prefix `vfs:` in the endpoint URL is not removed or changed.
 
-3.  Add [sample_proxy_1.wsdl](https://github.com/wso2-docs/WSO2_EI/blob/master/samples-protocol-switching/sample_proxy_1.wsdl) as a [registry resource]({{base_path}}/integrate/develop/creating-artifacts/creating-registry-resources). Change the registry path of the proxy accordingly. 
+3.  Add [sample_proxy_1.wsdl](https://github.com/wso2-docs/WSO2_EI/blob/master/samples-protocol-switching/sample_proxy_1.wsdl) as a [registry resource](../../develop/creating-artifacts/creating-registry-resources.md). Change the registry path of the proxy accordingly. 
     
 4.  Set up the back-end service.
         

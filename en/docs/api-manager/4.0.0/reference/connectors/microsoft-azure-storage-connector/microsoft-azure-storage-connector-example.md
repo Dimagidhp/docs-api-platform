@@ -22,13 +22,13 @@ All six operations are exposed via an API. The API with the context `/resources`
 * `/deletedetails` : Remove added employee data from the specified text or binary employee data (blob).
 * `/deletecontainer` : Remove created container in the Microsoft Azure Storage account.
 
-For more information about these operations, please refer to the [Microsoft Azure Storage connector reference guide]({{base_path}}/reference/connectors/microsoft-azure-storage-connector/microsoft-azure-storage-reference/).
+For more information about these operations, please refer to the [Microsoft Azure Storage connector reference guide](microsoft-azure-storage-reference.md).
 
-> **Note**: Before invoking the API, you need to create a **Storage Account** in **Microsoft Azure Storage account**. See [Azure Storage Configuration]({{base_path}}/reference/connectors/microsoft-azure-storage-connector/microsoft-azure-storage-configuration/) documentation for more information.
+> **Note**: Before invoking the API, you need to create a **Storage Account** in **Microsoft Azure Storage account**. See [Azure Storage Configuration](microsoft-azure-storage-configuration.md) documentation for more information.
 
 The following diagram shows the overall solution. The user creates a container, stores some text or binary employee data (blob) into the container, and then receives it back. To invoke each operation, the user uses the same API. 
 
-<img src="{{base_path}}/assets/img/integrate/connectors/ms-azure-storage-connector.png" title="Microsoft Azure Storage Connector" width="800" alt="Microsoft Azure Storage Connector"/>
+<img src="../../../assets/img/integrate/connectors/ms-azure-storage-connector.png" title="Microsoft Azure Storage Connector" width="800" alt="Microsoft Azure Storage Connector"/>
 
 If you do not want to configure this yourself, you can simply [get the project](#get-the-project) and run it.
 
@@ -184,8 +184,8 @@ Now we can export the imported connector and the API into a single CAR applicati
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/ms-azure-connector.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/ms-azure-connector.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 !!! tip
@@ -288,4 +288,4 @@ Invoke the API as shown below using the curl command. Curl Application can be do
 
 ## What's next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/install-and-setup/installation/run_in_containers).
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).

@@ -27,17 +27,17 @@ Follow the instructions below to manage the API lifecycle appropriately:
 
 2.  Click on the API for which you need to change its lifecycle state.
 
-     <a href="{{base_path}}/assets/img/learn/select-created-api.png" ><img src="{{base_path}}/assets/img/learn/select-created-api.png" alt="Select API" title="Select API" width="40%" /></a>
+     <a href="../../assets/img/learn/select-created-api.png" ><img src="../../assets/img/learn/select-created-api.png" alt="Select API" title="Select API" width="40%" /></a>
 
 3.  Click **Lifecycle**.
 
-     <a href="{{base_path}}/assets/img/learn/lifecycle-tab.png" ><img src="{{base_path}}/assets/img/learn/lifecycle-tab.png" alt="Lifecycle tab" title="Lifecycle tab" width="70%" /></a>
+     <a href="../../assets/img/learn/lifecycle-tab.png" ><img src="../../assets/img/learn/lifecycle-tab.png" alt="Lifecycle tab" title="Lifecycle tab" width="70%" /></a>
     
      The lifecycle state transition grid and the lifecycle change history appears. The current lifecycle state and the next possible lifecycle transitions are available in lifecycle state grid. The lifecycle history contains the data such as the lifecycle transition action, the user who performed the transition and the timestamp of the state change. 
 
 4. Click on the lifecycle state change buttons to change the lifecycle state.
 
-   <a href="{{base_path}}/assets/img/learn/lifecycle-transition-grid.png" ><img src="{{base_path}}/assets/img/learn/lifecycle-transition-grid.png" alt="Lifecycle" title="Lifecycle" width="70%" /></a>
+   <a href="../../assets/img/learn/lifecycle-transition-grid.png" ><img src="../../assets/img/learn/lifecycle-transition-grid.png" alt="Lifecycle" title="Lifecycle" width="70%" /></a>
 
     
     

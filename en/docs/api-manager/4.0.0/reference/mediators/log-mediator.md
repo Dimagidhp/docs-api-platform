@@ -1,9 +1,9 @@
 # Log Mediator
 
-The **Log mediator** is used to log mediated messages. For more information on logging, see [Monitoring Logs]({{base_path}}/observe/micro-integrator/classic-observability-logs/monitoring-logs/).
+The **Log mediator** is used to log mediated messages. For more information on logging, see [Monitoring Logs](../../observe/micro-integrator/classic-observability-logs/monitoring-logs.md).
 
 !!! Info
-	The Log mediator is a [conditionally]({{base_path}}/concepts/message-processing-units/#classification-of-mediators) [content aware]({{base_path}}/concepts/message-processing-units/#classification-of-mediators) mediator.
+	The Log mediator is a [conditionally](about-mediators.md#classification-of-mediators) [content aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 

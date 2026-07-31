@@ -12,19 +12,19 @@ Follow the instructions below to generate and download client-side SDKs via the 
 
 2. Click on the API for which you want to generate a client-side SDK (e.g., `PizzaShackAPI`).
 
-     [![API Overview]({{base_path}}/assets/img/consume/select-api-dev-portal.png)]({{base_path}}/assets/img/consume/select-api-dev-portal.png)
+     [![API Overview](../../assets/img/consume/select-api-dev-portal.png)](../../assets/img/consume/select-api-dev-portal.png)
  
 3.  Click **SDKs**. 
 
      The default SDKs that you can download appear. 
 
-     [![Default SDKs]({{base_path}}/assets/img/consume/default-sdks.png)]({{base_path}}/assets/img/consume/default-sdks.png)
+     [![Default SDKs](../../assets/img/consume/default-sdks.png)](../../assets/img/consume/default-sdks.png)
     
 4.  Click **Download** to download the required SDK. 
 
      This downloads the ZIP archive of the SDK.
 
-     <a href="{{base_path}}/assets/img/learn/download-sdk.png"><img src="{{base_path}}/assets/img/learn/download-sdk.png" alt="Download SDK" title="Download SDK" width="80%" /></a>    
+     <a href="../../assets/img/learn/download-sdk.png"><img src="../../assets/img/learn/download-sdk.png" alt="Download SDK" title="Download SDK" width="80%" /></a>    
     
 ##  Configuring supported languages for SDK generation
 
@@ -79,11 +79,11 @@ Follow the instructions below to configure the languages available for SDK gener
     supported_languages = ["android", "java", "csharp", "dart", "groovy", "javascript"]
     ```
     
-3.  [Restart the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/) to apply the configuration changes.
+3.  [Restart the server](../../install-and-setup/install/installing-the-product/running-the-api-m.md) to apply the configuration changes.
 
 !!! Important
     If you are enabling **Python** as a supported SDK generation language, ensure the following dependency is added.
 
     1.  Download the [`rgxgen-1.4.jar`](https://repo1.maven.org/maven2/com/github/curious-odd-man/rgxgen/1.4/rgxgen-1.4.jar) file.  
     2.  Copy the JAR file to the `<APIM_HOME>/repository/components/lib/` directory.  
-    3.  [Restart the server]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/).
+    3.  [Restart the server](../../install-and-setup/install/installing-the-product/running-the-api-m.md).

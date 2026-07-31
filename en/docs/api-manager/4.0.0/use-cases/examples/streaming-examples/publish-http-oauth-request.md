@@ -43,7 +43,7 @@ This application demonstrates how to configure WSO2 Streaming Integrator Tooling
 
 To execute the sample open the saved Siddhi application in Streaming Integrator Tooling, and start it by clicking the **Start** button (shown below) or by clicking **Run** -> **Run**.
 
-![Start button]({{base_path}}/assets/img/streaming/amazon-s3-sink-sample/start.png)
+![Start button](../../../assets/img/streaming/amazon-s3-sink-sample/start.png)
 
 If the Siddhi application starts successfully, the Streaming Integrator logs the following messages in the terminal.
 
@@ -63,7 +63,7 @@ Send events via one or more of the following methods:
 
     1. To open the Event Simulator, click the **Event Simulator** icon.
        
-        ![Event Simulator Icon]({{base_path}}/assets/img/streaming/testing-siddhi-applications/event-simulation-icon.png)
+        ![Event Simulator Icon](../../../assets/img/streaming/testing-siddhi-applications/event-simulation-icon.png)
        
         This opens the event simulation panel.
         

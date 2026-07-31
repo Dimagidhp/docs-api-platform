@@ -1,6 +1,6 @@
 # Setting Maximum Backend Throughput Limits
 
-The maximum backend throughput setting limits the total number of calls a particular API in the API Manager is allowed to make to the backend. While the [other rate limiting levels]({{base_path}}/design/rate-limiting/setting-throttling-limits) define the quota the API invoker gets, they do not ensure that the backend is protected from overuse. The maximum backend throughput setting limits the quota the backend can handle. The counters maintained when evaluating the maximum backend throughput are shared across all nodes of the Gateway cluster and apply across all users using any application that accesses that particular API.
+The maximum backend throughput setting limits the total number of calls a particular API in the API Manager is allowed to make to the backend. While the [other rate limiting levels](setting-throttling-limits.md) define the quota the API invoker gets, they do not ensure that the backend is protected from overuse. The maximum backend throughput setting limits the quota the backend can handle. The counters maintained when evaluating the maximum backend throughput are shared across all nodes of the Gateway cluster and apply across all users using any application that accesses that particular API.
 
 Please follow below steps to set a maximum backend throughput for a given API.
 
@@ -8,13 +8,13 @@ Please follow below steps to set a maximum backend throughput for a given API.
 
 2.  Click on the API which you want to set the maximum backend throughput.
     
-    [![Select Api]({{base_path}}/assets/img/learn/select-api.png)]({{base_path}}/assets/img/learn/select-api.png)
+    [![Select Api](../../assets/img/learn/select-api.png)](../../assets/img/learn/select-api.png)
     
 3.  Navigate to **Runtime** tab under **API Configurations**.
 
 4.  Select the **Specify** option for the maximum backend throughput and specify the limits of the Production and Sandbox endpoints separately, as the two endpoints can come from two servers with different capacities.
 
-    [![Max Throughput]({{base_path}}/assets/img/learn/learn-throttling-maxtps.png)]({{base_path}}/assets/img/learn/learn-throttling-maxtps.png)
+    [![Max Throughput](../../assets/img/learn/learn-throttling-maxtps.png)](../../assets/img/learn/learn-throttling-maxtps.png)
     
 5.  Save the API.
     

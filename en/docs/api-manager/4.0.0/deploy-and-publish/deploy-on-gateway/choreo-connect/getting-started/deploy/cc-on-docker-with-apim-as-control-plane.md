@@ -61,4 +61,4 @@ docker-compose up -d
 
 ## Step 4 - Deploy the sample API via WSO2 API Manager
 
-Follow the instructions in [create and publish an API from API Manager]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/#step-3-create-and-publish-an-api-from-api-manager).
+Follow the instructions in [create and publish an API from API Manager](../quick-start-guide-docker-with-apim.md#step-3-create-and-publish-an-api-from-api-manager).

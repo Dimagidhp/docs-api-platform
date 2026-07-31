@@ -18,11 +18,11 @@ into the system.
 For a two-node minimum HA cluster to work, only the active node should receive events. By design, you can only send 
 events to the active node. To achieve this, you can use a load balancing mechanism that sends events in a failover manner as depicted in the diagram below.
 
-[![overview]({{base_path}}/assets/img/streaming/deploying-si-as-minimum-ha-cluster/minimum-two-node-ha.png){: style="width:90%"}]({{base_path}}/assets/img/streaming/deploying-si-as-minimum-ha-cluster/minimum-two-node-ha.png)
+[![overview](../../../assets/img/streaming/deploying-si-as-minimum-ha-cluster/minimum-two-node-ha.png){: style="width:90%"}](../../../assets/img/streaming/deploying-si-as-minimum-ha-cluster/minimum-two-node-ha.png)
 
 !!! info "Before you begin:"
     Before configuring a minimum HA cluster, you need to complete the following prerequisites:<br/>
-      - For each WSO2 SI instance, you need a CPU with four cores, and a total memory of 4GB. For more information, see [Installing the Streaming Integrator in a Virtual Machine]({{base_path}}/install-and-setup/install/installing-the-product/installing-si).<br/>
+      - For each WSO2 SI instance, you need a CPU with four cores, and a total memory of 4GB. For more information, see [Installing the Streaming Integrator in a Virtual Machine](../../install/installing-the-product/installing-si.md).<br/>
       <br/>
       - Download and install two binary packs of WSO2 SI..<br/>
       <br/>
@@ -33,7 +33,7 @@ events to the active node. To achieve this, you can use a load balancing mechani
         <br/>
       - In order to retrieve the state of the Siddhi Applications deployed in the system (in case of a scenario where both the
         nodes fail), enable state persistence for both the nodes by specifying the same datasource/file location.
-        For detailed instructions, see [Configuring Database and File System State Persistence]({{base_path}}/install-and-setup/setup/si-setup/configuring-database-and-file-system-state-persistence).<br/>
+        For detailed instructions, see [Configuring Database and File System State Persistence](../si-setup/configuring-database-and-file-system-state-persistence.md).<br/>
         <br/>
       - A client-side data publishing mechanism (such as a load balancer) that works in a failover manner must be available
         to publish events to one of the available nodes (i.e., to the active node).
@@ -53,7 +53,7 @@ There are three main configurations that are required to setup a minimum HA clus
     - The configurations given below need to be done in the `<SI_HOME>/conf/server/deployment.yaml` file for both
       the WSO2 SI nodes in the cluster.<br/><br/>
     - If you need to run both SI instances in the same host, make sure that you do a port offset to change the default 
-      ports in one of the hosts. For more information about the default ports, see [Configuring Default Ports]({{base_path}}/install-and-setup/setup/si-setup/configuring-default-ports).
+      ports in one of the hosts. For more information about the default ports, see [Configuring Default Ports](../si-setup/configuring-default-ports.md).
       
 To configure the HA cluster, follow the steps below:
 
@@ -63,7 +63,7 @@ To configure the HA cluster, follow the steps below:
 2. To allow the two nodes to use same persistence storage, you need to configure RDBMS persistence configuration under `state.persistence`. The following is a configuration for db-based file persistence.
 
     !!! info
-        This step covers persistent configuration. For this purpose, you can use MySQL, MSSQL, POSTGRES and Oracle database types. For more information about the supported database types, see [Configuring Data Sources]({{base_path}}/install-and-setup/setup/si-setup/configuring-data-sources).
+        This step covers persistent configuration. For this purpose, you can use MySQL, MSSQL, POSTGRES and Oracle database types. For more information about the supported database types, see [Configuring Data Sources](../si-setup/configuring-data-sources.md).
 
 
     ```
@@ -141,7 +141,7 @@ To configure the HA cluster, follow the steps below:
               isAutoCommit: false
         ```
 
-        For detailed instructions on how to configure a datasource, see [Configuring Datasources]({{base_path}}/install-and-setup/setup/si-setup/configuring-data-sources).
+        For detailed instructions on how to configure a datasource, see [Configuring Datasources](../si-setup/configuring-data-sources.md).
 
     - `heartbeatInterval`:
 

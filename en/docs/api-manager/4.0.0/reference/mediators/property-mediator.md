@@ -4,7 +4,7 @@ The **Property Mediator** has no direct impact on the message, but rather on the
 the properties set on a message later through the Synapse XPath Variables or the `get-property()` extension function. A property can have a defined scope for which it is valid. If a property has no defined scope, it defaults to the Synapse message context scope. Using the property element with the **action** specified as `remove`, you can remove any existing message context properties.
 
 !!! Info
-    The Property mediator is a [conditionally content aware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    The Property mediator is a [conditionally content aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -31,7 +31,7 @@ The parameters available for configuring the Property mediator are as follows:
 <td><div class="content-wrapper">
 <p>A name for the property.</p>
 <p>You can provide a static value or a dynamic value for the property name. A dynamic property name can be retrieved
-by using an XPath function. You can use any of the <a href="{{base_path}}/reference/mediators/property-reference/accessing-properties-with-xpath">XPath functions</a> that you use for the property <b>value</b> or property <b>expression</b>.</p>
+by using an XPath function. You can use any of the <a href="property-reference/accessing-properties-with-xpath.md">XPath functions</a> that you use for the property <b>value</b> or property <b>expression</b>.</p>
 <p>Note that the XPath function should be contained within curly brackets (<code>{}</code>) as well as double quotations (<code>""</code>). See the examples given below.</p>
   <ul>
     <li>
@@ -44,8 +44,8 @@ by using an XPath function. You can use any of the <a href="{{base_path}}/refere
       <code>property name="{json-eval({$ctx:propertyName})}"</code>
     </li>
   </ul>
-<p>For names of the generic properties that come by default, see <a href="{{base_path}}/reference/mediators/property-reference/generic-Properties">Generic Properties</a> . You can select them from the drop-down list if you are adding the Property Mediator as shown below.</p>
-<p><img src="{{base_path}}/assets/img/integrate/mediators/119131214/119131215.jpg" title="generic properties list" width="800" alt="generic properties list" /></p>
+<p>For names of the generic properties that come by default, see <a href="property-reference/generic-Properties.md">Generic Properties</a> . You can select them from the drop-down list if you are adding the Property Mediator as shown below.</p>
+<p><img src="../../assets/img/integrate/mediators/119131214/119131215.jpg" title="generic properties list" width="800" alt="generic properties list" /></p>
 </div></td>
 </tr>
 <tr class="even">
@@ -122,26 +122,26 @@ If the <strong>Expression</strong> option is selected for the <strong>Set Action
 <li><strong>Synapse</strong>: This is the default scope. The properties set in this scope last as long as the transaction (request-response) exists.</li>
 <li><strong>Transport</strong>: The properties set in this scope will be considered transport headers. For example, if it is required to send an HTTP header named 'CustomHeader' with an outgoing request, you can use the property mediator configuration with this scope.</li>
 <li><strong>Axis2</strong>: Properties set in this scope have a shorter life span than those set in the <strong>Synapse</strong> scope. They are mainly used for passing parameters to the underlying Axis2 engine</li>
-<li><strong>axis2-client</strong>: This is similar to the <strong>Synapse</strong> scope. The difference between the two scopes is that the <strong>axis2-client</strong> scope can be accessed inside the <b>mediate()</b> method of a mediator via a custom mediator created using the <a href="{{base_path}}/reference/mediators/class-mediator">Class mediator</a>.</li>
+<li><strong>axis2-client</strong>: This is similar to the <strong>Synapse</strong> scope. The difference between the two scopes is that the <strong>axis2-client</strong> scope can be accessed inside the <b>mediate()</b> method of a mediator via a custom mediator created using the <a href="class-mediator.md">Class mediator</a>.</li>
 <li><strong>Operation</strong>: This scope is used to retrieve a property in the operation context level.</li>
 <li><strong>Registry</strong>: This scope is used to retrieve properties within the registry .</li>
 <li><strong>System</strong>: This scope is used to retrieve Java system properties.</li>
 <li><strong>Environment</strong>: This scope is used to retrieve environment variables ('env').</li>
 <li><strong>File</strong>: This scope is used to retrieve properties defined in the `file.properties` configuration file ('file').</li>
 </ul>
-<p>For a detailed explanation of each scope, see <a href="{{base_path}}/reference/mediators/property-reference/accessing-properties-with-xpath">Accessing Properties with XPath</a>.</p></td>
+<p>For a detailed explanation of each scope, see <a href="property-reference/accessing-properties-with-xpath.md">Accessing Properties with XPath</a>.</p></td>
 </tr>
 </tbody>
 </table>
 
 !!! Note
-    There are predefined XPath variables (such as `$ctx` ) that you can directly use in the Synapse configuration, instead of using the synapse:get-property() function. These XPath variables get properties of various scopes and have better performance than the `get-property()` function, which can have much lower performance because it does a registry lookup. These XPath variables get properties of various scopes. For more information on these XPath variables, see [Accessing Properties with XPath]({{base_path}}/reference/mediators/property-reference/accessing-properties-with-xpath).
+    There are predefined XPath variables (such as `$ctx` ) that you can directly use in the Synapse configuration, instead of using the synapse:get-property() function. These XPath variables get properties of various scopes and have better performance than the `get-property()` function, which can have much lower performance because it does a registry lookup. These XPath variables get properties of various scopes. For more information on these XPath variables, see [Accessing Properties with XPath](property-reference/accessing-properties-with-xpath.md).
 
 ## Examples
 
 ### Setting and logging and property
 
-In this example, we are setting the property symbol and later we can log it using the [Log Mediator]({{base_path}}/reference/mediators/log-Mediator).
+In this example, we are setting the property symbol and later we can log it using the [Log Mediator](log-Mediator.md).
 
 ```xml
 <property name="symbol" expression="fn:concat('Normal Stock - ', //m0:getQuote/m0:request/m0:symbol)" xmlns:m0="http://services.samples/xsd"/>
@@ -153,8 +153,8 @@ In this example, we are setting the property symbol and later we can log it usin
 
 ### Sending a fault message based on the Accept http header
 
-In this configuration, a response is sent to the client based on the `         Accept        ` header. The [PayloadFactory mediator]({{base_path}}/reference/mediators/payloadfactory-mediator) transforms the message contents. Then a [Property mediator]({{base_path}}/reference/mediators/property-mediator) sets the message type
-based on the `Accept` header using the `$ctx:accept` expression. The message is then sent back to the client via the [Respond mediator]({{base_path}}/reference/mediators/respond-mediator).
+In this configuration, a response is sent to the client based on the `         Accept        ` header. The [PayloadFactory mediator](payloadfactory-mediator.md) transforms the message contents. Then a [Property mediator](property-mediator.md) sets the message type
+based on the `Accept` header using the `$ctx:accept` expression. The message is then sent back to the client via the [Respond mediator](respond-mediator.md).
 
 ``` xml
 <payloadFactory media-type="xml">
@@ -235,7 +235,7 @@ Your output log will look like this.
 
 ### Reading SOAP headers
 
-SOAP headers provide information about the message, such as the To and From values. You can use the `         get-property()        ` function of the Property mediator to retrieve these headers. You can also add Custom SOAP Headers using the [PayloadFactory mediator]({{base_path}}/reference/mediators/payloadfactory-mediator) and the [Script Mediator]({{base_path}}/reference/mediators/script-mediator).
+SOAP headers provide information about the message, such as the To and From values. You can use the `         get-property()        ` function of the Property mediator to retrieve these headers. You can also add Custom SOAP Headers using the [PayloadFactory mediator](payloadfactory-mediator.md) and the [Script Mediator](script-mediator.md).
 
 #### To
 

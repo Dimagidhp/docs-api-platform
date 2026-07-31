@@ -9,7 +9,7 @@ OpenTracing aims to be an open, vendor-neutral standard for distributed systems 
  - Zipkin
  - Log
 
-For more information, see [Open Tracer Configurations]({{base_path}}/reference/config-catalog/#api-m-open-tracer-configurations).
+For more information, see [Open Tracer Configurations](../../../reference/config-catalog.md#api-m-open-tracer-configurations).
 
 ## Enabling Jaeger Tracing
 
@@ -36,7 +36,7 @@ For more information, see [Open Tracer Configurations]({{base_path}}/reference/c
 
      After you invoke the APIs you will see the tracing data in Jaeger as follow:
 
-    [![Distributed tracing jaeger]({{base_path}}/assets/img/administer/opentracing-jaeger.png)]({{base_path}}/assets/img/administer/opentracing-jaeger.png)
+    [![Distributed tracing jaeger](../../../assets/img/administer/opentracing-jaeger.png)](../../../assets/img/administer/opentracing-jaeger.png)
 
 ## Enabling Zipkin Tracing
 
@@ -62,7 +62,7 @@ For more information, see [Open Tracer Configurations]({{base_path}}/reference/c
 
      After you invoke the APIs you will see the tracing data in Zipkin as follow:
 
-[![Distributed tracing zipkin]({{base_path}}/assets/img/administer/opentracing-zipkin.png)]({{base_path}}/assets/img/administer/opentracing-zipkin.png)
+[![Distributed tracing zipkin](../../../assets/img/administer/opentracing-zipkin.png)](../../../assets/img/administer/opentracing-zipkin.png)
 
 
 ## Enabling Log Tracing

@@ -25,7 +25,7 @@ Once the **product server is started**, you can start the `JConsole` tool as fol
 2.  Execute the `jconsole` command to open the log-in screen of the **Java Monitoring & Management Console** as
     shown below.  
     
-     [![jconsole_process]({{base_path}}/assets/img/integrate/jmx/jconsole-new-connection.png){: style="width:50%")}]({{base_path}}/assets/img/integrate/jmx/jconsole-new-connection.png)
+     [![jconsole_process](../../../assets/img/integrate/jmx/jconsole-new-connection.png){: style="width:50%")}](../../../assets/img/integrate/jmx/jconsole-new-connection.png)
 
 3.  Click on the  `org.wso2.micro.integrator.bootstrap.Bootstrap` process (which is the Micro Integrator) under the Local Process.
 4.  Click **Connect** to open the **Java Monitoring & Management Console**. 
@@ -35,27 +35,27 @@ Once the **product server is started**, you can start the `JConsole` tool as fol
 
     -   **Overview**
 
-         [![jconsole overview]({{base_path}}/assets/img/integrate/jmx/jconsole-overview.png){: style="width:90%")}]({{base_path}}/assets/img/integrate/jmx/jconsole-overview.png)
+         [![jconsole overview](../../../assets/img/integrate/jmx/jconsole-overview.png){: style="width:90%")}](../../../assets/img/integrate/jmx/jconsole-overview.png)
 
     -   **Memory**
 
-         [![jconsole memory]({{base_path}}/assets/img/integrate/jmx/jconsole-memory.png){: style="width:90%")}]({{base_path}}/assets/img/integrate/jmx/jconsole-memory.png)
+         [![jconsole memory](../../../assets/img/integrate/jmx/jconsole-memory.png){: style="width:90%")}](../../../assets/img/integrate/jmx/jconsole-memory.png)
 
     -   **Threads**
 
-         [![jconsole threads]({{base_path}}/assets/img/integrate/jmx/jconsole-threads.png){: style="width:90%")}]({{base_path}}/assets/img/integrate/jmx/jconsole-threads.png)
+         [![jconsole threads](../../../assets/img/integrate/jmx/jconsole-threads.png){: style="width:90%")}](../../../assets/img/integrate/jmx/jconsole-threads.png)
 
     -   **Classes**
         
-         [![jconsole classes]({{base_path}}/assets/img/integrate/jmx/jconsole-classes.png){: style="width:90%")}]({{base_path}}/assets/img/integrate/jmx/jconsole-classes.png)
+         [![jconsole classes](../../../assets/img/integrate/jmx/jconsole-classes.png){: style="width:90%")}](../../../assets/img/integrate/jmx/jconsole-classes.png)
 
     -   **VM**
         
-         [![jconsole VM]({{base_path}}/assets/img/integrate/jmx/jconsole-vm-summary.png){: style="width:90%")}]({{base_path}}/assets/img/integrate/jmx/jconsole-vm-summary.png)
+         [![jconsole VM](../../../assets/img/integrate/jmx/jconsole-vm-summary.png){: style="width:90%")}](../../../assets/img/integrate/jmx/jconsole-vm-summary.png)
 
     -   **MBeans**
         
-         [![jconsole MBeans]({{base_path}}/assets/img/integrate/jmx/jconsole-mbeans.png){: style="width:90%")}]({{base_path}}/assets/img/integrate/jmx/jconsole-mbeans.png)
+         [![jconsole MBeans](../../../assets/img/integrate/jmx/jconsole-mbeans.png){: style="width:90%")}](../../../assets/img/integrate/jmx/jconsole-mbeans.png)
 
 See the list of [Micro Integrator MBeans](#mbeans-for-the-micro-integrator) that you can monitor.
 
@@ -109,7 +109,7 @@ JMX Management Beans (MBeans) that can be used for managing and
 monitoring the running server.  When you start JConsole, you can monitor
 these MBeans from the **MBeans** tab. Most of the MBeans are exposed from the underlying Synapse mediation engine.
 
-[![micro integrator mbeans]({{base_path}}/assets/img/integrate/jmx/mi-mbeans.png){: style="width:90%")}]({{base_path}}/assets/img/integrate/jmx/mi-mbeans.png)
+[![micro integrator mbeans](../../../assets/img/integrate/jmx/mi-mbeans.png){: style="width:90%")}](../../../assets/img/integrate/jmx/mi-mbeans.png)
 
 The following section summarizes the common MBeans for all WSO2 products:
 

@@ -13,11 +13,11 @@ To see the default API life cycle configuration, follow the steps given below.
 
 2.  Navigate to **Extensions &gt; Configure &gt; Lifecycles**.
 
-    ![]({{base_path}}/assets/img/learn/lifecycle-menu.png)
+    ![](../../assets/img/learn/lifecycle-menu.png)
 
 3.  Click the **View/Edit** link corresponding to the API LifeCycle. The default API life cycle configuration opens.
 
-    ![]({{base_path}}/assets/img/learn/api-lifecycle-veiw.png) 
+    ![](../../assets/img/learn/api-lifecycle-veiw.png) 
 
     ``` xml
     <aspect name="APILifeCycle" class="org.wso2.carbon.governance.registry.extensions.aspects.DefaultLifeCycle">
@@ -140,11 +140,11 @@ The above configuration includes the following important information:
 
     The state transition events that occur in the default API life cycle is shown in the following diagram:
 
-    ![]({{base_path}}/assets/img/learn/lifecycle-tab-publisher.png)
+    ![](../../assets/img/learn/lifecycle-tab-publisher.png)
 
 The **Lifecycle** tab in the Publisher, shows the current state of an API, the target events defined in the API life cycle for that state, and the set of checklist items.
 
-![]({{base_path}}/assets/img/learn/lifecycle-image-with-checklist-items.png)
+![](../../assets/img/learn/lifecycle-image-with-checklist-items.png)
 
 !!! Info
 
@@ -166,7 +166,7 @@ With the integration of the registry life cycle to the API life cycle of API Man
 
 Following are some extension points where the default API life cycle can be extended by modifying above mentioned XML configuration of the API life cycle.
 
--   [Define your own life cycle states]({{base_path}}/design/lifecycle-management/customize-api-life-cycle/) in the API life cycle
+-   [Define your own life cycle states](customize-api-life-cycle.md) in the API life cycle
 -   Change the state transition events as per the environmental preferences
 -   Add custom checklist items for specific state transitions
 -   Change the execution code for each state transition
@@ -195,4 +195,4 @@ For example, a transition event called `Notify Users` can be introduced in the *
 
 After adding this changes, if you Deprecate an API, the newly added transition option will be available in Lifecycle tab:
 
-![]({{base_path}}/assets/img/learn/custom-transition-state.png)
+![](../../assets/img/learn/custom-transition-state.png)

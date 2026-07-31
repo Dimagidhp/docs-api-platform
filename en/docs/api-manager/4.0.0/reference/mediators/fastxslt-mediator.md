@@ -1,6 +1,6 @@
 # FastXSLT Mediator
 
-The **FastXSLT Mediator** is similar to the [XSLT mediator]({{base_path}}/reference/mediators/xslt-mediator), but it uses the [Streaming XPath Parser](https://wso2.com/library/articles/2013/01/streaming-xpath-parser-wso2-esb/) and applies the XSLT transformation to the message stream instead of to the XML message payload. The result is a faster transformation, but you cannot specify the source, properties, features, or resources as you can with the XSLT mediator. Therefore, the FastXSLT mediator is intended to be used to gain performance in cases where the original message remains unmodified. Any pre-processing performed on the message payload will not be visible to the FastXSLT mediator, because the transformation logic is applied on the original message stream instead of the message payload. In cases where the message payload needs to be pre-processed, use the XSLT mediator instead of the FastXSLT mediator.
+The **FastXSLT Mediator** is similar to the [XSLT mediator](xslt-mediator.md), but it uses the [Streaming XPath Parser](https://wso2.com/library/articles/2013/01/streaming-xpath-parser-wso2-esb/) and applies the XSLT transformation to the message stream instead of to the XML message payload. The result is a faster transformation, but you cannot specify the source, properties, features, or resources as you can with the XSLT mediator. Therefore, the FastXSLT mediator is intended to be used to gain performance in cases where the original message remains unmodified. Any pre-processing performed on the message payload will not be visible to the FastXSLT mediator, because the transformation logic is applied on the original message stream instead of the message payload. In cases where the message payload needs to be pre-processed, use the XSLT mediator instead of the FastXSLT mediator.
 
 !!! Note
     The streaming XPath parser used in the Fast XSLT mediator does not support Xpath functions specified with the prefix " fn: ". Examples are " `         fn:contains        ` ", " `         fn:count        ` ", and " `         fn:concat        ` ".
@@ -28,7 +28,7 @@ In summary, following are the key differences between the XSLT and FastXSLT medi
     ```
     
 !!! Info
-    The FastXSLT mediator is a [conditionally content-aware]({{base_path}}/concepts/message-processing-units/#classification-of-mediators) mediator.
+    The FastXSLT mediator is a [conditionally content-aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -97,12 +97,12 @@ Follow the steps below to specify the stylesheet as a Registry entry in the abov
 
 1.  Double click on the API and click the following link in the
     **Properties** tab.  
-    ![]({{base_path}}/assets/img/integrate/mediators/fastxslt-props.png)
+    ![](../../assets/img/integrate/mediators/fastxslt-props.png)
 2.  Click **Create & point to a new resource...** link.  
-    ![]({{base_path}}/assets/img/integrate/mediators/new-reg-resource.png)
+    ![](../../assets/img/integrate/mediators/new-reg-resource.png)
 3.  Enter the following details to create the empty XSL file in which
     you enter the stylesheet, in the Registry.  
-    ![]({{base_path}}/assets/img/integrate/mediators/create-xsl.png)
+    ![](../../assets/img/integrate/mediators/create-xsl.png)
 4.  Double-click the stylesheet file in the **Project Explorer**, and add the following stylesheet as the content of the XSL file.
 
     **discountPayment.xsl**

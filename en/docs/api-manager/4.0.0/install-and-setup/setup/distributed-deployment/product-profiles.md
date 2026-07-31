@@ -11,8 +11,8 @@ When the API-M server is started, all components, features, and related artifact
 
 See the following topics to understand how API-M profiles are used in a distributed deployment:
 
--   [Distributed Deployment - Overview]({{base_path}}/install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m)
--   [Configuring a Distributed API-M Deployment]({{base_path}}/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup)
+-   [Distributed Deployment - Overview](understanding-the-distributed-deployment-of-wso2-api-m.md)
+-   [Configuring a Distributed API-M Deployment](deploying-wso2-api-m-in-a-distributed-setup.md)
 
 ## Profile startup commands
 

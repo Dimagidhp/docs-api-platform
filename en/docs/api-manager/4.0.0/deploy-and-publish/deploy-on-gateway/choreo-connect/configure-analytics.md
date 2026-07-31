@@ -4,12 +4,12 @@ Choreo Connect is capable of publishing fine grained analytics events which can 
 Choreo Connect can not only publish analytics data to the Choreo platform but also to platforms that support the ELK stack. The following subsections will explain in detail how you could enable and configure analytics for each platform to gain insights into the services exposed via Choreo Connect.
 
 !!! tip
-    To learn more on the analytics-related concepts, see [Choreo Connect Analytics - Concepts]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/choreo-connect-analytics/).
+    To learn more on the analytics-related concepts, see [Choreo Connect Analytics - Concepts](concepts/choreo-connect-analytics.md).
 
 Configure Analytics for Choreo Connect using one of the following methods:
 
-- [Choreo Portal Analytics for Choreo Connect]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configure-analytics/#configuring-choreo-portal-analytics)
-- [ELK Analytics for Choreo Connect]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configure-analytics/#configuring-elk-analytics)
+- [Choreo Portal Analytics for Choreo Connect](configure-analytics.md#configuring-choreo-portal-analytics)
+- [ELK Analytics for Choreo Connect](configure-analytics.md#configuring-elk-analytics)
 
 ## Configuring Choreo Portal Analytics
 
@@ -24,7 +24,7 @@ Follow the instructions below to configure analytics with Choreo:
 3. Open the `docker-compose.yaml` file, which based on your setup is located in the `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect` or `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect-with-apim` directory.
 
     !!! info
-        You can configure Choreo Connect to publish Analytics to the Choreo cloud via the [standalone mode]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-docker/#step-3-start-choreo-connect) or via the [with Control Plane mode]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/#step-3-start-choreo-connect-and-api-manager).
+        You can configure Choreo Connect to publish Analytics to the Choreo cloud via the [standalone mode](getting-started/deploy/cc-as-a-standalone-gateway-on-docker.md#step-3-start-choreo-connect) or via the [with Control Plane mode](getting-started/quick-start-guide-docker-with-apim.md#step-3-start-choreo-connect-and-api-manager).
 
 4. Locate the environment variables section under the `enforcer` and change the following variables.
 
@@ -37,7 +37,7 @@ Follow the instructions below to configure analytics with Choreo:
 
 5. Enable analytics before starting Choreo Connect. First of all, navigate to the configuration file location. {!includes/deploy/cc-configuration-file.md!}
 
-    1. Locate the [Analytics]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configurations/analytics-configurations/) section.
+    1. Locate the [Analytics](configurations/analytics-configurations.md) section.
 
     1. Enable analytics by using the following configurations.
 
@@ -74,25 +74,25 @@ Follow the instructions below to generate some traffic in order to be able to vi
 
 1. Deploy your API.
     
-     [Deploy your API in API Manager]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/deploy-api/deploy-rest-api-in-choreo-connect/#step-3-deploy-the-api-in-api-manager) based on your setup.
+     [Deploy your API in API Manager](deploy-api/deploy-rest-api-in-choreo-connect.md#step-3-deploy-the-api-in-api-manager) based on your setup.
 
 2. Invoke the API a few times.
 
-     For more information, see [Invoke the API]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/deploy-api/deploy-rest-api-in-choreo-connect/#step-4-invoke-the-api).
+     For more information, see [Invoke the API](deploy-api/deploy-rest-api-in-choreo-connect.md#step-4-invoke-the-api).
 
 3. Go to <a href="https://console.choreo.dev/insights">Choreo Insights</a> to view the statistics. 
 
      Here are some of the graphs generated in the Choreo cloud.
 
-     [![Choreo Analytics Overview]({{base_path}}/assets/img/deploy/choreo-analytics-overview.png)]({{base_path}}/assets/img/deploy/choreo-analytics-overview.png)
+     [![Choreo Analytics Overview](../../../assets/img/deploy/choreo-analytics-overview.png)](../../../assets/img/deploy/choreo-analytics-overview.png)
 
-     [![Choreo Analytics Traffic]({{base_path}}/assets/img/deploy/choreo-analytics-traffic.png)]({{base_path}}/assets/img/deploy/choreo-analytics-traffic.png)
+     [![Choreo Analytics Traffic](../../../assets/img/deploy/choreo-analytics-traffic.png)](../../../assets/img/deploy/choreo-analytics-traffic.png)
 
-     [![Choreo Analytics Latency]({{base_path}}/assets/img/deploy/choreo-analytics-latency.png)]({{base_path}}/assets/img/deploy/choreo-analytics-latency.png)
+     [![Choreo Analytics Latency](../../../assets/img/deploy/choreo-analytics-latency.png)](../../../assets/img/deploy/choreo-analytics-latency.png)
 
 ##  Configuring ELK Analytics
 
-Follow the instructions below to [configure ELK Analytics for Choreo Connect]({{base_path}}/assets/img/deploy/choreo-elk-analytics-data-flow.png)
+Follow the instructions below to [configure ELK Analytics for Choreo Connect](../../../assets/img/deploy/choreo-elk-analytics-data-flow.png)
 
 The Enforcer component in Choreo Connect can log analytics-related data to be used by Filebeat in ELK Stack. Data flow for the ELK Analytics can be depicted as given above.
 
@@ -207,7 +207,7 @@ Update the `choreo-connect-1.x.x/docker-compose/choreo-connect(-with-apim)/conf/
 
 ### Step 2 - Set up the ELK Stack
 
-1. [Configure and setup the following elements in ELK Stack]({{base_path}}/api-analytics/on-prem/elk-installation-guide/#step-3-configure-security-in-elk).
+1. [Configure and setup the following elements in ELK Stack](../../../api-analytics/on-prem/elk-installation-guide.md#step-3-configure-security-in-elk).
 
      - Elasticsearch 
      - Kibana 
@@ -240,9 +240,9 @@ Invoke a few requests (success and failure).
 
 Check the Kibana dashboard. 
 
-You will notice that the populated data appears in [different dashboards]({{base_path}}/api-analytics/on-prem/elk-installation-guide/#dashboards).
+You will notice that the populated data appears in [different dashboards](../../../api-analytics/on-prem/elk-installation-guide.md#dashboards).
 
 
 ## See Also
 
-- [Publishing Analytics Events to External Systems]({{base_path}}/api-analytics/samples/publishing-analytics-events-to-external-systems)
+- [Publishing Analytics Events to External Systems](../../../api-analytics/samples/publishing-analytics-events-to-external-systems.md)

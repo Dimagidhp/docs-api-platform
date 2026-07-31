@@ -10,7 +10,7 @@ The data handled by WSO2 Stream Processor are stored in the following two types 
 -   **Store-backed tables** : These are tables that are defined by you
     in an external database. For a list of database types supported and
     instructions to define table for different database types, see
-    [Defining Tables for External Data Stores]({{base_path}}/install-and-setup/setup/si-setup/defining-tables-for-physical-stores) .      
+    [Defining Tables for External Data Stores](defining-tables-for-physical-stores.md) .      
 
 ### Adding primary and index keys
 

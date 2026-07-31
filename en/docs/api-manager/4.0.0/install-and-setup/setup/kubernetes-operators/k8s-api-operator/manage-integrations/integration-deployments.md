@@ -12,20 +12,20 @@ Listed below are the system requirements for deploying integration solutions in 
 
 - [Kubernetes](https://kubernetes.io/docs/setup/) cluster and **v1.14+** client. 
 - [Docker](https://docs.docker.com/)
-- [Install K8s API Operator]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/install)
+- [Install K8s API Operator](../install.md)
 
 ## Deploy integration solutions in K8s
 
 !!! Tip
     To try the end-to-end process of deploying integration solutions on Kubernetes, see the integration examples: 
 
-    - [Hello World example]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-samples/hello-world)
-    - [Message Routing example]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-samples/content-based-routing)
-    - [JMS Sender/Receiver exampe]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-samples/jms-sender-receiver)
+    - [Hello World example](integration-samples/hello-world.md)
+    - [Message Routing example](integration-samples/content-based-routing.md)
+    - [JMS Sender/Receiver exampe](integration-samples/jms-sender-receiver.md)
 
 Given below are the main steps your will follow when you deploy integration solutions in a Kubernetes cluster.
 
-1. Be sure that the [system requirements](#prerequisites-system-requirements) are fulfilled, and that the [K8s API operator]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/install) is installed in your Kubernetes environment.
+1. Be sure that the [system requirements](#prerequisites-system-requirements) are fulfilled, and that the [K8s API operator](../install.md) is installed in your Kubernetes environment.
 2. Your integration solution should be prepared using **WSO2 Integration Studio** as follows:
 
     1. Create the integration solution.
@@ -530,7 +530,7 @@ When you run the above command, Kubernetes will spawn another temporary pod, whi
 
 ## Run inbound endpoints
 
-[Inbound Endpoints]({{base_path}}/reference/synapse-properties/inbound-endpoints/about-inbound-endpoints/) in the Micro Integrator are used for separating endpoint listeners. That is, for each HTTP inbound endpoint, messages are handled separately. Also, we can create any number of inbound endpoints on any port. 
+[Inbound Endpoints](../../../../../reference/synapse-properties/inbound-endpoints/about-inbound-endpoints.md) in the Micro Integrator are used for separating endpoint listeners. That is, for each HTTP inbound endpoint, messages are handled separately. Also, we can create any number of inbound endpoints on any port. 
 
 Therefore, we can expose the inbound endpoint ports from the Kubernetes cluster by passing the `inboundPorts` property inside our `integration_cr.yaml` custom resource file as follows:
 

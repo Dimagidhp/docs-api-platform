@@ -16,6 +16,6 @@ When it comes to managing APIs, users are able to deploy APIs in Kubernetes with
 
 Follow the deployment guides below to get started with managing APIs in Kubernetes.
 
-- [Choreo Connect as a Standalone Gateway on Kubernetes]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes)
+- [Choreo Connect as a Standalone Gateway on Kubernetes](../../../../../deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes.md)
 
-- [Choreo Connect on Kubernetes with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane/)
+- [Choreo Connect on Kubernetes with WSO2 API Manager as a Control Plane](../../../../../deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane.md)

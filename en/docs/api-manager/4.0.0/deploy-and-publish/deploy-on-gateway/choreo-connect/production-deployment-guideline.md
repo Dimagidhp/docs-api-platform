@@ -1,14 +1,14 @@
 # Production Deployment Guideline
 
-Kubernetes should be used for Choreo Connect production deployments. The common guidelines for deploying Choreo Connect in a production environment using the [Helm deployment option]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-deploy-overview/) provided below.
+Kubernetes should be used for Choreo Connect production deployments. The common guidelines for deploying Choreo Connect in a production environment using the [Helm deployment option](getting-started/deploy/cc-deploy-overview.md) provided below.
 
 You can deploy Choreo Connect using one of the following options.
 
-- [API Manager as Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/)
-- [Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway/)
+- [API Manager as Control Plane](concepts/apim-as-control-plane.md)
+- [Standalone Gateway](concepts/as-a-standalone-gateway.md)
 
 !!! note
-    Choreo Connect Docker based deployment option provided **only for the tryout purpose.** Docker based deployment option is **not recommended to use in production deployments**. For production deployments you can use Kubernetes based Choreo Connect deployment with [Helm artifacts]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane-helm-artifacts/) or [YAML artifacts]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane/).
+    Choreo Connect Docker based deployment option provided **only for the tryout purpose.** Docker based deployment option is **not recommended to use in production deployments**. For production deployments you can use Kubernetes based Choreo Connect deployment with [Helm artifacts](getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane-helm-artifacts.md) or [YAML artifacts](getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane.md).
 
 This document walk you through following sections.
 
@@ -325,7 +325,7 @@ wso2.deployment.gatewayRuntime.router.ingress.tlsSecretName=<TLS_CERT_SECRET_IN_
 ### Disable Test Token Issuer
 
 Choreo Connect provides the ability to generate a JWT as a test key to access the APIs. It is recommended to disable the `/testkey` endpoint in the Production environments.
-Refer the document [Generate a Test JWT]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/generate-a-test-jwt/) to read more about Test JWT.
+Refer the document [Generate a Test JWT](security/generate-a-test-jwt.md) to read more about Test JWT.
 
 Set the following value to `false` when installing the helm chart or set it in the values.yaml file.
 
@@ -403,7 +403,7 @@ wso2:
     mode: "APIM_AS_CP"
 ```
 
-Please follow the document about [Deploying Choreo Connect on Kubernetes With WSO2 API Manager as a Control Plane - Helm Artifacts]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane-helm-artifacts/) for deploying Choreo Connect.
+Please follow the document about [Deploying Choreo Connect on Kubernetes With WSO2 API Manager as a Control Plane - Helm Artifacts](getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane-helm-artifacts.md) for deploying Choreo Connect.
 
 ## Mode 2: Standalone Gateway Configurations
 
@@ -414,7 +414,7 @@ Hence, in a production deployment with the Standalone deployment option, it is r
 
 #### Step 1: Create Projects
 
-Follow the steps (step 1 and step 2) in the document [Deploy APIs as Immutable Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/deploy-api/deploy-apis-as-immutable-gateway/) to create an `apictl project`. You can include multiple `apictl projects`.
+Follow the steps (step 1 and step 2) in the document [Deploy APIs as Immutable Gateway](deploy-api/deploy-apis-as-immutable-gateway.md) to create an `apictl project`. You can include multiple `apictl projects`.
 
 For example lets create a directory `apictl-projects-dir` and copy all `apictl projects` (`petstore` project for following sample) to this directory. These projects can be zip files, unzipped project directory or projects that are exported from WSO2 API Manager.
 
@@ -517,4 +517,4 @@ wso2.deployment.adapter.security.adapterRestService.enabled="false"
 
 #### Step 5: Deploy Choreo Connect
 
-Please follow the document about [Deploying Choreo Connect as a Standalone Gateway on Kubernetes - Helm Artifacts]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes-helm-artifacts/) for deploying Choreo Connect.
+Please follow the document about [Deploying Choreo Connect as a Standalone Gateway on Kubernetes - Helm Artifacts](getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes-helm-artifacts.md) for deploying Choreo Connect.

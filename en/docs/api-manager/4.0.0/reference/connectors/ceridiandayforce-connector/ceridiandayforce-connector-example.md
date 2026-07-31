@@ -21,7 +21,7 @@ parameters must be passed in the body as we will see below.
 
 ## Setting up the environment 
 
-Please follow the steps mentioned at [Setting up Ceridian Dayforce Environment]({{base_path}}/reference/connectors/ceridiandayforce-connector/ceridiandayforce-connector-config/) document in order to create a Ceridian Dayforce developer account and obtain credentials you need to access the 
+Please follow the steps mentioned at [Setting up Ceridian Dayforce Environment](ceridiandayforce-connector-config.md) document in order to create a Ceridian Dayforce developer account and obtain credentials you need to access the 
 Dayforce sample APIs. Keep them saved to be used in the next steps.  
 
 ## Configure the connector in WSO2 Integration Studio
@@ -31,7 +31,7 @@ Follow these steps to set up the Integration Project and import Dayforce connect
 {!includes/reference/connectors/importing-connector-to-integration-studio.md!} 
 
 1. Right click on the created ESB Solution Project and select, -> **New** -> **Rest API** to create the REST API.
-   <img src="{{base_path}}/assets/img/integrate/connectors/adding-an-api.jpg" 
+   <img src="../../../assets/img/integrate/connectors/adding-an-api.jpg" 
    title="Adding a Rest API" width="800" alt="Adding a Rest API"/>
 
 2. Specify the API name as `DayforceConnectorTestAPI` and API context as `/dayforceconnector`. You can go to the 
@@ -107,8 +107,8 @@ Now the exported CApp can be deployed in the integration runtime so that we can 
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/ceridiandayforce-connector-1.0.0.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/ceridiandayforce-connector-1.0.0.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 ## Deployment
@@ -232,4 +232,4 @@ curl --location --request POST 'http://192.168.8.100:8290/dayforceconnector/post
 * You should get a 200 OK response. Please bear in mind that this post will not update the database in the sample 
 environment. However, if you use this in a test or production environment changes will be made to the database.
 
-In this example Ceridian Dayforce connector is used to perform operations with Dayforce HCM.  Please read the [Ceridian Dayforce connector reference guide]({{base_path}}/reference/connectors/ceridiandayforce-connector/ceridiandayforce-connector-reference/) to learn more about the operations you can perform with the Dayforce connector.
+In this example Ceridian Dayforce connector is used to perform operations with Dayforce HCM.  Please read the [Ceridian Dayforce connector reference guide](ceridiandayforce-connector-reference.md) to learn more about the operations you can perform with the Dayforce connector.

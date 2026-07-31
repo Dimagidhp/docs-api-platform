@@ -1,6 +1,6 @@
 # Working with WSO2 Integration Studio
 
-Once you have created a [REST API]({{base_path}}/integrate/develop/creating-artifacts/creating-an-api) or a [Proxy Service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) in WSO2 Integration Studio, you can update the mediation flow by adding new mediation artifacts and changing the existing artifacts.
+Once you have created a [REST API](creating-artifacts/creating-an-api.md) or a [Proxy Service](creating-artifacts/creating-a-proxy-service.md) in WSO2 Integration Studio, you can update the mediation flow by adding new mediation artifacts and changing the existing artifacts.
 
 Follow the steps given below.
 
@@ -9,9 +9,9 @@ Follow the steps given below.
     -   **Design View**:
         You can select any of the mediation artifacts from the design view shown below and update its parameters from the **Properties** tab in the bottom pane. You can also drag and drop new mediation artifacts to the design view from the artifact **Palette** to modify the mediation flow.
 
-        ![design view]({{base_path}}/assets/img/integrate/design-workflow/design-view.png)
+        ![design view](../../assets/img/integrate/design-workflow/design-view.png)
 
     -   **Source View**:
         If you have a sample proxy service configuration, you can simply copy it to the source view shown below.
 
-        ![source view]({{base_path}}/assets/img/integrate/design-workflow/source-view.png)
+        ![source view](../../assets/img/integrate/design-workflow/source-view.png)

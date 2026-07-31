@@ -1,10 +1,10 @@
 There are two kinds of jobs in Jenkins that we need to maintain. One for the Integration project repositories. Another kind is for the Deployment Descriptor repositories. 
 
-[![VM based CI/CD for Micro Integrator]({{base_path}}/assets/img/deploy/mi-cicd-vm.png)]({{base_path}}/assets/img/deploy/mi-cicd-vm.png)
+[![VM based CI/CD for Micro Integrator](../../../../assets/img/deploy/mi-cicd-vm.png)](../../../../assets/img/deploy/mi-cicd-vm.png)
 
 #### Integration Project Build Job
 - We need to maintain one Jenkins job per Integration Project repository.
-- The Integration Project has to be a [Maven Multi Module project]({{base_path}}/integrate/develop/create-integration-project/#maven-multi-module-projects) and it has to contain one Composite Exporter module. By default, the sample scripts provided, supports one Exporter module. Users can customize it to support multiple Exporter modules per Integration Project.
+- The Integration Project has to be a [Maven Multi Module project](../../../../integrate/develop/create-integration-project.md#maven-multi-module-projects) and it has to contain one Composite Exporter module. By default, the sample scripts provided, supports one Exporter module. Users can customize it to support multiple Exporter modules per Integration Project.
 - The build phase of the job will build the Integration project and run the unit tests if a Unit test server, if configured.
 - The release phase of the job will publish the CApps to the Nexus repository and create a release tag in GitHub.
 

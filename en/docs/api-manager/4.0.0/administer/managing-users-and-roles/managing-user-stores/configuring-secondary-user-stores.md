@@ -50,7 +50,7 @@ There are two approaches to configure a secondary user store. It can be configur
     </tbody>
     </table>
 
-    You can also populate this drop-down list with custom user store manager implementations by adding them to the server. For information on implementing a custom user store manager, see [Writing a Custom User Store Manager]({{base_path}}/administer/managing-users-and-roles/managing-user-stores/writing-a-custom-user-store-manager).
+    You can also populate this drop-down list with custom user store manager implementations by adding them to the server. For information on implementing a custom user store manager, see [Writing a Custom User Store Manager](writing-a-custom-user-store-manager.md).
 
     For samples, see [Sample Custom User Store Manager](https://github.com/wso2/product-is/tree/v5.10.0/modules/samples/user-mgt/sample-custom-user-store-manager) in the WSO2 Identity Server product repository.
 
@@ -62,7 +62,7 @@ There are two approaches to configure a secondary user store. It can be configur
 
      The properties vary based on the user store manager class that you selected, and there may be additional properties under "Optional" or "Advanced" sections at the bottom of the screen. For information on the properties that are used when defining user stores, see [Properties of User Stores](https://docs.wso2.com/display/ADMIN44x/Working+with+Properties+of+User+Stores).
 
-    [![Secondary user store definition]({{base_path}}/assets/img/administer/secondary-user-store-definition.png)]({{base_path}}/assets/img/administer/secondary-user-store-definition.png)
+    [![Secondary user store definition](../../../assets/img/administer/secondary-user-store-definition.png)](../../../assets/img/administer/secondary-user-store-definition.png)
 
     !!! note
         Make sure that you do not enter `federated` as the domain name as the term is reserved for federated users.
@@ -73,7 +73,7 @@ There are two approaches to configure a secondary user store. It can be configur
 6. Ensure that all the mandatory fields are filled and a valid domain name is given and click **Add**.
 
      A message appears saying that the user stores are being added.
-     [![Secondary user store update msg]({{base_path}}/assets/img/administer/secondary-user-store-update-msg.png)]({{base_path}}/assets/img/administer/secondary-user-store-update-msg.png)
+     [![Secondary user store update msg](../../../assets/img/administer/secondary-user-store-update-msg.png)](../../../assets/img/administer/secondary-user-store-update-msg.png)
 
     !!! Note
         The above message does not imply that the user store is added successfully. It simply means that the server is attempting to add the new user store to the end of the available chain of stores.

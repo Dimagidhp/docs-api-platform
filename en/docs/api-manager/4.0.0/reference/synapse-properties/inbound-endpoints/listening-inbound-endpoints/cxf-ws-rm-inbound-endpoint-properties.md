@@ -25,7 +25,7 @@ WS­ReliableMessaging allows SOAP messages to be reliably delivered between dist
 
 ## Properties
 
-The following properties can be configured when [creating a CXF WS-RM inbound endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-an-inbound-endpoint).
+The following properties can be configured when [creating a CXF WS-RM inbound endpoint](../../../../integrate/develop/creating-artifacts/creating-an-inbound-endpoint.md).
 
 <table>
   <tr>

@@ -48,7 +48,7 @@ Create and publish an API that is secured with the API key security scheme as th
 
 4. Select **API Key** and click **SAVE**.
 
-     [![Configure API key authentication]({{base_path}}/assets/img/learn/api-key-option.png)]({{base_path}}/assets/img/learn/api-key-option.png)
+     [![Configure API key authentication](../../../assets/img/learn/api-key-option.png)](../../../assets/img/learn/api-key-option.png)
 
 ### Step 2 - Generate the API Key
 
@@ -70,15 +70,15 @@ Create and publish an API that is secured with the API key security scheme as th
      </html>
 
 5. Click **Subscribe**.
-     [![Subscribe to the API]({{base_path}}/assets/img/learn/subscribe-to-api.png)]({{base_path}}/assets/img/learn/subscribe-to-api.png)
+     [![Subscribe to the API](../../../assets/img/learn/subscribe-to-api.png)](../../../assets/img/learn/subscribe-to-api.png)
 
 6. Click **MANAGE APP**, corresponding to the application that you used to subscribe to the API.
 
-     [![View list of credentials]({{base_path}}/assets/img/learn/view-credentials-manage-app.png)]({{base_path}}/assets/img/learn/view-credentials-manage-app.png)
+     [![View list of credentials](../../../assets/img/learn/view-credentials-manage-app.png)](../../../assets/img/learn/view-credentials-manage-app.png)
 
 7. Click **API KEY** and click **GENERATE KEY**.
 
-     [![Generate API key]({{base_path}}/assets/img/learn/generate-api-key.png)]({{base_path}}/assets/img/learn/generate-api-key.png)
+     [![Generate API key](../../../assets/img/learn/generate-api-key.png)](../../../assets/img/learn/generate-api-key.png)
 
 8. Optionally, define a validity period for the token.
 
@@ -90,7 +90,7 @@ Create and publish an API that is secured with the API key security scheme as th
      
 9. Copy the API key.
 
-     [![Copy API key]({{base_path}}/assets/img/learn/copy-api-key.png)]({{base_path}}/assets/img/learn/copy-api-key.png)
+     [![Copy API key](../../../assets/img/learn/copy-api-key.png)](../../../assets/img/learn/copy-api-key.png)
 
 ### Step 3 - Invoke the API
 
@@ -176,9 +176,9 @@ By default, the alias name is `gateway_certificate_alias`. Follow the instructio
 ### Configuring custom keystores
 
 <<<<<<< HEAD
-You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, refer the [Configuration Catalog]({{base_path}}//reference/config-catalog/) for more details.
+You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, refer the [Configuration Catalog](../../../reference/config-catalog.md) for more details.
 =======
-You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog]({{base_path}}/reference/config-catalog/).
+You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog](../../../reference/config-catalog.md).
 >>>>>>> 4cc235f87... Update en/docs/learn/api-security/api-authentication/secure-apis-using-api-keys.md
 
 To configure custom keystores, add the following to the `<API-M_HOME>/repository/conf/deployment.toml` file.
@@ -222,7 +222,7 @@ in the following formats.
 
 2. Select `IP Addresses`, add the IP addresses in the text input as shown below, and generate the key.
 
-    [![IP Restricted API key]({{base_path}}/assets/img/learn/ip-api-key.png)]({{base_path}}/assets/img/learn/ip-api-key.png)
+    [![IP Restricted API key](../../../assets/img/learn/ip-api-key.png)](../../../assets/img/learn/ip-api-key.png)
 
 #### 2) HTTP referer restriction
 
@@ -238,4 +238,4 @@ When the HTTP referer restriction has been enabled, only the specific HTTP refer
 
 2. Select `HTTP Referrers (Web Sites)` and add the referrers in the text input as shown below and generate the key.
 
-    [![HTTP Referer Restricted API key]({{base_path}}/assets/img/learn/http-referer-api-key.png)]({{base_path}}/assets/img/learn/http-referer-api-key.png)
+    [![HTTP Referer Restricted API key](../../../assets/img/learn/http-referer-api-key.png)](../../../assets/img/learn/http-referer-api-key.png)

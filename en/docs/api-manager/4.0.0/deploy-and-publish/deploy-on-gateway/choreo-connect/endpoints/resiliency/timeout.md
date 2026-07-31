@@ -4,16 +4,16 @@ You can use timeouts to gracefully handle connections that take an unusual amoun
 
 Timeouts can be defined at two levels.
 
-- [Endpoint Level]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/resiliency/timeout/#endpoint-level-upstream-timeouts) 
+- [Endpoint Level](timeout.md#endpoint-level-upstream-timeouts) 
     - Only upstream timeouts can be defined at this level
     - Must be explicitly defined
-- [Global Level]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/resiliency/timeout/#global-level-timeouts)
+- [Global Level](timeout.md#global-level-timeouts)
     - Multiple types of timeouts including upstream timeout can be defined
     - If not specified, default values are assigned 
 
 ## Endpoint Level Upstream Timeouts
 
-You can define the Endpoint Level Upstream Timeout in the `x-wso2-production-endpoint` and/or `x-wso2-sandbox-endpoint` OpenAPI extension of the API's OpenAPI definition, based on the endpoint type (i.e., production or sandbox), when [deploying an API **via the apictl (CLI Tool)**]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/deploy-api/deploy-rest-api-in-choreo-connect/#choreo-connect-as-a-standalone-gateway/).
+You can define the Endpoint Level Upstream Timeout in the `x-wso2-production-endpoint` and/or `x-wso2-sandbox-endpoint` OpenAPI extension of the API's OpenAPI definition, based on the endpoint type (i.e., production or sandbox), when [deploying an API **via the apictl (CLI Tool)**](../../deploy-api/deploy-rest-api-in-choreo-connect.md#choreo-connect-as-a-standalone-gateway).
 
 ``` bash tab="Production Endpoint"
 x-wso2-production-endpoints:
@@ -101,7 +101,7 @@ clusterTimeoutInSeconds = 20
 | maxRouteTimeoutInSeconds | Maximum value accepted as the Endpoint Level Upstream Timeout. If a larger Route Timeout value is set at the endpoint level using the `timeoutInMillis` configuration, the `maxRouteTimeoutInSeconds` value will override the latter mentioned Endpoint Level Upstream Timeout value. |
 | routeIdleTimeoutInSeconds | The backend (upstream) connection idle timeout. The amount of time the request’s stream may be idle. |
 
-For more information with regard to the latter mentioned configurations with regard to the Global Level Timeouts, see [Router]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configurations/router-configurations/#router), [Connection Timeout]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configurations/router-configurations/#connection-timeout), and [Upstream Timeout]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configurations/router-configurations/#upstream-timeout).
+For more information with regard to the latter mentioned configurations with regard to the Global Level Timeouts, see [Router](../../configurations/router-configurations.md#router), [Connection Timeout](../../configurations/router-configurations.md#connection-timeout), and [Upstream Timeout](../../configurations/router-configurations.md#upstream-timeout).
 
 !!! Info
 
@@ -119,5 +119,5 @@ For more information with regard to the latter mentioned configurations with reg
 
 ## See Also
 
-- [Circuit Breakers]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/resiliency/circuit-breakers)
+- [Circuit Breakers](circuit-breakers.md)
 

@@ -10,7 +10,7 @@ Instead of publishing already available analytics events data, it is also possib
 
 !!! Important
     - Note that, support for publishing custom analytics events data has been introduced to WSO2 API Manager 4.0.0 via an U2 update (Update level 130) and is effective from 27th July 2022.
-    - You can check if this feature is available in your current pack by viewing the trace logs without adding the jar containing the implemented class as [here]({{base_path}}/api-analytics/samples/publishing-custom-analytics-data/#build-the-project).
+    - You can check if this feature is available in your current pack by viewing the trace logs without adding the jar containing the implemented class as [here](publishing-custom-analytics-data.md#build-the-project).
     - If the feature is available in the pack you will be able to see a property object named `property` which includes `apiContext` and `userName` as default values.
 
     ```json
@@ -26,7 +26,7 @@ This section will cover the steps required to create a sample and configure the 
 
 You have to create a new `Java/Maven project`. 
 
-There is an already [created sample](https://github.com/wso2/samples-apim/tree/4.0.0/analytics-custom-data-provider) and if you wish to use that sample instead of developing the sample from scratch, then you can ignore the steps of creating the sample and start from [here]({{base_path}}/api-analytics/samples/publishing-custom-analytics-data/#build-the-project).
+There is an already [created sample](https://github.com/wso2/samples-apim/tree/4.0.0/analytics-custom-data-provider) and if you wish to use that sample instead of developing the sample from scratch, then you can ignore the steps of creating the sample and start from [here](publishing-custom-analytics-data.md#build-the-project).
 
 This section will cover how to configure the `pom.xml`, class implementations and building the created sample.
 
@@ -148,7 +148,7 @@ This section will cover the steps required to configure WSO2 API-M Gateway for t
 
 3. Enable logs.
 
-    To [enable trace logs]({{base_path}}/administer/logging-and-monitoring/logging/configuring-logging/#enabling-logs-for-a-component) for the component: `org.wso2.am.analytics.publisher`, edit the `log4j2.properties` file located inside `wso2am-4.0.0/repository/conf` directory. 
+    To [enable trace logs](../../administer/logging-and-monitoring/logging/configuring-logging.md#enabling-logs-for-a-component) for the component: `org.wso2.am.analytics.publisher`, edit the `log4j2.properties` file located inside `wso2am-4.0.0/repository/conf` directory. 
 
     1. Add new publisher to the loggers list:
     ```code

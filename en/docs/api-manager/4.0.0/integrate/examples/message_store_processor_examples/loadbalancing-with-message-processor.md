@@ -87,12 +87,12 @@ Following are the artifact configurations that we can use to implement this scen
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service), [endpoints]({{base_path}}/integrate/develop/creating-artifacts/creating-endpoints), [message stores]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-store) and [message processors]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-processor) with the configurations given above.
-4. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md), [endpoints](../../develop/creating-artifacts/creating-endpoints.md), [message stores](../../develop/creating-artifacts/creating-a-message-store.md) and [message processors](../../develop/creating-artifacts/creating-a-message-processor.md) with the configurations given above.
+4. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 
-[Configure the ActiveMQ broker]({{base_path}}/install-and-setup/setup/mi-setup/brokers/configure-with-activemq).
+[Configure the ActiveMQ broker](../../../install-and-setup/setup/mi-setup/brokers/configure-with-activemq.md).
 
 You can analyze the message sent by the Micro Integrator to the secure service using TCPMon.
 

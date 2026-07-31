@@ -6,17 +6,17 @@ Follow the instructions given below to create a **Scheduled Task** in WSO2 Integ
 
 ### Creating the Scheduled Task artifact
 
-1.  Right-click the [ESB Config project]({{base_path}}/integrate/develop/create-integration-project/#esb-config-project) and click **New** → **Scheduled Task**.  
+1.  Right-click the [ESB Config project](../create-integration-project.md#esb-config-project) and click **New** → **Scheduled Task**.  
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/scheduled_task/select-scheduled-task.png">
+    <img src="../../../assets/img/integrate/create_artifacts/scheduled_task/select-scheduled-task.png">
 
 2.  Select **Create a New Scheduled Task Artifact** and click **Next**.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/scheduled_task/new-task-wizard-1.png" width="500">
+    <img src="../../../assets/img/integrate/create_artifacts/scheduled_task/new-task-wizard-1.png" width="500">
 
-3.  Specify values for the [required parameter]({{base_path}}/reference/synapse-properties/scheduled-task-properties) for the scheduled task.
+3.  Specify values for the [required parameter](../../../reference/synapse-properties/scheduled-task-properties.md) for the scheduled task.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/scheduled_task/new-task-wizard-2.png" width="500">
+    <img src="../../../assets/img/integrate/create_artifacts/scheduled_task/new-task-wizard-2.png" width="500">
 
 4.   Specify the location to save the artifact:
 
@@ -35,20 +35,20 @@ Update the task properties to specify the incoming message that should trigger t
 
 1.  Open the new artifact from the project explorer.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/scheduled_task/scheduled-task-form-view.png" width="700">
+    <img src="../../../assets/img/integrate/create_artifacts/scheduled_task/scheduled-task-form-view.png" width="700">
 
 2.  In the **Form** view, you can optionally modify already specified property values.
 3.  Click **Task Implementation Properties** to open the **Task Properties** dialog box.
 
-    <img src="{{base_path}}/assets/img/integrate/create_artifacts/scheduled_task/scheduled-task-properties.png" width="700">
+    <img src="../../../assets/img/integrate/create_artifacts/scheduled_task/scheduled-task-properties.png" width="700">
 
 4.  Update the properties.
 
 ## Examples
 
--   [Task Scheduling using a Simple Trigger]({{base_path}}/integrate/examples/scheduled-tasks/task-scheduling-simple-trigger)
--   [Injecting Messages to a RESTful Endpoint]({{base_path}}/integrate/examples/scheduled-tasks/injecting-messages-to-rest-endpoint)
+-   [Task Scheduling using a Simple Trigger](../../examples/scheduled-tasks/task-scheduling-simple-trigger.md)
+-   [Injecting Messages to a RESTful Endpoint](../../examples/scheduled-tasks/injecting-messages-to-rest-endpoint.md)
 
 ## Tutorials
 
--   See the tutorial on [periodically executing an integration process]({{base_path}}/tutorials/integration-tutorials/using-scheduled-tasks) using a scheduled task
+-   See the tutorial on [periodically executing an integration process](../../../tutorials/integration-tutorials/using-scheduled-tasks.md) using a scheduled task

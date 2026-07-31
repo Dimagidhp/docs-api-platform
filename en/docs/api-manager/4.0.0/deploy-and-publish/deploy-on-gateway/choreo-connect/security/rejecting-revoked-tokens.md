@@ -3,10 +3,10 @@
 After issuing an access token or an API Key, a user or admin can revoke it due to any reason. This must be done especially if it has been compromised. If a revoked token is used to invoke an API, Choreo Connect will reject the invocation by returning an Unauthenticated Error response.
 
 !!! important
-    Revoking the access token can only be done by enabling the Control Plane Event hub. This is when running [Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/). For standalone mode, the only workaround would be to undeploy the API and redeploy with a different name or the version, while keeping the context (basepath) unchanged.
+    Revoking the access token can only be done by enabling the Control Plane Event hub. This is when running [Choreo Connect with WSO2 API Manager as a Control Plane](../concepts/apim-as-control-plane.md). For standalone mode, the only workaround would be to undeploy the API and redeploy with a different name or the version, while keeping the context (basepath) unchanged.
 
 !!! info
-    When you revoke an access token using APIM, an event will be sent to Choreo Connect via the Control Plane Event hub and Choreo Connect will reject the token then onwards. You can follow the [Quick Start Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim) to have an initial setup of Choreo Connect with Control Plane enabled.
+    When you revoke an access token using APIM, an event will be sent to Choreo Connect via the Control Plane Event hub and Choreo Connect will reject the token then onwards. You can follow the [Quick Start Guide](../getting-started/quick-start-guide-docker-with-apim.md) to have an initial setup of Choreo Connect with Control Plane enabled.
 
 Follow the steps given below to revoke an access token or an API key
 
@@ -17,9 +17,9 @@ Follow the steps given below to revoke an access token or an API key
 
 Here are the steps to revoke an Access Token.
 
-1. [Deploy the API]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/deploy-api/deploy-rest-api-in-choreo-connect).
+1. [Deploy the API](../deploy-api/deploy-rest-api-in-choreo-connect.md).
 
-2. Generate an access token from APIM (Follow [Get a Test Key to Invoke an API]({{base_path}}/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/#get-a-test-key-to-invoke-an-api)).
+2. Generate an access token from APIM (Follow [Get a Test Key to Invoke an API](../../../../consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md#get-a-test-key-to-invoke-an-api)).
 
 3. Revoke the access token by calling the following API from control plane.
 
@@ -83,11 +83,11 @@ Here are the steps to revoke an Access Token.
 
 Here are the steps to revoke an API Key.
 
-1. [Deploy the API]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/deploy-api/deploy-rest-api-in-choreo-connect).
+1. [Deploy the API](../deploy-api/deploy-rest-api-in-choreo-connect.md).
 
-2. Generate an API Key from API-M by following the steps in [Secure APIs with API Keys]({{base_path}}/design/api-security/api-authentication/secure-apis-using-api-keys).
+2. Generate an API Key from API-M by following the steps in [Secure APIs with API Keys](../../../../design/api-security/api-authentication/secure-apis-using-api-keys.md).
 
-3. Get an access token to the Control Plane (API-M) by referring to [this section]({{base_path}}/reference/product-apis/devportal-apis/devportal-v2/devportal-v2/#section/Authentication). Remember to include `apim:api_key` as a scope when requesting the access token.
+3. Get an access token to the Control Plane (API-M) by referring to [this section](../../../../reference/product-apis/devportal-apis/devportal-v2/devportal-v2.md#section/Authentication). Remember to include `apim:api_key` as a scope when requesting the access token.
 
 4. Revoke the API Key by calling the following API from the Control Plane.
 
@@ -100,7 +100,7 @@ Here are the steps to revoke an API Key.
     ```
 
     !!! info
-        Refer to [Developer Portal - Revoke API Key]({{base_path}}/reference/product-apis/devportal-apis/devportal-v2/devportal-v2/#tag/API-Keys/paths/~1applications~1{applicationId}~1api-keys~1{keyType}~1revoke/post) section for more info.
+        Refer to [Developer Portal - Revoke API Key](../../../../reference/product-apis/devportal-apis/devportal-v2/devportal-v2.md#tag/API-Keys/paths/~1applications~1{applicationId}~1api-keys~1{keyType}~1revoke/post) section for more info.
 
     The above command will return an empty 200 response.
 

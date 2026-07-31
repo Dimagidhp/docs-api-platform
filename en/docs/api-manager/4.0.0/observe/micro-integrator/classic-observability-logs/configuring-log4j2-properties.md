@@ -175,7 +175,7 @@ This logger generates logs for services deployed in the Micro Integrator. It ref
     logger.SERVICE_LOGGER.name = SERVICE_LOGGER.TestProxy
     ```
 
-    See the instructions on [monitoring per-service logs]({{base_path}}/integrate/develop/monitoring-service-level-logs).
+    See the instructions on [monitoring per-service logs](../../../integrate/develop/monitoring-service-level-logs.md).
 
 ```xml tab='SERVICE_LOGGER'
 logger.SERVICE_LOGGER.name= SERVICE_LOGGER
@@ -210,7 +210,7 @@ This logger generates logs for APIs deployed in the Micro Integrator. It refers 
     logger.API_LOG.name=API_LOGGER.TestAPI
     ```
 
-    See the instructions on [monitoring per-API logs]({{base_path}}/integrate/develop/monitoring-api-level-logs/).
+    See the instructions on [monitoring per-API logs](../../../integrate/develop/monitoring-api-level-logs.md).
 
 ```xml tab='API_LOGGER'
 logger.API_LOGGER.name= API_LOGGER
@@ -311,7 +311,7 @@ If required, you can change the default HTTP header (which is 'activity_id'), wh
 correlation_header_name="<correlation_id>"
 ```
 
-Once you have configured this logger, see the instructions on [monitoring correlation logs]({{base_path}}/observe/micro-integrator/classic-observability-logs/monitoring-correlation-logs).
+Once you have configured this logger, see the instructions on [monitoring correlation logs](monitoring-correlation-logs.md).
 
 ### Message Tracing Logs
 
@@ -376,7 +376,7 @@ These logs are disabled by default by setting the log level to `OFF`. You can en
     logger.httpclient-wire-content.level=OFF
     ```
 
-See the instructions on [using wire logs to debug]({{base_path}}/integrate/develop/using-wire-logs) your integration solution during development.
+See the instructions on [using wire logs to debug](../../../integrate/develop/using-wire-logs.md) your integration solution during development.
 
 ## Configuring HTTP Access Logs
 
@@ -631,18 +631,18 @@ You can <b>dynamically</b> update the log level for a specific logger by using t
 
 ### Viewing logs via the dashboard
 
-1.  Sign in to the [Micro Integrator dashboard]({{base_path}}/observe/mi-observe/working-with-monitoring-dashboard).
+1.  Sign in to the [Micro Integrator dashboard](../../mi-observe/working-with-monitoring-dashboard.md).
 2.  Click <b>Log Configs</b> on the left-hand navigator to open the <b>Logging Management</b> window.
 
-    <img alt="change log level from dashboard" src="{{base_path}}/assets/img/integrate/monitoring-dashboard/change-log-level-dashboard.png">
+    <img alt="change log level from dashboard" src="../../../assets/img/integrate/monitoring-dashboard/change-log-level-dashboard.png">
 
 3.  Use the <b>Search</b> option to find the required logger, and change the log level as shown above.
 
 ### Viewing logs via the CLI
 
-1.  Download and set up the [API Controller]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller).
+1.  Download and set up the [API Controller](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller.md).
 
-2.  Issue commands to view logs for the required Micro Integrator artifacts. For more information, see [Managing Integrations with apictl]({{base_path}}/install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl).
+2.  Issue commands to view logs for the required Micro Integrator artifacts. For more information, see [Managing Integrations with apictl](../../../install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl.md).
 
 
 ## Updating the threshold Level
@@ -760,5 +760,5 @@ However, since WSO2 Micro Integrator works in an OSGi environment, such Log4j2 e
 
 ## What's Next?
 
-Once you have configured the logs, you can start [using the logs]({{base_path}}/observe/micro-integrator/classic-observability-logs/monitoring-logs).
+Once you have configured the logs, you can start [using the logs](monitoring-logs.md).
 

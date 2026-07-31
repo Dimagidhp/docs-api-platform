@@ -6,7 +6,7 @@ Choreo Connect supports the configuration of multiple Gateways with WSO2 API Man
 
 Multiple gateway environments can be registered in the WSO2 API Manager control plane. Each environment group includes an Adapter, an Enforcer, and a Router. The environment name used to register in the WSO2 API Manager control plane can be specified in the Adapter configurations. When the Adapter is started, it pulls the API artifacts related to the environment.
 
-[![Distributed Adapter Pattern]({{base_path}}/assets/img/deploy/mgw/distributed-adapter-pattern.png){: style="width:60%"}]({{base_path}}/assets/img/deploy/mgw/distributed-adapter-pattern.png)
+[![Distributed Adapter Pattern](../../../assets/img/deploy/mgw/distributed-adapter-pattern.png){: style="width:60%"}](../../../assets/img/deploy/mgw/distributed-adapter-pattern.png)
 
 ## Configuration of environments
 
@@ -90,6 +90,6 @@ Let's assume you have two environments called "choreo-connect-1" and "choreo-con
 
 4. Add the Gateway environments "choreo-connect-1" and "choreo-connect-2" from the Gateways in the APIM admin portal.
 
-    [![Add Gateway Environment]({{base_path}}/assets/img/deploy/mgw/add-gateway-environment.png)]({{base_path}}/assets/img/deploy/mgw/add-gateway-environment.png)
+    [![Add Gateway Environment](../../../assets/img/deploy/mgw/add-gateway-environment.png)](../../../assets/img/deploy/mgw/add-gateway-environment.png)
 
 5. Deploy the API on the defined Gateway.

@@ -14,7 +14,7 @@ The deployment options for a scalable streaming integrator depends on the statel
 The following topics provide detailed descriptions of two approaches.
 
 !!! tip "System Requirements"
-    For system requirements for this deployment, see [Installing the Streaming Integrator in a Virtual Machine]({{base_path}}/install-and-setup/install/installing-the-product/installing-si).
+    For system requirements for this deployment, see [Installing the Streaming Integrator in a Virtual Machine](../../install/installing-the-product/installing-si.md).
 
 ## Stateless scalable high availability (HA) deployment
 
@@ -22,7 +22,7 @@ In stateless scenarios, the system does not work with any in-memory state. Thus 
  
 This is depicted in the diagram below.
 
-[![overview]({{base_path}}/assets/img/streaming/deploying-si-as-a-scalable-cluster/stateless-deployment-overview.png){: style="width:60%"}]({{base_path}}/assets/img/streaming/deploying-si-as-a-scalable-cluster/stateless-deployment-overview.png)
+[![overview](../../../assets/img/streaming/deploying-si-as-a-scalable-cluster/stateless-deployment-overview.png){: style="width:60%"}](../../../assets/img/streaming/deploying-si-as-a-scalable-cluster/stateless-deployment-overview.png)
 
 ## Stateful scalable high availability (HA) deployment
 
@@ -35,7 +35,7 @@ partitioning where one bucket of partitioned data is processed only in one speci
 
 The following is a high level diagram of event flow and components to achieve scalable, stateful, and highly available deployment.
 
-[![overview]({{base_path}}/assets/img/streaming/deploying-si-as-a-scalable-cluster/stateful-deployment-overview.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/deploying-si-as-a-scalable-cluster/stateful-deployment-overview.png)
+[![overview](../../../assets/img/streaming/deploying-si-as-a-scalable-cluster/stateful-deployment-overview.png){: style="width:80%"}](../../../assets/img/streaming/deploying-si-as-a-scalable-cluster/stateful-deployment-overview.png)
 
 The following sections describe each component in detail and how to configure them with WSO2 Streaming Integrator.
 

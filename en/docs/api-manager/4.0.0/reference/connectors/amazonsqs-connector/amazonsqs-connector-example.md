@@ -8,17 +8,17 @@ This example explains how to use Amazon SQS Connector to create a queue in the A
 
 It has a single HTTP API resource, which is `sendToQueue`. 
 
-<img src="{{base_path}}/assets/img/integrate/connectors/amazonsqs-connector.jpg" title="AmazonSQS-Connector" width="800" alt="AmazonSQS-Connector"/>
+<img src="../../../assets/img/integrate/connectors/amazonsqs-connector.jpg" title="AmazonSQS-Connector" width="800" alt="AmazonSQS-Connector"/>
 
 If you do not want to configure this yourself, you can simply [get the project](#get-the-project) and run it.
 
 ## Setting up the environment 
 
-1. Please follow the steps mentioned in the [Setting up the Amazon S3 Environment ]({{base_path}}/reference/connectors/amazonsqs-connector/amazonsqs-connector-config) document in order to create a Amazon account and obtain access key id and secret access key. Keep them saved to be used in the next steps.  
+1. Please follow the steps mentioned in the [Setting up the Amazon S3 Environment ](amazonsqs-connector-config.md) document in order to create a Amazon account and obtain access key id and secret access key. Keep them saved to be used in the next steps.  
 
 2. In this example we will be using XPath 2.0 which needs to be enabled in the product as shown below before starting the integration service. 
 
-    If you are using the Micro Integrator of **EI 7** or **APIM 4.0.0**, you need to enable this property by adding the following to the PRODUCT-HOME/conf/deployment.toml file. You can further refer to the [Product Configurations]({{base_path}}/reference/config-catalog/#http-transport).
+    If you are using the Micro Integrator of **EI 7** or **APIM 4.0.0**, you need to enable this property by adding the following to the PRODUCT-HOME/conf/deployment.toml file. You can further refer to the [Product Configurations](../../config-catalog.md#http-transport).
     
       ```
         [mediation]
@@ -36,7 +36,7 @@ Follow these steps to set up the Integration Project and the Connector Exporter 
 {!includes/reference/connectors/importing-connector-to-integration-studio.md!} 
 
 1. First let's create the following sequences, which are buildMessage, createQueue, sendMessage and ReceiveAndForwardMessage. Right click on the created Integration Project and select, -> **New** -> **Sequence** to create the Sequence. 
-    <img src="{{base_path}}/assets/img/integrate/connectors/add-sequence.jpg" title="Adding a Sequence" width="800" alt="Adding a Sequence"/>
+    <img src="../../../assets/img/integrate/connectors/add-sequence.jpg" title="Adding a Sequence" width="800" alt="Adding a Sequence"/>
 
 2. Provide the Sequence name as buildMessage. You can go to the source view of the XML configuration file of the API and copy the following configuration. In this sequence we are taking the user's input `companyName` and we build the message using a Payload Factory Mediator. 
     ```
@@ -164,8 +164,8 @@ Follow these steps to set up the Integration Project and the Connector Exporter 
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/amazonsqs.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/amazonsqs.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 !!! tip
@@ -218,5 +218,5 @@ You should get the following response with the 'sys_id' and keep it saved.
 
 ## What's Next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/install-and-setup/installation/run_in_containers).
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).
 

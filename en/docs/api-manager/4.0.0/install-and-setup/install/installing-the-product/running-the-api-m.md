@@ -4,7 +4,7 @@ Follow the steps given below to run the WSO2 API Manager runtime and access its 
 
 ## Before you begin
 
-[Download and install]({{base_path}}/install-and-setup/install/installing-the-product/installing-api-m-runtime) the API Manager server.
+[Download and install](installing-api-m-runtime.md) the API Manager server.
 
 ## Starting the API-M server
 
@@ -52,16 +52,16 @@ When the server starts successfully, the following log is printed: `"WSO2 Carbon
 
 When you start the API-M runtime, all of its web portals are started. You will see the URLs of each portal printed in the server-startup log as shown below.
 
-![API-M server startup log]({{base_path}}/assets/img/setup-and-install/running-product-mgt-console-url.png)
+![API-M server startup log](../../../assets/img/setup-and-install/running-product-mgt-console-url.png)
 
 Note that the server is running on `localhost` by default. You can use these URLs to access the web portals on your computer from any other computer connected to the LAN. When accessing the portals from the same computer where it is installed, you can use `localhost` instead of the IP address.
 
 !!! Info  
     To change the default hostname/port and to secure the API-M portals, see the following topics:
 
-    - [Changing the API-M hostname]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-hostname/#changing-the-api-m-hostname)
-    - [Changing the default API-M ports]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-api-m-ports)
-    - [Securing API-M Web Portals]({{base_path}}/install-and-setup/setup/security/securing-api-m-web-portals)
+    - [Changing the API-M hostname](../../setup/deployment-best-practices/changing-the-hostname.md#changing-the-api-m-hostname)
+    - [Changing the default API-M ports](../../setup/deployment-best-practices/changing-the-default-ports-with-offset.md#changing-the-default-api-m-ports)
+    - [Securing API-M Web Portals](../../setup/security/securing-api-m-web-portals.md)
 
 To sign in to each web portal:
 
@@ -123,5 +123,5 @@ To sign in to each web portal:
 
 ## See Also
 
--   [Running API-M as a Windows Service]({{base_path}}/install-and-setup/install/installing-the-product/installing-api-m-as-a-windows-service/)
--   [Running API-M as a Linux Service]({{base_path}}/install-and-setup/install/installing-the-product/installing-api-m-as-a-linux-service/)
+-   [Running API-M as a Windows Service](installing-api-m-as-a-windows-service.md)
+-   [Running API-M as a Linux Service](installing-api-m-as-a-linux-service.md)

@@ -34,7 +34,7 @@ Let's deploy an API on Choreo Connect, which running on Kubernetes, with WSO2 AP
 Following are some sample instructions to deploy API Manager for **quick start purpose**.
 
 !!! Tip
-    Please follow the document [Deploying API-M on Kubernetes using Helm Resources]({{base_path}}/install-and-setup/install/deploying-api-manager-with-kubernetes-or-openshift-resources/) which describes deploying API Manager. The following guide describes deploying API Manager for quick start purpose.
+    Please follow the document [Deploying API-M on Kubernetes using Helm Resources](../../../../../install-and-setup/install/deploying-api-manager-with-kubernetes-or-openshift-resources.md) which describes deploying API Manager. The following guide describes deploying API Manager for quick start purpose.
 
 ### Step 1 - Add the WSO2 Helm chart repository
 
@@ -315,4 +315,4 @@ Follow the steps given below.
  - Publisher Portal:  [https://am.wso2.com/publisher/](https://am.wso2.com/publisher/)
  - Developer Portal:  [https://am.wso2.com/devportal/](https://am.wso2.com/devportal/)
 
-Follow the instructions in [create and publish an API via API Manager]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/#step-3-create-and-publish-an-api-from-api-manager).
+Follow the instructions in [create and publish an API via API Manager](../quick-start-guide-docker-with-apim.md#step-3-create-and-publish-an-api-from-api-manager).

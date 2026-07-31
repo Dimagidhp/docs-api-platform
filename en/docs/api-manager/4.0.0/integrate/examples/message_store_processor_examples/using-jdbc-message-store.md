@@ -86,10 +86,10 @@ The WSDL URI needs to be updated with the path to the `sample_proxy_1.wsdl` file
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service), [message store]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-store), [message processor]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-processor), and [endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-endpoints) with the configurations given above.
-4. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md), [message store](../../develop/creating-artifacts/creating-a-message-store.md), [message processor](../../develop/creating-artifacts/creating-a-message-processor.md), and [endpoint](../../develop/creating-artifacts/creating-endpoints.md) with the configurations given above.
+4. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 
 Set up the back-end service:
 

@@ -16,7 +16,7 @@ The values passed by the arguments are evaluated against the existing
 message.
 
 !!! Info
-    The PayloadFactory mediator is a [content aware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    The PayloadFactory mediator is a [content aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -347,7 +347,7 @@ assumed by default. For example:
     ```xml
     <arg expression="$ctx:property.user.id" evaluator="json" />
     ```
-    Learn more about the [json-path syntax]({{base_path}}/integrate/examples/json_examples/json-examples).
+    Learn more about the [json-path syntax](../../integrate/examples/json_examples/json-examples.md).
 
 ### Adding arguments
 
@@ -1131,10 +1131,10 @@ IEA${element_separator}${payload.UniversalTransaction.Interchange_Control_Traile
 
 #### Build and run
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+1. [Set up WSO2 Integration Studio](../../integrate/develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../integrate/develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
 3. Create the artifacts (proxy service, registry resource) with the configurations given above.
-4. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+4. [Deploy the artifacts](../../integrate/develop/deploy-artifacts.md) in your Micro Integrator.
 5. Send a POST request to the `xml-to-edi-proxy` with the above given payload.
 	
 -   Output Payload

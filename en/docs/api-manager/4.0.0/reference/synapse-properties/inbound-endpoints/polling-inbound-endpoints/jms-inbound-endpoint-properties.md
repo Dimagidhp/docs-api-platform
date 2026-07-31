@@ -5,11 +5,11 @@ The JMS inbound protocol is an alternative to the JMS transport. The JMS inboun
 
 ## Properties
 
-Listed below are the properties used for [creating a JMS inbound endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-an-inbound-endpoint).
+Listed below are the properties used for [creating a JMS inbound endpoint](../../../../integrate/develop/creating-artifacts/creating-an-inbound-endpoint.md).
 
 ### Required Properties
 
-The following properties are required when [creating a JMS inbound endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-an-inbound-endpoint).
+The following properties are required when [creating a JMS inbound endpoint](../../../../integrate/develop/creating-artifacts/creating-an-inbound-endpoint.md).
 
 <table>
   <tr>
@@ -62,7 +62,7 @@ The following properties are required when [creating a JMS inbound endpoint]({{b
 
 ### Optional Properties
 
-The following optional properties can be configured when [creating a JMS inbound endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-an-inbound-endpoint).
+The following optional properties can be configured when [creating a JMS inbound endpoint](../../../../integrate/develop/creating-artifacts/creating-an-inbound-endpoint.md).
 
 <table>
    <thead>

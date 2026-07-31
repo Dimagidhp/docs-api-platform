@@ -2,9 +2,9 @@
 
 The "API Details Info" section which is shown below can be customized according to your design needs by configuring the `defaultTheme.js` file.
 
-The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#global-theming).
+The `defaultTheme.js` file has all the parameters defining the look and feel of the developer portal. To learn more about `defaultTheme.js` refer [here](overriding-developer-portal-theme.md#global-theming).
 
- [![styling api details info section]({{base_path}}/assets/img/learn/styling-api-details-info-section1.png)]({{base_path}}/assets/img/learn/styling-api-details-info-section1.png)
+ [![styling api details info section](../../../../assets/img/learn/styling-api-details-info-section1.png)](../../../../assets/img/learn/styling-api-details-info-section1.png)
 
 Edit the attributes in `themes.light.custom.infoBar` by following the below steps to change the styling of "API Details Info" section and the "Application Details Info" section.
 
@@ -53,7 +53,7 @@ const Configurations = {
 
 ```
 
- [![styling api details info section]({{base_path}}/assets/img/learn/styling-api-details-info-section2.png)]({{base_path}}/assets/img/learn/styling-api-details-info-section2.png)
+ [![styling api details info section](../../../../assets/img/learn/styling-api-details-info-section2.png)](../../../../assets/img/learn/styling-api-details-info-section2.png)
  
 ### Attribute options
 
@@ -69,7 +69,7 @@ const Configurations = {
 | listGridSelectedColor | string | Define the color of a selected icon (Grid/List) view of the API listing page. |
 | tagChipBackground | string | Change the background color of the tags. |
 
-You can handle most of the use cases with regard to rebranding using these configurations. However, if you need to make a change that is not supported by the defaultTheme.js file, then you need to override the relevant React component. For more information, see [Advanced Customization]({{base_path}}/reference/customize-product/customizations/advanced-ui-customization/) for more information.
+You can handle most of the use cases with regard to rebranding using these configurations. However, if you need to make a change that is not supported by the defaultTheme.js file, then you need to override the relevant React component. For more information, see [Advanced Customization](../advanced-ui-customization.md) for more information.
 
 ### Known issues and workarounds
 

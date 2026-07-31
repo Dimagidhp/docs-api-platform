@@ -14,7 +14,7 @@ Follow the instructions below to comment and reply to an API:
 
 2. Click on an API.
 
-    [![Select an API]({{base_path}}/assets/img/learn/select-api.png)]({{base_path}}/assets/img/learn/select-api.png)
+    [![Select an API](../../assets/img/learn/select-api.png)](../../assets/img/learn/select-api.png)
 
 3. Optionally, **Add a comment**.
     
@@ -22,12 +22,12 @@ Follow the instructions below to comment and reply to an API:
 
      Note that the comments appear sorted by the time they were entered, alongside the author's name.
 
-    [![Add a comments]({{base_path}}/assets/img/design/community-features/publisher-reply-to-comment.png)]({{base_path}}/assets/img/design/community-features/publisher-reply-to-comment.png)
+    [![Add a comments](../../assets/img/design/community-features/publisher-reply-to-comment.png)](../../assets/img/design/community-features/publisher-reply-to-comment.png)
 
 5. Optionally, **Reply to a comment**.
 
      Click **REPLY**, type your reply, and click **COMMENT**.
 
-    [![Reply to a comment]({{base_path}}/assets/img/design/community-features/publisher-reply-to-comment.png)]({{base_path}}/assets/img/design/community-features/publisher-reply-to-comment.png)
+    [![Reply to a comment](../../assets/img/design/community-features/publisher-reply-to-comment.png)](../../assets/img/design/community-features/publisher-reply-to-comment.png)
 
      When you add a reply to a comment, it will appear in a nested format to the original or the root comment.

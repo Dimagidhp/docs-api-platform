@@ -10,7 +10,7 @@ This part of the document describes how to set up Choreo Connect with Consul ser
 
 Example:
 
-[![service discovery]({{base_path}}/assets/img/deploy/consul-reference-with-mesh.png){: style="width:70%"}]({{base_path}}/assets/img/deploy/consul-reference-with-mesh.png)
+[![service discovery](../../../../assets/img/deploy/consul-reference-with-mesh.png){: style="width:70%"}](../../../../assets/img/deploy/consul-reference-with-mesh.png)
 
 ## Step 1 - Setup Consul
 
@@ -76,4 +76,4 @@ Refer to the Adapter section to the main configuration file of Choreo Connect (`
 
 ## Step 4 - Deploy the API
 
-You can use either WSO2 API Manager or APICTL to deploy APIs as described in [defining the endpoints]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/service-discovery/service-discovery-overview/#defining-the-endpoints).
+You can use either WSO2 API Manager or APICTL to deploy APIs as described in [defining the endpoints](service-discovery-overview.md#defining-the-endpoints).

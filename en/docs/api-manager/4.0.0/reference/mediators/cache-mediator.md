@@ -1,10 +1,10 @@
 # Cache Mediator
 
 When a message enters a message flow, the Cache mediator checks whether the incoming message is similar to a previous message that was received
-within a specified period of time. This is done by evaluating the hash value of incoming messages. If a similar message was identified before, the Cache mediator executes the `         onCacheHit        ` sequence (if specified), fetches the cached response, and prepares the Micro Integrator to send the response. The `         onCacheHit        ` sequence can send back the response message using the [Respond Mediator]({{base_path}}/reference/mediators/respond-mediator). If the `         onCacheHit        ` sequence is not specified, the cached response is sent back to the requester and the message is not passed on. If a similar message has not been seen before, then the message is passed on.
+within a specified period of time. This is done by evaluating the hash value of incoming messages. If a similar message was identified before, the Cache mediator executes the `         onCacheHit        ` sequence (if specified), fetches the cached response, and prepares the Micro Integrator to send the response. The `         onCacheHit        ` sequence can send back the response message using the [Respond Mediator](respond-mediator.md). If the `         onCacheHit        ` sequence is not specified, the cached response is sent back to the requester and the message is not passed on. If a similar message has not been seen before, then the message is passed on.
 
 !!! Info
-    - The Cache mediator is a [content-aware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    - The Cache mediator is a [content-aware](about-mediators.md#classification-of-mediators) mediator.
     - The Cache mediator supports only local caching. It does not support distributed caching.
 
 ## Syntax
@@ -288,6 +288,6 @@ response message.
 
 ### Invalidating cached responses remotely
 
-You can invalidate all cached response remotely by using any [JMX monitoring tool such as Jconsole]({{base_path}}/observe/micro-integrator/classic-observability-metrics/jmx-monitoring) via the exposed MBeans. You can use the `         invalidateTheWholeCache()        ` operation of the `         org.wso2.carbon.mediation        ` MBean for this as shown below.
+You can invalidate all cached response remotely by using any [JMX monitoring tool such as Jconsole](../../observe/micro-integrator/classic-observability-metrics/jmx-monitoring.md) via the exposed MBeans. You can use the `         invalidateTheWholeCache()        ` operation of the `         org.wso2.carbon.mediation        ` MBean for this as shown below.
 
-![]({{base_path}}/assets/img/integrate/jmx/jmx_monitoring_cache_mediator.png)
+![](../../assets/img/integrate/jmx/jmx_monitoring_cache_mediator.png)

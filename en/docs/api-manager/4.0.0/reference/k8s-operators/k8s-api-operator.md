@@ -14,14 +14,14 @@ project (exported from WSO2 Integration Studio) and deploys the integration in y
 !!! Note
     If you are using native Kubernetes for complex or custom scenarios, note that the WSO2 Kubernetes API Operator does not support such improvements. You need to use native Kubernetes and Helm charts instead for those cases.
 
-[![With and without K8s API Operator]({{base_path}}/assets/img/learn/kubernetes-operators/with-and-without-k8s-api-operator.png)]({{base_path}}/assets/img/learn/kubernetes-operators/with-and-without-k8s-api-operator.png)
+[![With and without K8s API Operator](../../assets/img/learn/kubernetes-operators/with-and-without-k8s-api-operator.png)](../../assets/img/learn/kubernetes-operators/with-and-without-k8s-api-operator.png)
 
 ## How the API Operator works
 
 Using kubectl command-line tool, users can manage APIs and Integration custom resources in 
 Kubernetes environments as follows.
 
-[![How API Operator Works]({{base_path}}/assets/img/learn/kubernetes-operators/how-api-operator-works.png)]({{base_path}}/assets/img/learn/kubernetes-operators/how-api-operator-works.png)
+[![How API Operator Works](../../assets/img/learn/kubernetes-operators/how-api-operator-works.png)](../../assets/img/learn/kubernetes-operators/how-api-operator-works.png)
 
 ### Deploy APIs
 
@@ -34,7 +34,7 @@ The high-level steps for deploying APIs in Kubernetes using the API K8s Operator
 5.  The API controller in the API Operator creates the relevant artifacts for deploying in the API Manager control plane and data plane.
 6.  Based on the deployment options, API controller deploys the API in the API Manager control plane or data plane.
 
-For more information and instructions, see [Deploying APIs]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-apis/api-deployments).
+For more information and instructions, see [Deploying APIs](../../install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-apis/api-deployments.md).
 
 ### Deploy Integrations
 
@@ -44,7 +44,7 @@ The high-level steps for deploying integrations in Kubernetes using the API K8s 
 2.  The API Operator takes control of the Integration CRD.
 3.  The Integration controller in the API Operator creates and deploys the relevant Kubernetes artifacts such as deployment, service, ingress, and horizontal pod autoscaler in the Kubernetes environment.
 
-For more information and instructions, see [Deploying Integrations]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-deployments).
+For more information and instructions, see [Deploying Integrations](../../install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-deployments.md).
   
 ## Custom Resources
 

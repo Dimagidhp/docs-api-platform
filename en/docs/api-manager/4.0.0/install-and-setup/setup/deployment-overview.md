@@ -11,7 +11,7 @@ This deployment consists of an API-M cluster with two nodes of the API-M runtime
 !!! Note 
     Two nodes of each component is used to ensure minimum high availability in all components.
 
-<a href="{{base_path}}/assets/img/setup-and-install/basic-ha-deployment.png"><img src="{{base_path}}/assets/img/setup-and-install/basic-ha-deployment.png" alt="standard HA deployment" width="50%"></a>
+<a href="../../assets/img/setup-and-install/basic-ha-deployment.png"><img src="../../assets/img/setup-and-install/basic-ha-deployment.png" alt="standard HA deployment" width="50%"></a>
 
 ### API-M cluster
 
@@ -19,7 +19,7 @@ The API-M cluster consists of two <b>All-in-One</b> API-M nodes. See the followi
 
 <ul>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/single-node/configuring-an-active-active-deployment">API-M Cluster with Minimum High Availability</a>
+        <a href="single-node/configuring-an-active-active-deployment.md">API-M Cluster with Minimum High Availability</a>
     </li>
 </ul>
 
@@ -29,10 +29,10 @@ The integration cluster may be a Micro Integrator cluster or a Streaming Integra
 
 <ul>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei">Micro Integrator Cluster with Minimum High Availability</a>
+        <a href="mi-setup/deployment/deploying_wso2_ei.md">Micro Integrator Cluster with Minimum High Availability</a>
     </li>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-minimum-ha-cluster">Streaming Integrator Cluster with Minimum High Availability</a>
+        <a href="si-deployment/deploying-si-as-minimum-ha-cluster.md">Streaming Integrator Cluster with Minimum High Availability</a>
     </li>
 </ul>
 
@@ -45,7 +45,7 @@ Although API-M nodes are capable of handling in-jvm multitenancy, Micro Integrat
 !!! Note
     The basic deployment suggests two nodes of each runtime to ensure minimum high availability. However, you can independently scale them depending on the resource requirements for each tenant.
 
-<a href="{{base_path}}/assets/img/setup-and-install/basic-ha-with-multitenancy.png"><img src="{{base_path}}/assets/img/setup-and-install/basic-ha-with-multitenancy.png" alt="standard HA with multitenancy" width="80%"></a>
+<a href="../../assets/img/setup-and-install/basic-ha-with-multitenancy.png"><img src="../../assets/img/setup-and-install/basic-ha-with-multitenancy.png" alt="standard HA with multitenancy" width="80%"></a>
 
 ### API-M cluster
 
@@ -53,7 +53,7 @@ The API-M cluster consists of two <b>All-in-One</b> API-M nodes. See the followi
 
 <ul>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/single-node/configuring-an-active-active-deployment">API-M Cluster with Minimum High Availability</a>
+        <a href="single-node/configuring-an-active-active-deployment.md">API-M Cluster with Minimum High Availability</a>
     </li>
 </ul>
 
@@ -63,10 +63,10 @@ The integration cluster consists of two nodes of the integration runtime for eac
 
 <ul>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei">Micro Integrator Cluster with Minimum High Availability</a>
+        <a href="mi-setup/deployment/deploying_wso2_ei.md">Micro Integrator Cluster with Minimum High Availability</a>
     </li>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-minimum-ha-cluster">Streaming Integrator Cluster with Minimum High Availability</a>
+        <a href="si-deployment/deploying-si-as-minimum-ha-cluster.md">Streaming Integrator Cluster with Minimum High Availability</a>
     </li>
 </ul>
 
@@ -79,7 +79,7 @@ You need to set up three clusters of the different components and runtimes as th
 !!! Note
     The basic deployment suggests two nodes of each runtime to ensure minimum high availability. However, you can independently scale them depending on the requirements.
 
-<a href="{{base_path}}/assets/img/setup-and-install/basic-scalable-deployment.png"><img src="{{base_path}}/assets/img/setup-and-install/basic-scalable-deployment.png" alt="Simple scalability" width="80%"></a>
+<a href="../../assets/img/setup-and-install/basic-scalable-deployment.png"><img src="../../assets/img/setup-and-install/basic-scalable-deployment.png" alt="Simple scalability" width="80%"></a>
 
 ### API-M cluster
 
@@ -104,7 +104,7 @@ The API-M layer of this deployment consists of two clusters of API-M components 
     </tr>
 </table>
 
-To set up this cluster, see the instructions on <a href="{{base_path}}/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup">Setting up a Distributed API-M deployment</a>.
+To set up this cluster, see the instructions on <a href="distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup.md">Setting up a Distributed API-M deployment</a>.
 
 ### Integration cluster
 
@@ -112,10 +112,10 @@ The integration cluster consist of a minimum of two nodes of the integration run
 
 <ul>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei">Micro Integrator Cluster with Minimum High Availability</a>
+        <a href="mi-setup/deployment/deploying_wso2_ei.md">Micro Integrator Cluster with Minimum High Availability</a>
     </li>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-minimum-ha-cluster">Streaming Integrator Cluster with Minimum High Availability</a>
+        <a href="si-deployment/deploying-si-as-minimum-ha-cluster.md">Streaming Integrator Cluster with Minimum High Availability</a>
     </li>
 </ul>
 
@@ -129,7 +129,7 @@ You need to set up three clusters of the different components and runtimes as th
     The basic deployment suggests two nodes of each runtime to ensure minimum high availability. However, you can independently scale them depending on the requirements.
 
 
-<a href="{{base_path}}/assets/img/setup-and-install/deployment-pattern4.png"><img src="{{base_path}}/assets/img/setup-and-install/deployment-pattern4.png" alt="Simple scalability with Traffic Manager separation" width="80%"></a>
+<a href="../../assets/img/setup-and-install/deployment-pattern4.png"><img src="../../assets/img/setup-and-install/deployment-pattern4.png" alt="Simple scalability with Traffic Manager separation" width="80%"></a>
 
 ### API-M cluster
 
@@ -162,7 +162,7 @@ The API-M layer of this deployment consists of two clusters of API-M components 
     </tr>
 </table>
 
-To set up this cluster, see the instructions on <a href="{{base_path}}/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup-with-tm-separated">Setting up a Distributed API-M deployment</a>.
+To set up this cluster, see the instructions on <a href="distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup-with-tm-separated.md">Setting up a Distributed API-M deployment</a>.
 
 ### Integration cluster
 
@@ -170,9 +170,9 @@ The integration cluster consist of a minimum of two nodes of the integration run
 
 <ul>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei">Micro Integrator Cluster with Minimum High Availability</a>
+        <a href="mi-setup/deployment/deploying_wso2_ei.md">Micro Integrator Cluster with Minimum High Availability</a>
     </li>
     <li>
-        <a href="{{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-minimum-ha-cluster">Streaming Integrator Cluster with Minimum High Availability</a>
+        <a href="si-deployment/deploying-si-as-minimum-ha-cluster.md">Streaming Integrator Cluster with Minimum High Availability</a>
     </li>
 </ul>

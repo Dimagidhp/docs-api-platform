@@ -1,5 +1,5 @@
 
-[![K8s based CI/CD for Streaming Integrator]({{base_path}}/assets/img/deploy/si-cicd-k8s.png)]({{base_path}}/assets/img/deploy/mi-cicd-k8s.png)
+[![K8s based CI/CD for Streaming Integrator](../../../assets/img/deploy/si-cicd-k8s.png)](../../../assets/img/deploy/mi-cicd-k8s.png)
 
 #### Deployment Descriptor Repository
 - This repository will be used to track the Siddhi apps/deployments in each environment.
@@ -14,8 +14,8 @@
 
 ### Kubernetes artifacts
 Sample Kubernetes artifacts for a stateless deployment are provided below. 
-This deployment can be scaled horizontally as an [Active-Active deployment]({{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-an-active-active-deployment). 
-You can find more deployment patterns [here]({{base_path}}/install-and-setup/setup/si-deployment/deployment-guide/).
+This deployment can be scaled horizontally as an [Active-Active deployment](../si-deployment/deploying-si-as-an-active-active-deployment.md). 
+You can find more deployment patterns [here](../si-deployment/deployment-guide.md).
 You can extend the below YAML files to introduce other components. (e.g., configMaps, Ingress, etc.) 
 
 ```yaml tab="Deployment"
@@ -127,9 +127,9 @@ spec:
 
 1. Clone the [samples-apim](https://github.com/wso2/samples-apim/) repository.
 
-2. [Create Siddhi apps using Streaming Integrator tooling]({{base_path}}/get-started/streaming-quick-start-guide/). You can use the tool to run and test the applications.
+2. [Create Siddhi apps using Streaming Integrator tooling](../../../get-started/streaming-quick-start-guide.md). You can use the tool to run and test the applications.
 
-3. Once the application is developed, you can create the Docker image and push them by using [“Export For Docker”]({{base_path}}/develop/streaming-apps/exporting-siddhi-applications/#exporting-siddhi-applications-as-a-docker-image).
+3. Once the application is developed, you can create the Docker image and push them by using [“Export For Docker”](../../../develop/streaming-apps/exporting-siddhi-applications.md#exporting-siddhi-applications-as-a-docker-image).
 
 
     !!! note

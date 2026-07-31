@@ -31,7 +31,7 @@ To prevent these types of security attacks, it is encouraged to disable the weak
 
         -   The "Supported cipher suites" section in the output does not contain any EXPORT ciphers.
 
-        -   When you use the supported cipher suites listed [here]({{base_path}}/install-and-setup/setup/reference/supported-cipher-suites/) , the BEAST attack status will be shown as vulnerable. Note that this is a client-side vulnerability caused by the TLSv1 protocol. You can make the BEAST status protected by removing TLSv1, which will make clients with TLSv1 unusable. Therefore, it is recommended tofixed this from the client side.
+        -   When you use the supported cipher suites listed [here](../reference/supported-cipher-suites.md) , the BEAST attack status will be shown as vulnerable. Note that this is a client-side vulnerability caused by the TLSv1 protocol. You can make the BEAST status protected by removing TLSv1, which will make clients with TLSv1 unusable. Therefore, it is recommended tofixed this from the client side.
 
         ``` java
         $ java -jar testsslserver.jar localhost 9443
@@ -166,4 +166,4 @@ ResponseHeaderFilter com.sample.tomcat.filter.ResponseHeaderFilter Content-Secur
 
 ## What's Next?
 
-See the [Security Guidelines for Production Deployment]({{base_path}}/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment) for the full list of security-related recommendations for WSO2 API Manager.
+See the [Security Guidelines for Production Deployment](../deployment-best-practices/security-guidelines-for-production-deployment.md) for the full list of security-related recommendations for WSO2 API Manager.

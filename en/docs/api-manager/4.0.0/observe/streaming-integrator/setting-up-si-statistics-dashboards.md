@@ -98,7 +98,7 @@ Follow the instructions below to start and configure the Grafana server:
 
 4. In the **Add data source** page **Settings** tab, update the configurations for Prometheus as follows:
 
-     [![prometheus configuration]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/prometheus-configurations.png)]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/prometheus-configurations.png)
+     [![prometheus configuration](../../assets/img/streaming/managing-grafana-dashboard/prometheus-configurations.png)](../../assets/img/streaming/managing-grafana-dashboard/prometheus-configurations.png)
 
      1. Click **Default** to make Prometheus the default data source.
   
@@ -108,7 +108,7 @@ Follow the instructions below to start and configure the Grafana server:
      
        If the data source is successfully configured, it is indicated via a message.
   
-       [![Save and Test]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/save-and-test.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/save-and-test.png)
+       [![Save and Test](../../assets/img/streaming/managing-grafana-dashboard/save-and-test.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/save-and-test.png)
 
 ### Step 1.5 - Load dashboards into Grafana
 
@@ -162,7 +162,7 @@ WSO2 Streaming Integrator offers pre-built dashboards for monitoring streaming d
    6. Click **Import**.
 
 !!! note
-    Optionally, you can **[organize the dashboards in folders and delete the dashboards]({{base_path}}/observe/streaming-integrator/managing-dashboards)** if required.
+    Optionally, you can **[organize the dashboards in folders and delete the dashboards](managing-dashboards.md)** if required.
 
 ## Step 2 - View dashboards
 
@@ -172,16 +172,16 @@ Follow the instructions below to view a dashboard:
 
 2. To expand the folder that contains the dashboard you want to view, click on it.
 
-     [![Expand Folder]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/expand-folder.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/expand-folder.png)
+     [![Expand Folder](../../assets/img/streaming/managing-grafana-dashboard/expand-folder.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/expand-folder.png)
  
 3. Click on the specific dashboard that you want to view.
 
-     [![View Dashboard]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/view-dashboard.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/view-dashboard.png)
+     [![View Dashboard](../../assets/img/streaming/managing-grafana-dashboard/view-dashboard.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/view-dashboard.png)
 
 4. Once the dashboard opens, click on the bar shown below to expand it and specify the time range for which you want to view statistics.
 
-     [![Select Time Range]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/view-dashboard.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/view-dashboard.png)
+     [![Select Time Range](../../assets/img/streaming/managing-grafana-dashboard/view-dashboard.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/view-dashboard.png)
     
      Once you expand the time range bar, you can select the required time interval or specify a custom time interval.
     
-     [![Select or Specify Time Range]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/select-or-specify-time-range.png){: style="width:50%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/select-or-specify-time-range.png)
+     [![Select or Specify Time Range](../../assets/img/streaming/managing-grafana-dashboard/select-or-specify-time-range.png){: style="width:50%"}](../../assets/img/streaming/managing-grafana-dashboard/select-or-specify-time-range.png)

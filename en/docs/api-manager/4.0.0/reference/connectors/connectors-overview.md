@@ -22,7 +22,7 @@ There are three types of connectors available.
 
 Most of the connectors available in the connector store are outbound connectors that illustrate connections and operations going out from the integration runtime to third-party applications and systems. However, there are connectors that also enable inbound connectivity from popular third-party applications.
 
-<img src="{{base_path}}/assets/img/integrate/connectors/inbound-outbound.png" title="Inbound and Outbound Connectors" width="700" alt="Inbound and Outbound Connectors"/>
+<img src="../../assets/img/integrate/connectors/inbound-outbound.png" title="Inbound and Outbound Connectors" width="700" alt="Inbound and Outbound Connectors"/>
 
 Some examples for inbound connectors are as follows.
 
@@ -67,7 +67,7 @@ Using connectors provide the following advantages:
 
 ## How to use connectors
 
-When configuring the integration logic, you need to use WSO2 Integration Studio. When ready, you can export the project along with dependency connectors to the integration runtime. See [documentation on adding connectors]({{base_path}}/integrate/develop/creating-artifacts/adding-connectors/) for more information.
+When configuring the integration logic, you need to use WSO2 Integration Studio. When ready, you can export the project along with dependency connectors to the integration runtime. See [documentation on adding connectors](../../integrate/develop/creating-artifacts/adding-connectors.md) for more information.
 
 See the following video for a quick look at how to use connectors.
 
@@ -141,7 +141,7 @@ For an example, please refer to [this issue](https://github.com/wso2/micro-integ
 
 ### Write your own custom connector
 
-There may be instances where the product you want to integrate with does not have a connector as yet. In this case, you can build your own connector. Please refer to the document [here]({{base_path}}/integrate/develop/customizations/creating-new-connector) for detailed instructions. The following are the types of custom connectors that you can write.
+There may be instances where the product you want to integrate with does not have a connector as yet. In this case, you can build your own connector. Please refer to the document [here](../../integrate/develop/customizations/creating-new-connector.md) for detailed instructions. The following are the types of custom connectors that you can write.
 
 * Custom connector 
 * Custom inbound endpoint  

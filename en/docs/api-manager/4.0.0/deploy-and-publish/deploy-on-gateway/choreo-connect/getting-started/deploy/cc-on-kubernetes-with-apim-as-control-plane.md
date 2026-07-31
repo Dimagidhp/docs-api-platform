@@ -53,5 +53,5 @@ Let's get started...
  - Developer Portal:  [https://apim.wso2.com/devportal/](https://apim.wso2.com/devportal/)
 
 
-    Follow the instructions in [create and publish an API via API Manager]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/#step-3-create-and-publish-an-api-from-api-manager).
+    Follow the instructions in [create and publish an API via API Manager](../quick-start-guide-docker-with-apim.md#step-3-create-and-publish-an-api-from-api-manager).
 

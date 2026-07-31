@@ -4,7 +4,7 @@ This example demonstrates how WSO2 Micro Integrator can be used to implement an 
 
 As shown below, a proxy service configured in the Micro Integrator sends messages to the RabbitMQ queue, which are then consumed by another proxy service in the Micro Integrator.
 
-<img src="{{base_path}}/assets/img/integrate/rabbitmq/rabbitmq-point-to-point.png">
+<img src="../../../assets/img/integrate/rabbitmq/rabbitmq-point-to-point.png">
 
 ## Synapse configurations
 
@@ -55,12 +55,12 @@ See the instructions on how to [build and run](#build-and-run) this example.
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) with the configurations given above.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md) with the configurations given above.
 4. Enable the RabbitMQ sender and receiver in the Micro-Integrator from the deployment.toml. Refer the 
- [configuring RabbitMQ documentation]({{base_path}}/install-and-setup/setup/mi-setup/brokers/configure-with-rabbitmq) for more information.
-5. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+ [configuring RabbitMQ documentation](../../../install-and-setup/setup/mi-setup/brokers/configure-with-rabbitmq.md) for more information.
+5. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 6. Make sure you have a RabbitMQ broker instance running.
 7. Configure a queue named `queue1` with required exchanges and routing keys.
 8. Send the following payload to the RabbitMQ publisher proxy (QueueProducer).

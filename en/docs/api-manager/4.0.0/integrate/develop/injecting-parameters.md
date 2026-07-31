@@ -318,17 +318,17 @@ The <b>pinned servers</b> parameter can be dynamically injected to a scheduled t
 
 See the list of inbound endpoint parameters that can be dynamically injected.
 
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/http-inbound-endpoint-properties">HTTP/HTTPS Inbound Protocol</a>
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/hl7-inbound-endpoint-properties">HL7 Inbound Protocol</a>
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/cxf-ws-rm-inbound-endpoint-properties">CXF WS-RM Inbound Protocol</a>
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/websocket-inbound-endpoint-properties">WebSocket Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/http-inbound-endpoint-properties.md">HTTP/HTTPS Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/hl7-inbound-endpoint-properties.md">HL7 Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/cxf-ws-rm-inbound-endpoint-properties.md">CXF WS-RM Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/listening-inbound-endpoints/websocket-inbound-endpoint-properties.md">WebSocket Inbound Protocol</a>
 
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/polling-inbound-endpoints/file-inbound-endpoint-properties">File Inbound Protocol</a>
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/polling-inbound-endpoints/jms-inbound-endpoint-properties">JMS Inbound Protocol</a>
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/polling-inbound-endpoints/kafka-inbound-endpoint-properties">Kafka Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/polling-inbound-endpoints/file-inbound-endpoint-properties.md">File Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/polling-inbound-endpoints/jms-inbound-endpoint-properties.md">JMS Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/polling-inbound-endpoints/kafka-inbound-endpoint-properties.md">Kafka Inbound Protocol</a>
 
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/event-based-inbound-endpoints/mqtt-inbound-endpoint-properties">MQTT Inbound Protocol</a>
--   <a href="{{base_path}}/reference/synapse-properties/inbound-endpoints/event-based-inbound-endpoints/rabbitmq-inbound-endpoint-properties">RabbitMQ Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/event-based-inbound-endpoints/mqtt-inbound-endpoint-properties.md">MQTT Inbound Protocol</a>
+-   <a href="../../reference/synapse-properties/inbound-endpoints/event-based-inbound-endpoints/rabbitmq-inbound-endpoint-properties.md">RabbitMQ Inbound Protocol</a>
 
 #### Example
 
@@ -388,12 +388,12 @@ In the following example, JMS transport parameters in an inbound endpoint are co
 
 The <b>pinned servers</b> parameter as well as all the service-level <b>transport parameters</b> can be dynamically injected to a proxy service.
 
--   [JMS parameters]({{base_path}}/reference/synapse-properties/transport-parameters/jms-transport-parameters)
--   [FIX parameters]({{base_path}}/reference/synapse-properties/transport-parameters/fix-transport-parameters)
--   [MailTo parameters]({{base_path}}/reference/synapse-properties/transport-parameters/mailto-transport-parameters)
--   [MQTT parameters]({{base_path}}/reference/synapse-properties/transport-parameters/mqtt-transport-parameters)
--   [RabbitMQ parameters]({{base_path}}/reference/synapse-properties/transport-parameters/rabbitmq-transport-parameters)
--   [VFS parameters]({{base_path}}/reference/synapse-properties/transport-parameters/vfs-transport-parameters)
+-   [JMS parameters](../../reference/synapse-properties/transport-parameters/jms-transport-parameters.md)
+-   [FIX parameters](../../reference/synapse-properties/transport-parameters/fix-transport-parameters.md)
+-   [MailTo parameters](../../reference/synapse-properties/transport-parameters/mailto-transport-parameters.md)
+-   [MQTT parameters](../../reference/synapse-properties/transport-parameters/mqtt-transport-parameters.md)
+-   [RabbitMQ parameters](../../reference/synapse-properties/transport-parameters/rabbitmq-transport-parameters.md)
+-   [VFS parameters](../../reference/synapse-properties/transport-parameters/vfs-transport-parameters.md)
 
 #### Example
 

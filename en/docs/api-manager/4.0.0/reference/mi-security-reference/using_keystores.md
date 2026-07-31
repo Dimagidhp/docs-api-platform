@@ -89,8 +89,8 @@ certificates. These certificates can be either of the following:
 
 ## Related topics
 
-* [Configure keystores for the Micro Integrator]({{base_path}}/install-and-setup/setup/mi-setup/security/configuring_keystores)
-* [Create new keystores]({{base_path}}/install-and-setup/setup/mi-setup/security/creating_keystores)
-* [Import new SSL certificates to keystores]({{base_path}}/install-and-setup/setup/mi-setup/security/importing_ssl_certificate)
-* [Renewing existing SSL certificates in keystores]({{base_path}}/install-and-setup/setup/mi-setup/security/renewing_ca_signed_certificate_in_keystore)
-* [Product deployment guidelines]({{base_path}}/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines/)
+* [Configure keystores for the Micro Integrator](../../install-and-setup/setup/mi-setup/security/configuring_keystores.md)
+* [Create new keystores](../../install-and-setup/setup/mi-setup/security/creating_keystores.md)
+* [Import new SSL certificates to keystores](../../install-and-setup/setup/mi-setup/security/importing_ssl_certificate.md)
+* [Renewing existing SSL certificates in keystores](../../install-and-setup/setup/mi-setup/security/renewing_ca_signed_certificate_in_keystore.md)
+* [Product deployment guidelines](../../install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md)

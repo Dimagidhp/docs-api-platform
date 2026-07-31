@@ -19,7 +19,7 @@ Before passing end user attributes, you need to enable and configure the JWT imp
 
 3. Start the server.
  
-     For more information, see the [Quick Start Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/).
+     For more information, see the [Quick Start Guide](getting-started/quick-start-guide-docker-with-apim.md).
 
 ## Enabling a customized backend JWT generator
 
@@ -83,7 +83,7 @@ When generating the backend JWT, it retrieves the claims from the invoked JWT. I
 
 4. Start the server.
 
-     For more information, see the [Quick Start Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/).
+     For more information, see the [Quick Start Guide](getting-started/quick-start-guide-docker-with-apim.md).
     
 ## Backend JWT generator configuration details
 
@@ -174,4 +174,4 @@ The relevant elements in the JWT generation configuration are described below. I
 
 ## See Also
 
-If you want to learn how you can pass end user attributes to the backend when working with the default API Gateway, see [Passing Enduser Attributes to the Backend]({{base_path}}/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway), which is under the API Gateway documentation section.
+If you want to learn how you can pass end user attributes to the backend when working with the default API Gateway, see [Passing Enduser Attributes to the Backend](../api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md), which is under the API Gateway documentation section.

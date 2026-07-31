@@ -21,7 +21,7 @@ interceptor for the resource defined.
 
 The following diagram illustrates the request flow from the client to the backend through the request interceptor service and the response flow from the backend to the client through the response interceptor service.
 
-<img src="{{base_path}}/assets/img/deploy/mgw/interceptors-overview.png" alt="Choreo Connect Interceptors request flow" width="650px"/>
+<img src="../../../../assets/img/deploy/mgw/interceptors-overview.png" alt="Choreo Connect Interceptors request flow" width="650px"/>
 
 | Numbers | Description                                                                                                                                                                                                  |
 |---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,8 +34,8 @@ The following diagram illustrates the request flow from the client to the backen
 
 Adding an interceptor requires the following two steps.
 
-1. [Implement an interceptor microservice adhering to the Interceptor OpenAPI Definition]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/interceptor-microservice/).
-2. [Refer to the interceptor service from the client-facing API definition to engage with it in the request/response flow]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/defining-interceptors-in-an-open-api-definition/).
+1. [Implement an interceptor microservice adhering to the Interceptor OpenAPI Definition](interceptor-microservice/interceptor-microservice.md).
+2. [Refer to the interceptor service from the client-facing API definition to engage with it in the request/response flow](defining-interceptors-in-an-open-api-definition.md).
 
 !!! info
     The following are not supported during request/response **body manipulation**.

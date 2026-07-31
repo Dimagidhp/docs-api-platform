@@ -2,7 +2,7 @@
 
 The Gateway of an API Manager deployment is responsible for the main business functionality of serving API traffic. The following diagram illustrates the message flow in the Gateway at a very high level.
 
-![]({{base_path}}/assets/attachments/103335234/103335235.png)
+![](../../assets/attachments/103335234/103335235.png)
 
 - [Message Flow in the API Manager Gateway](#message-flow-in-the-api-manager-gateway)
     - [The handlers](#the-handlers)
@@ -31,7 +31,7 @@ Each handler performs a specific task as mentioned in the table below. Note that
 
 ### Mediation extensions
 
-Mediation extensions are the custom mediation logic that can be executed in either the inflow or the outflow. For more details on how to configure mediation extensions, see [Adding Mediation Extensions]({{base_path}}/deploy-and-publish/deploy-on-gateway/api-gateway/message-mediation/changing-the-default-mediation-flow-of-api-requests) .
+Mediation extensions are the custom mediation logic that can be executed in either the inflow or the outflow. For more details on how to configure mediation extensions, see [Adding Mediation Extensions](../../deploy-and-publish/deploy-on-gateway/api-gateway/message-mediation/changing-the-default-mediation-flow-of-api-requests.md) .
 
 ### In sequence and out sequence
 

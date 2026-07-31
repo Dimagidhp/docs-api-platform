@@ -4,7 +4,7 @@ Choreo Connect (the API Microgateway) is a cloud-native, decentralized, lightwei
 
 The following diagram illustrates the basic architecture of Choreo Connect and showcases its main components.
 
-[![Choreo Connect Basic Architecture]({{base_path}}/assets/img/deploy/mgw/choreo-connect-basic-architecture.png){: style="width:70%"}]({{base_path}}/assets/img/deploy/mgw/choreo-connect-basic-architecture.png)
+[![Choreo Connect Basic Architecture](../../../../assets/img/deploy/mgw/choreo-connect-basic-architecture.png){: style="width:70%"}](../../../../assets/img/deploy/mgw/choreo-connect-basic-architecture.png)
 
 ## Choreo Connect Components
 
@@ -29,7 +29,7 @@ The Router and Enforcer have a Data Plane API that can be used to configure them
 The Adapter, within Choreo Connect, can receive the APIs via the following methods:
 
 - From the WSO2 API Manager Control Plane (Publisher).
-- By pushing the API project via the command line tool [APICTL]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller).
+- By pushing the API project via the command line tool [APICTL](../../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller.md).
 
 ## Communication Between the Components
 
@@ -42,10 +42,10 @@ Each component has its private-public key pair and truststore. In the case of th
 
     | **Deployment** | **Mode**| **File name** | **Directory** |
     |----------------|---------|---------------|---------------|
-    | Docker Compose |[Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway/)| `config.toml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect/conf/` |
-    | Docker Compose |[Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/) | `config.toml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect-with-apim/conf/` |
-    | Kubernetes |[Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway/)| `config-toml-configmap.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect/` |
-    | Kubernetes |[Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/)| `config-toml-configmap.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect-with-apim/` |
+    | Docker Compose |[Choreo Connect as a Standalone Gateway](../concepts/as-a-standalone-gateway.md)| `config.toml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect/conf/` |
+    | Docker Compose |[Choreo Connect with WSO2 API Manager as a Control Plane](../concepts/apim-as-control-plane.md) | `config.toml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect-with-apim/conf/` |
+    | Kubernetes |[Choreo Connect as a Standalone Gateway](../concepts/as-a-standalone-gateway.md)| `config-toml-configmap.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect/` |
+    | Kubernetes |[Choreo Connect with WSO2 API Manager as a Control Plane](../concepts/apim-as-control-plane.md)| `config-toml-configmap.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect-with-apim/` |
 
 ```toml
 [adapter.keystore] 
@@ -60,11 +60,11 @@ location = "/home/wso2/security/truststore"
 
 You can use Choreo Connect mainly in the following two modes.
 
-- [Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane)
+- [Choreo Connect with WSO2 API Manager as a Control Plane](../concepts/apim-as-control-plane.md)
      
      By enabling the Control Plane Event Hub in the Choreo Connect configuration file, the APIs deployed in WSO2 API Manager will automatically be available in Choreo Connect. When using this mode, you can either create an API via WSO2 API Manager or you can import an API to WSO2 API Manager using the API Controller (apictl), which is a command line tool.
 
-- [Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway)
+- [Choreo Connect as a Standalone Gateway](../concepts/as-a-standalone-gateway.md)
 
      If you have not started using WSO2 API Manager yet, or you want to try out Choreo Connect as a Standalone Gateway, simply use the CLI tool apictl to host your APIs.
 
@@ -72,12 +72,12 @@ You can use Choreo Connect mainly in the following two modes.
 
 The request flow within Choreo Connect is depicted in the following diagram.
 
-[![Choreo Connect Request Flow]({{base_path}}/assets/img/deploy/mgw/choreo-connect-request-flow.png)]({{base_path}}/assets/img/deploy/mgw/choreo-connect-request-flow.png)
+[![Choreo Connect Request Flow](../../../../assets/img/deploy/mgw/choreo-connect-request-flow.png)](../../../../assets/img/deploy/mgw/choreo-connect-request-flow.png)
 
 When a client makes an API request, it is sent to the Router. The Router then forwards the request to the Enforcer. The Enforcer performs validations such as JWT access token validation, rate limiting, and other other validations. Once the API request has been validated, the Router forwards it to the backend service. The Router will respond to the client when the backend service responds. In addition, the Router sends stats about APIs to the Enforcer, and the Enforcer sends final analytics data to the Analytics Server.
 
 ## See also
 
-- [Supported Features]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/supported-features/)
-- [Quick Start Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/)
-- [Deployment Options]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-deploy-overview/)
+- [Supported Features](supported-features.md)
+- [Quick Start Guide](quick-start-guide-docker-with-apim.md)
+- [Deployment Options](deploy/cc-deploy-overview.md)

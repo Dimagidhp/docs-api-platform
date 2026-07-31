@@ -2,8 +2,8 @@
 
 When you use Load Balanced API Endpoints, the traffic that comes to the resource is routed to the mentioned endpoint addresses based on the round-robin algorithm. You can enable load balancing capabilities when working with Choreo Connect (CC) in the following two modes.
 
-- [Load Balanced Endpoints With WSO2 API Manager]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/load-balanced-endpoints/#load-balanced-endpoints-with-apim)
-- [Load Balanced Endpoints With APICTL (WSO2 API Controller)]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/load-balanced-endpoints/#load-balanced-endpoints-with-apictl)
+- [Load Balanced Endpoints With WSO2 API Manager](load-balanced-endpoints.md#load-balanced-endpoints-with-apim)
+- [Load Balanced Endpoints With APICTL (WSO2 API Controller)](load-balanced-endpoints.md#load-balanced-endpoints-with-apictl)
 
 ## Choreo Connect with WSO2 API Manager as a Control Plane
 
@@ -25,15 +25,15 @@ After creating an API in the APIM publisher, select the API you want to apply lo
     !!! info
         Click the + sign in the text box after adding each service URL to provide multiple service endpoints.
 
-    [![Add load balanced endpoints in APIM]({{base_path}}/assets/img/learn/load-balance-and-fail-over.png)]({{base_path}}/assets/img/learn/load-balance-and-fail-over.png)
+    [![Add load balanced endpoints in APIM](../../../../assets/img/learn/load-balance-and-fail-over.png)](../../../../assets/img/learn/load-balance-and-fail-over.png)
 
-    [![Add load balanced endpoints addition in APIM]({{base_path}}/assets/img/learn/load-balanced-configurations.png)]({{base_path}}/assets/img/learn/load-balanced-configurations.png)
+    [![Add load balanced endpoints addition in APIM](../../../../assets/img/learn/load-balanced-configurations.png)](../../../../assets/img/learn/load-balanced-configurations.png)
     
 2.  Click **Save & Deploy**.
 
 ### Step 2 - Invoke API Endpoint Via The Choreo Connect
 
-After obtaining a valid JWT token, you can invoke APIs as described [here]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/quick-start-guide-docker-with-apim/#step-6-invoke-the-api-via-choreo-connect). 
+After obtaining a valid JWT token, you can invoke APIs as described [here](../getting-started/quick-start-guide-docker-with-apim.md#step-6-invoke-the-api-via-choreo-connect). 
 When invoking the API, traffic will route to the load balanced endpoints you defined above.
 
 Example is given below:

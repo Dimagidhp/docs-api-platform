@@ -5,7 +5,7 @@ To do this, the apictl projects need to be mounted to the `docker-compose/resour
 (default location) of the Adapter. 
 At the startup of the adapter, it picks the projects and deploys them. After startup, APIs should be added using apictl.
 
-For deploying APIs as an immutable Gateway using Helm chart, please refer [Deploy APIs as Immutable Gateway in Production Deployment]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/production-deployment-guideline/#deploy-apis-as-immutable-gateway).
+For deploying APIs as an immutable Gateway using Helm chart, please refer [Deploy APIs as Immutable Gateway in Production Deployment](../production-deployment-guideline.md#deploy-apis-as-immutable-gateway).
 
 ## Step 1 - Download apictl and set the path variable 
 
@@ -29,7 +29,7 @@ apictl init petstore --oas https://petstore.swagger.io/v2/swagger.json
 
 !!! note
 
-    Instead of initializing the API project, you can [export the APIs from API Manager]({{base_path}}/install-and-setup/setup/api-controller/managing-apis-api-products/migrating-apis-to-different-environments) as well.
+    Instead of initializing the API project, you can [export the APIs from API Manager](../../../../install-and-setup/setup/api-controller/managing-apis-api-products/migrating-apis-to-different-environments.md) as well.
 
 ## Step 3 - Copy the project to the resources/enforcer/artifacts/apis directory
 
@@ -62,4 +62,4 @@ All the apictl projects in the directory will be deployed during the startup.
 {! ./includes/invoke-api-with-jwt.md !}
 
 <!-- brought the following here because the path becomes relative when included in the includes folder -->
-Refer to [Generate a Test JWT]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/generate-a-test-jwt) for more details.
+Refer to [Generate a Test JWT](../security/generate-a-test-jwt.md) for more details.

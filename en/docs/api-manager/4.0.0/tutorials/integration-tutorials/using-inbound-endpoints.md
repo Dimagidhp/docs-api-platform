@@ -2,7 +2,7 @@
 
 ## What you'll build
 
-In this sample scenario, you will use an **Inbound Endpoint** to expose an already defined REST API through a different port. You can reuse the REST API that was defined in the [Sending a Simple Message to a Service]({{base_path}}/tutorials/integration-tutorials/sending-a-simple-message-to-a-service) tutorial. See [Creating an Inbound Endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-an-inbound-endpoint) for details on how to work with inbound endpoints using WSO2 Integration Studio.
+In this sample scenario, you will use an **Inbound Endpoint** to expose an already defined REST API through a different port. You can reuse the REST API that was defined in the [Sending a Simple Message to a Service](sending-a-simple-message-to-a-service.md) tutorial. See [Creating an Inbound Endpoint](../../integrate/develop/creating-artifacts/creating-an-inbound-endpoint.md) for details on how to work with inbound endpoints using WSO2 Integration Studio.
 
 ## Let's get started!
 
@@ -11,10 +11,10 @@ In this sample scenario, you will use an **Inbound Endpoint** to expose an alrea
 Set up WSO2 Integration Studio as follows:
 
 1.  Download the relevant [WSO2 Integration Studio](https://wso2.com/api-management/tooling/) based on your operating system.
-2.  Set up the project from the [Sending a Simple Message to a Service]({{base_path}}/tutorials/integration-tutorials/sending-a-simple-message-to-a-service) tutorial:
+2.  Set up the project from the [Sending a Simple Message to a Service](sending-a-simple-message-to-a-service.md) tutorial:
 
     !!! Note
-        This tutorial is a continuation of the [Sending a Simple Message to a Service]({{base_path}}/tutorials/integration-tutorials/sending-a-simple-message-to-a-service/) tutorial.
+        This tutorial is a continuation of the [Sending a Simple Message to a Service](sending-a-simple-message-to-a-service.md) tutorial.
 
     1.  Download the [prepackaged project](https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/Integration-Tutorial-Artifacts-EI7.1.0/sending-simple-message-tutorial.zip).
     2.  Open WSO2 Integration Studio and go to **File -> Import**. 
@@ -26,7 +26,7 @@ Set up WSO2 Integration Studio as follows:
     project directory will appear with the artifacts as shown below.
     Note the 'HealthcareAPI' that is already included.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/inbound-project-explorer.png" width="400">
+    <img src="../../assets/img/integrate/tutorials/inbound-project-explorer.png" width="400">
 
 2.  Right-click on **SampleServicesConfigs** and navigate to **New -> Inbound
     Endpoint**. Select **Create A New Inbound Endpoint** and click
@@ -53,7 +53,7 @@ Set up WSO2 Integration Studio as follows:
         </tr>
     </table>
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/using-inbound-endpoint/create-inbound-dialog-box.png" width="500">
+    <img src="../../assets/img/integrate/tutorials/using-inbound-endpoint/create-inbound-dialog-box.png" width="500">
 
 4.  Go to the **Properties** tab in the **Design** view and enter the following:
 
@@ -76,7 +76,7 @@ Set up WSO2 Integration Studio as follows:
         </tr>
     </table>
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/using-inbound-endpoint/configure-inbound-endpoint.png">
+    <img src="../../assets/img/integrate/tutorials/using-inbound-endpoint/configure-inbound-endpoint.png">
 
 The endpoint will now get mapped to any URL that matches the above pattern provided. You will be exposing the health care API on a new port through this inbound endpoint.
 
@@ -129,9 +129,9 @@ Let's send a message to the **healthcare** REST API (through the inbound endpoin
     !!! Tip
         If you don't see the <b>HTTP Client</b> pane, go to <b>Window -> Show View - Other</b> and select <b>HTTP Client</b> to enable the client pane.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
+    <img src="../../assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
     
-2. Enter the request information as given below and click the <b>Send</b> icon (<img src="{{base_path}}/assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
+2. Enter the request information as given below and click the <b>Send</b> icon (<img src="../../assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
     
     <table>
         <tr>

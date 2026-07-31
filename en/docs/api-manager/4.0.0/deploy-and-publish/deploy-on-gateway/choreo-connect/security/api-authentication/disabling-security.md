@@ -5,8 +5,8 @@ An API can be invoked without authentication by disabling security. Pick one of 
 
 |**Mode**         | **Method**    |
 |--------------|-----------|
-|[Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/)   | [Via WSO2 API Manager Publisher Portal](#via-wso2-api-manager-publisher-portal)  |
-|[Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway/)  |[By Updating the OpenAPI Definition](#by-updating-the-openapi-definition) |
+|[Choreo Connect with WSO2 API Manager as a Control Plane](../../concepts/apim-as-control-plane.md)   | [Via WSO2 API Manager Publisher Portal](#via-wso2-api-manager-publisher-portal)  |
+|[Choreo Connect as a Standalone Gateway](../../concepts/as-a-standalone-gateway.md)  |[By Updating the OpenAPI Definition](#by-updating-the-openapi-definition) |
 
 ## Via WSO2 API Manager Publisher Portal
 
@@ -16,7 +16,7 @@ An API can be invoked without authentication by disabling security. Pick one of 
 
 3. Expand any method and switch the security slidebar off to disable security for that specific resource.
 
-     [![Disable security for a Prototype API resource]({{base_path}}/assets/img/design/api-security/desable-security-for-resource.png)]({{base_path}}/assets/img/design/api-security/desable-security-for-resource.png)
+     [![Disable security for a Prototype API resource](../../../../../assets/img/design/api-security/desable-security-for-resource.png)](../../../../../assets/img/design/api-security/desable-security-for-resource.png)
 
 ## By updating the OpenAPI definition
 

@@ -13,46 +13,46 @@ This custom policy adds a full trace log that gets printed when you invoke a par
 
 3. Extract the downloaded archive of the Integration Studio to the desired location and run the **IntegrationStudio** application to start the tool.
 
-      [![Integration Studio]({{base_path}}/assets/img/learn/api-gateway/message-mediation/integration-studio.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/integration-studio.png)
+      [![Integration Studio](../../../../assets/img/learn/api-gateway/message-mediation/integration-studio.png)](../../../../assets/img/learn/api-gateway/message-mediation/integration-studio.png)
 
     !!! tip
-        To learn more about using WSO2 Integration Studio, see the [WSO2 Integration Studio]({{base_path}}/integrate/develop/wso2-integration-studio/) documentation.
+        To learn more about using WSO2 Integration Studio, see the [WSO2 Integration Studio](../../../../integrate/develop/wso2-integration-studio.md) documentation.
 
 4. Click **Window -> Perspective -> Open Perspective -> Other** to get the Perspective options.
   
-      [![Perspective Path]({{base_path}}/assets/img/learn/api-gateway/message-mediation/open-perspective.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/open-perspective.png)
+      [![Perspective Path](../../../../assets/img/learn/api-gateway/message-mediation/open-perspective.png)](../../../../assets/img/learn/api-gateway/message-mediation/open-perspective.png)
 
 5. Select **WSO2 APIManager** from the perspective list and click **Open**.
   
-      [![APIM Perspective]({{base_path}}/assets/img/learn/api-gateway/message-mediation/apim-perspective.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/apim-perspective.png)
+      [![APIM Perspective](../../../../assets/img/learn/api-gateway/message-mediation/apim-perspective.png)](../../../../assets/img/learn/api-gateway/message-mediation/apim-perspective.png)
 
       You will be redirected to the following page.
 
-     [![APIM Perspective View]({{base_path}}/assets/img/learn/api-gateway/message-mediation/apim-perspective-view.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/apim-perspective-view.png)
+     [![APIM Perspective View](../../../../assets/img/learn/api-gateway/message-mediation/apim-perspective-view.png)](../../../../assets/img/learn/api-gateway/message-mediation/apim-perspective-view.png)
 
 6. Click on the Login icon. 
    
       The Add Registry dialog box appears.
   
-     [![Login]({{base_path}}/assets/img/learn/api-gateway/message-mediation/login.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/login.png)
+     [![Login](../../../../assets/img/learn/api-gateway/message-mediation/login.png)](../../../../assets/img/learn/api-gateway/message-mediation/login.png)
 
 7. Enter the URL of the Publisher, Username and Password and click **OK**.
 
-    [![Checkin to register]({{base_path}}/assets/img/learn/api-gateway/message-mediation/checkin.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/checkin.png)
+    [![Checkin to register](../../../../assets/img/learn/api-gateway/message-mediation/checkin.png)](../../../../assets/img/learn/api-gateway/message-mediation/checkin.png)
 
 8. Locate the path where the sequence needs to be added `(IN/OUT/FAULT)` from the **Registry Tree Browser**.
 
-    [![Locate Path]({{base_path}}/assets/img/learn/api-gateway/message-mediation/registry-path.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/registry-path.png)
+    [![Locate Path](../../../../assets/img/learn/api-gateway/message-mediation/registry-path.png)](../../../../assets/img/learn/api-gateway/message-mediation/registry-path.png)
     
 9.  Click **Create** and create a new sequence, provide the sequence name as `newSequence`, and click **Finish**.
   
-     [![Create a new sequence]({{base_path}}/assets/img/learn/api-gateway/message-mediation/create-sequence.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/create-sequence.png)
+     [![Create a new sequence](../../../../assets/img/learn/api-gateway/message-mediation/create-sequence.png)](../../../../assets/img/learn/api-gateway/message-mediation/create-sequence.png)
 
      Your sequence now appears on the Integration Studio Editor. 
 
 10. Drag and drop a **Log Mediator** from the **Mediators** section, to your sequence and **Save** the `newSequence.xml` file.
 
-     [![New sequence XML]({{base_path}}/assets/img/learn/api-gateway/message-mediation/newsequence-log-xml.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/newsequence-log-xml.png)
+     [![New sequence XML](../../../../assets/img/learn/api-gateway/message-mediation/newsequence-log-xml.png)](../../../../assets/img/learn/api-gateway/message-mediation/newsequence-log-xml.png)
 
 11. Right-click on the created mediator, click **Show Properties View**, and enter the following values in the **Log Mediator**.
     
@@ -60,31 +60,31 @@ This custom policy adds a full trace log that gets printed when you invoke a par
 
 12. Right-click on the sequence file (`newSequence.xml`), and click **Commit file**.
   
-     [![push to register]({{base_path}}/assets/img/learn/api-gateway/message-mediation/commit-to-reg.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/commit-to-reg.png)
+     [![push to register](../../../../assets/img/learn/api-gateway/message-mediation/commit-to-reg.png)](../../../../assets/img/learn/api-gateway/message-mediation/commit-to-reg.png)
 
 13. Click **Yes** and push the changes into the remote registry.
 
 14. Click **Ok** and acknowledge the successful message popped up.
 
-    [![Success]({{base_path}}/assets/img/learn/api-gateway/message-mediation/success-message.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/success-message.png)
+    [![Success](../../../../assets/img/learn/api-gateway/message-mediation/success-message.png)](../../../../assets/img/learn/api-gateway/message-mediation/success-message.png)
 
 15. Navigate to the API Manager Management Console and click **Resources** > **Browser**, under the **Main** section to access the Registry Browser and to verify whether the sequence was added successfully.
     
-     [![API Manager Management Console]({{base_path}}/assets/img/learn/api-gateway/message-mediation/mgt-console-reg-browser.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/mgt-console-reg-browser.png)
+     [![API Manager Management Console](../../../../assets/img/learn/api-gateway/message-mediation/mgt-console-reg-browser.png)](../../../../assets/img/learn/api-gateway/message-mediation/mgt-console-reg-browser.png)
     
 16. Sign in to the **API Publisher**. 
 
 17. Click **Create API** and then create a new REST type API.
 
-     For more information, see [Create a REST API]({{base_path}}/design/create-api/create-rest-api/create-a-rest-api/).
+     For more information, see [Create a REST API](../../../../design/create-api/create-rest-api/create-a-rest-api.md).
 
 18. Click on the created API and click **Runtime Configurations**.
 
-19. Click the Edit icon [![Edit]({{base_path}}/assets/img/learn/api-gateway/message-mediation/edit-button.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/edit-button.png) in the **Message Mediation** section under the **Request** sub-menu.  
+19. Click the Edit icon [![Edit](../../../../assets/img/learn/api-gateway/message-mediation/edit-button.png)](../../../../assets/img/learn/api-gateway/message-mediation/edit-button.png) in the **Message Mediation** section under the **Request** sub-menu.  
 
 20. In the **Select a Mediation Policy** pop-up, select **Common Policies**, and then select the newly added sequence (`newSequence`) from the sequence list. Finally, click **Select**.
 
-    [![Select the mediation policy]({{base_path}}/assets/img/learn/api-gateway/message-mediation/select-mediation-policy.png)]({{base_path}}/assets/img/learn/api-gateway/message-mediation/select-mediation-policy.png)
+    [![Select the mediation policy](../../../../assets/img/learn/api-gateway/message-mediation/select-mediation-policy.png)](../../../../assets/img/learn/api-gateway/message-mediation/select-mediation-policy.png)
 
 21. If the API is not in `PUBLISHED` state, go to the **Lifecycle** tab, and click `REDEPLOY` to re-publish the API. 
 

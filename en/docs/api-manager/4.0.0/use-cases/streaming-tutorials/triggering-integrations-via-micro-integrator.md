@@ -8,18 +8,18 @@ To understand this, consider a scenario where the Streaming Integrator receives 
 
 ## Before you begin
 
-- [Start WSO2 Streaming Integrator server]({{base_path}}/setup/installing-si#starting-the-si-server).
+- [Start WSO2 Streaming Integrator server](../../install-and-setup/install/installing-the-product/installing-si.md#starting-the-si-server).
 
-- [Start Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview#starting-streaming-integrator-tooling).
+- [Start Streaming Integrator Tooling](../../develop/streaming-apps/streaming-integrator-studio-overview.md#starting-streaming-integrator-tooling).
 
-- Install the `grpc` Siddhi extension in Streaming Integrator Tooling. To do this, access Streaming Integrator Tooling, click **Tools** -> **Extension Installer** to open the **Extension Installer** dialog box, and then click **Install** for the **gRPC** extension. Restart Streaming Integrator Tooling for the installation to be effective. For detailed instructions, see [Installing Siddhi Extensions]({{base_path}}/develop/streaming-apps/installing-siddhi-extensions/).
+- Install the `grpc` Siddhi extension in Streaming Integrator Tooling. To do this, access Streaming Integrator Tooling, click **Tools** -> **Extension Installer** to open the **Extension Installer** dialog box, and then click **Install** for the **gRPC** extension. Restart Streaming Integrator Tooling for the installation to be effective. For detailed instructions, see [Installing Siddhi Extensions](../../develop/streaming-apps/installing-siddhi-extensions.md).
 
 - To install the `grpc` Siddhi extension in WSO2 Streaming Integrator, navigate to the `<SI_HOME>/bin` directory and issue the appropriate command based on your operating system.
 
     - **For Windows**     : `extension-installer.bat install grpc`
     - **For Linux/MacOS** : `./extension-installer.sh install grpc`
     
-   Then restart WSO2 Streaming Integrator for the installation to be effective. For detailed instructions to install a Siddhi extension, see [Downloading and Installing Siddhi Extensions]({{base_path}}/streaming/connectors/installing-siddhi-extensions).
+   Then restart WSO2 Streaming Integrator for the installation to be effective. For detailed instructions to install a Siddhi extension, see [Downloading and Installing Siddhi Extensions](../../develop/streaming-apps/installing-siddhi-extensions.md).
 
 
 ## Step 1: Configure the Streaming Integrator
@@ -167,7 +167,7 @@ Let's design a Siddhi application that triggers an integration flow and deploy i
 
 8. Click the **Deploy** menu option and then click **Deploy to Server**. The **Deploy Siddhi Apps to Server** dialog box opens as shown in the example below.
 
-    ![Deploy to Server dialog box]({{base_path}}/assets/img/streaming/getting-si-run-with-mi/deploy-to-server-dialog-box.png)
+    ![Deploy to Server dialog box](../../assets/img/streaming/getting-si-run-with-mi/deploy-to-server-dialog-box.png)
 
     1. In the **Add New Server** section, enter information as follows:
 
@@ -178,19 +178,19 @@ Let's design a Siddhi application that triggers an integration flow and deploy i
            | **User Name**   | `admin`                          |
            | **Password**    | `admin`                          |
 
-        ![Add New Server]({{base_path}}/assets/img/streaming/getting-si-run-with-mi/add-new-server.png)
+        ![Add New Server](../../assets/img/streaming/getting-si-run-with-mi/add-new-server.png)
 
         Then click **Add**.
 
     2. Select the check boxes for the **grpc-call-response.siddhi** Siddhi application and the server you added as shown below.
 
-        ![Deploy Siddhi Apps to Server]({{base_path}}/assets/img/streaming/getting-si-run-with-mi/select-siddhi-app-and-server.png)
+        ![Deploy Siddhi Apps to Server](../../assets/img/streaming/getting-si-run-with-mi/select-siddhi-app-and-server.png)
 
     3. Click **Deploy**.
 
         When the Siddhi application is successfully deployed, the following message appears in the **Deploy Siddhi Apps to Server** dialog box.
 
-        ![Deployment Status]({{base_path}}/assets/img/streaming/getting-si-run-with-mi/siddhi-application-deployment-status.png)
+        ![Deployment Status](../../assets/img/streaming/getting-si-run-with-mi/siddhi-application-deployment-status.png)
 
     As a result, the `grpc-call-response.siddhi` Siddhi application is saved in the `<SI_HOME>/wso2/server/deployment/siddhi-files` directory.
 

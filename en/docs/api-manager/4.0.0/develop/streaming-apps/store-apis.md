@@ -8,7 +8,7 @@
 <tbody>
 <tr class="odd">
 <th>Description</th>
-<td>Queries records in the Siddhi store. For more information, see [Integrating Data Stores in Streaming Integration]({{base_path}}/use-cases/streaming-tutorials/integrating-stores#perform-crud-operations-via-rest-api).</td>
+<td>Queries records in the Siddhi store. For more information, see [Integrating Data Stores in Streaming Integration](../../use-cases/streaming-tutorials/integrating-stores.md#perform-crud-operations-via-rest-api).</td>
 </tr>
 <tr class="even">
 <th>API Context</th>

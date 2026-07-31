@@ -53,7 +53,7 @@ in sequence.
 
 -   Select `json\_validator` from the drop-down menu for Common Policies.
 
-    <a href="{{base_path}}/assets/img/learn/mediation-json-validator.png"><img src="{{base_path}}/assets/img/learn/mediation-json-validator.png" width="70%" alt="Select JSON validator from the drop-down menu"></a> 
+    <a href="../../../../assets/img/learn/mediation-json-validator.png"><img src="../../../../assets/img/learn/mediation-json-validator.png" width="70%" alt="Select JSON validator from the drop-down menu"></a> 
 
 -   Scroll down the page and click **Save** to save the changes.
 

@@ -19,7 +19,7 @@ The Docker images related to Choreo Connect updates reside in [WSO2 private Dock
     <tbody>
         <tr>
             <td>
-                <a href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/choreo-connect-overview/#router">Router</a>
+                <a href="getting-started/choreo-connect-overview.md#router">Router</a>
             </td>
             <td>
                 <code>choreo-connect-router:{WSO2_PRODUCT_VERSION}.{UPDATE_LEVEL}</code>
@@ -30,7 +30,7 @@ The Docker images related to Choreo Connect updates reside in [WSO2 private Dock
         </tr>
         <tr>
             <td>
-                <a href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/choreo-connect-overview/#enforcer">Enforcer</a>
+                <a href="getting-started/choreo-connect-overview.md#enforcer">Enforcer</a>
             </td>
             <td>
                 <code>choreo-connect-enforcer:{WSO2_PRODUCT_VERSION}.{UPDATE_LEVEL}</code>
@@ -41,7 +41,7 @@ The Docker images related to Choreo Connect updates reside in [WSO2 private Dock
         </tr>
         <tr>
             <td>
-                <a href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/choreo-connect-overview/#adapter">Adapter</a>
+                <a href="getting-started/choreo-connect-overview.md#adapter">Adapter</a>
             </td>
             <td>
                 <code>choreo-connect-enforcer:{WSO2_PRODUCT_VERSION}.{UPDATE_LEVEL}</code>
@@ -93,6 +93,6 @@ Use your subscription details to log in to the Updates Portal via [https://updat
 
 ## See also
 
-- [Deployment Options]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-deploy-overview/)
-- [Production Deployment Guide]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/production-deployment-guideline/)
-- [Frequently Asked Questions (FAQs)]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/faq/)
+- [Deployment Options](getting-started/deploy/cc-deploy-overview.md)
+- [Production Deployment Guide](production-deployment-guideline.md)
+- [Frequently Asked Questions (FAQs)](faq.md)

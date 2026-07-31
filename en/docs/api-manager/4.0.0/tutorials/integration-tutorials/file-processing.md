@@ -45,14 +45,14 @@ Create an integration project with the following modules: **ESB Configs** and **
 
 1.  Open **WSO2 Integration Studio**.
 2.  Click **New Integration Project** in the **Getting Started** tab as shown below. 
-    ![]({{base_path}}/assets/img/new-project/new-integration-project.png)
+    ![](../../assets/img/new-project/new-integration-project.png)
 
 3.  Enter `FileProcessingService` as the project name.
 4.  Click **Finish**. The created project is saved in the **Project Explorer**.
 
 #### Create the Main and Fault sequences
 
-1.  Create the Main sequence with the following configuration. See the instructions on [creating a sequence]({{base_path}}/integrate/develop/creating-artifacts/creating-reusable-sequences).
+1.  Create the Main sequence with the following configuration. See the instructions on [creating a sequence](../../integrate/develop/creating-artifacts/creating-reusable-sequences.md).
     ```xml
     <sequence name="main" xmlns="http://ws.apache.org/ns/synapse">
         <in>
@@ -69,7 +69,7 @@ Create an integration project with the following modules: **ESB Configs** and **
         </out>
     </sequence>
     ```
-2.  Create the Fault sequence with the following configuration. See the instructions on [creating a sequence]({{base_path}}/integrate/develop/creating-artifacts/creating-reusable-sequences).
+2.  Create the Fault sequence with the following configuration. See the instructions on [creating a sequence](../../integrate/develop/creating-artifacts/creating-reusable-sequences.md).
 
     ```xml	
     <sequence name="fault" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
@@ -84,7 +84,7 @@ Create an integration project with the following modules: **ESB Configs** and **
 
 #### Create the `FileProxy`
 
-1.  Create a proxy service named `FileProxy` with the following configuration. See the instructions on [creating a proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service).
+1.  Create a proxy service named `FileProxy` with the following configuration. See the instructions on [creating a proxy service](../../integrate/develop/creating-artifacts/creating-a-proxy-service.md).
 
     ```xml
     <proxy xmlns="http://ws.apache.org/ns/synapse" name="FileProxy" transports="vfs" startOnLoad="true" trace="disable">
@@ -132,7 +132,7 @@ Create an integration project with the following modules: **ESB Configs** and **
 Follow the instructions below to create a sequence that can be used to
 connect to the database to insert data.
 
-1.  Create a sequence named `databaseSequence` with the following configuration. See the instructions on [creating a sequence]({{base_path}}/integrate/develop/creating-artifacts/creating-reusable-sequences).
+1.  Create a sequence named `databaseSequence` with the following configuration. See the instructions on [creating a sequence](../../integrate/develop/creating-artifacts/creating-reusable-sequences.md).
 
     ```xml
     <sequence xmlns="http://ws.apache.org/ns/synapse" name="databaseSequence">
@@ -175,7 +175,7 @@ connect to the database to insert data.
 
 #### Create the `fileWriteSequence`
 
-1.  Create a sequence named `fileWriteSequence` with the following configuration. See the instructions on [creating a sequence]({{base_path}}/integrate/develop/creating-artifacts/creating-reusable-sequences).
+1.  Create a sequence named `fileWriteSequence` with the following configuration. See the instructions on [creating a sequence](../../integrate/develop/creating-artifacts/creating-reusable-sequences.md).
 
     ```xml
     <sequence xmlns="http://ws.apache.org/ns/synapse" name="fileWriteSequence">
@@ -196,7 +196,7 @@ connect to the database to insert data.
 
 #### Create the `sendMailSequence`
 
-1.  Create a sequence named `sendMailSequence` with the following configuration. See the instructions on [creating a sequence]({{base_path}}/integrate/develop/creating-artifacts/creating-reusable-sequences). 
+1.  Create a sequence named `sendMailSequence` with the following configuration. See the instructions on [creating a sequence](../../integrate/develop/creating-artifacts/creating-reusable-sequences.md). 
       
     ```xml
     <sequence xmlns="http://ws.apache.org/ns/synapse" name="sendMailSequence">
@@ -234,7 +234,7 @@ Create a smooks configuration file (for example `smooks-config.xml`) as shown be
 #### Create a local registry entry
 
 Configure a local entry as shown below. This local entry will be used to refer to the [smooks configuration](#create-the-smooks-configuration).
-See the instructions on [creating a local registry configuration]({{base_path}}/integrate/develop/creating-artifacts/registry/creating-local-registry-entries).
+See the instructions on [creating a local registry configuration](../../integrate/develop/creating-artifacts/registry/creating-local-registry-entries.md).
 
 ```xml
 <localEntry key="smooks" src="file:resources/smooks-config.xml"/>
@@ -250,13 +250,13 @@ Package the artifacts in your composite application module to be able to deploy 
 
 ### Step 4: Configure the Micro Integrator server
 
-1.  Click the <b>Embedded Micro Integrator Configuration</b> (<img src="{{base_path}}/assets/img/integrate/tutorials/common/server-config-64x64.png" width="20">) icon on the upper menu to open the dialog box.
+1.  Click the <b>Embedded Micro Integrator Configuration</b> (<img src="../../assets/img/integrate/tutorials/common/server-config-64x64.png" width="20">) icon on the upper menu to open the dialog box.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/file-processing/embedded-server-configs.png" width="500">
+    <img src="../../assets/img/integrate/tutorials/file-processing/embedded-server-configs.png" width="500">
 
 2.  Add the following server configurations (to the `deployment.toml` file) using the upper section in the dialog box.
 
-    -   The **VFS** transport is enabled in the Micro Integrator by default. Enable the [MailTo transport]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transports/#configuring-the-mailto-transport) for sending the email message as shown below and update the values:
+    -   The **VFS** transport is enabled in the Micro Integrator by default. Enable the [MailTo transport](../../install-and-setup/setup/mi-setup/transport_configurations/configuring-transports.md#configuring-the-mailto-transport) for sending the email message as shown below and update the values:
 
         ```toml
         [[transport.mail.sender]]
@@ -279,7 +279,7 @@ Package the artifacts in your composite application module to be able to deploy 
         text_xml = "org.apache.axis2.transport.http.ApplicationXMLFormatter"
         ```
 
-3.  Click the (<img src="{{base_path}}/assets/img/integrate/tutorials/common/plus-icon.png" width="20">) icon in the lower section and add the following drivers and libraries. 
+3.  Click the (<img src="../../assets/img/integrate/tutorials/common/plus-icon.png" width="20">) icon in the lower section and add the following drivers and libraries. 
     -   [MySQL database driver](https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/Integration-Tutorial-Artifacts-EI7.1.0/EI7.1.0-file-processing-tutorial-JARS/mysql-connector-java-5.1.10-bin.jar).
     -   [CSV smooks library](https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/Integration-Tutorial-Artifacts-EI7.1.0/EI7.1.0-file-processing-tutorial-JARS/milyn-smooks-csv-1.2.4.jar).
 

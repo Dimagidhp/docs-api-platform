@@ -15,14 +15,14 @@ See the following topics for information and instructions:
 !!! Tip
     If you do not know which dashboard to download when setting up cloud-native observability, check the "Downloading the dashboard" section in the respective sub-sections below for details on the dashboard.
 
--	Setting up [cloud-native observability for a VM environment]({{base_path}}/observe/micro-integrator/setting-up-cloud-native-observability-on-a-vm).
--	Setting up [cloud-native observability for a Kubernetes environment]({{base_path}}/observe/micro-integrator/setting-up-cloud-native-observability-in-kubernetes).
+-	Setting up [cloud-native observability for a VM environment](setting-up-cloud-native-observability-on-a-vm.md).
+-	Setting up [cloud-native observability for a Kubernetes environment](setting-up-cloud-native-observability-in-kubernetes.md).
 
 ## Cluster dashboard
 
 Cluster dashboards visualize the overall statistics relating to your Micro Integrator cluster. You can view information related to your MI cluster. 
 
-[![Cluster Dashboard]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-cluster-dashboard.jpg)]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-cluster-dashboard.jpg)
+[![Cluster Dashboard](../../assets/img/integrate/monitoring-dashboard/grafana-cluster-dashboard.jpg)](../../assets/img/integrate/monitoring-dashboard/grafana-cluster-dashboard.jpg)
 
 ### Downloading the dashboard
 
@@ -68,7 +68,7 @@ This dashboard serves the following purposes:
 
 This displays statistics specific to a selected node.
 
-[![Node Dashboard]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-node-metrics.jpg)]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-node-metrics.jpg)
+[![Node Dashboard](../../assets/img/integrate/monitoring-dashboard/grafana-node-metrics.jpg)](../../assets/img/integrate/monitoring-dashboard/grafana-node-metrics.jpg)
 
 ### Downloading the dashboard
 
@@ -113,7 +113,7 @@ The purposes of this dashboard are as follows:
 
 In the Proxy service dashboard, you can view information related to a specific Proxy service.
 
-[![Proxy Service Metrics Dashboard]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-proxy-services-dashboard.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-proxy-services-dashboard.png)
+[![Proxy Service Metrics Dashboard](../../assets/img/integrate/monitoring-dashboard/grafana-proxy-services-dashboard.png)](../../assets/img/integrate/monitoring-dashboard/grafana-proxy-services-dashboard.png)
 
 ### Downloading the dashboard
 
@@ -153,7 +153,7 @@ The purposes of this dashboard are as follows:
 
 This dashboard displays overall statistics related to a specific API. 
 
-[![API Metrics Dashboard]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-api-services-dashboard.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-api-services-dashboard.png)
+[![API Metrics Dashboard](../../assets/img/integrate/monitoring-dashboard/grafana-api-services-dashboard.png)](../../assets/img/integrate/monitoring-dashboard/grafana-api-services-dashboard.png)
 
 ### Downloading the dashboard
 
@@ -191,7 +191,7 @@ The following is the list of widgets displayed in this dashboard.
 
 At a given time, the Inbound endpoint dashboard displays the overall statistics related to a selected endpoint. You can view information related to a specific Inbound endpoint. We can download this dashboard from here. In this dashboard, it will show us Up Time, All Request Count, Successful Request Count, Error Count, Error Percentage, Deployed Node Count, Request Rate, Error Rate and Response Time.
 
-[![Inbound Endpoint Metrics Dashboard]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-inbound-endpoint-metrics-dashboard.png)]({{base_path}}/assets/img/integrate/monitoring-dashboard/grafana-inbound-endpoint-metrics-dashboard.png)
+[![Inbound Endpoint Metrics Dashboard](../../assets/img/integrate/monitoring-dashboard/grafana-inbound-endpoint-metrics-dashboard.png)](../../assets/img/integrate/monitoring-dashboard/grafana-inbound-endpoint-metrics-dashboard.png)
 
 ### Downloading the dashboard
 

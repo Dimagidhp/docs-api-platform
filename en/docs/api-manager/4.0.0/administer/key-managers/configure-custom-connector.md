@@ -15,7 +15,7 @@ You need to write a custom Key Manager connector as explained below.
 
 1. Create a Maven project.
 
-      Let's download the sample project from [here]({{base_path}}/assets/attachments/administer/custom.auth.client.zip).
+      Let's download the sample project from [here](../../assets/attachments/administer/custom.auth.client.zip).
    
       However, when manually creating a Maven project, you will need to follow the following steps.
 
@@ -79,12 +79,12 @@ You need to write a custom Key Manager connector as explained below.
   
 3. Extend `AbstractKeyManager`.
 
-      The `AbstractKeyManager` implements the `KeyManager` interface. For more information on the operations carried out on the `KeyManager` interface, see [Extending the Key Manager Interface]({{base_path}}/develop/extending-api-manager/extending-key-management/extending-the-key-manager-interface).
+      The `AbstractKeyManager` implements the `KeyManager` interface. For more information on the operations carried out on the `KeyManager` interface, see [Extending the Key Manager Interface](../../reference/customize-product/extending-api-manager/extending-key-management/extending-the-key-manager-interface.md).
 
 
       In the sample project, the `AbstractKeyManager` interface has been extended using the `org.wso2.custom.client.CustomOAuthClient.java` class.
 
-4. If you need to customize the `JWTValidation` interface, you need to [extend the JWTValidator]({{base_path}}/develop/extending-api-manager/extending-key-management/extending-key-validation).
+4. If you need to customize the `JWTValidation` interface, you need to [extend the JWTValidator](../../reference/customize-product/extending-api-manager/extending-key-management/extending-key-validation.md).
 
 5. Build the project.
 
@@ -114,7 +114,7 @@ You need to write a custom Key Manager connector as explained below.
 
      1. Click **Key Managers** and then click **Add Key Manager**.
 
-           [![Add new Key Manager]({{base_path}}/assets/img/administer/add-key-manager.png)]({{base_path}}/assets/img/administer/add-key-manager.png)
+           [![Add new Key Manager](../../assets/img/administer/add-key-manager.png)](../../assets/img/administer/add-key-manager.png)
 
      2. Add the following Key Manager configurations.
 

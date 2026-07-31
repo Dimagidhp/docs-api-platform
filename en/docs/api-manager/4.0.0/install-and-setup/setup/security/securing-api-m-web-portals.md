@@ -12,7 +12,7 @@ If you are using the Mozilla Firefox browser, you are usually required to accept
     
 You can use the default certificate for testing purposes or for running the web portals on your company's internal networks. If you want to make these portals available to external users, your organization should obtain a certificate signed by a well-known certificate authority, which verifies that the server has the name it is accessed by and that this server belongs to the given organization. 
 
-See [Creating new keystores]({{base_path}}/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores) to learn more about using certificates.
+See [Creating new keystores](configuring-keystores/keystore-basics/creating-new-keystores.md) to learn more about using certificates.
 
 ## Configuring session time-out
 
@@ -99,4 +99,4 @@ After completing the steps above, the respective web portal will no longer use t
 
 ## What's Next?
 
-[Start the API-M runtime]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m) and access the web portals.
+[Start the API-M runtime](../../install/installing-the-product/running-the-api-m.md) and access the web portals.

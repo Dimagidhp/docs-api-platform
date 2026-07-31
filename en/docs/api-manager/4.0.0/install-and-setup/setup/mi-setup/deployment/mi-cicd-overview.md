@@ -5,11 +5,11 @@ Different organizations have different ways of addressing the problem.
 This is a guide of a reference implementation that involves a minimum number of parties in an organization for Integration automation.
 This guide contains three parts.
 
-1. [VM based CI/CD - MI]({{base_path}}/install-and-setup/setup/mi-setup/deployment/mi-cicd-vm).
+1. [VM based CI/CD - MI](mi-cicd-vm.md).
 
-2. [Kubernetes based CI/CD - MI]({{base_path}}/install-and-setup/setup/mi-setup/deployment/mi-cicd-k8s).
+2. [Kubernetes based CI/CD - MI](mi-cicd-k8s.md).
 
-3. [Kubernetes based CI/CD - SI]({{base_path}}/install-and-setup/setup/si-setup/si-cicd-k8s).
+3. [Kubernetes based CI/CD - SI](../../si-setup/si-cicd-k8s.md).
 
 ## Phases of SDLC
 

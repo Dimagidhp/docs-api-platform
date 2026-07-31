@@ -29,17 +29,17 @@ Take the following into consideration when deciding on whether to use the Kubern
 
 The API operator for Kubernetes provides first-class support for Micro Integrator deployments in the Kubernetes ecosystem. It uses the `Integration` custom resource (`integration_cr.yaml` file) that is available in the Kubernetes module, which is exported from WSO2 Integration Studio, and deploys the integration in your Kubernetes environment.
 
--   For instructions, see [deploying integrations on Kubernetes using the Operator]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-deployments).
+-   For instructions, see [deploying integrations on Kubernetes using the Operator](../../kubernetes-operators/k8s-api-operator/manage-integrations/integration-deployments.md).
 
 ### Using Helm resources
 
 WSO2 releases Helm resources for all product deployments. You can get the [Helm resources for the Micro Integrator](https://github.com/wso2/kubernetes-mi/) and set up a Micro Integrator deployment on Kubernetes.
 
--   For instructions, see [deploying integrations on Kubernetes using Helm resources]({{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying-micro-integrator-with-helm).
+-   For instructions, see [deploying integrations on Kubernetes using Helm resources](deploying-micro-integrator-with-helm.md).
 
 ### Using pure Kubernetes resources
 
 Integration developers can directly generate the Kubernetes artifacts that are required for a Kubernetes deployment using WSO2 Integration Studio. After you have generated these resources, you can set a Kubernetes deployment by following the Kubernetes documentation.
 
--   For information on the Kubernetes Exporter in WSO2 Integration Studio, see [Create Kubernetes project]({{base_path}}/integrate/develop/create-kubernetes-project).
+-   For information on the Kubernetes Exporter in WSO2 Integration Studio, see [Create Kubernetes project](../../../../integrate/develop/create-kubernetes-project.md).
 

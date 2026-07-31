@@ -10,7 +10,7 @@ title: Set up MI Analytics - WSO2 API Manager 4.0.0
 
 ## How it works
 
-[![MI Analytics]({{base_path}}/assets/img/integrate/mi-analytics/analytics-architecture.jpg)]({{base_path}}/assets/img/integrate/mi-analytics/analytics-architecture.jpg) 
+[![MI Analytics](../assets/img/integrate/mi-analytics/analytics-architecture.jpg)](../assets/img/integrate/mi-analytics/analytics-architecture.jpg) 
 
 
 MI Analytics consists of two components: **Server** and **Portal**. The server processes the data streams that are sent from the Micro Integrator and publishes the statistics to a database. The portal reads the statistics published by the worker and displays the statistics. The server and portal are connected through the database.
@@ -53,7 +53,7 @@ You will be running three servers (Analytics server, MI Analytics portal, and th
         </tbody>
         </table>
 
-    -   For the Micro Integrator, see the [installation prerequsites]({{base_path}}/install-and-setup/install/installation-prerequisites).
+    -   For the Micro Integrator, see the [installation prerequsites](../install-and-setup/install/installation-prerequisites.md).
 
 ## Step 1 - Download the servers
 
@@ -61,12 +61,12 @@ You will be running three servers (Analytics server, MI Analytics portal, and th
     1.  Go to the WSO2 Enterprise Integrator <a href="https://wso2.com/integration/">product page</a>, click <b>TRY IT NOW</b>, and then go to the <b>Other Resources</b> section.
     2.  Click <b>Integration Analytics</b> to download the distribution.
 
-        <img src="{{base_path}}/assets/img/integrate/observability/download-ei-analytics.png" width="50%" alt="Integration Analytics download menu">
+        <img src="../assets/img/integrate/observability/download-ei-analytics.png" width="50%" alt="Integration Analytics download menu">
 
     !!! Info
         The location of your Analytics installation will be referred to as `<MI_ANALYTICS_HOME>`.
 
--   **Download and [install the Micro Integrator]({{base_path}}/install-and-setup/install/installing-the-product/installing-mi)**.
+-   **Download and [install the Micro Integrator](../install-and-setup/install/installing-the-product/installing-mi.md)**.
 
 ## Step 2 - Configure the Micro Integrator
     
@@ -110,16 +110,16 @@ Alternatively, you can enable statistics for selected artifacts as explained bel
 
 ### Step 2.4 - Optionally, enable statistics for specific artifacts
 
-Let's use the integration artifacts from the [service chaining]({{base_path}}/tutorials/integration-tutorials/exposing-several-services-as-a-single-service) tutorial.
+Let's use the integration artifacts from the [service chaining](../tutorials/integration-tutorials/exposing-several-services-as-a-single-service.md) tutorial.
 
 !!! Warning
     It is **not recommended to enable tracing in production environments** as it generates a large number of events that reduces the performance of the analytics profile. Therefore, tracing should only be enabled in development environments.
 
 !!! info "If you do not have the integration artifacts from the service chaining tutorial"
-    If you did not try the [service chaining]({{base_path}}/tutorials/integration-tutorials/exposing-several-services-as-a-single-service) tutorial yet:
+    If you did not try the [service chaining](../tutorials/integration-tutorials/exposing-several-services-as-a-single-service.md) tutorial yet:
 
     1.  Download the [pre-packaged project](https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/Integration-Tutorial-Artifacts-EI7.1.0/service-orchestration-tutorial.zip) for the **service chaining** use case.
-    2.  [Open WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio) and [import the pre-packaged project]({{base_patgh}}/integrate/develop/importing-projects).
+    2.  [Open WSO2 Integration Studio](../integrate/develop/installing-wso2-integration-studio.md) and [import the pre-packaged project]({{base_patgh}}/integrate/develop/importing-projects).
 
 #### REST API artifact
 
@@ -128,7 +128,7 @@ Follow the steps below to enable statistics and tracing for the **REST API** ar
 1.  Select `HealthcareAPI` in the canvas of WSO2 Integration Studio to open the **Properties** tab.
 2.  Select **Statistics Enabled** and (if required) **Trace Enabled** as shown below.
 
-    <img src="{{base_path}}/assets/img/integrate/mi-analytics/restapi-properties.png" alt="rest api properties" width="500">
+    <img src="../assets/img/integrate/mi-analytics/restapi-properties.png" alt="rest api properties" width="500">
 
 #### Endpoint artifacts
 
@@ -136,7 +136,7 @@ Follow the steps below to enable statistics for the **endpoint** artifacts:
 
 1.  Select the required endpoint artifacts from the project explorer. 
 2.  Select **Statistics Enabled** and (if required) **Trace Enabled** as shown below.
-     [![endpoint properties]({{base_path}}/assets/img/integrate/mi-analytics/endpoint-properties.png){: style="width:80%"}]({{base_path}}/assets/img/integrate/mi-analytics/endpoint-properties.png)
+     [![endpoint properties](../assets/img/integrate/mi-analytics/endpoint-properties.png){: style="width:80%"}](../assets/img/integrate/mi-analytics/endpoint-properties.png)
      
 ### Step 2.5 - Optionally, set up load balancing
 
@@ -162,7 +162,7 @@ ei_analytics.username = "admin"
 ei_analytics.password = "admin"  
 ```  
 
-[![lb events to servers]({{base_path}}/assets/img/integrate/mi-analytics/ob-lb-events-to-servers.jpg){: style="width:70%"}]({{base_path}}/assets/img/integrate/mi-analytics/ob-lb-events-to-servers.jpg)
+[![lb events to servers](../assets/img/integrate/mi-analytics/ob-lb-events-to-servers.jpg){: style="width:70%"}](../assets/img/integrate/mi-analytics/ob-lb-events-to-servers.jpg)
 
 This handles failover as follows: 
 
@@ -179,7 +179,7 @@ You can send events to both the sets. You can also carry out load balancing for 
 - Similarly within set-B, it is sent either to Analytics B1 or Analytics B2. 
 - In the setup, you can have any number of sets and any number of servers as required.
 
-    [![lb events to set of servers]({{base_path}}/assets/img/integrate/mi-analytics/ob-lb-to-sets-of-servers.jpg){: style="width:70%"}]({{base_path}}/assets/img/integrate/mi-analytics/ob-lb-to-sets-of-servers.jpg)
+    [![lb events to set of servers](../assets/img/integrate/mi-analytics/ob-lb-to-sets-of-servers.jpg){: style="width:70%"}](../assets/img/integrate/mi-analytics/ob-lb-to-sets-of-servers.jpg)
     
 Similar to the other scenarios, you need to describe the server URLs as the receiver URL in the Micro Integrator configuration. The sets should be specified within curly braces separated by commas. Furthermore, each receiver that belongs to the set should be within the curly braces and with the receiver URLs in a comma-separated format. 
 
@@ -205,7 +205,7 @@ This setup involves sending all the events to more than one Analytics server.
 This approach is useful when you want to have multiple Analytics servers to analyze the same events simultaneously. 
 For example, as shown below, you can configure the Micro Integrator to publish the same event to both Analytics servers at the same time. 
 
- [![all events to all servers]({{base_path}}/assets/img/integrate/mi-analytics/ob-all-events-to-all-servers.jpg){: style="width:70%"}]({{base_path}}/assets/img/integrate/mi-analytics/ob-all-events-to-all-servers.jpg)
+ [![all events to all servers](../assets/img/integrate/mi-analytics/ob-all-events-to-all-servers.jpg){: style="width:70%"}](../assets/img/integrate/mi-analytics/ob-all-events-to-all-servers.jpg)
 
 The Analytics receiver URL should be configured with the following format in the Micro Integrator: 
 
@@ -233,7 +233,7 @@ In the scenario depicted in the image below,
 - If it is unavailable, then events are sent to Analytics-2. 
 - If Analytics-2  is also unavailable, then the events are sent to Analytics-3.
     
-[![fail over]({{base_path}}/assets/img/integrate/mi-analytics/ob-fail-over.jpg){: style="width:70%"}]({{base_path}}/assets/img/integrate/mi-analytics/ob-fail-over.jpg)
+[![fail over](../assets/img/integrate/mi-analytics/ob-fail-over.jpg){: style="width:70%"}](../assets/img/integrate/mi-analytics/ob-fail-over.jpg)
 
 The Analytics receiver URL should be configured with the following format in the Micro Integrator: 
 
@@ -251,4 +251,4 @@ ei_analytics.password = "admin"
 
 ## What's Next?
 
-If you have successfully set up your analytics deployment, see the instructions on [using the analytics portal]({{base_path}}/observe/mi-observe/using-the-analytics-dashboard).
+If you have successfully set up your analytics deployment, see the instructions on [using the analytics portal](using-the-analytics-dashboard.md).

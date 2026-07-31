@@ -3,7 +3,7 @@
 The **Send Mediator** is used to send messages out of Synapse to an endpoint. The Send Mediator also copies any message context properties from the current message context to the reply message received on the execution of the send operation, so that the response could be correlated back to the request. Messages may be correlated by WS-A MessageID, or even simple custom text labels.
 
 !!! Info
-    - The Send mediator is a [content-unaware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    - The Send mediator is a [content-unaware](about-mediators.md#classification-of-mediators) mediator.
     - A send operation can be blocking or non-blocking depending on the actual transport implementation used. The default NIO-based http/s implementation does not block on a send. Therefore, if a message should be sent and further processed (e.g. transformed) afterwards, it is required to clone the message into two copies and then perform the processing to avoid conflicts.
     - Do not add any mediator configurations after Send mediator in the same sequence, because the Micro Integrator does not process them. Any mediator configuration after the Send mediator should go to the outSequence or receive sequence.
 
@@ -146,11 +146,11 @@ client. Following is the configuration of these sequences.
 ### Configuring a blocking/non-blocking send operation
 
 In this example, the Send mediator in a proxy service using the [VFS
-transport]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transports/#configuring-the-vfs-transport) is
+transport](../../install-and-setup/setup/mi-setup/transport_configurations/configuring-transports.md#configuring-the-vfs-transport) is
 transferring a file to a VFS endpoint. VFS is a non-blocking transport
 by default, which means a new thread is spawned for each outgoing
-message. The [Property mediator]({{base_path}}/reference/mediators/property-mediator) added before the
-Send mediator removes the [ClientAPINonBlocking]({{base_path}}/reference/mediators/property-reference/generic-properties)
+message. The [Property mediator](property-mediator.md) added before the
+Send mediator removes the [ClientAPINonBlocking](property-reference/generic-properties.md)
 property from the message to perform the mediation in a single thread.
 This is required when the file being transferred is large and you want
 to avoid out-of-memory failures.

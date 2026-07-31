@@ -137,7 +137,7 @@ insert into FinalThroughputStream;
 
 This scenario was tested using two Siddhi applications that execute the process explained below.
 
-![ETL Process]({{base_path}}/assets/img/streaming/performance-analysis-results/production-factory-etl.png)
+![ETL Process](../../../assets/img/streaming/performance-analysis-results/production-factory-etl.png)
 
 The two Siddhi applications are as follows:
 

@@ -93,7 +93,7 @@ in the following ways:
     ```
 
     For more information about definig datasources, see [Configuring
-    Datasources]({{base_path}}/install-and-setup/setup/si-setup/configuring-data-sources).
+    Datasources](configuring-data-sources.md).
 
 The following database types are currently supported for WSO2 SP.
 
@@ -230,7 +230,7 @@ In addition, the following annotations are used in the HBase definition.
     record. Therefore, if you do not include one or more primary keys in
     the table definition, it is not possible to perform table operations
     such as searching, updating, deleting and joining. For more
-    information about table operations, see the [Integrating Stores tutorial]({{base_path}}/use-cases/streaming-tutorials/integrating-stores).
+    information about table operations, see the [Integrating Stores tutorial](../../../use-cases/streaming-tutorials/integrating-stores.md).
     
 - `@index`: 
     This specifies the fields that must be indexed at the database level. You can specify multiple values as a comma-separated list.

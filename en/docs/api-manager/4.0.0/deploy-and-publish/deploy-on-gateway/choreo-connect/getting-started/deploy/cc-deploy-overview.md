@@ -57,18 +57,18 @@ Try out the following Choreo Connect deployment guides based on your Choreo Conn
 <table>
     <tr>
         <td width="40%">
-            <img src="{{base_path}}/assets/img/deploy/mgw/docker-logo.png" width="80%" alt="Choreo Connect on Docker Compose">
+            <img src="../../../../../assets/img/deploy/mgw/docker-logo.png" width="80%" alt="Choreo Connect on Docker Compose">
         </td>
         <td width="60%">
             <ul>
                 <li>
                     <a
-                        href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-docker-with-apim-as-control-plane/">
+                        href="cc-on-docker-with-apim-as-control-plane.md">
                         Choreo Connect on Docker Compose With WSO2 API Manager as a Control Plane</a>
                 </li>
                 <li>
                     <a
-                        href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-docker/">WSO2
+                        href="cc-as-a-standalone-gateway-on-docker.md">WSO2
                         Choreo Connect as a standalone gateway deployed on Docker Compose</a>
                 </li>
             </ul>
@@ -76,19 +76,19 @@ Try out the following Choreo Connect deployment guides based on your Choreo Conn
     </tr>
     <tr>
         <td width="40%">
-            <img src="{{base_path}}/assets/img/deploy/mgw/helm.png" width="80%"
+            <img src="../../../../../assets/img/deploy/mgw/helm.png" width="80%"
                 alt="Choreo Connect on Kubernetes - Helm Artifacts">
         </td>
         <td width="60%">
             <ul>
                 <li>
                     <a
-                        href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane-helm-artifacts/">
+                        href="cc-on-kubernetes-with-apim-as-control-plane-helm-artifacts.md">
                         Choreo Connect on Kubernetes with WSO2 API Manager as a Control Plane</a>
                 </li>
                 <li>
                     <a
-                        href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes-helm-artifacts/">
+                        href="cc-as-a-standalone-gateway-on-kubernetes-helm-artifacts.md">
                         Choreo Connect as a standalone gateway deployed on Kubernetes</a>
                 </li>
             </ul>
@@ -96,19 +96,19 @@ Try out the following Choreo Connect deployment guides based on your Choreo Conn
     </tr>
     <tr>
         <td width="40%">
-            <img src="{{base_path}}/assets/img/deploy/mgw/kubernetes.png" width="80%"
+            <img src="../../../../../assets/img/deploy/mgw/kubernetes.png" width="80%"
                 alt="Choreo Connect on Kubernetes - YAML Artifacts">
         </td>
         <td width="60%">
             <ul>
                 <li>
                     <a
-                        href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-on-kubernetes-with-apim-as-control-plane/">
+                        href="cc-on-kubernetes-with-apim-as-control-plane.md">
                         Choreo Connect on Kubernetes with WSO2 API Manager as a Control Plane</a>
                 </li>
                 <li>
                     <a
-                        href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes/">
+                        href="cc-as-a-standalone-gateway-on-kubernetes.md">
                         Choreo Connect as a standalone gateway deployed on Kubernetes</a>
                 </li>
             </ul>

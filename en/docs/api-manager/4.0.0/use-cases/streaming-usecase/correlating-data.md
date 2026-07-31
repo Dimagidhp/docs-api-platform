@@ -2,7 +2,7 @@
 
 The streaming integrator can correlate data in order to detect patterns and trends in streaming data. Correlating can be done via patterns as well as sequences.
 
-![patterns-sequences-matrix]({{base_path}}/assets/img/streaming//correlating-events/patterns-sequences-matrix.png)
+![patterns-sequences-matrix](../../assets/img/streaming/correlating-events/patterns-sequences-matrix.png)
 
 The difference between patterns and sequence is that sequences require all the matching events to arrive consecutively to
  match the sequence condition, whereas patterns identify events that match the pattern condition irrespective of the order in which they arrive.
@@ -48,7 +48,7 @@ In the `Calculate Shelf Life` query, `every e1 = ProductionStream -> e2 = SalesT
 
 To try out the Siddhi application given in the sample above, follow the steps below:
 
-1. [Start and Access Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview/#starting-streaming-integrator-tooling).
+1. [Start and Access Streaming Integrator Tooling](../../develop/streaming-apps/streaming-integrator-studio-overview.md#starting-streaming-integrator-tooling).
 
 2. Open a new file, add the following content to it and save.
 
@@ -74,7 +74,7 @@ To try out the Siddhi application given in the sample above, follow the steps be
     insert into ShelfLifeStream;
     ```
    
-3. Simulate events for the `ShelfLifeApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events]({{base_path}}/develop/streaming-apps/testing-a-siddhi-application).
+3. Simulate events for the `ShelfLifeApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events](../../develop/streaming-apps/testing-a-siddhi-application.md).
 
     - For the `ProductionStream` stream
     
@@ -122,7 +122,7 @@ insert into LowStockLevelAlertStream;
 
 To try out the Siddhi application given in the sample above, follow the steps below:
 
-1. [Start and Access Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview/#starting-streaming-integrator-tooling).
+1. [Start and Access Streaming Integrator Tooling](../../develop/streaming-apps/streaming-integrator-studio-overview.md#starting-streaming-integrator-tooling).
 
 2. Open a new file, add the following content to it and save.
 
@@ -142,7 +142,7 @@ To try out the Siddhi application given in the sample above, follow the steps be
     insert into LowStockLevelAlertStream;
     ```
    
-3. Simulate events for the `DetectingLowStockApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events]({{base_path}}/develop/streaming-apps/testing-a-siddhi-application).
+3. Simulate events for the `DetectingLowStockApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events](../../develop/streaming-apps/testing-a-siddhi-application.md).
 
     - For the `LatestStockStream` stream
     
@@ -201,7 +201,7 @@ In the `Detect Wastage` query, the `from` clause detects a pattern where the sal
 
 To try out the Siddhi application given in the sample above, follow the steps below:
 
-1. [Start and Access Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview/#starting-streaming-integrator-tooling).
+1. [Start and Access Streaming Integrator Tooling](../../develop/streaming-apps/streaming-integrator-studio-overview.md#starting-streaming-integrator-tooling).
 
 2. Open a new file, add the following content to it and save.
 
@@ -228,7 +228,7 @@ To try out the Siddhi application given in the sample above, follow the steps be
     ```
    For testing purposes, the above Siddhi application detects the non occurrence of a matching event within three seconds instead of three days.
    
-3. Simulate events for the `ProductionStream` stream of the `DetectWastageApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events]({{base_path}}/develop/streaming-apps/testing-a-siddhi-application).
+3. Simulate events for the `ProductionStream` stream of the `DetectWastageApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events](../../develop/streaming-apps/testing-a-siddhi-application.md).
 
     | **name**  | **amount** |
     |-----------|------------|
@@ -273,7 +273,7 @@ The above Siddhi application compares  three events (i.e., e1, e2 and e3) that o
 
 To try out the Siddhi application given in the sample above, follow the steps below:
 
-1. [Start and Access Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview/#starting-streaming-integrator-tooling).
+1. [Start and Access Streaming Integrator Tooling](../../develop/streaming-apps/streaming-integrator-studio-overview.md#starting-streaming-integrator-tooling).
 
 2. Open a new file, add the following content to it and save.
 
@@ -292,7 +292,7 @@ To try out the Siddhi application given in the sample above, follow the steps be
     insert into DecreasingProductionAlertStream;
     ```
    
-3. Simulate three events for the `ProductionStream` stream of the `DecreasingProductionAlertApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events]({{base_path}}/develop/streaming-apps/testing-a-siddhi-application).
+3. Simulate three events for the `ProductionStream` stream of the `DecreasingProductionAlertApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events](../../develop/streaming-apps/testing-a-siddhi-application.md).
 
     | **name**      | **amount** |
     |---------------|------------|
@@ -334,7 +334,7 @@ The above Siddhi application matches every event in the `ProductionStream` strea
 
 To try out the Siddhi application given in the sample above, follow the steps below:
 
-1. [Start and Access Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview/#starting-streaming-integrator-tooling).
+1. [Start and Access Streaming Integrator Tooling](../../develop/streaming-apps/streaming-integrator-studio-overview.md#starting-streaming-integrator-tooling).
 
 2. Open a new file, add the following content to it and save.
 
@@ -353,7 +353,7 @@ To try out the Siddhi application given in the sample above, follow the steps be
     insert into DecreasingProductionAlertStream;
     ```
    
-3. Simulate events for the `ProductionStream` stream of the `ObserveProductionTrendsApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events]({{base_path}}/develop/streaming-apps/testing-a-siddhi-application).
+3. Simulate events for the `ProductionStream` stream of the `ObserveProductionTrendsApp` application as follows. For instructions to simulate events, see [Testing Siddhi Applications - Simulating Events](../../develop/streaming-apps/testing-a-siddhi-application.md).
 
     | **name**      | **amount** |
     |---------------|------------|

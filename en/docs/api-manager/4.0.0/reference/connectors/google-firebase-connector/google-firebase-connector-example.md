@@ -17,11 +17,11 @@ In this example let us see how we can use Google Firebase Connector to generate 
 
 Overall integration scenario would look like below. 
 <br/><br/>
-<img src="{{base_path}}/assets/img/integrate/connectors/google-firebase-scenario.png" title="Google Firebase Connector scenario" width="800" alt="Google Firebase Connector scenario"/>
+<img src="../../../assets/img/integrate/connectors/google-firebase-scenario.png" title="Google Firebase Connector scenario" width="800" alt="Google Firebase Connector scenario"/>
 
 ## Setting up the environment
 
-You need to create an application at Google Firebase and get the credentials required. Please follow [Setting up Google Firebase]({{base_path}}/reference/connectors/google-firebase-connector/google-firebase-setup/) on how to do that. 
+You need to create an application at Google Firebase and get the credentials required. Please follow [Setting up Google Firebase](google-firebase-setup.md) on how to do that. 
 
 ## Configure the connector in WSO2 Integration Studio
 
@@ -185,8 +185,8 @@ Now we can export the imported connector, sequence, and the API into a single CA
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/google-firebase-test-project.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/google-firebase-test-project.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 !!! tip
@@ -273,5 +273,5 @@ If you have registered some devices to your application, the notification will a
 
 ## What's Next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/integrate/develop/deploy-artifacts/).
-* Please read the [Google Firebase Connector reference guide]({{base_path}}/reference/connectors/google-firebase-connector/google-firebase-configuration/) to learn more about the operations you can perform with the connector.
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).
+* Please read the [Google Firebase Connector reference guide](google-firebase-configuration.md) to learn more about the operations you can perform with the connector.

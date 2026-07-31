@@ -11,7 +11,7 @@ Install and set up [Docker](https://www.docker.com).
 ### Step 1.1 - Download and install APICTL
 
 APICTL is a CLI tool which can be used to deploy undeploy APIs into Choreo Connect clusters.
-Refer [Download and initialize the CTL Tool]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-ctl-tool)
+Refer [Download and initialize the CTL Tool](../../../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller.md#download-and-initialize-the-ctl-tool)
 to setup the APICTL in your development environment.
 
 ### Step 1.2 - Download and extract Choreo Connect distribution .zip file
@@ -59,7 +59,7 @@ The project is now initialized. A directory with the name "petstore" has been cr
     ```
 
 !!! info
-    -   For more information on the API project directory that gets created, see [APICTL Getting Started]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller).
+    -   For more information on the API project directory that gets created, see [APICTL Getting Started](../../../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller.md).
 
 ## Step 3 - Start Choreo Connect
 
@@ -125,7 +125,7 @@ apictl mg deploy api -f petstore -e dev -k
 ### Step 5.1 - Obtain a token
 
 After the APIs are exposed via WSO2 Choreo Connect, you can invoke an API with a valid token(JWT) or using a test key.  
-Let's use WSO2 Choreo Connect's test key endpoint to obtain an test key in order to access the API. Refer [Generate a Test JWT]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/generate-a-test-jwt) for more details.
+Let's use WSO2 Choreo Connect's test key endpoint to obtain an test key in order to access the API. Refer [Generate a Test JWT](../../security/generate-a-test-jwt.md) for more details.
 
 ``` shell tab="Sample Token"
 TOKEN=$(curl -X POST "https://localhost:9095/testkey" -d "scope=read:pets" -H "Authorization: Basic YWRtaW46YWRtaW4=" -k -v)

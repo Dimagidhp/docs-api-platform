@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial, let's learn how you can handle streaming data that has errors (e.g., events that do not have values for certain attributes). WSO2 Streaming Integrator allows you to log such events, direct them to a separate stream or store them in a data store. If these errors occur at the time of publishing (e.g., due to a connection error), WSO2 SI also provides the option to wait and then resume to publish once the connection is stable again. For detailed information about different ways to handle errors, see the [Handling Errors guide]({{base_path}}/use-cases/streaming-tutorials/handling-errors).
+In this tutorial, let's learn how you can handle streaming data that has errors (e.g., events that do not have values for certain attributes). WSO2 Streaming Integrator allows you to log such events, direct them to a separate stream or store them in a data store. If these errors occur at the time of publishing (e.g., due to a connection error), WSO2 SI also provides the option to wait and then resume to publish once the connection is stable again. For detailed information about different ways to handle errors, see the [Handling Errors guide](../streaming-usecase/handling-errors.md).
 
 In this scenario, you are handling erroneous events by directing them to a MySQL store.
 
@@ -201,13 +201,13 @@ To create and deploy a Siddhi application, follow the steps below:
                   certPass: wso2carbon
             ```
     
-        ![Adding a New Server]({{base_path}}/assets/img/streaming/handling-requests-with-errors/add-a-new-server.png)
+        ![Adding a New Server](../../assets/img/streaming/handling-requests-with-errors/add-a-new-server.png)
         
         Then click **Add**.
         
     3. In the **Siddhi Apps to Deploy** section, select the check boxes for the **MappingErrorTest.siddhi** and **SinkTransportErrorTest.siddhi** applications. In the **Servers** section, select the check box for the server you added. Then click **Deploy**.
     
-        ![Select Siddhi Application and Server]({{base_path}}/assets/img/streaming/handling-requests-with-errors/select-siddhi-app-and-server.png)
+        ![Select Siddhi Application and Server](../../assets/img/streaming/handling-requests-with-errors/select-siddhi-app-and-server.png)
         
 ## Step 4: Connect the Error Store Explorer to the SI server
 
@@ -227,12 +227,12 @@ To connect the Error Store Explorer to the SI server, follow the procedure below
 
     The Error Store Explorer opens as shown below. 
    
-    ![Access Error Store]({{base_path}}/assets/img/streaming/handling-requests-with-errors/error-store-explorer-without-server.png)
+    ![Access Error Store](../../assets/img/streaming/handling-requests-with-errors/error-store-explorer-without-server.png)
    
 3. Click **Connect to Server**. Then enter information as follows:
    To check the port of the Streaming Integrator Server, Open <SI_HOME>/conf/server/deployment.yaml file. Under Listener Configurations of wso2.transport.http, locate the listener configuration with msf4j-https as the ID and specify its port as shown in the extract below.
 
-    ![Server Configuration]({{base_path}}/assets/img/streaming/handling-requests-with-errors/server-configurations.png)
+    ![Server Configuration](../../assets/img/streaming/handling-requests-with-errors/server-configurations.png)
 
     |**Parameter**|**Value**    |
     |-------------|-------------|
@@ -271,21 +271,21 @@ To manage the error in the Error Store Explorer, follow the procedure below:
     
 1. To open the Error Store Explorer, open Streaming Integrator Tooling, click **Tools** and then click **Error Store Explorer**.
 
-    ![Access Error Store]({{base_path}}/assets/img/streaming/handling-requests-with-errors/access-error-store-explorer.png)
+    ![Access Error Store](../../assets/img/streaming/handling-requests-with-errors/access-error-store-explorer.png)
     
     The Error Store Explorer opens as shown below.
     
-    ![Error Store Explorer]({{base_path}}/assets/img/streaming/handling-requests-with-errors/error-store-explorer.png)
+    ![Error Store Explorer](../../assets/img/streaming/handling-requests-with-errors/error-store-explorer.png)
     
     The single error displayed is the mapping error that you previously simulated.
     
 2. To view details of the error, click **Detailed Info**. The following is displayed.
 
-    ![Error Entry]({{base_path}}/assets/img/streaming/handling-requests-with-errors/error-entry.png)
+    ![Error Entry](../../assets/img/streaming/handling-requests-with-errors/error-entry.png)
     
 3. You can correct the mapping and replay the event. To do this, change `foo` in the event to `name` and click `replay`.
     
-    ![Replay Error]({{base_path}}/assets/img/streaming/handling-requests-with-errors/replay-error.png)
+    ![Replay Error](../../assets/img/streaming/handling-requests-with-errors/replay-error.png)
     
     As a result, the **Error Entry** dialog box closes, and the **Error Store Explorer** dialog box is displayed with no errors.
     
@@ -317,7 +317,7 @@ In this step, let's start the service at `http://localhost:8007/testUnavailableE
 
 In the **Siddhi Apps to Deploy** section, select the check box for the **ReceiveAndCount.siddhi** application. In the **Servers** section, select the check box for the server you added. Then click **Deploy**.
 
-   ![Select ReceiveAndCount Siddhi Application and Server]({{base_path}}/assets/img/streaming/handling-requests-with-errors/select-receive-and-count-app-and-server.png)
+   ![Select ReceiveAndCount Siddhi Application and Server](../../assets/img/streaming/handling-requests-with-errors/select-receive-and-count-app-and-server.png)
 
 The following log is displayed in the Streaming Integrator console.
 
@@ -330,23 +330,23 @@ To manage the error in the Error Store Explorer, follow the procedure below:
     
 1. To open the Error Store Explorer, open Streaming Integrator Tooling, click **Tools** and then click **Error Store Explorer**.
 
-    ![Access Error Store]({{base_path}}/assets/img/streaming/handling-requests-with-errors/access-error-store-explorer.png)
+    ![Access Error Store](../../assets/img/streaming/handling-requests-with-errors/access-error-store-explorer.png)
     
 2. In the **Siddhi app** field, select **SinkTransportErrorTest** Siddhi application and then click **Fetch**.
     
     As a result, an error is displayed as follows.
     
-    ![Error Store Explorer]({{base_path}}/assets/img/streaming/handling-requests-with-errors/error-store-explorer-with-sink-transport-error-test.png)
+    ![Error Store Explorer](../../assets/img/streaming/handling-requests-with-errors/error-store-explorer-with-sink-transport-error-test.png)
     
     This indicates that the event was dropped because the end point was not available.
     
 3. To view details of the error, click **Detailed Info**. The following is displayed.
 
-    ![Error Entry]({{base_path}}/assets/img/streaming/handling-requests-with-errors/error-entry-for-sink-transport-error-test.png)
+    ![Error Entry](../../assets/img/streaming/handling-requests-with-errors/error-entry-for-sink-transport-error-test.png)
     
     Previously, you deployed the `ReceiveAndCount` Siddhi application. Therefore, you can send the event again by clicking **Replay**.
     
-    ![Replay Error]({{base_path}}/assets/img/streaming/handling-requests-with-errors/replay-error-sink-transport-error-test.png)
+    ![Replay Error](../../assets/img/streaming/handling-requests-with-errors/replay-error-sink-transport-error-test.png)
     
     As a result, the **Error Entry** dialog box closes, and the **Error Store Explorer** dialog box is displayed with no errors.
     
@@ -412,7 +412,7 @@ To check whether the published event is successfully saved in the `SweetProducti
 
 The following is displayed:
 
-![Published Event]({{base_path}}/assets/img/streaming/handling-requests-with-errors/published-event-stored-in-db.png)
+![Published Event](../../assets/img/streaming/handling-requests-with-errors/published-event-stored-in-db.png)
 
 Use the same curl command as above to publish another event. However, this time the event fails because the `batchID`
 column that is defined as the primary key has a duplicate value of 1 in the second message. Due to this, the Siddhi application logs the following 
@@ -428,19 +428,19 @@ To manage the error in the Error Store Explorer, follow the procedure below:
 
 1. To open the Error Store Explorer, open Streaming Integrator Tooling, click **Tools** and then click **Error Store Explorer**.
 
-    ![Access Error Store]({{base_path}}/assets/img/streaming/handling-requests-with-errors/access-error-store-explorer.png)
+    ![Access Error Store](../../assets/img/streaming/handling-requests-with-errors/access-error-store-explorer.png)
 
 2. In the **Siddhi app** field, select **StoreRdbmsError** Siddhi application and then click **Fetch**.
 
     As a result, an error is displayed as follows.
 
-    ![Error Store Explorer]({{base_path}}/assets/img/streaming/handling-requests-with-errors/error-store-explorer-with-StoreRdbmsError.png)
+    ![Error Store Explorer](../../assets/img/streaming/handling-requests-with-errors/error-store-explorer-with-StoreRdbmsError.png)
 
     This indicates that the event was dropped due to database constrained violation.
 
 2. To view details of the error, click **Detailed Info**. The following is displayed.
 
-    ![Error Entry]({{base_path}}/assets/img/streaming/handling-requests-with-errors/error-entry-for-StoreRdbmsError.png)
+    ![Error Entry](../../assets/img/streaming/handling-requests-with-errors/error-entry-for-StoreRdbmsError.png)
 
     The erroneous event is displayed as a editable table as shown below. Change the value of batchID from `1` to `2` and 
     click **Replay**.
@@ -456,7 +456,7 @@ To manage the error in the Error Store Explorer, follow the procedure below:
     
     The following is displayed
     
-    ![Corrected Event]({{base_path}}/assets/img/streaming/handling-requests-with-errors/corrected-event-stored-in-db.png)
+    ![Corrected Event](../../assets/img/streaming/handling-requests-with-errors/corrected-event-stored-in-db.png)
 
 !!! info
     The following are other types of database errors that WSO2 Streaming Integrator can capture and store in the error store so that you can correct and replay them.<br/><br/>

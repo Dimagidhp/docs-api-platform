@@ -5,7 +5,7 @@ This sample demonstrates how you can implement the <b>request-reply</b> messagin
 As shown below, the `OrderRequest` proxy service in the Micro Integrator receives an HTTP
 request, which it publishes to a RabbitMQ queue. This message is consumed and processed by the `OrderProcessing` proxy service in the Micro Integrator, and the response is sent back to the client over HTTP.
 
-<img src="{{base_path}}/assets/img/integrate/rabbitmq/rabbitmq-request-response.png">
+<img src="../../../assets/img/integrate/rabbitmq/rabbitmq-request-response.png">
 
 ## Synapse configurations
 
@@ -72,12 +72,12 @@ See the instructions on how to [build and run](#build-and-run) this example.
 
 ## Build and run
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) with the configurations given above.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md) with the configurations given above.
 4. Enable the RabbitMQ sender and receiver in the Micro-Integrator from the deployment.toml. Refer the 
- [configuring RabbitMQ documentation]({{base_path}}/install-and-setup/setup/mi-setup/brokers/configure-with-rabbitmq) for more information.
-5. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+ [configuring RabbitMQ documentation](../../../install-and-setup/setup/mi-setup/brokers/configure-with-rabbitmq.md) for more information.
+5. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 6. Make sure you have a RabbitMQ broker instance running.
 7. Send a message to the `Order Request Proxy Service` with the following payload. 
 

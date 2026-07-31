@@ -9,7 +9,7 @@ The performance tests were conducted for streaming APIs of WSO2 API Manager. Tes
  
 ## Deployment used for the test
 
-[![API-M performance test all-in-one deployment]({{base_path}}/assets/img/setup-and-install/performance-test-results/apim_performance_test_all_in_one_deployment.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/apim_performance_test_all_in_one_deployment.png)
+[![API-M performance test all-in-one deployment](../../../assets/img/setup-and-install/performance-test-results/apim_performance_test_all_in_one_deployment.png)](../../../assets/img/setup-and-install/performance-test-results/apim_performance_test_all_in_one_deployment.png)
 
 <table>
 <thead>
@@ -83,7 +83,7 @@ concurrent users and the CPU and memory percentage consumed was recorded at that
 The following graph depicts the Error %, CPU % and Memory % variation in the server during the time in which the 
 request was processed.
 
-[![Server Sent Events Test Results]({{base_path}}/assets/img/setup-and-install/performance-test-results/sse_perf_test_results.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/sse_perf_test_results.png)
+[![Server Sent Events Test Results](../../../assets/img/setup-and-install/performance-test-results/sse_perf_test_results.png)](../../../assets/img/setup-and-install/performance-test-results/sse_perf_test_results.png)
 
 **Key observations:**
 
@@ -98,7 +98,7 @@ consumed.
 
 The following graph depicts the variation of Error, CPU and Memory % with concurrent users.
 
-[![WebSub Test Results]({{base_path}}/assets/img/setup-and-install/performance-test-results/websub_sse_perf_test_results.png)]({{base_path}}/assets/img/setup-and-install/performance-test-results/websub_sse_perf_test_results.png)
+[![WebSub Test Results](../../../assets/img/setup-and-install/performance-test-results/websub_sse_perf_test_results.png)](../../../assets/img/setup-and-install/performance-test-results/websub_sse_perf_test_results.png)
 
 **Key observations:**
 
@@ -118,7 +118,7 @@ Test for WebSocket API was done using a WebSocket server, which sends back the r
 
 The following graph depicts the ramp up period with error rate.
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/ws-streaming-api-ramp-up-vs-error-rate.png" alt="websocket_ramp_up_period_vs_error_rate" width="1000"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/ws-streaming-api-ramp-up-vs-error-rate.png" alt="websocket_ramp_up_period_vs_error_rate" width="1000"/>
 
 The following table shows the number of concurrent connections with error rate. A 500 bytes string payload was used as the message. Size of the payload was reduced when non-zero error rates were observed without any failed connections.
 
@@ -154,17 +154,17 @@ The following table shows the number of concurrent connections with error rate. 
 
 The following graphs depict the variation of CPU and Memory % with concurrent connections.
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/100connections.png" alt="100_connections" width="500"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/100connections.png" alt="100_connections" width="500"/>
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/200connections.png" alt="200_connections" width="500"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/200connections.png" alt="200_connections" width="500"/>
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/300connections.png" alt="300_connections" width="500"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/300connections.png" alt="300_connections" width="500"/>
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/400connections.png" alt="400_connections" width="500"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/400connections.png" alt="400_connections" width="500"/>
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/600connections.png" alt="600_connections" width="500"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/600connections.png" alt="600_connections" width="500"/>
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/800connections.png" alt="800_connections" width="500"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/800connections.png" alt="800_connections" width="500"/>
 
-<img src="{{base_path}}/assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/1000connections.png" alt="1000_connections" width="500"/>
+<img src="../../../assets/img/setup-and-install/performance-test-results/websocket-cpu-mem-graphs/1000connections.png" alt="1000_connections" width="500"/>
 

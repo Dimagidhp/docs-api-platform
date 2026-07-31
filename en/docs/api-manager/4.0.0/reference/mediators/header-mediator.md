@@ -3,7 +3,7 @@
 The **Header Mediator** allows you to manipulate SOAP and HTTP headers.
 
 !!! Info
-    The Header mediator is a [conditionally]({{base_path}}/concepts/message-processing-units/#classification-of-mediators) [content aware]({{base_path}}/concepts/message-processing-units/#classification-of-mediators) mediator.
+    The Header mediator is a [conditionally](about-mediators.md#classification-of-mediators) [content aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -118,7 +118,7 @@ to the HTTP request made to the endpoint.
 </outSequence>
 ```
 
-If you have [enabled wire logs]({{base_path}}/integrate/develop/using-wire-logs), you will view the following output.
+If you have [enabled wire logs](../../integrate/develop/using-wire-logs.md), you will view the following output.
 
 ``` text
 << GET /people/eric+cooke HTTP/1.1
@@ -157,7 +157,7 @@ header named `         header1        ` .
 In this example, the Header mediator allows the endpoint URL to which
 the message is sent to be set dynamically. It specifies the default
 address to which the message is sent dynamically by deriving the To
-header of the message via an XPath expression. Then the [Send mediator]({{base_path}}/reference/mediators/send-mediator) sends the message to a **Default Endpoint**. A Default Endpoint sends the message to the default address of the message (i.e. address specified in the To header). Therefore, in this scenario, selecting the Default Endpoint results in the message being sent to relevant URL calculated via the `         fn:concat('http://localhost:9764/services/Axis2SampleService_',get-property('epr'))        `
+header of the message via an XPath expression. Then the [Send mediator](send-mediator.md) sends the message to a **Default Endpoint**. A Default Endpoint sends the message to the default address of the message (i.e. address specified in the To header). Therefore, in this scenario, selecting the Default Endpoint results in the message being sent to relevant URL calculated via the `         fn:concat('http://localhost:9764/services/Axis2SampleService_',get-property('epr'))        `
 expression.
 
 ```

@@ -1,10 +1,10 @@
 # Viewing Sink Statistics
 
-![Query statistics dashboard]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/query_statistics_dashboard.jpg)
+![Query statistics dashboard](../../assets/img/streaming/streaming-integrator-grafana-dashboard/query_statistics_dashboard.jpg)
 
 ## Query Statistics Summary Table
 
-![Query Statistics Summary Table]({{base_path}}/assets/img/streaming/query-statistics/query-statistics-summary.png)
+![Query Statistics Summary Table](../../assets/img/streaming/query-statistics/query-statistics-summary.png)
 
 This lists all the queries from all the Siddhi applications in your Streaming Integrator server. The table displays the following for each query:
 
@@ -18,12 +18,12 @@ This lists all the queries from all the Siddhi applications in your Streaming In
    
 ## Memory
 
-![Memory Usage per Query]({{base_path}}/assets/img/streaming/sink-statistics/memory-usage-per-query.png)
+![Memory Usage per Query](../../assets/img/streaming/sink-statistics/memory-usage-per-query.png)
 
 This shows the memory usage of each query in your Streaming Integrator server.
 
 ## Latency
 
-![Query Latency]({{base_path}}/assets/img/streaming/sink-statistics/query-latency.png)
+![Query Latency](../../assets/img/streaming/sink-statistics/query-latency.png)
 
 This shows the latency of each query in your Streaming Integrator server.

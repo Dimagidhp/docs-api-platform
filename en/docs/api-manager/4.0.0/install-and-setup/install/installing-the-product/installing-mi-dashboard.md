@@ -10,11 +10,11 @@ Follow the steps given below to install the Micro Integrator (MI) Dashboard.
 	!!! Tip
 		If you are using default H2 RDBMS set up, you can skip this step.
 
-	- [Setting up a MySQL database]({{base_path}}/install-and-setup/install/installing-the-product/setting-up-mysql)
-	- [Setting up an MSSQL database]({{base_path}}/install-and-setup/install/installing-the-product/setting-up-mssql)
-	- [Setting up an Oracle database]({{base_path}}/install-and-setup/install/installing-the-product/setting-up-oracle)
-	- [Setting up a Postgre database]({{base_path}}/install-and-setup/install/installing-the-product/setting-up-postgresql)
-	- [Setting up an IBM database]({{base_path}}/install-and-setup/install/installing-the-product/setting-up-ibm-db2)
+	- [Setting up a MySQL database](setting-up-mysql.md)
+	- [Setting up an MSSQL database](setting-up-mssql.md)
+	- [Setting up an Oracle database](setting-up-oracle.md)
+	- [Setting up a Postgre database](setting-up-postgresql.md)
+	- [Setting up an IBM database](setting-up-ibm-db2.md)
 
 
 ## Installing the MI Dashboard
@@ -31,7 +31,7 @@ Follow the steps given below to install the Micro Integrator (MI) Dashboard.
     group_id = "mi_dev"
     node_id = "dev_node_2"
     ```
-    For more information, see [Micro Integrator Dashboard]({{base_path}}/observe/mi-observe/working-with-monitoring-dashboard/#step-2-configure-the-mi-servers).
+    For more information, see [Micro Integrator Dashboard](../../../observe/mi-observe/working-with-monitoring-dashboard.md#step-2-configure-the-mi-servers).
 
 
 
@@ -111,15 +111,15 @@ You must set your `JAVA_HOME` environment variable to point to the directory whe
 
     1.  Right-click the **My Computer** icon on the desktop and click **Properties.**
 
-        ![]({{base_path}}/assets/attachments/thumbnails/26838941/27042151)
+        ![](../../../assets/attachments/thumbnails/26838941/27042151)
 
     2.  In the System Properties window, click the **Advanced** tab, and then click **Environment Variables**.
 
-        ![]({{base_path}}/assets/attachments/26838941/27042150.png)
+        ![](../../../assets/attachments/26838941/27042150.png)
 
     3.  Click **New** under **System variables** (for all users) or under **User variables** (just for the user who is currently logged in).
 
-        ![]({{base_path}}/assets/attachments/thumbnails/26838941/27042154)
+        ![](../../../assets/attachments/thumbnails/26838941/27042154)
 
     4.  Enter the following information:
         -   In the **Variable name** field, enter: `JAVA_HOME`
@@ -144,5 +144,5 @@ If you need to set additional system properties when the server starts, you can 
 
 ## What's Next?
 
--   [Running the MI Dashboard]({{base_path}}/install-and-setup/install/installing-the-product/running-the-mi-dashboard).
+-   [Running the MI Dashboard](running-the-mi-dashboard.md).
 

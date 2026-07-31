@@ -4,7 +4,7 @@ Follow the steps given below to run the WSO2 Streaming Integrator (SI) runtime.
 
 ## Before you begin
 
-[Download and install]({{base_path}}/install-and-setup/install/installing-the-product/installing-si) the Streaming Integrator runtime.
+[Download and install](installing-si.md) the Streaming Integrator runtime.
 
 ## Starting the SI server
 
@@ -63,5 +63,5 @@ By default, the HTTP listener port is 8290 and the default HTTPS listener port i
 
 ## See Also
 
--   [Running the SI as a Windows Service]({{base_path}}/install-and-setup/install/installing-the-product/installing-si-as-windows-service)
--   [Running the SI as a Linux Service]({{base_path}}/install-and-setup/install/installing-the-product/installing-si-as-a-linux-service)
+-   [Running the SI as a Windows Service](installing-si-as-windows-service.md)
+-   [Running the SI as a Linux Service](installing-si-as-a-linux-service.md)

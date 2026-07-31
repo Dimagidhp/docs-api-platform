@@ -7,7 +7,7 @@ This guide will explain the steps required to do it.
 
 !!! attention "Update Level 14"
     This feature is available only as an update. After the Update of level 1.0.0.14 (released on 31st October 2022) and further.
-    For more information regarding Choreo Connect updates, refer to the documentation available in [here.]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/update-choreo-connect/)
+    For more information regarding Choreo Connect updates, refer to the documentation available in [here.](../update-choreo-connect.md)
 
 !!! note
     **Request headers** (headers sent to the upstream), **Response headers** (headers coming from the upstream) and **Response 
@@ -94,7 +94,7 @@ Therefore, by processing it you can obtain the required headers.
 ## Creating The Custom Reporter JAR to log analytics data
 
 1. In order to log the custom attributes for the event occurrences, you need to add Custom Reporter JAR to the dropins folder.
-You can follow the `Step 1.1` explained [here]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configure-analytics/#step-11-compile-the-reporter-implementation}) 
+You can follow the `Step 1.1` explained [here](../configure-analytics.md#step-11-compile-the-reporter-implementation}) 
 to obtain the JAR. Similar to the above after obtaining the JAR mount it to the `enforcer/dropins` folder.
 
    1. Configure the `log4j2.properties` file with the following configurations.

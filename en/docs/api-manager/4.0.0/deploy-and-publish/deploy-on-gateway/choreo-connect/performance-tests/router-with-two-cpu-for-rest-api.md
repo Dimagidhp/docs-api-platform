@@ -1,6 +1,6 @@
 # Performance Test Results for Router with Two CPU
 
-Test results explained in below obtained assigning Router's concurrency level as four. For the Choreo Connect components, below resource amounts are allocated. Same test setup diagram includes in [here]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/performance-tests/performance-test-results-overview-cc/#deployment-used-for-the-test) .
+Test results explained in below obtained assigning Router's concurrency level as four. For the Choreo Connect components, below resource amounts are allocated. Same test setup diagram includes in [here](performance-test-results-overview-cc.md#deployment-used-for-the-test) .
 
 <table>
 <thead>
@@ -51,7 +51,7 @@ Below graphs depict performance test results considering different test paramete
 ## Throughput (requests/sec) vs. concurrent users
 The following graph illustrates the throughput against the number of concurrent users.
 
-<a href="{{base_path}}/assets/img/deploy/mgw/performance-test/throughput-100-2cpu.png"><img src="{{base_path}}/assets/img/deploy/mgw/performance-test/throughput-100-2cpu.png" width="90%" ></a>
+<a href="../../../../assets/img/deploy/mgw/performance-test/throughput-100-2cpu.png"><img src="../../../../assets/img/deploy/mgw/performance-test/throughput-100-2cpu.png" width="90%" ></a>
 
 **Key observations:**
 
@@ -61,7 +61,7 @@ The following graph illustrates the throughput against the number of concurrent 
 
 Backend delay is assigned as zero milliseconds when obtaining test results. The below graph shows how response time varied for different concurrent user counts. Also, the same graph shows the impact of the payload size for the average response time.
 
-<a href="{{base_path}}/assets/img/deploy/mgw/performance-test/response-100-2cpu.png"><img src="{{base_path}}/assets/img/deploy/mgw/performance-test/response-100-2cpu.png" width="90%" ></a>
+<a href="../../../../assets/img/deploy/mgw/performance-test/response-100-2cpu.png"><img src="../../../../assets/img/deploy/mgw/performance-test/response-100-2cpu.png" width="90%" ></a>
 
 **Key observations:**
 
@@ -71,6 +71,6 @@ Backend delay is assigned as zero milliseconds when obtaining test results. The 
 
 Below graphs show 90th, 95th, and 99th Response Time percentiles for 0ms backend delay. This is useful to measure the percentage of requests that exceeded the response time value for a given percentile. A percentile can also tell the percentage of requests completed below the particular response time value.
 
-<a href="{{base_path}}/assets/img/deploy/mgw/performance-test/percentiles-100-2cpu.png"><img src="{{base_path}}/assets/img/deploy/mgw/performance-test/percentiles-100-2cpu.png" width="90%" ></a>
+<a href="../../../../assets/img/deploy/mgw/performance-test/percentiles-100-2cpu.png"><img src="../../../../assets/img/deploy/mgw/performance-test/percentiles-100-2cpu.png" width="90%" ></a>
 
 Test scenario results in CSV format are available [here](https://raw.githubusercontent.com/wso2/product-microgateway/main/performance/benchmarks/cpus-2/summary.csv)

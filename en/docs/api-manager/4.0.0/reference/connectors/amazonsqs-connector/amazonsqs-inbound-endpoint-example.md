@@ -4,9 +4,9 @@ The AmazonSQS Inbound Endpoint allows you to connect to Amazon and consume messa
 
 ## What you'll build
 
-This scenario demonstrates how the AmazonSQS inbound endpoint works as a message consumer. In this scenario, you should have a connectivity with Amazon AWS account. Please follow the steps mentioned in the [Setting up the Amazon Lambda Environment]({{base_path}}/reference/connectors/amazonlambda-connector/setting-up-amazonlambda/) document in order to create an Amazon account and obtain access key id and secret access key.
+This scenario demonstrates how the AmazonSQS inbound endpoint works as a message consumer. In this scenario, you should have a connectivity with Amazon AWS account. Please follow the steps mentioned in the [Setting up the Amazon Lambda Environment](../amazonlambda-connector/setting-up-amazonlambda.md) document in order to create an Amazon account and obtain access key id and secret access key.
 
-The Amazon SQS queue will receive messages from a third party system, while the integration runtime will keep listening to the messages from that queue. First you need to create a **Queue** inside the **Simple Queue Service** and send a message to the created Queue. The WSO2 AmazonSQS Inbound Endpoint will receive the message and notify. If you are extending this sample scenario, you can perform any kind of mediation using the [mediators]({{base_path}}/reference/mediators/about-mediators/).
+The Amazon SQS queue will receive messages from a third party system, while the integration runtime will keep listening to the messages from that queue. First you need to create a **Queue** inside the **Simple Queue Service** and send a message to the created Queue. The WSO2 AmazonSQS Inbound Endpoint will receive the message and notify. If you are extending this sample scenario, you can perform any kind of mediation using the [mediators](../../mediators/about-mediators.md).
 
 Following diagram shows the overall solution we are going to build. The Simple Queue Service will receive messages from the outside, while the AmazonSQS inbound endpoint will consume messages based on the updates.
 
@@ -16,11 +16,11 @@ Following diagram shows the overall solution we are going to build. The Simple Q
 
 1. Download [WSO2 Integration Studio](https://wso2.com/integration/integration-studio/). Create an **Integration Project** as below. 
    
-   <img src="{{base_path}}/assets/img/integrate/connectors/integration-project.png" title="Creating a new Integration Project" width="800" alt="Creating a new Integration Project" />
+   <img src="../../../assets/img/integrate/connectors/integration-project.png" title="Creating a new Integration Project" width="800" alt="Creating a new Integration Project" />
 
 2. Right click on **Created Integration Project** -> **New** -> **Inbound Endpoint** -> **Create A New Inbound Endpoint** -> **Inbound Endpoint Creation Type**and select as **custom** -> Click **Next**.
    
-   <img src="{{base_path}}/assets/img/integrate/connectors/smpp-inboundep-create-new-ie.png" title="Creating inbound endpoint" width="400" alt="Creating inbound endpoint" style="border:1px solid black"/>
+   <img src="../../../assets/img/integrate/connectors/smpp-inboundep-create-new-ie.png" title="Creating inbound endpoint" width="400" alt="Creating inbound endpoint" style="border:1px solid black"/>
 
 3. Click on **Inbound Endpoint** in design view and under `properties` tab, update class name to `org.wso2.carbon.inbound.amazonsqs.AmazonSQSPollingConsumer`. 
 
@@ -60,7 +60,7 @@ Following diagram shows the overall solution we are going to build. The Simple Q
        <log level="full"/>
    </sequence>
    ```
-> **Note**: To configure the `secretKey` and `accessKey` parameter value, please use the [Setting up the Amazon Lambda Environment]({{base_path}}/reference/connectors/amazonlambda-connector/setting-up-amazonlambda/) documentation.
+> **Note**: To configure the `secretKey` and `accessKey` parameter value, please use the [Setting up the Amazon Lambda Environment](../amazonlambda-connector/setting-up-amazonlambda.md) documentation.
 > - **secretKey** : The secret key used to sign requests.
 > - **accessKey** : The access key that corresponds to the secret key that you used to sign the request.
 > - **destination** : URL of the Amazon SQS Queue from which you want to consume messages.
@@ -70,7 +70,7 @@ Following diagram shows the overall solution we are going to build. The Simple Q
 **CApp (Carbon Application)** is the deployable artefact on the integration runtime. Let us see how we can export integration logic we developed into a CApp. To export the `Solution Project` as a CApp, a `Composite Application Project` needs to be created. Usually, when a solution project is created, this project is automatically created by Integration Studio. If not, you can specifically create it by navigating to  **File** -> **New** -> **Other** -> **WSO2** -> **Distribution** -> **Composite Application Project**. 
 
 1. Right click on Composite Application Project and click on **Export Composite Application Project**.</br> 
-  <img src="{{base_path}}/assets/img/integrate/connectors/capp-project1.jpg" title="Export as a Carbon Application" width="300" alt="Export as a Carbon Application" />
+  <img src="../../../assets/img/integrate/connectors/capp-project1.jpg" title="Export as a Carbon Application" width="300" alt="Export as a Carbon Application" />
 
 2. Select an **Export Destination** where you want to save the .car file. 
 
@@ -83,11 +83,11 @@ Following diagram shows the overall solution we are going to build. The Simple Q
   
 2. Copy the exported carbon application to the **<PRODUCT-HOME>/repository/deployment/server/carbonapps** folder. 
 
-3. [Start the integration server]({{base_path}}/get-started/quick-start-guide/integration-qsg/#start-the-micro-integrator). 
+3. [Start the integration server](../../../get-started/integration-quick-start-guide.md#start-the-micro-integrator). 
 
 ## Testing  
 
-Please log in to the Amazon **Simple Queue Service**-> created **Queue**. Select the Queue and **right click**-> **Send a Message**-> enter **Message**, or you can even use [AmazonSQS Connector Example]({{base_path}}/reference/connectors/amazonsqs-connector/amazonsqs-connector-example) we have implemented before.
+Please log in to the Amazon **Simple Queue Service**-> created **Queue**. Select the Queue and **right click**-> **Send a Message**-> enter **Message**, or you can even use [AmazonSQS Connector Example](amazonsqs-connector-example.md) we have implemented before.
 
 **Sample Message**
 
@@ -106,4 +106,4 @@ You will see following message in the server log file (found at <MI_HOME>/reposi
 
 ## What's next
    
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/install-and-setup/installation/run_in_containers).
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).

@@ -8,7 +8,7 @@ The Async API View is accessible only for Siddhi applications that have one or m
 
 To access the Async API View, open a Siddhi application that meets the criterion mentioned above and click **Async API View**.
 
-[![Open Async API View]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
+[![Open Async API View](../../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)](../../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
 
 ## Generating a new API definition
 
@@ -19,7 +19,7 @@ To access the Async API View, open a Siddhi application that meets the criterion
 
      The AsyncAPI Generation form appears.
 
-     [![Async API View button]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
+     [![Async API View button](../../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)](../../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
 
 2. Enter the Streaming API related details.
     
@@ -39,23 +39,23 @@ To access the Async API View, open a Siddhi application that meets the criterion
     | **Select Source or Sink type to Generate Async API**| Select the source or the sink from which you want to generate the API. | `websocket-server` |
     | **Sources**           | Select the stream from which the API should consume events as requests. | `SweetProductionStream` |
 
-     [![Design View of Async API]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-form.png)]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-form.png)
+     [![Design View of Async API](../../assets/img/streaming/working-with-async-api/async-api-form.png)](../../assets/img/streaming/working-with-async-api/async-api-form.png)
 
 3. Click **Generate Async API** to generate the AsyncAPI definition.
 
-     ![Generate Async API button]({{base_path}}/assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)
+     ![Generate Async API button](../../assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)
 
      After the Async API is generated, the AsyncAPI specifications will be visible in the **Async API View** as follows. The left panel shows the API definition in the code format, and the right panel shows it as a form.
 
-     [![Generated Asyc API Definition]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-spec-view.png)]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-spec-view.png)
+     [![Generated Asyc API Definition](../../assets/img/streaming/working-with-async-api/async-api-spec-view.png)](../../assets/img/streaming/working-with-async-api/async-api-spec-view.png)
 
 4. Add the generated AsynAPI definition to the Streaming backend.
 
      Click **Add Async API** to add the generated AsyncAPI definition to the Siddhi application.
 
-     <a href="{{base_path}}/assets/img/streaming/working-with-async-api/add-async-api-button.png"><img src="{{base_path}}/assets/img/streaming/working-with-async-api/add-async-api-button.png" width="20%" alt="Add Async API"></a>
+     <a href="../../assets/img/streaming/working-with-async-api/add-async-api-button.png"><img src="../../assets/img/streaming/working-with-async-api/add-async-api-button.png" width="20%" alt="Add Async API"></a>
 
 5. Click **Code View** to view the Siddhi application with the AsyncAPI definition that was generated and to edit it if required.
 
-After you complete editing the AsyncAPI definition, you can export it to the Service Catalog of the API Manager to expose it as an API. For more details, see [Exposing a Stream as a Managed API]({{base_path}}/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog).
+After you complete editing the AsyncAPI definition, you can export it to the Service Catalog of the API Manager to expose it as an API. For more details, see [Exposing a Stream as a Managed API](../../use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md).
 

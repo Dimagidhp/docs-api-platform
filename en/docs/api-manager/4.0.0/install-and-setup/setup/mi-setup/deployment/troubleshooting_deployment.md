@@ -1,6 +1,6 @@
 # Troubleshooting in Production Environments
 
-The following sections will guide you to troubleshoot various issues that may arise in your [Micro Integrator deployment]({{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei).
+The following sections will guide you to troubleshoot various issues that may arise in your [Micro Integrator deployment](deploying_wso2_ei.md).
 
 ## Analyzing a stack trace
 

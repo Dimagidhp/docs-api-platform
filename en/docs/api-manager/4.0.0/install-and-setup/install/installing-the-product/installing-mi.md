@@ -4,7 +4,7 @@ Follow the steps given below to install the Micro Integrator (MI) runtime of WSO
 
 ## Before you begin
 
-See the [Installation Prerequisites]({{base_path}}/install-and-setup/install/installation-prerequisites). 
+See the [Installation Prerequisites](../installation-prerequisites.md). 
 Java Development Kit (JDK) is essential to run the product.
 
 ## Installing the Micro Integrator
@@ -88,15 +88,15 @@ You must set your `JAVA_HOME` environment variable to point to the directory whe
 
     1.  Right-click the **My Computer** icon on the desktop and click **Properties.**
 
-        ![]({{base_path}}/assets/attachments/thumbnails/26838941/27042151)
+        ![](../../../assets/attachments/thumbnails/26838941/27042151)
 
     2.  In the System Properties window, click the **Advanced** tab, and then click **Environment Variables**.
 
-        ![]({{base_path}}/assets/attachments/26838941/27042150.png)
+        ![](../../../assets/attachments/26838941/27042150.png)
 
     3.  Click **New** under **System variables** (for all users) or under **User variables** (just for the user who is currently logged in).
 
-        ![]({{base_path}}/assets/attachments/thumbnails/26838941/27042154)
+        ![](../../../assets/attachments/thumbnails/26838941/27042154)
 
     4.  Enter the following information:
         -   In the **Variable name** field, enter: `JAVA_HOME`
@@ -121,5 +121,5 @@ If you need to set additional system properties when the server starts, you can 
 
 ## What's Next?
 
--   [Running the MI Runtime]({{base_path}}/install-and-setup/install/installing-the-product/running-the-mi).
+-   [Running the MI Runtime](running-the-mi.md).
 

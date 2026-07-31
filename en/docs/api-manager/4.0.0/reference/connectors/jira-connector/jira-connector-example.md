@@ -8,7 +8,7 @@ This example explains how to use the JIRA Connector to create an issue and read 
 
 You will use two HTTP API resources, which are `createIssue` and `getIssue`.
 
-<img src="{{base_path}}/assets/img/integrate/connectors/jira.png" title="Calling insert operation" width="800" alt="Calling insert operation"/>
+<img src="../../../assets/img/integrate/connectors/jira.png" title="Calling insert operation" width="800" alt="Calling insert operation"/>
 
 * `/createIssue `: The user sends the request payload with the issue details (the project info, summary, description and the issue type).  This request is sent to the integration runtime by invoking the Jira API. It creates the issue in the corresponding Jira account.
 
@@ -25,7 +25,7 @@ Follow these steps to set up the Integration Project and the Connector Exporter 
 ## Creating the Integration Logic
 
 1. Right click on the created Integration Project and select, -> **New** -> **Rest API** to create the REST API. 
-   <img src="{{base_path}}/assets/img/integrate/connectors/adding-an-api.jpg" title="Adding a Rest API" width="800" alt="Adding a Rest API"/>
+   <img src="../../../assets/img/integrate/connectors/adding-an-api.jpg" title="Adding a Rest API" width="800" alt="Adding a Rest API"/>
 
 2. Provide the API name as `jiraAPI` and the API context as `/jira`. You can go to the source view of the XML configuration file of the API and copy the following configuration.
 
@@ -72,8 +72,8 @@ Follow these steps to set up the Integration Project and the Connector Exporter 
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/jira-connector.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/jira-connector.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 ## Deployment
@@ -339,5 +339,5 @@ Follow these steps to deploy the exported CApp in the integration runtime.
 
 ## What's Next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Deploying your Integrations on Containers]({{base_path}}/install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-deployments/).
-* To customize this example for your own scenario, see [Jira Connector Configuration]({{base_path}}/reference/connectors/jira-connector/jira-connector-config) documentation for all operation details of the connector.
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Deploying your Integrations on Containers](../../../install-and-setup/setup/kubernetes-operators/k8s-api-operator/manage-integrations/integration-deployments.md).
+* To customize this example for your own scenario, see [Jira Connector Configuration](jira-connector-config.md) documentation for all operation details of the connector.

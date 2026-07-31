@@ -17,7 +17,7 @@ The ForEach mediator creates the following properties during mediation.
 | FOREACH_COUNTER           | This contains the count of the messages processed. The message count increases during each iteration. |
 
 !!! Note
-    [Iterate Mediator]({{base_path}}/reference/mediators/iterate-Mediator) is quite similar to the ForEach
+    [Iterate Mediator](iterate-Mediator.md) is quite similar to the ForEach
     mediator. You can use complex XPath expressions to conditionally select
     elements to iterate over in both mediators. Following are the main
     difference between ForEach and Iterate mediators:
@@ -33,8 +33,8 @@ The ForEach mediator creates the following properties during mediation.
         parent element of the message.
     -   In Iterate you need to send the split messages to an endpoint to
         continue the message flow. However, ForEach does not allow using
-        [Call]({{base_path}}/reference/mediators/call-Mediator), [Send]({{base_path}}/reference/mediators/send-Mediator) and
-        [Callout]({{base_path}}/reference/mediators/callout-Mediator) mediators in the sequence.
+        [Call](call-Mediator.md), [Send](send-Mediator.md) and
+        [Callout](callout-Mediator.md) mediators in the sequence.
     -   ForEach does not split the message flow, unlike Iterate Mediator. It
         guarantees to execute in the same thread until all iterations are
         complete.
@@ -83,7 +83,7 @@ The parameters available to configure the ForEach mediator are as follows.
 </tr>
 <tr class="odd">
 <td><strong>Sequence</strong></td>
-<td><p>The mediation sequence that should be applied to the messages derived from the parent message. ForEach mediator is used only for transformations, thereby, you should not include <a href="{{base_path}}/reference/mediators/call-mediator">Call</a> , <a href="{{base_path}}/reference/mediators/send-mediator">Send</a> and <a href="{{base_path}}/reference/mediators/callout-mediator">Callout</a> mediators, which are used to invoke endpoints, in t his sequence.</p>
+<td><p>The mediation sequence that should be applied to the messages derived from the parent message. ForEach mediator is used only for transformations, thereby, you should not include <a href="call-mediator.md">Call</a> , <a href="send-mediator.md">Send</a> and <a href="callout-mediator.md">Callout</a> mediators, which are used to invoke endpoints, in t his sequence.</p>
 <p>You can select one of the following options.</p>
 <ul>
 <li><strong>Anonymous</strong>: This allows you to define an anonymous sequence to be applied to the split messages by adding the required mediators as children of the ForEach mediator in the mediator tree.</li>
@@ -98,7 +98,7 @@ The parameters available to configure the ForEach mediator are as follows.
 In this configuration, the `         "//m0:getQuote/m0:request"        `
 XPath and `         "json-eval($.getQuote.request)"        ` JSONPath expression evaluates the split messages to be derived from the
 parent message. Then the split messages pass through a sequence which
-includes a [Log mediator]({{base_path}}/reference/mediators/log-Mediator) with the log level set to
+includes a [Log mediator](log-Mediator.md) with the log level set to
 `         full        ` .
 
 ``` java tab='Using a XPath expression'

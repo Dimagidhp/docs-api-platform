@@ -10,7 +10,7 @@ In this case, if you need to let end-users consume your services, you can use Ch
 
 Follow the instructions below to set up Choreo Connect with Consul for service discovery:
 
-[![service discovery]({{base_path}}/assets/img/deploy/consul-reference-discovery.png){: style="width:70%"}]({{base_path}}/assets/img/deploy/consul-reference-discovery.png)
+[![service discovery](../../../../assets/img/deploy/consul-reference-discovery.png){: style="width:70%"}](../../../../assets/img/deploy/consul-reference-discovery.png)
 
 ## Step 1 - Setup Consul
 
@@ -45,4 +45,4 @@ For instructions, see the [Consul official documentation](https://www.consul.io/
 
 ## Step 3 - Deploy the API
 
-You can use either WSO2 API Manager or APICTL to deploy APIs as described in [defining the endpoints]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/service-discovery/service-discovery-overview/#defining-the-endpoints).
+You can use either WSO2 API Manager or APICTL to deploy APIs as described in [defining the endpoints](service-discovery-overview.md#defining-the-endpoints).

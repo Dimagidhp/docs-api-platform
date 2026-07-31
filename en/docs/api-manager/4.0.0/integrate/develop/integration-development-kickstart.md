@@ -8,12 +8,12 @@ deploying them in your production environment.
 
 ## What you'll build
 
-We are going to use the same use case we considered in the [Quick Start Guide]({{base_path}}/get-started/integration-quick-start-guide). 
+We are going to use the same use case we considered in the [Quick Start Guide](../../get-started/integration-quick-start-guide.md). 
 In the quick start guide, we just executed the already-built integration scenario. 
 Here, we are going to build the integration scenario from scratch. Let’s recall the 
 business scenario:
 
-![Integration Scenario]({{base_path}}/assets/img/integrate/developing-first-integration/dev-first-integration-0.png)
+![Integration Scenario](../../assets/img/integrate/developing-first-integration/dev-first-integration-0.png)
 
 The scenario is about a basic healthcare system where WSO2 Micro Integrator is used as the integration middleware. Most healthcare centers use a system to help patients book doctor appointments. To check the availability of doctors, patients will typically use every online system that is dedicated to a particular healthcare center or personally visit the healthcare centers. 
 
@@ -43,7 +43,7 @@ from all the available healthcare centers.
 
 ## Step 1 - Set up the workspace
 
-Download the relevant [WSO2 Integration Studio](https://wso2.com/integration/integration-studio/) based on your operating system. For more information, see [Installing WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
+Download the relevant [WSO2 Integration Studio](https://wso2.com/integration/integration-studio/) based on your operating system. For more information, see [Installing WSO2 Integration Studio](installing-wso2-integration-studio.md).
 
 ## Step 2 - Develop the integration artifacts
 
@@ -52,19 +52,19 @@ Download the relevant [WSO2 Integration Studio](https://wso2.com/integration/int
 Let's create an integration project with the required modules (to store artifacts) in WSO2 Integration Studio.
 
 1.  Open WSO2 Integration Studio and click **New Integration Project** in the **Getting Started** view as shown below.
-    <img src="{{base_path}}/assets/img/integrate/new-project/new-integration-project.png" title="New Integration Project" width="700" alt="New Integration Project"/>
+    <img src="../../assets/img/integrate/new-project/new-integration-project.png" title="New Integration Project" width="700" alt="New Integration Project"/>
 
 3.  In the **New Integration Project** dialog box that opens, enter `Healthcare` as the project name. This is a <b>maven multi module</b> project.
 
     Be sure to leave the <b>Create ESB Configs</b> and <b>Create Composite Exporter</b> check boxes selected as shown below.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/2-dev-get-started-integration-proj.png" width="500">
+    <img src="../../assets/img/integrate/developing-first-integration/2-dev-get-started-integration-proj.png" width="500">
 
 3. Click **Finish**. 
 
   The integration project with the ESB Config module (`HealthcareConfigs`) and Composite Exporter module (`HealthcareCompositeExporter`) are created as shown below.
 
-  <a href="{{base_path}}/assets/img/integrate/developing-first-integration/3-dev-get-started-proj-explorer.png"><img src="{{base_path}}/assets/img/integrate/developing-first-integration/3-dev-get-started-proj-explorer.png" alt="project folder" width="300"></a>
+  <a href="../../assets/img/integrate/developing-first-integration/3-dev-get-started-proj-explorer.png"><img src="../../assets/img/integrate/developing-first-integration/3-dev-get-started-proj-explorer.png" alt="project folder" width="300"></a>
 
 ### Create Endpoints
 
@@ -74,7 +74,7 @@ Let's create two Endpoint artifacts for the two healthcare services:
 
 1.  Right-click `HealthcareConfigs` and go to **New** → **Endpoint** to open the **New Endpoint Artifact** dialog box.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/4-dev-get-started-select-endpoint.jpg" width="500">
+    <img src="../../assets/img/integrate/developing-first-integration/4-dev-get-started-select-endpoint.jpg" width="500">
     
 2.  In the <b>New Endpoint Artifact</b> dialog box that opens, select **Create a New Endpoint** and click **Next**.
 3.  For the ‘Grand Oak hospital service’, let’s use the following values:
@@ -102,7 +102,7 @@ Let's create two Endpoint artifacts for the two healthcare services:
       </tr>
     </table>
    
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/5-dev-get-started-grandoaks-endpoint.png" width="500">
+    <img src="../../assets/img/integrate/developing-first-integration/5-dev-get-started-grandoaks-endpoint.png" width="500">
 
 4.  Click **Finish** to save the endpoint configuration.
 5.  Follow the same steps to create an endpoint for ‘Pine Valley Hospital’. Use the following parameter values:
@@ -158,19 +158,19 @@ go to **New** → **REST API** to open the **API Artifact Creation Options** dia
       </tr>
     </table> 
 
-     <img src="{{base_path}}/assets/img/integrate/developing-first-integration/6-dev-get-started-rest-api.png" width="500">
+     <img src="../../assets/img/integrate/developing-first-integration/6-dev-get-started-rest-api.png" width="500">
         
 4. Click **Finish**. The REST API is created in the `src/main/synapse-config/api` folder under `HealthcareConfigs`.
 5. Open the new artifact from the project explorer. You will see the graphical view of the `HealthcareAPI` with its default **API Resource**.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/7-dev-get-started-api-canvas.png" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/7-dev-get-started-api-canvas.png" width="700">
     
     To the right of the editor, you will see the **Mediators** palette containing various mediators 
     that can be dragged and dropped into the canvas of the **API Resource**. 
 
 6. Double-click the API resource to open the **Properties** view:
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/8-dev-get-started-api-properties-view.png" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/8-dev-get-started-api-properties-view.png" width="700">
     
     Specify values for the required resource properties:
 
@@ -205,13 +205,13 @@ go to **New** → **REST API** to open the **API Artifact Creation Options** dia
 
     Drag the **Clone** mediator from the mediator palette and drop it into the request path (in sequence) of the API Resource canvas. 
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/9-dev-get-started-clone-mediator.png" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/9-dev-get-started-clone-mediator.png" width="700">
 
     Right-click the Clone mediator and select **Add/Remove Target..**. 
     In the **Add Target Branches** window, set the number of branches to 2. 
     You will now see two branches inside the **Clone** mediator.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/10-dev-get-started-clone-mediator-branches.png" width="300">
+    <img src="../../assets/img/integrate/developing-first-integration/10-dev-get-started-clone-mediator-branches.png" width="300">
 
 2. Invoke the GrandOak Endpoint:
 
@@ -219,11 +219,11 @@ go to **New** → **REST API** to open the **API Artifact Creation Options** dia
 
     Drag the Call mediator from the mediator palette into one branch of the Clone mediator. 
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/11-dev-get-started-call-mediator.png" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/11-dev-get-started-call-mediator.png" width="700">
    
     Then, drag the already-defined GrandOak endpoint artifact, which is available under the **Defined Endpoints** section of the palette, into the Call mediator.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/12-dev-get-started-call-grandoaks.png" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/12-dev-get-started-call-grandoaks.png" width="700">
        
 3. Construct message payload for the PineValley Endpoint:
 
@@ -239,7 +239,7 @@ go to **New** → **REST API** to open the **API Artifact Creation Options** dia
     Transformation mediators for constructing messages. Let's use the **PayloadFactory** mediator.
     Drag the PayloadFactory mediator into the 2nd branch of the **Clone** mediator as shown below.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/13-dev-get-started-payloadfactory-mediator.png" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/13-dev-get-started-payloadfactory-mediator.png" width="700">
     
     Specify values for the required PayloadFactory properties:
 
@@ -274,9 +274,9 @@ go to **New** → **REST API** to open the **API Artifact Creation Options** dia
     </table>
 
     Note the `$1` in the Payload format. It denotes a parameter that can get a value assigned dynamically. The value for the parameters needs to be assigned using Arguments **(Args)**. 
-    **Args** can be added using the **PayloadFactoryArgument** dialog box, which appears when you click the (<img src="{{base_path}}/assets/img/integrate/tutorials/common/plus-icon.png" width="20">) sign.
+    **Args** can be added using the **PayloadFactoryArgument** dialog box, which appears when you click the (<img src="../../assets/img/integrate/tutorials/common/plus-icon.png" width="20">) sign.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/14-dev-get-started-payloadfactory-expression.jpg" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/14-dev-get-started-payloadfactory-expression.jpg" width="700">
         
     In the `PayloadFactoryArgument` dialog box, select **Expression** as the **Argument Type**, and click **Argument Expression**. You will then see the **Expression Selector** dialog box. Enter **$ctx:uri.var.doctorType** as the value for the expression.
     
@@ -291,7 +291,7 @@ go to **New** → **REST API** to open the **API Artifact Creation Options** dia
     
     Drag the Aggregate mediator and drop it next to the Clone mediator as shown below.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/15-dev-get-started-aggregate-mediator.jpg">
+    <img src="../../assets/img/integrate/developing-first-integration/15-dev-get-started-aggregate-mediator.jpg">
    
     Specify values for the required Aggregate mediator properties.
 
@@ -312,7 +312,7 @@ go to **New** → **REST API** to open the **API Artifact Creation Options** dia
 
     To send the response back to the client, we can use the **Respond** mediator. Add the Respond mediator as shown below.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/16-dev-get-started-drop-mediator.jpg">
+    <img src="../../assets/img/integrate/developing-first-integration/16-dev-get-started-drop-mediator.jpg">
     
 The final mediation configuration looks similar to the above diagram.     
 Following is what you will see in the **Source View** of WSO2 Integration Studio.
@@ -370,11 +370,11 @@ There are several ways to deploy and run the integration scenario.
 
 1. Right-click `HealthcareCompositeExporter` and click **Export Project Artifacts and Run**.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/17-dev-get-started-build-and-run-1.jpg" width="500">
+    <img src="../../assets/img/integrate/developing-first-integration/17-dev-get-started-build-and-run-1.jpg" width="500">
 
 2. You will see the following dialog box. Select the `HealthcareConfigs` folder in the artifact list and click **Finish**.
 
-    <img src="{{base_path}}/assets/img/integrate/developing-first-integration/18-dev-get-started-build-and-run-2.png" width="700">
+    <img src="../../assets/img/integrate/developing-first-integration/18-dev-get-started-build-and-run-2.png" width="700">
 
 The embedded Micro Integrator starts with the deployed artifacts. You will see the server startup log in the <b>Console</b> tab, and the endpoints of the deployed services in the <b>Runtime Services</b> tab as shown below.
 
@@ -408,19 +408,19 @@ Once you have downloaded and set up the Micro Integrator locally, follow the ste
 
 ## Step 4 - Observe deployed artifacts
 
-Once you have deployed the artifacts and started the Micro Integrator server, you can [install]({{base_path}}/install-and-setup/install/installing-the-product/installing-mi-dashboard) and [start the <b>Dashboard</b>]({{base_path}}/install-and-setup/install/installing-the-product/running-the-mi-dashboard) to observe details of the deployed artifacts.
+Once you have deployed the artifacts and started the Micro Integrator server, you can [install](../../install-and-setup/install/installing-the-product/installing-mi-dashboard.md) and [start the <b>Dashboard</b>](../../install-and-setup/install/installing-the-product/running-the-mi-dashboard.md) to observe details of the deployed artifacts.
 
 If you are running the embedded Micro Integrator, click <b>Open Monitoring Dashboard</b> in the <b>Runtime Services</b> tab as shown below.
 
-<img src="{{base_path}}/assets/img/integrate/developing-first-integration/20-dev-get-started-open-dashboard.jpg" width="500">
+<img src="../../assets/img/integrate/developing-first-integration/20-dev-get-started-open-dashboard.jpg" width="500">
 
 You will be directed to the sign-in screen of the Dashboard from your default browser as shown below. Sign in using `admin` as the user name and password.
 
-<img src="{{base_path}}/assets/img/integrate/login.png">
+<img src="../../assets/img/integrate/login.png">
 
 Once you sign in, click the required artifact type to view details.
 
-<img src="{{base_path}}/assets/img/integrate/developing-first-integration/22-dev-get-started-dashboard-artifact-view.png">
+<img src="../../assets/img/integrate/developing-first-integration/22-dev-get-started-dashboard-artifact-view.png">
 
 ## Step 5 - Test the use case
 
@@ -430,7 +430,7 @@ Now, let's test the integration service.
 
 Let's start the mock back-end services for this use case:
 
-1.  Download the [`DoctorInfo-JDK11.jar` file]({{base_path}}/assets/attachments/developing-first-integration/doctorinfo-jdk11.jar). This contains two healthcare services.
+1.  Download the [`DoctorInfo-JDK11.jar` file](../../assets/attachments/developing-first-integration/doctorinfo-jdk11.jar). This contains two healthcare services.
 2.  Open a terminal, navigate to the location of the downloaded `DoctorInfo-JDK11.jar` file, and execute the following command to start the services:
 
     ```bash
@@ -450,9 +450,9 @@ There are two ways to invoke the service:
         !!! Tip
             If you don't see the <b>HTTP Client</b> tab, go to <b>Window -> Show View - Other</b> and select <b>HTTP Client</b> to enable the client tab.
 
-        <img src="{{base_path}}/assets/img/integrate/developing-first-integration/http4e-client-empty.png" width="800">
+        <img src="../../assets/img/integrate/developing-first-integration/http4e-client-empty.png" width="800">
         
-    2.  Enter the request information as given below and click the <b>Send</b> icon (<img src="{{base_path}}/assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
+    2.  Enter the request information as given below and click the <b>Send</b> icon (<img src="../../assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
         
         <table>
             <tr>
@@ -515,5 +515,5 @@ There are two ways to invoke the service:
 
 ## What's Next?
 
-- [Publish Integrations to the API Manager]({{base_path}}/integrate/develop/working-with-service-catalog).
-- [Writing a unit test for integration artifacts]({{base_path}}/integrate/develop/creating-unit-test-suite).
+- [Publish Integrations to the API Manager](working-with-service-catalog.md).
+- [Writing a unit test for integration artifacts](creating-unit-test-suite.md).

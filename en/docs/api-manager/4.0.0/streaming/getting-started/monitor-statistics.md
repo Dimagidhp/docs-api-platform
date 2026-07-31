@@ -1,6 +1,6 @@
 # Step 7: Monitor Statistics
 
-This step shows how you can monitor the CDC and file statistics of the WSO2 Streaming Integrator deployment you started and the `SweetFactoryApp` Siddhi application you created and deployed in the previous steps. For this purpose, you are using the some of the pre-configured dashboards provided by WSO2 Streaming Integrator. You can host these dashboards in Grafana and view statistics related to ETL activities carried out by the Streaming Integrator. For more information about these dashboards, see [Monitoring ETL Statistics with Grafana]({{base_path}}/observe/si-observe/viewing-etl-flow-dashboards)
+This step shows how you can monitor the CDC and file statistics of the WSO2 Streaming Integrator deployment you started and the `SweetFactoryApp` Siddhi application you created and deployed in the previous steps. For this purpose, you are using the some of the pre-configured dashboards provided by WSO2 Streaming Integrator. You can host these dashboards in Grafana and view statistics related to ETL activities carried out by the Streaming Integrator. For more information about these dashboards, see [Monitoring ETL Statistics with Grafana](../../observe/streaming-integrator/viewing-etl-flows.md)
 
 ## Configuring WSO2 SI to visualize statistics
 
@@ -94,13 +94,13 @@ The pre-configured dashboards provided by WSO2 Streaming Integrator which you pr
 3. In the **Data Sources** section, click **Add your first data source**. In the **Add data source** page that appears, click **Select** for **Prometheus**.
        
 4. In the **Add data source** page -> **Settings** tab, update the configurations for Prometheus as follows.<br/>   
-   ![prometheus configuration]({{base_path}}/assets/img/streaming/cdc-monitoring/prometheus-configurations.png)<br/>    
+   ![prometheus configuration](../../assets/img/streaming/cdc-monitoring/prometheus-configurations.png)<br/>    
    1. Click **Default** to make Prometheus the default data source.
    
    2. Under **HTTP**, enter `http://localhost:9090` as the URL.
    
    3. Click **Save & Test**. If the data source is successfully configured, it is indicated via a message.
-       ![Save and Test]({{base_path}}/assets/img/streaming/cdc-monitoring/save-and-test.png)
+       ![Save and Test](../../assets/img/streaming/cdc-monitoring/save-and-test.png)
        
    4. To import the dashboards that you previously downloaded as JSON files, follow the procedure below:
    
@@ -123,7 +123,7 @@ To enable the `SweetFactoryApp` Siddhi application to publish statistics to Prom
         @App:statistics(reporter = 'prometheus')
     ```
 !!! tip 
-    You can update the Siddhi application in Streaming Integrator Tooling and deploy it again in the Streaming Integrator server as you did in [Step 5: Update the Siddhi Application]({{base_path}}/streaming/getting-started/update-the-siddhi-application/).
+    You can update the Siddhi application in Streaming Integrator Tooling and deploy it again in the Streaming Integrator server as you did in [Step 5: Update the Siddhi Application](update-the-siddhi-application.md).
     
 ## Viewing statistics
 
@@ -131,27 +131,27 @@ To generate some statistics and view them, follow the procedure below.
 
 1. Start WSO2 Streaming Integrator.
 
-2. To generate statistics, insert as many events as you want into the `SweetProductionTable` MySQL table that you created for this scenario in [Step 1: Download Streaming Integrator and Dependencies]({{base_path}}/streaming/getting-started/download-install-and-start-si/). Also, manually add as many rows as you want in the `/Users/foo/productioninserts.csv` file.
+2. To generate statistics, insert as many events as you want into the `SweetProductionTable` MySQL table that you created for this scenario in [Step 1: Download Streaming Integrator and Dependencies](download-install-and-start-si.md). Also, manually add as many rows as you want in the `/Users/foo/productioninserts.csv` file.
 
 3. Access Grafana via the `localhost:3000` URL.
 
 4. In the side panel, click the **Dashboards** icon and click **Dashboards**.
 
-    ![Access Dashboards]({{base_path}}/assets/img/streaming/quick-start-guide-101/access-grafana-dashboards.png)
+    ![Access Dashboards](../../assets/img/streaming/quick-start-guide-101/access-grafana-dashboards.png)
     
     Then click on the **WSO2 Streaming Integrator - Overall Statistics** dashboard. It opens as follows.
     
     !!! info
         The statistics displayed will be different based on the number of records you inserted to the `SweetProductionTable` MySQL table and the number of rows you added in the `/Users/foo/productioninserts.csv` file during the last 30 minutes. You can also change the time interval for which statistics are displayed via the field for selecting the time interval in the top panel.
     
-    ![overall-statistics]({{base_path}}/assets/img/streaming/quick-start-guide-101/overall-staistics.png)
+    ![overall-statistics](../../assets/img/streaming/quick-start-guide-101/overall-staistics.png)
     
 5. Under **Overview Statistics**, click **SweetFactoryApp**. The **overview-statistics / WSO2 Streaming Integrator App Statistics** dashboard opens.
 
     
 6. Scroll down to the **Sources** section. The following is displayed.
 
-    ![source-statistics]({{base_path}}/assets/img/streaming/quick-start-guide-101/sources.png)
+    ![source-statistics](../../assets/img/streaming/quick-start-guide-101/sources.png)
     
     The two entries displayed above represent the `file` source and the `cdc` source used in the `SweetFactoryApp` Siddhi application.
     
@@ -162,33 +162,33 @@ To generate some statistics and view them, follow the procedure below.
 
     **Source Statistics**
     
-    ![File Statistics - Source]({{base_path}}/assets/img/streaming/quick-start-guide-101/file-statistics-source.png)
+    ![File Statistics - Source](../../assets/img/streaming/quick-start-guide-101/file-statistics-source.png)
     
     **Sink Statistics**
     
-    ![File Statistics - Sink]({{base_path}}/assets/img/streaming/quick-start-guide-101/file-statistics-sink.png)
+    ![File Statistics - Sink](../../assets/img/streaming/quick-start-guide-101/file-statistics-sink.png)
     
 9. Under **WSO2 Streaming Integrator - File Statistics** dashboard -> **Sources**, click on the file link. The **file-statistics / WSO2 Streaming Integrator / File Source Statistics**  dashboard opens displaying detailed statistics for the file when it is functioning as a source.
 
-    ![File Source Statistics]({{base_path}}/assets/img/streaming/quick-start-guide-101/file-statistics-sink.png)
+    ![File Source Statistics](../../assets/img/streaming/quick-start-guide-101/file-statistics-sink.png)
 
 10. Under **WSO2 Streaming Integrator - File Statistics** dashboard -> **Sources**, click on the file link. The **file-statistics / WSO2 Streaming Integrator / File Sink Statistics**  dashboard opens displaying detailed statistics for the file when it is functioning as a source.
 
-    ![File Sink Statistics]({{base_path}}/assets/img/streaming/quick-start-guide-101/file-statistics-sink.png)
+    ![File Sink Statistics](../../assets/img/streaming/quick-start-guide-101/file-statistics-sink.png)
                                                                                    
 11. In the **overview-statistics / WSO2 Streaming Integrator App Statistics** dashboard -> **CDC** section, click on the **SweetProductionTable** link. The **cdc-statistics / WSO2 Streaming Integrator / CDC Statistics**  dashboard opens with statistics generated for the `cdc` source in the `SweetFactoryApp` Siddhi application.
 
-    ![CDC Statistics]({{base_path}}/assets/img/streaming/quick-start-guide-101/cdc-statistics.png)
+    ![CDC Statistics](../../assets/img/streaming/quick-start-guide-101/cdc-statistics.png)
     
     Under **Streaming**, click on the **SweetProductionTable** link. The **cdc-statistics / WSO2 Streaming Integrator / CDC Streaming Statistics** dashboard opens as follows.
     
-    ![CDC Streaming Statistics]({{base_path}}/assets/img/streaming/quick-start-guide-101/cdc-streaming-statistics.png)
+    ![CDC Streaming Statistics](../../assets/img/streaming/quick-start-guide-101/cdc-streaming-statistics.png)
     
 !!! tip "What's Next?"
-    - To learn more about the key concepts of the Streaming Integrator component, see [Streaming Integrator Key Concepts]({{base_path}}/streaming/streaming-key-concepts).<br/>    
-    - For more hands-on experience with Streaming Integrator component, try the [Streaming Integrator Tutorials]({{base_path}}/use-cases/streaming-tutorials/tutorials-overview).<br/>    
-    - To learn about use cases specific to the Streaming Integrator component, see [Streaming Integrator Use Cases]({{base_path}}/use-cases/streaming-usecase/use-cases).<br/>
-    -  Learn how to run WSO2 Streaming Integrator in containerized environments, try [Running SI with Docker and Kubernetes]({{base_path}}/use-cases/streaming-tutorials/running-si-with-docker-and-kubernetes)
+    - To learn more about the key concepts of the Streaming Integrator component, see [Streaming Integrator Key Concepts](../streaming-key-concepts.md).<br/>    
+    - For more hands-on experience with Streaming Integrator component, try the [Streaming Integrator Tutorials](../../use-cases/streaming-tutorials/tutorials-overview.md).<br/>    
+    - To learn about use cases specific to the Streaming Integrator component, see [Streaming Integrator Use Cases](../../use-cases/streaming-usecase/use-cases.md).<br/>
+    -  Learn how to run WSO2 Streaming Integrator in containerized environments, try [Running SI with Docker and Kubernetes](../../use-cases/streaming-tutorials/running-si-with-docker-and-kubernetes.md)
 
     
 

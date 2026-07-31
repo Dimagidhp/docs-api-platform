@@ -6,7 +6,7 @@ The Event Hub acts as a mediator between the Adapter and the Control Plane. Chor
 - [JMS Topic](#jms-topic)
 
 !!! note
-    The Event Hub is included within the Control Plane profile of WSO2 API-M. Therefore, if you use a distributed setup use the IP address of the control plane node for the configurations. For more information on profiles, see [API-M Profiles]({{base_path}}/install-and-setup/setup/distributed-deployment/product-profiles).
+    The Event Hub is included within the Control Plane profile of WSO2 API-M. Therefore, if you use a distributed setup use the IP address of the control plane node for the configurations. For more information on profiles, see [API-M Profiles](../../../../install-and-setup/setup/distributed-deployment/product-profiles.md).
 
 ## Internal Data REST API
 
@@ -68,4 +68,4 @@ The following sample configuration illustrates how the `eventListeningEndpoints`
     requestTimeOut = 30
  ``` 
 
-For more information, see [Control Plane Configurations]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/configurations/control-plane-configurations/).
+For more information, see [Control Plane Configurations](../configurations/control-plane-configurations.md).

@@ -1,12 +1,12 @@
 # Aggregate Mediator
 
 The **Aggregate mediator** implements the [Aggregator enterprise integration pattern](https://mi.docs.wso2.com/en/latest/learn/enterprise-integration-patterns/message-routing/aggregator/). It
-combines (aggregates) the **response messages** of messages that were split by the split by the [Clone]({{base_path}}/reference/mediators/clone-mediator) or
-[Iterate]({{base_path}}/reference/mediators/iterate-mediator) mediator. Note that the responses are not necessarily aggregated in the same order that the requests were sent,
+combines (aggregates) the **response messages** of messages that were split by the split by the [Clone](clone-mediator.md) or
+[Iterate](iterate-mediator.md) mediator. Note that the responses are not necessarily aggregated in the same order that the requests were sent,
 even if you set the `         sequential        ` attribute to `         true        ` on the Iterate mediator.
 
 !!! Info
-    The Aggregate mediator is a [content-aware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    The Aggregate mediator is a [content-aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -69,7 +69,7 @@ The parameters available for configuring the Aggregate mediator are as follows.
 <td><strong>On Complete</strong></td>
 <td><p>The sequence to run when the aggregation is complete. You can select one of the following options:</p>
 <ul>
-<li><strong>Anonymous</strong>: Select this value if you want to specify the sequence to run by adding child mediators to the Aggregate mediator instead of selecting an existing sequence. For example, if you want to send the aggregated message via the <a href="{{base_path}}/reference/mediators/send-mediator">Send mediator</a>, you can add the Send mediator as a child mediator.</li>
+<li><strong>Anonymous</strong>: Select this value if you want to specify the sequence to run by adding child mediators to the Aggregate mediator instead of selecting an existing sequence. For example, if you want to send the aggregated message via the <a href="send-mediator.md">Send mediator</a>, you can add the Send mediator as a child mediator.</li>
 <li><strong>Pick from Registry</strong>: Select this option if you want to specify a sequence which is already defined and saved in the registry. You can select the sequence from the Configuration Registry or Governance Registry.</li>
 </ul></td>
 </tr>

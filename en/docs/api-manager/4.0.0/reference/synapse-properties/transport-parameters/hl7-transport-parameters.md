@@ -1,13 +1,13 @@
 # HL7 Parameters
 
-When you implement an integration use case that handles HL7 messages, you can use the following HL7 parameters in your [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) artifact.
+When you implement an integration use case that handles HL7 messages, you can use the following HL7 parameters in your [proxy service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md) artifact.
 
 !!! Info
     The Micro Integrator can receive HL7 messages or send HL7 messages only if the HL7 transport listener and sender are enabled and configured at the server level. Read about the [HL7 transport]({{base_path}}/install-and-setup/transport_configurations/configuring-transports/#configuring-the-hl7-transport).
 
 {!reference/synapse-properties/pull/proxy-service-add-properties-pull.md!}
 
-See [Creating a Proxy Service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) for instructions.
+See [Creating a Proxy Service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md) for instructions.
 
 ## Service-level Parameters
 
@@ -74,22 +74,22 @@ See [Creating a Proxy Service]({{base_path}}/integrate/develop/creating-artifact
       <b>Note</b>: When automatic acknowledgment is disabled, you can manually configure ACK/NACK messages for HL7 in the mediation sequence by using the following mediation properties:
       <ul>
       	<li>
-      		<a href="{{base_path}}/reference/mediators/property-reference/axis2-properties/#hl7_generate_ack">HL7_GENERATE_ACK</a>
+      		<a href="../../mediators/property-reference/axis2-properties.md#hl7_generate_ack">HL7_GENERATE_ACK</a>
       	</li>
       	<li>
-      		<a href="{{base_path}}/reference/mediators/property-reference/axis2-properties/#hl7_result_mode">HL7_RESULT_MODE</a>
+      		<a href="../../mediators/property-reference/axis2-properties.md#hl7_result_mode">HL7_RESULT_MODE</a>
       	</li>
       	<li>
-      		<a href="{{base_path}}/reference/mediators/property-reference/axis2-properties/#hl7_nack_message">HL7_NACK_MESSAGE</a>
+      		<a href="../../mediators/property-reference/axis2-properties.md#hl7_nack_message">HL7_NACK_MESSAGE</a>
       	</li>
       	<li>
-      		<a href="{{base_path}}/reference/mediators/property-reference/axis2-properties/#hl7_application_ack">HL7_APPLICATION_ACK</a>
+      		<a href="../../mediators/property-reference/axis2-properties.md#hl7_application_ack">HL7_APPLICATION_ACK</a>
       	</li>
       	<li>
-      		<a href="{{base_path}}/reference/mediators/property-reference/axis2-properties/#hl7_raw_message">HL7_RAW_MESSAGE</a>
+      		<a href="../../mediators/property-reference/axis2-properties.md#hl7_raw_message">HL7_RAW_MESSAGE</a>
       	</li>
       </ul> 
-      See <a href="{{base_path}}/integrate/examples/hl7-examples/acknowledge_hl7_messages">Message Acknowledgement for HL7 Messages</a> for details.
+      See <a href="../../../integrate/examples/hl7-examples/acknowledge_hl7_messages.md">Message Acknowledgement for HL7 Messages</a> for details.
     </td>
   </tr>
 </table>
@@ -198,6 +198,6 @@ The HL7 transport uses a thread pool to manage connections. A larger thread pool
 See the following examples demonstrating HL7 use cases:
 
 - [Enabling HL7]({{base_path}}/install-and-setup/transport_configurations/configuring-transports/#configuring-the-hl7-transport)
-- [Mediating HL7 Messages]({{base_path}}/integrate/examples/hl7-examples/HL7_proxy_service)
-- [Configuring Message Acknowledgement for HL7 Messages]({{base_path}}/integrate/examples/hl7-examples/acknowledge_hl7_messages)
-- [Using HL7 Messages with File Systems]({{base_path}}/integrate/examples/hl7-examples/file_transfer_using_hl7)
+- [Mediating HL7 Messages](../../../integrate/examples/hl7-examples/HL7_proxy_service.md)
+- [Configuring Message Acknowledgement for HL7 Messages](../../../integrate/examples/hl7-examples/acknowledge_hl7_messages.md)
+- [Using HL7 Messages with File Systems](../../../integrate/examples/hl7-examples/file_transfer_using_hl7.md)

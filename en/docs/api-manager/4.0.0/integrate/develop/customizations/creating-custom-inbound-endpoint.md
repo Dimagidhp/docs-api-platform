@@ -18,12 +18,12 @@ To support such scenarios, you can write your own custom inbound endpoint by ext
 
 You need to copy the built jar file to the `MI_HOME/lib` directory and restart the Micro Integrator to load the class.
 To copy the jar file to the <b>Embedded Micro Integrator</b>, open the <b>Embedded Micro 
-Integrator Server Configuration Wizard</b> by clicking on the (<img src="{{base_path}}/assets/img/integrate/tutorials/common/server-config-64x64.png" width="20">)
+Integrator Server Configuration Wizard</b> by clicking on the (<img src="../../../assets/img/integrate/tutorials/common/server-config-64x64.png" width="20">)
 icon on the upper menu and add the jar to select libraries section.
 
 ### Step 3: Adding the custom Inbound Endpoint
 
-1. If you have already created an [Integration Project]({{base_path}}/integrate/develop/create-integration-project), right-click the [ESB Config module]({{base_path}}/integrate/develop/create-integration-project/#types-of-projects) and go to **New → Inbound Endpoint** to open the **New Inbound Endpoint Artifact**.
+1. If you have already created an [Integration Project](../create-integration-project.md), right-click the [ESB Config module](../create-integration-project.md#types-of-projects) and go to **New → Inbound Endpoint** to open the **New Inbound Endpoint Artifact**.
 2. Select **Create a New Inbound Endpoint** and click **Next**.
 3. Type a unique name for the inbound endpoint, and then select **Custom** as the **Inbound Endpoint Creation Type**.
 5. Specify the location where the artifact should be saved: Select an existing ESB Config project in your workspace, or click **Create new Project** and create a new project.

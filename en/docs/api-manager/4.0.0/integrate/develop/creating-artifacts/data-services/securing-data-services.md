@@ -8,7 +8,7 @@ service.
 
 ## Prerequisites
 
-Be sure to [configure a user store]({{base_path}}/install-and-setup/setup/mi-setup/setup/user_stores/setting_up_a_userstore) for the Micro Integrator and add the required users and roles.
+Be sure to [configure a user store](../../../../install-and-setup/setup/mi-setup/user_stores/setting_up_a_userstore.md) for the Micro Integrator and add the required users and roles.
 
 ## Step 1: Creating a registry resource module
 
@@ -16,7 +16,7 @@ Registry artifacts (such as security policy files) should be stored in a
 **Registry Resource** module. Follow the steps given below to create a
 module:
 
-1.  Right click on the [Integration project]({{base_path}}/integrate/develop/create-integration-project) 
+1.  Right click on the [Integration project](../../create-integration-project.md) 
     and go to **New → Registry Resource**. 
     
     !!! Tip Alternatively, you can go to **File → New → Others** and 
@@ -33,7 +33,7 @@ module:
     will open the **New Registry Resource** window.
 2.  Select the **From existing template** option as shown below and
     click **Next** .  
-    ![]({{base_path}}/assets/img/integrate/tutorials/data_services/119130577/119130583.png)
+    ![](../../../../assets/img/integrate/tutorials/data_services/119130577/119130583.png)
 3.  Enter the following details:
 
     | Property      |    Value       |
@@ -53,7 +53,7 @@ module:
         !!! Tip
             Click the icon next to the scenario to get details of the scenario.
           
-        ![]({{base_path}}/assets/img/integrate/tutorials/data_services/119130577/119130596.png)
+        ![](../../../../assets/img/integrate/tutorials/data_services/119130577/119130596.png)
 
     2.  You can also provide encryption properties, signature
         properties, and advanced rampart configurations.
@@ -91,17 +91,17 @@ the source of the data service.
 
 ## Step 3: Package the artifacts
 
-See the instructions on [packaging the artifacts]({{base_path}}/integrate/develop/packaging-artifacts) into a composite exporter.
+See the instructions on [packaging the artifacts](../../packaging-artifacts.md) into a composite exporter.
 
 ## Step 4: Build and run the artifacts
 
-See the instructions [deploying the artifacts]({{base_path}}/integrate/develop/deploy-artifacts).
+See the instructions [deploying the artifacts](../../deploy-artifacts.md).
 
 ## Step 5: Testing the service
 
 Create a Soap UI project with the relevant security settings and then send the request to the hosted service.
 
-For guidelines on using SoapUI, see [general guidelines on testing with SOAP UI]({{base_path}}/integrate/develop/advanced-development/applying-security-to-a-proxy-service/#general-guidelines-on-testing-with-soap-ui).
+For guidelines on using SoapUI, see [general guidelines on testing with SOAP UI](../../advanced-development/applying-security-to-a-proxy-service.md#general-guidelines-on-testing-with-soap-ui).
 
 ## Using an encrypted datasource password
 
@@ -110,15 +110,15 @@ option of encrypting the datasource connection password. This ensures
 that the password is encrypted in the configuration file (.dbs file) of
 the data service.
 
-See the instructions on [encrypting plain-text passwords]({{base_path}}/install-and-setup/setup/mi-setup/security/encrypting_plain_text)
+See the instructions on [encrypting plain-text passwords](../../../../install-and-setup/setup/mi-setup/security/encrypting_plain_text.md)
 
 Once you have encrypted the datasource password, you can update the data
 service as explained below.
 
 1.  Open the data service and click **Data Sources** to expand the section.
-    ![]({{base_path}}/assets/img/integrate/tutorials/data_services/data_source_expanded.png)
+    ![](../../../../assets/img/integrate/tutorials/data_services/data_source_expanded.png)
 2.  Click on the **Edit** icon of the respective Datasource to open 
     **Edit Datasource** page.
-    ![]({{base_path}}/assets/img/integrate/tutorials/data_services/edit_datasource.png)
+    ![](../../../../assets/img/integrate/tutorials/data_services/edit_datasource.png)
 3.  Make sure to check **Use as a Secret Alias**.
 4.  Update the Secret Alias and click on **Save**.

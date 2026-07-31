@@ -5,11 +5,11 @@ See the instructions on how to set up a cluster of WSO2 Micro Integrator nodes i
 
 This deployment scenario is a two-node Micro Integrator deployment. That is, two Micro Integrator nodes are configured to serve requests with high availability and scalability. The product nodes in the deployment are fronted by an external third-party load balancer, which routes requests to the two nodes on a round-robin basis.
 
-<a href="{{base_path}}/assets/img/integrate/mi-deployment.png"><img src="{{base_path}}/assets/img/integrate/mi-deployment.png" alt="micro integrator deployment" width="60%"></a>
+<a href="../../../../assets/img/integrate/mi-deployment.png"><img src="../../../../assets/img/integrate/mi-deployment.png" alt="micro integrator deployment" width="60%"></a>
 
 ## Install the Micro Integrator
 
-[Download and install WSO2 Micro Integrator]({{base_path}}/install-and-setup/install/installing-the-product/installing-mi).
+[Download and install WSO2 Micro Integrator](../../../install/installing-the-product/installing-mi.md).
 
 Let's set up two instances of the Micro Integrator server.
 
@@ -22,7 +22,7 @@ Open the `deployment.toml` file (stored in the `<MI_HOME>/conf` folder) of each 
 hostname = "localhost"
 ```
 
-Find more [parameters]({{base_path}}/reference/config-catalog-mi/#deployment) for deployment settings.
+Find more [parameters](../../../../reference/config-catalog-mi.md#deployment) for deployment settings.
 
 ## Service catalog
 
@@ -36,7 +36,7 @@ username = "admin"
 password = "admin"
 ```
 
-See the descriptions of the [service catalog parameters]({{base_path}}/reference/config-catalog-mi/#service-catalog-client).
+See the descriptions of the [service catalog parameters](../../../../reference/config-catalog-mi.md#service-catalog-client).
 
 ## Cluster coordination
 
@@ -53,11 +53,11 @@ When the nodes in the cluster need to communicate with each other, the Micro Int
 
 1.  Create a database named `clusterdb`.
 
-    - [Setting up a MySQL database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-mysql)
-    - [Setting up an MSSQL database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-mssql)
-    - [Setting up an Oracle database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-oracle)
-    - [Setting up a Postgre database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-postgresql)
-    - [Setting up an IBM database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-ibm-db2)
+    - [Setting up a MySQL database](../databases/setting-up-mysql.md)
+    - [Setting up an MSSQL database](../databases/setting-up-mssql.md)
+    - [Setting up an Oracle database](../databases/setting-up-oracle.md)
+    - [Setting up a Postgre database](../databases/setting-up-postgresql.md)
+    - [Setting up an IBM database](../databases/setting-up-ibm-db2.md)
 
 2.  Open the `deployment.toml` file and see that the configurations are updated as shown below.
 
@@ -243,7 +243,7 @@ resolving_frequency = "3"
 
 When you have a cluster of nodes, the integration artifacts deployed in each server node needs to be identical. This can be achieved by synchronizing the deployment directories of each server.
 
-See [deployment synchronization]({{base_path}}/install-and-setup/setup/mi-setup/deployment/deployment_synchronization) for instructions.
+See [deployment synchronization](deployment_synchronization.md) for instructions.
 
 ## Registry synchronization (sharing)
 
@@ -252,14 +252,14 @@ See [deployment synchronization]({{base_path}}/install-and-setup/setup/mi-setup/
 
 The shared registry maintains the state (<b>active</b>/<b>inactive</b>) of the Message Processor artifact. This ensures that the same state is maintained for Message Processor in all the Micro Integrator nodes of the cluster.
 
-1.  Follow the instructions on [configuring the file-based registry]({{base_path}}/install-and-setup/setup/mi-setup/deployment/file_based_registry) for a two-node deployment of the Micro Integrator.
-2.  The `<MI_HOME>/registry` folder of each node in the cluster should be shared with each other. You can follow the same instructions as for [deployment synchronization]({{base_path}}/install-and-setup/setup/mi-setup/deployment/deployment_synchronization).
+1.  Follow the instructions on [configuring the file-based registry](file_based_registry.md) for a two-node deployment of the Micro Integrator.
+2.  The `<MI_HOME>/registry` folder of each node in the cluster should be shared with each other. You can follow the same instructions as for [deployment synchronization](deployment_synchronization.md).
 
 ## Load balancing
 
 If you need the HTTP/HTTPS traffic to be distributed among the nodes, you need to front them via a load balancer of your choice and balance the loads among the node URLs.
 
-Follow the instructions on [setting up a load balancer]({{base_path}}/install-and-setup/setup/mi-setup/deployment/setting_up_lb) for a two-node deployment of the Micro Integrator.
+Follow the instructions on [setting up a load balancer](setting_up_lb.md) for a two-node deployment of the Micro Integrator.
 
 ## Deployment hardening
 
@@ -297,7 +297,7 @@ You could observe the following member removal log in other servers when one nod
 
 ##  Testing task coordination
 
-Create a simple scheduled task using WSO2 Integration Studio and deploy it in the two Micro Integrator servers. See the instructions on [creating a scheduled task]({{base_path}}/integrate/develop/creating-artifacts/creating-scheduled-task).
+Create a simple scheduled task using WSO2 Integration Studio and deploy it in the two Micro Integrator servers. See the instructions on [creating a scheduled task](../../../../integrate/develop/creating-artifacts/creating-scheduled-task.md).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

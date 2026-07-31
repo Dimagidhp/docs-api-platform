@@ -9,7 +9,7 @@ Given below is a sample scenario that demonstrates how to work with the WSO2 Red
 The user sends the request to invoke an API to get stock details. This REST call will get converted into a SOAP message and is sent to the back-end service. While the response from the backend service is converted back to JSON and sent back to the API caller, the integration runtime will extract stock volume details from the response and store it into a configured Redis server.
 When users need to retrieve stock volumes collected, they can invoke the `getstockvolumedetails` resource. This example also demonstrates how users can manipulate this stock volume details by removing unwanted items from the Redis server.
 
-> **Note**: In this scenario you need to set up the Redis Server in your local machine. Please refer the [Setting up the Redis Connector]({{base_path}}/reference/connectors/redis-connector/redis-connector-configuration/) documentation. Follow the steps listed under `Setting up the Redis server` section to setup the Redis server and `Set up the back-end service` section to setup the Stockquote service. 
+> **Note**: In this scenario you need to set up the Redis Server in your local machine. Please refer the [Setting up the Redis Connector](redis-connector-configuration.md) documentation. Follow the steps listed under `Setting up the Redis server` section to setup the Redis server and `Set up the back-end service` section to setup the Stockquote service. 
 This example demonstrates how to use Redis connector to:
 
 1. Retrieve stock volume details from the Stockquote back-end service. This is done while extracting the stock volume, creating a Redis hash map, and adding stock volume details to the Redis server. (In this example, Redis hashes are used to store different companies' stocks volume details. Since the “symbol” that is sent in the request is “WSO2”, the request is routed to the WSO2 endpoint. Once the response from the WSO2 endpoint is received, it is transformed according to the specified template and sent to the client. Then create a hash map and insert extracted details to the Redis hashmap).
@@ -24,7 +24,7 @@ All three operations are exposed via an `StockQuoteAPI` API. The API with the co
 
 The following diagram shows the overall solution. The user creates a hash map, stores WSO2 stock volume details into the list, and then receives it back and removes unwanted hash map items. To invoke each operation, the user uses the same API.
 
-<img src="{{base_path}}/assets/img/integrate/connectors/redis-connector-example-updated.png" title="Redis connector example" width="800" alt="Redis connector example"/>
+<img src="../../../assets/img/integrate/connectors/redis-connector-example-updated.png" title="Redis connector example" width="800" alt="Redis connector example"/>
 
 If you do not want to configure this yourself, you can simply [get the project](#get-the-project) and run it.
 
@@ -42,7 +42,7 @@ Follow these steps to set up the Integration Project and the Connector Exporter 
 
 First create an API, which will be where we configure the integration logic. Right click on the created Integration Project and select, **New** -> **Rest API** to create the REST API. Specify the API name as `StockQuoteAPI` and API context as `/stockquote`.
     
-<img src="{{base_path}}/assets/img/integrate/connectors/adding-an-api.jpg" title="Adding a Rest API" width="800" alt="Adding a Rest API"/>
+<img src="../../../assets/img/integrate/connectors/adding-an-api.jpg" title="Adding a Rest API" width="800" alt="Adding a Rest API"/>
 
 #### Configuring the API
 
@@ -52,29 +52,29 @@ Create a resource that sets up Redis hash map and sets a specific field in a has
 
 1. Add an address endpoint using the send mediator to access SimpleStockQuoteService.
    
-   <img src="{{base_path}}/assets/img/integrate/connectors/redis-address-endpoint.png" title="Address endpoint" width="500" alt="Address endpoint"/>  
+   <img src="../../../assets/img/integrate/connectors/redis-address-endpoint.png" title="Address endpoint" width="500" alt="Address endpoint"/>  
 
 2. Add a header to get a quote from the SimpleStockQuoteService.
 
-   <img src="{{base_path}}/assets/img/integrate/connectors/redis-header.png" title="Add Header to get Quote" width="500" alt="Add Header to get Quote"/> 
+   <img src="../../../assets/img/integrate/connectors/redis-header.png" title="Add Header to get Quote" width="500" alt="Add Header to get Quote"/> 
 
 3. Add a payload factory to extract the selected stock details. In this sample, we attempt to get WSO2 stock details from the SimpleStockQuoteService.
    
-   <img src="{{base_path}}/assets/img/integrate/connectors/redis-payloadfactory.png" title="Add payloadfactory to extract WSO2 details" width="500" alt="Add payloadfactory to extract WSO2 details"/> 
+   <img src="../../../assets/img/integrate/connectors/redis-payloadfactory.png" title="Add payloadfactory to extract WSO2 details" width="500" alt="Add payloadfactory to extract WSO2 details"/> 
 
 4. In this example, we copy the original payload to a property using the Enrich mediator.
    
-   <img src="{{base_path}}/assets/img/integrate/connectors/redis-enrich1.png" title="Add enrich mediator" width="500" alt="Add enrich mediator"/> 
+   <img src="../../../assets/img/integrate/connectors/redis-enrich1.png" title="Add enrich mediator" width="500" alt="Add enrich mediator"/> 
 
    When we need the original payload, we replace the message body with this property value using the Enrich mediator as follows.
    
-   <img src="{{base_path}}/assets/img/integrate/connectors/redis-enrich2.png" title="Add enrich mediator" width="500" alt="Add enrich mediator"/> 
+   <img src="../../../assets/img/integrate/connectors/redis-enrich2.png" title="Add enrich mediator" width="500" alt="Add enrich mediator"/> 
     
 5. Initialize the connector.
     
     1. Navigate into the **Palette** pane and select the graphical operations icons listed under **Redis Connector** section. Then drag and drop the `init` operation into the Design pane.
         
-        <img src="{{base_path}}/assets/img/integrate/connectors/redis-init-drag-and-shop.png" title="Drag and drop init operation" width="500" alt="Drag and drop init operation"/>   
+        <img src="../../../assets/img/integrate/connectors/redis-init-drag-and-shop.png" title="Drag and drop init operation" width="500" alt="Drag and drop init operation"/>   
     
     2. Add the property values into the `init` operation as shown below. Replace the `redisHost`, `redisPort`, `redisTimeout` with your values.
         
@@ -82,13 +82,13 @@ Create a resource that sets up Redis hash map and sets a specific field in a has
         - **redisPort**: The port on which the Redis server is running (the default port is 6379).
         - **redisTimeout** : The server TTL (Time to live) in milliseconds.
     
-        <img src="{{base_path}}/assets/img/integrate/connectors/redis-init-parameterspng.png" title="Add values to the init operation" width="800" alt="Add values to the init operation"/>
+        <img src="../../../assets/img/integrate/connectors/redis-init-parameterspng.png" title="Add values to the init operation" width="800" alt="Add values to the init operation"/>
 
 6. Set up the hSet operation. This operation sets a specific field in a hash to a specified value.
 
     1. Navigate into the **Palette** pane and select the graphical operations icons listed under **Redis Connector** section. Then drag and drop the `hSet` operation into the Design pane.
            
-        <img src="{{base_path}}/assets/img/integrate/connectors/redis-hset-drag-and-drop.png" title="Drag and drop hSet operation" width="500" alt="Drag and drop hSet operation"/>    
+        <img src="../../../assets/img/integrate/connectors/redis-hset-drag-and-drop.png" title="Drag and drop hSet operation" width="500" alt="Drag and drop hSet operation"/>    
 
     2. In this operation we are going to set a hash map to the Redis server. The hSet operation sets a specific field in a hash to a specified value.
                                                                                  
@@ -98,9 +98,9 @@ Create a resource that sets up Redis hash map and sets a specific field in a has
         
         In this example, `redisKey` value is configured as **StockVolume**. While invoking the API, the above `redisField`,`redisValue` parameter values are extracted from the response of the SimpleStockQuoteService. Then they are populated as an input value for the Redis `hSet` operation.
         
-        <img src="{{base_path}}/assets/img/integrate/connectors/redis-hset-drag-and-drop-parameter.png" title="hSet parameters" width="500" alt="hSet parameters"/> 
+        <img src="../../../assets/img/integrate/connectors/redis-hset-drag-and-drop-parameter.png" title="hSet parameters" width="500" alt="hSet parameters"/> 
     
-7. To get the input values in to the `hSet`, we can use the [property mediator]({{base_path}}/reference/mediators/property-mediator). Navigate into the **Palette** pane and select the graphical mediators icons listed under **Mediators** section. Then drag and drop the `Property` mediators onto the Design pane as shown below.    
+7. To get the input values in to the `hSet`, we can use the [property mediator](../../mediators/property-mediator.md). Navigate into the **Palette** pane and select the graphical mediators icons listed under **Mediators** section. Then drag and drop the `Property` mediators onto the Design pane as shown below.    
       > **Note**: The properties should be added to the pallet before creating the operation.
         
         The parameters available for configuring the Property mediator are as follows:
@@ -110,26 +110,26 @@ Create a resource that sets up Redis hash map and sets a specific field in a has
         - **name** : symbol
         - **value expression** : $body/soapenv:Envelope/soapenv:Body/ns:getQuoteResponse/ax21:symbol
    
-        <img src="{{base_path}}/assets/img/integrate/connectors/redis-getsymbol-properties1.png" title="Add property mediators to get symbol" width="600" alt="Add property mediators to get symbol"/>
+        <img src="../../../assets/img/integrate/connectors/redis-getsymbol-properties1.png" title="Add property mediators to get symbol" width="600" alt="Add property mediators to get symbol"/>
     
     2. Add the property mediator to capture the `volume` values. The 'volume' contains stock quote volume of the selected company.              
    
         - **name** : volume
         - **value expression** : $body/soapenv:Envelope/soapenv:Body/ns:getQuoteResponse/ax21:volume
      
-        <img src="{{base_path}}/assets/img/integrate/connectors/redis-getvolume-properties1.png" title="Add property mediators to get volume" width="600" alt="Add property mediators to get volume"/>  
+        <img src="../../../assets/img/integrate/connectors/redis-getvolume-properties1.png" title="Add property mediators to get volume" width="600" alt="Add property mediators to get volume"/>  
         
 8. Forward the backend response to the API caller.
     
-    When you are invoking the created resource, the request of the message is going through the `/getstockquote` resource. Finally, it is passed to the [Respond mediator]({{base_path}}/reference/mediators/respond-mediator/). The Respond Mediator stops the processing on the current message and sends the message back to the client as a response.            
+    When you are invoking the created resource, the request of the message is going through the `/getstockquote` resource. Finally, it is passed to the [Respond mediator](../../mediators/respond-mediator.md). The Respond Mediator stops the processing on the current message and sends the message back to the client as a response.            
     
     1. Drag and drop **respond mediator** to the **Design view**. 
     
-         <img src="{{base_path}}/assets/img/integrate/connectors/redis-respond-mediator.png" title="Add Respond mediator" width="800" alt="Add Respond mediator"/> 
+         <img src="../../../assets/img/integrate/connectors/redis-respond-mediator.png" title="Add Respond mediator" width="800" alt="Add Respond mediator"/> 
 
     2. Once you have setup the resource, you can see the `getstockquote` resource as shown below.
     
-         <img src="{{base_path}}/assets/img/integrate/connectors/redis-createstockvolume-resource.png" title="Resource design view" width="600" alt="Resource design view"/>
+         <img src="../../../assets/img/integrate/connectors/redis-createstockvolume-resource.png" title="Resource design view" width="600" alt="Resource design view"/>
 
 ##### Configure a resource for the getstockvolumedetails operation
     
@@ -143,7 +143,7 @@ Create a resource that sets up Redis hash map and sets a specific field in a has
    
    You only need to send redisKey as parameter. In this example `redisKey` value is configured as **StockVolume**
 
-   <img src="{{base_path}}/assets/img/integrate/connectors/redis-hgetall-drag-and-drop.png" title="Drag and drop hGetAll operation" width="500" alt="Drag and drop hGetAll operation"/>
+   <img src="../../../assets/img/integrate/connectors/redis-hgetall-drag-and-drop.png" title="Drag and drop hGetAll operation" width="500" alt="Drag and drop hGetAll operation"/>
    
 3. Forward the backend response to the API caller. Please follow the steps given in section 8 in the `getstockquote` operation.   
 
@@ -159,7 +159,7 @@ Create a resource that sets up Redis hash map and sets a specific field in a has
       - **redisKey** : The name of the key where the hash is stored.
       - **redisFields** : The fields that you want to delete.
       
-      <img src="{{base_path}}/assets/img/integrate/connectors/redis-hdell-drag-and-drop.png" title="Drag and drop hDell operation" width="500" alt="Drag and drop hDell operation"/>
+      <img src="../../../assets/img/integrate/connectors/redis-hdell-drag-and-drop.png" title="Drag and drop hDell operation" width="500" alt="Drag and drop hDell operation"/>
    
 3. Forward the backend response to the API caller. Please follow the steps given in section 8 in the `getstockquote` operation.     
                
@@ -402,4 +402,4 @@ Invoke the API as shown below using the curl command. Curl Application can be do
      ```     
 ## What's next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/install-and-setup/installation/run_in_containers).
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).

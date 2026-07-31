@@ -6,7 +6,7 @@ Choreo Connect can be integrated with Istio service mesh using the methods liste
 
 ### MTLS Mode
 
-[![MTLS Mode]({{base_path}}/assets/img/deploy/istio-mtls.png)]({{base_path}}/assets/img/deploy/istio-mtls.png)
+[![MTLS Mode](../../../../assets/img/deploy/istio-mtls.png)](../../../../assets/img/deploy/istio-mtls.png)
 
 Microservices can be deployed in the Istio service mesh and made available using the Istio Ingress Gateway. Choreo Connect is deployed as the edge Gateway in this method, where API Management for Istio microservices is applied. Requests come to Choreo Connect, which validates them before sending them on to the Istio Ingress Gateway, which sends them to the relevant microservice, as indicated in the diagram.
 
@@ -14,7 +14,7 @@ Istio MTLS sample can be found in [Github](https://github.com/wso2/product-micro
 
 ### Sidecar Mode
 
-[![Sidecar Mode]({{base_path}}/assets/img/deploy/istio-sidecar.png)]({{base_path}}/assets/img/deploy/istio-sidecar.png)
+[![Sidecar Mode](../../../../assets/img/deploy/istio-sidecar.png)](../../../../assets/img/deploy/istio-sidecar.png)
 
 Microservices can be deployed in the Istio service mesh and made available using Choreo Connect Gateway. Choreo Connect is deployed in the Istio service mesh as a separate service where it applies API management for the microservices. Requests arrive at the Istio Ingress Gateway and are routed to Choreo Connect. Once Choreo Connect validates the request, it routes it to the relevant microservices. 
 
@@ -23,7 +23,7 @@ Istio Sidecar sample can be found in [Github](https://github.com/wso2/product-mi
 
 ### Service to Service Communication
 
-<img src="{{base_path}}/assets/img/deploy/istio-east-west-traffic.png" width="75%" alt="East-West traffic API management">
+<img src="../../../../assets/img/deploy/istio-east-west-traffic.png" width="75%" alt="East-West traffic API management">
 
 Microservices can be deployed in the Istio service mesh and the communication between microservices can be configured to route through Choreo Connect as an Internal API Gateway. Choreo Connect is deployed in the Istio service mesh as a separate service where it applies API Management for the microservices. Requests arrive that are validated in Choreo Connect before passing it the relevant microservice, as indicated in the diagram. In this scenario Choreo Connect acts as the edge Gateway as well as the internal Gateway.
 

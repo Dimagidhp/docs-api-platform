@@ -28,10 +28,10 @@ When running the Choreo Connect, you can provide the username, password as Adapt
 
 | **Deployment** | **Mode**| **File name** | **Directory** |
 |----------------|---------|---------------|---------------|
-| Docker Compose |[Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway/)| `docker-composer.yaml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect/` |
-| Docker Compose |[Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/) | `docker-composer.yaml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect-with-apim/` |
-| Kubernetes |[Choreo Connect as a Standalone Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/as-a-standalone-gateway/)| `adapter-deployment.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect/` |
-| Kubernetes |[Choreo Connect with WSO2 API Manager as a Control Plane]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/concepts/apim-as-control-plane/)| `adapter-deployment.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect-with-apim/` |
+| Docker Compose |[Choreo Connect as a Standalone Gateway](../concepts/as-a-standalone-gateway.md)| `docker-composer.yaml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect/` |
+| Docker Compose |[Choreo Connect with WSO2 API Manager as a Control Plane](../concepts/apim-as-control-plane.md) | `docker-composer.yaml` | `<CHOREO-CONNECT_HOME>/docker-compose/choreo-connect-with-apim/` |
+| Kubernetes |[Choreo Connect as a Standalone Gateway](../concepts/as-a-standalone-gateway.md)| `adapter-deployment.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect/` |
+| Kubernetes |[Choreo Connect with WSO2 API Manager as a Control Plane](../concepts/apim-as-control-plane.md)| `adapter-deployment.yaml` | `<CHOREO-CONNECT_HOME>/k8s-artifacts/choreo-connect-with-apim/` |
 
 
 !!! note 

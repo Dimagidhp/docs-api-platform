@@ -5,8 +5,8 @@ The **Script Mediator** is used to invoke the functions of a variety of scripti
 !!! Note
     The Micro Integrator uses Rhino engine to execute JavaScript. Rhino engine converts the script to a method inside a Java class. Therefore, when processing large JSON data volumes, the code length must be less than 65536 characters, since the Script mediator converts the payload into a Java object. However, you can use the following alternative options to process large JSON data volumes.
 
-    -   Achieve the same functionality via a [Class mediator]({{base_path}}/reference/mediators/class-mediator).
-    -   If the original message consists of repetitive sections, you can use the [Iterate mediator]({{base_path}}/reference/mediators/iterate-mediator/) to generate a relatively
+    -   Achieve the same functionality via a [Class mediator](class-mediator.md).
+    -   If the original message consists of repetitive sections, you can use the [Iterate mediator](iterate-mediator.md) to generate a relatively
     small payload using those repetitive sections. This will then allow you to use the Script mediator.
     -   The Script Mediator supports using Nashorn to execute JavaScripts, in addition to its default Rhino engine.
 
@@ -62,7 +62,7 @@ when using JavaScript `         getPayloadXML        ` and
 and when using Ruby, REXML documents.
 
 !!! Info
-    The Script mediator is a [content-aware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    The Script mediator is a [content-aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Prerequisites
 
@@ -438,7 +438,7 @@ The following table contains examples of how some of the commonly used methods c
 <span id="cb5-14"><a href="#cb5-14"></a><span class="op">}</span></span></code></pre></div>
 </div>
 </div>
-<p><code>               mc.getPayloadJSON()              </code> returns the JSON payload (received as the response) as a JavaScript object. This object can be manipulated as a normal JavaScript variable within a script as shown in the above JavaScript code. See <a href="{{base_path}}/integrate/examples/json_examples/json-examples/#script-mediator">JSON Support</a> for further information about how this script is used.</p>
+<p><code>               mc.getPayloadJSON()              </code> returns the JSON payload (received as the response) as a JavaScript object. This object can be manipulated as a normal JavaScript variable within a script as shown in the above JavaScript code. See <a href="../../integrate/examples/json_examples/json-examples.md#script-mediator">JSON Support</a> for further information about how this script is used.</p>
 <p><br />
 </p>
 </div></td>
@@ -447,7 +447,7 @@ The following table contains examples of how some of the commonly used methods c
 <td>No</td>
 <td>setPayloadJSON(payload)</td>
 <td><p>See the example script for the <code>              getPayloadJSON()             </code> method.</p>
-<p>The <code>              mc.setPayloadJSON()             </code> method can be used to replace the existing payload with a new payload. In the above script, we build a new array object by using the fields of the incoming JSON payload and set that array object as the new payload. See <a href="{{base_path}}/integrate/examples/json_examples/json-examples/#script-mediator">JSON Support</a> for further information about how this script is used</p></td>
+<p>The <code>              mc.setPayloadJSON()             </code> method can be used to replace the existing payload with a new payload. In the above script, we build a new array object by using the fields of the incoming JSON payload and set that array object as the new payload. See <a href="../../integrate/examples/json_examples/json-examples.md#script-mediator">JSON Support</a> for further information about how this script is used</p></td>
 </tr>
 <tr class="odd">
 <td>Yes</td>

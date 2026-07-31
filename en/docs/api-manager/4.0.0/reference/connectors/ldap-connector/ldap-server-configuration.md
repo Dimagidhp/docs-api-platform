@@ -62,12 +62,12 @@ and use it to sign the keys for the LDAP server.
 **Ensuring secure data**
 
 Secure Vault is supported for encrypting passwords. See, 
-[Working with Secrets]({{base_path}}/install-and-setup/setup/mi-setup/security/encrypting_plain_text) on integrating 
+[Working with Secrets](../../../install-and-setup/setup/mi-setup/security/encrypting_plain_text.md) on integrating 
 and using Secure Vault.
 
 **Re-using LDAP configurations**
 
-You can save the LDAP configuration as a [local entry]({{base_path}}/integrate/develop/creating-artifacts/registry/creating-local-registry-entries) and then easily reference it with the configKey attribute in your operations. For example, if you saved the above **<ldap.init>** entry as a local entry named MyLDAPConfig, you could reference it from an operation like addEntry as follows:
+You can save the LDAP configuration as a [local entry](../../../integrate/develop/creating-artifacts/registry/creating-local-registry-entries.md) and then easily reference it with the configKey attribute in your operations. For example, if you saved the above **<ldap.init>** entry as a local entry named MyLDAPConfig, you could reference it from an operation like addEntry as follows:
 
 ```xml
 <ldap.addEntry configKey="MyLDAPConfig"/>

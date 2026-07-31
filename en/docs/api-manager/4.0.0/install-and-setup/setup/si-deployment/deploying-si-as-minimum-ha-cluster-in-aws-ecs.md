@@ -8,7 +8,7 @@ The minimum HA cluster typically has two nodes where one node operates as the ac
 
 ### Assigning the Active and Passive statuses to nodes
 
-![Assign Node Active or Passive Status]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/assigning-node-status.png)
+![Assign Node Active or Passive Status](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/assigning-node-status.png)
 
 When a node is started in the minimum HA cluster mode, it checks the tables in the `WSO2_CLUSTER_DB` database. This check covers checking whether there are existing members in the cluster. If other nodes already exist as members of the cluster, it checks whether there are heartbeats from the existing member(s) for the last time interval that is of the same length as the specified heartbeat interval. If no heartbeat exists for the specified time interval, the node is added to the cluster as the active node. If not, it is added as the passive node.
 
@@ -32,7 +32,7 @@ The passive node saves the events sent to its event sync server in a queue. When
 
 The passive node continuously monitors the heartbeat of the active node. If the active node fails, the passive node follows the process shown below to start functioning as the active node so that data is not lost due to node failure.
 
-![Passive Node Becomes Active]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/passive-node-becomes-active-process.png)
+![Passive Node Becomes Active](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/passive-node-becomes-active-process.png)
 
 The following table explains the above steps.
 
@@ -57,17 +57,17 @@ The following table explains the above steps.
 
     1. Sign in to the IAM console via the AWS console. Under **Access Management**, click **Users**.
 
-        ![AWS IAM console]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/aws-iam-console.png)
+        ![AWS IAM console](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/aws-iam-console.png)
 
         Then click **Add User** in the page that appears, and enter information as follows.
 
         1. In the **User name** field, enter a valid email address. Under **Access Type**, select the **Programmatic Access** check box. Then click **Next:Permissions**.
 
-            ![User Details]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/add-user.png)
+            ![User Details](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/add-user.png)
 
         2. Add the user you are creating to a relevant group. In this example, let's create a new group. To do this, click **Create Group** and open the **CreateGroup** dialog box. Then enter a name for the group, select the **AdministratorAccess** check box, and then click **Create Group**.
         
-            ![Create Group]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-group.png)
+            ![Create Group](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-group.png)
 
             Click **Next:Tags**, and in the next page click **Next:Review**.
 
@@ -75,7 +75,7 @@ The following table explains the above steps.
 
             Once you create the user, you can get the access key and the secret key as shown below.
 
-            ![Get access keys and secret key]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/get-access-key-and-secret-key.png)
+            ![Get access keys and secret key](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/get-access-key-and-secret-key.png)
 
 
 2. Issue the following command in the terminal to configure AWS.
@@ -101,7 +101,7 @@ The following table explains the above steps.
 
         The repository is created as shown below.
 
-        ![Repository Created]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/created-repository.png)
+        ![Repository Created](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/created-repository.png)
 
     4. To retrieve an authentication token and authenticate your Docker client to your registry, do the following:
 
@@ -242,7 +242,7 @@ The following table explains the above steps.
 
         Once the build is successfully executed, a message similar to the following appears in the CLI.
 
-        ![build 1 successfully executed]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/build-node-1-executed.png)
+        ![build 1 successfully executed](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/build-node-1-executed.png)
 
     7. In the `docker-ei/dockerfiles/alpine/streaming-integrator/deployment.yaml` file, under `wso2.carbon`, change value for the `id` parameter to `wso2-si-2`.
 
@@ -256,7 +256,7 @@ The following table explains the above steps.
 
         Once the build is successfully executed, a message similar to the following appears in the CLI.
 
-        ![build 2 successfully executed]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/build-node-2-executed.png)
+        ![build 2 successfully executed](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/build-node-2-executed.png)
 
     9. To tag the built images, issue the following commands.
 
@@ -280,17 +280,17 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
     1. In the left navigator, click **Parameter groups**. Then, in the **Parameter Groups** page, click **Create Parameter Group** to create a new parameter group.
 
-        ![Create New Parameter Group]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-new-parameter-group.png)
+        ![Create New Parameter Group](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-new-parameter-group.png)
 
         The **Create parameter group** page opens.
 
     2. Enter details in the **Create parameter group** page to create a new parameter group.
 
-        ![Create New Parameter Group]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-parameter-group.png)
+        ![Create New Parameter Group](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-parameter-group.png)
 
         Then click **Create**. The newly created parameter group appears in the **Parameter groups** page as follows.
 
-        ![Created Parameter Group]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/parameter-groups.png)
+        ![Created Parameter Group](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/parameter-groups.png)
 
     3. To edit the parameter group, click on it. Then search for the **max_connections** parameter, select it, and click **Edit parameters**. Change the value for the `max_connections` parameter to `300` and then click **Save changes**.
 
@@ -298,7 +298,7 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
     1. In the left navigator, click **Databases**. Then in the **Databases** page, click **Create database** to open the **Create Database** page.
 
-        ![Create New Database]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-new-database.png)
+        ![Create New Database](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-new-database.png)
 
     2. In the **Create Database** page, enter details as follows.
 
@@ -310,15 +310,15 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
         4. Under **Settings**, enter details as instructed within the user interface.
 
-            ![RD Instance Settings]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/RD-instance-settings.png)
+            ![RD Instance Settings](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/RD-instance-settings.png)
 
         5. Under **Connectivity**, expand the **Additional connectivity configuration**. Under **Publicly accessible**, select **Yes**. This allows you to connect and create the database, and then check on the database values later.
 
-            ![Additional Connectivity]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/additional-connectivity.png)
+            ![Additional Connectivity](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/additional-connectivity.png)
 
         6. Expand the **Additional Configurations** section. In the **DB parameter group** field, select the parameter group that you previously created.
 
-            ![Additional Configurations]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/additional-configurations.png)
+            ![Additional Configurations](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/additional-configurations.png)
 
         7. Click **Create database**. The database you created appears in the **Databases** page.
 
@@ -328,15 +328,15 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
         2. In the **Security** section, click the VPC.
 
-            ![Security VPC]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/database-vpc.png)
+            ![Security VPC](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/database-vpc.png)
 
         3. In the **Security Groups** page that opens, click on the relevant security group to view details of it in a separate page.
 
-            ![Security Group]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/security-group.png)
+            ![Security Group](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/security-group.png)
 
         4. In the page with details of your security group, click **Edit Inbound Rules**.
 
-            ![Edit Inbound Rules]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/edit-inbound-rules.png)
+            ![Edit Inbound Rules](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/edit-inbound-rules.png)
 
             This opens the **Edit inbound rules** page.
 
@@ -359,28 +359,28 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
     3. In **Step 1: Select a VPC Configuration**, **VPC with a Single Public Subnet** is selected by default in the left pane. Click **Select** for it.
 
-        ![Select VPC Type]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/edit-inbound-rules.png)
+        ![Select VPC Type](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/edit-inbound-rules.png)
 
     4. In **Step 2: VPC with a Single Public Subnet**, enter `si-ha-vpc` in the **VPC name** field. Then click **Create VPC**.
 
-        ![Create VPC]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-vpc.png)
+        ![Create VPC](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-vpc.png)
 
     After successfully creating the VPC, you can view it in the **Your VPCs** page as follows:
 
-    ![Created VPC]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/created-vpc.png)
+    ![Created VPC](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/created-vpc.png)
 
     To view the public subnet created, click **Subnets** in the left navigator. The subnet connected to the VPC is displayed as shown below.
 
-    ![Created subnet]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/created-subnet.png)
+    ![Created subnet](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/created-subnet.png)
 
     To view the security group of the VPC, click **Security Groups** in the left navigator. The security group is displayed as follows.
 
-    ![security group]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/security-groups.png)
+    ![security group](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/security-groups.png)
 
     !!! info
         When you select the security group and view details for it at the bottom of the **Security Groups** page, note that all incoming traffic is currently enabled for now in the **Inbound Rules** tab.
 
-        ![Inbound Rules]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/inbound-rules.png)
+        ![Inbound Rules](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/inbound-rules.png)
 
 2. Set up the cluster as follows:
 
@@ -390,13 +390,13 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
     
     2. In the left navigator, click **Clusters**. Then click **Create Cluster** in the **Clusters** page.
     
-        ![clusters]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/clusters.png)
+        ![clusters](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/clusters.png)
     
     3. In the **Create Cluster** wizard that opens, select **EC2 Linux + Networking** and then click **Next step**.
-        ![create cluster]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-cluster-step-1.png)
+        ![create cluster](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-cluster-step-1.png)
     4. In **Step 2: Configure Cluster** of the **Create Cluster** wizard, enter information as follows:
         
-        ![configure cluster]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/configure-cluster.png)
+        ![configure cluster](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/configure-cluster.png)
     
         1. In the **Cluster name** field, enter a name for your cluster. In this example, let's enter `si-ha-cluster` as the name.
         
@@ -408,11 +408,11 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
     1. In the left navigator of Amazon ECS, click **Task Definitions**. Then in the **Task Definitions** window, click **Create new Task Definition**.
     
-        ![Create New Task Definition]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
+        ![Create New Task Definition](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
         
     2. In the **Select launch type compatibility** page, click **FARGATE** and then click **Next step**.
     
-        ![Select Launch Type]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
+        ![Select Launch Type](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
         
     3. In **Step 2: Configure task and container definitions**, enter information in the **Create new Task Definition** wizard as follows:
     
@@ -437,7 +437,7 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
                     2. In the left navigator, click **Repositories** to open the **Repositories** window.<br/>
                     3. Click on your repository (which is `wso2` in this example).<br/>
                     The available docker images are displayed in the **Images** window.<br/>
-                    ![Docker Images]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/docker-images.png)                                     
+                    ![Docker Images](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/docker-images.png)                                     
             3. In the **Port Mappings** section, add the following ports. 
             
                 |**Port**   |**Protocol**|
@@ -463,11 +463,11 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
     1. In the left navigator of Amazon ECS, click **Task Definitions**. Then in the **Task Definitions** window, click **Create new Task Definition**.
     
-        ![Create New Task Definition]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
+        ![Create New Task Definition](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
         
     2. In the **Select launch type compatibility** page, click **FARGATE** and then click **Next step**.
     
-        ![Select Launch Type]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
+        ![Select Launch Type](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-definition.png)
         
     3. In **Step 2: Configure task and container definitions**, enter information in the **Create new Task Definition** wizard as follows:
     
@@ -511,13 +511,13 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
 
     1. In Amazon ECS, click **Clusters** in the left navigator. Then click on your cluster.
 
-        ![Create Task for Cluster]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-for-cluster.png)
+        ![Create Task for Cluster](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/create-task-for-cluster.png)
         
         This opens the **Create Service** wizard.
         
     2. In the **Step 1: Configure service** page, select/enter information as follows:
         
-        ![Configure Service]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/configure-service.png)
+        ![Configure Service](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/configure-service.png)
     
         |**Field**          |**Value**          |
         |-------------------|-------------------|
@@ -530,7 +530,7 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
         
     3. In the **Step 2: Configure network**, select/enter information as follows:
     
-        ![Configure Network]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/configure-network.png)
+        ![Configure Network](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/configure-network.png)
     
         1. In the **Cluster VPC** field, select the VPC that you previously created.
         
@@ -540,7 +540,7 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
         
             When you click **Edit**, the **Configure security groups** dialog box opens. Here, select the **Select existing security group** option and then select the security group that you previously created and connected to your VPC. Then click **Save** to save he information you entered in this dialog box.
             
-            ![Select security groups]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/select-security-group.png)
+            ![Select security groups](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/select-security-group.png)
             
             Once you are back in the **Step 2: Configure network** page of the **Create Service** wizard, click **Next step**.
             
@@ -554,7 +554,7 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
         
         2. Click on the **Tasks** tab. The task is displayed as shown below.
         
-            ![View Task]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/view-task.png)
+            ![View Task](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/view-task.png)
             
         3. Click on the task to view it in a separate page. In that page, click on the **View logs in CloudWatch**. The following logs should be available to indicate that the node is started in the **Active** mode and it is persisting events.
         
@@ -567,7 +567,7 @@ To create a Amazon RDS (Relational Database Service) for the purpose of persisti
     
 6. Create a service for node 2 using the `ha-node2-task` task by following the same procedure you followed in the previous step (i.e., step 5) to create a service for node 1. However, make sure that the task definition is `ha-node2-task`. The service name can be `ha-node2-service`.
 
-    ![Service for node 2]({{base_path}}/assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/node2-service.png)
+    ![Service for node 2](../../../assets/img/streaming/si-as-minimum-ha-cluster-in-aws-ecs/node2-service.png)
     
     When you view logs in CloudWatch for node 2, the following is displayed.
     

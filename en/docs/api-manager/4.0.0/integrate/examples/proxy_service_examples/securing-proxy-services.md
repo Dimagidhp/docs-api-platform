@@ -43,10 +43,10 @@ This sample security policy file validates username token and admin role is allo
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) and [security policy]({{base_path}}/integrate/develop/creating-artifacts/registry/creating-local-registry-entries) with the configurations given above.
-4. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md) and [security policy](../../develop/creating-artifacts/registry/creating-local-registry-entries.md) with the configurations given above.
+4. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 
 Set up the back-end service:
 
@@ -63,7 +63,7 @@ Set up the back-end service:
       axis2server.bat
       ```
 
-Be sure to [configure a user store]({{base_path}}/install-and-setup/setup/mi-setup/setup/user_stores/setting_up_a_userstore) for the Micro Integrator and add the required users and roles.
+Be sure to [configure a user store](../../../install-and-setup/setup/mi-setup/user_stores/setting_up_a_userstore.md) for the Micro Integrator and add the required users and roles.
 
 Set up the SOAP client:
 

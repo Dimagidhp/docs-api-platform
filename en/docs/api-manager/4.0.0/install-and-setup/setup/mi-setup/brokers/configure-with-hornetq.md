@@ -79,7 +79,7 @@ a standalone HornetQ server.
     parameter.'java.naming.factory.url.pkgs' = "org.jboss.naming:org.jnp.interfaces"
     ```
     !!! Info
-        For details on the JMS configuration parameters used in the code segments above, see [JMS connection factory parameters]({{base_path}}/reference/config-catalog-mi/#jms-transport-listener-non-blocking-mode).
+        For details on the JMS configuration parameters used in the code segments above, see [JMS connection factory parameters](../../../../reference/config-catalog-mi.md#jms-transport-listener-non-blocking-mode).
 
 8.  Start HornetQ with the following command.
     -   On Windows:
@@ -231,7 +231,7 @@ Install JBoss EAP server and create a message queue within the server.
 6.  Log in to the Management Console using **admin** as both the username and password. In the **Profile** menu, click **Messaging ->
     Destinations** and you will be able to see the queue you added in Step 4 in the **Queues/Topics** section.
 
-    [![sample queue]({{base_path}}/assets/img/integrate/broker-configs/hornetq/sample-queue.jpg)]({{base_path}}/assets/img/integrate/broker-configs/hornetq/sample-queue.jpg)
+    [![sample queue](../../../../assets/img/integrate/broker-configs/hornetq/sample-queue.jpg)](../../../../assets/img/integrate/broker-configs/hornetq/sample-queue.jpg)
 
 Now you have configured the JBoss EAP Server. The next section describes how to configure the Micro Integrator to listen and fetch messages from the queue that you created above.
 

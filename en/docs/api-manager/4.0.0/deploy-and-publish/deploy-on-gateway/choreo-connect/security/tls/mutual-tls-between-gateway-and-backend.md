@@ -45,5 +45,5 @@ The certificate for router keystore can be found in `<distribution>/docker-compo
 
 ## Test Mutual TLS between Choreo Connect and Backend
 
-1. [Create an API]({{base_path}}/design/create-api/create-rest-api/create-a-rest-api/)
-2. [Test the API]({{base_path}}/design/create-api/create-rest-api/test-a-rest-api/)
+1. [Create an API](../../../../../design/create-api/create-rest-api/create-a-rest-api.md)
+2. [Test the API](../../../../../design/create-api/create-rest-api/test-a-rest-api.md)

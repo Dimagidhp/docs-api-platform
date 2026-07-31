@@ -6,7 +6,7 @@ The following diagram illustrates a scenario where a failover message
 store and a scheduled failover message forwarding processor is used
 to ensure guaranteed delivery:
 
-![guaranteed delivery]({{base_path}}/assets/img/integrate/tutorials/guaranteed-delivery-failover/guaranteed-delivery.png)
+![guaranteed delivery](../../../assets/img/integrate/tutorials/guaranteed-delivery-failover/guaranteed-delivery.png)
 
 In this scenario, the original message store fails due to, either network
 failure, message store crash, or system shutdown for maintenance. The
@@ -126,14 +126,14 @@ The synapse configurations used above are as follows:
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service), [message stores]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-store), and [message processors]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-processor) with the configurations given above.
-4. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md), [message stores](../../develop/creating-artifacts/creating-a-message-store.md), and [message processors](../../develop/creating-artifacts/creating-a-message-processor.md) with the configurations given above.
+4. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 
 Set up the broker:
 
-1.  [Configure a broker]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transport#configuring-the-jms-transport) with your Micro Integrator instance. Let's use Active MQ for this example.
+1.  [Configure a broker](../../../install-and-setup/setup/mi-setup/transport_configurations/configuring-transports.md#configuring-the-jms-transport) with your Micro Integrator instance. Let's use Active MQ for this example.
 2.  Start the broker.
 3.  Start the Micro Integrator (after starting the broker).
 

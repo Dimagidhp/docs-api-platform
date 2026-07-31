@@ -16,7 +16,7 @@ You have to create a new `Java/Maven project`.
 
 With the use of `WSO2 Analytics Publisher` extension which is available at `WSO2 nexus` repository it is possible to create the sample. Created sample can be used to log and publish analytics events to external systems.
 
-There is an already [created sample](https://github.com/wso2/samples-apim/tree/master/analytics-event-publisher) and if you wish to use that sample instead of developing the sample from scratch, then you can ignore the steps of creating the sample and start from [here]({{base_path}}/api-analytics/samples/publishing-analytics-events-to-external-systems/#build-the-project).
+There is an already [created sample](https://github.com/wso2/samples-apim/tree/master/analytics-event-publisher) and if you wish to use that sample instead of developing the sample from scratch, then you can ignore the steps of creating the sample and start from [here](publishing-analytics-events-to-external-systems.md#build-the-project).
 
 This section will cover how to configure the `pom.xml`, class implementations and building the created sample.
 
@@ -226,7 +226,7 @@ Filebeat comes with pre-built Kibana dashboards and UIs for visualizing log data
 
 Once you have followed and completed the above steps successfully, you will be able to visualize log data as shown below,
 
-[![Logs listed in kibana]({{base_path}}/assets/img/analytics/samples/logs-listed-in-kibana.png)]({{base_path}}/assets/img/analytics/samples/logs-listed-in-kibana.png)
+[![Logs listed in kibana](../../assets/img/analytics/samples/logs-listed-in-kibana.png)](../../assets/img/analytics/samples/logs-listed-in-kibana.png)
 
 #### Filtering Total Analytics Traffic
 
@@ -234,11 +234,11 @@ It is possible to view the analytics traffic by applying a filter as shown below
 
 Replace `<MetricReporterImplClass>` with the class name given to the MetricReporter implementation class that you have created with your sample.
 
-[![Total analytics traffic filter]({{base_path}}/assets/img/analytics/samples/total-analytics-traffic-filter.png)]({{base_path}}/assets/img/analytics/samples/total-analytics-traffic-filter.png)
+[![Total analytics traffic filter](../../assets/img/analytics/samples/total-analytics-traffic-filter.png)](../../assets/img/analytics/samples/total-analytics-traffic-filter.png)
 
 Once this filter is applied you will be able to visualize analytics traffic as shown below,
 
-[![Filtered total Analytics traffic]({{base_path}}/assets/img/analytics/samples/total-analytics-traffic.png)]({{base_path}}/assets/img/analytics/samples/total-analytics-traffic.png)
+[![Filtered total Analytics traffic](../../assets/img/analytics/samples/total-analytics-traffic.png)](../../assets/img/analytics/samples/total-analytics-traffic.png)
 
 #### Filtering Analytics Traffic for a Specific API
 
@@ -246,8 +246,8 @@ It is possible to view the analytics traffic for a specific API by applying a fi
 
 Replace `<API_Name>` with the name of the API in which you want to visualize traffic.
 
-[![Analytics traffic for a specific API filter]({{base_path}}/assets/img/analytics/samples/analytics-traffic-for-a-specific-api-filter.png)]({{base_path}}/assets/img/analytics/samples/analytics-traffic-for-a-specific-api-filter.png)
+[![Analytics traffic for a specific API filter](../../assets/img/analytics/samples/analytics-traffic-for-a-specific-api-filter.png)](../../assets/img/analytics/samples/analytics-traffic-for-a-specific-api-filter.png)
 
 Once this filter is applied you will be able to visualize analytics traffic for a specific API as shown below. And you can notice that both the filters are applied on logs.
 
-[![Filtered Analytics traffic for a specific API]({{base_path}}/assets/img/analytics/samples/analytics-traffic-for-a-specific-api.png)]({{base_path}}/assets/img/analytics/samples/analytics-traffic-for-a-specific-api.png)
+[![Filtered Analytics traffic for a specific API](../../assets/img/analytics/samples/analytics-traffic-for-a-specific-api.png)](../../assets/img/analytics/samples/analytics-traffic-for-a-specific-api.png)

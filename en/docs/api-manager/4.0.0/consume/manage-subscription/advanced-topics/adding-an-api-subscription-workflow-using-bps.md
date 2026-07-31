@@ -1,6 +1,6 @@
 # Adding an API Subscription Workflow
 
-This section explains how to attach a custom workflow to the API subscription operation in the API Manager. First, see [Workflow Extensions]({{base_path}}/reference/customize-product/extending-api-manager/extending-workflows/customizing-a-workflow-extension) for information on different types of workflows executors.
+This section explains how to attach a custom workflow to the API subscription operation in the API Manager. First, see [Workflow Extensions](../../../reference/customize-product/extending-api-manager/extending-workflows/customizing-a-workflow-extension.md) for information on different types of workflows executors.
 
 Attaching a custom workflow to API subscription enables you to add throttling tiers to an API that consumers cannot choose at the time of subscribing. Only admins can set these tiers to APIs. When a consumer subscribes to an API, he/she has to subscribe to an application in order to get access to the API. However, when API subscription workflow is enabled, when the consumer subscribes to an application, it initially is in the `On Hold` state, and he/she can not use the API, using its production or sandbox keys, until their subscription is approved.
 
@@ -71,7 +71,7 @@ Attaching a custom workflow to API subscription enables you to add throttling ti
 
 
 6.  Select **Add** under the **Processes** menu and upload the `<API-M_HOME>/business-processes/subscription-creation/BPEL/SubscriptionApprovalWorkFlowProcess_1.0.0.zip` file to EI. This is the business process archive file.
-        ![]({{base_path}}/assets/img/learn/learn-subscription-workflow-upload.png)
+        ![](../../../assets/img/learn/learn-subscription-workflow-upload.png)
 
 7.  Select **Add** under the **Human Tasks** menu and upload the `<API-M_HOME>/business-processes/subscription-creation/HumanTask/SubscriptionsApprovalTask-1.0.0.zip` file to EI. This is the human task archived file.
 
@@ -138,7 +138,7 @@ Attaching a custom workflow to API subscription enables you to add throttling ti
 6.  Select **Add** under the **Processes** menu and upload the 
 `<API-M_HOME>/business-processes/subscription-creation/BPEL/SubscriptionApprovalWorkFlowProcess_1.0.0.zip` 
 file to BPS. This is the business process archive file.
-    ![]({{base_path}}/assets/img/learn/learn-subscription-workflow-upload.png)
+    ![](../../../assets/img/learn/learn-subscription-workflow-upload.png)
 
 7.  Select **Add** under the **Human Tasks** menu and upload the `<API-M_HOME>/business-processes/subscription-creation/HumanTask/SubscriptionsApprovalTask-1.0.0.zip` file to BPS. This is the human task archived file.
 
@@ -152,7 +152,7 @@ First, enable the API subscription workflow **.**
 
 1.  Sign in to API Manager Management Console ( `https://<Server Host>:9443/carbon` ) and select **Browse** under **Resources** .
 
-    ![]({{base_path}}/assets/img/learn/learn-subscription-workflow-browse.png)
+    ![](../../../assets/img/learn/learn-subscription-workflow-browse.png)
 
 2.  Go to the `/_system/governance/apimgt/applicationdata/workflow-extensions.xml` resource, disable the Simple Workflow Executor and enable WS Workflow Executor. Also specify the service endpoint where the workflow engine is hosted and the credentials required to access the said service via basic authentication (i.e., username/password based authentication).
 
@@ -178,15 +178,15 @@ First, enable the API subscription workflow **.**
 
 3.  Go to the API Developer Portal credentials page and subscribe to an API. It will trigger the API subscription process and create a Human Task instance that pauses the execution of the BPEL until some action is performed on it. After subscribing you will see the subscription status as ON_HOLD
 
-     ![]({{base_path}}/assets/img/learn/workflow-subscription-onhold.png)
+     ![](../../../assets/img/learn/workflow-subscription-onhold.png)
 
 4.  Sign in to the Admin Portal ( `https://<Server Host>:9443/admin` ), list all the tasks for API subscription and click on start to approve the task. It resumes the BPEL process and completes the subscription process.
 
-    ![]({{base_path}}/assets/img/learn/workflow-subscription-admin-entry.png)
+    ![](../../../assets/img/learn/workflow-subscription-admin-entry.png)
 
     After approving go back to the API Developer Portal credentials page, the application status will be UNBLOCKED
      
-    ![]({{base_path}}/assets/img/learn/workflow-subscription-complete.png)
+    ![](../../../assets/img/learn/workflow-subscription-complete.png)
 
 5.  Go back to the API Developer Portal and see that the user is now subscribed to the API.
 

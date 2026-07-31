@@ -1,10 +1,10 @@
 There are two kinds of jobs in Jenkins that we need to maintain. One for the Integration project repositories. Another kind is for the Deployment Descriptor repositories. 
 
-[![K8s based CI/CD for Micro Integrator]({{base_path}}/assets/img/deploy/mi-cicd-k8s.png)]({{base_path}}/assets/img/deploy/mi-cicd-k8s.png)
+[![K8s based CI/CD for Micro Integrator](../../../../assets/img/deploy/mi-cicd-k8s.png)](../../../../assets/img/deploy/mi-cicd-k8s.png)
 
 #### Integration Project Build Job
 - We need to maintain one Jenkins job per Integration Project repository.
-- The Integration Project has to be a [Maven Multi Module project]({{base_path}}/integrate/develop/create-integration-project/#maven-multi-module-projects) and it has to contain one Kubernetes Exporter module. 
+- The Integration Project has to be a [Maven Multi Module project](../../../../integrate/develop/create-integration-project.md#maven-multi-module-projects) and it has to contain one Kubernetes Exporter module. 
 - The build phase of the job will build the Integration project and run the unit tests if a Unit test server is configured.
 - The release phase of the job generates Docker images using the provided repository, name and project version and pushes the image to the configured Docker registry and creates a release tag in GitHub.
 

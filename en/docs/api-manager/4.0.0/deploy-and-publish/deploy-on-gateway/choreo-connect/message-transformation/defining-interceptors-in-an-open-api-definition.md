@@ -206,7 +206,7 @@ the client and stop buffering the client request body and save the size of the r
 In the same way you can use only required inclusions based on you requirement and tune the interception flow.
 
 Following are the possible values for the `includes` in the extension. More information on ***Invocation Context*** is can be found in
-[Interceptor Context and Invocation Context]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/interceptor-context-and-invocation-context/#invocation-context)
+[Interceptor Context and Invocation Context](interceptor-microservice/interceptor-context-and-invocation-context.md#invocation-context)
 
 - Inclusions in **request** flow interception.
 

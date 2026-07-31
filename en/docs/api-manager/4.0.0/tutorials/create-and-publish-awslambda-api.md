@@ -10,15 +10,15 @@ Follow the steps below to create and publish an AWS Lambda API:
 
 2. Click **CREATE API** and then click **Design a New REST API**.
 
-    [![Create a new REST API]({{base_path}}/assets/img/learn/create-api-design-rest-api-link.png)]({{base_path}}/assets/img/learn/create-a-rest-api.jpg)
+    [![Create a new REST API](../assets/img/learn/create-api-design-rest-api-link.png)](../assets/img/learn/create-a-rest-api.jpg)
 
 3. Enter the API details and click **CREATE**.  
 
-    [![Create a test API]({{base_path}}/assets/img/learn/create-test-api.png)]({{base_path}}/assets/img/learn/create-test-api.png)
+    [![Create a test API](../assets/img/learn/create-test-api.png)](../assets/img/learn/create-test-api.png)
 
     !!!note
          **You do not need to enter the Endpoint during the initial process of creating the API.**
-         For more information on the possible API details that you can add, see [Create a REST API]({{base_path}}/design/create-api/create-rest-api/create-a-rest-api)
+         For more information on the possible API details that you can add, see [Create a REST API](../design/create-api/create-rest-api/create-a-rest-api.md)
 
 Now, you have created a new REST API successfully. 
 
@@ -27,7 +27,7 @@ Now, you have created a new REST API successfully.
 1. Click **Endpoints** to navigate to Endpoints page.
 2. Navigate to the **AWS Lambda** endpoint type and click **ADD**.
 
-    [![Select AWS Lambda endpoint]({{base_path}}/assets/img/learn/endpoint-select-awslambda-endpoint.png)]({{base_path}}/assets/img/learn/endpoint-select-awslambda-endpoint.png)
+    [![Select AWS Lambda endpoint](../assets/img/learn/endpoint-select-awslambda-endpoint.png)](../assets/img/learn/endpoint-select-awslambda-endpoint.png)
 
 3. Select the preferred **Access Method**
 
@@ -41,7 +41,7 @@ Now, you have created a new REST API successfully.
 
 4. Click **Save**.
 
-    [![Save the AWS Lambda endpoint]({{base_path}}/assets/img/learn/endpoint-awslambda-save.png)]({{base_path}}/assets/img/learn/endpoint-awslambda-save.png)
+    [![Save the AWS Lambda endpoint](../assets/img/learn/endpoint-awslambda-save.png)](../assets/img/learn/endpoint-awslambda-save.png)
 
     !!!note
          You will get an error message if you have not set the Access Method properly.
@@ -58,20 +58,20 @@ Now, you have created a new REST API successfully.
 
     1. Click delete, as shown below, to remove all the existing resources.
 
-          [![Delete all existing resources]({{base_path}}/assets/img/learn/delete-all-existing-resources.png)]({{base_path}}/assets/img/learn/delete-all-existing-resources.png)
+          [![Delete all existing resources](../assets/img/learn/delete-all-existing-resources.png)](../assets/img/learn/delete-all-existing-resources.png)
 
     2. Add a new resource.
           1. Select **POST** as HTTP Verb.
           2. Enter a meaningful name for URI Pattern.
           3. Click **(+)** to add a new resource.
 
-          [![Add a new resource]({{base_path}}/assets/img/learn/resource-add-post-test.png)]({{base_path}}/assets/img/learn/resource-add-post-test.png)
+          [![Add a new resource](../assets/img/learn/resource-add-post-test.png)](../assets/img/learn/resource-add-post-test.png)
 
 3. Under AWS Lambda Settings, select or type Amazon Resource Name (ARN) for the resource.
 
     You can select already created AWS Lambda functions that are listed in the autocomplete box.
 
-    [![Select or type ARN]({{base_path}}/assets/img/learn/resource-add-amazon-resource-name.png)]({{base_path}}/assets/img/learn/resource-add-amazon-resource-name.png)
+    [![Select or type ARN](../assets/img/learn/resource-add-amazon-resource-name.png)](../assets/img/learn/resource-add-amazon-resource-name.png)
 
 4. Optionally, change the AWS SDK Client Execution Timeout by changing the **Set Timeout** option.
      The default AWS SDK Client Execution Timeout is 50 seconds.
@@ -79,11 +79,11 @@ Now, you have created a new REST API successfully.
      - Min Timeout - 1 second
      - Max Timeout - 15 minutes
 
-    [![Set Timeout]({{base_path}}/assets/img/learn/resource-set-amazon-resource-timeout.png)]({{base_path}}/assets/img/learn/resource-set-amazon-resource-timeout.png)
+    [![Set Timeout](../assets/img/learn/resource-set-amazon-resource-timeout.png)](../assets/img/learn/resource-set-amazon-resource-timeout.png)
 
 5. Click **SAVE**.
 
-    [![Save resources]({{base_path}}/assets/img/learn/resource-save.png)]({{base_path}}/assets/img/learn/resource-save.png)
+    [![Save resources](../assets/img/learn/resource-save.png)](../assets/img/learn/resource-save.png)
 
 !!! note
     Parameter mapping (path, query, and header) is not yet supported and you have to add these parameters to the payload before you send it.
@@ -93,7 +93,7 @@ Now, you have created a new REST API successfully.
 1. Click **Lifecycle** to navigate to the API lifecycle.
 2. Click **PUBLISH** to publish the API to the API Developer Portal.
 
-    [![Publish test API]({{base_path}}/assets/img/learn/lifecycle-publish-test-api.png)]({{base_path}}/assets/img/learn/lifecycle-publish-test-api.png)
+    [![Publish test API](../assets/img/learn/lifecycle-publish-test-api.png)](../assets/img/learn/lifecycle-publish-test-api.png)
 
 You have successfully published the AWS Lambda API.
 

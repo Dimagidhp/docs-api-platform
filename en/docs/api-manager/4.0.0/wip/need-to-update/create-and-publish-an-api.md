@@ -1,16 +1,16 @@
 # Create and Publish an API
 
-**API creation** is the process of linking an existing backend API implementation to the [API Publisher]({{base_path}}/get-started/key-concepts) so that you can manage and monitor the [API's lifecycle]({{base_path}}/get-started/key-concepts) , documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher]({{base_path}}/get-started/key-concepts) itself.
+**API creation** is the process of linking an existing backend API implementation to the [API Publisher](../../get-started/key-concepts.md) so that you can manage and monitor the [API's lifecycle](../../get-started/key-concepts.md) , documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../../get-started/key-concepts.md) itself.
 
 !!! note
 Click the following topics for a description of the concepts that you need to know when creating an API:
 
--   [API visibility]({{base_path}}/get-started/key-concepts)
--   [Resources]({{base_path}}/get-started/key-concepts)
--   [Endpoints]({{base_path}}/get-started/key-concepts)
--   [Throttling tiers]({{base_path}}/get-started/key-concepts)
--   [Sequences]({{base_path}}/get-started/key-concepts)
--   [Response caching]({{base_path}}/install-and-setup/setup/advance-configurations/configuring-caching)
+-   [API visibility](../../get-started/key-concepts.md)
+-   [Resources](../../get-started/key-concepts.md)
+-   [Endpoints](../../get-started/key-concepts.md)
+-   [Throttling tiers](../../get-started/key-concepts.md)
+-   [Sequences](../../get-started/key-concepts.md)
+-   [Response caching](../../install-and-setup/setup/advance-configurations/configuring-caching.md)
 
 
 1.  Sign in to the WSO2 API Publisher via `https://<hostname>:9443/publisher` (e.g., `https://localhost:9443/publisher` ). Use **admin** as the username and password.
@@ -21,10 +21,10 @@ Click the following topics for a description of the concepts that you need to kn
     You can go back to the interactive tutorial at a later stage by clicking **API Walkthrough** on the top right corner.
 
 
-    ![]({{base_path}}/assets/attachments/103327814/103327786.png)
+    ![](../../assets/attachments/103327814/103327786.png)
 
 3.  Click **Design a New REST API** and click **Start Creating** .
-    ![]({{base_path}}/assets/attachments/103327814/103327785.png)
+    ![](../../assets/attachments/103327814/103327785.png)
 4.  Give the information in the table below and click **Add** to add the resource.
 
     Field
@@ -60,9 +60,9 @@ Click the following topics for a description of the concepts that you need to kn
         !!! info
         The selection of the HTTP method should match the actual backend resource. For example, if the actual backend contains the GET method to retrieve details of a phone number, that resource should match a GET resource type with a proper context.
 
-    ![]({{base_path}}/assets/attachments/103327814/103327784.png)
+    ![](../../assets/attachments/103327814/103327784.png)
 
-    For more information on URL patterns, see [API Resources]({{base_path}}/get-started/key-concepts) .
+    For more information on URL patterns, see [API Resources](../../get-started/key-concepts.md) .
 
 5.  After you add the resource, click it's `GET` method to expand it. Update the value for **Produces** as `application/xml` and the value for **Consumes** as `application/json` .
 
@@ -77,7 +77,7 @@ Click the following topics for a description of the concepts that you need to kn
     | `PhoneNumber` | Give the phone number to be validated         | query          | string    | True     |
     | `LicenseKey`| Give the license key as 0 for testing purpose | query          | string    | True     |
 
-    ![]({{base_path}}/assets/attachments/103327814/103327783.png)
+    ![](../../assets/attachments/103327814/103327783.png)
 
         !!! info
     HTTP Post
@@ -87,7 +87,7 @@ Click the following topics for a description of the concepts that you need to kn
         !!! note
     Import or Edit API definition
 
-    ![]({{base_path}}/assets/attachments/103327814/103327782.png)
+    ![](../../assets/attachments/103327814/103327782.png)
 
     To import an existing swagger definition from a file or a URL, click **Import** . Click **Edit Source** to manually edit the API swagger definition.
 
@@ -116,7 +116,7 @@ Click the following topics for a description of the concepts that you need to kn
 
 8.  Click the **Managed API** option.
 
-    ![]({{base_path}}/assets/attachments/103327814/103327781.png)
+    ![](../../assets/attachments/103327814/103327781.png)
 
 9.  The **Implement** tab opens. Enter the information in the table below.
 
@@ -155,13 +155,13 @@ Click the following topics for a description of the concepts that you need to kn
 
     For more information on Endpoints, see [Working with Endpoints](https://docs.wso2.com/display/AM2xx/Working+with+Endpoints) .
 
-    ![]({{base_path}}/assets/attachments/103327814/103327780.png)
-    For additional information, see [Enabling CORS for APIs]({{base_path}}/design/advanced-topics/enabling-cors-for-apis) and [Adding Mediation Extensions]({{base_path}}/reference/customize-product/extending-api-manager/extending-gateway/writing-custom-handlers). For details on adding and managing certificates, see [Dynamic SSL Certificate Installation](_Add_SSL_Certificates_for_Endpoints_) .
+    ![](../../assets/attachments/103327814/103327780.png)
+    For additional information, see [Enabling CORS for APIs](../../design/advanced-topics/enabling-cors-for-apis.md) and [Adding Mediation Extensions](../../reference/customize-product/extending-api-manager/extending-gateway/writing-custom-handlers.md). For details on adding and managing certificates, see [Dynamic SSL Certificate Installation](_Add_SSL_Certificates_for_Endpoints_) .
 
         !!! info
     You can deploy your API as a **Prototyped API** in the **Implement** tab. A prototyped API is usually a mock implementation made public in order to get feedback about its usability. You can implement it **inline** or by specifying an **endpoint** .
 
-    ![]({{base_path}}/assets/attachments/103327814/103327779.png)
+    ![](../../assets/attachments/103327814/103327779.png)
 
     You can invoke the API without a subscription after publishing the API to the Developer Portal. For more information, see [Deploy and Test as a Prototype](_Deploy_and_Test_Mock_APIs_) .
 
@@ -195,17 +195,17 @@ Click the following topics for a description of the concepts that you need to kn
     </tbody>
     </table>
 
-    ![]({{base_path}}/assets/attachments/103327814/103327778.png)
+    ![](../../assets/attachments/103327814/103327778.png)
 
         !!! info
     Make Default Version
 
     **Make this the Default Version** checkbox ensures that the API is available in the Gateway without a version specified in the production and sandbox URLs. This option allows you to create a new version of an API and set it as the default version. Then, you can invoke the same resources in the client applications without changing the API gateway URL. This allows you to create new versions of an API with changes, while at the same time allowing existing client applications to be invoked without the client having to change the URLs.
 
-    ![]({{base_path}}/assets/attachments/103327814/103327777.png)
+    ![](../../assets/attachments/103327814/103327777.png)
 
 
-    For more information on **maximum backend throughput** and **advanced throttling policies**, see [Working with Throttling]({{base_path}}/design/rate-limiting/introducing-throttling-use-cases).
+    For more information on **maximum backend throughput** and **advanced throttling policies**, see [Working with Throttling](../../design/rate-limiting/introducing-throttling-use-cases.md).
 
 11. Click **Save & Publish** . This publishes the API that you just created to the Developer Portal so that subscribers can use it.
 
@@ -217,8 +217,8 @@ You have created an API.
 
 **Related Tutorials**
 
--   [Create and Publish an API from a Swagger Definition]({{base_path}}/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition)
--   [Create a Prototyped API with an Inline Script]({{base_path}}/design/prototype-api/create-a-mock-api-with-an-inline-script)
--   [Create a WebSocket API]({{base_path}}/design/create-api/create-streaming-api/create-a-websocket-streaming-api)
--   [Create and Publish a SOAP API]({{base_path}}/design/create-api/create-rest-api/expose-a-soap-service-as-a-rest-api)
+-   [Create and Publish an API from a Swagger Definition](../../design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition.md)
+-   [Create a Prototyped API with an Inline Script](../../design/prototype-api/create-a-mock-api-with-an-inline-script.md)
+-   [Create a WebSocket API](../../design/create-api/create-streaming-api/create-a-websocket-streaming-api.md)
+-   [Create and Publish a SOAP API](../../design/create-api/create-rest-api/expose-a-soap-service-as-a-rest-api.md)
 

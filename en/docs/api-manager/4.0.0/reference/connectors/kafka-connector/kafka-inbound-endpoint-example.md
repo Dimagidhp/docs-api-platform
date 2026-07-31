@@ -4,25 +4,25 @@ The Kafka inbound endpoint acts as a message consumer. It creates a connection t
 
 ## What you'll build
 This sample demonstrates how one way message bridging from Kafka to HTTP can be done using the inbound Kafka endpoint.
-See [Configuring Kafka Inbound Endpoint]({{base_path}}/reference/connectors/kafka-connector/kafka-inbound-endpoint-config/) for more information.
+See [Configuring Kafka Inbound Endpoint](kafka-inbound-endpoint-config.md) for more information.
 
 The following diagram illustrates all the required functionality of the Kafka service that you are going to build. In this example, you only need to consider about the scenario of message consuming.
 
-<img src="{{base_path}}/assets/img/integrate/connectors/kafkainboundendpoint.png" title="Kafka inbound endpoint" width="800" alt="Kafka inbound endpoint"/>
+<img src="../../../assets/img/integrate/connectors/kafkainboundendpoint.png" title="Kafka inbound endpoint" width="800" alt="Kafka inbound endpoint"/>
 
 If you do not want to configure this yourself, you can simply [get the project](#get-the-project) and run it.
 
 ## Set up Kafka
 
-Before you begin, set up Kafka by following the instructions in [Setting up Kafka]({{base_path}}/reference/connectors/kafka-connector/setting-up-kafka/).
+Before you begin, set up Kafka by following the instructions in [Setting up Kafka](setting-up-kafka.md).
 
 ## Configure inbound endpoint using WSO2 Integration Studio
 
 1. Download [WSO2 Integration Studio](https://wso2.com/integration/integration-studio/). Create an **Integration Project** as below. 
-<img src="{{base_path}}/assets/img/integrate/connectors/solution-project.jpg" title="Creating a new Integration Project" width="800" alt="Creating a new Integration Project" />
+<img src="../../../assets/img/integrate/connectors/solution-project.jpg" title="Creating a new Integration Project" width="800" alt="Creating a new Integration Project" />
 
 2. Right click on **Source** -> **main** -> **synapse-config** -> **inbound-endpoints** and add a new **custom inbound endpoint**.</br> 
-<img src="{{base_path}}/assets/img/integrate/connectors/db-event-inbound-ep.png" title="Creating inbound endpoint" width="400" alt="Creating inbound endpoint" style="border:1px solid black"/>
+<img src="../../../assets/img/integrate/connectors/db-event-inbound-ep.png" title="Creating inbound endpoint" width="400" alt="Creating inbound endpoint" style="border:1px solid black"/>
 
 3. Click on **Inbound Endpoint** in the design view and under the `properties` tab, update the class name to `org.wso2.carbon.inbound.kafka.KafkaMessageConsumer`.
 
@@ -71,7 +71,7 @@ Before you begin, set up Kafka by following the instructions in [Setting up Kafk
 **CApp (Carbon Application)** is the deployable artefact on the integration runtime. Let us see how we can export integration logic we developed into a CApp. To export the `Solution Project` as a CApp, a `Composite Application Project` needs to be created. Usually, when a solution project is created, this project is automatically created by Integration Studio. If not, you can specifically create it by navigating to  **File** -> **New** -> **Other** -> **WSO2** -> **Distribution** -> **Composite Application Project**. 
 
 1. Right click on Composite Application Project and click on **Export Composite Application Project**.</br> 
-  <img src="{{base_path}}/assets/img/integrate/connectors/capp-project1.jpg" title="Export as a Carbon Application" width="300" alt="Export as a Carbon Application" />
+  <img src="../../../assets/img/integrate/connectors/capp-project1.jpg" title="Export as a Carbon Application" width="300" alt="Export as a Carbon Application" />
 
 2. Select an **Export Destination** where you want to save the .car file. 
 
@@ -81,8 +81,8 @@ Before you begin, set up Kafka by following the instructions in [Setting up Kafk
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/kafka-connector.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/kafka-connector.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 ## Deployment
@@ -122,7 +122,7 @@ You can download the ZIP file and extract the contents to get the project code.
    The Kafka inbound endpoint gets the messages from the Kafka brokers and logs the messages in the Micro Integrator.
 
 ## Configure inbound endpoint with Kafka Avro message
-You can setup WSO2 Micro Integrator inbound endpoint with Kafka Avro messaging format as well. Follow the instructions on [Setting up Kafka]({{base_path}}/reference/connectors/kafka-connector/setting-up-kafka/) to setup Kafka on the Micro Integrator. In inbound endpoint XML configurations, change the `value.deserializer` parameter to `io.confluent.kafka.serializers.KafkaAvroDeserializer` and `key.deserializer` parameter to `io.confluent.kafka.serializers.KafkaAvroDeserializer`. Add new parameter `schema.registry.url` and add schema registry URL in there. The following is the modiefied sample of the Kafka inbound endpoint:
+You can setup WSO2 Micro Integrator inbound endpoint with Kafka Avro messaging format as well. Follow the instructions on [Setting up Kafka](setting-up-kafka.md) to setup Kafka on the Micro Integrator. In inbound endpoint XML configurations, change the `value.deserializer` parameter to `io.confluent.kafka.serializers.KafkaAvroDeserializer` and `key.deserializer` parameter to `io.confluent.kafka.serializers.KafkaAvroDeserializer`. Add new parameter `schema.registry.url` and add schema registry URL in there. The following is the modiefied sample of the Kafka inbound endpoint:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <inboundEndpoint name="KAFKAListenerEP" sequence="kafka_process_seq" onError="fault" class="org.wso2.carbon.inbound.kafka.KafkaMessageConsumer" suspend="false" xmlns="http://ws.apache.org/ns/synapse">
@@ -146,5 +146,5 @@ Make sure to start Kafka Schema Registry before starting up the Micro Integrator
    
 ## What's next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/install-and-setup/installation/run_in_containers).
-* To customize this example for your own scenario, see [Kafka Inbound Endpoint Configuration]({{base_path}}/reference/connectors/kafka-connector/kafka-inbound-endpoint-config/) documentation.
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).
+* To customize this example for your own scenario, see [Kafka Inbound Endpoint Configuration](kafka-inbound-endpoint-config.md) documentation.

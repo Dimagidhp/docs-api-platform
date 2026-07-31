@@ -21,11 +21,11 @@ An Integration project is a maven multi module project, which will contain all t
 1.  Open **WSO2 Integration Studio**.
 2.  Click **New Integration Project** in the **Getting Started** tab as shown below. 
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/create-integration-project.jpg" width="700">
+    <img src="../../assets/img/integrate/tutorials/common/create-integration-project.jpg" width="700">
 
     This will open the <b>New Integration Project</b> dialog box.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/create-simple-message-project.jpg" width="500">
+    <img src="../../assets/img/integrate/tutorials/common/create-simple-message-project.jpg" width="500">
 
 3.  Enter `SampleServices` as the project name and select the following check boxes to create the required modules.
     -   **Create ESB Configs**
@@ -99,7 +99,7 @@ You will now see the projects listed in the **Project Explorer**.
     </tr>
     </table>
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/119132164.png">
+    <img src="../../assets/img/integrate/tutorials/119132155/119132164.png">
     
 #### Create an Endpoint
 
@@ -175,11 +175,11 @@ Let's create an HTTP endpoint to represent the Hospital Service.
 1. Right click on **Sample Services Configs** module in the Project Explorer and select **Add or Remove Connector/Module**.
 2. Select **Add Connector/module** and click **Next**. You are now connected to the [WSO2 Connector store](https://store.wso2.com).
 3. Find **Email** from the list of connectors and click the **Download** button (for the Email connector). 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132294/import-gmail-connector.jpg" width="500">
+    <img src="../../assets/img/integrate/tutorials/119132294/import-gmail-connector.jpg" width="500">
 
 4. Click **Finish**.
    The connector is now downloaded to your workspace in WSO2 Integration Studio and the connector operations are available in the Email Connector palette.  
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132294/select-connector-dialog.png" width="300">
+    <img src="../../assets/img/integrate/tutorials/119132294/select-connector-dialog.png" width="300">
 
 Let's use these connector operations in the configuration.
 
@@ -223,7 +223,7 @@ You can now start updating the API resource with the mediation flow.
         <td>
           <div class="content-wrapper">
             <p>Follow the steps given below to specify the expression value:</p>
-            <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/expression-value.png">
+            <img src="../../assets/img/integrate/tutorials/119132155/expression-value.png">
           <ol>
               <li>
                 Click the <strong>Ex</strong> button before the <b>Value</b> field. This specifies the value type as <i>expression</i>.
@@ -383,9 +383,9 @@ You can now start updating the API resource with the mediation flow.
 
 10.  Right click on **SampleServicesConnectorExporter** and navigate to **New →  Add/Remove Connectors** and select **Add connector/module** and click on **Next** . Select **Workspace** to list down the connectors that were added.  
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132294/add-remove-connectors.png" width="500">
+    <img src="../../assets/img/integrate/tutorials/119132294/add-remove-connectors.png" width="500">
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132294/connector-select-dialog.png" width="500">
+    <img src="../../assets/img/integrate/tutorials/119132294/connector-select-dialog.png" width="500">
 
 11. Select the Email connector from the list and click **OK** and then **Finish**.
 
@@ -440,9 +440,9 @@ Let's send a request to the API resource. You can use the embedded <b>HTTP Clien
     !!! Tip
         If you don't see the <b>HTTP Client</b> pane, go to <b>Window -> Show View - Other</b> and select <b>HTTP Client</b> to enable the client pane.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
+    <img src="../../assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
     
-2. Enter the request information as given below and click the <b>Send</b> icon (<img src="{{base_path}}/assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
+2. Enter the request information as given below and click the <b>Send</b> icon (<img src="../../assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
     
     <table>
         <tr>

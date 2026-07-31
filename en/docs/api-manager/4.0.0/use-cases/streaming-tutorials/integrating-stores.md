@@ -243,11 +243,11 @@ To try out these queries, simulate events for the streams via the Event Simulato
        
 2. Click the **Event Simulator** icon to open the event simulator.
 
-    ![Event Simulation icon]({{base_path}}/assets/img/streaming/testing-siddhi-applications/event-simulation-icon.png)
+    ![Event Simulation icon](../../assets/img/streaming/testing-siddhi-applications/event-simulation-icon.png)
     
     It opens the left panel for event simulation as follows.
     
-    ![Event Simulation Panel]({{base_path}}/assets/img/streaming//testing-siddhi-applications/event-simulation-panel.png)
+    ![Event Simulation Panel](../../assets/img/streaming/testing-siddhi-applications/event-simulation-panel.png)
     
 3. To simulate purchase events, select `StockManagementApp` for the **Siddhi App Name** field, and `MaterialPurchasesStream` for the **Stream Name** field.
 
@@ -279,7 +279,7 @@ To try out these queries, simulate events for the streams via the Event Simulato
       
       The following table is displayed.
       
-      ![Saved Purchase Records]({{base_path}}/assets/img/streaming/integrating-stores/saved-purchase-records.png)
+      ![Saved Purchase Records](../../assets/img/streaming/integrating-stores/saved-purchase-records.png)
     
     - For the `dispatches` database:
     
@@ -293,7 +293,7 @@ To try out these queries, simulate events for the streams via the Event Simulato
       
       The following table is displayed.
     
-      ![Saved Dispatch Records]({{base_path}}/assets/img/streaming/integrating-stores/saved-dispatch-records.png)
+      ![Saved Dispatch Records](../../assets/img/streaming/integrating-stores/saved-dispatch-records.png)
          
 #### Retrieve Records
  
@@ -391,7 +391,7 @@ Assume that the Factory Manager needs to view all the purchase records for honey
 
     The following is logged in the terminal.
     
-    ![Retrieved Event]({{base_path}}/assets/img/streaming/integrating-stores/retrieved-event.png)
+    ![Retrieved Event](../../assets/img/streaming/integrating-stores/retrieved-event.png)
         
 #### Update or insert records
  
@@ -499,7 +499,7 @@ To try this, follow the steps below:
        
         The following is  displayed.
         
-        ![Saved Stock Records]({{base_path}}/assets/img/streaming/integrating-stores/saved-stock-records.png)
+        ![Saved Stock Records](../../assets/img/streaming/integrating-stores/saved-stock-records.png)
         
         Here, the single record displayed is the event you sent. This event is inserted as a new record because the `StockTable` table did not have any records.
        
@@ -521,7 +521,7 @@ To try this, follow the steps below:
         
         The following is  displayed.
         
-        ![Updated Stock Records]({{base_path}}/assets/img/streaming/integrating-stores/updated-stock-records.png)
+        ![Updated Stock Records](../../assets/img/streaming/integrating-stores/updated-stock-records.png)
         
         Again, a single record  is displayed. Although value for the `name` attribute is the same, the value for the `amount` attribute has been updated from `150` to `200`. This is because `name` is the primary key of the `StockTable` table and at any given time, there can be only one record with a specific name for the `name` attribute. Therefore, because you simulated two events with the same value for the `name` attribute, the second event updated the first one.
     
@@ -632,7 +632,7 @@ To update the `StockTable` table via streams, follow the steps below:
        
        The following is  displayed.
        
-       ![Saved Stock Records]({{base_path}}/assets/img/streaming/integrating-stores/edited-stock-records.png)
+       ![Saved Stock Records](../../assets/img/streaming/integrating-stores/edited-stock-records.png)
        
        Here, the single record displayed is the event you sent. This event is inserted as a new record because the `StockTable` table did not have any records. 
  
@@ -750,7 +750,7 @@ To delete records in the `StockTable` table via streams, follow the steps below:
        
 ### Perform CRUD operations via REST API
 
-In this section, let's perform CRUD operations via the [Store API]({{base_path}}/develop/streaming-apps/store-apis)
+In this section, let's perform CRUD operations via the [Store API](../../develop/streaming-apps/store-apis.md)
 
 #### Insert records
 
@@ -772,7 +772,7 @@ select * from StockTable;
 
 The following is displayed:
 
-![Results for Insert operation]({{base_path}}/assets/img/streaming/integrating-stores/insert-operation-results.png)
+![Results for Insert operation](../../assets/img/streaming/integrating-stores/insert-operation-results.png)
 
 #### Retrieve records
 
@@ -808,7 +808,7 @@ select * from StockTable;
 
 The following is displayed:
 
-![Results for Insert operation]({{base_path}}/assets/img/streaming/integrating-stores/upsert-operation-results-for-update.png)
+![Results for Insert operation](../../assets/img/streaming/integrating-stores/upsert-operation-results-for-update.png)
 
 Now let's send an event where the value for the `name` attribute is different to that of the existing value in the `StockTable` table as follows:
 
@@ -828,7 +828,7 @@ select * from StockTable;
 
 The following is displayed:
 
-![Results for Insert operation]({{base_path}}/assets/img/streaming/integrating-stores/upsert-operation-results-for-insert.png)
+![Results for Insert operation](../../assets/img/streaming/integrating-stores/upsert-operation-results-for-insert.png)
 
 #### Update records
 
@@ -850,7 +850,7 @@ select * from StockTable;
 
 The following is displayed:
 
-![Results for Update operation]({{base_path}}/assets/img/streaming/integrating-stores/update-operation-results.png)
+![Results for Update operation](../../assets/img/streaming/integrating-stores/update-operation-results.png)
 
 #### Delete records
 
@@ -872,7 +872,7 @@ select * from StockTable;
 
 The following is displayed:
 
-![Results for Delete operation]({{base_path}}/assets/img/streaming/integrating-stores/delete-operation-results.png)   
+![Results for Delete operation](../../assets/img/streaming/integrating-stores/delete-operation-results.png)   
 
 ### Manipulate data in stores via SQL queries
 
@@ -1001,4 +1001,4 @@ To start creating the Siddhi application with the required tables, follow the st
    
    The following is displayed:
    
-   ![Updated Stock]({{base_path}}/assets/img/streaming/integrating-stores/updated-table-after-sql-query.png)
+   ![Updated Stock](../../assets/img/streaming/integrating-stores/updated-table-after-sql-query.png)

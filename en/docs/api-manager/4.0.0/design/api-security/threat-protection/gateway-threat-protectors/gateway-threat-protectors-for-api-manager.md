@@ -2,9 +2,9 @@
 
 WSO2 API Manager has three types of threat protectors for the Gateway.
 
--   [Regular Expression Threat Protection for API Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/api-gateway/threat-protectors/regular-expression-threat-protection-for-api-gateway/)
--   [JSON Threat Protection for API Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/api-gateway/threat-protectors/json-threat-protection-for-api-gateway/)
--   [XML Threat Protection for API Gateway]({{base_path}}/deploy-and-publish/deploy-on-gateway/api-gateway/threat-protectors/xml-threat-protection-for-api-gateway/)
+-   [Regular Expression Threat Protection for API Gateway](../../../../deploy-and-publish/deploy-on-gateway/api-gateway/threat-protectors/regular-expression-threat-protection-for-api-gateway.md)
+-   [JSON Threat Protection for API Gateway](../../../../deploy-and-publish/deploy-on-gateway/api-gateway/threat-protectors/json-threat-protection-for-api-gateway.md)
+-   [XML Threat Protection for API Gateway](../../../../deploy-and-publish/deploy-on-gateway/api-gateway/threat-protectors/xml-threat-protection-for-api-gateway.md)
 
 ### Combining threat protectors
 
@@ -47,8 +47,8 @@ You can add custom sequences depending on the threats that you need to address. 
 2.  Go to **Runtime Configurations** Tab of the relevant API.
 3.  Click **Message Mediation** under **Request**.
       
-      <a href="{{base_path}}/assets/img/learn/request-message-mediation.png"><img src="{{base_path}}/assets/img/learn/request-message-mediation.png" width="70%"></a>
+      <a href="../../../../assets/img/learn/request-message-mediation.png"><img src="../../../../assets/img/learn/request-message-mediation.png" width="70%"></a>
 
 4.  Select and upload your custom sequence.
    
-      <a href="{{base_path}}/assets/img/learn/add-custom-mediation-policy.png"><img src="{{base_path}}/assets/img/learn/add-custom-mediation-policy.png" width="70%"></a>
+      <a href="../../../../assets/img/learn/add-custom-mediation-policy.png"><img src="../../../../assets/img/learn/add-custom-mediation-policy.png" width="70%"></a>

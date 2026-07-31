@@ -7,7 +7,7 @@ The following are some of the ways to troubleshoot errors that you may encounter
 Once you add an artifact, you need to refresh the `CompositeApplication.pom`
 file to reflect new changes on the Composite Application.
 
-![troubleshooting]({{base_path}}/assets/img/integrate/workbench/refresh-integration-studio.png)
+![troubleshooting](../../assets/img/integrate/workbench/refresh-integration-studio.png)
 
 ## Restoring the project perspective
 
@@ -33,7 +33,7 @@ When you use **display scaling** that exceeds 150% (in **Windows** or **Linux** 
 
 ## Error creating Docker image (on macOS)
 
-When you run WSO2 Integration Studio on MacOS, you will sometimes get the following error when you [generate a Docker image]({{base_path}}/integrate/develop/generate-docker-image) of your integration artifacts: "**Error creating Docker image**".
+When you run WSO2 Integration Studio on MacOS, you will sometimes get the following error when you [generate a Docker image](generate-docker-image.md) of your integration artifacts: "**Error creating Docker image**".
 
 The details of the error are given below. To access WSO2 Integration Studio errors, see the instructions on [viewing the WSO2 Integration Studio error log](#view-wso2-integration-studio-error-log)
 
@@ -71,11 +71,11 @@ at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
 
 This error is because the **Docker UI** installation on your MacOS has a feature that stores Docker credentials on Mac Keychain. To fix this, you must disable this feature from the Docker UI. Also, this will automatically be saved in your `~/.docker/config.json` file.
 
-![docker ui]({{base_path}}/assets/img/integrate/docker-ui.png)
+![docker ui](../../assets/img/integrate/docker-ui.png)
 
 ## Error creating Docker image (on Windows)
 
-When you build a Docker image either via [Docker Exporter Project]({{base_path}}/integrate/develop/create-docker-project) or [Kubernetes Exporter Project]({{base_path}}/integrate/develop/create-kubernetes-project) in WSO2 Integration Studio on Windows, you may sometimes get the following error: "**Docker image generation failed**".
+When you build a Docker image either via [Docker Exporter Project](create-docker-project.md) or [Kubernetes Exporter Project](create-kubernetes-project.md) in WSO2 Integration Studio on Windows, you may sometimes get the following error: "**Docker image generation failed**".
 
 The details of the error are given below. To access WSO2 Integration Studio errors, see the instructions on [viewing the WSO2 Integration Studio error log](#view-wso2-integration-studio-error-log)
 
@@ -112,11 +112,11 @@ Follow the steps given below.
 1.  Right-click the Docker icon in the **Notifications** area (or System tray) to open the [**Docker Desktop**](https://docs.docker.com/docker-for-windows/) menu.
 2.  Select **Settings**.
 
-    ![Docker Desktop menu]({{base_path}}/assets/img/integrate/docker-desktop-menu-windows.png)
+    ![Docker Desktop menu](../../assets/img/integrate/docker-desktop-menu-windows.png)
 
 3.  In the **Settings** dialog box that opens, select **Expose daemon on TCP without TLS**.
 
-    ![Docker settings tab]({{base_path}}/assets/img/integrate/docker-ui-setting-windows.png)
+    ![Docker settings tab](../../assets/img/integrate/docker-ui-setting-windows.png)
 
 4.  Restart Docker to apply the changes.
 
@@ -133,6 +133,6 @@ To get details of a WSO2 Integration Studio error:
 
     This will open the **Error Log** tab in WSO2 Integration Studio:
 
-    ![error log tab]({{base_path}}/assets/img/integrate/error-log-tab.png)
+    ![error log tab](../../assets/img/integrate/error-log-tab.png)
 
 3.  Double-click the required error to see the details.

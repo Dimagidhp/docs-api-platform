@@ -5,8 +5,8 @@ Follow the steps given below to set up the required MySQL databases for your Mic
 !!! Tip
 	WSO2 Micro Integrator requires databases for the following scenarios: 
 
-	-	<a href='{{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei#cluster-coordination'>cluster coordination</a>
-    -	<a href='{{base_path}}/install-and-setup/setup/mi-setup/user_stores/setting_up_a_userstore'>using an RDBMS user store</a>
+	-	<a href='../deployment/deploying_wso2_ei.md#cluster-coordination'>cluster coordination</a>
+    -	<a href='../user_stores/setting_up_a_userstore.md'>using an RDBMS user store</a>
     -	<a href='{{base_path}}/install-and-setup/setup/mi-setup/deployment/deployment_checklist#monitoring-transaction-counts'>monitoring transaction counts</a>.
 
 ## Setting up a MySQL server
@@ -35,16 +35,16 @@ You can run the scripts on one database instance or set up separate instances fo
 	</tr>
 	<tr>
 		<td>mysql_cluster.sql</td>
-		<td>This script creates the database tables that are required for <a href='{{base_path}}/install-and-setup/setup/mi-setup/deployment/deploying_wso2_ei/#cluster-coordination'>cluster coordination</a> (i.e., coordinating the server nodes in your VM deployment). This is only applicable if you have stateful integration artifacts deployed in a clustered setup.
+		<td>This script creates the database tables that are required for <a href='../deployment/deploying_wso2_ei.md#cluster-coordination'>cluster coordination</a> (i.e., coordinating the server nodes in your VM deployment). This is only applicable if you have stateful integration artifacts deployed in a clustered setup.
 		</td>
 	</tr>
 	<tr>
 		<td>mysql_user.sql</td>
-		<td>This script creates the database tables that are required for storing users and roles. This is only required if you have configured an <a href='{{base_path}}/install-and-setup/setup/mi-setup/user_stores/setting_up_a_userstore'>RDBMS user store</a>.</td>
+		<td>This script creates the database tables that are required for storing users and roles. This is only required if you have configured an <a href='../user_stores/setting_up_a_userstore.md'>RDBMS user store</a>.</td>
 	</tr>
 	<tr>
 		<td>mysql_transaction_count.sql</td>
-		<td>This script creates the database tables that are required for storing the transaction counts. This is only required if you want to <a href='{{base_path}}/install-and-setup/setup/deployment-best-practices/monitoring-transaction-counts/'>monitor transaction counts</a> in your deployment.</td>
+		<td>This script creates the database tables that are required for storing the transaction counts. This is only required if you want to <a href='../../deployment-best-practices/monitoring-transaction-counts.md'>monitor transaction counts</a> in your deployment.</td>
 	</tr>
 </table>
 
@@ -132,4 +132,4 @@ update_interval = 2
 
 {!includes/integration/pull-content-user-store-db-id.md!}
 
-See the descriptions of [database connection parameters]({{base_path}}/reference/config-catalog-mi/#database-connection).
+See the descriptions of [database connection parameters](../../../../reference/config-catalog-mi.md#database-connection).

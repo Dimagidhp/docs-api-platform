@@ -36,7 +36,7 @@ Syntax:
 
 ### get-property() function
 
-The `get-property()` function allows any XPath expression used in a configuration to look up information from the current message context. Using the [Property mediator]({{base_path}}/reference/mediators/property-mediator), you can retrieve properties from the message context and header.
+The `get-property()` function allows any XPath expression used in a configuration to look up information from the current message context. Using the [Property mediator](../property-mediator.md), you can retrieve properties from the message context and header.
 
 The syntax of the function takes the following format.
 
@@ -53,7 +53,7 @@ If you provide only the property name without the scope, the default 
     When the result of an XPath evaluation results in a single XML node, the
     evaluator will return the text content of this node by default
     (equivalent of doing /root/body/node/text()). If you want to retrieve
-    the node itself, you can configure the [Enrich mediator]({{base_path}}/reference/mediators/enrich-mediator) as shown
+    the node itself, you can configure the [Enrich mediator](../enrich-mediator.md) as shown
     in the following example.
     ``` xml
     <inSequence>
@@ -102,7 +102,7 @@ scope.
 | OperationName   | Operation name corresponding to the message. A proxy service with a WSDL can have different operations. If the WSDL is not defined, ESB defines fixed operations. |
 
   
-To access a property with the `synapses` cope inside the `mediate()` method of a mediator, you can include the following configuration in a custom mediator created using the [Class mediator]({{base_path}}/reference/mediators/class-mediator):
+To access a property with the `synapses` cope inside the `mediate()` method of a mediator, you can include the following configuration in a custom mediator created using the [Class mediator](../class-mediator.md):
 
 ``` java
 public boolean mediate(org.apache.synapse.MessageContext mc) {  
@@ -125,7 +125,7 @@ using the following syntax.
 Syntax:  
 `get-property('axis2', String propertyName)`
 
-To access a property with the `axis2` scope inside the `mediate()` method of a mediator, you can include the following configuration in a custom mediator created using the [Class mediator]({{base_path}}/reference/mediators/class-mediator):
+To access a property with the `axis2` scope inside the `mediate()` method of a mediator, you can include the following configuration in a custom mediator created using the [Class mediator](../class-mediator.md):
 
 ``` java
 public boolean mediate(org.apache.synapse.MessageContext mc) {  
@@ -145,7 +145,7 @@ This is similar to the `synapse`
 scope. The difference is that it can be accessed inside the
 `mediate()` method of a mediator by including one of
 the following configurations in a custom mediator, created using the
-[Class mediator]({{base_path}}/reference/mediators/class-mediator) :
+[Class mediator](../class-mediator.md) :
 
 ``` java
 public boolean mediate(org.apache.synapse.MessageContext mc) {  
@@ -214,7 +214,7 @@ given property with the `operation` scope only exists
 in a single request and can be accessed by a single resource. The
 properties in this scope are passed to the error handler when the
 `FORCE_ERROR_ON_SOAP_FAULT` property is set to
-`true`. See `FORCE_ERROR_ON_SOAP_FAULT` section in [Generic Properties]({{base_path}}/reference/mediators/property-reference/generic-properties) for more information.
+`true`. See `FORCE_ERROR_ON_SOAP_FAULT` section in [Generic Properties](generic-properties.md) for more information.
 
 Syntax:  
 `         get-property('operation', String propertyName)        `
@@ -242,7 +242,7 @@ The SOAP 1.1 or 1.2 body element. For example, the expression **$body//getQuote*
 
 **Example of $body usage**:
 
-1.  Deploy the following proxy service using instructions in [Creating a Proxy Service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service).  
+1.  Deploy the following proxy service using instructions in [Creating a Proxy Service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md).  
       
     Note the property, `<property xmlns:m0="http://services.samples" name="stockprop" expression="$body//m0:getQuote"/>` in the configuration. It is used to log the first `<m0:getQuote>` element of the request SOAP body.
 
@@ -288,7 +288,7 @@ below.
 
 **Example of $header usage** :
 
-1.  Deploy the following proxy service using instructions in [Creating a Proxy Service]({{base_path}}/develop/creating-artifacts/creating-a-proxy-service).  
+1.  Deploy the following proxy service using instructions in [Creating a Proxy Service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md).  
       
     Note the property, `<property xmlns:wsa="http://www.w3.org/2005/08/addressing" name="stockprop" expression="$header/wsa:To"/> ` in the configuration. It is used to log the value of **wsa:To**
     header of the SOAP request.
@@ -337,7 +337,7 @@ example below.
 
 **Example of $axis2 usage** :
 
-1.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service]({{base_path}}/develop/creating-artifacts/creating-a-proxy-service).  
+1.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md).  
       
     Note the property, ` <property name="stockprop" expression="$axis2:REST_URL_POSTFIX"/>` in the configuration which is used to log the REST_URL_POSTFIX
     value of the request message.
@@ -380,7 +380,7 @@ In this example, the property definition,
 is equivalent to
 `<property name="stockprop" expression="get-property('axis2','REST_URL_POSTFIX')"/>`
 
-Similarly, you can use $axis2 prefix with [HTTP Transport Properties]({{base_path}}/reference/mediators/property-reference/http-transport-properties).
+Similarly, you can use $axis2 prefix with [HTTP Transport Properties](http-transport-properties.md).
 
 ### $ctx
 
@@ -392,7 +392,7 @@ This example sends a request to a sample proxy service, and sets the
 target endpoint to a non-existent endpoint reference key. It causes a
 mediation fault, which triggers the fault sequence.
 
-1.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service]({{base_path}}/develop/creating-artifacts/creating-a-proxy-service).  
+1.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md).  
       
     Note the property, `<property name="stockerrorprop" expression="$ctx:ERROR\_MESSAGE"/\>` in the fault sequence configuration. It is used to log the error message that occurs due to a  mediation fault.
 
@@ -435,7 +435,7 @@ name="stockerrorprop" expression="$ctx:ERROR\_MESSAGE"/\> is equivalent
 to \<property name="stockerrorprop"
 expression="get-property('ERROR\_MESSAGE')"/\>.  
   
-Similarly, you can use $ctx prefix with [Generic Properties]({{base_path}}/reference/mediators/property-reference/generic-properties).
+Similarly, you can use $ctx prefix with [Generic Properties](generic-properties.md).
 
 ### $trp
 
@@ -447,7 +447,7 @@ regarded as the same. We have discussed an example below.
 
 **Example of $trp usage:**
 
-1.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service]({{base_path}}/develop/creating-artifacts/creating-a-proxy-service).  
+1.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md).  
       
     Note the property, \<property name="stockprop"
     expression="$trp:Content-Type"/\> in the configuration, which is
@@ -491,7 +491,7 @@ expression="$trp:Content-Type"/\> is equivalent to \<property
 name="stockprop"
 expression="get-property('transport','Content-Type')"/\>. Similarly, you
 can use $trp prefix with [HTTP Transport
-Properties]({{base_path}}/reference/mediators/property-reference/http-transport-properties/) .
+Properties](http-transport-properties.md) .
 
 ### $url
 
@@ -499,7 +499,7 @@ The prefix used to get the URI element of a request URL.
 
 **Example of $url usage:**
 
-1.  Create a REST API with the following configuration using instructions given in page [Working with APIs]({{base_path}}/reference/mediators/property-reference/generic-Properties).
+1.  Create a REST API with the following configuration using instructions given in page [Working with APIs](generic-Properties.md).
 
     ``` xml
     <api xmlns="http://ws.apache.org/ns/synapse" name="Editing" context="/editing">
@@ -532,11 +532,11 @@ The prefix used to get the URI element of a request URL.
 
 The prefix used to refer to a particular parameter value passed
 externally by an invoker such as the [Call Template
-Mediator]({{base_path}}/reference/mediators/call-template-mediator).
+Mediator](../call-template-mediator.md).
 
 **Example of $func usage:**
 
-1.  Add a sequence template with the following configuration. See [Adding a New Sequence Template]({{base_path}}/integrate/develop/creating-artifacts/creating-reusable-sequences) for detailed instructions.
+1.  Add a sequence template with the following configuration. See [Adding a New Sequence Template](../../../integrate/develop/creating-artifacts/creating-reusable-sequences.md) for detailed instructions.
 
     ``` xml
     <template xmlns="http://ws.apache.org/ns/synapse" name="HelloWordLogger">
@@ -548,7 +548,7 @@ Mediator]({{base_path}}/reference/mediators/call-template-mediator).
     </template>
     ```
 
-2.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service]({{base_path}}/develop/creating-artifacts/creating-a-proxy-service).
+2.  Deploy the following proxy service. For instructions, see [Creating a Proxy Service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md).
 
     ``` xml
     <proxy xmlns="http://ws.apache.org/ns/synapse"
@@ -593,7 +593,7 @@ Prefix used to get a SOAP 1.1 or 1.2 envelope level element. For example, to get
 
 **Example of $env usage:**
 
-1.  Create an API with the following configuration. For information on how to create an API, see [Working with APIs]({{base_path}}/reference/mediators/property-reference/generic-Properties).
+1.  Create an API with the following configuration. For information on how to create an API, see [Working with APIs](generic-Properties.md).
 
     ``` xml
     <api context="/soapEnvelopeTest" name="SoapEnvelopeTest">

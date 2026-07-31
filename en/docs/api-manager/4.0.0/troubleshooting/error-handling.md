@@ -130,7 +130,7 @@ Given below are some error codes and their meanings.
 <tr class="even">
 <td><code>900905</code></td>
 <td><p>Incorrect access token type is provided</p></td>
-<td><p>The access token type used is not supported when invoking the API. The supported access token types are application and user accesses tokens. See <a href="{{base_path}}/get-started/key-concepts/#access-token">Access Tokens</a>.</p></td>
+<td><p>The access token type used is not supported when invoking the API. The supported access token types are application and user accesses tokens. See <a href="../get-started/key-concepts.md#access-token">Access Tokens</a>.</p></td>
 <td>Invoke an API with application token, where the resource only allows application user tokens</td>
 </tr>
 <tr class="odd">
@@ -317,7 +317,7 @@ Therefore,
 Error code = 101504 + 3 = 101507
 
 These Transport error codes are used in [Advanced Configurations of
-Endpoints]({{base_path}}/design/endpoints/endpoint-types/)
+Endpoints](../design/endpoints/endpoint-types.md)
 .
 
 ### Custom error messages

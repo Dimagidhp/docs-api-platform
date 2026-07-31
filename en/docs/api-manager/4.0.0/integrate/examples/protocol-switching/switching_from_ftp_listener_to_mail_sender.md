@@ -40,12 +40,12 @@ Following are the integration artifacts that we can used to implement this scena
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Add [sample_proxy_1.wsdl](https://github.com/wso2-docs/WSO2_EI/blob/master/samples-protocol-switching/sample_proxy_1.wsdl) as a [registry resource]({{base_path}}/integrate/develop/creating-artifacts/creating-registry-resources) (change the registry path of the proxy accordingly). 
-4. Create the proxy service with the [VFS configurations parameters given above]({{base_path}}/reference/config-catalog/#vfs-transport).
-5. Configure [MailTo transport sender]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transports/#configuring-the-mailto-transport).
-6. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator and start the Micro Integrator.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Add [sample_proxy_1.wsdl](https://github.com/wso2-docs/WSO2_EI/blob/master/samples-protocol-switching/sample_proxy_1.wsdl) as a [registry resource](../../develop/creating-artifacts/creating-registry-resources.md) (change the registry path of the proxy accordingly). 
+4. Create the proxy service with the [VFS configurations parameters given above](../../../reference/config-catalog.md#vfs-transport).
+5. Configure [MailTo transport sender](../../../install-and-setup/setup/mi-setup/transport_configurations/configuring-transports.md#configuring-the-mailto-transport).
+6. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator and start the Micro Integrator.
 
 Set up the back-end service.
 

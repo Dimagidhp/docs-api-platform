@@ -17,21 +17,21 @@ Follow the instructions below to create a new folder:
 
 2. In the left pane, click the **Dashboards** icon, and then click **Manage**.
 
-     [![Manage Grafana Dashboard]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/manage-grafana-dashboard.png){: style="width:20%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/manage-grafana-dashboard.png)
+     [![Manage Grafana Dashboard](../../assets/img/streaming/managing-grafana-dashboard/manage-grafana-dashboard.png){: style="width:20%"}](../../assets/img/streaming/managing-grafana-dashboard/manage-grafana-dashboard.png)
     
      This opens the **Dashboards**/**Manage** tab. 
     
-     [![Managing Grafana Dashboard]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/managing-dashboards.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/managing-dashboards.png)
+     [![Managing Grafana Dashboard](../../assets/img/streaming/managing-grafana-dashboard/managing-dashboards.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/managing-dashboards.png)
     
 3. Click **New Folder**. In the **Folder Name** field that appears, enter a name (e.g., `cdc-statistics`) for the new folder that you are creating. Then click **Create**.
 
 4. Navigate back to the **Dashboards**/**Manage** tab. You can do this by clicking **Manage Dashboards** in the message that appears in the page of your new folder.
 
-     [![New Folder]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/new-folder-page.png){: style="width:60%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/new-folder-page.png)
+     [![New Folder](../../assets/img/streaming/managing-grafana-dashboard/new-folder-page.png){: style="width:60%"}](../../assets/img/streaming/managing-grafana-dashboard/new-folder-page.png)
     
      The new folder you created appears as shown in the following image.
     
-     [![View New Folder]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/view-new-folder.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/view-new-folder.png)
+     [![View New Folder](../../assets/img/streaming/managing-grafana-dashboard/view-new-folder.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/view-new-folder.png)
     
 ### Moving dashboards between folders
 
@@ -39,11 +39,11 @@ Follow the instructions below to move selected dashboards to a specific folder:
 
 1. In the **Dashboards**/**Manage** tab, select the dashboards you want to move. Then click **Move**.
 
-     [![Move dashboards]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/move-dashboard.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/move-dashboard.png)
+     [![Move dashboards](../../assets/img/streaming/managing-grafana-dashboard/move-dashboard.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/move-dashboard.png)
     
 2. In the **Choose Dashboard Folder** dialog box that appears, select the folder to which you want to move the selected dashboards.
     
-     [![Select Dashboard Folder]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/select-dashboard-folder.png)]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/select-dashboard-folder.png)
+     [![Select Dashboard Folder](../../assets/img/streaming/managing-grafana-dashboard/select-dashboard-folder.png)](../../assets/img/streaming/managing-grafana-dashboard/select-dashboard-folder.png)
     
 3. Click **Move** to move the selected dashboards. A message appears to inform that the selected dashboards are successfully moved, and the **Dashboards**/**Manage** tab displays the selected dashboards under the folder you selected to move them.
 
@@ -54,6 +54,6 @@ Follow the instructions below to move selected dashboards to a specific folder:
 
 In the **Dashboards**/**Manage** tab, select the dashboard(s) you want to delete. Then click **Delete**.
 
-[![Move dashboards]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/delete-dashboard.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/managing-grafana-dashboard/delete-dashboard.png)
+[![Move dashboards](../../assets/img/streaming/managing-grafana-dashboard/delete-dashboard.png){: style="width:80%"}](../../assets/img/streaming/managing-grafana-dashboard/delete-dashboard.png)
 
 In the message that appears to confirm whether you want to delete the dashboard, click *Delete*.

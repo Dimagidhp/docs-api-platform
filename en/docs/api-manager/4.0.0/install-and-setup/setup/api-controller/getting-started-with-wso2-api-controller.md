@@ -356,7 +356,7 @@ For more information, see [Download and Initialize the apictl](#download-and-ini
         ```
 
         !!!note
-            Output of the `get envs` command can be formatted with Go Templates. For more information on formatting the get commands, see [Formatting the outputs of get commands]({{base_path}}/install-and-setup/setup/api-controller/advanced-topics/formatting-the-output-of-get-command).
+            Output of the `get envs` command can be formatted with Go Templates. For more information on formatting the get commands, see [Formatting the outputs of get commands](advanced-topics/formatting-the-output-of-get-command.md).
 
         !!!note
             `apictl list envs` command has been deprecated from the apictl 4.0.0 onwards. Instead use `apictl get envs` as shown above. 

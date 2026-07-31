@@ -4,7 +4,7 @@ Siddhi Server Statistics Dashboard represents a detailed view of the active serv
 
 The information displayed is as follows.
 
-![Servers up/down]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/active_servers_graph.png)
+![Servers up/down](../../assets/img/streaming/streaming-integrator-grafana-dashboard/active_servers_graph.png)
 
  This indicates the number of active servers against time. When a new server is started, it is indicated by a vertical line. You can move the cursor over this vertical line to check the host and port at which the new active server is running.
 
@@ -23,7 +23,7 @@ The information displayed is as follows.
 
 ## Siddhi App Count
 
-![Siddhi app count]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/siddhi_app_count.png)
+![Siddhi app count](../../assets/img/streaming/streaming-integrator-grafana-dashboard/siddhi_app_count.png)
 
  This indicates the number of active servers against time. When a new server is started, it is indicated by a vertical line. You can move the cursor over this vertical line to check the host and port at which the new active server is running.
 
@@ -35,19 +35,19 @@ This allows you to get an overall understanding of the level of activity carried
 
 !!! tip "Recommended action"
     If the Siddhi application count is relatively high, you can check the throughput for each Siddhi application to identify the Siddhi applications that you can remove from your Streaming Integrator deployment to reduce the system overhead. To do this, you can filter statistics for each individual Siddhi application in the following dashboards:<br/><br/>
-    - [Siddhi Stream Statistics]({{base_path}}/observe/si-observe/viewing-stream-statistics)<br/>
-    - [Siddhi Source Statistics]({{base_path}}/observe/si-observe/viewing-source-statistics)<br/>
-    - [Siddhi Sink Statistics]({{base_path}}/observe/si-observe/viewing-sink-statistics)<br/>
-    - [Siddhi Query Statistics]({{base_path}}/observe/si-observe/viewing-query-statistics)<br/>
-    - [Siddhi Window Statistics]({{base_path}}/observe/si-observe/viewing-window-statistics)<br/>
-    - [Siddhi Trigger Statistics]({{base_path}}/observe/si-observe/viewing-trigger-statistics)<br/>
-    - [Siddhi Table Statistics]({{base_path}}/observe/si-observe/viewing-table-statistics)<br/>
-    - [Siddhi Aggregation Statistics]({{base_path}}/observe/si-observe/viewing-aggregation-statistics)<br/>
-    - [Siddhi On Demand Query Statistics]({{base_path}}/observe/si-observe/viewing-on-demand-query-statistics)
+    - [Siddhi Stream Statistics](viewing-stream-statistics.md)<br/>
+    - [Siddhi Source Statistics](viewing-source-statistics.md)<br/>
+    - [Siddhi Sink Statistics](viewing-sink-statistics.md)<br/>
+    - [Siddhi Query Statistics](viewing-query-statistics.md)<br/>
+    - [Siddhi Window Statistics](viewing-window-statistics.md)<br/>
+    - [Siddhi Trigger Statistics](viewing-trigger-statistics.md)<br/>
+    - [Siddhi Table Statistics](viewing-table-statistics.md)<br/>
+    - [Siddhi Aggregation Statistics](viewing-aggregation-statistics.md)<br/>
+    - [Siddhi On Demand Query Statistics](viewing-on-demand-query-statistics.md)
 
 ## Server Statistics Summary Table
 
-![Server statistics summary]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/server_statistics_summary.png)
+![Server statistics summary](../../assets/img/streaming/streaming-integrator-grafana-dashboard/server_statistics_summary.png)
 
  This lists the currently active Streaming Integrator servers and displays the following for each server:
   - The total events received by the server
@@ -66,7 +66,7 @@ To evaluate the performance of each server as follows:
  
 ## Overall Throughput
 
-![Overall throughput]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/overall_throughput_graph.png)
+![Overall throughput](../../assets/img/streaming/streaming-integrator-grafana-dashboard/overall_throughput_graph.png)
 
  This shows the overall throughput of all the servers in your current Streaming Integrator deployment. 
 
@@ -79,7 +79,7 @@ To monitor the overall throughput and evaluate it against other statistics such 
  
 ## System Load Average
 
-![System load average]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/system_load_average_graph.png)
+![System load average](../../assets/img/streaming/streaming-integrator-grafana-dashboard/system_load_average_graph.png)
 
  This shows the average system load of your current Streaming Integrator deployment.
  
@@ -92,7 +92,7 @@ To monitor the system load average and compare it with other statistics such as 
  
 ## CPU Usage
 
-![CPU usage]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/cpu_usage_graph.png)
+![CPU usage](../../assets/img/streaming/streaming-integrator-grafana-dashboard/cpu_usage_graph.png)
 
   This shows the CPU usage of your current Streaming Integrator deployment.
   
@@ -105,7 +105,7 @@ To monitor the CPU usage of your current Streaming Integrator deployment and to 
  
 ## Memory Usage
 
-![Memory usage]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/memory_usage_graph.png)
+![Memory usage](../../assets/img/streaming/streaming-integrator-grafana-dashboard/memory_usage_graph.png)
 
  This shows the memory usage of your current Streaming Integrator deployment.
 
@@ -119,7 +119,7 @@ To monitor the memory usage of your Streaming Integrator deployment and allocate
 
 ## JVM Physical Memory
 
-![JVM physical memory]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/jvm_physical_memory_usage.png)
+![JVM physical memory](../../assets/img/streaming/streaming-integrator-grafana-dashboard/jvm_physical_memory_usage.png)
 
 The amount of JVM physical memory consumed by your WSO2 Streaming Integrator deployment over time.
 
@@ -129,7 +129,7 @@ You can use these statistics to profile your JVM.
 
 ## JVM Threads
 
-![JVM threads]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/jvm_threads.png)
+![JVM threads](../../assets/img/streaming/streaming-integrator-grafana-dashboard/jvm_threads.png)
 
 This shows the number of JVM threads that are currently active.
 
@@ -139,7 +139,7 @@ You can use these statistics to profile your JVM.
 
 ## JVM Class Load
 
-![JVM class load]({{base_path}}/assets/img/streaming/streaming-integrator-grafana-dashboard/jvm_class_load.png)
+![JVM class load](../../assets/img/streaming/streaming-integrator-grafana-dashboard/jvm_class_load.png)
 
 **Purpose**
 

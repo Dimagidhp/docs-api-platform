@@ -90,17 +90,17 @@ WSO2 Identity Server acts as an identity service provider of systems enabled wit
 
         Following image shows the sample values for SAML2 Web SSO Configuration:
 
-        [![saml-configuration-in-service-provider]({{base_path}}/assets/img/setup-and-install/saml-configuration-in-service-provider.png)]({{base_path}}/assets/img/setup-and-install/saml-configuration-in-service-provider.png)
+        [![saml-configuration-in-service-provider](../../../assets/img/setup-and-install/saml-configuration-in-service-provider.png)](../../../assets/img/setup-and-install/saml-configuration-in-service-provider.png)
 
         ??? Info "Enable a tenant-specific SSO for the Publisher and Developer Portal"
 
             To enable a tenant-specific SSO with IS 5.10.0 for Publisher and the Developer Portal, enable the **Use tenant domain in local subject identifier** option under the **Local & Outbound Authentication Configuration** section.
 
-            [![saml-configuration-in-service-provider]({{base_path}}/assets/img/setup-and-install/enable-tenant-domain-in-local-sub-identifier.png)]({{base_path}}/assets/img/setup-and-install/enable-tenant-domain-in-local-sub-identifier.png)
+            [![saml-configuration-in-service-provider](../../../assets/img/setup-and-install/enable-tenant-domain-in-local-sub-identifier.png)](../../../assets/img/setup-and-install/enable-tenant-domain-in-local-sub-identifier.png)
 
     2.  Expand the **Claim Configuration** section. Add **http://wso2.org/claims/role** as mandatory claim.
 
-        [![]({{base_path}}/assets/img/setup-and-install/claim-configuration-in-service-provider-for-saml2-sso.png)]({{base_path}}/assets/img/setup-and-install/claim-configuration-in-service-provider-for-saml2-sso.png)
+        [![](../../../assets/img/setup-and-install/claim-configuration-in-service-provider-for-saml2-sso.png)](../../../assets/img/setup-and-install/claim-configuration-in-service-provider-for-saml2-sso.png)
 
     3.  Update the Service Provider configurations.
 
@@ -109,7 +109,7 @@ WSO2 Identity Server acts as an identity service provider of systems enabled wit
 
             1.  Click the **SaaS Application** option that appears after registering the service provider.
 
-            [![saas-configuration-in-service-provider]({{base_path}}/assets/img/setup-and-install/saas.png)]({{base_path}}/assets/img/setup-and-install/saas.png)            
+            [![saas-configuration-in-service-provider](../../../assets/img/setup-and-install/saas.png)](../../../assets/img/setup-and-install/saas.png)            
 
             If you do not select the **SaaS Application** option, only users in the current tenant domain will be allowed to login to the portals. You will need to register separate service providers for portals from each tenant.
 
@@ -199,7 +199,7 @@ WSO2 Identity Server acts as an identity service provider of systems enabled wit
 
         Following image shows the sample values for SAML2 Web SSO Configurations:
 
-        [![saml-configuration-in-identity-provider]({{base_path}}/assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)]({{base_path}}/assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)
+        [![saml-configuration-in-identity-provider](../../../assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)](../../../assets/img/setup-and-install/identity-provider-configuration-for-saml-sso.png)
 
         !!! Note
             Make sure your service provider configurations in the Identity Server and the identity provider configurations in API Manager are similarly reflected to each other.
@@ -211,7 +211,7 @@ WSO2 Identity Server acts as an identity service provider of systems enabled wit
 
     3.  Enable Just-in-Time Provisioning to provision the users in API Manager.
 
-        [![]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)]({{base_path}}/assets/img/setup-and-install/jit-provisioning-for-sso.png)
+        [![](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)](../../../assets/img/setup-and-install/jit-provisioning-for-sso.png)
 
     4.  Add the following role mapping under **Role Configuration** section:
 
@@ -234,7 +234,7 @@ WSO2 Identity Server acts as an identity service provider of systems enabled wit
         </tbody>
         </table>
 
-        [![]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso.png)]({{base_path}}/assets/img/setup-and-install/role-mapping-for-sso.png)
+        [![](../../../assets/img/setup-and-install/role-mapping-for-sso.png)](../../../assets/img/setup-and-install/role-mapping-for-sso.png)
 
         !!! Tip
             Instead of using the default internal roles, you can also create new roles in API Manager and map it to the provisioned users.
@@ -248,7 +248,7 @@ WSO2 Identity Server acts as an identity service provider of systems enabled wit
 
     2.  Expand the **Local & Outbound Authentication Configuration** section and select **Federated Authentication** as the **Authentication Type** and select the name of the Identity Provider you created. Update the configurations with your selection.
 
-        [![]({{base_path}}/assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)]({{base_path}}/assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)
+        [![](../../../assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)](../../../assets/img/setup-and-install/local-and-outbound-authentication-configuration-for-sso.png)
 
     3.  Repeat the same step for the apim_devportal Service Provider as well.
 

@@ -1,7 +1,7 @@
 Since GraphQL schemas often have circular relationships, the depth can grow without bounds. 
 An example of such a query is as follows:
 
-[![GraphQL Depth Limitation]({{base_path}}/assets/img/learn/graphql-depth-limitation.png)]({{base_path}}/assets/img/learn/graphql-depth-limitation.png)
+[![GraphQL Depth Limitation](../../../assets/img/learn/graphql-depth-limitation.png)](../../../assets/img/learn/graphql-depth-limitation.png)
 
 
 This relationship allows a bad actor to construct an expensive nested query. WSO2 API-Manager introduces GraphQL **Query 
@@ -50,23 +50,23 @@ Let's see how **GraphQL Query Depth Limitation** can be managed with your GraphQ
 2.  Click **Subscription Policies** under the **Rate Limiting Policies** section to see the set of existing 
 subscription policies.
 3.  To add a new Subscription Policy, click **Add Policy** .
-[![Add new Subscription Policy]({{base_path}}/assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)]({{base_path}}/assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)
+[![Add new Subscription Policy](../../../assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)](../../../assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)
 4.  Fill in the required details.
-[![Add new Subscription Policy with Max Depth]({{base_path}}/assets/img/learn/create-subscription-policy-with-graphql-depth.png)]({{base_path}}/assets/img/learn/create-subscription-policy-with-graphql-depth.png)
+[![Add new Subscription Policy with Max Depth](../../../assets/img/learn/create-subscription-policy-with-graphql-depth.png)](../../../assets/img/learn/create-subscription-policy-with-graphql-depth.png)
 5. click **Save** Button
-[![Add Subscription Policy]({{base_path}}/assets/img/learn/save-subscription-policy-graphql-query-analysis.png)]({{base_path}}/assets/img/learn/save-subscription-policy-graphql-query-analysis.png)
+[![Add Subscription Policy](../../../assets/img/learn/save-subscription-policy-graphql-query-analysis.png)](../../../assets/img/learn/save-subscription-policy-graphql-query-analysis.png)
 
 
 ### Design a GraphQL API
 
-To design a GraphQL API, see [Create a GraphQL API]({{base_path}}/design/create-api/create-a-graphql-api).
+To design a GraphQL API, see [Create a GraphQL API](../../create-api/create-a-graphql-api.md).
 
 <html>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>
 Instead of giving Business Plans of GraphQL API related details in 
-<a href="{{base_path}}/design/create-api/create-a-graphql-api">Create a GraphQL API</a>, 
+<a href="../../create-api/create-a-graphql-api.md">Create a GraphQL API</a>, 
 Use Business Plans that you create in the previous steps.
 </p>
 </div> 
@@ -75,7 +75,7 @@ Use Business Plans that you create in the previous steps.
 ### Invoke a GraphQL API
 
 To invoke a GraphQL API, see 
-[Invoke a GraphQL API]({{base_path}}/consume/invoke-apis/invoke-apis-using-tools/invoke-an-graphql-api-using-the-integrated-graphql-console).
+[Invoke a GraphQL API](../../../consume/invoke-apis/invoke-apis-using-tools/invoke-an-graphql-api-using-the-integrated-graphql-console.md).
 
 To perform **GraphQL Query Depth Limitation**: 
 
@@ -102,7 +102,7 @@ Enter the following sample query. Then click on execute button as follows.
 
    ```
 
-   [![GraphQL Depth Limitation]({{base_path}}/assets/img/learn/graphql-depth-limitation-console.png)]({{base_path}}/assets/img/learn/graphql-depth-limitation-console.png)
+   [![GraphQL Depth Limitation](../../../assets/img/learn/graphql-depth-limitation-console.png)](../../../assets/img/learn/graphql-depth-limitation-console.png)
 
 You have now successfully blocked a GraphQL API query using the **Max Depth** value that you assigned before.
 

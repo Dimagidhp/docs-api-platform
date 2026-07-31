@@ -1,6 +1,6 @@
 # Property Group Mediator
 
-The Property Group Mediator is similar to the [Property Mediator]({{base_path}}/reference/mediators/property-mediator). It sets or removes properties on the message context flowing through synapse. However, unlike the Property mediator, the Property Group mediator handles multiple properties as a
+The Property Group Mediator is similar to the [Property Mediator](property-mediator.md). It sets or removes properties on the message context flowing through synapse. However, unlike the Property mediator, the Property Group mediator handles multiple properties as a
 group. You can select the property action (i.e., whether the property
 must be added to or removed from the message context) for each
 individual property. Therefore, in a scenario where you need to
@@ -9,7 +9,7 @@ Mediator configuration instead of multiple Property Mediator
 configurations.
 
 !!! Info
-    The Property Group mediator is a [conditionally content aware]({{base_path}}/reference/mediators/about-mediators/#classification-of-mediators) mediator.
+    The Property Group mediator is a [conditionally content aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -36,18 +36,18 @@ follows:
 -   Enter a meaningful description for the property group in the
     **Description** field.
 -   To add a new property, click the **Add a new element** icon.  
-    ![]({{base_path}}/assets/img/integrate/mediators/119134127/119134143.png)  
+    ![](../../assets/img/integrate/mediators/119134127/119134143.png)  
     As a result, the **Property Mediator** dialog box opens. Here, you
     can select a predefined property from the list or configure a custom
     property.
 -   To remove a property, click the **Delete selected element(s)**
     icon.  
-    ![]({{base_path}}/assets/img/integrate/mediators/119134127/119134161.png)
+    ![](../../assets/img/integrate/mediators/119134127/119134161.png)
 -   To arrange the properties in the required order within the property
     group configuration, you can select any property and then click the
     following icons to move it up/down the list.  
-    ![]({{base_path}}/assets/img/integrate/mediators/119134127/119134166.png)
-    ![]({{base_path}}/assets/img/integrate/mediators/119134127/119134167.png)
+    ![](../../assets/img/integrate/mediators/119134127/119134166.png)
+    ![](../../assets/img/integrate/mediators/119134127/119134167.png)
 
 ## Example
 

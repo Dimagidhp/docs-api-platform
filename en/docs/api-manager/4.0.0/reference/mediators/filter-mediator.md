@@ -7,7 +7,7 @@ Filter mediator executes the other mediators enclosed in the sequence.
 The Filter Mediator closely resembles the "If-else" control structure.
 
 !!! Info
-    The Filter mediator is a [conditionally]({{base_path}}/concepts/message-processing-units/#classification-of-mediators) [content aware]({{base_path}}/concepts/message-processing-units/#classification-of-mediators) mediator.
+    The Filter mediator is a [conditionally](about-mediators.md#classification-of-mediators) [content aware](about-mediators.md#classification-of-mediators) mediator.
 
 ## Syntax
 
@@ -98,7 +98,7 @@ message.
 
 ### Applying separate sequences
 
-In this example, the [Log mediator]({{base_path}}/reference/mediators/log-mediator) is used to log
+In this example, the [Log mediator](log-mediator.md) is used to log
 information from a service named Bus Services via a property when the
 request matches the filter criteria. When the request does not match the
 filter criteria, another log mediator configuration is used log

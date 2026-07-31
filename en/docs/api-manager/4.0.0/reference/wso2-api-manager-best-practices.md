@@ -12,9 +12,9 @@ Here are the guidelines and recommendations to design and deploy APIs using WSO2
 ## Best practices for creating an API
 
 -   [Create APIs]({{base_path}}/learn/design-api/create-api/create-a-rest-api/) for dedicated backend services.
--   For each of the resources, decide on the [HTTP methods that are used to perform the required application functions]({{base_path}}/getting-started/key-concepts/). This includes the use of applicable HTTP headers.
+-   For each of the resources, decide on the [HTTP methods that are used to perform the required application functions](../get-started/key-concepts.md). This includes the use of applicable HTTP headers.
 -   Decide on special behaviors required by the application (e.g., concurrency control, long running requests).
--   Identify potential [error-prone situations and define corresponding error messages]({{base_path}}/troubleshooting/error-handling).
+-   Identify potential [error-prone situations and define corresponding error messages](../troubleshooting/error-handling.md).
 
 ### Proper Naming APIs
 

@@ -10,7 +10,7 @@ API has the `/publishMessages` context. It publishes messages via the topic to t
 
 ## Set up Kafka
 
-Before you begin, set up Kafka by following the instructions in [Setting up Kafka]({{base_path}}/reference/connectors/kafka-connector/setting-up-kafka).
+Before you begin, set up Kafka by following the instructions in [Setting up Kafka](setting-up-kafka.md).
 
 ## Configure the connector in WSO2 Integration Studio
 
@@ -169,4 +169,4 @@ This demonstrates how the Kafka connector publishes Avro messages to Kafka broke
    
 ## What's next
 
-* To customize this example for your own scenario, see [Kafka Connector Configuration]({{base_path}}/reference/connectors/kafka-connector/kafka-connector-config) documentation.
+* To customize this example for your own scenario, see [Kafka Connector Configuration](kafka-connector-config.md) documentation.

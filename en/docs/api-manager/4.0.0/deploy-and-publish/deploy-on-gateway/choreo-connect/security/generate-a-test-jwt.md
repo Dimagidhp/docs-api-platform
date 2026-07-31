@@ -58,4 +58,4 @@ To accept these test keys generated from the Enforcer as trusted tokens, the fol
     certificateFilePath = "/home/wso2/security/truststore/mg.pem"
 ```
 
-Refer to [Configuring an External Key Manager]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/security/api-authentication/configuring-an-external-key-manager/) to learn more.
+Refer to [Configuring an External Key Manager](api-authentication/configuring-an-external-key-manager.md) to learn more.

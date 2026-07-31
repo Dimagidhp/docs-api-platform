@@ -16,11 +16,11 @@
 
     -  First download the Microgateway distribution from the [github release page](https://github.com/wso2/product-microgateway/releases/) and extract that to a folder of your choice.
 
-    -  Make sure the apictl is downloaded and initialized, if not follow the steps in [Download and initialize the apictl]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl).
+    -  Make sure the apictl is downloaded and initialized, if not follow the steps in [Download and initialize the apictl](../getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl).
 
     -  Ensure that the API Operator is deployed in the Kubernetes cluster. Please refer [API Operator documentation](https://github.com/wso2/k8s-api-operator/tree/master) for detailed steps.
     
-    -  Then deploy Microgateway in Kubernetes cluster. Please refer [Steps for deploying  Microgateway in Kubernetes]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes/).
+    -  Then deploy Microgateway in Kubernetes cluster. Please refer [Steps for deploying  Microgateway in Kubernetes](../../../../deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/deploy/cc-as-a-standalone-gateway-on-kubernetes.md).
 
 ## Add an API to Kubernetes cluster
 
@@ -193,7 +193,7 @@
         </tbody>
     </table>
 
-2.  You can add [kustomization.yaml]({{base_path}}/install-and-setup/setup/api-controller/managing-apis-in-kubernetes/resources/kustomization.yaml), [kustomize-config.yaml]({{base_path}}/install-and-setup/setup/api-controller/managing-apis-in-kubernetes/resources/kustomize-config.yaml) and project zip file (Eg: PizzaShackAPI_1.0.0.zip).
+2.  You can add [kustomization.yaml](resources/kustomization.yaml), [kustomize-config.yaml](resources/kustomize-config.yaml) and project zip file (Eg: PizzaShackAPI_1.0.0.zip).
 
 3.  Run the following command to generate the related configuration maps.
 

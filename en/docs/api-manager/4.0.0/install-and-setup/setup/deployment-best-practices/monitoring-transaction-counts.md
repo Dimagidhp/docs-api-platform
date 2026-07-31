@@ -1,10 +1,10 @@
 # Monitoring Integration Transactions Counts
 
-A **Transaction** in WSO2 Micro Integrator is typically defined as an inbound request (a request coming to the server). That is, any inbound request to a [REST API]({{base_path}}/integrate/develop/creating-artifacts/creating-an-api), [Proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service), or [Inbound Endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-an-inbound-endpoint) is considered as one transaction.
+A **Transaction** in WSO2 Micro Integrator is typically defined as an inbound request (a request coming to the server). That is, any inbound request to a [REST API](../../../integrate/develop/creating-artifacts/creating-an-api.md), [Proxy service](../../../integrate/develop/creating-artifacts/creating-a-proxy-service.md), or [Inbound Endpoint](../../../integrate/develop/creating-artifacts/creating-an-inbound-endpoint.md) is considered as one transaction.
 
 However, when the Micro Integrator is configured as both the message producer and consumer to handle **asynchronous** messaging scenarios, the two requests (listening request and sending request) are considered as a single transaction.
 
-If you need to track the number of transactions in your Micro Integrator deployment, you can enable the transaction counter component in each Micro Integrator instance of your deployment. Currently, the transaction counter is responsible for counting all requests received via the [HTTP Passthru]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transports/#configuring-the-httphttps-transport) and [JMS]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transports/#configuring-the-jms-transport) transports and for persisting the summary of the transaction count in a database for future use.
+If you need to track the number of transactions in your Micro Integrator deployment, you can enable the transaction counter component in each Micro Integrator instance of your deployment. Currently, the transaction counter is responsible for counting all requests received via the [HTTP Passthru](../mi-setup/transport_configurations/configuring-transports.md#configuring-the-httphttps-transport) and [JMS](../mi-setup/transport_configurations/configuring-transports.md#configuring-the-jms-transport) transports and for persisting the summary of the transaction count in a database for future use.
 
 Follow the instructions given below.
 
@@ -14,11 +14,11 @@ Configure a relational database to persist transaction count information and the
 
 1.  Select the preferred database type from the list given below and follow the relevant link to set up a database.
 
-    - [Setting up a MySQL database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-MySQL)
-    - [Setting up an MSSQL database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-MSSQL)
-    - [Setting up an Oracle database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-Oracle)
-    - [Setting up a Postgre database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-PostgreSQL)
-    - [Setting up an IBM database]({{base_path}}/install-and-setup/setup/mi-setup/databases/setting-up-IBM-DB2)
+    - [Setting up a MySQL database](../mi-setup/databases/setting-up-MySQL.md)
+    - [Setting up an MSSQL database](../mi-setup/databases/setting-up-MSSQL.md)
+    - [Setting up an Oracle database](../mi-setup/databases/setting-up-Oracle.md)
+    - [Setting up a Postgre database](../mi-setup/databases/setting-up-PostgreSQL.md)
+    - [Setting up an IBM database](../mi-setup/databases/setting-up-IBM-DB2.md)
 
 2.  Once you have set up the database, verify that the `deployment.toml` file of your Micro Integrator contains the relevant datasource configurations:
 
@@ -128,6 +128,6 @@ Configure a relational database to persist transaction count information and the
 
 You can get the transaction count for a particular month or period. This data can be viewed or saved to a report. There are two ways to get transaction count data:
 
--  Start the [APICTL]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller) and use the [mi transaction]({{base_path}}/install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl/#monitor-transactions) option.
+-  Start the [APICTL](../api-controller/getting-started-with-wso2-api-controller.md) and use the [mi transaction](../api-controller/managing-integrations/managing-integrations-with-ctl.md#monitor-transactions) option.
 
--  Directly access the [Management API resources]({{base_path}}/observe/mi-observe/working-with-management-api) and invoke the [/transaction/count]({{base_path}}/observe/mi-observe/working-with-management-api/#get-transaction-count) and [/transaction/report]({{base_path}}/observe/mi-observe/working-with-management-api/#get-transaction-report-data) resources.
+-  Directly access the [Management API resources](../../../observe/mi-observe/working-with-management-api.md) and invoke the [/transaction/count](../../../observe/mi-observe/working-with-management-api.md#get-transaction-count) and [/transaction/report](../../../observe/mi-observe/working-with-management-api.md#get-transaction-report-data) resources.

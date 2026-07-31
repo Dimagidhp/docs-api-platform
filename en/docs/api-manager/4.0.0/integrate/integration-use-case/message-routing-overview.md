@@ -6,10 +6,10 @@ Message routing is one of the most fundamental requirements when integrating sys
 
 The following image depicts a form of message routing where a message is routed through the Micro Integrator to the appropriate service. In this case, the Switch/Send mediator can be used.
 
-<img src="{{base_path}}/assets/img/integrate/use-cases-overview/message-routing.png" title="Message Routing" width="500" alt="Message Routing"/>
+<img src="../../assets/img/integrate/use-cases-overview/message-routing.png" title="Message Routing" width="500" alt="Message Routing"/>
 
 <!--
-![message routing]({{base_path}}/assets/img/integrate/use-cases-overview/message-routing-new.png)
+![message routing](../../assets/img/integrate/use-cases-overview/message-routing-new.png)
 -->
 
 <table>
@@ -18,7 +18,7 @@ The following image depicts a form of message routing where a message is routed 
 			<b>Tutorials</b></br>
 			<ul>
 				<li>
-					Try the end-to-end use case on <a href="{{base_path}}/tutorials/integration-tutorials/routing-requests-based-on-message-content">message routing</a>
+					Try the end-to-end use case on <a href="../../tutorials/integration-tutorials/routing-requests-based-on-message-content.md">message routing</a>
 				</li>
 			</ul>
 		</td>
@@ -27,13 +27,13 @@ The following image depicts a form of message routing where a message is routed 
 			<b>Examples</b>
 			<ul>
 				<li>
-					<a href="{{base_path}}/integrate/examples/message-routing/header-based-routing">Routing based on message header</a>
+					<a href="../examples/routing_examples/routing_based_on_headers.md">Routing based on message header</a>
 				</li>
 				<li>
-					<a href="{{base_path}}/integrate/examples/message-routing/payload-based-routing">Routing based on message payload</a>
+					<a href="../examples/routing_examples/routing_based_on_payloads.md">Routing based on message payload</a>
 				</li>
 				<li>
-					<a href="{{base_path}}/integrate/examples/message-routing/split-and-aggregate-responses">Splitting and aggregating response messages</a>
+					<a href="../examples/routing_examples/splitting_aggregating_messages.md">Splitting and aggregating response messages</a>
 				</li>
 			</ul>
 		</td>
@@ -47,10 +47,10 @@ The integration of systems that communicate in various message formats is a comm
 
 The following image depicts a typical message transformation scenario using the Transform mediator. 
 
-<img src="{{base_path}}/assets/img/integrate/use-cases-overview/message-transformation.png" title="Message Transformation" width="600" alt="Message Transformation"/>
+<img src="../../assets/img/integrate/use-cases-overview/message-transformation.png" title="Message Transformation" width="600" alt="Message Transformation"/>
 
 <!--
-![message transformation]({{base_path}}/assets/img/integrate/use-cases-overview/message-transformation-new.png) 
+![message transformation](../../assets/img/integrate/use-cases-overview/message-transformation-new.png) 
 -->
 <table>
 	<tr>
@@ -58,7 +58,7 @@ The following image depicts a typical message transformation scenario using the 
 			<b>Tutorials</b></br>
 			<ul>
 				<li>
-					Try the end-to-end use case on <a href="{{base_path}}/tutorials/integration-tutorials/transforming-message-content">message transformation</a>
+					Try the end-to-end use case on <a href="../../tutorials/integration-tutorials/transforming-message-content.md">message transformation</a>
 				</li>
 			</ul>
 		</td>
@@ -70,10 +70,10 @@ The following image depicts a typical message transformation scenario using the 
 					<a href="{{base_path}}/integrate/examples/message-transformations/soap-to-json-conversion">Converting SOAP Messages to JSON</a>
 				</li>
 				<li>
-					<a href="{{base_path}}/integrate/examples/message-transformations/pox-to-json-conversion">Converting POX Messages to JSON</a>
+					<a href="../examples/message_transformation_examples/pox-to-json-conversion.md">Converting POX Messages to JSON</a>
 				</li>
 				<li>
-					<a href="{{base_path}}/integrate/examples/message-transformations/json-to-soap-conversion">Converting JSON Messages to SOAP</a>
+					<a href="../examples/message_transformation_examples/json-to-soap-conversion.md">Converting JSON Messages to SOAP</a>
 				</li>
 				<li>
 					<a href="{{base_path}}/integrate/examples/message-transformations/csv-to-other-formats-conversion">Converting CSV Messages to Other Formats</a>

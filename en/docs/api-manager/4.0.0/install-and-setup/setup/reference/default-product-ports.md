@@ -3,14 +3,14 @@
 This page describes the default ports used by each runtime of WSO2 API Manager.
 
 !!! Note
-    If you [change the default runtime ports]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset), most of the runtime ports change automatically based on the offset.
+    If you [change the default runtime ports](../deployment-best-practices/changing-the-default-ports-with-offset.md), most of the runtime ports change automatically based on the offset.
 
 ## API-M ports
 
-Listed below are the ports used by the API-M runtime when the [port offset]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#configuring-the-port-offset) is 0.
+Listed below are the ports used by the API-M runtime when the [port offset](../deployment-best-practices/changing-the-default-ports-with-offset.md#configuring-the-port-offset) is 0.
 
 !!! Info
-    See the instructions on [changing the default API-I ports]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-api-m-ports).
+    See the instructions on [changing the default API-I ports](../deployment-best-practices/changing-the-default-ports-with-offset.md#changing-the-default-api-m-ports).
 
 <table>
     <tr>
@@ -140,7 +140,7 @@ Listed below are the ports used by the API-M runtime when the [port offset]({{ba
 By default, the Micro Integrator is **internally** configured with a port offset of 10. Listed below are the ports that are effective in the Micro Integrator by default (due to the internal port offset of 10).
 
 !!! Info
-    See the instructions on [changing the default MI ports]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-mi-ports).
+    See the instructions on [changing the default MI ports](../deployment-best-practices/changing-the-default-ports-with-offset.md#changing-the-default-mi-ports).
 
 <table>
     <tr>
@@ -172,7 +172,7 @@ By default, the Micro Integrator is **internally** configured with a port offset
             <code>9201</code>
         </td>
         <td>
-            The HTTP port of the <a href="{{base_path}}/observe/mi-observe/working-with-management-api">Management API</a> of WSO2 Micro Integrator.</br></br>
+            The HTTP port of the <a href="../../../observe/mi-observe/working-with-management-api.md">Management API</a> of WSO2 Micro Integrator.</br></br>
             <b>Configuring the default HTTP port</b></br>
             If required, you can manually change the HTTP port in the <code>deployment.toml</code> file (stored in the <code>MI_HOME/conf</code> folder) as shown below.</br></br>
             <div>
@@ -187,7 +187,7 @@ By default, the Micro Integrator is **internally** configured with a port offset
             <code>9164</code>
         </td>
         <td>
-            The HTTPS port of the <a href="{{base_path}}/observe/mi-observe/working-with-management-api">Management API</a> of WSO2 Micro Integrator.</br></br>
+            The HTTPS port of the <a href="../../../observe/mi-observe/working-with-management-api.md">Management API</a> of WSO2 Micro Integrator.</br></br>
             <b>Configuring the default HTTPS port</b></br>
             If required, you can manually change the HTTPS port in the <code>deployment.toml</code> file (stored in the <code>MI_HOME/conf</code> folder) as shown below.</br></br>
             <div>
@@ -204,7 +204,7 @@ By default, the Micro Integrator is **internally** configured with a port offset
 Listed below are the default ports used by the Streaming Integrator runtime and the Streaming Integrator Tooling runtime. The default port offset in these runtimes are `0` and `3` respectively.
 
 !!! Info
-    See the instructions on [changing the default SI ports]({{base_path}}/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-si-ports).
+    See the instructions on [changing the default SI ports](../deployment-best-practices/changing-the-default-ports-with-offset.md#changing-the-default-si-ports).
 
 -  Thrift and Binary ports:
 

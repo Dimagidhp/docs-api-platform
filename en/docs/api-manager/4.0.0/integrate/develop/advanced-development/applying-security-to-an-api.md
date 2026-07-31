@@ -1,7 +1,7 @@
 # Applying Security to an API
 
 ## Using a Basic Auth handler
-A Basic Authentication handler is enabled in the Micro Integrator by default. See the example on [securing an API with basic auth]({{base_path}}/integrate/examples/rest_api_examples/securing-rest-apis).
+A Basic Authentication handler is enabled in the Micro Integrator by default. See the example on [securing an API with basic auth](../../examples/rest_api_examples/securing-rest-apis.md).
 
 ## Using a custom basic auth handler
 
@@ -9,7 +9,7 @@ If required, you can implement a custom basic auth handler (instead of the defau
 
 ### Prerequisites
 
-**Before you begin**, be sure to [configure a user store]({{base_path}}/install-and-setup/setup/mi-setup/user_stores/setting_up_a_userstore ) for the Micro Integrator and add the required users and roles.
+**Before you begin**, be sure to [configure a user store](../../../install-and-setup/setup/mi-setup/user_stores/setting_up_a_userstore.md) for the Micro Integrator and add the required users and roles.
 
 ### Creating the custom handler
 

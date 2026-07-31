@@ -68,7 +68,7 @@ not required to restart the server to enable them.
 
 !!! warning
     The support for Websocket Access Logs is only available since API-M 4.0.0 U2 update level 328. For more information on
-    updating WSO2 API Manager, refer [Updating WSO2 API Manager]({{base_path}}/administer/product-administration/updating-wso2-api-manager). 
+    updating WSO2 API Manager, refer [Updating WSO2 API Manager](../../administer/updating-wso2-api-manager.md). 
 
 Sample access logs printed when Websocket connection is initiated is mentioned below.
 

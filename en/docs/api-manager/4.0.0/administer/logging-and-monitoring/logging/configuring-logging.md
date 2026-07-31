@@ -44,7 +44,7 @@ appenders = CARBON_LOGFILE, CARBON_CONSOLE, AUDIT_LOGFILE, ATOMIKOS_LOGFILE, CAR
 DELETE_EVENT_LOGFILE, TRANSACTION_LOGFILE
 ```
    
-For information on managing the log growth of the Carbon Logs, see the [Managing log growth]({{base_path}}/administer/logging-and-monitoring/logging/managing-log-growth) guide.
+For information on managing the log growth of the Carbon Logs, see the [Managing log growth](managing-log-growth.md) guide.
 
 ### Enabling logs for a tenant
 
@@ -225,8 +225,8 @@ The following is a sample Gateway Wire Log for an API request.
 
 ## HTTP Access Logs
 
-HTTP requests/responses are logged in Access Logs to monitor the activities related to an application's usage. For instructions on how to configure and use the HTTP Access Logs in WSO2 API Manager, see [Monitoring the HTTP Access Logs]({{base_path}}/observe/api-manager/monitoring-http-access-logs/).
+HTTP requests/responses are logged in Access Logs to monitor the activities related to an application's usage. For instructions on how to configure and use the HTTP Access Logs in WSO2 API Manager, see [Monitoring the HTTP Access Logs](../../../observe/api-manager/monitoring-http-access-logs.md).
 
 ## Audit Logs
 
-Audit Logs are used for tracking the sequence of actions that affect a particular task carried out on the server. For instructions on how to configure and use Audit Logs in WSO2 API Manager, see [Monitoring Audit Logs]({{base_path}}/observe/api-manager/monitoring-audit-logs/).
+Audit Logs are used for tracking the sequence of actions that affect a particular task carried out on the server. For instructions on how to configure and use Audit Logs in WSO2 API Manager, see [Monitoring Audit Logs](../../../observe/api-manager/monitoring-audit-logs.md).

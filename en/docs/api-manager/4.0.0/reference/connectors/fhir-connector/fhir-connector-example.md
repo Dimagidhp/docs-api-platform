@@ -20,7 +20,7 @@ Before you start configuring the FHIR connector, you also need to download the r
 
 Specific message builders/formatters configuration needs to be enabled in the product as shown below before starting the integration service.
 
-If you are using **EI7** or **APIM 4.0.0**, you need to enable this property by adding the following to the **<PRODUCT_HOME>/conf/deployment.toml** file. You can further refer to the [Working with Message Builders and Formatters]({{base_path}}/reference/config-catalog/#http-transport) and [Product Configurations]({{base_path}}/install-and-setup/message_builders_formatters/message-builders-and-formatters/) documentations.
+If you are using **EI7** or **APIM 4.0.0**, you need to enable this property by adding the following to the **<PRODUCT_HOME>/conf/deployment.toml** file. You can further refer to the [Working with Message Builders and Formatters](../../config-catalog.md#http-transport) and [Product Configurations](../../../install-and-setup/setup/mi-setup/message_builders_formatters/message-builders-and-formatters.md) documentations.
 
 ```toml
 [[custom_message_builders]]
@@ -54,7 +54,7 @@ In here FHIR clients can invoke the API with HTTP/HTTPs with required informatio
 
 This server is regularly loaded with a standard set of test data sets and also this server can store any data that related to administrative concepts such as patients, providers, organizations and devices, as well as a variety of clinical concepts including problems, medications, diagnostics, care plans and financial issues, among others.
 
-<img src="{{base_path}}/assets/img/integrate/connectors/fhirconnector.png" title="FHIR Connector" width="800" alt="FHIR Connector"/>
+<img src="../../../assets/img/integrate/connectors/fhirconnector.png" title="FHIR Connector" width="800" alt="FHIR Connector"/>
 
 ## Configure the connector in WSO2 Integration Studio
 
@@ -249,8 +249,8 @@ To learn about supported operations and their parameters, please refer to `FHIR 
 
 You can download the ZIP file and extract the contents to get the project code.
 
-<a href="{{base_path}}/assets/attachments/connectors/fhir-connector.zip">
-    <img src="{{base_path}}/assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
+<a href="../../../assets/attachments/connectors/fhir-connector.zip">
+    <img src="../../../assets/img/integrate/connectors/download-zip.png" width="200" alt="Download ZIP">
 </a>
 
 ## Deployment
@@ -426,4 +426,4 @@ This demonstrates how the WSO2 FHIR connector works.
    
 ## What's next
 
-* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers]({{base_path}}/install-and-setup/installation/run_in_containers).
+* You can deploy and run your project on Docker or Kubernetes. See the instructions in [Running the Micro Integrator on Containers](../../../integrate/develop/deploy-artifacts.md).

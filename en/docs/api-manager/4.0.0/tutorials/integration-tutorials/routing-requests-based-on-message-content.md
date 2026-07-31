@@ -30,11 +30,11 @@ An Integration project is a maven multi module project, which will contain all t
 1.  Open **WSO2 Integration Studio**.
 2.  Click **New Integration Project** in the **Getting Started** tab as shown below. 
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/create-integration-project.jpg" width="700">
+    <img src="../../assets/img/integrate/tutorials/common/create-integration-project.jpg" width="700">
 
     This will open the <b>New Integration Project</b> dialog box.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/create-simple-message-project.jpg" width="500">
+    <img src="../../assets/img/integrate/tutorials/common/create-simple-message-project.jpg" width="500">
 
 3.  Enter `SampleServices` as the project name and select the following check boxes to create the required modules.
     -   **Create ESB Configs**
@@ -109,7 +109,7 @@ Let's create three different HTTP endpoints for the above services.
         </tr>
     </table>
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/119132166.png" width="500">
+    <img src="../../assets/img/integrate/tutorials/119132155/119132166.png" width="500">
 
 4.  Click **Finish**.
 5.  Similarly, create the HTTP endpoints for the other two hospital services using the URI Templates given below:
@@ -119,7 +119,7 @@ Let's create three different HTTP endpoints for the above services.
 You have now created the three endpoints for the hospital back-end services that will be used to make appointment reservations.
 
 !!! Tip
-    You can also create a single endpoint where the differentiation of the hospital name can be handled using a variable in the URI template. See the tutorial on [Exposing Several Services as a Single Service]({{base_path}}/tutorials/integration-tutorials/exposing-several-services-as-a-single-service).
+    You can also create a single endpoint where the differentiation of the hospital name can be handled using a variable in the URI template. See the tutorial on [Exposing Several Services as a Single Service](exposing-several-services-as-a-single-service.md).
 
     Using three different endpoints is advantageous when the back-end services are very different from one another and/or when there is a requirement to configure error handling differently for each of them.
 
@@ -186,7 +186,7 @@ You have now created the three endpoints for the hospital back-end services tha
     </tr>
     </table>
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/119132164.png">
+    <img src="../../assets/img/integrate/tutorials/119132155/119132164.png">
 
 #### Define the mediation flow 
 
@@ -225,7 +225,7 @@ You can now start configuring the API resource.
          <td>
             <div class="content-wrapper">
               <p>Follow the steps given below to specify the expression value:</p>
-              <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/expression-value.png">
+              <img src="../../assets/img/integrate/tutorials/119132155/expression-value.png">
             <ol>
                 <li>Click the <strong>Ex</strong> button before the <b>Value</b> field. This specifies the value type as <i>expression</i>.</li>
                 <li>
@@ -243,11 +243,11 @@ You can now start configuring the API resource.
 3.  Drag a **Switch** mediator from the **Mediator** palette just after the Property mediator.
 4.  Right-click the Switch mediator you just added and select **Add/Remove Case** to add the number of cases you want to specify.  
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/119132163.png">
+    <img src="../../assets/img/integrate/tutorials/119132155/119132163.png">
 
     We have three different hospital endpoints, which corresponds to three switch cases. Enter 3 for **Number of branches** and click **OK**.  
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/119132155/switch-cases-dialog.png">
+    <img src="../../assets/img/integrate/tutorials/119132155/switch-cases-dialog.png">
 
 5.  With the Switch mediator selected, go to the **Properties** tab and give the following details:
     <table>
@@ -338,7 +338,7 @@ You can now start configuring the API resource.
             Follow the steps given below to extract the stock symbol from the request and print a welcome message in the log:
             <ol>
                 <li>
-                    Click the <b>plus</b> icon (<img src="{{base_path}}/assets/img/integrate/tutorials/common/plus-icon.png" width="30">)
+                    Click the <b>plus</b> icon (<img src="../../assets/img/integrate/tutorials/common/plus-icon.png" width="30">)
     to start defining a property. This opens the <b>LogProperty</b> dialog box.
                 </li>
                 <li>
@@ -441,9 +441,9 @@ Let's send a request to the API resource to make a reservation. You can use the 
     !!! Tip
         If you don't see the <b>HTTP Client</b> pane, go to <b>Window -> Show View -> Other</b> and select <b>HTTP Client</b> to enable the client pane.
 
-    <img src="{{base_path}}/assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
+    <img src="../../assets/img/integrate/tutorials/common/http4e-client-empty.png" width="800">
 
-2. Enter the request information as given below and click the <b>Send</b> icon (<img src="{{base_path}}/assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
+2. Enter the request information as given below and click the <b>Send</b> icon (<img src="../../assets/img/integrate/tutorials/common/play-head-icon.png" width="20">).
     
     <table>
         <tr>

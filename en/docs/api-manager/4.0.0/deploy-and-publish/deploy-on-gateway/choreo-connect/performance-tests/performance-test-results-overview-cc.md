@@ -13,7 +13,7 @@ Two key performance metrics were used to measure the performance of each test.
 
 Given below are the details of the deployment that was used for the performance test that is recorded in this documentation.
 
-[![CC performance test all-in-one deployment]({{base_path}}/assets/img/deploy/mgw/performance-test/test-deployment.png)]({{base_path}}/assets/img/deploy/mgw/performance-test/test-deployment.png)
+[![CC performance test all-in-one deployment](../../../../assets/img/deploy/mgw/performance-test/test-deployment.png)](../../../../assets/img/deploy/mgw/performance-test/test-deployment.png)
 
 
 <table>
@@ -84,13 +84,13 @@ Since we used the `c5.xlarge` instances (CPU count = 4) for the performance test
     <td>1</td>
     <td>1000 (1CPU)</td>
     <td>2</td>
-    <td><a href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/performance-tests/router-with-one-cpu-for-rest-api">Router with one CPU</a</td>
+    <td><a href="router-with-one-cpu-for-rest-api.md">Router with one CPU</a</td>
   </tr>
   <tr>
     <td>2</td>
     <td>2000 (2CPU)</td>
     <td>4</td>
-    <td><a href="{{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/performance-tests/router-with-two-cpu-for-rest-api/">Router with two CPU</a</td>
+    <td><a href="router-with-two-cpu-for-rest-api.md">Router with two CPU</a</td>
   </tr>
 </tbody>
 </table>

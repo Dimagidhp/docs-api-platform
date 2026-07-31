@@ -29,14 +29,14 @@ subordinate relationship. These relationships are relevant only for a
 particular transaction.
 
 For an example that demonstrates how the [transaction
-mediator]({{base_path}}/reference/mediators/transaction-mediator/) can
+mediator](../../reference/mediators/transaction-mediator.md) can
 be used to manage distributed transactions , see [Transaction Mediator
 Example](https://docs.wso2.com/display/EI650/Transaction+Mediator+Example).
 
 ### Java Message Service (JMS) transactions
 
 In addition to the [transaction
-mediator]({{base_path}}/reference/mediators/transaction-mediator/) ,
+mediator](../../reference/mediators/transaction-mediator.md) ,
 WSO2 Micro Integrator (WSO2 MI) also supports JMS transactions.
 
 !!! Note
@@ -75,13 +75,13 @@ receives a fault. This cause the JMS transaction to roll back.
 
 The sample scenario can be depicted as follows:
 
-![]({{base_path}}/assets/img/integrate/jms_transaction.png)
+![](../../assets/img/integrate/jms_transaction.png)
 
 #### Prerequisites
 
 -   Windows, Linux or Solaris operating systems with WSO2 MI
     installed. For instructions on downloading and installing WSO2 MI,
-    see [Installation Guide]({{base_path}}/install-and-setup/install/installing-the-product/installing-mi) .
+    see [Installation Guide](../../install-and-setup/install/installing-the-product/installing-mi.md) .
 -   WSO2 MI JMS transport configured with ActiveMQ. For instructions,
     see [Configure with ActiveMQ](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/brokers/configure-with-ActiveMQ/)
     .
@@ -217,7 +217,7 @@ The sample scenario can be depicted as follows:
 
     !!! Info
         Due to the asynchronous behavior of the [Send
-        Mediator]({{base_path}}/reference/mediators/send-mediator/) , you
+        Mediator](../../reference/mediators/send-mediator.md) , you
         cannot you use it with a http/https endpoint, but you can use it in
         asynchronous use cases, for example with another JMS as endpoint.
     
@@ -278,7 +278,7 @@ entire transaction should be rolled back.
 -   Windows, Linux or Solaris operating systems with WSO2 MI
     installed. For instructions on downloading and installing WSO2 MI,
     see [Installation
-    Guide]({{base_path}}/install-and-setup/install/installing-the-product/installing-mi) .
+    Guide](../../install-and-setup/install/installing-the-product/installing-mi.md) .
 -   WSO2 MI JMS transport configured with ActiveMQ. For instructions,
     see [Configure with
     ActiveMQ](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/brokers/configure-with-ActiveMQ/)
@@ -401,7 +401,7 @@ depicted as follows.
 ##### Prerequisites
 
 -   Install WSO2 MI. For instructions , see [Installation
-    Guide]({{base_path}}/install-and-setup/install/installing-the-product/installing-mi) .
+    Guide](../../install-and-setup/install/installing-the-product/installing-mi.md) .
 -   WSO2 MI JMS transport configured with ActiveMQ. For instructions,
         see [Configure with
         ActiveMQ](https://ei.docs.wso2.com/en/latest/micro-integrator/setup/brokers/configure-with-ActiveMQ/)

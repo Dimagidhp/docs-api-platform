@@ -2,7 +2,7 @@
 
 WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs. APIs can be built by integrating different types of APIs such as traditional request-response style APIs and Event-driven APIs using a low-code/no-code development experience, and the APIs can be exposed to consumers through its API Gateway. 
 
-For more information on WSO2 API Manager, see the [overview]({{base_path}}/getting-started/overview/).
+For more information on WSO2 API Manager, see the [overview](overview.md).
 
 The **WSO2 API Manager 4.0.0** is the successor of **WSO2 API Manager 3.2.0** and **WSO2 Enterprise Integrator 7.1.0**. It contains the following components, which have new features and enhancements:
 
@@ -14,31 +14,31 @@ It is now available to download from [here](https://wso2.com/api-management/#).
 
 ### New features
 
-- **[New Service Catalog that lists registered services]({{base_path}}/design/create-api/create-an-api-using-a-service/)**
+- **[New Service Catalog that lists registered services](../design/create-api/create-an-api-using-a-service.md)**
     
 	 WSO2 API Manager includes a Service Catalog where developers can register their services in a RESTful manner. Service Catalog is one of the main attributes that enable the API-first Integration in WSO2 API Manager. Through the Service Catalog, integration services are made discoverable to the API Management layer so that API proxies can directly be created using them.
 
-- **[API and API Product revision support]({{base_path}}/design/create-api/create-api-revisions/)**
+- **[API and API Product revision support](../design/create-api/create-api-revisions.md)**
     
 	 If you are an API Publisher, there can be a situation where you need to keep track of the different deployments of your API. For this purpose, a new concept named **Revisions** has been introduced. The revisions of your API can be **deployed** to specific Gateway Environment(s) as needed. You cannot edit the revisions. However, if required, you can **restore** your API to a specific revision if you want to discard the latest changes.
 
-- **[Support for ForgeRock Key Manager]({{base_path}}/administer/key-managers/configure-forgerock-connector/)**
+- **[Support for ForgeRock Key Manager](../administer/key-managers/configure-forgerock-connector.md)**
 
     WSO2 API Manager can connect to ForgeRock out-of-the-box using the [WSO2 API-M ForgeRock Connector](https://github.com/wso2-extensions/apim-km-forgerock). WSO2 API Manager has the capability to support multiple Key Managers at the same time. So with the use of connectors, it is capable of supporting any authorization server as a Key Manager, and in this case, it supports a connection to ForgeRock as a third-party Key Manager.
 
-- **[Support for PingFederate Key Manager]({{base_path}}/administer/key-managers/configure-pingfederate-connector/)**
+- **[Support for PingFederate Key Manager](../administer/key-managers/configure-pingfederate-connector.md)**
 
     WSO2 API Manager supports multiple Key Managers at the same time. As a result, WSO2 API Manager is prepacked with an inbuilt resident Key Manager, and with the use of connectors, it is capable of supporting any authorization server as a Key Manager. WSO2 API Manager can connect PingFederate out-of-the-box using the [WSO2 API-M PingFederate Connector](https://github.com/wso2-extensions/apim-km-pingfederate).
 
-- **[Support for Auth0 Key Manager]({{base_path}}/administer/key-managers/configure-auth0-connector/)**
+- **[Support for Auth0 Key Manager](../administer/key-managers/configure-auth0-connector.md)**
 
     It is possible to integrate the WSO2 API Manager with an external Identity and Access Management server (IAM) using the Auth0 OAuth Authorization Server to manage the OAuth clients and tokens that WSO2 API Manager requires. WSO2 API Manager has inbuilt support to consume APIs exposed by Auth0 OAuth.
 
-- **[Streaming API support in API Gateway]({{base_path}}/design/create-api/create-streaming-api/streaming-api-overview)**
+- **[Streaming API support in API Gateway](../design/create-api/create-streaming-api/streaming-api-overview.md)**
 
     Streaming APIs refer to APIs that have AsyncAPI definitions and use the **WebSocket**, **WebSub (WebHook)**, and **Server-Sent Events (SSE)** protocols. Streaming APIs are popular in the Event-driven architecture (EDA). With Streaming APIs, you can expose and manage **WebSocket**, **WebSub (WebHook)**, and **Server-Sent Events** backends in WSO2 API Manager. In WSO2 API Manager, Streaming APIs can be created by importing AsyncAPI definitions, and existing Streaming APIs can be exported as AsyncAPI definitions.
 
-- **[Exposing APIs via Custom Hostnames (Virtual Hosts)]({{base_path}}/deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames)**
+- **[Exposing APIs via Custom Hostnames (Virtual Hosts)](../deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames.md)**
 
     **Virtual Host** enables you to deploy an API or API Product Revision to a Gateway with a custom hostname. Gateway environments and its virtual hosts can be managed via the Admin Portal, and the API Publisher can choose a host when deploying an API Revision or API Product Revision. 
 
@@ -59,7 +59,7 @@ It is now available to download from [here](https://wso2.com/api-management/#).
 
 ### Deprecated features and functionalities
 
-- **[Message Tracing]({{base_path}}/deploy-and-publish/deploy-on-gateway/api-gateway/message-tracing/)**
+- **[Message Tracing](../deploy-and-publish/deploy-on-gateway/api-gateway/message-tracing.md)**
 
      The support for this feature will be removed from subsequent versions starting from WSO2 API Manager 4.0.0.
 
@@ -68,7 +68,7 @@ It is now available to download from [here](https://wso2.com/api-management/#).
 - **Microgateway Labels**
 
       [Grouping APIs with Microgateway Labels](https://apim.docs.wso2.com/en/3.2.0/learn/api-microgateway/grouping-apis-with-labels/)
-      is removed from this release. Instead, you can use [Virtual Hosts (VHosts)]({{base_path}}/deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames)
+      is removed from this release. Instead, you can use [Virtual Hosts (VHosts)](../deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames.md)
       and dynamically manageable Gateway environments to group and expose APIs with custom hostnames.
 
 - **Implicit Grant**
@@ -81,7 +81,7 @@ It is now available to download from [here](https://wso2.com/api-management/#).
 
 ### Key changes
 
-- The name of the startup script has changed from `wso2server.sh` (Linux/Mac OS) and `wso2server.bat` (Windows) to `api-manager.sh` and `api-manager.bat` respectively. For instructions, see [Running the Product]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/).
+- The name of the startup script has changed from `wso2server.sh` (Linux/Mac OS) and `wso2server.bat` (Windows) to `api-manager.sh` and `api-manager.bat` respectively. For instructions, see [Running the Product](../install-and-setup/install/installing-the-product/running-the-api-m.md).
 
 - The endpoints mentioned below previously worked through the Gateway. In API-M 4.0.0, WSO2 has moved them separately as follows:   
     
@@ -96,7 +96,7 @@ It is now available to download from [here](https://wso2.com/api-management/#).
       
     | **Profile**        | **Description**           | **Startup Argument**  |
     | :------------- |:-------------| :-----|
-    | Control Plane profile      | This profile contains the Publisher, Developer Portal, Key Manager, and Traffic Manager </br>components. </br>If you need to use the Traffic Manager profile separately, you need to disable </br>the Traffic Manager component in the Control Plane profile. </br>For more information, see [API-M 4.0.0 distributed setup documentation]({{base_path}}/install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m). | `-Dprofile=control-plane` |
+    | Control Plane profile      | This profile contains the Publisher, Developer Portal, Key Manager, and Traffic Manager </br>components. </br>If you need to use the Traffic Manager profile separately, you need to disable </br>the Traffic Manager component in the Control Plane profile. </br>For more information, see [API-M 4.0.0 distributed setup documentation](../install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m.md). | `-Dprofile=control-plane` |
     | Gateway profile      | The API Gateway profile.      |   `-Dprofile=gateway` |
     | Traffic Manager profile | The Traffic Manager profile.      |    `-Dprofile=traffic-manager` |
 
@@ -127,35 +127,35 @@ It is now available to download from [here](https://wso2.com/api-management/#).
 
 ### New features
 
-- **[New and improved File Connector]({{base_path}}/reference/connectors/file-connector/file-connector-overview/)**
+- **[New and improved File Connector](../reference/connectors/file-connector/file-connector-overview.md)**
     
-	The File Connector allows you to connect to different file systems and perform various operations. The File Connector uses the [Apache Commons VFS](https://commons.apache.org/proper/commons-vfs/) I/O functionalities to execute operations. For more information, see **[File Connector Example]({{base_path}}/reference/connectors/file-connector/file-connector-example/)** and **[File Connector Reference]({{base_path}}/reference/connectors/file-connector/file-connector-config/)**.
+	The File Connector allows you to connect to different file systems and perform various operations. The File Connector uses the [Apache Commons VFS](https://commons.apache.org/proper/commons-vfs/) I/O functionalities to execute operations. For more information, see **[File Connector Example](../reference/connectors/file-connector/file-connector-example.md)** and **[File Connector Reference](../reference/connectors/file-connector/file-connector-config.md)**.
 
-- **[HashiCorp Secure Vault]({{base_path}}/install-and-setup/setup/mi-setup/security/using-hashicorp-secrets/)**
+- **[HashiCorp Secure Vault](../install-and-setup/setup/mi-setup/security/using-hashicorp-secrets.md)**
     
 	By default, the Micro Integrator is configured to use WSO2 secure vault for encrypting secrets. However, you may encounter certain limitations with WSO2 secure vault if you use secrets with a large number of characters. You can overcome this issue by using HashiCorp secrets.
 
-- **[JSON evaluation support for property mediator]({{base_path}}/reference/mediators/property-mediator/)**
+- **[JSON evaluation support for property mediator](../reference/mediators/property-mediator.md)**
     
 	Enhanced JSON evaluation support was added for the property mediator.
 
-- **[FreeMarker support PayloadFactory mediator]({{base_path}}/reference/mediators/payloadfactory-mediator/)**
+- **[FreeMarker support PayloadFactory mediator](../reference/mediators/payloadfactory-mediator.md)**
     
 	You can now use the **FreeMarker** template to write the payload. This is particularly useful when defining complex JSON payloads.
 
-- **[OAuth endpoint]({{base_path}}/reference/synapse-properties/endpoint-properties/)**
+- **[OAuth endpoint](../reference/synapse-properties/endpoint-properties.md)**
     
 	A message exit point or an endpoint defines an external destination for a message. Typically, this is the address of a proxy service that acts as the front-end to the actual service. You can configure the endpoint artifacts with any attributes or semantics needed for communicating with that service. An endpoint could represent a URL, a mailbox, a JMS queue, a TCP socket, etc., along with the settings needed for the connection.
 
-- **[Call mediator improvement]({{base_path}}/reference/mediators/call-mediator/)**
+- **[Call mediator improvement](../reference/mediators/call-mediator.md)**
     
 	Improvements have been made to the call mediator so that it can now store the response to a property.
 
-- **[Generating service catalog entry (open API definition)]({{base_path}}/integrate/develop/working-with-service-catalog/)**
+- **[Generating service catalog entry (open API definition)](../integrate/develop/working-with-service-catalog.md)**
     
 	WSO2 API Manager includes a Service Catalog where developers can register their services in a RESTful manner. Integration services can be created when deploying your project as a C-App. These integration services are made discoverable to the API Management layer via the Service Catalog so that API proxies can directly be created using them.
 
-- **[Data Service Call Mediator]({{base_path}}/reference/mediators/dss-mediator/)**
+- **[Data Service Call Mediator](../reference/mediators/dss-mediator.md)**
 
     Data Service Call mediator allows you to invoke data service operations from a mediation sequence without introducing an HTTP call (using the Call or Send mediators) 
     to access the data service.  This improves the server performance because the data service is accessed directly without going through the HTTP transport.
@@ -170,8 +170,8 @@ The Micro Integrator is the integration runtime of WSO2 API-M 4.0.0 as well WSO2
 
 The **new features** introduced with the Micro Integrator of API-M 4.0.0 are listed above. In addition, note the following significant changes:
 
-- The CLI tool of EI 7.x is replaced with the [API Controller (CLI)]({{base_path}}/install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl) of API-M 4.0.0.
-- The EI Kubernetes Operator of EI 7.x is merged with the [API Operator]({{base_path}}/reference/k8s-operators/k8s-api-operator/) of API-M 4.0.0.
+- The CLI tool of EI 7.x is replaced with the [API Controller (CLI)](../install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl.md) of API-M 4.0.0.
+- The EI Kubernetes Operator of EI 7.x is merged with the [API Operator](../reference/k8s-operators/k8s-api-operator.md) of API-M 4.0.0.
 
 
 
@@ -227,7 +227,7 @@ The following table explains the availability of the most critical features in t
 			XML-based configurations
 		</td>
 		<td>
-			<a href="{{base_path}}/reference/config-catalog-mi">TOML-based configurations</a>
+			<a href="../reference/config-catalog-mi.md">TOML-based configurations</a>
 		</td>
 	</tr>
 	<tr>
@@ -268,10 +268,10 @@ The following table explains the availability of the most critical features in t
 			Tooling
 		</td>
 		<td>
-			<a href="{{base_path}}/integrate/develop/wso2-integration-studio">WSO2 Integration Studio</a>
+			<a href="../integrate/develop/wso2-integration-studio.md">WSO2 Integration Studio</a>
 		</td>
 		<td>
-			<a href="{{base_path}}/integrate/develop/wso2-integration-studio">WSO2 Integration Studio</a>
+			<a href="../integrate/develop/wso2-integration-studio.md">WSO2 Integration Studio</a>
 		</td>
 	</tr>
 	<tr>
@@ -282,8 +282,8 @@ The following table explains the availability of the most critical features in t
 			Management Console
 		</td>
 		<td>
-			<a href="{{base_path}}/observe/mi-observe/working-with-monitoring-dashboard">Micro Integrator Dashboard</a></br>
-			<a href="{{base_path}}/install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl">API Controller (CLI)</a>
+			<a href="../observe/mi-observe/working-with-monitoring-dashboard.md">Micro Integrator Dashboard</a></br>
+			<a href="../install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl.md">API Controller (CLI)</a>
 		</td>
 	</tr>
 	<tr>
@@ -305,7 +305,7 @@ The following table explains the availability of the most critical features in t
 			RDBMS-based Registry
 		</td>
 		<td>
-			<a href="{{base_path}}/install-and-setup/setup/mi-setup/deployment/file_based_registry">File system based Registry</a>
+			<a href="../install-and-setup/setup/mi-setup/deployment/file_based_registry.md">File system based Registry</a>
 		</td>
 	</tr>
 	<tr>
@@ -342,10 +342,10 @@ The following features, which are available in ESB runtimes, are removed from th
 			Management Console
 		</td>
 		<td>
-			<a href="{{base_path}}/integrate/develop/wso2-integration-studio">WSO2 Integration Studio</a> is the recommended tool for developing integration solutions. The monitoring capabilities available in the management console (of the ESB profile) are available through the new <a href="{{base_path}}/observe/mi-observe/working-with-monitoring-dashboard">Micro Integrator dashboard</a>.
+			<a href="../integrate/develop/wso2-integration-studio.md">WSO2 Integration Studio</a> is the recommended tool for developing integration solutions. The monitoring capabilities available in the management console (of the ESB profile) are available through the new <a href="../observe/mi-observe/working-with-monitoring-dashboard.md">Micro Integrator dashboard</a>.
 		</td>
 		<td>
-			<a href="{{base_path}}/observe/mi-observe/working-with-monitoring-dashboard">Micro Integrator Dashboard</a>
+			<a href="../observe/mi-observe/working-with-monitoring-dashboard.md">Micro Integrator Dashboard</a>
 		</td>
 	</tr>
 	<tr>
@@ -378,7 +378,7 @@ The following features, which are available in ESB runtimes, are removed from th
 			-
 		</td>
 		<td>
-			<a href="{{base_path}}/install-and-setup/setup/mi-setup/deployment/file_based_registry">File system based Registry</a>
+			<a href="../install-and-setup/setup/mi-setup/deployment/file_based_registry.md">File system based Registry</a>
 		</td>
 	</tr>
 	<tr>
@@ -431,7 +431,7 @@ It is now available to download from [here](https://github.com/wso2/streaming-in
 
 ### New features
 
-- **[Deploy AsyncAPI definitions to WSO2 API-M Services]({{base_path}}/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog/)**
+- **[Deploy AsyncAPI definitions to WSO2 API-M Services](../use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md)**
     
 	 WSO2 Streaming Integrator has the inbuilt capability to directly deploy Siddhi applications with Async API definitions to WSO2 API Manager services. These services can then be used to create an API and deploy in the API Manager runtime.
 
@@ -473,7 +473,7 @@ It is now available to download from [here](https://github.com/wso2/streaming-in
 	 
 - **Kafka and HTTP metrics monitoring**
     
-	 This release provides Kafka and HTTP metrics monitoring capability. In the previous release, this was only available for File, RDBMS and CDC (Change Data Capture). The metrics can be published to a preconfigured [Prometheus](https://prometheus.io/) server and then you can either create your own [Grafana](https://grafana.com/) dashboard or use the ETL dashboard which is already created by us. For more information on how to configure metrics, refer to [Monitoring ETL Flows]({{base_path}}/observe/streaming-integrator/viewing-etl-flows/) documentation page.
+	 This release provides Kafka and HTTP metrics monitoring capability. In the previous release, this was only available for File, RDBMS and CDC (Change Data Capture). The metrics can be published to a preconfigured [Prometheus](https://prometheus.io/) server and then you can either create your own [Grafana](https://grafana.com/) dashboard or use the ETL dashboard which is already created by us. For more information on how to configure metrics, refer to [Monitoring ETL Flows](../observe/streaming-integrator/viewing-etl-flows.md) documentation page.
 	 
 
 <hr style="border:8px solid gray"> </hr>
@@ -486,21 +486,21 @@ It is now available to download from [here](https://wso2.com/api-management/tool
 
 ### New features
 
-- [API Controller as a developer CLI tool for Choreo Connect]({{base_path}}/install-and-setup/setup/api-controller/managing-choreo-connect/managing-choreo-connect-with-ctl/)
-- [Merge Micro Integrator (MI) CLI commands with apictl]({{base_path}}/install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl/)
+- [API Controller as a developer CLI tool for Choreo Connect](../install-and-setup/setup/api-controller/managing-choreo-connect/managing-choreo-connect-with-ctl.md)
+- [Merge Micro Integrator (MI) CLI commands with apictl](../install-and-setup/setup/api-controller/managing-integrations/managing-integrations-with-ctl.md)
 - Support import/export revisioning of APIs and API Products
-- [Adding proxy environment variables support for apictl]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#set-proxy-environment-variables-for-apictl)
+- [Adding proxy environment variables support for apictl](../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller.md#set-proxy-environment-variables-for-apictl)
 - Resolve parameters at server-side while importing an API/API Product project
-- [Parameter file support for API Products]({{base_path}}/install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters/#defining-the-params-file-for-an-api-product)
+- [Parameter file support for API Products](../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters.md#defining-the-params-file-for-an-api-product)
 - Introducing new schemas for apictl API/API Product/Application project artifacts
-- [Support to override subscription policies of an API using the parameters file]({{base_path}}/install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters/#defining-the-params-file-for-an-api)
-- [Support TLS renegotiation configuration]({{base_path}}/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#set-tls-renegotiation-mode)
-- [Support apictl bundle command (archives an API Project)]({{base_path}}/install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters/#bundling-the-generated-directory-before-import)
-- [Introducing a structure for deployment and source repositories]({{base_path}}/install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters/#generating-the-deployment-directory)
+- [Support to override subscription policies of an API using the parameters file](../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters.md#defining-the-params-file-for-an-api)
+- [Support TLS renegotiation configuration](../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller.md#set-tls-renegotiation-mode)
+- [Support apictl bundle command (archives an API Project)](../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters.md#bundling-the-generated-directory-before-import)
+- [Introducing a structure for deployment and source repositories](../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters.md#generating-the-deployment-directory)
 - Support endpoint security separately for Production and Sandbox endpoints via parameters file
 - VCS support for both the deployment and source repositories
 - Support for import/export of Streaming APIs
-- [Ability to extract APIs from the AWS API-Gateway and to initialize an apictl API project]({{base_path}}/deploy-and-publish/publish-on-dev-portal/publish-aws-apis-in-the-dev-portal)
+- [Ability to extract APIs from the AWS API-Gateway and to initialize an apictl API project](../deploy-and-publish/publish-on-dev-portal/publish-aws-apis-in-the-dev-portal.md)
 	 
 	 The `apictl aws init` command was introduced for this purpose.
 
@@ -655,7 +655,7 @@ WSO2 API Manager 4.0.0 is compatible with Choreo Connect {{choreo_connect.versio
 
 #### New features
 
-Please see the [supported features]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/supported-features/)
+Please see the [supported features](../deploy-and-publish/deploy-on-gateway/choreo-connect/getting-started/supported-features.md)
 
 
 ## **Kubernetes API Operator**

@@ -80,10 +80,10 @@ See the descriptions of the above configurations:
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service), [endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-endpoints), and [message processor]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-processor) with the configurations given above.
-4. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md), [endpoint](../../develop/creating-artifacts/creating-endpoints.md), and [message processor](../../develop/creating-artifacts/creating-a-message-processor.md) with the configurations given above.
+4. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 
 Set up the back-end service:
 
@@ -100,7 +100,7 @@ Set up the back-end service:
       axis2server.bat
       ```
 
-[Configure the ActiveMQ broker]({{base_path}}/install-and-setup/setup/mi-setup/brokers/configure-with-activemq) and set up the JMS Sender.
+[Configure the ActiveMQ broker](../../../install-and-setup/setup/mi-setup/brokers/configure-with-activemq.md) and set up the JMS Sender.
 
 Invoke the service:
 
@@ -229,10 +229,10 @@ See the descriptions of the above configurations:
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
-3. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service), [mediation sequences]({{base_path}}/integrate/develop/creating-artifacts/creating-reusable-sequences), [endpoint]({{base_path}}/integrate/develop/creating-artifacts/creating-endpoints), [message store]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-store) and [message processor]({{base_path}}/integrate/develop/creating-artifacts/creating-a-message-processor) with the configurations given above.
-4. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+3. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md), [mediation sequences](../../develop/creating-artifacts/creating-reusable-sequences.md), [endpoint](../../develop/creating-artifacts/creating-endpoints.md), [message store](../../develop/creating-artifacts/creating-a-message-store.md) and [message processor](../../develop/creating-artifacts/creating-a-message-processor.md) with the configurations given above.
+4. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 
 Set up the back-end service:
 
@@ -249,6 +249,6 @@ Set up the back-end service:
       axis2server.bat
       ```
    
-[Configure the ActiveMQ broker]({{base_path}}/install-and-setup/setup/mi-setup/brokers/configure-with-activemq).
+[Configure the ActiveMQ broker](../../../install-and-setup/setup/mi-setup/brokers/configure-with-activemq.md).
 
 Invoke the service. Note a message similar to the following example printed in the backend service.

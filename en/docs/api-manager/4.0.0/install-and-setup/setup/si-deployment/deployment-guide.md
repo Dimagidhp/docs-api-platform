@@ -8,7 +8,7 @@ installation and deployment, high maintainability, and DevOps-friendliness.
 
 The main deployment patterns supported are:
 
- - [Single Node Deployment]({{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-a-single-deployment)
- - [Minimum High Available(HA) Deployment]({{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-minimum-ha-cluster)
- - [Scalable High Available(HA) Deployment]({{base_path}}/install-and-setup/setup/si-deployment/deploying-si-as-a-scalable-cluster)
+ - [Single Node Deployment](deploying-si-as-a-single-deployment.md)
+ - [Minimum High Available(HA) Deployment](deploying-si-as-minimum-ha-cluster.md)
+ - [Scalable High Available(HA) Deployment](deploying-si-as-a-scalable-cluster.md)
  

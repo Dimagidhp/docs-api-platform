@@ -86,23 +86,23 @@ Let's see how **GraphQL Query Complexity Limitation** can be managed with your G
 2.  Click **Subscription Policies** under the **Rate Limiting Policies** section to see the set of existing 
 subscription policies.
 3.  To add a new Subscription Policy, click **Add Policy** .
-[![Add new Subscription Policy]({{base_path}}/assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)]({{base_path}}/assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)
+[![Add new Subscription Policy](../../../assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)](../../../assets/img/learn/add-new-subscription-policy-graphql-query-complexity.png)
 4.  Fill in the required details.
-[![Add new Subscription Policy]({{base_path}}/assets/img/learn/create-subscription-policy-with-graphql-complexity.png)]({{base_path}}/assets/img/learn/create-subscription-policy-with-graphql-complexity.png)
+[![Add new Subscription Policy](../../../assets/img/learn/create-subscription-policy-with-graphql-complexity.png)](../../../assets/img/learn/create-subscription-policy-with-graphql-complexity.png)
 5.  click **Save** Button.
-[![Add new Subscription Policy]({{base_path}}/assets/img/learn/save-subscription-policy-graphql-query-analysis.png)]({{base_path}}/assets/img/learn/save-subscription-policy-graphql-query-analysis.png)
+[![Add new Subscription Policy](../../../assets/img/learn/save-subscription-policy-graphql-query-analysis.png)](../../../assets/img/learn/save-subscription-policy-graphql-query-analysis.png)
 
 
 ### Design a GraphQL API
 
-To design a GraphQL API, see [Create a GraphQL API]({{base_path}}/design/create-api/create-a-graphql-api).
+To design a GraphQL API, see [Create a GraphQL API](../../create-api/create-a-graphql-api.md).
 
 <html>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>
 Instead of giving Business Plans of GraphQL API related details in 
-<a href="{{base_path}}/design/create-api/create-a-graphql-api">Create a GraphQL API</a>, 
+<a href="../../create-api/create-a-graphql-api.md">Create a GraphQL API</a>, 
 Use Business Plans that you create in the previous steps.
 </p>
 </div> 
@@ -112,23 +112,23 @@ Use Business Plans that you create in the previous steps.
 1.  Sign in to the Publisher Portal using the URL `https://localhost:9443/publisher`.
 2.  Click **edit button** of the **Query Analysis** tab under the **Run time Configuration** section to see the set of default 
     field's complexity values.
-[![See Existing field's Complexity Value]({{base_path}}/assets/img/learn/modify-graphql-complexity-values.png)]({{base_path}}/assets/img/learn/modify-graphql-complexity-values.png)
+[![See Existing field's Complexity Value](../../../assets/img/learn/modify-graphql-complexity-values.png)](../../../assets/img/learn/modify-graphql-complexity-values.png)
 3.  After Updating complexity values, click **Set** buttons.
-[![Update field's Complexity Value]({{base_path}}/assets/img/learn/set-graphql-complexity.png)]({{base_path}}/assets/img/learn/set-graphql-complexity.png)
+[![Update field's Complexity Value](../../../assets/img/learn/set-graphql-complexity.png)](../../../assets/img/learn/set-graphql-complexity.png)
 4.  click **Save** buttons to update the API.
-[![Update API with field's Complexity Value]({{base_path}}/assets/img/learn/update-api-with-graphql-complexity.png)]({{base_path}}/assets/img/learn/update-api-with-graphql-complexity.png)
+[![Update API with field's Complexity Value](../../../assets/img/learn/update-api-with-graphql-complexity.png)](../../../assets/img/learn/update-api-with-graphql-complexity.png)
 
 
 
 ### Invoke a GraphQL API
 
 To invoke a GraphQL API, see 
-[Invoke a GraphQL API]({{base_path}}/consume/invoke-apis/invoke-apis-using-tools/invoke-an-graphql-api-using-the-integrated-graphql-console).
+[Invoke a GraphQL API](../../../consume/invoke-apis/invoke-apis-using-tools/invoke-an-graphql-api-using-the-integrated-graphql-console.md).
 
 To perform **GraphQL Query Complexity Limitation**: 
 
    a. Click **Complexity Analysis** tab to see the Complexity values of the fields.
-   [![GraphQL Complexity Limitation]({{base_path}}/assets/img/learn/graphql-complexity-analysis.png)]({{base_path}}/assets/img/learn/graphql-complexity-analysis.png)
+   [![GraphQL Complexity Limitation](../../../assets/img/learn/graphql-complexity-analysis.png)](../../../assets/img/learn/graphql-complexity-analysis.png)
 
    b. Enter the following sample query. Then click on execute button as follows.
 
@@ -147,7 +147,7 @@ To perform **GraphQL Query Complexity Limitation**:
     }
 
    ```
-   [![GraphQL Complexity Limitation]({{base_path}}/assets/img/learn/graphql-complexity-limitation-console.png)]({{base_path}}/assets/img/learn/graphql-complexity-limitation-console.png)
+   [![GraphQL Complexity Limitation](../../../assets/img/learn/graphql-complexity-limitation-console.png)](../../../assets/img/learn/graphql-complexity-limitation-console.png)
 
 You have now **successfully blocked a requested GraphQL query** using the **Max Complexity** value that you assigned before.
 

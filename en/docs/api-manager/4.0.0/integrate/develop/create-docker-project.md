@@ -1,12 +1,12 @@
 # Creating Docker Exporter
 
-Create a Docker Exporter if you want to deploy your integration solutions inside a Docker environment. This project directory allows you to package multiple [integration modules]({{base_path}}/integrate/develop/create-integration-project) into a single Docker image and then build and push to the Docker registries.
+Create a Docker Exporter if you want to deploy your integration solutions inside a Docker environment. This project directory allows you to package multiple [integration modules](create-integration-project.md) into a single Docker image and then build and push to the Docker registries.
 
 ## Creating the Docker exporter
 
 Follow the steps given below.   
 
-1. [Create a new integration project]({{base_path}}/integrate/develop/create-integration-project) and create a Docker Exporter by doing one of the following.
+1. [Create a new integration project](create-integration-project.md) and create a Docker Exporter by doing one of the following.
 
     1. As part of creating an integration project, you can select the **Docker Exporter** check box.
 
@@ -14,7 +14,7 @@ Follow the steps given below.
 
 2. In the **New Docker Exporter** dialog box that opens, enter a name for the Docker exporter and other parameters as shown below.
 
-    <img src="{{base_path}}/assets/img/integrate/new-project/docker-exporter.png" width="500">
+    <img src="../../assets/img/integrate/new-project/docker-exporter.png" width="500">
 
     Enter the following information:
 
@@ -101,7 +101,7 @@ Follow the steps given below.
 
 3.  Optionally, click **Next** and configure Maven details for the Docker exporter.
 
-    <img src="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/new_docker_project_maven_info.png" width="500">
+    <img src="../../assets/img/integrate/create_project/docker_k8s_project/new_docker_project_maven_info.png" width="500">
 
 4.  Click **Finish**. The Docker exporter is created in the project explorer.
 5.  This step is only required if you already have a Docker image (in your local Docker repository) with the same name as the base image specified above. 
@@ -119,7 +119,7 @@ Follow the steps given below.
 
 Expand the **Docker Exporter** in the project explorer. See that the following folders and files are created:
 
-<img src="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/proj_explorer_docker_project.png" width="400">
+<img src="../../assets/img/integrate/create_project/docker_k8s_project/proj_explorer_docker_project.png" width="400">
 
 <table>
     <tr>
@@ -151,7 +151,7 @@ Expand the **Docker Exporter** in the project explorer. See that the following f
             deployment.toml
         </td>
         <td>
-            The <a href="{{base_path}}/reference/config-catalog">product configuration file</a>.
+            The <a href="../../reference/config-catalog.md">product configuration file</a>.
         </td>
     </tr>
     <tr>
@@ -176,9 +176,9 @@ Expand the **Docker Exporter** in the project explorer. See that the following f
 
 Before you begin:
 
--   Create your integration artifacts in an [ESB Config sub project]({{base_path}}/integrate/develop/create-integration-project/#sub-projects) and package the artifacts in a [Composite Exporter]({{base_path}}/integrate/develop/packaging-artifacts/#sub-projects). For example, see the HelloWorld sample given below.
+-   Create your integration artifacts in an [ESB Config sub project](create-integration-project.md#sub-projects) and package the artifacts in a [Composite Exporter](packaging-artifacts.md#sub-projects). For example, see the HelloWorld sample given below.
 
-    <img alt="Integration artifacts for Docker" src="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/integration-projects-for-docker.png" width="300">
+    <img alt="Integration artifacts for Docker" src="../../assets/img/integrate/create_project/docker_k8s_project/integration-projects-for-docker.png" width="300">
 
 -   Be sure to start your Docker instance before building the image. If Docker is not started, the build process will fail.
 
@@ -203,21 +203,21 @@ To <b>build</b> and <b>push</b> the Docker image:
 
 1.  Open the **pom.xml** file inside the Docker project and click **Refresh** on the top-right. Your composite application project with integration artifacts will be listed under **Dependencies** as follows:
 
-    <img alt="Docker Pom view" src="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/docker-pom.png" width="700">
+    <img alt="Docker Pom view" src="../../assets/img/integrate/create_project/docker_k8s_project/docker-pom.png" width="700">
     
 2.  Select the composite exporters that you want to package inside the Docker image.
 3.  If required, you can update the **Target Repository** to which the image should be pushed and the **Target Tag**.
 4.  Save the POM file and click **Build** to start the Docker image build.
 5.  It will build the Docker image based on the Dockerfile and the Target details. When the image is created, the following message will display. 
 
-    <img src="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/build.png" alt="Docker Build Success">
+    <img src="../../assets/img/integrate/create_project/docker_k8s_project/build.png" alt="Docker Build Success">
 
 6.  Click <b>Push</b> to push the Docker image to your Docker registry. 
 
     In the dialog box that opens, provide the details of your Docker registry as shown below.
 
-    <a href="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/docker-registry-credentials.png"><img src="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/docker-registry-credentials.png" width="70%"></a>
+    <a href="../../assets/img/integrate/create_project/docker_k8s_project/docker-registry-credentials.png"><img src="../../assets/img/integrate/create_project/docker_k8s_project/docker-registry-credentials.png" width="70%"></a>
 
     When the image is pushed to the registry, you will see the following message.
 
-    <img src="{{base_path}}/assets/img/integrate/create_project/docker_k8s_project/push.png" alt="Docker Push Success">
+    <img src="../../assets/img/integrate/create_project/docker_k8s_project/push.png" alt="Docker Push Success">

@@ -18,7 +18,7 @@ Follow the instructions below to expose a third-party Service Provider stream as
 
         Let's refer to this directory as `<KAFKA_HOME>`.
 
-    2. Install relevant kafka client libraries in SI using extension installer. For instructions to download and install a Siddhi extension, see [Downloading and Installing Siddhi Extensions]({{base_path}}/reference/streaming-connectors/downloading-and-installing-siddhi-extensions/).
+    2. Install relevant kafka client libraries in SI using extension installer. For instructions to download and install a Siddhi extension, see [Downloading and Installing Siddhi Extensions](../../reference/streaming-connectors/downloading-and-installing-siddhi-extensions.md).
 
     3. Configure the basic details needed to publish siddhi application with AsyncAPI definition to the services in API Manager.
     
@@ -87,7 +87,7 @@ Follow the instructions below to expose a third-party Service Provider stream as
 
 1. Navigate to the `<APIM_HOME>/bin` directory 
 
-2. [Start the API_Manager]({{base_path}}/install-and-setup/install/installing-the-product/running-the-api-m/).
+2. [Start the API_Manager](../../install-and-setup/install/installing-the-product/running-the-api-m.md).
 
      The following log appears on the API Manager console when the server is started successfully.
 
@@ -100,7 +100,7 @@ Follow the instructions below to expose a third-party Service Provider stream as
 
 1. Navigate to the `<SI_HOME>/bin` directory 
 
-2. [Start the Streaming Integrator]({{base_path}}/install-and-setup/install/installing-the-product/running-the-si/#starting-the-si-server).
+2. [Start the Streaming Integrator](../../install-and-setup/install/installing-the-product/running-the-si.md#starting-the-si-server).
 
      The following log appears on the SI console when the server is started successfully.
 
@@ -116,7 +116,7 @@ Let's create a basic Siddhi application that can consume messages from a Kafka t
 
 Follow the instructions below to create a Streaming Backend server:
 
-1. [Start Streaming Integrator Tooling]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview/#starting-streaming-integrator-tooling).
+1. [Start Streaming Integrator Tooling](../../develop/streaming-apps/streaming-integrator-studio-overview.md#starting-streaming-integrator-tooling).
 
 2. Click **New** to open a new file.
 
@@ -161,7 +161,7 @@ Follow the instructions below to generate an AsyncAPI Definition via the Streami
 
      The AsyncAPI Generation form appears.
 
-     [![Async API View button]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)]({{base_path}}/assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
+     [![Async API View button](../../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)](../../assets/img/streaming/working-with-async-api/open-async-api-view-button.png)
 
 2. Enter the WebSocket Streaming API related details.
     
@@ -177,21 +177,21 @@ Follow the instructions below to generate an AsyncAPI Definition via the Streami
      | **Select Source or Sink type to Generate Async API** | Select **websocket-server**           |
      | **Sources**                                          | Select **TotalCountStream**      |
 
-     [![Design View of Async API]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-form.png)]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-form.png)
+     [![Design View of Async API](../../assets/img/streaming/working-with-async-api/async-api-form.png)](../../assets/img/streaming/working-with-async-api/async-api-form.png)
 
 3. Click **Generate Async API** to generate the AsyncAPI definition.
 
-     ![Generate Async API button]({{base_path}}/assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)
+     ![Generate Async API button](../../assets/img/streaming/working-with-async-api/generate-async-api-view-button.png)
 
      After the Async API is generated as described above, the Async API specifications will be visible in the **Async API View**.
 
-     ![Async API view]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-spec-view.png)
+     ![Async API view](../../assets/img/streaming/working-with-async-api/async-api-spec-view.png)
 
 4. Add the generated AsynAPI definition to the Streaming backend.
 
      Click **Add Async API** to add the generated AsyncAPI definition to the Siddhi application.
 
-     <a href="{{base_path}}/assets/img/streaming/working-with-async-api/add-async-api-button.png"><img src="{{base_path}}/assets/img/streaming/working-with-async-api/add-async-api-button.png" width="20%" alt="Add Async API"></a>
+     <a href="../../assets/img/streaming/working-with-async-api/add-async-api-button.png"><img src="../../assets/img/streaming/working-with-async-api/add-async-api-button.png" width="20%" alt="Add Async API"></a>
 
 3. Click **Code View** to view the Siddhi application with the AsyncAPI definition that was generated and save it so that it can be deployed on SI server.
 
@@ -203,7 +203,7 @@ Follow the instructions below to publish the AsyncAPI definition to the service 
 
 1. Click **Deploy**, and then click **Deploy to Server** in Streaming Integrator Tooling. 
 
-     [![Deploy To Server]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png)]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png)
+     [![Deploy To Server](../../assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png)](../../assets/img/streaming/working-with-async-api/async-api-deploy-to-server.png)
 
      This opens the **Deploy Siddhi Apps to Server** dialog box. 
 
@@ -211,7 +211,7 @@ Follow the instructions below to publish the AsyncAPI definition to the service 
 
 3. Click **Deploy**.
 
-     [![Deploy Button]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy.png)]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-deploy.png)
+     [![Deploy Button](../../assets/img/streaming/working-with-async-api/async-api-deploy.png)](../../assets/img/streaming/working-with-async-api/async-api-deploy.png)
 
      After the Siddhi application is successfully deployed, the following log messages appear in the Streaming Integrator and API Manager server logs to indicate that the AsyncAPI definition is successfully published in the Service Catalog.
 
@@ -234,7 +234,7 @@ Follow the instructions below to view the service catalog entry in WSO2 API Mana
      
      For testing purposes, you can use `https://localhost:9448/publisher` and `admin` as the username and password.
 
-     [![Open Service Catalog]({{base_path}}/assets/img/integrate/tutorials/service-catalog/open-service-catalog.png)]({{base_path}}/assets/img/integrate/tutorials/service-catalog/open-service-catalog.png)
+     [![Open Service Catalog](../../assets/img/integrate/tutorials/service-catalog/open-service-catalog.png)](../../assets/img/integrate/tutorials/service-catalog/open-service-catalog.png)
      
 2. Click **Services**.
 
@@ -258,7 +258,7 @@ Follow the instructions below to create an API from the deployed managed service
 
 3. Click **Create API**.
 
-    [![Create API from Service]({{base_path}}/assets/img/streaming/working-with-async-api/create-api-from-service.png)]({{base_path}}/assets/img/streaming/working-with-async-api/create-api-from-service.png)
+    [![Create API from Service](../../assets/img/streaming/working-with-async-api/create-api-from-service.png)](../../assets/img/streaming/working-with-async-api/create-api-from-service.png)
 
      The API overview page appears.
 
@@ -272,7 +272,7 @@ Follow the instructions below to publish the API via the WSO2 API Manager Publis
 
      If the API is published successfully, the lifecycle state will shift to **PUBLISHED**.
 
-     [![Publish API]({{base_path}}/assets/img/learn/publish-api.png)]({{base_path}}/assets/img/learn/publish-api.png)
+     [![Publish API](../../assets/img/learn/publish-api.png)](../../assets/img/learn/publish-api.png)
 
 ## Step 9 - Invoke the published API
 
@@ -294,11 +294,11 @@ Follow the instructions below to publish the API via the WSO2 API Manager Publis
     
          This wizard takes you through the steps of creating a new application, subscribing, generating keys, and generating an access token to invoke the API.
 
-         [![Subscription & Key Generation Wizard]({{base_path}}/assets/img/learn/key-generation-wizard.png)]({{base_path}}/assets/img/learn/key-generation-wizard.png)
+         [![Subscription & Key Generation Wizard](../../assets/img/learn/key-generation-wizard.png)](../../assets/img/learn/key-generation-wizard.png)
 
     2. Copy the authorization token that appears in here.
 
-         <a href="{{base_path}}/assets/img/learn/generate-access-token-popup.jpg"><img src="{{base_path}}/assets/img/learn/generate-access-token-popup.jpg" width="55%" alt="Authorization token"></a>
+         <a href="../../assets/img/learn/generate-access-token-popup.jpg"><img src="../../assets/img/learn/generate-access-token-popup.jpg" width="55%" alt="Authorization token"></a>
 
 4. Try out the operations.
 
@@ -363,7 +363,7 @@ Let's execute the following Kafka client producer sample to pass the streaming e
 As SI server is already running as explained in above steps, when the Kafka client sends the events they will be consumed by the source in the SI server and pushed to the WebSocket server. 
 As the WS client command listens to these events, the following types of events will be printed in the terminal that the WS client was run.
     
-  [![Results]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-websocket-results.png)]({{base_path}}/assets/img/streaming/working-with-async-api/async-api-websocket-results.png)
+  [![Results](../../assets/img/streaming/working-with-async-api/async-api-websocket-results.png)](../../assets/img/streaming/working-with-async-api/async-api-websocket-results.png)
 
 
 Now, you have successfully created and published the API that corresponds to the WebSocket service in the Services. In addition, you have subscribed to it, obtained an access token for testing, and tested the API with the access token generated with the Kafka client which sends streaming events.

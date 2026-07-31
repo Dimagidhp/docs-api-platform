@@ -65,15 +65,15 @@ FIX_XSLT:
 
 Create the artifacts:
 
-1. [Set up WSO2 Integration Studio]({{base_path}}/integrate/develop/installing-wso2-integration-studio).
-2. [Create an integration project]({{base_path}}/integrate/develop/create-integration-project) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
+1. [Set up WSO2 Integration Studio](../../develop/installing-wso2-integration-studio.md).
+2. [Create an integration project](../../develop/create-integration-project.md) with an <b>ESB Configs</b> module and an <b>Composite Exporter</b>.
 3. Add the above XSLT as a registry resource.
-4. Create the [proxy service]({{base_path}}/integrate/develop/creating-artifacts/creating-a-proxy-service) with the configurations given above.
+4. Create the [proxy service](../../develop/creating-artifacts/creating-a-proxy-service.md) with the configurations given above.
 5. Download the FIX transport resources from [here](https://github.com/wso2-docs/WSO2_EI/tree/master/FIX-transport-resources) and change the `{file_path}` of the proxy with the downloaded location.
 6. Change the `{reg_path}` with the XSLT registry location. 
-6. [Deploy the artifacts]({{base_path}}/integrate/develop/deploy-artifacts) in your Micro Integrator.
+6. [Deploy the artifacts](../../develop/deploy-artifacts.md) in your Micro Integrator.
 
-[Enable the FIX transport]({{base_path}}/install-and-setup/setup/mi-setup/transport_configurations/configuring-transports/#configuring-the-fix-transport) and start the Micro-Integrator.
+[Enable the FIX transport](../../../install-and-setup/setup/mi-setup/transport_configurations/configuring-transports.md#configuring-the-fix-transport) and start the Micro-Integrator.
 
 Set up the back-end service:
 

@@ -35,7 +35,7 @@ Follow the steps given below.
 
 2.  Generate a key store, export the public certificate from the keystore, and import that certificate to the `client­-truststore.jks` file.
     
-     For more information, see [Creating New Keystores]({{base_path}}/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/).
+     For more information, see [Creating New Keystores](../security/configuring-keystores/keystore-basics/creating-new-keystores.md).
 
 3.  Restart the server.
 
@@ -74,7 +74,7 @@ Follow the steps given below.
 
 !!! Warning
 
-    After you change the hostname, if you encounter login failures when trying to access the API Publisher and API Developer Portal with the error `Registered callback does not match with the provided url`, see ['Registered callback does not match with the provided url' error]({{base_path}}/troubleshooting/troubleshooting-invalid-callback-error) in the Troubleshooting guide.
+    After you change the hostname, if you encounter login failures when trying to access the API Publisher and API Developer Portal with the error `Registered callback does not match with the provided url`, see ['Registered callback does not match with the provided url' error](../../../troubleshooting/troubleshooting-invalid-callback-error.md) in the Troubleshooting guide.
 
 !!! Note
 

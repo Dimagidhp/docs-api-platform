@@ -48,9 +48,9 @@ Following is the request received from the Choreo Connect Router when you enable
 
 The `requestHeaders`, `requestTrailers` and `requestBody` fields in the above request to the interceptor service
 provide the request headers, trailers and **base64 encoded** request body from the client. The `invocationContext`
-contains additional request details. For more information, see [Invocation Context]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/interceptor-context-and-invocation-context/#invocation-context).
+contains additional request details. For more information, see [Invocation Context](interceptor-context-and-invocation-context.md#invocation-context).
 
-You can customize the request body in the open API definition according to your requirements. For more information, see [Defining Interceptors in an OpenAPI Definition]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/defining-interceptors-in-an-open-api-definition/).
+You can customize the request body in the open API definition according to your requirements. For more information, see [Defining Interceptors in an OpenAPI Definition](../defining-interceptors-in-an-open-api-definition.md).
 
 ### 2. Response from the Interceptor Service to Choreo Connect Router
 
@@ -137,7 +137,7 @@ Interceptor can instruct the Choreo-Connect Router what should be done with the 
 | [headers\|trailers]ToAdd     | **Appends** a new value onto existing headers/trailers, or **adds** the headers/trailers if it does not already exist.                                                                                                                                   |
 | [headers\|trailers]ToRemove  | **Deletes** headers/trailers.                                                                                                                                                                                                                             |
 | [headers\|trailers]ToReplace | **Sets** the new value for existing headers/trailers, or **adds** the headers/trailers if it does not already exist.                                                                                                                                      |
-| interceptorContext           | Refer [Interceptor Context]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/interceptor-context-and-invocation-context/#interceptor-context) for details.                      |
+| interceptorContext           | Refer [Interceptor Context](interceptor-context-and-invocation-context.md#interceptor-context) for details.                      |
 | body                         | **Sets** the body with **base64** decoding the provided value. If the value is `null` (i.e. `{"body": null}`) or the key "body" is not defined (i.e. `{}`), body is not updated. If the value is empty (i.e. `{"body": ""}`), **sets** the body as empty. |
 
 <!-- The content of the below warning is same as the info notice in the file
@@ -169,7 +169,7 @@ Note that the body should be base64 encoded.
 
 You can select the endpoint (or the backend) that the request should get directed with the logic of your interceptor service.
 First, you have to define all the available endpoints defined with the extension `x-wso2-endpoints`.
-Refer [Defining Endpoints in an OpenAPI Definition]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/defining-endpoints-in-an-openapi-definition/).
+Refer [Defining Endpoints in an OpenAPI Definition](../../endpoints/defining-endpoints-in-an-openapi-definition.md).
 Then, you can include the "Dynamic Endpoint" name in the interceptor response.
 
 !!! warning

@@ -77,6 +77,6 @@ For more information on above circuit breakers, refer [the Envoy documentation](
 
 ## See Also
 
-- [Timeout]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/endpoints/resiliency/timeout)
+- [Timeout](timeout.md)
 
 

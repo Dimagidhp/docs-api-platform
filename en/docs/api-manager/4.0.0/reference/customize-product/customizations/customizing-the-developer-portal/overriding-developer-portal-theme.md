@@ -7,7 +7,7 @@ There are mainly two ways to customize and override the developer portal theme.
 
 In this section, we will cover the first method which is the simplest way to change the appearance of Developer portal.
 
-For the second method, please refer [Advanced Customization]({{base_path}}/develop/customizations/advanced-ui-customization/) section.
+For the second method, please refer [Advanced Customization](../advanced-ui-customization.md) section.
 
 ## Global Theming
 
@@ -53,17 +53,17 @@ Enable landing page. **defaultTheme.json** (Tenant theming).
 
 The following documents describe some of the most commonly used customizations, that you can do by changing the `defaultTheme.js`
 
-  - [Enabling or Disabling API Detail Tabs]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enabling-or-disabling-api-detail-tabs/)
-  - [Override API Overview Page per API]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/override-api-overview-page-per-api/)
-  - [Enable or Disable Rating]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-rating/)
-  - [Enable or Disable Home Page]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-home-page/)
-  - [Enable or Disable Tag Cloud]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-tag-cloud/)
-  - [Enable or Disable Footer]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-footer/)
-  - [Enable or Disable Banner]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-banner/)
-  - [Styling API Details Left Menu]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-left-menu/)
-  - [Styling API Details Info Section]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-info-section/)
-  - [Styling the Logo and Header]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/styling-the-logo-and-header/)
-  - [Customize API Listing Default View]({{base_path}}/reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/change-default-view/)
+  - [Enabling or Disabling API Detail Tabs](enabling-or-disabling-api-detail-tabs.md)
+  - [Override API Overview Page per API](override-api-overview-page-per-api.md)
+  - [Enable or Disable Rating](enable-or-disable-rating.md)
+  - [Enable or Disable Home Page](enable-or-disable-home-page.md)
+  - [Enable or Disable Tag Cloud](enable-or-disable-tag-cloud.md)
+  - [Enable or Disable Footer](enable-or-disable-footer.md)
+  - [Enable or Disable Banner](enable-or-disable-banner.md)
+  - [Styling API Details Left Menu](styling-api-details-left-menu.md)
+  - [Styling API Details Info Section](styling-api-details-info-section.md)
+  - [Styling the Logo and Header](styling-the-logo-and-header.md)
+  - [Customize API Listing Default View](customize-api-listing/change-default-view.md)
 
 ## Tenant Theming 
 
@@ -71,7 +71,7 @@ The following documents describe some of the most commonly used customizations, 
 
 **If you do not have access to the file system** , you can upload/download the Devportal theme via the Admin Portal as shown below:
 
-1.  Download the sample theme here [sample-theme.zip]({{base_path}}/assets/attachments/learn/sample-theme.zip). 
+1.  Download the sample theme here [sample-theme.zip](../../../../assets/attachments/learn/sample-theme.zip). 
 2.  The `sample-theme.zip` file contains the following folder structure. 
 
      You can make the changes required to `userTheme.json` file and archive it back. The name of the archive does not matter. But make sure that the `userTheme.json` file name remains the same.
@@ -102,7 +102,7 @@ The following documents describe some of the most commonly used customizations, 
 4.  Click **Tenant Theme** under **Settings** category and click **Browse File to Upload** to upload your ZIP file.
     Alternatively, you can drag and drop your ZIP file to upload.
 
-    [![Upload tenant theme]({{base_path}}/assets/img/learn/upload-tenant-theme.png)]({{base_path}}/assets/img/learn/upload-tenant-theme.png)
+    [![Upload tenant theme](../../../../assets/img/learn/upload-tenant-theme.png)](../../../../assets/img/learn/upload-tenant-theme.png)
 
 5.  Access the API Developer Portal (`https://<server-host>:<server-port>/devportal`) using your tenant username and password.
 

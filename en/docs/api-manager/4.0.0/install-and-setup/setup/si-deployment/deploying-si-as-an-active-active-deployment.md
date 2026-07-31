@@ -6,7 +6,7 @@ overview of the Active-Active deployment pattern and instructions to configure i
 
 ## Overview
 
-[![overview]({{base_path}}/assets/img/streaming/active-active-deployment/si-active-active-deployment-pattern.png){: style="width:80%"}]({{base_path}}/assets/img/streaming/active-active-deployment/si-active-active-deployment-pattern.png)
+[![overview](../../../assets/img/streaming/active-active-deployment/si-active-active-deployment-pattern.png){: style="width:80%"}](../../../assets/img/streaming/active-active-deployment/si-active-active-deployment-pattern.png)
 
 The above diagram represents a deployment where you are not limited to two nodes. You can scale the event processing horizontally by adding more SI
  nodes to the deployment. In this deployment, it is recommended to configure the client application to publish events to multiple SI nodes in a Round

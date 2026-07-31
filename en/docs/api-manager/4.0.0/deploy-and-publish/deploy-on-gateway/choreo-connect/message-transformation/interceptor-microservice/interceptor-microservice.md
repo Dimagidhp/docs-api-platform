@@ -10,7 +10,7 @@ Use the following Open API Definition to build your interceptor service with a p
 
 Choreo Connect Router makes requests to your interceptor service in the following paths. You can define which handler
 (request/response) should be get called, which information should be included in the request body of the interceptor
-service when [Defining Interceptors in an OpenAPI Definition]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/defining-interceptors-in-an-open-api-definition/) 
+service when [Defining Interceptors in an OpenAPI Definition](../defining-interceptors-in-an-open-api-definition.md) 
 
-1. [Request Flow Interceptor]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/request-flow-interceptor/)
-2. [Response Flow Interceptor]({{base_path}}/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/response-flow-interceptor/)
+1. [Request Flow Interceptor](request-flow-interceptor.md)
+2. [Response Flow Interceptor](response-flow-interceptor.md)

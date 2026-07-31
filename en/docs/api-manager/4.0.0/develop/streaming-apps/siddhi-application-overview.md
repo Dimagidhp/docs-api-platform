@@ -62,7 +62,7 @@ Streams are one of the core elements of a stream processing application. A strea
 
 ### Tables
 
-A table is a collection of events that can be used to store streaming data. The capability to store events in a table allows you to query for stored events later or process them again with a different stream. The generic table concept holds here as well, however, Siddhi tables also support numerous table specific data manipulations such as defining primary keys, indexing, etc. For more information on Siddhi tables, see [Storage Integration]({{base_path}}/develop/streaming-apps/siddhi-application-overview) and [Tables at Siddhi Streaming SQL Guide](https://siddhi-io.github.io/siddhi/documentation/siddhi-4.x/query-guide-4.x/#table).
+A table is a collection of events that can be used to store streaming data. The capability to store events in a table allows you to query for stored events later or process them again with a different stream. The generic table concept holds here as well, however, Siddhi tables also support numerous table specific data manipulations such as defining primary keys, indexing, etc. For more information on Siddhi tables, see [Storage Integration](siddhi-application-overview.md) and [Tables at Siddhi Streaming SQL Guide](https://siddhi-io.github.io/siddhi/documentation/siddhi-4.x/query-guide-4.x/#table).
 
 ### Windows
 
@@ -74,6 +74,6 @@ Aggregation allows you to aggregate streaming events for different time granular
 
   
 
-The elements mentioned above work together in a Siddhi application to form an event flow. To understand how the elements os a Siddhi application are interconnected, you can view the design view of a Siddhi application. For more information, see [Streaming Integrator Tooling Overview]({{base_path}}/develop/streaming-apps/streaming-integrator-studio-overview).
+The elements mentioned above work together in a Siddhi application to form an event flow. To understand how the elements os a Siddhi application are interconnected, you can view the design view of a Siddhi application. For more information, see [Streaming Integrator Tooling Overview](streaming-integrator-studio-overview.md).
 
   
