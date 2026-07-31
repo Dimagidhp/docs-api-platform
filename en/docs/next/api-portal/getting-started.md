@@ -28,7 +28,7 @@ The API Portal & MCP Hub is where developers discover, subscribe to, and consume
 Run this command in your terminal to download and unzip the standalone API Portal distribution:
 
 ```bash
-curl -sLO https://github.com/wso2/api-platform/releases/download/api-portal%2Fv1.0.0/wso2apip-api-portal-1.0.0-rc.zip && \
+curl -sLO https://github.com/wso2/api-platform/releases/download/api-portal%2Fv1.0.0-rc/wso2apip-api-portal-1.0.0-rc.zip && \
 unzip wso2apip-api-portal-1.0.0-rc.zip
 ```
 
@@ -111,7 +111,7 @@ Create an API manifest and an OpenAPI definition:
 
 ```yaml
 # api.yaml
-apiVersion: api-portal.api-platform.wso2.com/v1alpha2
+apiVersion: api-portal.api-platform.wso2.com/v1
 kind: RestApi
 
 metadata:
