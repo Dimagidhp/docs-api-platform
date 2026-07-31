@@ -147,6 +147,7 @@ Configure how client applications authenticate when accessing your proxy endpoin
 | **Key name** | The name of the request header that clients must provide (e.g., `X-API-Key`). |
 | **Sent in** | Currently, `header` is the only supported option. |
 | **API Key Value Prefix** | Optional prefix prepended to the value clients must send, e.g. `Bearer` so clients send `Bearer <key>`. |
+
 3. Click **Save** to apply the security configuration.
 
 ---
