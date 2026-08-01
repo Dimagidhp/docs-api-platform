@@ -62,7 +62,7 @@ To move to a different plan on an API you're already subscribed to:
 2. Click **Switch plan** on the plan card you want.
 3. Confirm in the dialog.
 
-Your subscription token stays the same, so nothing you've already configured breaks. Only the rate limits change.
+Your subscription token stays the same, so nothing you've already configured breaks. What changes is the rate limits and quota the new plan sets.
 
 ## Cancel a subscription
 

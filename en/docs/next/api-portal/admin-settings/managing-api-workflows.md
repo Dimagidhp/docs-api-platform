@@ -48,7 +48,7 @@ The right pane shows an **Agent Preview**—the name and description exactly as 
 
 Choose one of two authoring paths.
 
-**Upload file**—drop in a workflow you already have. Arazzo specs go in as `.yaml`, `.yml`, or `.json`; a natural-language workflow goes in as `.md`. After upload, an Arazzo file gets its source descriptions validated and listed, and a Markdown file gets a summary strip..
+**Upload file**—drop in a workflow you already have. Arazzo specs go in as `.yaml`, `.yml`, or `.json`; a natural-language workflow goes in as `.md`. After upload, an Arazzo file gets its source descriptions validated and listed, and a Markdown file gets a summary strip.
 
 **From template**—pick the APIs that take part in the workflow and let the portal generate a starter Arazzo spec from their specifications. Filter the API list by name, type, or description, or narrow it to selected, AI Ready, or AI Restricted APIs. MCP servers appear in this list alongside APIs.
 

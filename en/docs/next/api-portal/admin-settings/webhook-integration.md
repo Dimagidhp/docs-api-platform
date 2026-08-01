@@ -14,7 +14,9 @@ content_type: "how-to"
 
 # Webhooks
 
-The API Portal & MCP Hub doesn't talk to a gateway directly. Instead it publishes a signed HTTP POST to every endpoint you register whenever an application, API key, or subscription changes. A handler behind that endpoint decides what to do next—typically propagating the change to your API Gateway so access is enforced immediately, rejecting a key the moment a developer revokes it.
+The API Portal & MCP Hub doesn't talk to a gateway directly. Instead it publishes a signed HTTP POST to every endpoint you register whenever an application, API key, or subscription changes. Each delivery is signed when the subscriber has a secret; without one it arrives unsigned. A handler behind that endpoint decides what to do next, typically propagating the change to your API Gateway.
+
+Enforcement is not immediate, and delivery alone doesn't guarantee it. It happens only once the subscriber accepts the event and acts on it. A timeout or a non-2xx response is terminal — there's no retry — so the change stays unenforced, and any queueing on the subscriber's side adds delay.
 
 This page covers registering a subscriber. For the payload of every event, the delivery envelope, and how to verify and decrypt one, see the [Webhook Event Catalog](../references/webhook-event-catalog.md).
 

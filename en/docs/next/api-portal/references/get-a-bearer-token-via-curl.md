@@ -15,19 +15,19 @@ content_type: "how-to"
 
 # Getting a bearer token via curl (IDP mode)
 
-When the API Portal & MCP Hub is configured with an external IDP (e.g. Asgardeo), REST API calls to `/api/v0.9/*` must include an `Authorization: Bearer <token>` header. This guide shows how to obtain that token from the terminal, without a browser.
+When the API Portal & MCP Hub is configured with an external IDP (e.g. Asgardeo), REST API calls to `/api/v0.9/*` must include an `Authorization: Bearer <token>` header. This guide obtains that token from the terminal, without going through the portal UI. One step still opens a browser: the identity provider's own login and redirect.
 
 !!! note
     If you're running in **local auth mode** instead (the default for local development), get a token from the Platform API directly—see [Getting Started](../getting-started.md)—no PKCE flow needed.
 
 ## Prerequisites
 
-- IDP is configured (`idp.client_id` is set in `config.toml`—see [Authentication](../setting-up/authentication/overview.md))
+- An identity provider (IDP) is configured, with `api_portal.auth.idp.client_id` set in `config.toml`—see [Authentication](../setting-up/authentication/overview.md)
 - The `dp:*` scopes are registered in the IDP and assigned to your user (see [Set up Asgardeo](../setting-up/authentication/asgardeo-setup.md) steps 3–4)
 - You have the **client ID** and **client secret** from your IDP application
 - You know your org's identifier (the `ORGANIZATION_IDENTIFIER` value used to scope the login, e.g. `sub`)
 
-## Flow: Authorization code + PKCE
+## Flow: Authorization code + Proof Key for Code Exchange (PKCE)
 
 The API Portal application is a confidential Traditional Web App—it uses authorization code flow with PKCE and a client secret. You need to:
 

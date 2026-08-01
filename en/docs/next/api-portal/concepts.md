@@ -80,7 +80,7 @@ An **API workflow** is a published, multi-step sequence of API calls defined in 
 
 A **subscription plan** is a named usage tier that controls how much of an API or MCP server a developer can consume. Plans are attached to an artifact during publishing, and developers choose a plan when subscribing.
 
-Plans can define rate limits—a request count (or event count, for async APIs) per time window (minute, hour, day, or month). When enabled, a default set of plans (Bronze, Silver, Gold, Unlimited, AsyncUnlimited) is created with the organization. See [Subscription Plans](admin-settings/subscription-plans.md).
+Plans can define rate limits—a request count (or event count, for async APIs) per time window (minute, hour, day, or month). When `organization.auto_create_subscription_plans` is on, a default set of plans (Bronze, Silver, Gold, Unlimited, AsyncUnlimited) is created with the organization. See [Subscription Plans](admin-settings/subscription-plans.md).
 
 ## Application
 

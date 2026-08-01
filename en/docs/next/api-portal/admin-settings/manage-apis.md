@@ -43,7 +43,16 @@ Click **Next**.
 
 ### Step 2: Spec
 
-Upload the contract that defines the API—required. One file, accepted as `.json`, `.yaml`, `.yml`, `.graphql`, `.gql`, `.wsdl`, or `.xml`, depending on the API type: OpenAPI or AsyncAPI for REST, WebSocket, and WebSub; GraphQL SDL for GraphQL; WSDL for SOAP.
+Upload the contract that defines the API. One file is required, and the format follows the API type you chose in step 1:
+
+| API type | Contract |
+|---|---|
+| REST | OpenAPI, as `.json`, `.yaml`, or `.yml` |
+| WebSocket, WebSub | AsyncAPI, as `.json`, `.yaml`, or `.yml` |
+| GraphQL | A GraphQL schema, as `.graphql` or `.gql` |
+| MCP | A flat, type-tagged list of tools, resources, and prompts, as `.yaml` or `.yml`. See [Manage MCP servers](manage-mcp-servers.md#adding-an-mcp-server) |
+
+The file picker also accepts `.wsdl` and `.xml`. SOAP isn't in the **API type** list, so SOAP APIs reach the catalog another way rather than through this wizard.
 
 Click **Next**.
 

@@ -248,7 +248,7 @@ Status Code **200**
 |»» enabled|boolean|false|none|none|
 |»» events|[string]|false|none|none|
 |»» timeoutMs|integer|false|none|none|
-|»» hasSecret|boolean|false|none|Whether a secret is configured. The same secret both HMAC-signs outgoing payloads and encrypts sensitive fields in secret event payloads.|
+|»» hasSecret|boolean|false|none|Whether a secret is configured. The same secret serves two purposes. It signs outgoing payloads with a hash-based message authentication code (HMAC), and it derives the AES-256-GCM key that encrypts sensitive fields. Encrypted fields arrive as `data.iv`, `data.tag`, and `data.ciphertext`; the derivation and a worked decryption example are documented in the webhook event catalog.|
 |»» createdBy|string|false|none|Identity of the user who created this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses and list items.|
 |»» updatedBy|string|false|none|Identity of the user who last updated this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses only, omitted on list items.|
 |»» createdAt|string(date-time)|false|none|none|

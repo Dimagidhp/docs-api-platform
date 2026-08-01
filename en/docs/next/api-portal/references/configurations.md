@@ -220,11 +220,18 @@ These three keys describe the organization the instance serves:
 
 | Key | Description |
 |---|---|
-| `organization.handle` | The URL slug of the single organization this instance serves, and the pin every route is scoped against—anything resolving to a different organization is rejected. In local-auth mode it must match the Platform API's organization id; in IDP mode, the `org_handle` claim of the tokens the portal verifies |
+| `organization.handle` | The URL slug of the single organization this instance serves, and the pin every route is scoped against. Anything resolving to a different organization is rejected. In local-auth mode it must match the Platform API's organization id. In IDP mode the token's organization claim is matched against the organization's `idpRefId` instead—see the note below |
 | `organization.display_name` | Used only when seeding the organization for the first time. Never overwrites an existing name, so an admin's later edit in the settings UI survives restarts. Empty means "use the handle" |
 | `organization.auto_create_subscription_plans` | Seeds Bronze, Silver, Gold, Unlimited, and AsyncUnlimited alongside the organization |
 
 Seeding runs on startup only if the organization doesn't already exist, so it's idempotent and safe to leave enabled.
+
+!!! note "Which token claim carries the organization"
+    The two authentication modes resolve it differently, so don't assume one claim covers both.
+
+    - **Local auth** reads a fixed `org_handle` claim and compares it to `organization.handle`.
+    - **IDP mode** reads the claim named by `auth.claim_mappings.organization` (default `org_name`) and compares it to the organization's `idpRefId`, which admins set in [Organization settings](../admin-settings/organization-settings.md).
+
 
 !!! note
     `organization.default_name` is a deprecated alias for `handle`. It still resolves, with a startup warning—use `handle` in new configuration.
@@ -275,7 +282,7 @@ The proxy's behavior and its safety limits are set by these keys:
 | Key | Default | Description |
 |---|---|---|
 | `tryout.enabled` | `true` | Whether the proxy is available |
-| `tryout.allow_http_endpoints` | `true` | Set `false` to permit only `https://` endpoints |
+| `tryout.allow_http_endpoints` | `true` | Whether cleartext `http://` endpoints may be called. Intended for local development; set it to `false` in production so only `https://` endpoints are reachable |
 | `tryout.allow_private_endpoints` | `false` | Deny-by-default. The registered-endpoint allowlist can't protect against an endpoint registered to point at an internal service, so this denylist is the only control for that case. Set `true` when the gateway legitimately sits on a private address—a Docker Compose service name, a cluster IP, localhost—after confirming only intended services are reachable from the portal |
 | `tryout.tls_skip_verify` | `false` | Development only |
 | `tryout.timeout_ms` | `15000` | Per-request timeout |

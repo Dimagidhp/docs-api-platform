@@ -32,7 +32,7 @@ curl -X POST https://localhost:9543/api/v0.9/organizations \
 
 ```
 
-NOT SUPPORTED—always returns 405. This API Portal serves the single organization named by its `organization.handle` configuration, which is created on startup along with its default portal configuration, label, view, and subscription plans. The operation is retained for forward compatibility.
+NOT SUPPORTED. A well-formed request returns 405; a malformed one can still fail validation first with 400, or 415 for an unsupported content type. This API Portal serves the single organization named by its `organization.handle` configuration, which is created on startup along with its default portal configuration, label, view, and subscription plans. The operation is retained for forward compatibility.
 
 > Payload
 
@@ -74,7 +74,7 @@ Required scopes (the token must carry at least one of): `dp:organization:create`
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[OrganizationCreateRequest](schemas.md#schemaorganizationcreaterequest)|true|Organization creation payload. Send JSON or an organization YAML file in the `organization` multipart field. The JSON example below applies only to the `application/json` content type. When an organization YAML **file** is uploaded instead, its content must use `kind: Organization` with the nested shape `metadata.name` (handle, any top-level `id` is ignored) and `spec.displayName`; all other fields (including `cpRefId`) are read from `spec`. The YAML `spec` block additionally accepts `labels` (array of `{name, displayName}`) and `views` (array of `{id, displayName, labels}`—`id` becomes the view's handle) to bootstrap labels and views at creation time—these are not available via the `application/json` content type.|
+|body|body|[OrganizationCreateRequest](schemas.md#schemaorganizationcreaterequest)|true|Organization creation payload. Send JSON or an organization YAML file in the `organization` multipart field. The JSON example below applies only to the `application/json` content type. When an organization YAML **file** is uploaded instead, its content must use `kind: Organization` with the nested shape `metadata.name` (handle, any top-level `id` is ignored) and `spec.displayName`; all other fields (including `cpRefId`) are read from `spec`. The YAML `spec` block additionally accepts `labels` (array of `{name, displayName}`) and `views` (array of `{id, displayName, labels}` — `id` becomes the view's handle) to bootstrap labels and views at creation time — these are not available via the `application/json` content type.|
 
 > Example responses
 >
@@ -129,7 +129,7 @@ Required scopes (the token must carry at least one of): `dp:organization:create`
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
-|405|[Method Not Allowed](https://tools.ietf.org/html/rfc7231#section-6.5.5)|The operation is not offered by this deployment. Returned by the organization lifecycle operations, which an API Portal serving a single organization does not expose—that organization is configured and provisioned at startup.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|405|[Method Not Allowed](https://tools.ietf.org/html/rfc7231#section-6.5.5)|The operation is not offered by this deployment. Returned by the organization lifecycle operations, which an API Portal serving a single organization does not expose — that organization is configured and provisioned at startup.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |415|[Unsupported Media Type](https://tools.ietf.org/html/rfc7231#section-6.5.13)|Unsupported request media type.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
@@ -157,7 +157,7 @@ curl -X GET https://localhost:9543/api/v0.9/organizations \
 
 ```
 
-NOT SUPPORTED—always returns 405. Listing is inherently cross-organization, and this API Portal serves exactly one. Use `GET /organizations/{orgId}` with this instance's own handle instead. The operation is retained for forward compatibility.
+NOT SUPPORTED. A well-formed request returns 405; a malformed one can still fail validation first with 400. Listing is inherently cross-organization, and this API Portal serves exactly one. Use `GET /organizations/{orgId}` with this instance's own handle instead. The operation is retained for forward compatibility.
 
 ### Authentication
 
@@ -194,7 +194,7 @@ Required scopes (the token must carry at least one of): `dp:organization:read`, 
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|405|[Method Not Allowed](https://tools.ietf.org/html/rfc7231#section-6.5.5)|The operation is not offered by this deployment. Returned by the organization lifecycle operations, which an API Portal serving a single organization does not expose—that organization is configured and provisioned at startup.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|405|[Method Not Allowed](https://tools.ietf.org/html/rfc7231#section-6.5.5)|The operation is not offered by this deployment. Returned by the organization lifecycle operations, which an API Portal serving a single organization does not expose — that organization is configured and provisioned at startup.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
 ## Update an organization
@@ -215,7 +215,7 @@ curl -X PUT https://localhost:9543/api/v0.9/organizations/{orgId} \
 
 ```
 
-Updates organization metadata, claim mappings, role mappings, and portal configuration. `orgId` must name this instance's own organization; any other returns 403. The `id` (handle) and `idpRefId` fields cannot be changed—they are what page URLs and incoming token organization claims are matched against, so a rename would leave the running instance unable to find its own organization. Sending a different value returns 400.
+Updates organization metadata, claim mappings, role mappings, and portal configuration. `orgId` must name this instance's own organization; any other returns 403. The `id` (handle) and `idpRefId` fields cannot be changed — they are what page URLs and incoming token organization claims are matched against, so a rename would leave the running instance unable to find its own organization. Sending a different value returns 400.
 
 > Payload
 
@@ -257,7 +257,7 @@ Required scopes (the token must carry at least one of): `dp:organization:update`
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[OrganizationUpdateRequest](schemas.md#schemaorganizationupdaterequest)|true|Organization update payload. Send JSON or an organization YAML file in the `organization` multipart field. The JSON example below applies only to the `application/json` content type. When an organization YAML **file** is uploaded instead, its content must use `kind: Organization` with the nested shape `metadata.name` (handle, any top-level `id` is ignored) and `spec.displayName`; all other fields (including `cpRefId`) are read from `spec`. The YAML `spec` block additionally accepts `labels` (upserted by name) and `views` (upserted by `id`, which becomes the view's handle, with `labels` replacing the view's label set)—these are not available via the `application/json` content type.|
+|body|body|[OrganizationUpdateRequest](schemas.md#schemaorganizationupdaterequest)|true|Organization update payload. Send JSON or an organization YAML file in the `organization` multipart field. The JSON example below applies only to the `application/json` content type. When an organization YAML **file** is uploaded instead, its content must use `kind: Organization` with the nested shape `metadata.name` (handle, any top-level `id` is ignored) and `spec.displayName`; all other fields (including `cpRefId`) are read from `spec`. The YAML `spec` block additionally accepts `labels` (upserted by name) and `views` (upserted by `id`, which becomes the view's handle, with `labels` replacing the view's label set) — these are not available via the `application/json` content type.|
 |orgId|path|string|true|The organization's handle (also matches by name or IDP reference ID). Not the internal database uuid.|
 
 > Example responses
@@ -370,7 +370,7 @@ curl -X GET https://localhost:9543/api/v0.9/organizations/{orgId} \
 
 ```
 
-Retrieves this instance's organization by organization name, handle, or identity provider (IDP) reference ID. Because the portal serves a single organization, `orgId` must resolve to that one; any other organization returns 403—and so does an organization that does not exist, so the response cannot be used to discover which organizations the shared database holds.
+Retrieves this instance's organization by organization name, handle, or identity provider (IDP) reference ID. Because the portal serves a single organization, `orgId` must resolve to that one; any other organization returns 403 — and so does an organization that does not exist, so the response cannot be used to discover which organizations the shared database holds.
 
 ### Authentication
 
@@ -450,7 +450,7 @@ curl -X DELETE https://localhost:9543/api/v0.9/organizations/{orgId} \
 
 ```
 
-NOT SUPPORTED—always returns 405. This API Portal instance is bound to a single organization for its whole lifetime; deleting it would leave the instance serving nothing. The operation is retained for forward compatibility.
+NOT SUPPORTED. A well-formed request returns 405; a malformed one can still fail validation first with 400. This API Portal instance is bound to a single organization for its whole lifetime; deleting it would leave the instance serving nothing. The operation is retained for forward compatibility.
 
 ### Authentication
 
@@ -510,7 +510,7 @@ Required scopes (the token must carry at least one of): `dp:organization:delete`
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
-|405|[Method Not Allowed](https://tools.ietf.org/html/rfc7231#section-6.5.5)|The operation is not offered by this deployment. Returned by the organization lifecycle operations, which an API Portal serving a single organization does not expose—that organization is configured and provisioned at startup.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|405|[Method Not Allowed](https://tools.ietf.org/html/rfc7231#section-6.5.5)|The operation is not offered by this deployment. Returned by the organization lifecycle operations, which an API Portal serving a single organization does not expose — that organization is configured and provisioned at startup.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
 <h3 id="delete-an-organization-(not-supported)-responseschema">Response schema</h3>

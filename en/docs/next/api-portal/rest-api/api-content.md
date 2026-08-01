@@ -59,7 +59,7 @@ Required scopes (the token must carry at least one of): `dp:api_content:create`,
 |» content|body|string(binary)|true|ZIP upload field named `content`.|
 |» docMetadata|body|string|false|Optional JSON string containing API document link metadata.|
 |» imageMetadata|body|string|false|Optional JSON string containing API image metadata.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 #### Detailed descriptions
 
@@ -177,7 +177,7 @@ Required scopes (the token must carry at least one of): `dp:api_content:update`,
 |» content|body|string(binary)|true|ZIP upload field named `content`.|
 |» docMetadata|body|string|false|Optional JSON string containing API document link metadata.|
 |» imageMetadata|body|string|false|Optional JSON string containing API image metadata.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 #### Detailed descriptions
 
@@ -286,8 +286,8 @@ session: an anonymous request for a non-image type is rejected.
 |---|---|---|---|---|
 |type|query|string|true|Stored API content type selector. Common values are `web`, `document`, `image`, and `link`, depending on how the uploaded ZIP content was classified.|
 |fileName|query|string|true|Stored API content file name to retrieve.|
-|orgId|query|string|false|Deprecated and ignored. Accepted only so existing callers (the portal's own image-URL rewrite appends it) are not rejected. The organization is always this instance's own—from the session when there is one, otherwise from `organization.handle` configuration. It was previously honoured on this unauthenticated endpoint, which made it a selector for any organization's API icons in a shared database.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|orgId|query|string|false|Deprecated and ignored. Accepted only so existing callers (the portal's own image-URL rewrite appends it) are not rejected. The organization is always this instance's own — from the session when there is one, otherwise from `organization.handle` configuration. It was previously honoured on this unauthenticated endpoint, which made it a selector for any organization's API icons in a shared database.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -392,7 +392,7 @@ Required scopes (the token must carry at least one of): `dp:api_content:delete`,
 |---|---|---|---|---|
 |type|query|string|true|Stored API content type selector. Common values are `web`, `document`, `image`, and `link`, depending on how the uploaded ZIP content was classified.|
 |fileName|query|string|false|File name selector used to delete a single stored API content file.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >

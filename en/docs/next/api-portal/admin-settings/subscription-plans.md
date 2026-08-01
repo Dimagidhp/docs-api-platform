@@ -27,7 +27,7 @@ A **subscription plan** is a named usage tier that controls how much of an API a
 | **Name** | Required. The name shown to developers on the plan card, for example `Gold` |
 | **Description** | Optional description of the tier shown to developers |
 | **Limits** | One or more usage limits (see below). Leave empty for an unlimited plan |
-| **External reference ID** | Optional UUID linking this plan to an external billing or quota system |
+| **External reference ID** | Optional universally unique identifier (UUID) linking this plan to an external billing or quota system |
 
 The portal generates the plan's internal identifier itself—there's no handle to choose. A plan created through the [Management API](../rest-api/subscription-plans.md) can supply one as `id`; one created here gets a UUID.
 
@@ -43,7 +43,9 @@ The portal generates the plan's internal identifier itself—there's no handle t
 
 ## Editing or deleting a plan
 
-Click a plan's name (or the pencil icon) to edit its fields and limits. Click the trash icon to delete a plan—this can't be undone, and any application subscribed under a deleted plan will need to be moved to a different plan before its subscription can renew.
+Click a plan's name (or the pencil icon) to edit its fields and limits.
+
+Click the trash icon to delete a plan. Deleting can't be undone. Any subscription held under a deleted plan has to be moved to a different plan before it can renew.
 
 ## Attaching plans to an API
 

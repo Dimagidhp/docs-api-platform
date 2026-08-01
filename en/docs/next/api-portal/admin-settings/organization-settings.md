@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # Organization settings
 
-The **Organization** tab in the API Portal's Settings page manages the details of the organization you're currently signed in to.
+The **Organization** tab in the API Portal's Settings page manages the details of the organization you're signed in to.
 
 ## Editing organization details
 

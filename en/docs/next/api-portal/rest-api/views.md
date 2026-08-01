@@ -250,7 +250,7 @@ curl -X PUT https://localhost:9543/api/v0.9/views/{viewId} \
 
 ```
 
-Updates the view display name and/or label associations. When `labels` is supplied, it fully replaces the view's label set—labels present in the list are attached and any others are detached. The service returns the accepted request payload.
+Updates the view's display name, its label associations, or both. When `labels` is supplied, it fully replaces the view's label set — labels present in the list are attached and any others are detached. The service returns the accepted request payload.
 
 > Payload
 

@@ -29,6 +29,8 @@ That has two consequences worth internalizing:
 
 ### What you can override
 
+These are the files the example theme replaces, and what each one governs:
+
 | Path in the theme | Controls |
 |---|---|
 | `styles/main.css` | The portal-wide stylesheet, including the color tokens |
@@ -172,12 +174,6 @@ zip -r my-theme.zip my-theme/
 ```
 
 That produces `my-theme/styles/main.css`, `my-theme/layout/main.hbs`, and so on.
-
-For example, from the directory that contains `my-theme/`:
-
-```bash
-zip -r my-theme.zip my-theme/
-```
 
 !!! warning "A wrapper directory is required"
     The portal classifies each file by the path *below* the first segment. Zipping from inside the theme directory—so that `layout/` and `styles/` sit at the ZIP root—makes `layout/main.hbs` register as a generic template rather than the page shell, and your layout silently won't apply.

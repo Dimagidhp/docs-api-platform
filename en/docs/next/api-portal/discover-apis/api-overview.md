@@ -54,7 +54,7 @@ GraphQL APIs show the Endpoints section only. Their operations live in the schem
 
 Each plan in the **Subscription plans** panel carries its own button:
 
-- **Subscribe** creates a subscription to that plan and shows the subscription token to send as the `Subscription-Key` header. If you aren't signed in, the button takes you to the login page first.
+- **Subscribe** creates a subscription to that plan and shows the subscription token, which you send in the header the API's specification names, commonly `Subscription-Key`. If you aren't signed in, the button takes you to the login page first.
 - **View subscription** replaces it on the plan you already hold, and opens a dialog where you can reveal or copy the token, regenerate it, suspend the subscription, or unsubscribe.
 
 For the full flow, see [Manage Subscriptions](../manage-subscriptions.md).

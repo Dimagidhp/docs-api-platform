@@ -83,7 +83,9 @@ To remove the association later, click **Remove** next to the key in the same li
 
 ## Key lifecycle events
 
-When you generate, regenerate, or revoke an API key—or change its application association—the portal publishes a webhook event to every subscriber configured for it. Enforcement happens once that subscriber receives and accepts the event. Delivery is attempted exactly once, so a timeout or a non-2xx response leaves the change unenforced, and any queueing or processing on the subscriber's side adds delay.
+When you generate, regenerate, or revoke an API key, the portal publishes a webhook event to every subscriber configured for it. Enforcement happens once that subscriber receives and accepts the event. Delivery is attempted exactly once, so a timeout or a non-2xx response leaves the change unenforced, and any queueing or processing on the subscriber's side adds delay.
+
+Changing a key's application association publishes `apikey.application_updated`. That's an analytics notification — it doesn't affect whether the key works.
 
 The key itself travels encrypted on `apikey.generated` and `apikey.regenerated`. For the payload of each event, see the [Webhook Event Catalog](references/webhook-event-catalog.md); to register a subscriber, see [Webhook Integration](admin-settings/webhook-integration.md).
 

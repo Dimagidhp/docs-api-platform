@@ -163,7 +163,7 @@ curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/api-keys/generate \
 
 ```
 
-Generates an API key stored in the API Portal (devportal is source of truth). The plaintext secret is returned once in the response and never persisted. A `apikey.generated` webhook event is published to the organization's configured webhook subscribers so they can register the key (e.g. with a gateway). Key `id` is optional—a UUID handle is generated when it is omitted; when provided it must match `^[a-z0-9][a-z0-9_-]{0,127}$`. `expiresAt` must include a timezone when sent as an ISO-8601 string.
+Generates an API key stored in the API Portal (devportal is source of truth). The plaintext secret is returned once in the response and never persisted. A `apikey.generated` webhook event is published to the organization's configured webhook subscribers so they can register the key (e.g. with a gateway). Key `id` is optional — a UUID handle is generated when it is omitted; when provided it must match `^[a-z0-9][a-z0-9_-]{0,127}$`. `expiresAt` must include a timezone when sent as an ISO-8601 string.
 
 > Payload
 
@@ -188,7 +188,7 @@ Required scopes (the token must carry at least one of): `dp:api_key:create`, `dp
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[ApiKeyRequest](schemas.md#schemaapikeyrequest)|true|API key payload. `id` must be lowercase and may contain numbers, underscores, and hyphens. `displayName` is an optional human-readable label that defaults to `id` when omitted. `expiresAt` can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. The parent resource (API or MCP server, depending on the path) is identified by the corresponding path parameter.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -308,7 +308,7 @@ Required scopes (the token must carry at least one of): `dp:api_key:read`, `dp:a
 |appId|query|string|false|Optional application ID used to filter API keys associated with that application.|
 |limit|query|integer|false|Maximum number of records to return.|
 |offset|query|integer|false|Number of records to skip before returning results.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -450,11 +450,11 @@ Required scopes (the token must carry at least one of): `dp:api_key:update`, `dp
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to regenerate by its `keyId`. `expiresAt` is optional and, if provided, updates the key's expiry; the key's `id`/`displayName` cannot be changed by this operation.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
-|» expiresAt|body|any|false|New expiry for the key. Can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. Omit to leave the current expiry unchanged.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|» expiresAt|body|any|false|New expiry for the key. The value can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. Omit to leave the current expiry unchanged.|
 |»» *anonymous*|body|string(date-time)|false|none|
 |»» *anonymous*|body|number|false|none|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -562,8 +562,8 @@ Required scopes (the token must carry at least one of): `dp:api_key:revoke`, `dp
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to revoke by its `keyId`.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -635,7 +635,7 @@ curl -X POST https://localhost:9543/api/v0.9/apis/{apiId}/api-keys/associate \
 
 ```
 
-Associates (or re-associates) an existing API key with an application, for analytics attribution only—it has no effect on the key's validity or authorization. An `apikey.application_updated` webhook event is published once for this key, with a payload of `{ key_id, application }`.
+Associates (or re-associates) an existing API key with an application, for analytics attribution only — it has no effect on the key's validity or authorization. An `apikey.application_updated` webhook event is published once for this key, with a payload of `{ key_id, application }`.
 
 > Payload
 
@@ -660,9 +660,9 @@ Required scopes (the token must carry at least one of): `dp:api_key:update`, `dp
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key and the application to associate it with.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
 |» appId|body|string|true|API Portal application ID to associate the key with.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >
@@ -794,8 +794,8 @@ Required scopes (the token must carry at least one of): `dp:api_key:update`, `dp
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to remove the application association from.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
-|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST/SOAP/WS/WebSub/GraphQL APIs—MCP servers are addressed via `/mcp-servers`.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|apiId|path|string|true|The API's handle (unique per org). Resolves only to REST, SOAP, WebSocket, WebSub, and GraphQL APIs. Model Context Protocol (MCP) servers are addressed via `/mcp-servers`.|
 
 > Example responses
 >

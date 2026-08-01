@@ -319,8 +319,8 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to regenerate by its `keyId`. `expiresAt` is optional and, if provided, updates the key's expiry; the key's `id`/`displayName` cannot be changed by this operation.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
-|» expiresAt|body|any|false|New expiry for the key. Can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. Omit to leave the current expiry unchanged.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
+|» expiresAt|body|any|false|New expiry for the key. The value can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. Omit to leave the current expiry unchanged.|
 |»» *anonymous*|body|string(date-time)|false|none|
 |»» *anonymous*|body|number|false|none|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
@@ -431,7 +431,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:revok
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to revoke by its `keyId`.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
@@ -529,7 +529,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key and the application to associate it with.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
 |» appId|body|string|true|API Portal application ID to associate the key with.|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
@@ -663,7 +663,7 @@ Required scopes (the token must carry at least one of): `dp:mcp_server_key:updat
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to remove the application association from.|
-|» keyId|body|string|true|The key's handle—the `id` returned by generate or list.|
+|» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses

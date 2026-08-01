@@ -19,7 +19,7 @@ An application is a logical stand-in for a physical one—a mobile app, web app,
 Applications belong to you. Each developer sees only their own, and you can keep as many as you need—a `MyApp-Production` application and a `MyApp-Staging` application, say, linked to different OAuth applications in the key manager.
 
 !!! note
-    Applications are **not** required for subscriptions or API keys. [Subscriptions](manage-subscriptions.md) are made directly to an API, and [API keys](manage-api-keys.md) are bound to an API. Applications matter only for OAuth2-secured APIs. You can associate an existing API key with an application afterward, but that's for usage analytics and changes nothing about the key.
+    An application is **required** for OAuth2-secured APIs, since it's what holds the client ID. It's **optional** everywhere else. [Subscriptions](manage-subscriptions.md) are made directly to an API, and [API keys](manage-api-keys.md) are bound to an API, so neither needs one. You can associate an existing API key with an application for usage analytics, which changes nothing about the key.
 
 ## Create an application
 

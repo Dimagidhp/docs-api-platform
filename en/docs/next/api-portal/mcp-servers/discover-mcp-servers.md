@@ -59,7 +59,7 @@ The sidebar holds an **MCP Server Configuration** snippet—a ready-made JSON bl
 ### Header buttons
 
 - **Subscribe**: jumps to the plans in the sidebar. Shown when the server has plans and you aren't subscribed yet
-- **Documentation**: opens the documentation page
+- **Documentation**: opens the documentation page.
 
 ## Try tools in the Playground
 

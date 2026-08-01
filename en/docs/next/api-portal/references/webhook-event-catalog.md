@@ -77,7 +77,7 @@ To verify:
 
 ## Decrypt sensitive fields
 
-Four events carry a credential. It never appears in plaintext in the body, and it is never stored in the portal's event record—it is encrypted per subscriber at publish time.
+Four events carry a credential. The credential never appears in plaintext in the body, and it is never stored in the portal's event record—it is encrypted per subscriber at publish time.
 
 Each encrypted field in `data` is an object:
 

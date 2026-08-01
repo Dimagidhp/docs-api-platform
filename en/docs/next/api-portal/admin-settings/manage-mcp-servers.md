@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # Manage MCP servers
 
-The **MCP Servers** tab in the API Portal's Settings page is where you add, edit, publish, deprecate, and delete the Model Context Protocol (MCP) servers exposed in the portal, alongside your REST/Async/GraphQL/SOAP APIs.
+The **MCP Servers** tab in the API Portal's Settings page is where you add, edit, publish, deprecate, and delete the Model Context Protocol (MCP) servers exposed in the portal, alongside your REST, WebSocket, GraphQL, and WebSub APIs.
 
 ## Adding an MCP server
 
@@ -55,4 +55,4 @@ Servers can also be published without the wizard, through the portal's [MCP Regi
 
 ## Artifact types
 
-If you only want to expose MCP servers (hiding REST/Async/GraphQL/SOAP APIs entirely), or the reverse, see [Artifact types](../artifact-types.md).
+If you only want to expose MCP servers (hiding every other API type entirely), or the reverse, see [Artifact types](../artifact-types.md).

@@ -51,7 +51,7 @@ The page reloads with your term applied as a `query` parameter, and the results 
 
 ### What a search term matches
 
-A search takes one free-text term rather than a set of separate fields, and compares it against everything the portal holds about an API:
+A search takes one free-text term rather than a set of separate fields. Which fields it compares that term against depends on the database the portal runs on—see the per-database differences below.
 
 | Matched against | Example |
 |---|---|

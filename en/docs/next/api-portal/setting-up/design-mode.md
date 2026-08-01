@@ -17,6 +17,9 @@ content_type: "how-to"
 
 Design mode lets you develop and preview API page layouts and org-level themes without a running database or an identity provider. The portal starts with sample data loaded from disk and serves all pages anonymously—login, API key generation, and subscription management are disabled.
 
+!!! danger "Local development only"
+    Design mode disables login, serves every page anonymously, and runs on plain HTTP with no TLS. Never expose an instance running in design mode to untrusted users or to a network you don't control.
+
 ## When to use design mode
 
 Use design mode when you want to:
@@ -47,12 +50,14 @@ Then start the portal normally:
 npm start
 ```
 
-Visit **http://localhost:9543/views/default**.
+Visit `http://localhost:9543/views/default`.
 
 !!! note
     The portal always starts on plain HTTP in design mode—no TLS certificate setup required.
 
 ## Configuration options
+
+All six keys live under `[api_portal.design_mode]`:
 
 | Option (TOML) | Default | Description |
 |---|---|---|
@@ -191,6 +196,8 @@ items:
 `metadata.name` becomes the application ID. Creating new applications, viewing individual application details, and managing keys aren't available in design mode.
 
 ## What is disabled in design mode
+
+Design mode turns off everything that needs a database or an identity provider:
 
 | Feature | Status |
 |---|---|

@@ -35,7 +35,7 @@ Read the API's own specification—it's authoritative, and the portal derives it
 
 Two shortcuts on the API's [overview page](../discover-apis/api-overview.md) tell you the same thing faster:
 
-- An **API Keys** button appears for REST and WebSocket APIs whose specification declares API key security. The portal doesn't offer key generation for GraphQL, SOAP, or MCP artifacts, even when their specification declares an `apiKey` scheme—get a key for those from whoever operates the API.
+- An **API Keys** button appears for REST and WebSocket APIs whose specification declares API key security. The portal offers no key generation in the UI for GraphQL, SOAP, or MCP artifacts, even when their specification declares an `apiKey` scheme. For those, use the Management API: [API Keys](../rest-api/api-keys.md) for GraphQL and SOAP APIs, and [MCP Server Keys](../rest-api/mcp-server-keys.md) for MCP servers.
 - A **Subscription plans** panel appears only for APIs with plans, which is what a subscription token comes from.
 
 The per-API Markdown document at `/{orgName}/views/{viewName}/api/{apiHandle}.md` spells out the authentication steps in prose, generated from the same specification. It's the quickest read of the three.

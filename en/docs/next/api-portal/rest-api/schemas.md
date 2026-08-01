@@ -191,7 +191,7 @@ xor
 |businessOwner|string¦null|false|none|none|
 |businessOwnerContact|string¦null|false|none|none|
 |businessOwnerEmail|string(email)¦null|false|none|none|
-|idpRefId|string|false|none|The organization claim value asserted by the configured Identity Provider at SSO login. On every login, the portal matches the authenticated user's org claim against this value to resolve which organization they belong to—it must exactly match the IDP's claim, or login fails for that org's users. Distinct from `cpRefId`, which is unrelated to authentication.|
+|idpRefId|string|false|none|The organization claim value asserted by the configured identity provider (IDP) at single sign-on (SSO) login. On every login, the portal matches the authenticated user's org claim against this value to resolve which organization they belong to — it must exactly match the IDP's claim, or login fails for that org's users. Distinct from `cpRefId`, which is unrelated to authentication.|
 |cpRefId|string¦null|false|none|Control Plane reference ID. Included in outbound webhook event payloads so subscribers can correlate this organization with its Control Plane (Platform API) counterpart. Not used for authentication or org resolution.|
 |configuration|object|false|none|Free-form organization configuration set by the caller. Which artifact types the portal serves is operator configuration (`api_portal.artifacts`), not part of this.|
 |createdAt|string(date-time)¦null|false|none|none|
@@ -322,7 +322,7 @@ allOf
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|*anonymous*|[ApiInfoResponse](#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key)—this schema exists only to share the field set between the two via `allOf`.|
+|*anonymous*|[ApiInfoResponse](#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key) — this schema exists only to share the field set between the two via `allOf`.|
 
 and
 
@@ -330,7 +330,7 @@ and
 |---|---|---|---|---|
 |*anonymous*|object|false|none|none|
 |» id|string|false|none|The API's handle (unique per org). Not the internal database uuid.|
-|» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API—e.g. MCP servers published via the registry.|
+|» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API — e.g. MCP servers published via the registry.|
 |» endPoints|[ApiEndpointsResponse](#schemaapiendpointsresponse)|false|none|none|
 |» subscriptionPlans|[[SubscriptionPlanResponse](#schemasubscriptionplanresponse)]|false|none|none|
 
@@ -419,7 +419,7 @@ allOf
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|*anonymous*|[ApiInfoResponse](#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key)—this schema exists only to share the field set between the two via `allOf`.|
+|*anonymous*|[ApiInfoResponse](#schemaapiinforesponse)|false|none|Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key) — this schema exists only to share the field set between the two via `allOf`.|
 
 and
 
@@ -427,8 +427,8 @@ and
 |---|---|---|---|---|
 |*anonymous*|object|false|none|none|
 |» id|string|false|none|The API's handle (unique per org). Not the internal database uuid.|
-|» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API—e.g. MCP servers published via the registry.|
-|» dataSource|string¦null|false|none|Indicates which content matched the search term: `METADATA` if the match was in the API's own metadata, or a content type (e.g. a value from the API Content `type` field) if the match was inside an uploaded content file. Only computed by getAllApiMetadataForOrganization when both the `query` search parameter is supplied and the database is PostgreSQL—absent on SQLite (the dev default) and absent from every other operation (get/create/update single API).|
+|» refId|string¦null|false|none|Platform API (Control Plane) reference ID for this API. Used for MCP registry visibility filtering and included in outbound webhook event payloads. Null/absent for APIs that exist only in the API Portal and are not registered with the Platform API — e.g. MCP servers published via the registry.|
+|» dataSource|string¦null|false|none|Indicates which content matched the search term: `METADATA` if the match was in the API's own metadata, or a content type (e.g. a value from the API Content `type` field) if the match was inside an uploaded content file. Only computed by getAllApiMetadataForOrganization when both the `query` search parameter is supplied and the database is PostgreSQL — absent on SQLite (the dev default) and absent from every other operation (get/create/update single API).|
 |» planId|string|false|none|none|
 |» endPoints|[ApiEndpointsResponse](#schemaapiendpointsresponse)|false|none|none|
 |» subscriptionPlans|[[SubscriptionPlanResponse](#schemasubscriptionplanresponse)]|false|none|none|
@@ -483,7 +483,7 @@ and
 
 ```
 
-Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key)—this schema exists only to share the field set between the two via `allOf`.
+Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateResponse (not nested under an `apiInfo` key) — this schema exists only to share the field set between the two via `allOf`.
 
 ### Properties
 
@@ -495,8 +495,8 @@ Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateRespon
 |version|string|false|none|none|
 |status|string|false|none|API lifecycle status.|
 |description|string|false|none|none|
-|type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE)—distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
-|referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId`—the create response echoes the parsed YAML back.|
+|type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE) — distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
+|referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId` — the create response echoes the parsed YAML back.|
 |agentVisibility|string|false|none|none|
 |addedLabels|[string]|false|none|none|
 |removedLabels|[string]|false|none|none|
@@ -628,7 +628,7 @@ Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateRespon
 |description|string|false|none|none|
 |limits|[object]|false|none|Rate/quota limits enforced for this plan. Empty when the plan is unlimited.|
 |» limitType|string|false|none|none|
-|» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries—the `limits` array is empty.|
+|» limitCount|any|false|none|Returned as a string when the stored count exceeds the safe integer range, otherwise a number. Unlimited plans have no limit entries — the `limits` array is empty.|
 
 oneOf
 
@@ -905,7 +905,7 @@ OAuth client ID mapping entry attached to an application.
 |» limitCount|integer|true|none|Use -1 for unlimited, otherwise a positive number.|
 |» timeUnit|string¦null|false|none|Omit for a limit with no time window.|
 |» timeAmount|integer|false|none|Size of the time window, in `timeUnit` units.|
-|type|string|false|none|Legacy shorthand accepted only via SubscriptionPlan/SubscriptionPlanList YAML upload (`multipart/form-data`); converted into `limits` before storage. Ignored for JSON requests—use `limits` instead.|
+|type|string|false|none|Legacy shorthand accepted only via SubscriptionPlan/SubscriptionPlanList YAML upload (`multipart/form-data`); converted into `limits` before storage. Ignored for JSON requests — use `limits` instead.|
 |requestCount|any|false|none|Legacy YAML shorthand paired with `type: requestcount`. Use -1 for unlimited.|
 
 oneOf
@@ -997,7 +997,7 @@ xor
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |displayName|string|true|none|none|
-|id|string|false|none|Immutable, org-scoped slug for the application, stored as its handle. Optional—defaults to the application's `displayName` when omitted.|
+|id|string|false|none|Immutable, org-scoped slug for the application, stored as its handle. Optional — defaults to the application's `displayName` when omitted.|
 |description|string|true|none|none|
 
 <h2 id="tocS_SubscriptionCreateRequest">SubscriptionCreateRequest</h2>
@@ -1068,7 +1068,7 @@ xor
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|artifactId|string|false|none|API ID the subscription belongs to. Optional—if provided, it is validated against the API derived from the existing subscription record and the request is rejected with 400 if they don't match. It is never used as a fallback: if the API cannot be derived from the subscription record, the request fails with 400 regardless of this value.|
+|artifactId|string|false|none|API ID the subscription belongs to. Optional — if provided, it is validated against the API derived from the existing subscription record and the request is rejected with 400 if they don't match. It is never used as a fallback: if the API cannot be derived from the subscription record, the request fails with 400 regardless of this value.|
 |planId|string|true|none|API Portal subscription plan ID to switch to.|
 
 <h2 id="tocS_SubscriptionResponse">SubscriptionResponse</h2>
@@ -1141,7 +1141,7 @@ Subscription payload.
 |id|string|false|none|Optional handle for the key. When provided it must match the pattern and be unique for this API; when omitted, the server generates a UUID handle.|
 |displayName|string|false|none|Optional human-readable name for the key. Defaults to `id` when omitted.|
 |subscriptionId|string|false|none|Optional subscription ID to associate the key with.|
-|appId|string|false|none|Optional application ID to associate the key with, for analytics attribution only—it has no effect on the key's validity or authorization. Must belong to the same organization and be owned by the caller.|
+|appId|string|false|none|Optional application ID to associate the key with, for analytics attribution only — it has no effect on the key's validity or authorization. Must belong to the same organization and be owned by the caller.|
 |expiresAt|any|false|none|Optional ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds.|
 
 oneOf
@@ -1219,7 +1219,7 @@ API key metadata returned by list operations. Secret material is omitted.
 
 ```
 
-API key response returned by generate/regenerate only. Unlike ApiKeyMetadataResponse, this does not include apiId, appId, appDisplayName, createdAt, or revokedAt—generate/regenerate return only these five fields.
+API key response returned by generate/regenerate only. Unlike ApiKeyMetadataResponse, this does not include apiId, appId, appDisplayName, createdAt, or revokedAt — generate/regenerate return only these five fields.
 
 ### Properties
 
@@ -1408,10 +1408,10 @@ Minimal developer-facing key manager view.
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|string|false|none|Optional handle for the webhook subscriber (unique per org), stored as-is. When omitted, the server generates a UUID handle. Supply it only when you need a specific, stable identifier—it is the id used in the resource path, and a collision on a handle you supplied yourself is reported as 409.|
+|id|string|false|none|Optional handle for the webhook subscriber (unique per org), stored as-is. When omitted, the server generates a UUID handle. Supply it only when you need a specific, stable identifier — it is the id used in the resource path, and a collision on a handle you supplied yourself is reported as 409.|
 |displayName|string|true|none|Display name for the webhook subscriber.|
 |targetUrl|string(uri)|true|none|Target URL events are POSTed to.|
-|secret|string|false|none|Shared secret, used for two purposes: signing outgoing payloads (HMAC-SHA256), and deriving the AES-256-GCM key that encrypts sensitive fields in secret event payloads (apikey.*, subscription.*) so only the subscriber can read the plaintext value. Stored encrypted; never returned in responses.|
+|secret|string|false|none|Shared secret, used for two purposes. It signs outgoing payloads with a hash-based message authentication code (HMAC-SHA256). It also derives, through HKDF-SHA3-256, the AES-256-GCM key that encrypts sensitive fields in `apikey.*` and `subscription.*` payloads, so only the subscriber can read the plaintext. Encrypted fields arrive as `data.iv`, `data.tag`, and `data.ciphertext`; the derivation and a worked decryption example are documented in the webhook event catalog. Stored encrypted, and never returned in responses.|
 |events|[string]|false|none|Glob-style event type allowlist (only a trailing `*` wildcard is supported, e.g. `apikey.*`). Omit or leave empty to receive all event types.|
 |enabled|boolean|false|none|none|
 |timeoutMs|integer|false|none|none|
@@ -1457,7 +1457,7 @@ Webhook subscriber configuration. The secret is never included.
 |enabled|boolean|false|none|none|
 |events|[string]|false|none|none|
 |timeoutMs|integer|false|none|none|
-|hasSecret|boolean|false|none|Whether a secret is configured. The same secret both HMAC-signs outgoing payloads and encrypts sensitive fields in secret event payloads.|
+|hasSecret|boolean|false|none|Whether a secret is configured. The same secret serves two purposes. It signs outgoing payloads with a hash-based message authentication code (HMAC), and it derives the AES-256-GCM key that encrypts sensitive fields. Encrypted fields arrive as `data.iv`, `data.tag`, and `data.ciphertext`; the derivation and a worked decryption example are documented in the webhook event catalog.|
 |createdBy|string|false|none|Identity of the user who created this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses and list items.|
 |updatedBy|string|false|none|Identity of the user who last updated this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses only, omitted on list items.|
 |createdAt|string(date-time)|false|none|none|
@@ -1530,7 +1530,7 @@ A single delivery attempt made to a webhook subscriber.
 |---|---|---|---|---|
 |keyManager|string|true|none|none|
 |type|string|false|none|none|
-|consumerKey|string|true|none|The OAuth client_id, created directly in the key manager. The portal does not store or persist the client secret—it is supplied per-request when generating a token and is only seen transiently during that request.|
+|consumerKey|string|true|none|The OAuth client_id, created directly in the key manager. The portal does not store or persist the client secret — it is supplied per-request when generating a token and is only seen transiently during that request.|
 
 #### Enumerated Values
 
@@ -1609,13 +1609,13 @@ A single delivery attempt made to a webhook subscriber.
 
 ```
 
-OAuth access token generation payload. `consumerSecret` is required—the portal uses it to call the Authorization Server token endpoint directly.
+OAuth access token generation payload. `consumerSecret` is required — the portal uses it to call the Authorization Server token endpoint directly.
 
 ### Properties
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|consumerSecret|string|true|none|Client secret for the OAuth application. Not stored by the portal—the caller must supply it on each token generation request.|
+|consumerSecret|string|true|none|Client secret for the OAuth application. Not stored by the portal — the caller must supply it on each token generation request.|
 |scopes|[string]|false|none|none|
 |validityPeriod|integer|false|none|none|
 

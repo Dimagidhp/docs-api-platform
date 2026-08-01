@@ -13,9 +13,9 @@ last_updated: 2026-07-31
 content_type: "tutorial"
 ---
 
-# End to end: a secured API from gateway to portal
+# End-to-end: a secured API from gateway to portal
 
-This tutorial wires up the whole platform and follows one credential from end to end. You'll publish an API that requires **two** credentials on every call—a subscription token *and* an API key—then generate both in the API Portal and watch the gateway accept them.
+This tutorial wires up the whole platform and follows two credentials from end to end. You'll publish an API that requires both a subscription token and an API key on every call. Then you'll generate both in the API Portal and watch the gateway accept them.
 
 The point of the exercise is the seam in the middle. The portal never talks to the gateway. When a developer subscribes or generates a key, the portal fires a **signed webhook** to the Platform API, which persists the credential and pushes it to every gateway where the API is deployed. Getting that seam right is most of the work, and most of this tutorial.
 

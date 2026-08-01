@@ -79,7 +79,7 @@ An agent that hasn't been handed a prompt finds workflows through the portal's m
 |---|---|
 | `/{orgName}/views/{viewName}/llms.txt` | The portal index. Its **API Workflows** section lists every agent-visible workflow with its description, each linking to the workflow's own Markdown |
 | `/{orgName}/views/{viewName}/api-workflows.md` | A Markdown list of every agent-visible workflow, each linking to `/api-workflows/{handle}.md` |
-| `/{orgName}/views/{viewName}/api-workflows/{handle}.md` | One workflow in Markdown: status, description, its source APIs with links to their documentation, guidance on working out each source's authentication, and the full Arazzo specification inlined |
+| `/{orgName}/views/{viewName}/api-workflows/{handle}.md` | One workflow in Markdown. For an Arazzo workflow: status, description, source APIs linked to their documentation, guidance on each source's authentication, and the full Arazzo specification inlined. For a Markdown workflow: the content the admin authored, as written |
 | `/{orgName}/views/{viewName}/api-workflows/{handle}/arazzo.json` | The raw Arazzo specification. Returns `404` for a Markdown-authored workflow |
 | `/{orgName}/views/{viewName}/api-workflows/{handle}/prompt` | A JSON object with the workflow's agent prompt, description, raw content, and source APIs |
 

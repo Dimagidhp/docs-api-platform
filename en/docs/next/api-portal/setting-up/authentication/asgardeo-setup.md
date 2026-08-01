@@ -78,7 +78,7 @@ This registers an API resource in Asgardeo that represents the API Portal & MCP 
 The system application is only needed to run this script. Once the `dp:*` API resource is registered, the system application can be deleted.
 
 !!! note
-    Browser login sessions are preauthorized—the portal trusts session-level authentication and skips per-operation scope checks for users signed in through the IdP. The `dp:*` scopes matter only for machine clients calling the REST API directly with a Bearer token, which is why `scope` in the configuration below does not need to request them.
+    Browser login sessions are preauthorized—the portal trusts session-level authentication and skips per-operation scope checks for users signed in through the IdP. The `dp:*` scopes apply only to machine clients calling the REST API directly with a Bearer token, which is why `scope` in the configuration below does not need to request them.
 
 ## Step 4: Link the scopes to the application
 

@@ -32,7 +32,7 @@ curl -X POST https://localhost:9543/api/v0.9/applications/{applicationId}/genera
 
 ```
 
-Maps an OAuth client_id—created directly in the selected key manager—to the specified application. The portal does not create or register OAuth clients; it only stores the client_id reference and later proxies token requests for it.
+Maps an OAuth client_id — created directly in the selected key manager — to the specified application. The portal does not create or register OAuth clients; it only stores the client_id reference and later proxies token requests for it.
 
 > Payload
 
@@ -57,7 +57,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[AppKeyMappingRequest](schemas.md#schemaappkeymappingrequest)|true|Maps an OAuth client_id—created directly in the key manager—to this application. The application is identified by the `applicationId` path parameter.|
+|body|body|[AppKeyMappingRequest](schemas.md#schemaappkeymappingrequest)|true|Maps an OAuth client_id — created directly in the key manager — to this application. The application is identified by the `applicationId` path parameter.|
 |applicationId|path|string|true|The application's handle (unique per org).|
 
 > Example responses
@@ -270,7 +270,7 @@ curl -X DELETE https://localhost:9543/api/v0.9/applications/{applicationId}/oaut
 
 ```
 
-Removes the local client_id mapping for an application. This does not affect the OAuth client in the key manager—that client is owned and managed externally.
+Removes the local client_id mapping for an application. This does not affect the OAuth client in the key manager — that client is owned and managed externally.
 
 ### Authentication
 
