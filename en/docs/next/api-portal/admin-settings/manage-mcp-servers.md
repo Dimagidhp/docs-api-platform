@@ -14,7 +14,9 @@ content_type: "how-to"
 
 # Manage MCP servers
 
-The **MCP Servers** tab in the API Portal's Settings page is where you add, edit, publish, deprecate, and delete the Model Context Protocol (MCP) servers exposed in the portal, alongside your REST, WebSocket, GraphQL, and WebSub APIs.
+The **MCP Servers** tab in the API Portal's Settings page manages the Model Context Protocol (MCP) servers the portal exposes. From it you can add, edit, publish, deprecate, and delete a server, singly or in bulk.
+
+MCP servers sit in the same catalog as your REST, WebSocket, GraphQL, and WebSub APIs.
 
 ## Adding an MCP server
 
@@ -35,7 +37,7 @@ One step differs from a regular API. At **Spec**, an MCP server's contract isn't
       to: { type: string }
 ```
 
-`TOOL`, `RESOURCE`, and `PROMPT` entries can be mixed in one file. Whatever you upload here is what the portal renders as the server's Tools, Resources, and Prompts sections, and serves to AI agents.
+`TOOL`, `RESOURCE`, and `PROMPT` entries can be mixed in one file. What you upload here becomes the server's Tools, Resources, and Prompts sections once the server is published. It reaches AI agents only while the server is also agent-visible.
 
 Once the server is created, an additional **Content** step lets you upload a ZIP for its landing-page content, exactly as with a regular API.
 

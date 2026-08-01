@@ -77,7 +77,7 @@ https://localhost:9543/default/views/default
 
 You'll see the API Portal home page.
 
-![API Portal home page with browse buttons for APIs and MCP servers, a Discover with AI button, and a Log In button](../../assets/img/standalone-devportal/getting-started/home-page.png)
+![API Portal home page](../../assets/img/standalone-devportal/getting-started/home-page.png)
 
 Click **Log In** and sign in with the admin username and password from Step 2.
 
@@ -101,7 +101,7 @@ This deploys everything under `resources/samples/` into the `default` organizati
 
 Refresh the catalog page and the sample APIs appear as a grid of cards, each showing the API's name, version, type, and a **Subscribe** button.
 
-![API listing page with four seeded sample API cards, each showing type badges, tags, plan count, and a Subscribe button](../../assets/img/standalone-devportal/getting-started/api-listing-page.png)
+![API listing page showing the seeded sample APIs as a grid of cards](../../assets/img/standalone-devportal/getting-started/api-listing-page.png)
 
 To publish an API of your own instead, continue below.
 

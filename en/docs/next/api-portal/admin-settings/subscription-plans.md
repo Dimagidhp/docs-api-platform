@@ -29,7 +29,11 @@ A **subscription plan** is a named usage tier that controls how much of an API a
 | **Limits** | One or more usage limits (see below). Leave empty for an unlimited plan |
 | **External reference ID** | Optional universally unique identifier (UUID) linking this plan to an external billing or quota system |
 
-The portal generates the plan's internal identifier itself—there's no handle to choose. A plan created through the [Management API](../rest-api/subscription-plans.md) can supply one as `id`; one created here gets a UUID.
+A plan carries three separate identifiers, and it's worth keeping them apart:
+
+- **Plan handle**—the developer-facing id used in Management API paths and in the `subscriptionPlans` references on an API. Supply it as `id` when creating a plan through the [Management API](../rest-api/subscription-plans.md). This form sends no `id`, so plans created here get a generated UUID as their handle.
+- **Database UUID**—the portal's own internal primary key. Never exposed in the API.
+- **External reference ID**—the optional link to a billing or quota system, set in the field above. It has no effect inside the portal.
 
 4. Click **+ Add limit** for each limit you want to enforce, and configure:
 

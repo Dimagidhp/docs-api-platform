@@ -28,11 +28,11 @@ The handle appears in every portal URL:
 https://<host>/<orgHandle>/views/<viewName>
 ```
 
-It must match the organization ID the Platform API asserts in the `org_handle` claim of the tokens this portal verifies. See [Organization Settings](admin-settings/organization-settings.md).
+In local-auth mode it must match the organization ID the Platform API asserts in the `org_handle` claim. In IDP mode the token's organization claim is matched against the organization's `idpRefId` instead. See [Organization settings](admin-settings/organization-settings.md).
 
 ## View
 
-A **view** is a filtered, branded subset of the organization's APIs and MCP servers—for example, one view for internal developers and one for external partners. Each view shows only the artifacts carrying its assigned labels, and can have its own layout, LLM instructions, and API workflows.
+A **view** is a filtered, branded subset of the organization's APIs and Model Context Protocol (MCP) servers—for example, one view for internal developers and one for external partners. Each view shows only the artifacts carrying its assigned labels. It can also have its own layout, large language model (LLM) instructions, and API workflows.
 
 Each view has its own URL:
 

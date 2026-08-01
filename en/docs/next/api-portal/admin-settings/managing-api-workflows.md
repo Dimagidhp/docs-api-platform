@@ -63,7 +63,11 @@ Either way, the right pane holds the definition editor:
 
 ### Step 3: Agent prompt
 
-The agent prompt is **generated from the workflow**, not written from scratch. Click **Regenerate** to rebuild it after changing the definition, edit the text directly if you want to adjust it, and **Copy prompt** to take it elsewhere.
+The agent prompt is **generated from the workflow**, not written from scratch. Three actions are available:
+
+- **Regenerate** rebuilds the prompt after you change the definition.
+- Editing the text directly lets you adjust the generated wording.
+- **Copy prompt** puts it on your clipboard to use elsewhere.
 
 The right pane shows the Markdown file agents will fetch, plus a **Readiness** checklist covering name and description, workflow definition, and agent prompt.
 

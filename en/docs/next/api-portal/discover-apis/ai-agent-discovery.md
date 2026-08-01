@@ -14,7 +14,7 @@ content_type: "concept"
 
 # AI agent API discovery
 
-The API Portal & MCP Hub has built-in support for AI agent discoverability. Every published API, MCP server, and API workflow is exposed through a set of machine-readable endpoints that AI agents, large language model (LLM) powered assistants, and agentic frameworks can use to discover, understand, and invoke them without human assistance.
+The API Portal & MCP Hub has built-in support for AI agent discoverability. Every published API, MCP server, and API workflow is exposed through a set of machine-readable endpoints that AI agents, large language model (LLM)-powered assistants, and agentic frameworks can use to discover, understand, and invoke them without human assistance.
 
 This page explains what those endpoints return and how agents navigate the portal.
 

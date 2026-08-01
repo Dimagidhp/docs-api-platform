@@ -265,7 +265,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 
 curl -X GET https://localhost:9543/api/v0.9/apis/{apiId}/assets?type=document&fileName=getting-started.md \
   -u {username}:{password} \
-  -H 'Accept: text/css'
+  -H 'Accept: text/markdown'
 
 ```
 

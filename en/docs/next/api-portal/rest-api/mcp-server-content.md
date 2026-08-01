@@ -254,7 +254,7 @@ At least one of `web/` or `docs/` must exist at the ZIP root.
 
 curl -X GET https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/assets?type=document&fileName=getting-started.md \
   -H 'Authorization: Bearer {access_token}' \
-  -H 'Accept: text/css'
+  -H 'Accept: text/markdown'
 
 ```
 

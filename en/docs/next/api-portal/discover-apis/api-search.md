@@ -35,7 +35,7 @@ Each card shows:
 
 Click a card to open the API's [overview page](api-overview.md).
 
-MCP servers are listed separately. Click **MCP Servers** in the sidebar to browse them the same way.
+Model Context Protocol (MCP) servers are listed separately. Click **MCP Servers** in the sidebar to browse them the same way.
 
 !!! note
     A listing covers one [view](../admin-settings/manage-views.md), and an API appears in it only if one of the API's labels is mapped to that view. If an API you expect is missing, ask your portal admin to check its labels.

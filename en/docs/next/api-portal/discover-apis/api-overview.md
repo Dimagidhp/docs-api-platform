@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # API overview
 
-Every API's overview page shows a summary of what the API does, how to reach it, and how to start consuming it, before you dig into the full [documentation](api-documentations.md).
+Every API's overview page summarizes what the API does, how to reach it, and how to start consuming it. Read it before you dig into the full [documentation](api-documentations.md).
 
 ## View an API's overview page
 
@@ -37,7 +37,7 @@ The header shows the API's icon, name, version, and description, along with tags
 
 - **Subscribe**: jumps down to the subscription plans. Shown when the API has plans and you aren't subscribed to one yet
 - **Documentation**: opens the API's full documentation. SOAP APIs show a **Download** button for the WSDL file instead
-- **Try with AI**: opens a modal with a ready-made prompt that briefs an AI agent on the API using its [machine-readable documentation](ai-agent-discovery.md). Copy the prompt, download it as a `.txt` file, or send it straight to an assistant with **Run in Claude**. Shown when the API is agent-visible
+- **Try with AI**: opens a modal with a ready-made prompt that briefs an AI agent on the API, using its [machine-readable documentation](ai-agent-discovery.md). Shown when the API is agent-visible. From the modal you can copy the prompt, download it as a `.txt` file, or send it straight to an assistant with **Run in Claude**.
 - **API Keys**: opens the API Keys page, where you generate a key. Shown for REST and WebSocket APIs whose specification declares API key security, and never for GraphQL, SOAP, or MCP artifacts.
 
 ### Page sections
@@ -60,7 +60,7 @@ Each plan in the **Subscription plans** panel carries its own button:
 For the full flow, see [Manage Subscriptions](../manage-subscriptions.md).
 
 !!! note
-    MCP servers have their own overview page with a similar layout. It shows the server's **MCP Server URL**, **Tools**, **Resources**, and **Prompts**, plus an **MCP Server Configuration** snippet you can paste into an MCP client. See [Discover MCP Servers](../mcp-servers/discover-mcp-servers.md).
+    Model Context Protocol (MCP) servers have their own overview page with a similar layout. It shows the server's **MCP Server URL**, **Tools**, **Resources**, and **Prompts**, plus an **MCP Server Configuration** snippet you can paste into an MCP client. See [Discover MCP Servers](../mcp-servers/discover-mcp-servers.md).
 
 ## Related
 

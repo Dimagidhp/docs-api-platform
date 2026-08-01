@@ -14,7 +14,9 @@ content_type: "concept"
 
 # MCP servers
 
-A Model Context Protocol (MCP) server exposes capabilities an AI agent can call directly: **tools** it can invoke, **resources** it can read, and **prompts** it can reuse. The API Portal & MCP Hub publishes MCP servers next to your APIs, with the same catalog, subscription, and credential machinery—the "MCP Hub" half of the product.
+A Model Context Protocol (MCP) server exposes capabilities an AI agent can call directly: **tools** it can invoke, **resources** it can read, and **prompts** it can reuse.
+
+The API Portal & MCP Hub publishes MCP servers next to your APIs. They share the same catalog, subscription, and credential machinery—this is the "MCP Hub" half of the product.
 
 ## How MCP servers differ from APIs
 

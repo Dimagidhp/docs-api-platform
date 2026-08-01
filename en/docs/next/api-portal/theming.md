@@ -40,7 +40,7 @@ These are the files the example theme replaces, and what each one governs:
 | `pages/home/partials/home.hbs` | The home page body |
 | `pages/apis/partials/api-listing.hbs` | How APIs are listed, including the card markup |
 | `pages/api-landing/partials/api-detail-banner.hbs` | The header block on an API's overview page |
-| `images/` | Logo and other image assets |
+| `images/` | Logo and other image assets. Optional, and the example below ships none |
 
 Any other `pages/**/partials/*.hbs` file from the default tree works the same way—those are just the ones the example below uses.
 

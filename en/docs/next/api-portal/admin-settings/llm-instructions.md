@@ -1,6 +1,6 @@
 ---
 title: "Configure LLM instructions for the API Portal & MCP Hub"
-description: "Set the portal name and description that head llms.txt, and turn AI discoverability on or off for the whole portal."
+description: "Set the portal name and description that head the llms.txt file, and turn AI discoverability on or off for the whole portal."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/llm-instructions/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/llm-instructions.md
 tags:
@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # LLM instructions
 
-**LLM Instructions** controls how AI agents see your portal as a whole. It sets the name and description at the top of `llms.txt`—the first thing an agent reads before it navigates anything else—and carries the switch that turns AI discoverability on or off for the entire portal.
+**LLM Instructions** controls how AI agents see your portal as a whole. The name refers to large language models (LLMs), the systems behind those agents. It sets the name and description at the top of `llms.txt`—the first thing an agent reads before it navigates anything else—and carries the switch that turns AI discoverability on or off for the entire portal.
 
 Everything on this page is scoped to one [view](manage-views.md). Use the view selector to switch.
 

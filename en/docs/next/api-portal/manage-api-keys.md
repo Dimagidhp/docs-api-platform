@@ -63,7 +63,7 @@ Each row carries three actions: **Associate app** (or **Change app** when one is
 
 ## Associate an API key with an application
 
-API keys are always generated for an API directly—never for an application. Associating a key with an application afterward is optional and exists purely for **usage analytics attribution**: it groups a key's request metrics under an application in reporting. It has no effect on the key's validity or authorization, and a key works identically whether it is associated with an application.
+API keys are always generated for an API directly—never for an application. Associating a key with an application afterward is optional. It exists purely for **usage analytics attribution**. In reporting, it groups that key's request metrics under the application. It has no effect on the key's validity or authorization, and a key works identically whether it is associated with an application.
 
 You can do this from either side. From the key's own row, click **Associate app** or **Change app**. Or, from the application:
 
@@ -85,7 +85,7 @@ To remove the association later, click **Remove** next to the key in the same li
 
 When you generate, regenerate, or revoke an API key, the portal publishes a webhook event to every subscriber configured for it. Enforcement happens once that subscriber receives and accepts the event. Delivery is attempted exactly once, so a timeout or a non-2xx response leaves the change unenforced, and any queueing or processing on the subscriber's side adds delay.
 
-Changing a key's application association publishes `apikey.application_updated`. That's an analytics notification — it doesn't affect whether the key works.
+Changing a key's application association publishes `apikey.application_updated`. That's an analytics notification—it doesn't affect whether the key works.
 
 The key itself travels encrypted on `apikey.generated` and `apikey.regenerated`. For the payload of each event, see the [Webhook Event Catalog](references/webhook-event-catalog.md); to register a subscriber, see [Webhook Integration](admin-settings/webhook-integration.md).
 

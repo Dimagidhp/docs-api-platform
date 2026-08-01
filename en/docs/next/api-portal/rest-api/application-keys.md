@@ -53,7 +53,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 
 </aside>
 
-<h3 id="map-an-oauth-`client_id`-to-an-api-portal-application-parameters">Parameters</h3>
+<h3 id="map-an-oauth-client_id-to-an-api-portal-application-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -120,7 +120,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 }
 ```
 
-<h3 id="map-an-oauth-`client_id`-to-an-api-portal-application-responses">Responses</h3>
+<h3 id="map-an-oauth-client_id-to-an-api-portal-application-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -130,7 +130,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:crea
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="map-an-oauth-`client_id`-to-an-api-portal-application-responseschema">Response schema</h3>
+<h3 id="map-an-oauth-client_id-to-an-api-portal-application-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -281,7 +281,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:revo
 
 </aside>
 
-<h3 id="remove-an-oauth-`client_id`-mapping-parameters">Parameters</h3>
+<h3 id="remove-an-oauth-client_id-mapping-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -318,7 +318,7 @@ Required scopes (the token must carry at least one of): `dp:application_key:revo
 }
 ```
 
-<h3 id="remove-an-oauth-`client_id`-mapping-responses">Responses</h3>
+<h3 id="remove-an-oauth-client_id-mapping-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -326,4 +326,4 @@ Required scopes (the token must carry at least one of): `dp:application_key:revo
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="remove-an-oauth-`client_id`-mapping-responseschema">Response schema</h3>
+<h3 id="remove-an-oauth-client_id-mapping-responseschema">Response schema</h3>

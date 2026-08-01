@@ -52,7 +52,7 @@ Upload the contract that defines the API. One file is required, and the format f
 | GraphQL | A GraphQL schema, as `.graphql` or `.gql` |
 | MCP | A flat, type-tagged list of tools, resources, and prompts, as `.yaml` or `.yml`. See [Manage MCP servers](manage-mcp-servers.md#adding-an-mcp-server) |
 
-The file picker also accepts `.wsdl` and `.xml`. SOAP isn't in the **API type** list, so SOAP APIs reach the catalog another way rather than through this wizard.
+The file picker also accepts `.wsdl` and `.xml`, but **API type** offers no SOAP option, so you can't create a SOAP API here. Create those through the [Management API](../rest-api/apis.md) instead, posting `type: SOAP` with a WSDL definition.
 
 Click **Next**.
 
