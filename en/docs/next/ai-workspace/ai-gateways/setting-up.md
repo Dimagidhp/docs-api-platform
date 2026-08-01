@@ -32,7 +32,7 @@ The AI Gateways page displays a list of all configured gateways with the followi
 |--------|-------------|
 | **Name** | The gateway name |
 | **Description** | A brief description of the gateway |
-| **Status** | The current status, either Active or Not Active |
+| **Status** | The gateway status, either Active or Not Active |
 | **Last Updated** | Timestamp of the most recent change |
 | **Actions** | Edit and delete options |
 
@@ -50,11 +50,13 @@ The AI Gateways page displays a list of all configured gateways with the followi
     - **Description** (optional): a brief description that identifies the gateway's purpose.
     - **URL** (required): the gateway URL, for example `https://localhost:8443`. This is the endpoint where the gateway runtime is accessible.
 
+    The Add AI Gateway form collects the name, description, and URL:
+
     ![Add AI Gateway form showing Name, Description, URL pre-filled with localhost:8443](../../../assets/img/ai-gateway/standalone-ai-workspace/ai-gateway/ai-gateway-form.png)
 
 4. Click **Add Gateway** to create the gateway.
 
-5. The gateway detail page opens showing the gateway name, status (**Inactive** initially), vhost, and creation timestamp.
+5. The gateway detail page opens showing the gateway name, status (**Not Active** initially), vhost, and creation timestamp.
 
 ---
 
@@ -79,7 +81,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 !!! note "Where the control plane address comes from"
     Every method below needs two values from the **Get Started** section: the control plane address the gateway connects to, and this gateway's registration token.
 
-    Self-hosted AI Workspace fills that address into the commands it shows from `[ai_workspace.gateway] controlplane_host` in its own `config.toml`. The key is display-only — AI Workspace never connects to it — so the address has to be reachable from the machine running the gateway, not from the workspace. If the commands carry an address your gateway can't reach, correct that key and reload the page rather than editing the value into the gateway. For the Helm method, put the hostname in `controlPlane.host` and any port in `controlPlane.port`. See [Two keys that aren't interchangeable](../ports.md#two-keys-that-arent-interchangeable).
+    Self-hosted AI Workspace fills that address into the commands it shows from `[ai_workspace.gateway] controlplane_host` in its own `config.toml`. The key is display-only, and AI Workspace never connects to it. The address has to be reachable from the machine running the gateway, not from the workspace. If the commands carry an address your gateway can't reach, correct that key and reload the page rather than editing the value into the gateway. For the Helm method, put the hostname in `controlPlane.host` and any port in `controlPlane.port`. See [Two keys that aren't interchangeable](../ports.md#two-keys-that-arent-interchangeable).
 
 !!! note "Gateway version"
     AI Workspace works with **gateway v1.2 and above**. Those gateways provision their keys and certificates with `./scripts/setup.sh` and take their configuration from `api-platform.env`, which Compose loads through the `env_file:` directive. The **Get Started** section offers the gateway versions AI Workspace supports and shows the commands for the version you register.
@@ -288,7 +290,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     Replace the placeholders with the values the Get Started section shows. Split the control plane address across the two flags: the hostname in `controlPlane.host`, its port in `controlPlane.port`. `<your-gateway-token>` is this gateway's registration token.
 
-Once the gateway runtime is running and connected, the gateway status changes from **Inactive** to **Active**.
+Once the gateway runtime is running and connected, the gateway status changes from **Not Active** to **Active**.
 
 ---
 

@@ -12,7 +12,7 @@ last_updated: 2026-06-22
 content_type: "overview"
 ---
 
-# MCP Proxies Overview
+# MCP proxies overview
 
 ## What is Model Context Protocol?
 
@@ -22,11 +22,11 @@ MCP follows a host-client-server architecture and supports two transport mechani
 
 For more information, refer to the official [specification](https://modelcontextprotocol.io/introduction).
 
-## What is an MCP Proxy?
+## What is an MCP proxy?
 
 An MCP proxy connects the gateway to an upstream MCP server. MCP clients call the dedicated endpoint the gateway provides, and the gateway forwards their requests to your upstream MCP server. On that proxy you apply policies that control the MCP traffic passing through the gateway.
 
-## What does an MCP Proxy offer?
+## What does an MCP proxy offer?
 
 MCP defines an RPC-based communication model between agents and tools, but it leaves the demands of an enterprise environment to you. An MCP proxy covers them with built-in security, governance, and observability for MCP communication:
 
@@ -34,7 +34,7 @@ MCP defines an RPC-based communication model between agents and tools, but it le
 - **Policies**: enforces the policies that control MCP traffic.
 - **Observability**: shows which tools and servers are called, and which calls fail.
 
-## Next Steps
+## Next steps
 
 - [Configure an MCP proxy](configure-proxy.md): create and deploy your first proxy
 - [Apply policies to an MCP proxy](apply-policies.md): apply policies after deployment

@@ -104,8 +104,8 @@ AI services bill per token, so uncontrolled usage turns into unexpected cost. AI
 
 | Policy | Caps | Specification |
 |--------|------|---------------|
-| [Rate limit — basic](#rate-limit-basic) | Request count | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/basic-ratelimit) |
-| [Rate limit — advanced](#rate-limit-advanced) | Request count, with multi-dimensional and weighted quotas | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) |
+| [Rate limit - basic](#rate-limit-basic) | Request count | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/basic-ratelimit) |
+| [Rate limit - advanced](#rate-limit-advanced) | Request count, with multi-dimensional and weighted quotas | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) |
 | [Token-based rate limit](#token-based-rate-limit) | Prompt, completion, or total tokens | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/token-based-ratelimit) |
 | [LLM cost](#llm-cost) | Nothing on its own — calculates the cost other policies spend against | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/llm-cost) |
 | [LLM cost-based rate limit](#llm-cost-based-rate-limit) | Monetary spend in USD | [Policy Hub](https://wso2.com/api-platform/policy-hub/policies/llm-cost-based-ratelimit) |
@@ -153,7 +153,7 @@ Caps request count like the basic policy, with more control over how requests ar
 !!! warning "Redis failures disable quota enforcement"
     With a Redis-backed counter, a Redis outage stops quotas being enforced rather than blocking traffic. Requests pass through unrestricted for as long as Redis is unreachable, which can drive unbounded upstream traffic and LLM spend. Alert on Redis availability, and pair the policy with a limit that doesn't depend on Redis — an in-memory rate limit, or a [token-based](#token-based-rate-limit) or [LLM cost-based](#llm-cost-based-rate-limit) limit — if you need a ceiling that survives the outage.
 
-For the full configuration schema, see [Rate limit — advanced](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) in the Policy Hub.
+For the full configuration schema, see [Rate limit - advanced](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) in the Policy Hub.
 
 ### Token-based rate limit
 

@@ -49,24 +49,46 @@ SQLite suits a single instance you're evaluating or running for one team. Move t
 
 ## Step 1: Create the database and user
 
-On your PostgreSQL server, create the database and the user the Platform API connects as. Don't grant the user rights to create tables. A database administrator provisions the schema in the next step, and the Platform API needs only to read and write the rows:
+Create the database and the user the Platform API connects as. Don't grant the user rights to create tables. A database administrator provisions the schema in the next step, and the Platform API needs only to read and write the rows.
 
-```sql
-CREATE DATABASE platform_api;
-CREATE USER platform_api WITH PASSWORD '<your-password>';
-GRANT CONNECT ON DATABASE platform_api TO platform_api;
-```
+=== "PostgreSQL"
 
-On SQL Server, create the database and a server login of the same name instead. Step 2 maps that login to a database user.
+    Run these statements on your PostgreSQL server:
+
+    ```sql
+    CREATE DATABASE platform_api;
+    CREATE USER platform_api WITH PASSWORD '<your-password>';
+    GRANT CONNECT ON DATABASE platform_api TO platform_api;
+    ```
+
+=== "SQL Server"
+
+    Create the database and a server login of the same name. Run these statements against the `master` database:
+
+    ```sql
+    CREATE DATABASE platform_api;
+    CREATE LOGIN platform_api WITH PASSWORD = '<your-password>';
+    ```
+
+    Step 2 maps that login to a database user.
 
 ## Step 2: Provision the schema
 
 Run the bundled script for your database yourself, as a user that can create tables, before the first start:
 
-```bash
-psql -h <your-db-host> -U <admin-user> -d platform_api \
-  -f resources/platform-api/db-scripts/schema.postgres.sql
-```
+=== "PostgreSQL"
+
+    ```bash
+    psql -h <your-db-host> -U <admin-user> -d platform_api \
+      -f resources/platform-api/db-scripts/schema.postgres.sql
+    ```
+
+=== "SQL Server"
+
+    ```bash
+    sqlcmd -S <your-db-host> -U <admin-user> -d platform_api \
+      -i resources/platform-api/db-scripts/schema.sqlserver.sql
+    ```
 
 The distribution ships one script per database at `resources/platform-api/db-scripts/`:
 
@@ -78,21 +100,23 @@ The distribution ships one script per database at `resources/platform-api/db-scr
 
 Then grant the Platform API's user read and write access to what the script created. Run the statements for your database, connected to the `platform_api` database.
 
-On PostgreSQL:
+=== "PostgreSQL"
 
-```sql
-GRANT USAGE ON SCHEMA public TO platform_api;
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO platform_api;
-GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO platform_api;
-```
+    ```sql
+    GRANT USAGE ON SCHEMA public TO platform_api;
+    GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO platform_api;
+    GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO platform_api;
+    ```
 
-On SQL Server, create a database user for the login and add it to the two built-in data roles:
+=== "SQL Server"
 
-```sql
-CREATE USER platform_api FOR LOGIN platform_api;
-ALTER ROLE db_datareader ADD MEMBER platform_api;
-ALTER ROLE db_datawriter ADD MEMBER platform_api;
-```
+    Create a database user for the login and add it to the two built-in data roles:
+
+    ```sql
+    CREATE USER platform_api FOR LOGIN platform_api;
+    ALTER ROLE db_datareader ADD MEMBER platform_api;
+    ALTER ROLE db_datawriter ADD MEMBER platform_api;
+    ```
 
 ## Step 3: Configure the connection
 

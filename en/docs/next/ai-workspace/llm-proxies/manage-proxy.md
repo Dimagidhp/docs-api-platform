@@ -12,13 +12,13 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Manage App LLM Proxy
+# Manage App LLM proxy
 
 Once you create an App LLM proxy, manage its configuration through the proxy details page. This guide covers every management operation available for your specialized application or agent proxy.
 
 ---
 
-## Access Proxy Details
+## Access proxy details
 
 1. Navigate to **LLM** > **Proxies** in the left navigation menu.
 
@@ -37,7 +37,7 @@ The **Deploy to Gateway** button and a **delete** icon are located in the top-ri
 
 ---
 
-## Provider Settings
+## Provider settings
 
 Configure which LLM service provider the proxy connects to and how it authenticates with the provider.
 
@@ -78,7 +78,7 @@ If your selected provider uses API key authentication, you'll see the **API Key 
 
 Define which API endpoints (resources) are available through this proxy by importing an OpenAPI specification.
 
-### OpenAPI Specification
+### OpenAPI specification
 
 The OpenAPI specification defines the resources, or API endpoints, available through your proxy. For some providers, the workspace populates the specification for you.
 
@@ -95,7 +95,7 @@ The OpenAPI specification defines the resources, or API endpoints, available thr
 !!! tip "OpenAPI format"
     The proxy accepts OpenAPI 3.0 and 3.1 specifications in both JSON and YAML formats.
 
-### View Resources
+### View resources
 
 After importing, the **Resources** section displays the count and list of parsed resources. Each resource shows:
 
@@ -164,7 +164,7 @@ Resource-wise guardrails apply to **specific endpoints** only. This section list
 
 4. Click **Submit** to attach the guardrail to the resource.
 
-### Manage Guardrails
+### Manage guardrails
 
 - **View**: Global guardrails appear as pills in the Global Guardrails section. Resource-specific guardrails appear under each resource card.
 - **Remove**: Click the **×** icon on a guardrail pill to remove it.
@@ -177,7 +177,7 @@ Resource-wise guardrails apply to **specific endpoints** only. This section list
 
 ---
 
-## Save Changes
+## Save changes
 
 After making configuration changes across any tab (Provider, Resources, Security, Guardrails), click the **Save** button at the bottom-right of the page to persist your changes.
 
@@ -188,7 +188,7 @@ Use the **Cancel** button to discard all unsaved changes and revert to the last 
 
 ---
 
-## Delete Proxy
+## Delete proxy
 
 To delete a proxy, click the **delete** icon (trash icon) in the top-right corner of the proxy details page, next to the Deploy to Gateway button.
 
@@ -206,7 +206,7 @@ To delete a proxy, click the **delete** icon (trash icon) in the top-right corne
 
 ---
 
-## Next Steps
+## Next steps
 
-- [Policies overview](../policies/overview.md) — Learn about all available policies for proxies
-- [Policy Hub](https://wso2.com/api-platform/policy-hub/) — Browse the full catalog of available guardrails and policies
+- [Policies overview](../policies/overview.md): learn about all available policies for proxies
+- [Policy Hub](https://wso2.com/api-platform/policy-hub/): browse the full catalog of available guardrails and policies

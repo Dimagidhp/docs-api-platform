@@ -12,7 +12,7 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Syncing Gateway-Created AI Artifacts to the AI Workspace
+# Syncing gateway-created AI artifacts to the AI Workspace
 
 ## Overview
 
@@ -119,7 +119,7 @@ LlmProviderTemplate ──(spec.template)──▶ LlmProvider ──(spec.provi
 !!! note
     The LLM proxy and MCP proxy reference the project `default`. Make sure that project exists in your organization in AI Workspace first.
 
-### Step 1 - Create the LLM Provider Template
+### Step 1 - Create the LLM provider template
 
 The provider references a template by name, so create the template first. `llm-provider-template.yaml`:
 
@@ -143,7 +143,7 @@ curl --location 'http://localhost:9090/api/management/v1/llm-provider-templates'
   --data-binary '@llm-provider-template.yaml'
 ```
 
-### Step 2 - Create the LLM Provider
+### Step 2 - Create the LLM provider
 
 The provider links to the LLM provider template above via `spec.template`. `llm-provider.yaml`:
 
@@ -171,7 +171,7 @@ curl --location 'http://localhost:9090/api/management/v1/llm-providers' \
   --data-binary '@llm-provider.yaml'
 ```
 
-### Step 3 - Create the LLM Proxy
+### Step 3 - Create the LLM proxy
 
 The proxy belongs to a project (the `project-id` annotation) and links to the LLM provider via `spec.provider.id`. `llm-proxy.yaml`:
 
@@ -199,7 +199,7 @@ curl --location 'http://localhost:9090/api/management/v1/llm-proxies' \
   --data-binary '@llm-proxy.yaml'
 ```
 
-### Step 4 - Create an MCP Proxy
+### Step 4 - Create an MCP proxy
 
 An MCP proxy also belongs to a project but stands on its own (no template or provider prerequisite). `mcp-proxy.yaml`:
 
@@ -236,25 +236,25 @@ The gateway syncs each artifact up automatically. Shortly after you create them,
 
 Open the **AI Workspace** for the organization your gateway is registered with, then find each artifact in its section of the sidebar.
 
-### LLM Provider Template
+### LLM provider template
 
 Under **Settings** > **LLM Provider Templates**:
 
 ![LLM provider template synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider-template.png)
 
-### LLM Provider
+### LLM provider
 
 Under **LLM** > **LLM Providers**:
 
 ![LLM provider synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider.png)
 
-### LLM Proxy
+### LLM proxy
 
 Under **LLM** > **App LLM Proxies**, in the **Default** project:
 
 ![LLM proxy synced from the gateway to the AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-proxy.png)
 
-### MCP Proxy
+### MCP proxy
 
 Under **MCP** > **MCP Proxies**, in the **Default** project:
 
@@ -280,15 +280,15 @@ A gateway-created artifact is **read-only** in the AI Workspace because the gate
 
 - Upstreams, the auth/routing used to serve traffic, and policies
 
-    ![Access Control of DP origin LLM provider](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-access-control.png)
+    ![Read-only access control settings of a gateway-origin LLM provider](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-access-control.png)
 
 - An LLM provider template's token-tracking settings
 
-    ![Token Mapping of DP origin LLM provider template](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-template-token-mapping.png)
+    ![Read-only token mapping settings of a gateway-origin LLM provider template](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-provider-template-token-mapping.png)
 
 - Deploying, redeploying, or undeploying the artifact
 
-    ![Deployment of DP origin LLM proxy](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-proxy-deployment.png)
+    ![Deployment view of a gateway-origin LLM proxy, with the deploy actions unavailable](../../assets/img/ai-workspace/bottom-up/dp-origin-llm-proxy-deployment.png)
 
 - Deleting it while it is still deployed on a gateway (undeploy it from all gateways first)
 
@@ -334,11 +334,13 @@ The sync behaves exactly the same for these gateways: artifacts loaded from file
 - **Syncing is turned off.** Set `deployment_sync_enabled = true` in the gateway's `config.toml` and restart the gateway.
 - **The AI Workspace can't be reached.** The artifact still works on the gateway; the sync retries automatically and catches up once the connection is restored. Check that the gateway is connected to the AI Workspace.
 - **The project doesn't exist** (LLM proxy or MCP proxy). These belong to a project. Create the project named in the artifact's `project-id` annotation in your organization, then re-apply the artifact on the gateway:
-  ```yaml
-  metadata:
-    annotations:
-      "gateway.api-platform.wso2.com/project-id": "default"
-  ```
+
+    ```yaml
+    metadata:
+      annotations:
+        "gateway.api-platform.wso2.com/project-id": "default"
+    ```
+
 - **A referenced artifact isn't there yet.** An LLM provider needs its template, and an LLM proxy needs its provider. Create them in order: the template, then the provider, then the proxy. The dependent artifact catches up on its own once the artifact it references has synced.
 
 ### I can't edit, deploy, or delete a gateway-created artifact in the AI Workspace

@@ -14,7 +14,9 @@ content_type: "reference"
 
 # AI Workspace Configuration and Environment Interpolation
 
-The AI Workspace stack — the AI Workspace Backend-for-Frontend (BFF) and the Platform API it proxies to — reads its configuration from TOML files (`config.toml`) layered over built-in defaults. This page explains how each service loads its config file, how environment values and mounted files are injected through interpolation tokens, and how to keep sensitive values out of the file. For provisioning the keys, certificates, and credentials those tokens resolve to, see [Get started with AI Workspace](./getting-started.md).
+The AI Workspace stack has two services: the AI Workspace Backend-for-Frontend (BFF) and the Platform API it proxies to. Each reads its configuration from a TOML file (`config.toml`) layered over built-in defaults.
+
+This page explains how each service loads its config file. It also covers how environment values and mounted files are injected through interpolation tokens, and how to keep sensitive values out of the file. For provisioning the keys, certificates, and credentials those tokens resolve to, see [Get started with AI Workspace](./getting-started.md).
 
 ## How configuration is loaded
 
@@ -51,10 +53,10 @@ mode = '{{ env "APIP_AIW_AUTH_MODE" "basic" }}'
 
 {% endraw %}
 
-Every token in the shipped config carries a default, so an unset variable keeps the built-in value.
+Most tokens in the shipped config carry a default, so an unset variable keeps the built-in value. A token written without a default names a required secret, and startup fails when that variable isn't set.
 
 !!! note "The variable name is a naming convention, not a prefix override"
-    By convention each token names the key's dotted path (the table segment and key, uppercased, dots as underscores), prefixed per service: `APIP_AIW_` for AI Workspace (so `[ai_workspace.control_plane] url` becomes `APIP_AIW_CONTROL_PLANE_URL`), `APIP_CP_` for the Platform API, and `APIP_AP_` for the API Portal. The loader doesn't interpret the prefix — the name is only the literal string you pass to the interpolation function. You can rename any variable, as long as you edit the matching token in `config.toml` to agree.
+    By convention each token names the key's dotted path, uppercased with dots as underscores, behind a per-service prefix. The prefixes are `APIP_AIW_` for AI Workspace, `APIP_CP_` for the Platform API, and `APIP_AP_` for the API Portal. For example, `[ai_workspace.control_plane] url` becomes `APIP_AIW_CONTROL_PLANE_URL`. The loader doesn't interpret the prefix — the name is only the literal string you pass to the interpolation function. You can rename any variable, as long as you edit the matching token in `config.toml` to agree.
 
 ### Which variables your deployment reads
 
@@ -64,7 +66,7 @@ For every configurable option and the tokens the shipped files carry, refer to t
 
 ## Sensitive values in `config.toml`
 
-This section covers credentials the services need to start — database passwords, the OpenID Connect (OIDC) client secret, the at-rest encryption key. It's a separate mechanism from the [AI Workspace secrets](./secrets-management.md) feature, which stores encrypted credentials you reference from artifacts.
+This section covers credentials the services need to start — database passwords, the OpenID Connect (OIDC) client secret, and the at-rest encryption key. It's a separate mechanism from the [AI Workspace secrets](./secrets-management.md) feature, which stores encrypted credentials you reference from artifacts.
 
 Never write a sensitive value as a literal in `config.toml`, and never hardcode one in `docker-compose.yaml`. Reference each with an interpolation token — from an environment variable or, preferably, from a mounted file:
 
@@ -83,7 +85,7 @@ client_secret = '{{ env "APIP_AIW_AUTH_OIDC_CLIENT_SECRET" }}'
 
 {% endraw %}
 
-Both forms fail closed: if the variable is unset/empty, or the file is missing or outside the allowed source directories, the service refuses to start. A {% raw %}`{{ file }}`{% endraw %} path must live under an allowed directory — `/etc/ai-workspace` or `/secrets/ai-workspace` for the BFF, `/etc/platform-api` or `/secrets/platform-api` for the Platform API. Override the list with the shared `APIP_CONFIG_FILE_SOURCE_ALLOWLIST` (comma-separated; it **replaces** the defaults rather than extending them).
+Neither `encryption_key` nor `client_secret` carries a default, so each is a required secret. Both forms fail closed: if the variable is unset or empty, or the file is missing or outside the allowed source directories, the service refuses to start. A {% raw %}`{{ file }}`{% endraw %} path must live under an allowed directory — `/etc/ai-workspace` or `/secrets/ai-workspace` for the BFF, `/etc/platform-api` or `/secrets/platform-api` for the Platform API. Override the list with the shared `APIP_CONFIG_FILE_SOURCE_ALLOWLIST` (comma-separated; it **replaces** the defaults rather than extending them).
 
 !!! important "Two unrelated mechanisms"
     The {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens on this page are resolved by the service's config loader at startup, and only inside `config.toml`. The {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder of [Secrets Management](./secrets-management.md) is resolved by the gateway at request time, and only inside artifact configurations. Neither works in the other's place.

@@ -8,139 +8,96 @@ tags:
   - ai-workspace
   - overview
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-23
+last_updated: 2026-08-01
 content_type: "overview"
 ---
 
-# AI Workspace Overview
+# AI Workspace overview
 
-The AI Workspace is the control plane for AI Gateway runtimes. It gives platform teams a centralized interface to register gateways, configure providers and application-facing proxies, apply policies, and manage deployments without working directly with the Gateway-Controller API.
+The AI Workspace is the control plane for AI Gateway runtimes. It gives platform teams one interface to register gateways, configure providers and application-facing proxies, apply policies, and manage deployments. You don't work directly with the Gateway-Controller API.
 
-## What AI Workspace Manages
+This page maps out the documentation in the order you work through it. To go straight to a running stack, follow [Get started with AI Workspace](getting-started.md).
 
-### AI Gateways
+## How it works
 
-Register and manage AI Gateway runtimes that process AI traffic.
+1. Create an AI Gateway entry in the AI Workspace, then start the gateway runtime and register it with the generated token.
+2. Configure LLM providers, App LLM proxies, or MCP proxies in the control plane.
+3. Deploy those configurations to one or more connected gateways.
+4. Attach policies and guardrails, then redeploy to apply them.
 
-- Create gateway entries and associate them with environments
-- Generate registration tokens to connect runtimes to the control plane
-- Track gateway connectivity and deployment status
+## Set up the workspace
 
-Learn more in [AI Gateways](ai-gateways/setting-up.md).
+These topics cover standing the stack up and configuring how it runs:
 
-### LLM Providers
+| Topic | What it covers |
+|-------|----------------|
+| [Configuration and interpolation](configuration.md) | How each service loads `config.toml`, and how interpolation tokens inject environment values and mounted files |
+| [Change the ports AI Workspace uses](ports.md) | Move the stack off its default ports |
+| [Connect a database to the Platform API](database.md) | Move artifact storage from the default SQLite file onto PostgreSQL or SQL Server |
+| [Authentication](authentication/overview.md) | File-based login for local use, or an OpenID Connect (OIDC) identity provider for production |
 
-Define reusable connections to upstream AI services such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral.
+The {% raw %}`{{ env }}` and `{{ file }}`{% endraw %} tokens in `config.toml` supply the services' own startup credentials. They're a separate mechanism from [Secrets management](secrets-management.md), which stores the credentials your artifacts reference. Neither works in the other's place.
 
-- Store provider credentials and connection details
-- Control which upstream resources are exposed
-- Apply provider-level security, rate limits, and guardrails
+## Build the artifacts
 
-Learn more in [LLM providers](llm-providers/overview.md).
+| Topic | What it covers |
+|-------|----------------|
+| [AI Gateways](ai-gateways/setting-up.md) | The runtime that processes and routes requests between your applications and LLM providers. Register one, issue its registration token, and track its status |
+| [LLM provider templates](llm-provider-templates/overview.md) | Reusable blueprints holding the endpoint, authentication, OpenAPI specification, and token mappings for an upstream service |
+| [LLM providers](llm-providers/overview.md) | Connections to services such as OpenAI, Anthropic, Azure OpenAI, Gemini, Mistral AI, and AWS Bedrock |
+| [App LLM proxies](llm-proxies/overview.md) | Optional application-facing endpoints, for when a GenAI application or agent needs its own controls |
+| [MCP proxies](mcp-proxies/overview.md) | Managed endpoints in front of upstream Model Context Protocol (MCP) servers |
+| [Secrets management](secrets-management.md) | Encrypted credentials that the artifacts above reference by handle instead of by value |
 
-### App LLM Proxies
+An LLM provider serves traffic on its own. Add an App LLM proxy only when one application or agent needs guardrails, authentication, exposed resources, or routing that differ from the provider's.
 
-Create optional, application-facing endpoints for GenAI applications and agents when they need controls that differ from the underlying provider.
+### Connect a provider that isn't built in
 
-- Publish specialized proxy endpoints for distinct GenAI apps, copilots, or agents
-- Isolate consumers with separate API keys and policies
-- Apply proxy-level resources, security settings, and guardrails
+Built-in templates cover OpenAI, Azure OpenAI, Azure AI Foundry, AWS Bedrock, Anthropic, Mistral, and Gemini. For any other service, an organization admin creates a custom template under **Settings > LLM Provider Templates**. The template captures that service's endpoint, authentication shape, and token mappings, then appears in the provider type picker alongside the built-in ones.
 
-Learn more in [App LLM proxies](llm-proxies/overview.md).
+A provider created from a custom template works only after you [deploy the template](llm-provider-templates/configure-template.md#deploy-a-custom-template-to-the-gateway) to the gateway that serves the provider.
 
-### GenAI Applications
+### Three ways to create artifacts
 
-Represent the AI applications and agents in your project, and map API keys to them for application-level visibility.
+| Path | How it works |
+|------|--------------|
+| In the AI Workspace | Configure the artifact in the console, then deploy it to one or more gateways. You own it, and it stays editable |
+| [On the gateway](bottom-up-ai-artifact-deployment-guide.md) | Create it through the gateway's management API or its on-disk configuration. It serves traffic immediately and syncs up as a read-only copy the gateway owns |
+| [Through CI/CD](ci-cd/overview.md) | Keep artifacts as project files in source control, validate them, and apply them with the `ap` CLI in a Git-based release workflow |
 
-- Group multiple API keys under one named application
-- Track usage, tokens, and cost per application
-- Improve governance and accountability for shared GenAI workloads
+## Govern what you built
 
-Learn more in [GenAI applications](genai-applications.md).
+[Policies](policies/overview.md) attach to LLM providers, App LLM proxies, and MCP proxies. The AI Workspace is where you attach them, and the AI Gateway enforces them at request time.
 
-### MCP Proxies
+- **Guardrails** — content safety, personally identifiable information (PII) masking, schema and length validation, and prompt injection detection.
+- **Rate limits** — caps on request count, token consumption, and monetary spend.
+- **Traffic and prompt policies** — model routing, prompt templates, semantic caching, and provider transformation.
 
-Expose and govern Model Context Protocol servers through connected gateways.
+[Insights](insights.md) -  The gateway publishes traffic, token usage, latency, cost, and guardrail events to your Moesif analytics workspace. Use those measurements to set limits from observed usage rather than estimates.
 
-- Connect remote MCP servers through managed proxy endpoints
-- Apply MCP-specific authentication, authorization, rewrite, and access-control policies
-- Control how MCP capabilities are exposed to clients
+### Custom policies
 
-Learn more in [MCP proxies](mcp-proxies/overview.md).
+When the built-in catalog doesn't cover what you need, write your own AI policy and ship it inside a gateway image. Once a gateway runs it, the policy syncs into the AI Workspace and appears under **Settings > Custom Policies**, ready to attach like any built-in policy.
 
-### CI/CD
+1. [Writing an AI policy](policies/writing-an-ai-policy.md): implement the policy with the gateway SDK.
+2. [Building the gateway with AI policies](policies/build-gateway-with-ai-policies.md): package it into a custom AI Gateway image with the `ap` CLI.
+3. [Apply AI policies to proxies](policies/apply-ai-policies-to-proxies.md): sync it to the organization and attach it to a provider or proxy.
 
-Manage AI Workspace artifacts as project files and apply them through a Git-based release workflow.
+## Consume it from an application
 
-- Version LLM providers, App LLM proxies, and MCP proxies in source control
-- Validate project files before applying them to AI Workspace
-- Associate artifacts with intended gateway targets during create and update operations
-
-Learn more in [AI Workspace CI/CD](ci-cd/overview.md).
-
-### Policies and Guardrails
-
-Configure AI-specific governance controls for providers and proxies.
-
-- Apply content safety and PII protection guardrails
-- Configure token- and cost-based rate limiting
-- Use prompt management, semantic cache, and model-routing policies
-
-Learn more in [Policies](policies/overview.md).
-
-### Settings
-
-Manage organization-wide assets from the **Settings** section:
-
-- **LLM Provider Templates** — Define reusable connection templates for custom LLM providers not covered by the built-in provider types, and enable or disable templates to control what's offered when adding a provider.
-- **Custom Policies** — Review and remove the [custom AI policies](policies/writing-an-ai-policy.md) synced from your connected gateways.
-
-## How It Works
-
-1. Create an AI Gateway entry in AI Workspace.
-2. Start the gateway runtime and register it with the generated token.
-3. Configure LLM providers or MCP proxies in the control plane.
-4. Deploy those configurations to one or more connected gateways.
-5. Manage runtime behavior through policies, guardrails, and gateway deployments.
-
-## Configuration Interpolation
-
-The AI Workspace control plane itself is configured through `config.toml`, resolved once at startup. Rather than writing values directly into the file, each key can hold an interpolation token that resolves them from the environment or a mounted file:
-
-{% raw %}
-- `{{ env "VARIABLE_NAME" "default" }}` — reads the named environment variable, falling back to `default` if it's unset. Omit the default to make the variable required; startup fails if it isn't set.
-- `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply sensitive values such as the OpenID Connect (OIDC) client secret or a database password without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
-
-```toml
-[ai_workspace.logging]
-level = '{{ env "APIP_AIW_LOGGING_LEVEL" "info" }}'
-
-[ai_workspace.auth.oidc]
-client_secret = '{{ file "/secrets/ai-workspace/oidc_client_secret" }}'
-```
-
-{% endraw %}
-
-Resolution fails closed: an unset required variable, or an unreadable or disallowed file, aborts startup rather than running with an empty credential.
-
-These tokens apply to `config.toml` only. They are a separate mechanism from the [AI Workspace secrets](secrets-management.md) you store in the control plane and reference from artifacts.
-
-For each {% raw %}`{{ file }}`{% endraw %} token, mount the referenced value at that exact path in `docker-compose.yaml`:
-
-```yaml
-    volumes:
-      - ./secrets/oidc_client_secret:/secrets/ai-workspace/oidc_client_secret:ro
-```
-
-Keep `./secrets/oidc_client_secret` out of source control, and restrict it to its owner with `chmod 600 ./secrets/oidc_client_secret`.
+| Topic | What it covers |
+|-------|----------------|
+| [GenAI applications](genai-applications.md) | Group API keys under a named application, for usage visibility per application |
+| [Configure inbound authentication](configure-inbound-auth.md) | Set the header name clients use to send their API key |
+| [Invoke providers and proxies via SDKs](using-sdks.md) | Call a deployed endpoint from the OpenAI, Anthropic, Gemini, Mistral, Azure OpenAI, or LangChain SDKs |
 
 ## Relationship to AI Gateway
 
-AI Workspace is the control plane. The [AI Gateway](../../cloud/ai-gateway/overview.md) is the runtime plane that handles the actual traffic.
+The AI Workspace is the control plane. The [AI Gateway](../../cloud/ai-gateway/overview.md) is the runtime plane that handles the traffic.
 
-- Use AI Gateway docs when you want to work directly with the runtime, Gateway-Controller API, or standalone deployment model.
-- Use AI Workspace docs when you want centralized lifecycle management for connected gateways and their AI assets.
+- Use the AI Gateway docs to work directly with the runtime, the Gateway-Controller API, or the standalone deployment model.
+- Use the AI Workspace docs for centralized lifecycle management of connected gateways and their AI assets.
 
-## Getting Started
+## Next step
 
-To start using the control plane, follow the [Getting Started](getting-started.md) guide.
+[Get started with AI Workspace](getting-started.md): run the stack locally with Docker Compose, create your first AI gateway, and configure an LLM provider.

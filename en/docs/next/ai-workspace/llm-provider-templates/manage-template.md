@@ -12,11 +12,11 @@ last_updated: 2026-07-10
 content_type: "how-to"
 ---
 
-# Manage LLM Provider Template
+# Manage LLM provider template
 
 This guide shows how to create an LLM provider from a template, and how to edit, enable, disable, and delete templates.
 
-## Use a Template to Create a Provider
+## Use a template to create a provider
 
 When [adding an LLM provider](../llm-providers/configure-provider.md):
 
@@ -33,16 +33,16 @@ When [adding an LLM provider](../llm-providers/configure-provider.md):
 !!! warning
     A provider created from a custom template only works after the template is [deployed to the gateway](configure-template.md#deploy-a-custom-template-to-the-gateway) that serves the provider.
 
-## Edit a Template
+## Edit a template
 
 You can only edit **custom** templates; built-in templates are read-only. There are two ways to make a change:
 
 - Edit a version in place through the [Overview, Connection, and Token Mapping tabs](configure-template.md#configure-the-template) — for example, to update the logo URL, endpoint, or mappings.
 - [Create a new version](configure-template.md#versioning) to introduce a different configuration while keeping the existing version available.
 
-Editing a template version doesn't affect the providers already created from it — a provider copies the template configuration at creation time, so template changes only apply to providers created afterwards.
+Editing a template version doesn't affect the providers already created from it. A provider copies the template configuration at creation time, so template changes apply only to providers created afterward.
 
-## Enable / Disable a Template
+## Enable or disable a template
 
 You can turn a **built-in** template version on or off from the template's **Overview** tab.
 
@@ -52,7 +52,7 @@ You can turn a **built-in** template version on or off from the template's **Ove
 - A version cannot be disabled while a provider is using it.
 - Disabled templates appear dimmed in the listing and cannot be used to create new providers.
 
-## Delete a Template
+## Delete a template
 
 To remove a **custom** template version:
 
@@ -69,7 +69,7 @@ Deleting the last remaining version removes the whole template.
 
 ---
 
-## Next Steps
+## Next steps
 
 - [LLM providers overview](../llm-providers/overview.md): create a provider from a template
 - [App LLM proxies overview](../llm-proxies/overview.md): add application-facing endpoints on top of a provider

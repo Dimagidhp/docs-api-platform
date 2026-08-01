@@ -12,21 +12,32 @@ last_updated: 2026-06-22
 content_type: "how-to"
 ---
 
-# Configure App LLM Proxy
+# Configure App LLM proxy
 
-An App LLM proxy exposes a managed endpoint that your GenAI applications or agents use to reach an LLM provider. Once deployed, the proxy handles authentication and enforces any guardrails you configure. While the provider can be called directly, the proxy lets you create specialized endpoints for different applications, agents, or environments with independent keys, guardrails, and access controls on top of the same provider.
+An App LLM proxy exposes a managed endpoint that your GenAI applications or agents use to reach an LLM provider. Once deployed, the proxy handles authentication and enforces any guardrails you configure.
+
+You can also call the provider directly. Use a proxy when you need specialized endpoints for different applications, agents, or environments. Each proxy gets its own keys, guardrails, and access controls on top of the same provider.
 
 This guide walks you through creating an App LLM proxy, optionally attaching guardrails, and deploying it to a gateway.
 
 ## Prerequisites
 
 !!! info "Before you begin"
-    - A user whose token carries the scopes these steps need: `ap:llm_proxy:manage` to create and edit proxies, `ap:llm_proxy:deployment:manage` to deploy one, `ap:llm_provider:read` to choose the provider behind it, and `ap:gateway:read` to choose the target gateway. A proxy that carries its own upstream credential also needs `ap:secret:create`. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all of these, and `ap_publisher` grants every one except `ap:secret:create`.
-    - At least one [configured and deployed LLM provider](../llm-providers/configure-provider.md)
+    - A user whose token carries the scopes these steps need:
+
+        - `ap:llm_proxy:manage` to create and edit proxies.
+        - `ap:llm_proxy:deployment:manage` to deploy a proxy.
+        - `ap:llm_provider:read` to choose the provider behind it.
+        - `ap:gateway:read` to choose the target gateway.
+        - `ap:secret:create`, but only when the proxy carries its own upstream credential.
+
+        Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all of these. `ap_publisher` grants every one except `ap:secret:create`.
+
+    - At least one [configured and deployed LLM provider](../llm-providers/configure-provider.md).
 
 ---
 
-## Create a New App LLM Proxy
+## Create a new App LLM proxy
 
 1. Navigate to **LLM** > **Proxies** in the left navigation menu.
 
@@ -48,7 +59,7 @@ This guide walks you through creating an App LLM proxy, optionally attaching gua
 
 ---
 
-## Add Guardrails (Optional)
+## Add guardrails (optional)
 
 You can attach policies and guardrails to your proxy that apply to all requests:
 
@@ -68,7 +79,7 @@ You can attach policies and guardrails to your proxy that apply to all requests:
 
 ---
 
-## Deploy Proxy to Gateway
+## Deploy proxy to gateway
 
 After creating your proxy, you must deploy it to a gateway before it can be used.
 
@@ -109,7 +120,7 @@ Click **Back to App LLM Proxy** to return to the proxy details page.
 
 ---
 
-## Get Started
+## Get started
 
 Once the proxy is deployed, the proxy details page shows the **Get Started** panel on the right.
 
@@ -129,7 +140,7 @@ To call a specific resource, append the resource path:
 https://{gateway-host}/{proxy-name}/chat/completions
 ```
 
-### App LLM Proxy Keys
+### App LLM proxy keys
 
 Generate an API key to authenticate requests to the deployed gateway.
 
@@ -139,13 +150,13 @@ Generate an API key to authenticate requests to the deployed gateway.
 !!! danger "Important"
     An API key is displayed only once. Store it in a secure location immediately, because you can't retrieve it again.
 
-### Deployed Gateways
+### Deployed gateways
 
 The **Deployed Gateways** section lists all gateways this proxy is deployed to, along with the deployment status.
 
 ---
 
-## Next Steps
+## Next steps
 
 - [Invoke providers and proxies via SDKs](../using-sdks.md): connect to your proxy from Python using provider-native SDKs
 - [Manage an App LLM proxy](manage-proxy.md): configure the provider, resources, security, and guardrails

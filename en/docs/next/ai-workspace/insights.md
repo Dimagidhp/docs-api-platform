@@ -18,13 +18,13 @@ The **Insights** page in the AI Workspace links to your [Moesif](https://www.moe
 
 AI Workspace doesn't embed or proxy Moesif content. The Insights page provides a button that opens your Moesif workspace in a new tab, and all analytics are viewed in Moesif itself.
 
-## How It Works
+## How it works
 
 1. **Configure your AI Gateway** with a Moesif Application ID (see [Enabling Moesif on a Gateway](#enabling-moesif-on-a-gateway)). The gateway runtime publishes telemetry — requests, tokens, latency, and guardrail events — directly to Moesif.
 2. **Open Insights** in the AI Workspace left navigation menu, then click the button to open your Moesif workspace in a new tab.
 3. **View analytics** in Moesif. All data resides in Moesif, not in the AI Workspace.
 
-## Enabling Moesif on a Gateway
+## Enabling Moesif on a gateway
 
 Analytics are published to Moesif only when your gateway runtime is configured with a Moesif Application ID. Set the `MOESIF_KEY` environment variable on the gateway runtime.
 
@@ -41,7 +41,7 @@ For the full gateway setup procedure, see [Setting up an AI Gateway](ai-gateways
 !!! note
     If `MOESIF_KEY` isn't configured, the gateway doesn't publish telemetry, and your Moesif workspace shows no data.
 
-## What Moesif Tracks
+## What Moesif tracks
 
 With the gateway Moesif integration active, your Moesif workspace shows:
 
@@ -53,7 +53,7 @@ With the gateway Moesif integration active, your Moesif workspace shows:
 
 Filtering, segmentation, and dashboarding are done entirely within Moesif.
 
-## Using Insights for Cost and Rate Limit Management
+## Using Insights for cost and rate limit management
 
 Use Moesif analytics to tune your [token-based rate limits](policies/overview.md#token-based-rate-limit):
 
@@ -61,7 +61,7 @@ Use Moesif analytics to tune your [token-based rate limits](policies/overview.md
 2. Check per-consumer traffic to determine appropriate per-consumer limits.
 3. Monitor error rates to detect rate limit violations (`429 Too Many Requests` responses) and adjust limits accordingly.
 
-## Using Insights for Guardrail Monitoring
+## Using Insights for guardrail monitoring
 
 When guardrails are active, you can use Moesif analytics to:
 

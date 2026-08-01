@@ -12,7 +12,7 @@ last_updated: 2026-06-22
 content_type: "how-to"
 ---
 
-# Configure an MCP Proxy
+# Configure an MCP proxy
 
 An MCP proxy exposes a managed endpoint that your applications use to reach an MCP server. Once deployed, the proxy handles authentication and other access controls.
 
@@ -25,7 +25,7 @@ This guide walks you through creating a proxy and deploying it to a gateway.
 
 ---
 
-## Create a New Proxy
+## Create a new proxy
 
 1. Navigate to **MCP** > **MCP Proxies** in the left navigation menu.
 
@@ -33,28 +33,28 @@ This guide walks you through creating a proxy and deploying it to a gateway.
 
 3. Provide the **MCP Server URL**. AI Workspace connects to that URL and fetches the server information.
 
-    !!! warning "Protected Servers"
+    !!! warning "Protected servers"
         If the MCP server is protected with static credentials, provide them under **Advanced Configurations**. AI Workspace uses those credentials when it fetches the server information.
 
 4. Click **Next** to proceed to the next step.
 
 5. Fill in the required proxy details:
 
-    1. **Name** (Required): Enter a unique name for the proxy (for example, `mcp-tools-proxy`, `context-server-proxy`). The Proxy ID is auto-generated from the name (lowercase, hyphen-separated).
+    1. **Name** (required): Enter a unique name for the proxy (for example, `mcp-tools-proxy`, `context-server-proxy`). The Proxy ID is auto-generated from the name (lowercase, hyphen-separated).
 
-    2. **Version** (Required): The version is pre-filled (for example, `v1.0`). You can edit this if needed.
+    2. **Version** (required): The version is pre-filled (for example, `v1.0`). You can edit this if needed.
 
-    3. **Description** (Optional): Add a brief description to identify the proxy's purpose.
+    3. **Description** (optional): Add a brief description to identify the proxy's purpose.
 
-    4. **Context** (Optional): Enter the context path (default: `/`). This is the base path for proxy endpoints (normalized with "/" prefix).
+    4. **Context** (optional): Enter the context path (default: `/`). This is the base path for proxy endpoints (normalized with "/" prefix).
 
-    5. **Target** (Required): The MCP server URL the gateway calls. AI Workspace fills this in from the URL you provided in the previous step.
+    5. **Target** (required): The MCP server URL the gateway calls. AI Workspace fills this in from the URL you provided in the previous step.
 
 6. Click **Create** to create and save the proxy.
 
 ---
 
-## Deploy Proxy to Gateway
+## Deploy proxy to gateway
 
 After creating your proxy, you must deploy it to a gateway before it can be used.
 
@@ -95,11 +95,11 @@ Click **Back to MCP Proxy** to return to the proxy details page.
 
 ---
 
-## Get Started
+## Get started
 
 Once the proxy is deployed, the overview page shows the MCP proxy URL.
 
-### Connect with an MCP Client
+### Connect with an MCP client
 
 Select a gateway from the **Gateways** dropdown to see the base URL for calling this proxy through that gateway.
 
@@ -111,6 +111,6 @@ https://{gateway-host}/{proxy-context}/mcp
 
 ---
 
-## Next Steps
+## Next steps
 
 - [Apply policies to an MCP proxy](apply-policies.md): govern MCP traffic with access control, authorization, and rewrite policies.

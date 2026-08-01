@@ -12,15 +12,15 @@ last_updated: 2026-06-22
 content_type: "overview"
 ---
 
-# App LLM Proxies Overview
+# App LLM proxies overview
 
-## Why a Proxy on Top of a Provider?
+## Why a proxy on top of a provider?
 
 An **LLM Provider** connects the gateway to an upstream LLM service and can be called directly. An **App LLM Proxy** adds an optional, application-facing endpoint on top when you need controls that are specific to a GenAI application or agent.
 
-The main benefit is specialization and isolation. You can call a single provider directly, or back multiple App LLM proxies with it: one for a customer-facing chatbot with strict guardrails, another for an internal agent with relaxed settings, and another for a workflow-specific GenAI assistant. You configure each proxy independently, and swapping the underlying provider needs no changes in the applications or agents that call the proxy.
+The main benefit is specialization and isolation. You can call a single provider directly, or back multiple App LLM proxies with it. For example, use one proxy for a customer-facing chatbot with strict guardrails, a second for an internal agent with relaxed settings, and a third for a workflow-specific GenAI assistant. You configure each proxy independently.
 
-## What You Can Do with an App LLM Proxy
+## What you can do with an App LLM proxy
 
 **Expose a controlled API endpoint**
 The proxy gives you a stable URL your GenAI application or agent calls. You control which resources (API paths) are exposed, and can enable or disable them without touching the upstream provider.
@@ -35,12 +35,12 @@ Require applications or agents to present an API key before the gateway forwards
 Attach content safety, PII masking, or semantic caching policies globally across all endpoints, or target them at specific resources only.
 
 **Create specialized endpoints for apps and agents**
-Create separate proxies for different GenAI applications, agents, teams, or environments (dev, staging, production) — each with independent rate limits, guardrails, access keys, and exposed resources — all sharing the same provider backend.
+Create separate proxies for different GenAI applications, agents, teams, or environments such as dev, staging, and production. Each proxy has its own guardrails, access keys, and exposed resources. Provider-level rate limits stay shared across every proxy that uses the same provider backend.
 
-**Switch providers without client changes**
-Because applications and agents call the proxy URL rather than the provider directly, you can swap the underlying LLM provider (for example, from OpenAI to Azure OpenAI) without any changes on the client side.
+**Switch between compatible providers without client changes**
+Applications and agents call the proxy URL rather than the provider directly. You can swap the underlying LLM provider, for example from OpenAI to Azure OpenAI, and clients need no changes as long as the new provider preserves the client-facing contract. That contract covers the authentication clients send and the resources the proxy exposes.
 
-## Next Steps
+## Next steps
 
 - [Configure an App LLM proxy](configure-proxy.md): create and deploy your first specialized proxy
 - [Manage an App LLM proxy](manage-proxy.md): update configuration, guardrails, and resources after deployment

@@ -12,7 +12,7 @@ last_updated: 2026-07-31
 content_type: "quickstart"
 ---
 
-# Getting Started
+# Getting started
 
 The AI Workspace enables you to manage AI gateways and LLM providers. This guide gets AI Workspace running locally with Docker Compose, then walks you through creating your first AI gateway and LLM provider.
 
@@ -31,14 +31,16 @@ curl -sLO https://github.com/wso2/api-platform/releases/download/portals/ai-work
 unzip wso2apip-ai-workspace-1.0.0.zip
 ```
 
-## Step 2: Run the Setup Script
+## Step 2: Run the setup script
 
 ```bash
 cd wso2apip-ai-workspace-1.0.0
 ./scripts/setup.sh
 ```
 
-Run the script once before the first start. The stack never auto-generates keys or certificates: every service fails closed with a descriptive error if something it needs is missing, rather than starting with a weaker value. The script prompts for the admin username and password — press <kbd>Enter</kbd> at each prompt to accept `admin` and a randomly generated password — and provisions the following:
+Run the script once before the first start. The stack never auto-generates keys or certificates. If something a service needs is missing, that service fails closed with a descriptive error rather than starting with a weaker value.
+
+The script prompts for the admin username and password. Press <kbd>Enter</kbd> at each prompt to accept `admin` and a randomly generated password. The script provisions the following:
 
 | Artifact | Location | Purpose |
 |----------|----------|---------|
@@ -50,7 +52,6 @@ Run the script once before the first start. The stack never auto-generates keys 
 | Admin credentials | `api-platform.env` | The Platform API's basic-auth admin user: `APIP_CP_ADMIN_USERNAME` plus the bcrypt `APIP_CP_ADMIN_PASSWORD_HASH`. |
 | Compose defaults | `.env` | `COMPOSE_PROFILES`, which decides the services a plain `docker compose up -d` starts, and `COMPOSE_PROJECT_NAME`, which namespaces this copy's containers, networks, and volumes. |
 
-To skip both prompts — in CI, for example — set the credentials in the environment instead: `ADMIN_USERNAME=admin ADMIN_PASSWORD='…' ./scripts/setup.sh`.
 
 !!! warning "Save the printed admin username and password"
     The admin password is shown only once, and `api-platform.env` holds only its bcrypt hash. To set a new one, delete both `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` from `api-platform.env` and rerun `./scripts/setup.sh`. Deleting only one of the two makes the script stop with an error, because a username without its matching hash can never authenticate.
@@ -58,7 +59,7 @@ To skip both prompts — in CI, for example — set the credentials in the envir
 !!! warning "Don't delete or edit `COMPOSE_PROJECT_NAME`"
     The project name is pinned on the first run and never changes afterward — not on a rerun, not under any flag. The stack's data lives in volumes prefixed with it, so a different name starts the stack with an empty database. To choose the name yourself, set `COMPOSE_PROJECT_NAME` in the environment for the first run.
 
-## Step 3: Start the Stack
+## Step 3: Start the stack
 
 ```bash
 docker compose up -d
@@ -87,11 +88,11 @@ An AI gateway is the runtime that processes and routes requests between your app
 2. Click **+ Add AI Gateway**.
 3. Fill in the **Name** and **URL**, then click **Add Gateway**.
 4. Copy the **Gateway Registration Token** and save it securely immediately — it is shown only once. Then follow the setup instructions to start the gateway runtime.
-5. Once connected, the gateway status changes from **Inactive** to **Active**.
+5. Once connected, the gateway status changes from **Not Active** to **Active**.
 
 For detailed instructions, see [AI Gateways](ai-gateways/setting-up.md).
 
-## Step 6: Configure an LLM Provider
+## Step 6: Configure an LLM provider
 
 An LLM provider connects AI Workspace to an AI service platform such as OpenAI, Anthropic, or Azure OpenAI.
 
@@ -117,7 +118,7 @@ Rerunning `./scripts/setup.sh` is safe. By default it fills in only what's missi
 To rotate a single value by hand, delete it from `api-platform.env` — or delete the file under `resources/certificates` or `resources/keys` — and rerun the script.
 
 !!! warning "Rotating an encryption key destroys encrypted data"
-    `--rotate-encryption-key` replaces both encryption keys, which makes everything encrypted under the old keys permanently unreadable. That covers stored [AI Workspace secrets](secrets-management.md), subscription tokens, and WebSub HMAC secrets held by the Platform API, plus the API Portal's subscription secrets and webhook secrets. At an interactive terminal the script asks you to type `rotate` to confirm; in a non-interactive run, passing the flag is itself the confirmation. Rotating the JWT keypair with `--force` is milder — it only invalidates issued login tokens, so everyone signs in again.
+    `--rotate-encryption-key` replaces both encryption keys, which makes everything encrypted under the old keys permanently unreadable. That covers stored [AI Workspace secrets](secrets-management.md), subscription tokens, and WebSub HMAC secrets held by the Platform API. It also covers the API Portal's subscription secrets and webhook secrets. At an interactive terminal the script asks you to type `rotate` to confirm; in a non-interactive run, passing the flag is itself the confirmation. Rotating the JWT keypair with `--force` is milder — it only invalidates issued login tokens, so everyone signs in again.
 
 ## Provision the at-rest encryption key manually
 
@@ -148,7 +149,7 @@ To use the environment variable form instead, switch the token to {% raw %}`{{ e
 
 ## Change environment values after setup
 
-`api-platform.env` holds the values the containers read at startup — the admin credentials the setup script wrote, and anything else your `config.toml` pulls in through an {% raw %}`{{ env }}`{% endraw %} token. Edit that file to change a setting, for example to switch the AI Workspace login mode or point at a different control plane, then restart the stack.
+`api-platform.env` holds the values the containers read at startup. Those are the admin credentials the setup script wrote, plus anything else your `config.toml` pulls in through an {% raw %}`{{ env }}`{% endraw %} token. Edit that file to change a setting, for example to switch the AI Workspace login mode or point at a different control plane. Then restart the stack.
 
 The sample `docker-compose.yaml` loads the file with the `env_file:` directive. It sets `format: raw` so that the `$` characters in a bcrypt password hash aren't treated as Compose interpolation:
 
@@ -163,7 +164,7 @@ services:
 
 Keep `api-platform.env` out of source control. It's git-ignored in the distribution.
 
-## What's Next
+## Next steps
 
 - [Manage your provider](llm-providers/manage-provider.md): configure connection, access control, security, rate limiting, guardrails, and models
 

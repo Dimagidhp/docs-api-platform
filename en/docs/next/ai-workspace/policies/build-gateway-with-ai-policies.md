@@ -12,11 +12,11 @@ last_updated: 2026-07-24
 content_type: "how-to"
 ---
 
-# Building the Gateway with AI Policies
+# Building the gateway with AI policies
 
 After [writing a custom AI policy](writing-an-ai-policy.md), build it into the AI Gateway image so it can run alongside the built-in guardrails and rate-limiting policies.
 
-## Install the AP CLI Tool
+## Install the AP CLI tool
 
 The `ap` CLI builds a custom gateway image that carries your own policies. It's the same `ap` CLI that [AI Workspace CI/CD](../ci-cd/overview.md) uses for commands such as `ap gateway apply` and `ap ai-workspace build`. If you already have it installed for that workflow, skip ahead to [Configure the build file](#configure-the-build-file). Otherwise, download the binary for your platform from the [AP CLI releases page](https://github.com/wso2/api-platform/releases/tag/ap%2Fv0.7.0) and follow the steps below to install it.
 
@@ -92,7 +92,7 @@ The `ap` CLI builds a custom gateway image that carries your own policies. It's 
     ap --version
     ```
 
-## Configure the Build File
+## Configure the build file
 
 The `build.yaml` file is included in the AI Gateway package you downloaded when [setting up the AI Gateway](../ai-gateways/setting-up.md). It declares the gateway version and the list of policies to include. Edit this file to add your custom AI policies before building the gateway image.
 
@@ -119,7 +119,7 @@ Each policy entry uses one of two source types:
 | `gomodule` | The Go module reference for a Policy Hub managed policy, for example `github.com/wso2/gateway-controllers/policies/pii-masking@v1` |
 | `filePath` | The path from `build.yaml` to a local custom AI policy directory |
 
-### Adding a Custom AI Policy
+### Adding a custom AI policy
 
 Your custom AI policy can reside anywhere on the filesystem. Use a relative path from the `build.yaml` file to point to it.
 
@@ -144,7 +144,7 @@ policies:
 !!! note
     The path in `filePath` is always relative to the location of `build.yaml`, not the directory from which you run the `ap` command.
 
-## Build the Gateway Image
+## Build the gateway image
 
 Once `build.yaml` is ready, run the following command from the directory containing `build.yaml` to build the custom gateway image:
 
@@ -164,7 +164,7 @@ Once the build completes, the output lists the two image names produced. For exa
 
 A `build-manifest.yaml` file is also written alongside `build.yaml`, recording the resolved versions of all policies included in the build.
 
-## Update the Docker Compose File
+## Update the Docker Compose file
 
 After building, update the `image:` fields in your `docker-compose.yaml` to use the newly built images.
 
@@ -188,6 +188,6 @@ Once updated, start the gateway as usual. `api-platform.env` continues to be loa
 docker compose up
 ```
 
-## What's Next?
+## Next steps
 
-- [Apply AI policies to proxies](apply-ai-policies-to-proxies.md): sync your custom AI policy to the organization and apply it to LLM providers and App LLM proxies
+- [Apply AI policies to proxies](apply-ai-policies-to-proxies.md): sync your custom AI policy to the organization and apply it to LLM providers, App LLM proxies, and MCP proxies

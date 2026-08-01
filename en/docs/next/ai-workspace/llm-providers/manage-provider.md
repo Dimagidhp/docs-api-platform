@@ -12,11 +12,11 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Manage LLM Provider
+# Manage LLM provider
 
 After deploying your LLM provider, manage its configuration through the provider details page. This guide covers all management operations organized by tab.
 
-## Access Provider Details
+## Access provider details
 
 1. Navigate to **AI Workspace** > **LLM Providers**.
 
@@ -33,7 +33,7 @@ The provider details page shows:
 
 Manage upstream endpoint configuration and authentication credentials for the LLM provider.
 
-### Provider Endpoint
+### Provider endpoint
 
 The **Upstream URL** field sets where the gateway forwards API requests:
 
@@ -66,7 +66,7 @@ Configure how the gateway authenticates with the upstream provider:
 
 Switching to **other** or **none** clears the stored authentication header and credentials for this provider.
 
-### OpenAPI Specification
+### OpenAPI specification
 
 The **Spec URL** field holds the OpenAPI specification the resource list is imported from:
 
@@ -76,7 +76,7 @@ The **Spec URL** field holds the OpenAPI specification the resource list is impo
 
 ---
 
-## Access Control
+## Access control
 
 Control which API endpoints are accessible through this provider.
 
@@ -96,7 +96,7 @@ Use the arrow buttons between the two panels to move resources:
 - **`<`** — Move the selected resources back
 - **`<<`** — Move all resources back
 
-### Import Resources
+### Import resources
 
 Click **Import resources from specification** to load or refresh the resource list from the provider's OpenAPI specification.
 
@@ -106,7 +106,7 @@ Click **Import resources from specification** to load or refresh the resource li
 
 Configure how applications authenticate when accessing this provider through the gateway.
 
-### API Key Authentication
+### API key authentication
 
 Set the API key that client applications must provide:
 
@@ -126,9 +126,9 @@ Set the API key that client applications must provide:
 
 ---
 
-## Rate Limiting
+## Rate limiting
 
-Control request and token consumption, to prevent cost overruns and keep usage fair across all consumers.
+Control request and token consumption to prevent cost overruns and keep usage fair across all consumers.
 
 Configure rate limits in the **Backend** section, which controls requests from the gateway to the upstream LLM provider. Limiting that traffic protects your provider API credentials and caps total spend.
 
@@ -136,6 +136,8 @@ The Backend section supports two configuration modes:
 
 - **Provider-wide** — A single limit applied across all API endpoints. The limit maintains **one shared counter**: traffic on any endpoint draws down the same allowance, so exhausting the limit via one endpoint rejects requests on all endpoints.
 - **Per Resource** — Individual limits per API endpoint (for example, chat completions vs. embeddings). Each endpoint maintains its **own independent counter**.
+
+The Backend section of the Rate Limiting tab presents both the Provider-wide and Per Resource modes:
 
 ![Rate Limiting tab showing Provider-wide and Per Resource configuration modes in the Backend section](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider/rate-limiting-tab.png)
 
@@ -145,7 +147,7 @@ The Backend section supports two configuration modes:
 !!! info "Provider-wide limits are a hard ceiling"
     A provider-wide limit is evaluated before any per-resource policy and counts **every request attempt** — including requests that a stricter per-resource policy later rejects. When the shared allowance is exhausted, requests to every endpoint receive HTTP `429`. See [Policy scope: Global or per resource](../policies/overview.md#policy-scope-global-or-per-resource) for details.
 
-### Limit Criteria
+### Limit criteria
 
 Configure either of these criteria, or both:
 
@@ -156,14 +158,14 @@ Configure either of these criteria, or both:
 
 For each enabled criterion, set the **Quota** and **Reset Duration** (`second`, `minute`, or `hour`).
 
-### Provider-wide Configuration
+### Provider-wide configuration
 
 1. Select **Provider-wide** in the Backend section.
 2. Enable **Request Count** and/or **Token Count**.
 3. Enter the **Quota** and select the **Reset Duration** for each criterion.
 4. Click **Save**.
 
-### Per Resource Configuration
+### Per Resource configuration
 
 1. Select **Per Resource** in the Backend section.
 2. Expand **Limit per Resource** to set default limits for all endpoints:
@@ -182,7 +184,7 @@ For each enabled criterion, set the **Quota** and **Reset Duration** (`second`, 
 
 Attach guardrails to enforce content safety, compliance, and quality standards. Attach a guardrail on a provider globally, to all endpoints, or per resource, to specific endpoints. Either way it affects every proxy that uses this provider.
 
-### View Attached Guardrails
+### View attached guardrails
 
 The tab displays the guardrails attached to the provider:
 
@@ -190,7 +192,7 @@ The tab displays the guardrails attached to the provider:
 - **Configuration status** and parameters
 - **Enable/disable toggles** to activate or deactivate a guardrail
 
-### Add a Guardrail
+### Add a guardrail
 
 Attach a guardrail globally, to all endpoints, or per resource, to one endpoint. A global guardrail runs on every request regardless of the endpoint called; a resource-level guardrail runs only on the endpoint you attach it to. If you configure both, the gateway evaluates the global guardrails first, then the resource-level ones. See [Policy scope: Global or per resource](../policies/overview.md#policy-scope-global-or-per-resource).
 
@@ -210,7 +212,7 @@ Attach a guardrail globally, to all endpoints, or per resource, to one endpoint.
 3. Select and configure the guardrail (same process as global guardrails).
 4. Click **Add** to attach it to the resource.
 
-### Configure Guardrails
+### Configure guardrails
 
 You can't edit guardrail parameters in place. To change a guardrail's configuration, delete it and add it again with the updated settings.
 
@@ -253,11 +255,11 @@ The gateway blocks any model that isn't in the chip list. An application that re
 
 ---
 
-## Lifecycle Operations
+## Lifecycle operations
 
 ---
 
-### Redeploy Provider
+### Redeploy provider
 
 Push configuration changes to deployed gateways.
 
@@ -279,7 +281,7 @@ Push configuration changes to deployed gateways.
 
 ---
 
-### Delete Provider
+### Delete provider
 
 Permanently remove the provider and all its configurations.
 
@@ -303,7 +305,7 @@ Permanently remove the provider and all its configurations.
 
 ---
 
-## Next Steps
+## Next steps
 
-- [Configure App LLM proxy](../llm-proxies/configure-proxy.md) — Configure and deploy specialized proxy endpoints for GenAI applications or agents using your provider
-- [Policies overview](../policies/overview.md) — Explore all available guardrails and policies
+- [Configure App LLM proxy](../llm-proxies/configure-proxy.md): configure and deploy specialized proxy endpoints for GenAI applications or agents using your provider
+- [Policies overview](../policies/overview.md): explore all available guardrails and policies

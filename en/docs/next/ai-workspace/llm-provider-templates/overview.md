@@ -12,7 +12,7 @@ last_updated: 2026-07-10
 content_type: "overview"
 ---
 
-# LLM Provider Templates Overview
+# LLM provider templates overview
 
 An LLM provider template is a reusable blueprint that holds everything needed to connect to an upstream LLM service:
 
@@ -23,14 +23,14 @@ An LLM provider template is a reusable blueprint that holds everything needed to
 
 Once a template holds this configuration, you can create any number of [LLM providers](../llm-providers/overview.md) from it without entering the same details again.
 
-## Template Types
+## Template types
 
 | Type | Description |
 |------|-------------|
 | **Built-in** | Shipped with the product for well-known services: OpenAI, Azure OpenAI, Azure AI Foundry, AWS Bedrock, Anthropic, Mistral, and Gemini. These are read-only; you can only enable or disable them. |
 | **Custom** | Created by you, either from scratch or as a new version of a built-in template. You can edit and delete these freely. |
 
-## Viewing Templates
+## Viewing templates
 
 1. Navigate to **AI Workspace** in your API Platform dashboard.
 2. Go to **Settings** > **LLM Provider Templates**.

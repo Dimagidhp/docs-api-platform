@@ -12,7 +12,7 @@ last_updated: 2026-07-23
 content_type: "overview"
 ---
 
-# LLM Providers Overview
+# LLM providers overview
 
 An LLM provider is an integration with an AI service platform that offers language models. By configuring providers in AI Workspace, you can:
 
@@ -21,7 +21,7 @@ An LLM provider is an integration with an AI service platform that offers langua
 - **Monitor provider status**: Track availability and health of connected services
 - **Reuse configuration**: Use one provider across multiple proxies without duplicating credentials
 
-## Supported Providers
+## Supported providers
 
 API Platform AI Workspace supports the following LLM providers:
 
@@ -35,8 +35,9 @@ API Platform AI Workspace supports the following LLM providers:
 | <img src="https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/mistral/icon.png" width="32" alt=""> **Mistral AI** | Access Mistral's open and commercial models | [Mistral AI documentation](https://mistral.ai/) |
 | <img src="https://raw.githubusercontent.com/wso2/api-platform/main/llm-provider-specs/awsbedrock/icon.png" width="32" alt=""> **AWS Bedrock** | Access Anthropic, Meta, Mistral, and Amazon models through Amazon Bedrock | [AWS Bedrock documentation](https://aws.amazon.com/bedrock/) |
 
-## Connecting a Custom Provider
+## Connecting a custom provider
 
-If the LLM service you use isn't in the list above, an organization admin can define a reusable **LLM Provider Template** under **Settings > LLM Provider Templates**. A template captures the endpoint and authentication shape for a custom provider, and it then appears in the provider type selector alongside the built-in providers whenever you add a new provider. Built-in templates are read-only — you can't create new versions from them — but you can enable or disable any template to control whether it's offered when adding a provider.
+If the LLM service you use isn't in the list above, an organization admin can define a reusable **LLM Provider Template** under **Settings > LLM Provider Templates**. A template captures the endpoint and authentication shape for a custom provider. It then appears in the provider type selector alongside the built-in providers whenever you add a provider.
+
 
 **Next:** [Configure an LLM provider](configure-provider.md), to set up your first provider.

@@ -12,11 +12,11 @@ last_updated: 2026-07-24
 content_type: "how-to"
 ---
 
-# Apply AI Policies to Proxies
+# Apply AI policies to proxies
 
 After [building the AI Gateway with your custom AI policy](build-gateway-with-ai-policies.md) and starting it, the gateway automatically sends its policy manifest to the control plane on connection. You can then sync your custom AI policy to the organization and apply it to your LLM providers, App LLM proxies, and MCP proxies.
 
-## Step 1: View the Gateway Policies
+## Step 1: View the gateway policies
 
 1. Go to your AI Workspace.
 2. From the left navigation, select **AI Gateways**.
@@ -38,7 +38,7 @@ The console fetches the manifest from the gateway and displays a table of all po
 
 ![AI Gateway detail page showing the Policies tab with a table of installed policies, their Policy Type, and Sync Status](../../../assets/img/custom-policies/ViewGatewayPolicies.svg)
 
-## Step 2: Sync the Custom AI Policy to the Organization
+## Step 2: Sync the custom AI policy to the organization
 
 Sync a custom AI policy to the organization before you apply it to an LLM provider, App LLM proxy, or MCP proxy.
 
@@ -60,7 +60,7 @@ Once synced, the custom AI policy is available organization-wide and can be appl
     - Patch version updates aren't supported.
     - Version downgrades aren't allowed.
 
-## Step 3: View Organization-Level Custom Policies
+## Step 3: View organization-level custom policies
 
 After syncing, the custom AI policy appears in **Settings > Custom Policies**. To view it:
 
@@ -82,7 +82,7 @@ This section lists all custom AI policies available in the organization with the
 !!! note
     To delete a synced custom AI policy, none of the LLM providers, App LLM proxies, or MCP proxies in the organization should be using it.
 
-## Step 4: Apply the Custom AI Policy
+## Step 4: Apply the custom AI policy
 
 Once synced, a custom AI policy is attached the same way for LLM providers, App LLM proxies, and MCP proxies — it appears alongside the built-in guardrails and policies wherever policies are configured for that resource:
 

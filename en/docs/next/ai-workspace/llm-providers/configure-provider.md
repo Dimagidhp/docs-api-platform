@@ -12,7 +12,7 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Configure LLM Provider
+# Configure LLM provider
 
 LLM providers allow you to connect AI service platforms like OpenAI, Anthropic, and others to the AI Workspace. Once configured, providers can be deployed and used directly through the managed gateway.
 
@@ -21,11 +21,19 @@ LLM providers allow you to connect AI service platforms like OpenAI, Anthropic, 
 
 ## Prerequisites
 
-- A user whose token carries the scopes these steps need: `ap:llm_provider:manage` to add and edit providers, `ap:llm_provider:deployment:manage` to deploy one, `ap:gateway:read` to choose the target gateway, and `ap:secret:create` because AI Workspace stores the upstream API key as an encrypted [secret](../secrets-management.md) on your behalf. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all four. `ap_publisher` grants every one except `ap:secret:create`, so saving a provider with a new API key is rejected until you add that scope to the role.
-- At least one [AI Gateway created and set up](../ai-gateways/setting-up.md)
-- API credentials for your LLM provider, such as an API key or an access token
+- A user whose token carries the scopes these steps need:
 
-## Add a New Provider
+    - `ap:llm_provider:manage` to add and edit providers.
+    - `ap:llm_provider:deployment:manage` to deploy a provider.
+    - `ap:gateway:read` to choose the target gateway.
+    - `ap:secret:create` because AI Workspace stores the upstream API key as an encrypted [secret](../secrets-management.md) on your behalf.
+
+    Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all four.
+
+- At least one [AI Gateway created and set up](../ai-gateways/setting-up.md).
+- API credentials for your LLM provider, such as an API key or an access token.
+
+## Add a new provider
 
 1. Navigate to **AI Workspace** in your API Platform dashboard.
 2. Select **LLM Providers** from the menu.
@@ -35,21 +43,21 @@ LLM providers allow you to connect AI service platforms like OpenAI, Anthropic, 
 
 4. If the selected template has more than one version, select a version and click **Continue**. A single version is selected automatically.
 
-## Configure Provider Details
+## Configure provider details
 
 After selecting your provider type, fill in the provider configuration form:
 
    ![Add LLM Service Provider form with OpenAI selected, showing Name, Version, Description, Context, API Key, and Guardrails fields](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider/llm-provider-details.png)
 
-### Basic Information
+### Basic information
 
 1. **Name** (required): Enter a unique name for the provider (for example, `openai-production`, `anthropic-dev`).
 
 2. **Version** (required): The version is pre-filled (for example, `v1.0`). You can edit this if needed.
 
-3. **Description** (Optional): Add a description to identify the provider's purpose.
+3. **Description** (optional): Add a description to identify the provider's purpose.
 
-4. **Context** (Optional): Enter the context path (default: `/`). This is the base context for the provider.
+4. **Context** (optional): Enter the context path (default: `/`). This is the base context for the provider.
 
 ### Authentication
 
@@ -89,7 +97,7 @@ The authentication fields vary depending on the provider you selected:
 
 === "AWS Bedrock"
     1. **Upstream URL** (required): Enter the Bedrock runtime endpoint for your region, in the form `https://bedrock-runtime.<region>.amazonaws.com` (for example, `https://bedrock-runtime.us-east-1.amazonaws.com`).
-    2. **API Key** (required): Enter your Amazon Bedrock API key. Paste the raw key — AI Workspace sends it as `Authorization: Bearer <key>` and adds the `Bearer ` prefix for you.
+    2. **API Key** (required): Enter your Amazon Bedrock API key. Paste the raw key. AI Workspace adds the `Bearer` prefix followed by a space, and sends the credential as `Authorization: Bearer <key>`.
 
     !!! info
         Bedrock's endpoint isn't pre-configured, because the runtime host is region-specific. Use the region your API key and model access live in — a key issued in one region doesn't work against another region's endpoint.
@@ -100,7 +108,7 @@ The authentication fields vary depending on the provider you selected:
 !!! note "Custom provider templates"
     If you're adding a provider from a custom [LLM provider template](overview.md#connecting-a-custom-provider) (**Settings > LLM Provider Templates**), the **Authentication Type** can also be set to **other** (no credentials stored — use a policy to handle upstream auth) or **none** (no upstream authentication sent), in addition to **api-key**.
 
-### Add Guardrails (Optional)
+### Add guardrails (optional)
 
 You can attach policies and guardrails to your provider that apply to all requests:
 
@@ -118,7 +126,7 @@ You can attach policies and guardrails to your provider that apply to all reques
 !!! info
     Learn more about available guardrails in the [Policies overview](../policies/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
 
-## Save Provider
+## Save provider
 
 1. After configuring all settings and adding guardrails (if needed), click **Add Provider**.
 
@@ -126,7 +134,7 @@ You can attach policies and guardrails to your provider that apply to all reques
 
 3. The provider appears in the providers list.
 
-## Deploy Provider to Gateway
+## Deploy provider to gateway
 
 After creating your provider, you must deploy it to a gateway before it can be used.
 
@@ -139,7 +147,7 @@ After creating your provider, you must deploy it to a gateway before it can be u
 
 3. Wait for the deployment to complete. The status changes to **Deployed**.
 
-## Get Started
+## Get started
 
 Once the provider is deployed, the provider details page shows the Invoke URL on the left and a **Get Started** panel on the right.
 
@@ -147,7 +155,7 @@ Once the provider is deployed, the provider details page shows the Invoke URL on
 
 Select a gateway from the **Gateways** dropdown to see the base URL for accessing this provider through that gateway.
 
-### API Keys
+### API keys
 
 Generate an API key to authenticate requests to the deployed gateway.
 
@@ -157,13 +165,13 @@ Generate an API key to authenticate requests to the deployed gateway.
 !!! danger "Important"
     An API key is displayed only once. Store it in a secure location immediately, because you can't retrieve it again.
 
-### Deployed Gateways
+### Deployed gateways
 
 The **Deployed Gateways** section lists all gateways this provider is deployed to, along with the host address and deployment status.
 
 ---
 
-## Next Steps
+## Next steps
 
 - [Configure an App LLM proxy](../llm-proxies/configure-proxy.md): configure and deploy a specialized proxy endpoint for a GenAI application or agent that uses your provider
 - [Manage an LLM provider](manage-provider.md): configure access control, security, rate limiting, and more
