@@ -155,7 +155,9 @@ export APIP_AIW_AUTH_OIDC_CLIENT_SECRET
 
 Reading the value from a prompt keeps the secret out of your shell history and out of the process list.
 
-Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers. In a production deployment, prefer supplying it from a mounted secret file. Swap the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %}, then mount the secret at that path. Resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
+Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers.
+
+In a production deployment, prefer supplying it from a mounted secret file. Swap the token in `config.toml` for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %}, then mount the secret at that path on the AI Workspace service only. That path is one of the BFF's allowed file sources, and the Platform API can't read it. Resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
 
 Once configured, opening AI Workspace redirects you to the Asgardeo-hosted login page instead of the file-based login form:
 

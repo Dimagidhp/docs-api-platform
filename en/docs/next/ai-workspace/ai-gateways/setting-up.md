@@ -24,7 +24,10 @@ An AI Gateway is the runtime component that processes and routes requests betwee
     - `ap:gateway:manage` to add, edit, or delete a gateway.
     - `ap:gateway:token:manage` to issue a registration token. `ap:gateway:manage` covers the token operations on its own.
 
-    Of the roles the [role-to-scope mapping](../setting-up/authentication/overview.md) ships, `ap_admin` and `ap_operator` grant all of these scopes. `ap_viewer` and `ap_publisher` can only view gateways.
+    The built-in [role-to-scope mapping](../setting-up/authentication/overview.md) assigns these scopes as follows:
+
+    - `ap_admin` and `ap_operator` grant all three scopes.
+    - `ap_viewer` and `ap_publisher` grant `ap:gateway:read` only, so they can view gateways but not change them.
 
 ## View AI gateways
 

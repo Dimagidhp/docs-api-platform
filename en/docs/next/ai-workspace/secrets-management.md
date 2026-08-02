@@ -17,7 +17,11 @@ content_type: "how-to"
 
 AI Workspace lets you store sensitive credentials as **secrets** and reference them securely in artifact configurations. Secrets are encrypted at rest using AES-GCM-256. Plaintext values are never written to the database and are **never returned in any API response**—not even the creation response.
 
-Use secrets to avoid embedding raw API keys, tokens, or passwords directly in large language model (LLM) provider configurations, Model Context Protocol (MCP) proxy configs, or API backend settings.
+Use secrets to keep raw API keys, tokens, and passwords out of your artifact configurations. They apply to the following:
+
+- Large language model (LLM) provider configurations
+- Model Context Protocol (MCP) proxy configurations
+- API backend settings
 
 !!! important "Not the same as `config.toml` interpolation"
     Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services have their own startup credentials: the database password, the OpenID Connect (OIDC) client secret, and the at-rest encryption key. Those are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](setting-up/configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.

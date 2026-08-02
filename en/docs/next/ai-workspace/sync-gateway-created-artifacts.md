@@ -14,7 +14,14 @@ content_type: "how-to"
 
 # Sync gateway-created AI artifacts to AI Workspace
 
-You can create four kinds of AI artifact directly on the AI Gateway: an **LLM Provider Template**, an **LLM Provider**, an **LLM Proxy**, or an **MCP Proxy**. Each one syncs up to **AI Workspace** automatically. There it appears as a copy the gateway owns: the deployment fields the gateway runs the artifact from are **read-only**, while runtime-neutral details such as the description, documentation, OpenAPI definitions, and template connection details stay editable. See [What you can and can't change in AI Workspace](#what-you-can-and-cant-change-in-ai-workspace).
+You can create four kinds of AI artifact directly on the AI Gateway:
+
+- **LLM Provider Template**
+- **LLM Provider**
+- **LLM Proxy**
+- **MCP Proxy**
+
+Each one syncs up to **AI Workspace** automatically, where it appears as a copy the gateway owns. The deployment fields the gateway runs the artifact from are **read-only**. Runtime-neutral details stay editable, such as the description, documentation, OpenAPI definitions, and template connection details. For the full breakdown, see [What you can and can't change in AI Workspace](#what-you-can-and-cant-change-in-ai-workspace).
 
 This is the reverse of the usual top-down flow:
 
@@ -96,7 +103,7 @@ The examples below use these conventions:
 
 ## Create the artifacts on the gateway
 
-This walkthrough builds a complete **LLM Proxy** together with the two artifacts it depends on: an **LLM Provider Template** and an **LLM Provider**. It then adds a standalone **MCP Proxy**. Each `curl` creates the artifact on the gateway. The artifact starts serving immediately and is synced to AI Workspace.
+This walkthrough builds a complete **LLM Proxy** together with the two artifacts it depends on: an **LLM Provider Template** and an **LLM Provider**. It then adds a standalone **MCP Proxy**. Each `curl` creates the artifact on the gateway. The artifact starts serving immediately and syncs to AI Workspace.
 
 Create them in dependency order so each reference resolves:
 
