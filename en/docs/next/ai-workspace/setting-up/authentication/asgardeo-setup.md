@@ -30,7 +30,7 @@ This guide walks you through configuring Asgardeo as the identity provider for a
 
 ## Step 2: Register the AI Workspace application
 
-AI Workspace runs a backend-for-frontend (BFF) that acts as a confidential OIDC client. The BFF holds the client secret and completes the authorization-code and PKCE exchange on the back channel. Register it as a confidential web application, not a single-page application. A single-page application is a public client. The token endpoint rejects the BFF's exchange with this error: "The authenticated client is not authorized to use the requested grant type."
+AI Workspace runs a backend-for-frontend (BFF) that acts as a confidential OpenID Connect (OIDC) client. The BFF holds the client secret and completes the authorization-code and Proof Key for Code Exchange (PKCE) exchange on the back channel. Register it as a confidential web application, not a single-page application. A single-page application is a public client. The token endpoint rejects the BFF's exchange with this error: "The authenticated client is not authorized to use the requested grant type."
 
 1. In the root organization, go to **Applications > New Application**.
 2. Choose **Standard-Based Application > OpenID Connect** (Traditional Web Application) and name it `AI Workspace`.

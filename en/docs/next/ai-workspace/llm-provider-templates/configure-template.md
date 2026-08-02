@@ -68,7 +68,7 @@ Define where token usage and model information are read from in requests and res
 
 ## Versioning
 
-Built-in template versions are read-only. Custom template versions can be changed at any time: edit a version in place, or create a new version to introduce a different configuration while keeping the existing version available. Either way, providers already created from a version aren't affected — a provider copies the template configuration at creation time.
+Built-in template versions are read-only. You can edit a custom template version in place at any time. You can also create a new version to introduce a different configuration while keeping the earlier version available. Either way, providers already created from a version aren't affected—a provider copies the template configuration at creation time.
 
 **To create a new version:**
 

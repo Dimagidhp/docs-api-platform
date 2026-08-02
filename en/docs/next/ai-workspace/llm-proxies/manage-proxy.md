@@ -63,10 +63,10 @@ If your selected provider uses API key authentication, you'll see the **API Key 
 2. Click **Save API Key** to store the credential securely.
 
 !!! warning "Security best practices"
-    - The workspace encrypts API keys and stores them securely
-    - Keys aren't displayed after saving
-    - Store a backup copy in a secure location
-    - Rotate keys regularly
+    - The workspace encrypts API keys and stores them securely.
+    - Keys aren't displayed after saving.
+    - Store a backup copy in a secure location.
+    - Rotate keys regularly.
 
 ## Resources
 
@@ -181,14 +181,14 @@ To delete a proxy, click the **delete** icon (trash icon) in the top-right corne
 !!! danger "Irreversible action"
     Deleting a proxy is permanent and can't be undone.
 
-    - The workspace removes the proxy from all gateways immediately
-    - All generated API keys stop working
-    - All configuration, including resources, security, and guardrails, is deleted
+    - The workspace removes the proxy from all gateways immediately.
+    - All generated API keys stop working.
+    - All configuration, including resources, security, and guardrails, is deleted.
 
 !!! warning "Before deleting"
-    - Ensure no applications are actively using the proxy
-    - Back up any important configuration settings
-    - Notify teams that depend on the proxy endpoints
+    - Ensure no applications are actively using the proxy.
+    - Back up any important configuration settings.
+    - Notify teams that depend on the proxy endpoints.
 
 ## Next steps
 

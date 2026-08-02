@@ -66,7 +66,7 @@ docker compose up -d
 ```
 
 !!! tip "Port 9643 or 9243 already taken?"
-    Change the host side of the `ports:` mappings in `docker-compose.yaml` before you start—for example `"8443:9643"` for the AI Workspace. See [Change the ports AI Workspace uses](setting-up/ports.md) for the two config keys that need to match.
+    Change the host side of the `ports:` mappings in `docker-compose.yaml` before you start—for example `"9743:9643"` for the AI Workspace. Open AI Workspace on the remapped host port in the next step, such as `https://localhost:9743` instead of `https://localhost:9643`. See [Change the ports AI Workspace uses](setting-up/ports.md) for the two config keys that need to match.
 
 ## Step 4: Open AI Workspace
 

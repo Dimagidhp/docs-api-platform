@@ -18,9 +18,9 @@ AI Workspace CI/CD lets you manage AI Workspace artifacts as version-controlled 
 
 You can use this flow for:
 
-- **LLM providers**—reusable connections to model providers such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral AI
+- **Large language model (LLM) providers**—reusable connections to model providers such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral AI
 - **App LLM proxies**—application-facing proxy endpoints with their own security, guardrails, policies, and provider reference
-- **MCP proxies**—managed proxy endpoints for upstream MCP servers
+- **Model Context Protocol (MCP) proxies**—managed proxy endpoints for upstream MCP servers
 
 ## How the CI/CD flow works
 

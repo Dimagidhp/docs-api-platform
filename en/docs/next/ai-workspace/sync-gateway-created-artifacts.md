@@ -16,10 +16,10 @@ content_type: "how-to"
 
 You can create four kinds of AI artifact directly on the AI Gateway:
 
-- **LLM Provider Template**
+- **Large language model (LLM) Provider Template**
 - **LLM Provider**
 - **LLM Proxy**
-- **MCP Proxy**
+- **Model Context Protocol (MCP) Proxy**
 
 Each one syncs up to **AI Workspace** automatically, where it appears as a copy the gateway owns. The deployment fields the gateway runs the artifact from are **read-only**. Runtime-neutral details stay editable, such as the description, documentation, OpenAPI definitions, and template connection details. For the full breakdown, see [What you can and can't change in AI Workspace](#what-you-can-and-cant-change-in-ai-workspace).
 
@@ -28,7 +28,7 @@ This is the reverse of the usual top-down flow:
 | | You create it in… | The AI Workspace copy is… |
 |---|---|---|
 | **Top-down** | AI Workspace, then it's pushed to the gateway | editable—you own it |
-| **This guide (bottom-up)** | the gateway, then it's synced up to AI Workspace | read-only—the gateway owns it |
+| **This guide (bottom-up)** | the gateway, then it's synced up to AI Workspace | read-only for deployment fields—the gateway owns them; runtime-neutral details stay editable |
 
 Because the gateway owns these artifacts, they keep serving traffic even if AI Workspace is temporarily unavailable, and any change you make on the gateway is synced up automatically.
 
@@ -328,7 +328,7 @@ The sync behaves exactly the same for these gateways: artifacts loaded from file
 
 ### I can't edit, deploy, or delete a gateway-created artifact in AI Workspace
 
-This is expected—the gateway owns it, so it's read-only in AI Workspace.
+This is expected—the gateway owns the artifact, so its deployment fields are read-only in AI Workspace.
 
 - Make configuration and deployment changes on the **gateway**; they sync up automatically.
 - You can still edit runtime-neutral details: the description, display name, documentation, OpenAPI definitions, and, for an LLM provider template, its connection details and logo.

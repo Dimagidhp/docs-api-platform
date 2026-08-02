@@ -96,18 +96,18 @@ Because of these limitations, file-based authentication isn't suitable for produ
 
 ## Identity provider authentication
 
-For production, configure AI Workspace to delegate login to an identity provider (IdP) over OIDC. AI Workspace works with any OIDC-compliant IdP that meets these requirements:
+For production, configure AI Workspace to delegate login to an identity provider (IdP) over OpenID Connect (OIDC). AI Workspace works with any OIDC-compliant IdP that meets these requirements:
 
 | Requirement | Details |
 |-------------|---------|
 | OIDC discovery | The IdP exposes `/.well-known/openid-configuration` at its authority URL |
-| JWT access tokens | Access tokens are JWTs, not opaque tokens |
-| JWKS endpoint | The IdP exposes a JWKS endpoint so the Platform API can verify token signatures |
+| JSON Web Token (JWT) access tokens | Access tokens are JWTs, not opaque tokens |
+| JSON Web Key Set (JWKS) endpoint | The IdP exposes a JWKS endpoint so the Platform API can verify token signatures |
 | Custom claims | Tokens carry organization identity as custom claims (claim names are configurable) |
 | Confidential client | AI Workspace is registered as a confidential client with a client secret, not a public or single-page application client |
 
-[Connect an identity provider to AI Workspace](connect-an-identity-provider.md) covers the configuration for any such IdP: client registration, claim mappings, and the choice between scope and role authorization. [Set up Asgardeo as your identity provider](asgardeo-setup.md) is an example of those steps, applied to one specific IdP.
+[Connect an identity provider to AI Workspace](connect-an-identity-provider.md) covers the configuration for any such IdP. It walks through client registration, claim mappings, and the choice between scope and role authorization. [Set up Asgardeo as your identity provider](asgardeo-setup.md) applies those steps to one specific IdP.
 
 ## Choosing a mode
 
-Use file-based authentication when you're trying out AI Workspace, running a demo, or don't yet have an identity provider available. Move to an identity provider before you deploy to a shared or production environment, need multiple organizations, or want single sign-on with an existing identity system.
+Use file-based authentication when you're trying out AI Workspace, running a demo, or don't yet have an identity provider available. Move to an identity provider before you deploy to a shared or production environment. Switch to one as well when you need multiple organizations, or want single sign-on with an existing identity system.
