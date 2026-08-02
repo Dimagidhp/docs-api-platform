@@ -25,15 +25,14 @@ content_type: "reference"
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/webhook-subscribers \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
 
-Registers a webhook subscriber for the organization. Event deliveries (apikey.*, subscription.*, etc.) matching the subscriber's events filter are fanned out to its target URL. The `secret`, if provided, is encrypted at rest using AES-256-GCM.
+Registers a webhook subscriber for the organization. Event deliveries (apikey.*, subscription.*, etc.) matching the subscriber's events filter are fanned out to its target URL. The `secret`, if provided, is encrypted at rest using AES-256-GCM. When `id` is omitted, the server generates a UUID handle; the assigned handle is returned as `id` in the response and is what later requests address.
 
 > Payload
 
@@ -41,9 +40,8 @@ Registers a webhook subscriber for the organization. Event deliveries (apikey.*,
 {
   "id": "production-gateway",
   "displayName": "Production Gateway",
-  "targetUrl": "https://gateway.example.com/devportal-webhook",
+  "targetUrl": "https://gateway.example.com/api-portal-webhook",
   "secret": "<shared-secret>",
-  "publicKey": "string",
   "events": [
     "apikey.*",
     "subscription.*"
@@ -56,7 +54,9 @@ Registers a webhook subscriber for the organization. Event deliveries (apikey.*,
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:webhook_subscriber:create`, `dp:webhook_subscriber:manage`
 
 </aside>
 
@@ -67,7 +67,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |body|body|[WebhookSubscriberRequest](schemas.md#schemawebhooksubscriberrequest)|true|Webhook subscriber configuration payload.|
 
 > Example responses
-
+>
 > 201 Response
 
 ```json
@@ -75,7 +75,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
   "id": "production-gateway",
   "orgId": "org-12345",
   "displayName": "Production Gateway",
-  "targetUrl": "https://gateway.example.com/devportal-webhook",
+  "targetUrl": "https://gateway.example.com/api-portal-webhook",
   "enabled": true,
   "events": [
     "apikey.*",
@@ -83,7 +83,6 @@ This operation requires <strong>Basic Auth</strong> authentication.
   ],
   "timeoutMs": 5000,
   "hasSecret": true,
-  "hasPublicKey": false,
   "createdBy": "alice@example.com",
   "updatedBy": "alice@example.com",
   "createdAt": "2019-08-24T14:15:22Z",
@@ -136,7 +135,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-webhook-subscriber-responseschema">Response Schema</h3>
+<h3 id="create-a-webhook-subscriber-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -161,9 +160,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/webhook-subscribers \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -172,7 +170,9 @@ Returns all webhook subscriber configurations for the organization. Secrets are 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:webhook_subscriber:read`, `dp:webhook_subscriber:manage`
 
 </aside>
 
@@ -184,7 +184,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |offset|query|integer|false|Number of records to skip before returning results.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -194,7 +194,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
       "id": "production-gateway",
       "orgId": "org-12345",
       "displayName": "Production Gateway",
-      "targetUrl": "https://gateway.example.com/devportal-webhook",
+      "targetUrl": "https://gateway.example.com/api-portal-webhook",
       "enabled": true,
       "events": [
         "apikey.*",
@@ -202,7 +202,6 @@ This operation requires <strong>Basic Auth</strong> authentication.
       ],
       "timeoutMs": 5000,
       "hasSecret": true,
-      "hasPublicKey": false,
       "createdBy": "alice@example.com",
       "updatedBy": "alice@example.com",
       "createdAt": "2019-08-24T14:15:22Z",
@@ -235,7 +234,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|List of webhook subscriber configurations.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-webhook-subscribers-responseschema">Response Schema</h3>
+<h3 id="list-webhook-subscribers-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -249,8 +248,7 @@ Status Code **200**
 |»» enabled|boolean|false|none|none|
 |»» events|[string]|false|none|none|
 |»» timeoutMs|integer|false|none|none|
-|»» hasSecret|boolean|false|none|Whether a secret is configured for HMAC-signing outgoing payloads.|
-|»» hasPublicKey|boolean|false|none|Whether a public key is configured for envelope-encrypting secret event payloads.|
+|»» hasSecret|boolean|false|none|Whether a secret is configured. The same secret serves two purposes. It signs outgoing payloads with a hash-based message authentication code (HMAC), and it derives the AES-256-GCM key that encrypts sensitive fields. Encrypted fields arrive as `data.iv`, `data.tag`, and `data.ciphertext`; the derivation and a worked decryption example are documented in the webhook event catalog.|
 |»» createdBy|string|false|none|Identity of the user who created this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses and list items.|
 |»» updatedBy|string|false|none|Identity of the user who last updated this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses only, omitted on list items.|
 |»» createdAt|string(date-time)|false|none|none|
@@ -272,9 +270,8 @@ Status Code **200**
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/webhook-subscribers/{subscriberId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -283,7 +280,9 @@ Retrieves a single webhook subscriber configuration by ID.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:webhook_subscriber:read`, `dp:webhook_subscriber:manage`
 
 </aside>
 
@@ -294,7 +293,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subscriberId|path|string|true|The webhook subscriber's handle (its `id` in request/response payloads), not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -302,7 +301,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
   "id": "production-gateway",
   "orgId": "org-12345",
   "displayName": "Production Gateway",
-  "targetUrl": "https://gateway.example.com/devportal-webhook",
+  "targetUrl": "https://gateway.example.com/api-portal-webhook",
   "enabled": true,
   "events": [
     "apikey.*",
@@ -310,7 +309,6 @@ This operation requires <strong>Basic Auth</strong> authentication.
   ],
   "timeoutMs": 5000,
   "hasSecret": true,
-  "hasPublicKey": false,
   "createdBy": "alice@example.com",
   "updatedBy": "alice@example.com",
   "createdAt": "2019-08-24T14:15:22Z",
@@ -357,10 +355,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X PUT https://localhost:9543/api/v0.9/webhook-subscribers/{subscriberId} \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -373,9 +370,8 @@ Updates an existing webhook subscriber configuration. Only supplied fields are u
 {
   "id": "production-gateway",
   "displayName": "Production Gateway",
-  "targetUrl": "https://gateway.example.com/devportal-webhook",
+  "targetUrl": "https://gateway.example.com/api-portal-webhook",
   "secret": "<shared-secret>",
-  "publicKey": "string",
   "events": [
     "apikey.*",
     "subscription.*"
@@ -388,7 +384,9 @@ Updates an existing webhook subscriber configuration. Only supplied fields are u
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:webhook_subscriber:update`, `dp:webhook_subscriber:manage`
 
 </aside>
 
@@ -400,7 +398,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subscriberId|path|string|true|The webhook subscriber's handle (its `id` in request/response payloads), not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -408,7 +406,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
   "id": "production-gateway",
   "orgId": "org-12345",
   "displayName": "Production Gateway",
-  "targetUrl": "https://gateway.example.com/devportal-webhook",
+  "targetUrl": "https://gateway.example.com/api-portal-webhook",
   "enabled": true,
   "events": [
     "apikey.*",
@@ -416,7 +414,6 @@ This operation requires <strong>Basic Auth</strong> authentication.
   ],
   "timeoutMs": 5000,
   "hasSecret": true,
-  "hasPublicKey": false,
   "createdBy": "alice@example.com",
   "updatedBy": "alice@example.com",
   "createdAt": "2019-08-24T14:15:22Z",
@@ -480,7 +477,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-webhook-subscriber-responseschema">Response Schema</h3>
+<h3 id="update-a-webhook-subscriber-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -499,9 +496,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X DELETE https://localhost:9543/api/v0.9/webhook-subscribers/{subscriberId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -510,7 +506,9 @@ Deletes a webhook subscriber configuration by ID.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:webhook_subscriber:delete`, `dp:webhook_subscriber:manage`
 
 </aside>
 
@@ -521,7 +519,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subscriberId|path|string|true|The webhook subscriber's handle (its `id` in request/response payloads), not the internal database uuid.|
 
 > Example responses
-
+>
 > 404 Response
 
 ```json
@@ -561,9 +559,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/webhook-subscribers/{subscriberId}/deliveries \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -572,7 +569,9 @@ Returns the most recent webhook delivery attempts for a single subscriber, newes
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:webhook_subscriber:read`, `dp:webhook_subscriber:manage`
 
 </aside>
 
@@ -583,7 +582,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subscriberId|path|string|true|The webhook subscriber's handle (its `id` in request/response payloads), not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -631,7 +630,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-recent-deliveries-for-a-webhook-subscriber-responseschema">Response Schema</h3>
+<h3 id="list-recent-deliveries-for-a-webhook-subscriber-responseschema">Response schema</h3>
 
 Status Code **200**
 

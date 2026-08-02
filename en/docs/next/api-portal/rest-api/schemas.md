@@ -175,9 +175,7 @@ xor
   "businessOwnerEmail": "user@example.com",
   "idpRefId": "string",
   "cpRefId": "string",
-  "configuration": {
-    "devportalMode": "DEFAULT"
-  },
+  "configuration": {},
   "createdAt": "2019-08-24T14:15:22Z",
   "updatedAt": "2019-08-24T14:15:22Z"
 }
@@ -193,20 +191,11 @@ xor
 |businessOwner|string¦null|false|none|none|
 |businessOwnerContact|string¦null|false|none|none|
 |businessOwnerEmail|string(email)¦null|false|none|none|
-|idpRefId|string|false|none|The organization claim value asserted by the configured Identity Provider at SSO login. On every login, the portal matches the authenticated user's org claim against this value to resolve which organization they belong to — it must exactly match the IDP's claim, or login fails for that org's users. Distinct from `cpRefId`, which is unrelated to authentication.|
+|idpRefId|string|false|none|The organization claim value asserted by the configured identity provider (IDP) at single sign-on (SSO) login. On every login, the portal matches the authenticated user's org claim against this value to resolve which organization they belong to — it must exactly match the IDP's claim, or login fails for that org's users. Distinct from `cpRefId`, which is unrelated to authentication.|
 |cpRefId|string¦null|false|none|Control Plane reference ID. Included in outbound webhook event payloads so subscribers can correlate this organization with its Control Plane (Platform API) counterpart. Not used for authentication or org resolution.|
-|configuration|object|false|none|Organization portal configuration. Always includes `devportalMode`; may contain additional free-form keys set by the caller.|
-|» devportalMode|string|false|none|Controls the mode of the developer portal.|
+|configuration|object|false|none|Free-form organization configuration set by the caller. Which artifact types the portal serves is operator configuration (`api_portal.artifacts`), not part of this.|
 |createdAt|string(date-time)¦null|false|none|none|
 |updatedAt|string(date-time)¦null|false|none|none|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|devportalMode|DEFAULT|
-|devportalMode|MCP_SERVERS_ONLY|
-|devportalMode|APIS_ONLY|
 
 <h2 id="tocS_OrganizationContentUploadResponse">OrganizationContentUploadResponse</h2>
 
@@ -507,7 +496,7 @@ Fields are returned at the root of ApiMetadataResponse / ApiMetadataCreateRespon
 |status|string|false|none|API lifecycle status.|
 |description|string|false|none|none|
 |type|string|false|none|The stored/returned type constant (src/utils/constants.js API_TYPE) — distinct from the request-time keyword accepted on create/update (see `type` in ApiMetadataMultipartBody: REST, SOAP, MCP, WS, WEBSUB, GRAPHQL). REST maps to `RestApi` and WEBSUB maps to `WebSubApi`; the rest are returned unchanged.|
-|referenceId|string¦null|false|none|External reference ID. Present when the API was created from a `devportal.yaml` artifact whose `spec` block sets `referenceId` — the create response echoes the parsed YAML back.|
+|referenceId|string¦null|false|none|External reference ID. Present when the API was created from a YAML artifact whose `spec` block sets `referenceId` — the create response echoes the parsed YAML back.|
 |agentVisibility|string|false|none|none|
 |addedLabels|[string]|false|none|none|
 |removedLabels|[string]|false|none|none|
@@ -826,9 +815,7 @@ OAuth client ID mapping entry attached to an application.
   "id": "acme",
   "idpRefId": "string",
   "cpRefId": "string",
-  "configuration": {
-    "devportalMode": "DEFAULT"
-  }
+  "configuration": {}
 }
 
 ```
@@ -844,16 +831,7 @@ OAuth client ID mapping entry attached to an application.
 |id|string|true|none|Desired handle for the organization (unique), stored as-is. Used in portal URLs.|
 |idpRefId|string|true|none|The organization claim value asserted by the configured Identity Provider at SSO login. Must exactly match the IDP's org claim for that org's users, or login will fail. Distinct from `cpRefId`.|
 |cpRefId|string¦null|false|none|Control Plane reference ID, included in outbound webhook event payloads. Not used for authentication.|
-|configuration|object|false|none|none|
-|» devportalMode|string|false|none|none|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|devportalMode|DEFAULT|
-|devportalMode|MCP_SERVERS_ONLY|
-|devportalMode|APIS_ONLY|
+|configuration|object|false|none|Free-form organization configuration.|
 
 <h2 id="tocS_OrganizationUpdateRequest">OrganizationUpdateRequest</h2>
 
@@ -871,9 +849,7 @@ OAuth client ID mapping entry attached to an application.
   "id": "acme",
   "idpRefId": "string",
   "cpRefId": "string",
-  "configuration": {
-    "devportalMode": "DEFAULT"
-  }
+  "configuration": {}
 }
 
 ```
@@ -889,16 +865,7 @@ OAuth client ID mapping entry attached to an application.
 |id|string|true|none|Desired handle for the organization (unique), stored as-is. Used in portal URLs.|
 |idpRefId|string|true|none|The organization claim value asserted by the configured Identity Provider at SSO login. Must exactly match the IDP's org claim for that org's users, or login will fail. Distinct from `cpRefId`.|
 |cpRefId|string¦null|false|none|Control Plane reference ID, included in outbound webhook event payloads. Not used for authentication.|
-|configuration|object|false|none|none|
-|» devportalMode|string|false|none|none|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|devportalMode|DEFAULT|
-|devportalMode|MCP_SERVERS_ONLY|
-|devportalMode|APIS_ONLY|
+|configuration|object|false|none|Free-form organization configuration.|
 
 <h2 id="tocS_SubscriptionPlanRequest">SubscriptionPlanRequest</h2>
 
@@ -929,7 +896,7 @@ OAuth client ID mapping entry attached to an application.
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|string|true|none|Desired handle for the plan (unique per org), stored as-is. When the plan is created from a SubscriptionPlan YAML artifact instead, the handle is always taken from `metadata.name`.|
+|id|string|false|none|Optional desired handle for the plan (unique per org), stored as-is. When omitted, the server generates a UUID handle. When the plan is created from a SubscriptionPlan YAML artifact instead, the handle is always taken from `metadata.name`.|
 |refId|string|false|none|Platform API subscription plan UUID to associate with this plan.|
 |displayName|string|true|none|none|
 |description|string|false|none|none|
@@ -1052,7 +1019,7 @@ xor
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|artifactId|string|true|none|API Portal API ID.|
+|artifactId|string|true|none|API ID.|
 |subscriptionPlanId|string|true|none|API Portal subscription plan ID.|
 
 <h2 id="tocS_SubscriptionUpdateRequest">SubscriptionUpdateRequest</h2>
@@ -1101,7 +1068,7 @@ xor
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|artifactId|string|false|none|API Portal API ID the subscription belongs to. Optional — if provided, it is validated against the API derived from the existing subscription record and the request is rejected with 400 if they don't match. It is never used as a fallback: if the API cannot be derived from the subscription record, the request fails with 400 regardless of this value.|
+|artifactId|string|false|none|API ID the subscription belongs to. Optional — if provided, it is validated against the API derived from the existing subscription record and the request is rejected with 400 if they don't match. It is never used as a fallback: if the API cannot be derived from the subscription record, the request fails with 400 regardless of this value.|
 |planId|string|true|none|API Portal subscription plan ID to switch to.|
 
 <h2 id="tocS_SubscriptionResponse">SubscriptionResponse</h2>
@@ -1133,7 +1100,7 @@ Subscription payload.
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |subscriptionId|string|false|none|none|
-|artifactId|string|false|none|API Portal API ID.|
+|artifactId|string|false|none|API ID.|
 |subscriptionToken|string¦null|false|none|Plaintext subscription token, decrypted on every read (not just on create). Null if decryption fails (e.g. the encryption key changed since the token was stored).|
 |subscriptionPlanName|string|false|none|none|
 |status|string|false|none|none|
@@ -1171,7 +1138,7 @@ Subscription payload.
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|string|true|none|none|
+|id|string|false|none|Optional handle for the key. When provided it must match the pattern and be unique for this API; when omitted, the server generates a UUID handle.|
 |displayName|string|false|none|Optional human-readable name for the key. Defaults to `id` when omitted.|
 |subscriptionId|string|false|none|Optional subscription ID to associate the key with.|
 |appId|string|false|none|Optional application ID to associate the key with, for analytics attribution only — it has no effect on the key's validity or authorization. Must belong to the same organization and be owned by the caller.|
@@ -1219,7 +1186,7 @@ API key metadata returned by list operations. Secret material is omitted.
 |---|---|---|---|---|
 |id|string|false|none|none|
 |displayName|string|false|none|none|
-|apiId|string|false|none|API Portal API ID the key belongs to.|
+|apiId|string|false|none|API ID the key belongs to.|
 |appId|string¦null|false|none|ID of the application this key is associated with, if any. Analytics attribution only.|
 |appDisplayName|string¦null|false|none|Display name of the associated application, if any.|
 |status|string|false|none|none|
@@ -1318,7 +1285,7 @@ API key response returned by generate/regenerate only. Unlike ApiKeyMetadataResp
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |displayName|string|true|none|none|
-|id|string|false|none|Desired handle for the key manager (unique per org), stored as-is. Optional — defaults to the key manager's `displayName` when omitted.|
+|id|string|false|none|Optional desired handle for the key manager (unique per org), stored as-is. When omitted, the server generates a UUID handle. A collision on a handle you supply yourself is reported as 409.|
 |enabled|boolean|false|none|none|
 |tokenEndpoint|string(uri)|true|none|OAuth2 token endpoint. The OAuth application itself must be created directly in this key manager; the portal only proxies `client_appKeyMappings` token requests to this endpoint.|
 
@@ -1425,9 +1392,8 @@ Minimal developer-facing key manager view.
 {
   "id": "production-gateway",
   "displayName": "Production Gateway",
-  "targetUrl": "https://gateway.example.com/devportal-webhook",
+  "targetUrl": "https://gateway.example.com/api-portal-webhook",
   "secret": "<shared-secret>",
-  "publicKey": "string",
   "events": [
     "apikey.*",
     "subscription.*"
@@ -1442,11 +1408,10 @@ Minimal developer-facing key manager view.
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|string|true|none|Desired handle for the webhook subscriber (unique per org), stored as-is.|
-|displayName|string|false|none|Optional display name. Defaults to the handle when omitted.|
-|targetUrl|string(uri)|true|none|Target URL events are POSTed to. Must be unique within the organization.|
-|secret|string|false|none|Shared secret used to sign outgoing payloads (HMAC). Stored encrypted; never returned in responses.|
-|publicKey|string|false|none|PEM-encoded public key. When set, secret event payloads (apikey.*, subscription.*) are additionally encrypted to this key so only the subscriber can read the plaintext key.|
+|id|string|false|none|Optional handle for the webhook subscriber (unique per org), stored as-is. When omitted, the server generates a UUID handle. Supply it only when you need a specific, stable identifier — it is the id used in the resource path, and a collision on a handle you supplied yourself is reported as 409.|
+|displayName|string|true|none|Display name for the webhook subscriber.|
+|targetUrl|string(uri)|true|none|Target URL events are POSTed to.|
+|secret|string|false|none|Shared secret, used for two purposes. It signs outgoing payloads with a hash-based message authentication code (HMAC-SHA256). It also derives, through HKDF-SHA3-256, the AES-256-GCM key that encrypts sensitive fields in `apikey.*` and `subscription.*` payloads, so only the subscriber can read the plaintext. Encrypted fields arrive as `data.iv`, `data.tag`, and `data.ciphertext`; the derivation and a worked decryption example are documented in the webhook event catalog. Stored encrypted, and never returned in responses.|
 |events|[string]|false|none|Glob-style event type allowlist (only a trailing `*` wildcard is supported, e.g. `apikey.*`). Omit or leave empty to receive all event types.|
 |enabled|boolean|false|none|none|
 |timeoutMs|integer|false|none|none|
@@ -1463,7 +1428,7 @@ Minimal developer-facing key manager view.
   "id": "production-gateway",
   "orgId": "org-12345",
   "displayName": "Production Gateway",
-  "targetUrl": "https://gateway.example.com/devportal-webhook",
+  "targetUrl": "https://gateway.example.com/api-portal-webhook",
   "enabled": true,
   "events": [
     "apikey.*",
@@ -1471,7 +1436,6 @@ Minimal developer-facing key manager view.
   ],
   "timeoutMs": 5000,
   "hasSecret": true,
-  "hasPublicKey": false,
   "createdBy": "alice@example.com",
   "updatedBy": "alice@example.com",
   "createdAt": "2019-08-24T14:15:22Z",
@@ -1493,8 +1457,7 @@ Webhook subscriber configuration. The secret is never included.
 |enabled|boolean|false|none|none|
 |events|[string]|false|none|none|
 |timeoutMs|integer|false|none|none|
-|hasSecret|boolean|false|none|Whether a secret is configured for HMAC-signing outgoing payloads.|
-|hasPublicKey|boolean|false|none|Whether a public key is configured for envelope-encrypting secret event payloads.|
+|hasSecret|boolean|false|none|Whether a secret is configured. The same secret serves two purposes. It signs outgoing payloads with a hash-based message authentication code (HMAC), and it derives the AES-256-GCM key that encrypts sensitive fields. Encrypted fields arrive as `data.iv`, `data.tag`, and `data.ciphertext`; the derivation and a worked decryption example are documented in the webhook event catalog.|
 |createdBy|string|false|none|Identity of the user who created this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses and list items.|
 |updatedBy|string|false|none|Identity of the user who last updated this webhook subscriber, or `deleted_user` if that user's IDP reference no longer exists. Present on single-resource GET responses only, omitted on list items.|
 |createdAt|string(date-time)|false|none|none|

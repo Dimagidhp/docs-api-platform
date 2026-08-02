@@ -1,6 +1,6 @@
 ---
 title: "Configure webhooks in the API Portal & MCP Hub"
-description: "Register endpoints to receive signed, real-time notifications when API keys or subscriptions change in the API Portal & MCP Hub."
+description: "Register endpoints to receive signed, real-time notifications when applications, API keys, or subscriptions change."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/webhook-integration/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/admin-settings/webhook-integration.md
 tags:
@@ -8,61 +8,68 @@ tags:
   - api-portal
   - webhooks
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-23
+last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
 # Webhooks
 
-The API Portal & MCP Hub doesn't talk to a gateway directly. Instead, it publishes a signed HTTP POST to every webhook endpoint you register whenever an API key or subscription changes — a handler you run behind that endpoint decides what to do next, typically propagating the change to your API Gateway so access is enforced immediately (for example, rejecting a key the moment a developer revokes it).
+The API Portal & MCP Hub doesn't talk to a gateway directly. Instead it publishes a signed HTTP POST to every endpoint you register whenever an application, API key, or subscription changes. Each delivery is signed when the subscriber has a secret; without one it arrives unsigned. A handler behind that endpoint decides what to do next, typically propagating the change to your API Gateway.
 
-## Adding a Webhook
+Enforcement is not immediate, and delivery alone doesn't guarantee it. It happens only once the subscriber accepts the event and acts on it. A timeout or a `non-2xx` response is terminal—there's no retry—so the change stays unenforced, and any queueing on the subscriber's side adds delay.
 
-1. Navigate to **Settings** and select the **Webhooks** tab under **INTEGRATIONS**.
+This page covers registering a subscriber. For the payload of every event, the delivery envelope, and how to verify and decrypt one, see the [Webhook Event Catalog](../references/webhook-event-catalog.md).
+
+## Add a webhook
+
+1. Go to **Settings** and select **Webhooks** under **INTEGRATIONS**.
 2. Click **+ Add webhook**.
 3. Fill in the fields:
 
-| Field | Description |
-|---|---|
-| **Display name** | Name shown in the Webhooks table |
-| **Handle** | Lowercase identifier used internally |
-| **Target URL** | The HTTPS endpoint that receives webhook POSTs |
-| **Secret** | Optional. Minimum 32 characters, used to sign each delivery with HMAC-SHA256. Never shown again after saving — leave blank on edit to keep the existing value |
-| **Timeout (ms)** | Request timeout for each delivery attempt (default 5000) |
-| **Public key** | Optional PEM-encoded RSA public key used to encrypt sensitive fields (an API key or subscription token) carried in certain events, so only you can decrypt them |
-| **Events** | **All events**, or **Select events** to choose an explicit allowlist |
-| **Enabled** | Disable a webhook without deleting it |
+    - **Display name**—required. The name shown in the Webhooks table.
+    - **Target URL**—required. The endpoint that receives the POSTs.
+    - **Secret**—required by this form. Used both to sign each delivery and to derive the key that encrypts credential fields. Never shown again after saving; leave it blank when editing to keep the existing value.
+    - **Timeout (ms)**—how long to wait for a response before giving up. Defaults to 5000.
+    - **Events**—**All events**, or **Select events** to pick an explicit allowlist. The picker groups them as Subscriptions, API keys, and Applications.
+    - **Enabled**—turn a subscriber off without deleting it.
 
 4. Click **Add webhook**.
 
-!!! warning "Set a public key before production"
-    If no public key is configured, sensitive fields (API key secrets, subscription tokens) are omitted from delivered events entirely rather than sent in plaintext. Configure a public key before relying on `apikey.generated`, `apikey.regenerated`, `subscription.created`, or `subscription.token_regenerated` payloads.
+!!! warning "Always set a secret"
+    The secret does double duty: it signs each delivery and derives the key that encrypts credential fields. This form requires one, but the [Management API](../rest-api/webhook-subscribers.md) does not—only `displayName` and `targetUrl` are mandatory there, so a subscriber created programmatically can end up without a secret.
 
-## Editing or Deleting a Webhook
+    Such a subscriber still receives events, with two consequences. Deliveries arrive unsigned, so you can't verify they came from the portal. And the four events that carry a credential arrive **without it**—the field is dropped rather than sent in plaintext. Set a secret before relying on `apikey.generated`, `apikey.regenerated`, `subscription.created`, or `subscription.token_regenerated`.
 
-Click a webhook's display name (or the pencil icon) to edit its fields. Click the trash icon to delete it — this can't be undone.
+## Edit or delete a webhook
 
-## Webhook Events
+Click a webhook's display name, or the pencil icon, to edit it. Click the trash icon to delete it—that can't be undone.
 
-| Event | Fired when | Carries a sensitive field |
-|---|---|---|
-| `apikey.generated` | A new API key is generated for a subscription | Yes — the key secret |
-| `apikey.regenerated` | An existing API key is rotated | Yes — the new key secret |
-| `apikey.revoked` | An API key is revoked | No |
-| `apikey.application_updated` | A key's application association changes | No |
-| `subscription.created` | A developer subscribes to an API | Yes — the subscription token |
-| `subscription.updated` | A subscription's status changes (ACTIVE ↔ INACTIVE) | No |
-| `subscription.plan_changed` | A subscription's plan is changed in-place | No |
-| `subscription.token_regenerated` | A subscription token is regenerated | Yes — the new token |
-| `subscription.deleted` | A developer unsubscribes | No |
-| `application.created` | A developer creates an application | No |
-| `application.updated` | An application is renamed or its details change | No |
-| `application.deleted` | An application is deleted | No |
+## What gets delivered
 
-Each delivery is attempted exactly once — there's no automatic retry, so make sure your endpoint is reliable and responds quickly within the configured timeout.
+The portal publishes twelve event types across three groups:
 
-## Verifying Deliveries
+| Group | Events |
+|---|---|
+| Subscriptions | `created`, `updated`, `plan_changed`, `token_regenerated`, `deleted` |
+| API keys | `generated`, `regenerated`, `revoked`, `application_updated` |
+| Applications | `created`, `updated`, `deleted` |
 
-If a secret is configured, every POST includes an `X-Api-Portal-Signature` header in the form `t=<unix_seconds>,v1=<hex_hmac>`, computed as `HMAC-SHA256(secret, "<t>.<raw_body>")`. Reject deliveries where `|now - t|` exceeds a few minutes, to guard against replay.
+Four of them carry a credential, encrypted with a key derived from your secret: `apikey.generated`, `apikey.regenerated`, `subscription.created`, and `subscription.token_regenerated`.
 
-Events carrying a sensitive field include an `encrypted_fields` array naming which fields in `data` are encrypted using hybrid RSA-OAEP + AES-256-GCM envelope encryption — decrypt each with the RSA private key matching the public key you configured on the webhook.
+Each delivery carries an `X-Api-Portal-Signature` header and, where relevant, an `encrypted_fields` list naming the fields in `data` that hold an encrypted envelope. The [Webhook Event Catalog](../references/webhook-event-catalog.md) has the full payload for each event, the signature algorithm, and the decryption steps.
+
+## Delivery behavior
+
+Two things to design your endpoint around:
+
+- **A delivery is attempted once.** Any `non-2xx` response, connection error, or timeout is terminal—there's no automatic retry. Make the endpoint reliable, and answer within the configured timeout.
+- **Acknowledge fast, work later.** Return a `2xx` and do the propagation asynchronously, rather than holding the connection open while you call a gateway.
+
+You can read delivery history, including failures and their HTTP status, through the Management API—see [Webhook Events](../rest-api/webhook-events.md).
+
+## Related
+
+- [Webhook Event Catalog](../references/webhook-event-catalog.md): every event's payload, headers, signing, and encryption
+- [Webhook Subscribers](../rest-api/webhook-subscribers.md): manage subscribers through the Management API
+- [Webhook Events](../rest-api/webhook-events.md): read delivery history through the Management API
+- [Manage API Keys](../manage-api-keys.md): the lifecycle behind the `apikey.*` events

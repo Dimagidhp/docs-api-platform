@@ -25,10 +25,9 @@ content_type: "reference"
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/api-keys/generate \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -47,7 +46,9 @@ Generates an API key for an MCP server. Mirrors `POST /api/v0.9/apis/{apiId}/api
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:mcp_server_key:create`, `dp:mcp_server_key:manage`
 
 </aside>
 
@@ -59,7 +60,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
-
+>
 > 201 Response
 
 ```json
@@ -94,7 +95,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 {
   "status": "error",
   "code": "FORBIDDEN",
-  "message": "Write operations are disabled in read-only mode."
+  "message": "Forbidden"
 }
 ```
 
@@ -124,11 +125,11 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Generated API key. The plaintext `key` is returned exactly once.|[ApiKeyResponse](schemas.md#schemaapikeyresponse)|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden for the current runtime mode or caller permissions.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="generate-an-mcp-server-api-key-responseschema">Response Schema</h3>
+<h3 id="generate-an-mcp-server-api-key-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -153,9 +154,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/api-keys \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -164,7 +164,9 @@ Lists API keys for the given MCP server. Mirrors `GET /api/v0.9/apis/{apiId}/api
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:mcp_server_key:read`, `dp:mcp_server_key:manage`
 
 </aside>
 
@@ -178,7 +180,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -239,7 +241,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-mcp-server-api-keys-responseschema">Response Schema</h3>
+<h3 id="list-mcp-server-api-keys-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -248,7 +250,7 @@ Status Code **200**
 |» list|[[ApiKeyMetadataResponse](schemas.md#schemaapikeymetadataresponse)]|false|none|[API key metadata returned by list operations. Secret material is omitted.]|
 |»» id|string|false|none|none|
 |»» displayName|string|false|none|none|
-|»» apiId|string|false|none|API Portal API ID the key belongs to.|
+|»» apiId|string|false|none|API ID the key belongs to.|
 |»» appId|string¦null|false|none|ID of the application this key is associated with, if any. Analytics attribution only.|
 |»» appDisplayName|string¦null|false|none|Display name of the associated application, if any.|
 |»» status|string|false|none|none|
@@ -285,10 +287,9 @@ Status Code **200**
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/api-keys/regenerate \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -307,7 +308,9 @@ Regenerates the secret for an existing MCP server API key identified by `keyId` 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:mcp_server_key:update`, `dp:mcp_server_key:manage`
 
 </aside>
 
@@ -317,13 +320,13 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |---|---|---|---|---|
 |body|body|object|true|Identifies the API key to regenerate by its `keyId`. `expiresAt` is optional and, if provided, updates the key's expiry; the key's `id`/`displayName` cannot be changed by this operation.|
 |» keyId|body|string|true|The key's handle — the `id` returned by generate or list.|
-|» expiresAt|body|any|false|New expiry for the key. Can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. Omit to leave the current expiry unchanged.|
+|» expiresAt|body|any|false|New expiry for the key. The value can be an ISO-8601 datetime with timezone, epoch seconds, or epoch milliseconds. Omit to leave the current expiry unchanged.|
 |»» *anonymous*|body|string(date-time)|false|none|
 |»» *anonymous*|body|number|false|none|
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -342,7 +345,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 {
   "status": "error",
   "code": "FORBIDDEN",
-  "message": "Write operations are disabled in read-only mode."
+  "message": "Forbidden"
 }
 ```
 
@@ -381,7 +384,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Generated or regenerated API key. The plaintext `key` is returned exactly once.|[ApiKeyResponse](schemas.md#schemaapikeyresponse)|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden for the current runtime mode or caller permissions.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The key has already been revoked and cannot be regenerated.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
@@ -397,10 +400,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/api-keys/revoke \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -418,7 +420,9 @@ Revokes an existing MCP server API key identified by `keyId` in the request body
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:mcp_server_key:revoke`, `dp:mcp_server_key:manage`
 
 </aside>
 
@@ -431,14 +435,14 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
-
+>
 > 403 Response
 
 ```json
 {
   "status": "error",
   "code": "FORBIDDEN",
-  "message": "Write operations are disabled in read-only mode."
+  "message": "Forbidden"
 }
 ```
 
@@ -477,7 +481,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|API key revoked successfully.|None|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden for the current runtime mode or caller permissions.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The key has already been revoked.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
@@ -493,10 +497,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/api-keys/associate \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -515,7 +518,9 @@ Associates (or re-associates) an existing MCP server API key with an application
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:mcp_server_key:update`, `dp:mcp_server_key:manage`
 
 </aside>
 
@@ -529,7 +534,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -563,7 +568,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 {
   "status": "error",
   "code": "FORBIDDEN",
-  "message": "Write operations are disabled in read-only mode."
+  "message": "Forbidden"
 }
 ```
 
@@ -603,12 +608,12 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Association updated.|[ApiKeyApplicationResponse](schemas.md#schemaapikeyapplicationresponse)|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden for the current runtime mode or caller permissions.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The key has already been revoked and cannot be associated with an application.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="associate-an-mcp-server-api-key-with-an-application-responseschema">Response Schema</h3>
+<h3 id="associate-an-mcp-server-api-key-with-an-application-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -627,10 +632,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/mcp-servers/{mcpServerId}/api-keys/dissociate \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -648,7 +652,9 @@ Removes the application association from an MCP server API key identified by `ke
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:mcp_server_key:update`, `dp:mcp_server_key:manage`
 
 </aside>
 
@@ -661,14 +667,14 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |mcpServerId|path|string|true|The MCP server's handle (unique per org).|
 
 > Example responses
-
+>
 > 403 Response
 
 ```json
 {
   "status": "error",
   "code": "FORBIDDEN",
-  "message": "Write operations are disabled in read-only mode."
+  "message": "Forbidden"
 }
 ```
 
@@ -697,6 +703,6 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|Association removed (or none existed).|None|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden for the current runtime mode or caller permissions.|[ErrorResponse](schemas.md#schemaerrorresponse)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Request is forbidden. The caller lacks the required permission, or the current runtime mode disallows the operation (read-only mode). It is also returned when the request names an organization other than the single one this instance serves. A nonexistent organization is answered identically to one belonging to someone else, so the response cannot be used to discover what a shared database holds.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|

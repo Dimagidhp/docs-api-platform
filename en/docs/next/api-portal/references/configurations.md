@@ -18,25 +18,25 @@ The API Portal & MCP Hub reads its configuration from `configs/config.toml`, lay
 
 {% raw %}
 
-## How Configuration Is Loaded
+## How configuration is loaded
 
 Precedence, lowest to highest:
 
 1. Built-in defaults (`src/config/configDefaults.js`)
 2. `configs/config.toml`, with any `{{ env }}` / `{{ file }}` references resolved
 
-`configs/config-template.toml` documents every supported key with its default value as plain literals — a reference copy, not the file the portal actually reads.
+`configs/config-template.toml` documents every supported key with its default value as plain literals—a reference copy, not the file the portal actually reads.
 
 !!! important "Environment variables do not override config keys directly"
     There is no automatic `APIP_AP_*` prefix that maps environment variables onto config keys. An environment value reaches a setting **only** through an explicit interpolation token written into `config.toml`, resolved when the file loads. A field with no token always takes its literal TOML value (or the built-in default).
 
-## Interpolation Tokens
+## Interpolation tokens
 
 | Token | Behavior |
 |---|---|
-| `{{ env "NAME" }}` | Substitutes the value of environment variable `NAME`. **Fails closed** (aborts startup) if `NAME` is unset or empty — it does not fall through to a default. |
+| `{{ env "NAME" }}` | Substitutes the value of environment variable `NAME`. **Fails closed** (aborts startup) if `NAME` is unset or empty—it does not fall through to a default. |
 | `{{ env "NAME" "default" }}` | Substitutes `NAME`'s value if set and non-empty, else the literal `"default"`. |
-| `{{ file "/path" }}` | Reads a secret value from a mounted file at `/path`, trimmed. Always required — a missing, unreadable, oversized, or disallowed path is a hard startup error. |
+| `{{ file "/path" }}` | Reads a secret value from a mounted file at `/path`, trimmed. Always required—a missing, unreadable, oversized, or disallowed path is a hard startup error. |
 
 An example from the shipped `config.toml`:
 
@@ -46,10 +46,10 @@ encryption_key = '{{ env "APIP_AP_SECURITY_ENCRYPTION_KEY" }}'
 session_secret = '{{ env "APIP_AP_SECURITY_SESSION_SECRET" }}'
 ```
 
-Partial substitution works too — `'foo-{{ env "X" }}'` resolves to `"foo-bar"` if `X=bar`.
+Partial substitution works too—`'foo-{{ env "X" }}'` resolves to `"foo-bar"` if `X=bar`.
 
 !!! note "`{{ file }}` path allowlist"
-    `{{ file "/path" }}` only reads from `/etc/api-portal` or `/secrets/api-portal` by default. Override with the `APIP_CONFIG_FILE_SOURCE_ALLOWLIST` environment variable (comma-separated directories) — read directly from the process environment rather than through `{{ env }}`, since it gates interpolation itself.
+    `{{ file "/path" }}` only reads from `/etc/api-portal` or `/secrets/api-portal` by default. Override with the `APIP_CONFIG_FILE_SOURCE_ALLOWLIST` environment variable (comma-separated directories)—read directly from the process environment rather than through `{{ env }}`, since it gates interpolation itself.
 
 ## Server
 
@@ -69,7 +69,7 @@ key_file = "./resources/security/private-key.pem"
 | `server.base_url` | `https://localhost:9543` | Canonical public origin, used only to build absolute URLs embedded in generated agent prompts |
 | `server.port` | `9543` | Single listener port |
 | `server.https.enabled` | `false` | Whether the listener terminates TLS itself. Set `false` only when a trusted upstream (proxy/LB/ingress) terminates TLS |
-| `server.https.cert_file` / `key_file` | — | Required only when `https.enabled = true` — no self-signed fallback |
+| `server.https.cert_file` / `key_file` |—| Required only when `https.enabled = true`—no self-signed fallback |
 
 {% endraw %}
 
@@ -118,23 +118,22 @@ header_name = "x-wso2-api-key"
 value = ""
 ```
 
-`encryption_key` and `session_secret` are required — the portal fails closed at startup if either doesn't resolve to a 64-character hex string. Generate one with `openssl rand -hex 32`.
+`encryption_key` and `session_secret` are required—the portal fails closed at startup if either doesn't resolve to a 64-character hex string. Generate one with `openssl rand -hex 32`.
 
 ## Authentication
 
 ```toml
 [api_portal.auth]
 mode = "local"          # local | idp
-role_validation = false # Enforce per-operation role validation
 
 [api_portal.auth.claim_mappings]
-organization = "org_name"
-roles = "roles"
+organization = "org_name"   # claim carrying the org ID
+roles = "roles"             # claim carrying the user's roles
 groups = "groups"
 
 [api_portal.auth.local]
 platform_api_url = ""
-public_key_path = ""
+public_key_path = ""    # path to the Platform API's RS256 public key PEM
 tls_skip_verify = false
 
 [api_portal.auth.idp]
@@ -148,23 +147,57 @@ client_secret = ""
 audience = ""
 callback_url = "http://localhost:9543/default/callback"
 scope = "openid profile email"
+sign_up_url = ""
 logout_url = "https://localhost:9443/oidc/logout"
 logout_redirect_uri = "http://localhost:9543/default"
 certificate = ""
 jwks_url = "https://localhost:9443/oauth2/jwks"
 token_refresh_timeout_ms = 10000
-
-[api_portal.auth.idp.roles]
-admin = "admin"
-subscriber = "Internal/subscriber"
-super_admin = "superAdmin"
+silent_sso = true      # Enable silent SSO
+org_callback = false   # Redirect to the org's own landing page after login
 ```
 
 See [Authentication](../setting-up/authentication/overview.md) for the authentication modes and the Asgardeo identity-provider walkthrough.
 
-## Page Access Rules
+### Authorization
 
-Additions only — the portal always protects its own pages (applications, API keys, subscriptions, settings) regardless of what's listed here. Use this to require login/authorization for a custom page you've added:
+Authorization is configured in its own section, independent of `auth.mode`, because both the local and IDP branches read it.
+
+```toml
+[api_portal.auth.authorization]
+enabled = true
+mode = "role"           # scope | role
+role_to_scope_mapping = "./resources/role-to-scope-mapping.yaml"
+page_role_validation = false
+
+[api_portal.auth.authorization.portal_roles]
+admin = "ap_admin"
+subscriber = "ap_subscriber"
+```
+
+Five keys govern how a request's permissions are resolved:
+
+| Key | Default | Description |
+|---|---|---|
+| `authorization.enabled` | `true` | Master switch for Management API (`/api/v0.9`) authorization. With `false`, any authenticated caller satisfies every operation's scope list—a development opt-out that logs a startup warning |
+| `authorization.mode` | `role` | How a request's effective scopes are derived. `role` expands the token's roles claim through the mapping table and ignores the scope claim entirely, so a caller can't widen a role's grant by asking for extra scopes. `scope` reads the token's own scope claim—use it when the issuer mints `dp:*` scopes directly. Validated even when `enabled = false`, so a typo surfaces immediately |
+| `authorization.role_to_scope_mapping` | `./resources/role-to-scope-mapping.yaml` | Path to the YAML grant table. Required when `mode = "role"`. Validated at startup against the portal's OpenAPI spec whenever it's set—an undeclared `dp:*` scope fails startup rather than surfacing later as a role that logs in and is denied every request |
+| `authorization.page_role_validation` | `false` | Per-page role-tier gating. Separate from `enabled`, which governs REST scopes—one switch for both would mean turning page gating off also silently disabled REST enforcement |
+| `authorization.portal_roles.admin` / `.subscriber` | `ap_admin` / `ap_subscriber` | The role names, as they appear in the roles claim, that grant each page-access tier. Point them at your IDP's role names, or at names in the mapping table to drive page gating and REST authorization from the same roles |
+
+!!! danger "Two retired keys abort startup"
+    Leaving either of these in `config.toml` fails startup by design—an ignored key would silently apply the default instead of what the file says.
+
+    | Retired key | Replacement |
+    |---|---|
+    | `auth.role_validation` | `auth.authorization.page_role_validation` |
+    | `auth.idp.roles` | `auth.authorization.portal_roles` |
+
+    Note that `role_validation` maps to `page_role_validation`, **not** to `authorization.enabled`. There was also a third role tier, `super_admin`; it gated pages this portal doesn't serve, so it was removed.
+
+## Page access rules
+
+Additions only—the portal always protects its own pages (applications, API keys, subscriptions, settings) regardless of what's listed here. Use this to require login/authorization for a custom page you've added:
 
 ```toml
 # [api_portal.page_access_rules]
@@ -172,19 +205,93 @@ Additions only — the portal always protects its own pages (applications, API k
 # authorized = ["**/my-custom-page"]
 ```
 
-Patterns are glob-matched (minimatch) against the request URL and merged with — never replace — the built-in list.
+Patterns are glob-matched (minimatch) against the request URL and merged with—never replace—the built-in list.
 
 ## Organization
 
 ```toml
 [api_portal.organization]
-default_name = "default"                 # "" disables auto-seeding
+handle = "default"                       # URL slug: /{handle}/views/{viewName}
+display_name = "Default"                 # Used only when first seeding the organization
 auto_create_subscription_plans = true    # Auto-create Bronze/Silver/Gold/Unlimited/AsyncUnlimited
 ```
 
-Bootstraps a default organization on startup — idempotent, safe to leave enabled across restarts.
+These three keys describe the organization the instance serves:
 
-## Design Mode
+| Key | Description |
+|---|---|
+| `organization.handle` | The URL slug of the single organization this instance serves, and the pin every route is scoped against. Anything resolving to a different organization is rejected. In local-auth mode it must match the Platform API's organization id. In IDP mode the token's organization claim is matched against the organization's `idpRefId` instead—see the note below |
+| `organization.display_name` | Used only when seeding the organization for the first time. Never overwrites an existing name, so an admin's later edit in the settings UI survives restarts. Empty means "use the handle" |
+| `organization.auto_create_subscription_plans` | Seeds Bronze, Silver, Gold, Unlimited, and AsyncUnlimited alongside the organization |
+
+Seeding runs on startup only if the organization doesn't already exist, so it's idempotent and safe to leave enabled.
+
+!!! note "Which token claim carries the organization"
+    The two authentication modes resolve it differently, so don't assume one claim covers both.
+
+    - **Local auth** reads a fixed `org_handle` claim and compares it to `organization.handle`.
+    - **IDP mode** reads the claim named by `auth.claim_mappings.organization` (default `org_name`) and compares it to the organization's `idpRefId`, which admins set in [Organization settings](../admin-settings/organization-settings.md).
+
+
+!!! note
+    `organization.default_name` is a deprecated alias for `handle`. It still resolves, with a startup warning—use `handle` in new configuration.
+
+## Artifacts
+
+```toml
+[api_portal.artifacts]
+enabled_types = ["apis", "mcp-servers", "api-workflows"]
+```
+
+An allowlist of the artifact types this portal serves. A type left out gets no navigation entry, no landing-page section, and `404`s on its routes. Valid entries are `apis`, `mcp-servers`, and `api-workflows`; an unrecognized entry aborts startup so a typo can't silently drop a type. Omit the section to serve all three. See [Artifact types](../artifact-types.md).
+
+## Uploads
+
+Limits applied to every upload and to archive extraction—theme ZIPs, API specs, documents, and landing-page content.
+
+```toml
+[api_portal.uploads]
+max_bytes = 10485760       # 10 MiB — a single upload, or a single entry inside an archive
+max_total_bytes = 52428800 # 50 MiB — total extracted size per archive
+max_zip_entries = 500
+max_depth = 10
+```
+
+These are the ceilings the Theming panel's "up to 10 MB" hint and the Manage APIs spec upload both derive from. `max_total_bytes`, `max_zip_entries`, and `max_depth` guard archive extraction against a decompression bomb, so raise them only deliberately.
+
+!!! note
+    This section isn't in `config-template.toml`—the values come from the built-in defaults. Add the table to `config.toml` to override them.
+
+## Try-out proxy
+
+The try-it console calls an API's registered endpoint, which is a different origin from the portal. Rather than requiring every gateway to return CORS headers naming the portal, the panel can be pointed at a same-origin proxy that makes the call server-side.
+
+```toml
+[api_portal.tryout]
+enabled = true
+allow_http_endpoints = true    # false: only https:// endpoints may be called
+allow_private_endpoints = false
+tls_skip_verify = false        # development only
+timeout_ms = 15000
+max_request_bytes = 1048576    # 1 MiB
+max_response_bytes = 5242880   # 5 MiB
+```
+
+The proxy's behavior and its safety limits are set by these keys:
+
+| Key | Default | Description |
+|---|---|---|
+| `tryout.enabled` | `true` | Whether the proxy is available |
+| `tryout.allow_http_endpoints` | `true` | Whether cleartext `http://` endpoints may be called. Intended for local development; set it to `false` in production so only `https://` endpoints are reachable |
+| `tryout.allow_private_endpoints` | `false` | Deny-by-default. The registered-endpoint allowlist can't protect against an endpoint registered to point at an internal service, so this denylist is the only control for that case. Set `true` when the gateway legitimately sits on a private address—a Docker Compose service name, a cluster IP, localhost—after confirming only intended services are reachable from the portal |
+| `tryout.tls_skip_verify` | `false` | Development only |
+| `tryout.timeout_ms` | `15000` | Per-request timeout |
+| `tryout.max_request_bytes` | `1048576` | Request body ceiling. Exceeding it returns `413` |
+| `tryout.max_response_bytes` | `5242880` | Response body ceiling |
+
+Two limits hold regardless of these settings: the proxy only calls URLs contained by one of the endpoints registered for that API, so a caller can't choose an arbitrary host; and link-local and cloud-metadata addresses such as `169.254.169.254` are refused at connection time.
+
+## Design mode
 
 ```toml
 # [api_portal.design_mode]
@@ -207,11 +314,15 @@ batch_size = 50
 signature_tolerance_sec = 300
 ```
 
-Global delivery tuning only — subscribers themselves are per-organization, managed via the [Webhook Integration](../admin-settings/webhook-integration.md) settings tab, not this file. Each delivery is attempted exactly once; there's no retry/backoff.
+Global delivery tuning only—subscribers themselves are per-organization, managed on the [Webhook Integration](../admin-settings/webhook-integration.md) settings tab, not in this file. Each delivery is attempted exactly once; there's no retry or backoff.
+
+`signature_tolerance_sec` is the window the portal's own signature verifier accepts. See the [Webhook Event Catalog](webhook-event-catalog.md) for the signing algorithm.
 
 ## Related
 
 - [Authentication](../setting-up/authentication/overview.md)
+- [Artifact types](../artifact-types.md)
 - [Design Mode](../setting-up/design-mode.md)
+- [Webhook Event Catalog](webhook-event-catalog.md)
 - [Get a Bearer Token via curl](get-a-bearer-token-via-curl.md)
 - [Management API](../rest-api/overview.md)

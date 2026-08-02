@@ -12,7 +12,7 @@ last_updated: 2026-07-23
 content_type: "quickstart"
 ---
 
-# Getting Started
+# Getting started
 
 The API Portal & MCP Hub is where developers discover, subscribe to, and consume the APIs and MCP servers you publish. This guide gets the API Portal & MCP Hub running locally with Docker Compose in a few minutes, then walks you through publishing your first API.
 
@@ -32,7 +32,7 @@ curl -sLO https://github.com/wso2/api-platform/releases/download/api-portal%2Fv1
 unzip wso2apip-api-portal-1.0.0-rc.zip
 ```
 
-## Step 2: Run the Setup Script
+## Step 2: Run the setup script
 
 ```bash
 cd wso2apip-api-portal-1.0.0
@@ -42,18 +42,18 @@ cd wso2apip-api-portal-1.0.0
 This one-time script provisions everything the containers need to start:
 
 - a self-signed TLS certificate under `resources/certificates/`
-- the API Portal and Platform API secrets — the encryption keys, the session secret, and the RS256 JWT signing keypair — written as files under `resources/keys/`
+- the API Portal and Platform API secrets—the encryption keys, the session secret, and the RS256 JWT signing keypair—written as files under `resources/keys/`
 - your admin credentials, bcrypt-hashed into `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` in `api-platform.env`
 
-It also prompts you for an **admin username and password**. Press Enter at the password prompt to have a strong one generated for you — it's printed once at the end, so copy it before continuing.
+It also prompts you for an **admin username and password**. Press Enter at the password prompt to have a strong one generated for you—it's printed once at the end, so copy it before continuing.
 
 !!! warning "Save the printed admin credentials"
-    The admin password is shown only once and is never stored in plaintext — only its bcrypt hash is written to `api-platform.env`. If you lose it, remove `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` from `api-platform.env` and rerun `./scripts/setup.sh` to generate a new one.
+    The admin password is shown only once and is never stored in plaintext—only its bcrypt hash is written to `api-platform.env`. If you lose it, remove `APIP_CP_ADMIN_USERNAME` and `APIP_CP_ADMIN_PASSWORD_HASH` from `api-platform.env` and rerun `./scripts/setup.sh` to generate a new one.
 
 !!! note "Re-running the script"
-    The script is idempotent — re-running it only fills in what's missing and never overwrites an existing value. To rotate a secret, remove it from `api-platform.env`, or delete the relevant file under `resources/certificates/` or `resources/keys/`, then re-run.
+    The script is idempotent—re-running it only fills in what's missing and never overwrites an existing value. To rotate a secret, remove it from `api-platform.env`, or delete the relevant file under `resources/certificates/` or `resources/keys/`, then re-run.
 
-## Step 3: Start the Portal
+## Step 3: Start the portal
 
 ```bash
 docker compose up -d
@@ -67,7 +67,7 @@ Verify the Platform API sidecar is healthy:
 curl -fk https://localhost:9243/health
 ```
 
-## Step 4: Open the Portal
+## Step 4: Open the portal
 
 Navigate to:
 
@@ -77,16 +77,16 @@ https://localhost:9543/default/views/default
 
 You'll see the API Portal home page.
 
-![API Portal home page with the heading "APIs, MCP servers & workflows built for Developers and AI Agents", Browse our APIs, Browse our MCP servers, and Discover with AI buttons, and a Log In button in the top right](../../assets/img/standalone-devportal/getting-started/home-page.png)
+![API Portal home page](../../assets/img/standalone-devportal/getting-started/home-page.png)
 
 Click **Log In** and sign in with the admin username and password from Step 2.
 
 !!! tip "Browser trust warning?"
     The generated TLS certificate is self-signed. Click **Advanced > Proceed** to continue.
 
-You should see the default API catalog page. It stays empty until you add APIs — either seed the bundled samples or publish your own, both covered next.
+You should see the default API catalog page. It stays empty until you add APIs—either seed the bundled samples or publish your own, both covered next.
 
-## Step 5: Seed Sample APIs (Optional)
+## Step 5: Seed sample APIs (optional)
 
 The fastest way to see a populated catalog is to deploy the bundled sample APIs and MCP servers:
 
@@ -94,18 +94,18 @@ The fastest way to see a populated catalog is to deploy the bundled sample APIs 
 ./scripts/seed-samples.sh
 ```
 
-This deploys everything under `resources/samples/` into the `default` organization through the public REST API. It prompts for the admin username and password from Step 2 — or set `ADMIN_USERNAME` / `ADMIN_PASSWORD` to skip the prompt. It's safe to re-run: samples that already exist (matched by name and version) are skipped.
+This deploys everything under `resources/samples/` into the `default` organization through the public REST API. It prompts for the admin username and password from Step 2—or set `ADMIN_USERNAME` / `ADMIN_PASSWORD` to skip the prompt. It's safe to re-run: samples that already exist (matched by name and version) are skipped.
 
 !!! note
     Requires `curl`, `jq`, and `zip` on your `PATH`, and the portal must already be running (Step 3).
 
 Refresh the catalog page and the sample APIs appear as a grid of cards, each showing the API's name, version, type, and a **Subscribe** button.
 
-![API Portal API listing page showing a search bar and four sample API cards — Catalog API, Countries GraphQL API, Navigation API, and Reading List API — each with type badges, tags, plan count, and a Subscribe button](../../assets/img/standalone-devportal/getting-started/api-listing-page.png)
+![API listing page showing the seeded sample APIs as a grid of cards](../../assets/img/standalone-devportal/getting-started/api-listing-page.png)
 
 To publish an API of your own instead, continue below.
 
-## Step 6: Publish Your First API
+## Step 6: Publish your first API
 
 Publish an API by uploading a manifest and an OpenAPI definition. This example uses the **Reading List API**, whose backend is already hosted, so it works without deploying a gateway of your own.
 
@@ -125,7 +125,7 @@ spec:
   version: v1.0
   description: Sample reading-list API for tracking books and their reading status. Open access — no API key or subscription required.
   status: PUBLISHED
-  referenceID: reading-list-api-v1.0
+  referenceId: reading-list-api-v1.0
 
   tags:
     - reading-list
@@ -234,12 +234,14 @@ curl -k -X POST "https://localhost:9543/api/v0.9/apis" \
   -F "definition=@definition.yaml;type=application/yaml"
 ```
 
-Refresh the portal — the Reading List API now appears in the catalog. Click it to view its documentation and try-out console.
+Refresh the portal—the Reading List API now appears in the catalog. Click it to view its documentation and try-out console.
 
-## What's Next
+## What's next
 
-- [Search APIs](discover-apis/api-search.md): find published APIs by name, type, version, or description
-- [Create an Application](manage-applications/create-an-application.md): set up a container for OAuth2 credentials
-- [Subscribe to an API](manage-subscriptions/subscribe-to-an-api.md): subscribe to a published API under a plan
-- [Consume an API Secured with API Key](consuming-services/consume-an-api-secured-with-api-key.md) or [Consume an API Secured with OAuth2](consuming-services/consume-an-api-secured-with-oauth2.md)
-- [Theming](admin-settings/theming.md): customize the portal's look and feel
+- [Search APIs](discover-apis/api-search.md): browse and search the catalog
+- [MCP Servers](mcp-servers/overview.md): publish and connect to Model Context Protocol servers
+- [AI Agent Discovery](discover-apis/ai-agent-discovery.md): the `llms.txt` and Markdown endpoints agents use
+- [Manage Applications](manage-applications.md): set up a container for OAuth2 credentials
+- [Manage Subscriptions](manage-subscriptions.md): subscribe to a published API under a plan
+- [Consume an API Secured with an API Key](consume-an-api/api-key.md) or [Consume an API Secured with OAuth2](consume-an-api/oauth2.md)
+- [Theming](theming.md): customize the portal's look and feel

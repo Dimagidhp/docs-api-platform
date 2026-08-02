@@ -12,11 +12,11 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Organization Settings
+# Organization settings
 
-The **Organization** tab in the API Portal's Settings page manages the details of the organization you're currently signed in to.
+The **Organization** tab in the API Portal's Settings page manages the details of the organization you're signed in to.
 
-## Editing Organization Details
+## Editing organization details
 
 1. Log in to the API Portal & MCP Hub as an admin and navigate to **Settings**.
 2. Under the **ORGANIZATION** group, select the **Organization** tab.
@@ -25,15 +25,15 @@ The **Organization** tab in the API Portal's Settings page manages the details o
 | Field | Description |
 |---|---|
 | **Name** | The display name shown throughout the portal UI |
-| **Handle** | The URL-safe identifier used in every portal URL (`/<orgHandle>/views/<viewName>`). Read-only — it can't be changed after the organization is created |
-| **Artifact types served** | Read-only. Shows which artifact types the portal serves — APIs, MCP servers, and API workflows. Set by the operator in the `[api_portal.artifacts]` config, not from this pane; pages for a type that isn't served return 404. See [Artifact types](../artifact-types.md) |
+| **Handle** | The URL-safe identifier used in every portal URL (`/<orgHandle>/views/<viewName>`). Read-only—it can't be changed after the organization is created |
+| **Artifact types served** | Read-only. Shows which artifact types the portal serves—APIs, Model Context Protocol (MCP) servers, and API workflows. Set by the operator in the `[api_portal.artifacts]` config, not from this pane; pages for a type that isn't served return 404. See [Artifact types](../artifact-types.md) |
 | **Business owner** | Contact name for the organization owner |
 | **Business owner contact** | The owner's phone number or other contact string |
 | **Business owner email** | The owner's email address |
-| **IDP reference ID** | The org claim value your identity provider asserts at SSO login. The portal matches an authenticated user's org claim against this value to resolve which organization they belong to |
+| **IDP reference ID** | The organization claim value your identity provider (IDP) asserts at single sign-on (SSO) login. The portal matches an authenticated user's organization claim against this value to resolve which organization they belong to |
 | **Control plane reference ID** | Reference ID included in outbound webhook event payloads (`org.ref_id`). Not used for authentication |
 
 4. Click **Save changes**.
 
 !!! note
-    This page only manages the organization you're currently in — it doesn't create or delete organizations. Organization creation happens once, automatically, when the portal is provisioned.
+    This page only manages the organization you're currently in—it doesn't create or delete organizations. Organization creation happens once, automatically, when the portal is provisioned.

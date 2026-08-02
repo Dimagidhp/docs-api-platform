@@ -39,11 +39,11 @@ Retrieves a single organization theme asset (CSS, image, etc.) by `fileType` and
 |fileType|query|string|true|Organization content file type, such as style, image, text, template, or partial.|
 |fileName|query|string|true|Stored organization content file name.|
 |filePath|query|string|false|Optional relative content path used together with `fileType` and `fileName`.|
-|orgId|query|string|false|Organization ID used to resolve a view's public style/image asset when no session is present (e.g. the pre-auth login page). Ignored for authenticated requests, which use the session organization.|
+|orgId|query|string|false|Deprecated and ignored. Accepted only so existing callers (the portal's own style-URL rewrite appends it) are not rejected. The organization is always this instance's own — from the session when there is one, otherwise from `organization.handle` configuration. It was previously honoured on this unauthenticated endpoint, which made it a selector for any organization's branding in a shared database.|
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```
@@ -95,7 +95,7 @@ Retrieves a single organization theme asset (CSS, image, etc.) by `fileType` and
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="get-a-theme-asset-responseschema">Response Schema</h3>
+<h3 id="get-a-theme-asset-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -114,27 +114,20 @@ Retrieves a single organization theme asset (CSS, image, etc.) by `fileType` and
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/views/{viewId}/apply-theme \
-  -u {username}:{password} \
-  -H 'Content-Type: multipart/form-data' \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
-  -d @payload.json
+  -F 'file=@theme.zip'
 
 ```
 
 Uploads a ZIP file and atomically replaces the view's theme assets. Only the assets contained in the uploaded ZIP are present afterward.
 
-> Payload
-
-```yaml
-file: string
-
-```
-
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:organization_content:manage`, `dp:organization:manage`
 
 </aside>
 
@@ -147,7 +140,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -191,7 +184,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="apply-a-theme-responseschema">Response Schema</h3>
+<h3 id="apply-a-theme-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -210,9 +203,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/views/{viewId}/reset-theme \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -221,7 +213,9 @@ Deletes all stored theme assets for the view, reverting it to built-in defaults.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:organization_content:manage`, `dp:organization:manage`
 
 </aside>
 
@@ -232,7 +226,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
-
+>
 > 500 Response
 
 ```json
@@ -261,9 +255,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/views/{viewId}/export-theme \
-  -u {username}:{password} \
-  -H 'Accept: application/zip' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/zip'
 
 ```
 
@@ -272,7 +265,9 @@ Bundles the view's current custom theme assets into a single ZIP archive for dow
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:organization_content:read`, `dp:organization:manage`
 
 </aside>
 
@@ -283,7 +278,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |viewId|path|string|true|The view's handle (unique per org). Not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 > 404 Response

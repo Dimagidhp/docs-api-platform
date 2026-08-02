@@ -25,10 +25,9 @@ content_type: "reference"
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/labels \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -47,7 +46,9 @@ Creates a label for the organization.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:label:create`, `dp:label:manage`
 
 </aside>
 
@@ -58,7 +59,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |body|body|[LabelRequest](schemas.md#schemalabelrequest)|true|Label payload.|
 
 > Example responses
-
+>
 > 201 Response
 
 ```json
@@ -113,7 +114,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-label-responseschema">Response Schema</h3>
+<h3 id="create-a-label-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -138,9 +139,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/labels \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -149,7 +149,9 @@ Returns all labels configured for the organization.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:label:read`, `dp:label:manage`
 
 </aside>
 
@@ -161,7 +163,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |offset|query|integer|false|Number of records to skip before returning results.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -215,7 +217,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request. Validation and other bad-request errors are returned as a standard error object (field-level details, when present, are carried in its `errors` array); some legacy handlers return a message-only object.|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-labels-responseschema">Response Schema</h3>
+<h3 id="list-labels-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -247,9 +249,8 @@ Status Code **200**
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/labels/{labelId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -258,7 +259,9 @@ Retrieves a single label by handle.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:label:read`, `dp:label:manage`
 
 </aside>
 
@@ -269,7 +272,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |labelId|path|string|true|The label's handle (its `id` in request/response payloads), not the internal database uuid.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -318,10 +321,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X PUT https://localhost:9543/api/v0.9/labels/{labelId} \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -340,7 +342,9 @@ Updates an existing label by handle.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:label:update`, `dp:label:manage`
 
 </aside>
 
@@ -352,7 +356,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |body|body|[LabelRequest](schemas.md#schemalabelrequest)|true|Label payload.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -418,7 +422,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-label-responseschema">Response Schema</h3>
+<h3 id="update-a-label-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -437,9 +441,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X DELETE https://localhost:9543/api/v0.9/labels/{labelId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -448,7 +451,9 @@ Deletes a label by handle.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:label:delete`, `dp:label:manage`
 
 </aside>
 
@@ -459,7 +464,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |labelId|path|string|true|The label's handle (its `id` in request/response payloads), not the internal database uuid.|
 
 > Example responses
-
+>
 > 404 Response
 
 ```json

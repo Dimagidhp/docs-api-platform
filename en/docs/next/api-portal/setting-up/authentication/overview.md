@@ -29,9 +29,9 @@ The two modes present users with different login experiences:
 
 - **Local mode** (`mode = "local"`): clicking **Login** on any portal page shows a built-in username and password form. Credentials are validated against the Platform API.
 
-- **Identity provider mode** (`mode = "idp"`): clicking **Login** redirects the user directly to the identity provider's authorization endpoint — no intermediate login page is shown. After authenticating, the user is returned to the page they originally requested.
+- **Identity provider mode** (`mode = "idp"`): clicking **Login** redirects the user directly to the identity provider's authorization endpoint—no intermediate login page is shown. After authenticating, the user is returned to the page they originally requested.
 
-Public pages (the API catalog and documentation) are always accessible without authentication in either mode. Only protected pages — applications, subscriptions, and API keys — require login.
+Public pages (the API catalog and documentation) are always accessible without authentication in either mode. Only protected pages—applications, subscriptions, and API keys—require login.
 
 ## Local authentication
 
@@ -58,20 +58,30 @@ Local authentication is intended for development and local testing only. Move to
 
 ## Identity provider authentication
 
-For production, configure the portal to delegate login to an identity provider (IdP) over OIDC. The API Portal & MCP Hub works with any OIDC-compliant IdP — such as Asgardeo, Keycloak, Auth0, or Okta — that meets these requirements:
+For production, configure the portal to delegate login to an identity provider (IdP) over OpenID Connect (OIDC). The API Portal & MCP Hub works with any OIDC-compliant IdP—such as Asgardeo, Keycloak, Auth0, or Okta—that meets these requirements:
 
 | Requirement | Details |
 |-------------|---------|
 | OIDC endpoints | The IdP exposes authorization, token, and (optionally) userinfo endpoints, discoverable from its `/.well-known/openid-configuration` |
-| JWT access tokens | Access tokens are JWTs, not opaque tokens |
-| Signature verification | The IdP exposes a JWKS endpoint, or you supply its X.509 certificate, so the portal can verify token signatures |
+| JSON Web Token (JWT) access tokens | Access tokens are JWTs, not opaque tokens |
+| Signature verification | The IdP exposes a JSON Web Key Set (JWKS) endpoint, or you supply its X.509 certificate, so the portal can verify token signatures |
 | Confidential client | The portal is registered as a confidential client with a client secret (a server-side Traditional Web Application), not a public single-page application |
 | Claims | Tokens carry the organization identifier and the user's roles as claims (claim names are configurable) |
 
 When `mode = "idp"`, the portal reads the `[api_portal.auth.idp]` block for the OIDC endpoints and client credentials, and the `[api_portal.auth.claim_mappings]` block for the claim names that carry organization and role information.
 
-!!! note
-    We're expanding our step-by-step setup guides to cover more identity providers. For now, [Set up Asgardeo as your identity provider](asgardeo-setup.md) walks through a complete configuration using WSO2 Asgardeo. The same concepts apply to any OIDC-compliant IdP.
+[Set up Asgardeo as your identity provider](asgardeo-setup.md) walks through a complete configuration using WSO2 Asgardeo. The same concepts apply to any OIDC-compliant IdP.
+
+## Authorization is configured separately
+
+Authentication decides who a caller is. Authorization decides what they may do. The two are configured in different places.
+
+`[api_portal.auth.authorization]` applies in **both** modes. The portal verifies a token the same way whether it came from an IdP's JWKS endpoint or the Platform API's public key.
+
+That section holds the role-to-scope mapping, the switch for Management API scope enforcement, per-page role gating, and the role names granting the admin and subscriber tiers. See [Authorization](../../references/configurations.md#authorization).
+
+!!! important
+    Two keys that used to live here are retired, and leaving either in `config.toml` aborts startup: `auth.role_validation` is now `auth.authorization.page_role_validation`, and `auth.idp.roles` is now `auth.authorization.portal_roles`.
 
 ## Choosing a mode
 

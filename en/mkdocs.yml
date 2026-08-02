@@ -685,21 +685,27 @@ nav:
     - Overview: next/api-portal/overview.md
     - Getting Started: next/api-portal/getting-started.md
     - Concepts: next/api-portal/concepts.md
-    - AI Agent Discovery: next/api-portal/discover-apis/ai-agent-discovery.md
     - Discover APIs:
         - Search APIs: next/api-portal/discover-apis/api-search.md
         - API Overview: next/api-portal/discover-apis/api-overview.md
-        - Documentations: next/api-portal/discover-apis/api-documentations.md
-    - API Workflows:
-        - Consuming API Workflows: next/api-portal/api-workflows/consuming-api-workflows.md
+        - API Documentation: next/api-portal/discover-apis/api-documentations.md
+        - AI Agent Discovery: next/api-portal/discover-apis/ai-agent-discovery.md
+    - MCP Servers:
+        - Overview: next/api-portal/mcp-servers/overview.md
+        - Discover MCP Servers: next/api-portal/mcp-servers/discover-mcp-servers.md
+        - Connect to an MCP Server: next/api-portal/mcp-servers/connect-to-an-mcp-server.md
+        - MCP Registry API: next/api-portal/mcp-servers/mcp-registry.md
+    - API Workflows: next/api-portal/api-workflows.md
     - Consume an API:
-        - Consume an API Secured with OAuth2: next/api-portal/consuming-services/consume-an-api-secured-with-oauth2.md
-        - Consume an API Secured with API Key: next/api-portal/consuming-services/consume-an-api-secured-with-api-key.md
-    - Manage Applications:
-        - Create an Application: next/api-portal/manage-applications/create-an-application.md
-    - Manage Subscriptions:
-        - Subscribe to an API: next/api-portal/manage-subscriptions/subscribe-to-an-api.md
+        - Overview: next/api-portal/consume-an-api/overview.md
+        - OAuth2-Secured APIs: next/api-portal/consume-an-api/oauth2.md
+        - API-Key-Secured APIs: next/api-portal/consume-an-api/api-key.md
+    - Manage Applications: next/api-portal/manage-applications.md
+    - Manage Subscriptions: next/api-portal/manage-subscriptions.md
     - Manage API Keys: next/api-portal/manage-api-keys.md
+    - Theming: next/api-portal/theming.md
+    - Tutorials:
+        - Secured API End to End: next/api-portal/tutorials/secured-api-end-to-end.md
     - Setting Up:
         - Authentication:
           - Overview: next/api-portal/setting-up/authentication/overview.md
@@ -716,13 +722,14 @@ nav:
         - Content:
             - Manage APIs: next/api-portal/admin-settings/manage-apis.md
             - Manage MCP Servers: next/api-portal/admin-settings/manage-mcp-servers.md
+            - API Content: next/api-portal/admin-settings/api-content.md
         - Integrations:
             - Webhook Integration: next/api-portal/admin-settings/webhook-integration.md
         - AI & Discovery:
             - LLM Instructions: next/api-portal/admin-settings/llm-instructions.md
             - Managing API Workflows: next/api-portal/admin-settings/managing-api-workflows.md
         - Appearance:
-            - Theming: next/api-portal/admin-settings/theming.md
+            - Apply a Theme: next/api-portal/admin-settings/theming.md
     - References:
         - Management API:
             - Overview: next/api-portal/rest-api/overview.md
@@ -746,6 +753,7 @@ nav:
             - Webhook Subscribers: next/api-portal/rest-api/webhook-subscribers.md
             - Webhook Events: next/api-portal/rest-api/webhook-events.md
             - Schemas: next/api-portal/rest-api/schemas.md
+        - Webhook Event Catalog: next/api-portal/references/webhook-event-catalog.md
         - Get a Bearer Token via curl: next/api-portal/references/get-a-bearer-token-via-curl.md
         - Configurations: next/api-portal/references/configurations.md
   - AI Workspace:

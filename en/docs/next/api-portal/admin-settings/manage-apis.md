@@ -30,10 +30,11 @@ The **APIs** tab in the API Portal's Settings page is where you add, edit, publi
 | **Handle (URL slug)** | Auto-generated from name and version; edit to override |
 | **API type** | `REST`, `WebSocket`, `GraphQL`, `WebSub`, or `MCP` |
 | **Agent visibility** | **Visible** includes the API in `llms.txt` and AI-agent discovery surfaces; **Hidden** excludes it while still showing it to human users |
-| **Description** | Required — shown in the catalog and used as context for AI agents |
+| **Description** | Required—shown in the catalog and used as context for AI agents |
 | **Production URL** | Required for most API types |
 | **Sandbox URL** | Optional |
-| **Labels** | Comma-separated labels controlling which [views](manage-views.md) show this API |
+| **Labels** | A toggle picker of the labels defined in your organization. Selected labels control which [views](manage-views.md) show this API. Empty until you create labels under [Manage Labels](manage-labels.md) |
+| **Tags** | Comma-separated free-text keywords for search and discovery. Unlike labels, they don't affect visibility |
 | **Status** | **Published** or **Deprecated** |
 | **Technical owner / email**, **Business owner / email** | Ownership contacts shown on the API's detail page |
 | **Applicable Subscription Plans** | Search and select which [subscription plans](subscription-plans.md) developers can subscribe under. Leave empty to make the API accessible without a plan |
@@ -42,33 +43,44 @@ Click **Next**.
 
 ### Step 2: Spec
 
-Upload the contract that defines the API — required. Accepted formats: OpenAPI (`.json`/`.yaml`), AsyncAPI, GraphQL SDL (`.graphql`), or WSDL (`.wsdl`/`.xml`). Single file, up to 10 MB.
+Upload the contract that defines the API. One file is required, and the format follows the API type you chose in step 1:
+
+| API type | Contract |
+|---|---|
+| REST | OpenAPI, as `.json`, `.yaml`, or `.yml` |
+| WebSocket, WebSub | AsyncAPI, as `.json`, `.yaml`, or `.yml` |
+| GraphQL | A GraphQL schema, as `.graphql` or `.gql` |
+| MCP | A flat, type-tagged list of tools, resources, and prompts, as `.yaml` or `.yml`. See [Manage MCP servers](manage-mcp-servers.md#adding-an-mcp-server) |
+
+The file picker also accepts `.wsdl` and `.xml`, but **API type** offers no SOAP option, so you can't create a SOAP API here. Create those through the [Management API](../rest-api/apis.md) instead, posting `type: SOAP` with a WSDL definition.
 
 Click **Next**.
 
 ### Step 3: Documentation
 
-Optionally upload one or more Markdown (`.md`) files as guides or reference docs for developers.
+Optionally upload one or more Markdown files (`.md` or `.markdown`) as guides or reference docs for developers. These are what the portal serves as attached documents, both on the API's documentation page and to AI agents.
 
 Click **Next** to create the API, or continue to Step 4 if you're editing an existing API.
 
 ### Step 4: Content (edit mode only)
 
-Once an API exists, you can upload a ZIP to set its landing-page content: include a `web/` folder for landing-page assets (Markdown, HTML, CSS, JS, images) and/or a `docs/` folder for downloadable documents. Files with a matching name are replaced; others are added.
+Once an API exists, you can upload a ZIP holding a `web/` folder (the overview body and images), a `docs/` folder (downloadable documents), or both. Files with a matching name are replaced; others are added.
 
-Click **Upload content** — this uploads immediately and is independent of **Save changes**.
+Click **Upload content**—this uploads immediately and is independent of **Save changes**.
+
+For the file names the portal looks for, how the API icon is set, and how `docs/` subdirectories become documentation sections, see [Customize an API's Content](api-content.md).
 
 ## Editing an API
 
 Click the **⋮** menu on an API's row and select **Edit** to reopen the wizard, prefilled with its current details, spec, documentation, and content.
 
-## Publishing and Deprecating
+## Publishing and deprecating
 
 Use the **⋮** menu on an API's row:
 
-- **Publish** — makes a draft or deprecated API live in the catalog
-- **Deprecate** — keeps the API visible but marked as deprecated; you can publish it again at any time
+- **Publish**—makes a draft or deprecated API live in the catalog
+- **Deprecate**—keeps the API visible but marked as deprecated; you can publish it again at any time
 
 ## Deleting APIs
 
-Use the **⋮** menu's **Delete** action to remove a single API, or select multiple rows with the checkboxes to reveal a bulk action bar with **Delete selected**. Deleting an API removes it from the portal along with its spec and documentation — this can't be undone.
+Use the **⋮** menu's **Delete** action to remove a single API, or select multiple rows with the checkboxes to reveal a bulk action bar with **Delete selected**. Deleting an API removes it from the portal along with its spec and documentation—this can't be undone.

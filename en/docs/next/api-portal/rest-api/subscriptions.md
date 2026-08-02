@@ -25,10 +25,9 @@ content_type: "reference"
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/subscriptions \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -47,7 +46,9 @@ Creates a subscription for an API. The API must exist in the API Portal and have
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:subscription:create`, `dp:subscription:manage`
 
 </aside>
 
@@ -55,10 +56,10 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[SubscriptionCreateRequest](schemas.md#schemasubscriptioncreaterequest)|true|Subscription creation payload. `artifactId` is the API Portal API ID.|
+|body|body|[SubscriptionCreateRequest](schemas.md#schemasubscriptioncreaterequest)|true|Subscription creation payload. `artifactId` is the API ID.|
 
 > Example responses
-
+>
 > 201 Response
 
 ```json
@@ -129,7 +130,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|The request conflicts with an existing resource.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="create-a-subscription-responseschema">Response Schema</h3>
+<h3 id="create-a-subscription-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -154,18 +155,19 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/subscriptions \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
-Lists subscriptions owned by the authenticated user. When `artifactId` is provided, results are additionally filtered by the API Portal API ID.
+Lists subscriptions owned by the authenticated user. When `artifactId` is provided, results are additionally filtered by the API ID.
 
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:subscription:read`, `dp:subscription:manage`
 
 </aside>
 
@@ -173,12 +175,12 @@ This operation requires <strong>Basic Auth</strong> authentication.
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|artifactId|query|string|false|Optional API Portal API ID used to filter results.|
+|artifactId|query|string|false|Optional API ID used to filter results.|
 |limit|query|integer|false|Maximum number of records to return.|
 |offset|query|integer|false|Number of records to skip before returning results.|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -232,7 +234,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Returned when `artifactId` is provided but does not match an existing API.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="list-subscriptions-responseschema">Response Schema</h3>
+<h3 id="list-subscriptions-responseschema">Response schema</h3>
 
 Status Code **200**
 
@@ -240,7 +242,7 @@ Status Code **200**
 |---|---|---|---|---|
 |» list|[[SubscriptionResponse](schemas.md#schemasubscriptionresponse)]|false|none|[Subscription payload.]|
 |»» subscriptionId|string|false|none|none|
-|»» artifactId|string|false|none|API Portal API ID.|
+|»» artifactId|string|false|none|API ID.|
 |»» subscriptionToken|string¦null|false|none|Plaintext subscription token, decrypted on every read (not just on create). Null if decryption fails (e.g. the encryption key changed since the token was stored).|
 |»» subscriptionPlanName|string|false|none|none|
 |»» status|string|false|none|none|
@@ -272,9 +274,8 @@ Status Code **200**
 ```shell
 
 curl -X GET https://localhost:9543/api/v0.9/subscriptions/{subId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -283,7 +284,9 @@ Retrieves a single subscription by subscription ID.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:subscription:read`, `dp:subscription:manage`
 
 </aside>
 
@@ -294,7 +297,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subId|path|string|true|none|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -350,10 +353,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X PUT https://localhost:9543/api/v0.9/subscriptions/{subId} \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -371,7 +373,9 @@ Updates the subscription status. Accepts only `ACTIVE` or `INACTIVE`.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:subscription:update`, `dp:subscription:manage`
 
 </aside>
 
@@ -383,7 +387,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subId|path|string|true|none|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -445,7 +449,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="update-a-subscription-responseschema">Response Schema</h3>
+<h3 id="update-a-subscription-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -464,9 +468,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X DELETE https://localhost:9543/api/v0.9/subscriptions/{subId} \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -475,7 +478,9 @@ Deletes the subscription and returns a success message.
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:subscription:delete`, `dp:subscription:manage`
 
 </aside>
 
@@ -486,7 +491,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subId|path|string|true|none|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -534,10 +539,9 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/subscriptions/{subId}/change-plan \
-  -u {username}:{password} \
+  -H 'Authorization: Bearer {access_token}' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}' \
   -d @payload.json
 
 ```
@@ -556,7 +560,9 @@ Changes the subscription plan in-place. The subscription UUID and token remain u
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:subscription:update`, `dp:subscription:manage`
 
 </aside>
 
@@ -568,7 +574,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subId|path|string|true|none|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
@@ -630,7 +636,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Resource not found.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal server error.|[ErrorResponse](schemas.md#schemaerrorresponse)|
 
-<h3 id="change-subscription-plan-responseschema">Response Schema</h3>
+<h3 id="change-subscription-plan-responseschema">Response schema</h3>
 
 #### Enumerated Values
 
@@ -649,9 +655,8 @@ This operation requires <strong>Basic Auth</strong> authentication.
 ```shell
 
 curl -X POST https://localhost:9543/api/v0.9/subscriptions/{subId}/regenerate-token \
-  -u {username}:{password} \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer {access-token}'
+  -H 'Authorization: Bearer {access_token}' \
+  -H 'Accept: application/json'
 
 ```
 
@@ -660,7 +665,9 @@ Regenerates the subscription token, immediately invalidating the old one. A `sub
 ### Authentication
 
 <aside class="warning">
-This operation requires <strong>Basic Auth</strong> authentication.
+This operation requires a <strong>Bearer JWT</strong> access token in the <code>Authorization</code> header.
+
+Required scopes (the token must carry at least one of): `dp:subscription:manage`
 
 </aside>
 
@@ -671,7 +678,7 @@ This operation requires <strong>Basic Auth</strong> authentication.
 |subId|path|string|true|none|
 
 > Example responses
-
+>
 > 200 Response
 
 ```json
