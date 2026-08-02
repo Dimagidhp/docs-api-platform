@@ -16,7 +16,7 @@ content_type: "overview"
 
 AI Workspace is where a platform team configures and governs the traffic its organization sends to large language model (LLM) services.
 
-The starting point is an AI Gateway: a runtime that sits between your applications and services such as OpenAI, Anthropic, or AWS Bedrock. Your applications call the gateway instead of calling those services directly, and the gateway forwards each request upstream. AI Workspace is the console where you decide what the gateway does, which services it can reach, which credentials it uses, what limits and safety checks it applies, and which applications get through.
+The starting point is an AI Gateway: a runtime that sits between your applications and services such as OpenAI, Anthropic, or AWS Bedrock. Your applications call the gateway instead of calling those services directly, and the gateway forwards each request upstream. AI Workspace is the console where you decide what the gateway does. From there you set which services it can reach, which credentials it uses, what limits and safety checks it applies, and which applications get through.
 
 Putting the gateway in the middle moves five things out of your application code and into one place:
 
@@ -38,7 +38,7 @@ You'll meet these objects throughout the documentation:
 | **LLM provider** | A connection to an upstream AI service, holding its endpoint and credentials. Serves traffic on its own once deployed |
 | **App LLM proxy** | An optional application-facing endpoint layered on a provider, for when one GenAI application or agent needs controls of its own |
 | **MCP proxy** | A managed endpoint in front of an upstream Model Context Protocol (MCP) server |
-| **Policy** | A rule the gateway enforces on each request — a guardrail, a rate limit, or a routing or prompt behavior |
+| **Policy** | A rule the gateway enforces on each request—a guardrail, a rate limit, or a routing or prompt behavior |
 | **Secret** | An encrypted credential that the objects above reference by handle instead of by value |
 
 ## How it works
@@ -94,9 +94,9 @@ A provider created from a custom template works only after you [deploy the templ
 
 [Policies](policies/overview.md) attach to LLM providers, App LLM proxies, and MCP proxies. AI Workspace is where you attach them; the AI Gateway enforces them at request time.
 
-- **Guardrails** — content safety, PII masking, schema and length validation, and prompt injection detection.
-- **Rate limits** — caps on request count, token consumption, and monetary spend.
-- **Traffic and prompt policies** — model routing, prompt templates, semantic caching, and provider transformation.
+- **Guardrails**—content safety, PII masking, schema and length validation, and prompt injection detection.
+- **Rate limits**—caps on request count, token consumption, and monetary spend.
+- **Traffic and prompt policies**—model routing, prompt templates, semantic caching, and provider transformation.
 
 The gateway also publishes traffic, token usage, latency, cost, and guardrail events to your Moesif analytics workspace. [Insights](insights.md) is where you open it. Set your limits from those measurements rather than from estimates.
 
@@ -135,7 +135,7 @@ One gateway can serve many artifacts, and one artifact can be deployed to many g
 
 Working through the workspace means you manage all of this from the console rather than calling the gateway's Gateway-Controller API yourself.
 
-Use these docs for centralized lifecycle management of your connected gateways and the AI artifacts on them. Use the [AI Gateway documentation](../../cloud/ai-gateway/overview.md) when you work with the runtime directly — its Gateway-Controller API, its on-disk configuration, or the standalone deployment model where there's no control plane at all.
+Use the AI Workspace documentation for centralized lifecycle management of your connected gateways and the AI artifacts on them. Use the [AI Gateway documentation](../../cloud/ai-gateway/overview.md) when you work with the runtime directly. That covers its Gateway-Controller API, its on-disk configuration, and the standalone deployment model where there's no control plane at all.
 
 An artifact created on a gateway isn't invisible to the workspace. It [syncs up as a read-only copy](sync-gateway-created-artifacts.md) you can view and monitor.
 

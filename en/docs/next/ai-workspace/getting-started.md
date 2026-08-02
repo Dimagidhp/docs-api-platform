@@ -14,7 +14,7 @@ content_type: "quickstart"
 
 # Get started with AI Workspace
 
-The AI Workspace lets you manage AI gateways and LLM providers. This guide gets AI Workspace running locally with Docker Compose, then walks you through creating your first AI gateway and LLM provider.
+The AI Workspace lets you manage AI gateways and large language model (LLM) providers. This guide gets AI Workspace running locally with Docker Compose, then walks you through creating your first AI gateway and LLM provider.
 
 ## Prerequisites
 
@@ -66,7 +66,7 @@ docker compose up -d
 ```
 
 !!! tip "Port 9643 or 9243 already taken?"
-    Change the host side of the `ports:` mappings in `docker-compose.yaml` before you start — for example `"8443:9643"` for the AI Workspace. See [Change the ports AI Workspace uses](setting-up/ports.md) for the two config keys that need to match.
+    Change the host side of the `ports:` mappings in `docker-compose.yaml` before you start—for example `"8443:9643"` for the AI Workspace. See [Change the ports AI Workspace uses](setting-up/ports.md) for the two config keys that need to match.
 
 ## Step 4: Open AI Workspace
 
@@ -87,7 +87,7 @@ An AI gateway is the runtime that processes and routes requests between your app
 1. Navigate to **AI Gateways** in the left navigation menu.
 2. Click **+ Add AI Gateway**.
 3. Fill in the **Name** and **URL**, then click **Add Gateway**.
-4. Copy the **Gateway Registration Token** and save it securely straight away — it's shown only once. Then follow the setup instructions to start the gateway runtime.
+4. Copy the **Gateway Registration Token** and save it securely straight away—it's shown only once. Then follow the setup instructions to start the gateway runtime.
 5. Once connected, the gateway status changes from **Not Active** to **Active**.
 
 For detailed instructions, see [Set up an AI Gateway](ai-gateways/setting-up.md).

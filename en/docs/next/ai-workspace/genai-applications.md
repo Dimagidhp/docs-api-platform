@@ -16,7 +16,7 @@ content_type: "concept"
 
 A GenAI application represents a real AI application inside AI Workspace, with the API keys it uses attached to it. This gives you application-level visibility and control instead of tracking usage only at the individual key level.
 
-Without GenAI applications, usage is tied only to the API keys generated for LLM providers or App LLM proxies. AI Workspace then tracks three metrics — models, tokens, and cost — against each key rather than against an application. That makes attribution hard when several developers generate keys for the same project.
+Without GenAI applications, usage is tied only to the API keys generated for LLM providers or App LLM proxies. AI Workspace then tracks three metrics—models, tokens, and cost—against each key rather than against an application. That makes attribution hard when several developers generate keys for the same project.
 
 With a GenAI application, you can:
 

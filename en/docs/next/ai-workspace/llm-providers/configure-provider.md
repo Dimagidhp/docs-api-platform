@@ -100,7 +100,7 @@ The authentication fields vary depending on the provider you selected:
     2. **API Key** (required): Enter your Amazon Bedrock API key. Paste the raw key. AI Workspace adds the `Bearer` prefix followed by a space, and sends the credential as `Authorization: Bearer <key>`.
 
     !!! info
-        Bedrock's endpoint isn't pre-configured, because the runtime host is region-specific. Use the region your API key and model access live in — a key issued in one region doesn't work against another region's endpoint.
+        Bedrock's endpoint isn't pre-configured, because the runtime host is region-specific. Use the region your model access lives in. If you use a short-term Bedrock API key, it's scoped to the region that issued it and doesn't work against another region's endpoint. A long-term key, which is backed by service-specific IAM credentials, isn't tied to a single region.
 
 !!! info "How the API key is stored"
     AI Workspace stores the upstream API key as an encrypted secret and keeps only a {% raw %}`{{ secret "handle" }}`{% endraw %} reference in the provider configuration. The plaintext key never lands in the provider configuration or in an API response. See [Secrets management](../secrets-management.md).

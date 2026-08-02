@@ -283,9 +283,9 @@ Beyond the built-in policies, you can write your own AI policy and deploy it to 
 
 To build and roll one out end to end:
 
-1. [Write an AI policy](writing-an-ai-policy.md) — implement the policy using the gateway SDK
-2. [Build the gateway with AI policies](build-gateway-with-ai-policies.md) — package the policy into a custom AI Gateway image
-3. [Apply AI policies to proxies](apply-ai-policies-to-proxies.md) — sync the policy to the organization and attach it to a provider or proxy
+1. [Write an AI policy](writing-an-ai-policy.md)—implement the policy using the gateway SDK
+2. [Build the gateway with AI policies](build-gateway-with-ai-policies.md)—package the policy into a custom AI Gateway image
+3. [Apply AI policies to proxies](apply-ai-policies-to-proxies.md)—sync the policy to the organization and attach it to a provider or proxy
 
 ## Policy Hub
 

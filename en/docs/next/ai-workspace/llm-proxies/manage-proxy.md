@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # Manage an App LLM proxy
 
-Once you create an App LLM proxy, manage its configuration through the proxy details page. This guide covers every management operation available for your specialized application or agent proxy.
+Once you create an App LLM proxy, manage its configuration through the proxy details page. This guide covers every management operation available for your App LLM proxy.
 
 ## Access proxy details
 

@@ -30,7 +30,7 @@ This guide walks you through configuring Asgardeo as the identity provider for a
 
 ## Step 2: Register the AI Workspace application
 
-AI Workspace runs a backend-for-frontend (BFF) that acts as a confidential OIDC client: it holds the client secret and completes the authorization-code and PKCE exchange on the back channel. Register it as a confidential web application, not a single-page application. A single-page application is a public client. The token endpoint rejects the BFF's exchange with this error: "The authenticated client is not authorized to use the requested grant type."
+AI Workspace runs a backend-for-frontend (BFF) that acts as a confidential OIDC client. The BFF holds the client secret and completes the authorization-code and PKCE exchange on the back channel. Register it as a confidential web application, not a single-page application. A single-page application is a public client. The token endpoint rejects the BFF's exchange with this error: "The authenticated client is not authorized to use the requested grant type."
 
 1. In the root organization, go to **Applications > New Application**.
 2. Choose **Standard-Based Application > OpenID Connect** (Traditional Web Application) and name it `AI Workspace`.
@@ -149,8 +149,11 @@ org_handle   = "org_handle"
 Never write the client secret as a literal in `config.toml`. The `{% raw %}{{ env }}{% endraw %}` placeholder above reads it from an environment variable instead, so it never has to be committed to source control:
 
 ```bash
-export APIP_AIW_AUTH_OIDC_CLIENT_SECRET=<ai-workspace-client-secret>
+read -rs -p "AI Workspace client secret: " APIP_AIW_AUTH_OIDC_CLIENT_SECRET
+export APIP_AIW_AUTH_OIDC_CLIENT_SECRET
 ```
+
+Reading the value from a prompt keeps the secret out of your shell history and out of the process list.
 
 Set it in the distribution's git-ignored `api-platform.env` file, which is loaded into both containers. In a production deployment, prefer supplying it from a mounted secret file. Swap the token for {% raw %}`'{{ file "/secrets/ai-workspace/oidc_client_secret" }}'`{% endraw %}, then mount the secret at that path. Resolution fails closed, so a missing or unreadable file aborts startup rather than falling back to an empty credential.
 

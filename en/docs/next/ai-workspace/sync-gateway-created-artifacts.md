@@ -14,14 +14,14 @@ content_type: "how-to"
 
 # Sync gateway-created AI artifacts to AI Workspace
 
-When you create an AI artifact directly on the AI Gateway — an **LLM Provider Template**, **LLM Provider**, **LLM Proxy**, or **MCP Proxy** — it syncs up to **AI Workspace** automatically, where it appears as a **read-only** copy you can view and monitor.
+You can create four kinds of AI artifact directly on the AI Gateway: an **LLM Provider Template**, an **LLM Provider**, an **LLM Proxy**, or an **MCP Proxy**. Each one syncs up to **AI Workspace** automatically. There it appears as a **read-only** copy you can view and monitor.
 
 This is the reverse of the usual top-down flow:
 
 | | You create it in… | The AI Workspace copy is… |
 |---|---|---|
-| **Top-down** | AI Workspace, then it's pushed to the gateway | editable — you own it |
-| **This guide (bottom-up)** | the gateway, then it's synced up to AI Workspace | read-only — the gateway owns it |
+| **Top-down** | AI Workspace, then it's pushed to the gateway | editable—you own it |
+| **This guide (bottom-up)** | the gateway, then it's synced up to AI Workspace | read-only—the gateway owns it |
 
 Because the gateway owns these artifacts, they keep serving traffic even if AI Workspace is temporarily unavailable, and any change you make on the gateway is synced up automatically.
 
@@ -96,7 +96,7 @@ The examples below use these conventions:
 
 ## Create the artifacts on the gateway
 
-This walkthrough builds a complete **LLM Proxy** together with the artifacts it depends on — an **LLM Provider Template** and an **LLM Provider** — then adds a standalone **MCP Proxy**. Each `curl` creates the artifact on the gateway; it starts serving immediately and is synced to AI Workspace.
+This walkthrough builds a complete **LLM Proxy** together with the two artifacts it depends on: an **LLM Provider Template** and an **LLM Provider**. It then adds a standalone **MCP Proxy**. Each `curl` creates the artifact on the gateway. The artifact starts serving immediately and is synced to AI Workspace.
 
 Create them in dependency order so each reference resolves:
 
@@ -224,25 +224,25 @@ Open **AI Workspace** for the organization your gateway is registered with, then
 
 ### LLM provider template
 
-Under **Settings** > **LLM Provider Templates**:
+The template appears under **Settings** > **LLM Provider Templates**:
 
 ![LLM provider template synced from the gateway to AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider-template.png)
 
 ### LLM provider
 
-Under **LLM** > **LLM Providers**:
+The provider appears under **LLM** > **LLM Providers**:
 
 ![LLM provider synced from the gateway to AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-provider.png)
 
 ### LLM proxy
 
-Under **LLM** > **App LLM Proxies**, in the **Default** project:
+The proxy appears under **LLM** > **App LLM Proxies**, in the **Default** project:
 
 ![LLM proxy synced from the gateway to AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-llm-proxy.png)
 
 ### MCP proxy
 
-Under **MCP** > **MCP Proxies**, in the **Default** project:
+The MCP proxy appears under **MCP** > **MCP Proxies**, in the **Default** project:
 
 ![MCP proxy synced from the gateway to AI Workspace](../../assets/img/ai-workspace/bottom-up/dp-to-cp-mcp-proxy.png)
 
@@ -321,7 +321,7 @@ The sync behaves exactly the same for these gateways: artifacts loaded from file
 
 ### I can't edit, deploy, or delete a gateway-created artifact in AI Workspace
 
-This is expected — the gateway owns it, so it's read-only in AI Workspace.
+This is expected—the gateway owns it, so it's read-only in AI Workspace.
 
 - Make configuration and deployment changes on the **gateway**; they sync up automatically.
 - You can still edit runtime-neutral details: the description, display name, documentation, OpenAPI definitions, and, for an LLM provider template, its connection details and logo.

@@ -14,13 +14,13 @@ content_type: "overview"
 
 # AI Workspace CI/CD overview
 
-AI Workspace CI/CD lets you manage AI Workspace artifacts as version-controlled project files and apply them to the AI Workspace control plane with the `ap` CLI. This gives platform teams a repeatable way to create, update, review, and promote AI artifacts without relying only on manual UI changes.
+AI Workspace CI/CD lets you manage AI Workspace artifacts as version-controlled project files. You apply those files to the AI Workspace control plane with the `ap` CLI. This gives platform teams a repeatable way to create, update, review, and promote AI artifacts without relying only on manual UI changes.
 
 You can use this flow for:
 
-- **LLM providers** — reusable connections to model providers such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral AI
-- **App LLM proxies** — application-facing proxy endpoints with their own security, guardrails, policies, and provider reference
-- **MCP proxies** — managed proxy endpoints for upstream MCP servers
+- **LLM providers**—reusable connections to model providers such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral AI
+- **App LLM proxies**—application-facing proxy endpoints with their own security, guardrails, policies, and provider reference
+- **MCP proxies**—managed proxy endpoints for upstream MCP servers
 
 ## How the CI/CD flow works
 
@@ -52,7 +52,7 @@ An AI Workspace CI/CD project uses the same project file model as other API Plat
 | File | Purpose |
 |------|---------|
 | `metadata.yaml` | Defines the artifact identity and display metadata. For AI Workspace artifacts, it can also include `spec.associatedGateways`. |
-| `runtime.yaml` | Defines the runtime behavior, such as context, provider reference, upstream configuration, security, and policies. This file is also what deploys the artifact to the gateway. |
+| `runtime.yaml` | Defines the runtime behavior, such as context, provider reference, upstream configuration, security, and policies. Running `ap gateway apply -f runtime.yaml` applies this runtime configuration and the artifact to the gateway. |
 | `definition.yaml` | Defines the OpenAPI or MCP capability definition used when building the AI Workspace payload. This file is required for all supported AI Workspace artifact types. |
 | `.api-platform/config.yaml` | Stores project-level CLI configuration, including the AI Workspace file paths used during build and apply. |
 
@@ -92,10 +92,10 @@ AI Workspace validates gateway associations within the organization context of t
 
 ## Benefits of the CI/CD flow
 
-- **Git-based lifecycle** — Review, version, and promote AI Workspace artifacts through pull requests.
-- **Repeatable deployments** — Apply the same project files across environments using pipeline variables.
-- **Reduced drift** — Keep UI-managed artifacts aligned with the project files used by CI/CD.
-- **One model across artifact types** — Use the same build and apply model for every supported API Platform artifact type.
+- **Git-based lifecycle**—Review, version, and promote AI Workspace artifacts through pull requests.
+- **Repeatable deployments**—Apply the same project files across environments using pipeline variables.
+- **Reduced drift**—Keep UI-managed artifacts aligned with the project files used by CI/CD.
+- **One model across artifact types**—Use the same build and apply model for every supported API Platform artifact type.
 
 ## Next steps
 

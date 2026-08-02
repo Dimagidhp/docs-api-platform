@@ -15,12 +15,12 @@ content_type: "how-to"
 
 # Secrets management
 
-AI Workspace lets you store sensitive credentials as **secrets** and reference them securely in artifact configurations. Secrets are encrypted at rest using AES-GCM-256. Plaintext values are never written to the database and are **never returned in any API response** — not even the creation response.
+AI Workspace lets you store sensitive credentials as **secrets** and reference them securely in artifact configurations. Secrets are encrypted at rest using AES-GCM-256. Plaintext values are never written to the database and are **never returned in any API response**—not even the creation response.
 
-Use secrets to avoid embedding raw API keys, tokens, or passwords directly in LLM provider configurations, MCP proxy configs, or API backend settings.
+Use secrets to avoid embedding raw API keys, tokens, or passwords directly in large language model (LLM) provider configurations, Model Context Protocol (MCP) proxy configs, or API backend settings.
 
 !!! important "Not the same as `config.toml` interpolation"
-    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services' own startup credentials — database password, OpenID Connect (OIDC) client secret, at-rest encryption key — are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](setting-up/configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
+    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services have their own startup credentials: the database password, the OpenID Connect (OIDC) client secret, and the at-rest encryption key. Those are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](setting-up/configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
 
 ## How it works
 
@@ -45,7 +45,7 @@ The raw credential is sent to the secrets API only once and is never stored in t
 
 ## API reference
 
-The secrets API is available at `/api/v0.9/secrets`. All requests require a valid JWT with the appropriate scope.
+The secrets API is available at `/api/v0.9/secrets`. All requests require a valid JSON Web Token (JWT) with the appropriate scope.
 
 ### Required scopes
 
@@ -121,7 +121,7 @@ sk-xxx
 }
 ```
 
-The response doesn't include the `value`. Store the plaintext in a secure location before submitting it — you can't retrieve it later.
+The response doesn't include the `value`. Store the plaintext in a secure location before submitting it—you can't retrieve it later.
 
 **Error responses**
 

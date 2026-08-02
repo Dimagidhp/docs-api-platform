@@ -39,15 +39,15 @@ password_hash = "$2a$12$..."   # bcrypt hash of the password
 roles         = ["ap_admin"]
 ```
 
-Generate a bcrypt hash for the password with any standard tool, for example:
+Generate a bcrypt hash for the password with any standard tool. This example prompts for the password, so it never reaches your shell history or the process list:
 
 ```bash
-htpasswd -bnBC 12 "" "your-password" | tr -d ':\n'
+htpasswd -nBC 12 "" | tr -d ':\n'
 ```
 
 ### Add more users
 
-`[[platform_api.auth.file.users]]` is an array of tables, so repeating the whole block — double brackets and all — defines another user. Give each one the roles that match what that person does:
+`[[platform_api.auth.file.users]]` is an array of tables, so repeating the whole block—double brackets and all—defines another user. Give each one the roles that match what that person does:
 
 ```toml
 [[platform_api.auth.file.users]]

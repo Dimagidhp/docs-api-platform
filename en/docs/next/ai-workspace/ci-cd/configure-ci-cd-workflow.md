@@ -87,7 +87,7 @@ When using this CI/CD flow, start the AI Gateway with control-plane deployment s
 deployment_sync_enabled = false
 ```
 
-In **declarative CI/CD**, AI Workspace artifacts and gateway runtime artifacts are **applied independently** from the project files. Each operation runs **synchronously** and doesn't rely on output from another service or on **asynchronous gateway-to-control-plane synchronization**. Disabling deployment synchronization prevents the gateway from trying to synchronize deployed artifacts back to AI Workspace while CI/CD owns the artifact lifecycle.
+In **declarative CI/CD**, the AI Workspace artifact operation and the gateway runtime operation run **independently of each other**, and both read from the same project files. Each operation runs **synchronously** and doesn't rely on output from another service or on **asynchronous gateway-to-control-plane synchronization**. Disabling deployment synchronization prevents the gateway from trying to synchronize deployed artifacts back to AI Workspace while CI/CD owns the artifact lifecycle.
 
 ## Create or update the project
 

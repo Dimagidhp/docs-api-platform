@@ -14,11 +14,17 @@ content_type: "how-to"
 
 # Set up an AI Gateway
 
-An AI Gateway is the runtime component that processes and routes requests between your applications and LLM providers. Create and manage AI gateways in AI Workspace, then deploy your LLM providers and proxies to them.
+An AI Gateway is the runtime component that processes and routes requests between your applications and large language model (LLM) providers. Create and manage AI gateways in AI Workspace, then deploy your LLM providers and proxies to them.
 
 ## Prerequisites
 
-- A user whose token carries the scopes these steps need: `ap:gateway:read` to view gateways, `ap:gateway:manage` to add, edit, or delete one, and `ap:gateway:token:manage` to issue a registration token. `ap:gateway:manage` also covers the token operations on its own. Of the roles the [role-to-scope mapping](../setting-up/authentication/overview.md) ships, `ap_admin` and `ap_operator` grant all of these; `ap_viewer` and `ap_publisher` can only view gateways.
+- A user whose token carries the scopes these steps need:
+
+    - `ap:gateway:read` to view gateways.
+    - `ap:gateway:manage` to add, edit, or delete a gateway.
+    - `ap:gateway:token:manage` to issue a registration token. `ap:gateway:manage` covers the token operations on its own.
+
+    Of the roles the [role-to-scope mapping](../setting-up/authentication/overview.md) ships, `ap_admin` and `ap_operator` grant all of these scopes. `ap_viewer` and `ap_publisher` can only view gateways.
 
 ## View AI gateways
 
