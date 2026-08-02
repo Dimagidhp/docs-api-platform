@@ -94,9 +94,9 @@ A provider created from a custom template works only after you [deploy the templ
 
 [Policies](policies/overview.md) attach to LLM providers, App LLM proxies, and MCP proxies. AI Workspace is where you attach them; the AI Gateway enforces them at request time.
 
-- **Guardrails**—content safety, PII masking, schema and length validation, and prompt injection detection.
-- **Rate limits**—caps on request count, token consumption, and monetary spend.
-- **Traffic and prompt policies**—model routing, prompt templates, semantic caching, and provider transformation.
+- **Guardrails** cover content safety, PII masking, schema and length validation, and prompt injection detection.
+- **Rate limits** cap request count, token consumption, and monetary spend.
+- **Traffic and prompt policies** handle model routing, prompt templates, semantic caching, and provider transformation.
 
 The gateway also publishes traffic, token usage, latency, cost, and guardrail events to your Moesif analytics workspace. [Insights](insights.md) is where you open it. Set your limits from those measurements rather than from estimates.
 

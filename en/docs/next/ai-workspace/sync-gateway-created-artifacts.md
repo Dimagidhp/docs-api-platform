@@ -14,7 +14,7 @@ content_type: "how-to"
 
 # Sync gateway-created AI artifacts to AI Workspace
 
-You can create four kinds of AI artifact directly on the AI Gateway: an **LLM Provider Template**, an **LLM Provider**, an **LLM Proxy**, or an **MCP Proxy**. Each one syncs up to **AI Workspace** automatically. There it appears as a **read-only** copy you can view and monitor.
+You can create four kinds of AI artifact directly on the AI Gateway: an **LLM Provider Template**, an **LLM Provider**, an **LLM Proxy**, or an **MCP Proxy**. Each one syncs up to **AI Workspace** automatically. There it appears as a copy the gateway owns: the deployment fields the gateway runs the artifact from are **read-only**, while runtime-neutral details such as the description, documentation, OpenAPI definitions, and template connection details stay editable. See [What you can and can't change in AI Workspace](#what-you-can-and-cant-change-in-ai-workspace).
 
 This is the reverse of the usual top-down flow:
 
