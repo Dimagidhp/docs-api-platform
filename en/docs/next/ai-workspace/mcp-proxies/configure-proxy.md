@@ -1,8 +1,8 @@
 ---
 title: "Configure an MCP proxy"
 description: "Create an MCP proxy from an upstream MCP server URL and deploy it to a gateway."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/mcp-proxies/configure-proxy/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/mcp-proxies/configure-proxy.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/mcp-proxies/configure-proxy/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/mcp-proxies/configure-proxy.md
 tags:
   - cloud
   - ai-workspace
@@ -22,8 +22,6 @@ This guide walks you through creating a proxy and deploying it to a gateway.
 
 !!! info "Before you begin"
     - Access to AI Workspace with **Admin** or **Developer** role
-
----
 
 ## Create a new proxy
 
@@ -51,8 +49,6 @@ This guide walks you through creating a proxy and deploying it to a gateway.
     5. **Target** (required): The MCP server URL the gateway calls. AI Workspace fills this in from the URL you provided in the previous step.
 
 6. Click **Create** to create and save the proxy.
-
----
 
 ## Deploy proxy to gateway
 
@@ -93,8 +89,6 @@ Click **Back to MCP Proxy** to return to the proxy details page.
 !!! info "Deployment status"
     Monitor deployment progress on this page. Changes take effect within seconds of successful deployment.
 
----
-
 ## Get started
 
 Once the proxy is deployed, the overview page shows the MCP proxy URL.
@@ -108,8 +102,6 @@ The URL follows the format:
 ```
 https://{gateway-host}/{proxy-context}/mcp
 ```
-
----
 
 ## Next steps
 

@@ -1,8 +1,8 @@
 ---
 title: "Build the AI Gateway with custom AI policies"
 description: "Install the AP CLI, configure build.yaml, and build a custom AI Gateway image that includes your custom AI policies."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/build-gateway-with-ai-policies/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/build-gateway-with-ai-policies.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/policies/build-gateway-with-ai-policies/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/policies/build-gateway-with-ai-policies.md
 tags:
   - cloud
   - ai-workspace
@@ -12,11 +12,11 @@ last_updated: 2026-07-24
 content_type: "how-to"
 ---
 
-# Building the gateway with AI policies
+# Build the gateway with AI policies
 
 After [writing a custom AI policy](writing-an-ai-policy.md), build it into the AI Gateway image so it can run alongside the built-in guardrails and rate-limiting policies.
 
-## Install the AP CLI tool
+## Install the ap CLI
 
 The `ap` CLI builds a custom gateway image that carries your own policies. It's the same `ap` CLI that [AI Workspace CI/CD](../ci-cd/overview.md) uses for commands such as `ap gateway apply` and `ap ai-workspace build`. If you already have it installed for that workflow, skip ahead to [Configure the build file](#configure-the-build-file). Otherwise, download the binary for your platform from the [AP CLI releases page](https://github.com/wso2/api-platform/releases/tag/ap%2Fv0.7.0) and follow the steps below to install it.
 
@@ -119,7 +119,7 @@ Each policy entry uses one of two source types:
 | `gomodule` | The Go module reference for a Policy Hub managed policy, for example `github.com/wso2/gateway-controllers/policies/pii-masking@v1` |
 | `filePath` | The path from `build.yaml` to a local custom AI policy directory |
 
-### Adding a custom AI policy
+### Add a custom AI policy
 
 Your custom AI policy can reside anywhere on the filesystem. Use a relative path from the `build.yaml` file to point to it.
 

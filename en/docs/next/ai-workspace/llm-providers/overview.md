@@ -1,8 +1,8 @@
 ---
 title: "LLM providers overview"
 description: "Connect AI service platforms such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral AI as reusable LLM providers in AI Workspace."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-providers/overview/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-providers/overview.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-providers/overview/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-providers/overview.md
 tags:
   - cloud
   - ai-workspace
@@ -23,7 +23,7 @@ An LLM provider is an integration with an AI service platform that offers langua
 
 ## Supported providers
 
-API Platform AI Workspace supports the following LLM providers:
+AI Workspace supports the following LLM providers:
 
 | Provider | Description | Learn more |
 |----------|-------------|-----------|
@@ -35,9 +35,10 @@ API Platform AI Workspace supports the following LLM providers:
 | <img src="https://raw.githubusercontent.com/nomadxd/openapi-connectors/main/openapi/mistral/icon.png" width="32" alt=""> **Mistral AI** | Access Mistral's open and commercial models | [Mistral AI documentation](https://mistral.ai/) |
 | <img src="https://raw.githubusercontent.com/wso2/api-platform/main/llm-provider-specs/awsbedrock/icon.png" width="32" alt=""> **AWS Bedrock** | Access Anthropic, Meta, Mistral, and Amazon models through Amazon Bedrock | [AWS Bedrock documentation](https://aws.amazon.com/bedrock/) |
 
-## Connecting a custom provider
+## Connect a custom provider
 
-If the LLM service you use isn't in the list above, an organization admin can define a reusable **LLM Provider Template** under **Settings > LLM Provider Templates**. A template captures the endpoint and authentication shape for a custom provider. It then appears in the provider type selector alongside the built-in providers whenever you add a provider.
+If the LLM service you use isn't in the list above, a user with template-management access can define a reusable **LLM Provider Template** under **Settings > LLM Provider Templates**. A template captures the endpoint and authentication shape for a custom provider. It then appears in the provider type selector alongside the built-in providers whenever you add a provider.
 
+## Next step
 
-**Next:** [Configure an LLM provider](configure-provider.md), to set up your first provider.
+[Configure an LLM provider](configure-provider.md): set up your first provider.

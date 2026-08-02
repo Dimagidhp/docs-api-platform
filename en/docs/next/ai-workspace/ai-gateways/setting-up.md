@@ -1,8 +1,8 @@
 ---
 title: "Set up an AI Gateway in AI Workspace"
 description: "Register an AI Gateway in AI Workspace, connect the runtime with a registration token, and manage existing gateways."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ai-gateways/setting-up/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ai-gateways/setting-up.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/ai-gateways/setting-up/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/ai-gateways/setting-up.md
 tags:
   - cloud
   - ai-workspace
@@ -12,17 +12,15 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Setting up an AI Gateway
+# Set up an AI Gateway
 
 An AI Gateway is the runtime component that processes and routes requests between your applications and LLM providers. Create and manage AI gateways in AI Workspace, then deploy your LLM providers and proxies to them.
 
 ## Prerequisites
 
-- A user whose token carries the scopes these steps need: `ap:gateway:read` to view gateways, `ap:gateway:manage` to add, edit, or delete one, and `ap:gateway:token:manage` to issue a registration token. `ap:gateway:manage` also covers the token operations on its own. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` and `ap_operator` grant all of these; `ap_viewer` and `ap_publisher` can only view gateways.
+- A user whose token carries the scopes these steps need: `ap:gateway:read` to view gateways, `ap:gateway:manage` to add, edit, or delete one, and `ap:gateway:token:manage` to issue a registration token. `ap:gateway:manage` also covers the token operations on its own. Of the roles the [role-to-scope mapping](../setting-up/authentication/overview.md) ships, `ap_admin` and `ap_operator` grant all of these; `ap_viewer` and `ap_publisher` can only view gateways.
 
----
-
-## View AI Gateways
+## View AI gateways
 
 1. Navigate to **AI Gateways** in the left navigation menu.
 
@@ -36,9 +34,7 @@ The AI Gateways page displays a list of all configured gateways with the followi
 | **Last Updated** | Timestamp of the most recent change |
 | **Actions** | Edit and delete options |
 
----
-
-## Add a New AI Gateway
+## Add an AI gateway
 
 1. Navigate to **AI Gateways** in the left navigation menu.
 
@@ -58,13 +54,11 @@ The AI Gateways page displays a list of all configured gateways with the followi
 
 5. The gateway detail page opens showing the gateway name, status (**Not Active** initially), vhost, and creation timestamp.
 
----
-
-## Set Up the Gateway
+## Set up the gateway runtime
 
 After creating an AI gateway, you need to set up the gateway runtime. The detail page provides a **Get Started** section with setup instructions.
 
-### Gateway Registration Token
+### Gateway registration token
 
 A **Gateway Registration Token** is displayed at the top of the Get Started section. This token is required to connect your gateway runtime to the control plane.
 
@@ -74,26 +68,26 @@ A **Gateway Registration Token** is displayed at the top of the Get Started sect
 !!! tip "Lost your token?"
     The registration token is single-use. If you need to reconfigure the gateway, click the **Reconfigure** button to generate a new token. The new token revokes the old one and disconnects the gateway from the control plane.
 
-### Installation Methods
+### Installation methods
 
 The Get Started section provides setup instructions for multiple deployment options.
 
 !!! note "Where the control plane address comes from"
     Every method below needs two values from the **Get Started** section: the control plane address the gateway connects to, and this gateway's registration token.
 
-    Self-hosted AI Workspace fills that address into the commands it shows from `[ai_workspace.gateway] controlplane_host` in its own `config.toml`. The key is display-only, and AI Workspace never connects to it. The address has to be reachable from the machine running the gateway, not from the workspace. If the commands carry an address your gateway can't reach, correct that key and reload the page rather than editing the value into the gateway. For the Helm method, put the hostname in `controlPlane.host` and any port in `controlPlane.port`. See [Two keys that aren't interchangeable](../ports.md#two-keys-that-arent-interchangeable).
+    Self-hosted AI Workspace fills that address into the commands it shows from `[ai_workspace.gateway] controlplane_host` in its own `config.toml`. The key is display-only, and AI Workspace never connects to it. The address has to be reachable from the machine running the gateway, not from the workspace. If the commands carry an address your gateway can't reach, correct that key and reload the page rather than editing the value into the gateway. For the Helm method, put the hostname in `controlPlane.host` and any port in `controlPlane.port`. See [Two keys that aren't interchangeable](../setting-up/ports.md#two-keys-that-arent-interchangeable).
 
 !!! note "Gateway version"
     AI Workspace works with **gateway v1.2 and above**. Those gateways provision their keys and certificates with `./scripts/setup.sh` and take their configuration from `api-platform.env`, which Compose loads through the `env_file:` directive. The **Get Started** section offers the gateway versions AI Workspace supports and shows the commands for the version you register.
 
-=== "Quick Start"
+=== "Quick start"
     **Prerequisites:**
 
     - cURL installed
     - unzip installed
     - Docker installed and running
 
-    **Step 1: Download the Gateway**
+    **Step 1: Download the gateway**
 
     Run this command in your terminal to download the gateway:
 
@@ -102,7 +96,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     unzip wso2apip-ai-gateway-1.2.0.zip
     ```
 
-    **Step 2: Set up the Gateway**
+    **Step 2: Set up the gateway**
 
     Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
@@ -117,7 +111,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
     ```
 
-    **Step 3: Configure the Gateway**
+    **Step 3: Configure the gateway**
 
     Append the control plane host and your registration token to `api-platform.env`:
 
@@ -130,7 +124,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     Replace both placeholders with the values the Get Started section shows: the control plane address, as `host:port` with no scheme, and this gateway's registration token.
 
-    **Step 4: Start the Gateway**
+    **Step 4: Start the gateway**
 
     Start the gateway. `api-platform.env` is loaded automatically via the Compose `env_file:` directive:
 
@@ -138,7 +132,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     docker compose up
     ```
 
-=== "Virtual Machine"
+=== "Virtual machine"
     **Prerequisites:**
 
     - cURL installed
@@ -156,7 +150,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     docker compose version
     ```
 
-    **Step 1: Download the Gateway**
+    **Step 1: Download the gateway**
 
     Run this command in your terminal to download the gateway:
 
@@ -165,7 +159,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     unzip wso2apip-ai-gateway-1.2.0.zip
     ```
 
-    **Step 2: Set up the Gateway**
+    **Step 2: Set up the gateway**
 
     Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
@@ -180,7 +174,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
     ```
 
-    **Step 3: Configure the Gateway**
+    **Step 3: Configure the gateway**
 
     Append the control plane host and your registration token to `api-platform.env`:
 
@@ -193,7 +187,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     Replace both placeholders with the values the Get Started section shows: the control plane address, as `host:port` with no scheme, and this gateway's registration token. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
 
-    **Step 4: Start the Gateway**
+    **Step 4: Start the gateway**
 
     Start the gateway. `api-platform.env` is loaded automatically via the Compose `env_file:` directive:
 
@@ -207,7 +201,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     - cURL installed
     - unzip installed
 
-    **Step 1: Download the Gateway**
+    **Step 1: Download the gateway**
 
     Run this command in your terminal to download the gateway:
 
@@ -216,7 +210,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     unzip wso2apip-ai-gateway-1.2.0.zip
     ```
 
-    **Step 2: Set up the Gateway**
+    **Step 2: Set up the gateway**
 
     Run the one-time setup script. It provisions the AES-256 at-rest encryption key, the router HTTPS listener certificate, the gateway-controller admin credentials, and `api-platform.env` — all required before the first start (the gateway has no demo mode and fails closed if a required key, certificate, or credential is missing). The admin password is printed once — copy it:
 
@@ -231,7 +225,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
     ```
 
-    **Step 3: Configure the Gateway**
+    **Step 3: Configure the gateway**
 
     Append the control plane host and your registration token to `api-platform.env`:
 
@@ -244,7 +238,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     Replace both placeholders with the values the Get Started section shows: the control plane address, as `host:port` with no scheme, and this gateway's registration token. The token is single-use — if you need to reconfigure, click **Reconfigure** to generate a new token (this revokes the old token and disconnects the gateway).
 
-    **Step 4: Start the Gateway**
+    **Step 4: Start the gateway**
 
     Start the gateway. `api-platform.env` is loaded automatically via the Compose `env_file:` directive:
 
@@ -262,7 +256,7 @@ The Get Started section provides setup instructions for multiple deployment opti
 
     The registration token is a one-time generated token for this gateway. If you need to install or update the gateway chart again, first reconfigure this gateway to generate a new registration token. Reconfiguring revokes the previous token.
 
-    **Create the encryption key Secret**
+    **Create the encryption key secret**
 
     At-rest encryption is mandatory and fail-closed — nothing is auto-generated, and the chart doesn't render without an AES-256 key Secret. Create it in the install namespace before installing the chart:
 
@@ -273,7 +267,7 @@ The Get Started section provides setup instructions for multiple deployment opti
     rm default-aesgcm256-v1.bin   # don't leave the plaintext key on disk
     ```
 
-    **Installing the Chart**
+    **Install the chart**
 
     Run this command to install the gateway chart with the encryption key and control plane configurations:
 
@@ -292,11 +286,9 @@ The Get Started section provides setup instructions for multiple deployment opti
 
 Once the gateway runtime is running and connected, the gateway status changes from **Not Active** to **Active**.
 
----
+## Manage AI gateways
 
-## Manage AI Gateways
-
-### Edit a Gateway
+### Edit a gateway
 
 1. In the AI Gateways list, click the edit icon next to the gateway you want to modify.
 
@@ -304,7 +296,7 @@ Once the gateway runtime is running and connected, the gateway status changes fr
 
 3. Click **Save** to apply the changes.
 
-### Delete a Gateway
+### Delete a gateway
 
 1. In the AI Gateways list, click the delete icon next to the gateway you want to remove.
 
@@ -313,9 +305,7 @@ Once the gateway runtime is running and connected, the gateway status changes fr
 !!! danger "Irreversible action"
     Deleting a gateway is permanent, and it undeploys every provider and proxy on that gateway immediately.
 
----
-
-## Next Steps
+## Next steps
 
 - [Configure an LLM provider](../llm-providers/configure-provider.md): set up an LLM provider and deploy it to your gateway
 - [Configure an App LLM proxy](../llm-proxies/configure-proxy.md): create a specialized proxy for a GenAI application or agent and deploy it to your gateway

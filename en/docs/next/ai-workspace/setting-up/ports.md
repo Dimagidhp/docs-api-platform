@@ -1,8 +1,8 @@
 ---
 title: "Change the ports AI Workspace uses"
 description: "Move the AI Workspace and Platform API off their default ports, either by remapping the published host port or by changing the port each service listens on."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ports/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ports.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/ports/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/ports.md
 tags:
   - cloud
   - ai-workspace
@@ -12,7 +12,7 @@ last_updated: 2026-07-31
 content_type: "how-to"
 ---
 
-# Ports
+# Change the ports AI Workspace uses
 
 The stack listens on these ports by default:
 
@@ -128,4 +128,4 @@ docker compose up -d --force-recreate
 ## Related
 
 - [AI Workspace configuration](configuration.md) — how interpolation tokens deliver values into `config.toml`
-- [Getting started](getting-started.md) — the quickstart these defaults come from
+- [Get started with AI Workspace](../getting-started.md) — the quickstart these defaults come from

@@ -1,8 +1,8 @@
 ---
 title: "Invoke providers and proxies via SDKs"
 description: "Call a deployed LLM provider or App LLM proxy using the OpenAI, Anthropic, Gemini, Mistral, Azure OpenAI, or LangChain SDKs."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/using-sdks/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/using-sdks.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/using-sdks/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/using-sdks.md
 tags:
   - cloud
   - ai-workspace
@@ -20,7 +20,7 @@ The examples below apply to both providers and proxies. The only difference betw
 
 ## Prerequisites
 
-- An LLM [Provider](llm-providers/configure-provider.md) or [App LLM proxy](llm-proxies/configure-proxy.md) deployed to a gateway
+- An [LLM provider](llm-providers/configure-provider.md) or [App LLM proxy](llm-proxies/configure-proxy.md) deployed to a gateway
 - The **Invoke URL** for the deployed endpoint
 - A generated **API key**
 
@@ -29,7 +29,7 @@ The examples below apply to both providers and proxies. The only difference betw
 All requests to the gateway must include your API key in the request header named in the **Security** tab of your provider or proxy. That header is `X-API-Key` by default, and the code examples below use that default.
 
 !!! note
-    Depending on the SDK or provider you use, choose the header name that works best and set it in the **Security** tab. See [Configure Inbound Authentication](configure-inbound-auth.md). The examples below use the default `X-API-Key` header.
+    Depending on the SDK or provider you use, choose the header name that works best and set it in the **Security** tab. See [Configure inbound authentication](configure-inbound-auth.md). The examples below use the default `X-API-Key` header.
 
 ## OpenAI
 
@@ -195,7 +195,7 @@ All requests to the gateway must include your API key in the request header name
     **Install:** `pip install google-genai`
 
     !!! note
-        The Gemini SDK normally sends its key as `x-goog-api-key`, which the gateway does not use for authentication. Pass `api_key="placeholder"` to satisfy the SDK and supply the real gateway key via `X-API-Key` in `HttpOptions`.
+        The Gemini SDK normally sends its key as `x-goog-api-key`, which the gateway doesn't use for authentication. Pass `api_key="placeholder"` to satisfy the SDK and supply the real gateway key via `X-API-Key` in `HttpOptions`.
 
     **Basic content generation:**
 

@@ -1,8 +1,8 @@
 ---
 title: "Manage an LLM provider"
 description: "Configure connection, access control, security, rate limiting, guardrails, and models for a deployed LLM provider, then redeploy or delete it."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-providers/manage-provider/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-providers/manage-provider.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-providers/manage-provider/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-providers/manage-provider.md
 tags:
   - cloud
   - ai-workspace
@@ -12,7 +12,7 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Manage LLM provider
+# Manage an LLM provider
 
 After deploying your LLM provider, manage its configuration through the provider details page. This guide covers all management operations organized by tab.
 
@@ -37,7 +37,7 @@ Manage upstream endpoint configuration and authentication credentials for the LL
 
 The **Upstream URL** field sets where the gateway forwards API requests:
 
-| Provider Type | URL Configuration |
+| Provider type | URL configuration |
 |---------------|-------------------|
 | OpenAI, Anthropic, Gemini, Mistral AI | Pre-configured (read-only) |
 | Azure OpenAI, Azure AI Foundry, AWS Bedrock | Custom URL (editable) |
@@ -51,7 +51,7 @@ The **Upstream URL** field sets where the gateway forwards API requests:
 
 Configure how the gateway authenticates with the upstream provider:
 
-| Authentication Type | Behavior |
+| Authentication type | Behavior |
 |----------------------|----------|
 | **api-key** | The gateway attaches an **Authentication Header** and **Credentials** value to every upstream request. For built-in providers, the template sets both. |
 | **other** | The workspace stores no credentials for this provider. Use a policy to configure upstream authentication instead. |
@@ -73,8 +73,6 @@ The **Spec URL** field holds the OpenAPI specification the resource list is impo
 - Supply either a URL or a file upload
 - The specification populates the Access Control resources list
 - Re-import it to refresh the available endpoints
-
----
 
 ## Access control
 
@@ -100,8 +98,6 @@ Use the arrow buttons between the two panels to move resources:
 
 Click **Import resources from specification** to load or refresh the resource list from the provider's OpenAPI specification.
 
----
-
 ## Security
 
 Configure how applications authenticate when accessing this provider through the gateway.
@@ -124,8 +120,6 @@ Set the API key that client applications must provide:
 3. Optionally set an **API Key Value Prefix**, for example `Bearer`, if clients send the key with a scheme prefix.
 4. Click **Save**.
 
----
-
 ## Rate limiting
 
 Control request and token consumption to prevent cost overruns and keep usage fair across all consumers.
@@ -145,7 +139,7 @@ The Backend section of the Rate Limiting tab presents both the Provider-wide and
     Provider-wide and Per Resource modes are mutually exclusive. Clear existing limits before switching modes.
 
 !!! info "Provider-wide limits are a hard ceiling"
-    A provider-wide limit is evaluated before any per-resource policy and counts **every request attempt** — including requests that a stricter per-resource policy later rejects. When the shared allowance is exhausted, requests to every endpoint receive HTTP `429`. See [Policy scope: Global or per resource](../policies/overview.md#policy-scope-global-or-per-resource) for details.
+    A provider-wide limit is evaluated before any per-resource policy and counts **every request attempt** — including requests that a stricter per-resource policy later rejects. When the shared allowance is exhausted, requests to every endpoint receive `HTTP 429`. See [Policy scope: global or per resource](../policies/overview.md#policy-scope-global-or-per-resource) for details.
 
 ### Limit criteria
 
@@ -161,11 +155,11 @@ For each enabled criterion, set the **Quota** and **Reset Duration** (`second`, 
 ### Provider-wide configuration
 
 1. Select **Provider-wide** in the Backend section.
-2. Enable **Request Count** and/or **Token Count**.
+2. Enable **Request Count**, **Token Count**, or both.
 3. Enter the **Quota** and select the **Reset Duration** for each criterion.
 4. Click **Save**.
 
-### Per Resource configuration
+### Per-resource configuration
 
 1. Select **Per Resource** in the Backend section.
 2. Expand **Limit per Resource** to set default limits for all endpoints:
@@ -178,11 +172,9 @@ For each enabled criterion, set the **Quota** and **Reset Duration** (`second`, 
 
 **Learn more:** [Token-based rate limiting](../policies/overview.md#token-based-rate-limit)
 
----
-
 ## Guardrails
 
-Attach guardrails to enforce content safety, compliance, and quality standards. Attach a guardrail on a provider globally, to all endpoints, or per resource, to specific endpoints. Either way it affects every proxy that uses this provider.
+Attach guardrails to enforce content safety, compliance, and quality standards. Attach a guardrail on a provider globally to all endpoints or at the resource level to specific endpoints. Either way, the guardrail affects every proxy that uses this provider.
 
 ### View attached guardrails
 
@@ -194,7 +186,7 @@ The tab displays the guardrails attached to the provider:
 
 ### Add a guardrail
 
-Attach a guardrail globally, to all endpoints, or per resource, to one endpoint. A global guardrail runs on every request regardless of the endpoint called; a resource-level guardrail runs only on the endpoint you attach it to. If you configure both, the gateway evaluates the global guardrails first, then the resource-level ones. See [Policy scope: Global or per resource](../policies/overview.md#policy-scope-global-or-per-resource).
+Attach a guardrail globally to all endpoints or at the resource level to one endpoint. A global guardrail runs on every request, whichever endpoint the request calls. A resource-level guardrail runs only on the endpoint you attach it to. If you configure both, the gateway evaluates the global guardrails first, then the resource-level ones. See [Policy scope: global or per resource](../policies/overview.md#policy-scope-global-or-per-resource).
 
 **To add a global guardrail:**
 
@@ -230,8 +222,6 @@ You can't edit guardrail parameters in place. To change a guardrail's configurat
 
 **Learn more:** [Policies overview](../policies/overview.md). For the full policy catalog, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
 
----
-
 ## Models
 
 Configure which AI models are accessible through this provider.
@@ -253,11 +243,7 @@ The **Models** tab displays a chip list of the models available through this pro
 
 The gateway blocks any model that isn't in the chip list. An application that requests a removed model receives an error.
 
----
-
 ## Lifecycle operations
-
----
 
 ### Redeploy provider
 
@@ -278,8 +264,6 @@ Push configuration changes to deployed gateways.
 
 !!! info "Deployment status"
     Monitor deployment progress in the notification panel. Changes take effect within seconds of successful deployment.
-
----
 
 ### Delete provider
 
@@ -303,9 +287,7 @@ Permanently remove the provider and all its configurations.
     - Deletes all configuration, including guardrails, rate limits, and models
     - **Cannot be undone**
 
----
-
 ## Next steps
 
-- [Configure App LLM proxy](../llm-proxies/configure-proxy.md): configure and deploy specialized proxy endpoints for GenAI applications or agents using your provider
+- [Configure an App LLM proxy](../llm-proxies/configure-proxy.md): configure and deploy specialized proxy endpoints for GenAI applications or agents using your provider
 - [Policies overview](../policies/overview.md): explore all available guardrails and policies

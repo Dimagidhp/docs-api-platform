@@ -1,8 +1,8 @@
 ---
 title: "Set up Asgardeo as your identity provider"
 description: "Configure Asgardeo as the identity provider for a production AI Workspace deployment, from application registration to Platform API configuration."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/authentication/asgardeo-setup/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/authentication/asgardeo-setup.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/authentication/asgardeo-setup/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/authentication/asgardeo-setup.md
 tags:
   - cloud
   - ai-workspace
@@ -156,7 +156,7 @@ Set it in the distribution's git-ignored `api-platform.env` file, which is loade
 
 Once configured, opening AI Workspace redirects you to the Asgardeo-hosted login page instead of the file-based login form:
 
-![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../../assets/img/ai-gateway/standalone-ai-workspace/authentication/oidc-login-redirect.png)
+![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../../../assets/img/ai-gateway/standalone-ai-workspace/authentication/oidc-login-redirect.png)
 
 ## Claim flow summary
 

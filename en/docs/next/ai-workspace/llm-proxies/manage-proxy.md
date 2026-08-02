@@ -1,8 +1,8 @@
 ---
 title: "Manage an App LLM proxy"
 description: "Configure provider settings, resources, security, and guardrails for a deployed App LLM proxy, then save, redeploy, or delete it."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-proxies/manage-proxy/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-proxies/manage-proxy.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-proxies/manage-proxy/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-proxies/manage-proxy.md
 tags:
   - cloud
   - ai-workspace
@@ -12,11 +12,9 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Manage App LLM proxy
+# Manage an App LLM proxy
 
 Once you create an App LLM proxy, manage its configuration through the proxy details page. This guide covers every management operation available for your specialized application or agent proxy.
-
----
 
 ## Access proxy details
 
@@ -35,13 +33,11 @@ The page is organized into four configuration tabs: **Provider**, **Resources**,
 
 The **Deploy to Gateway** button and a **delete** icon are located in the top-right corner of the page.
 
----
-
 ## Provider settings
 
 Configure which LLM service provider the proxy connects to and how it authenticates with the provider.
 
-### LLM Service Provider
+### LLM service provider
 
 1. Go to the **Provider** tab.
 
@@ -52,7 +48,7 @@ Configure which LLM service provider the proxy connects to and how it authentica
     !!! info
         Changing the provider updates related settings such as authentication and available resources.
 
-### API Key Configuration
+### API key configuration
 
 If your selected provider uses API key authentication, you'll see the **API Key Configuration** section below the provider dropdown.
 
@@ -71,8 +67,6 @@ If your selected provider uses API key authentication, you'll see the **API Key 
     - Keys aren't displayed after saving
     - Store a backup copy in a secure location
     - Rotate keys regularly
-
----
 
 ## Resources
 
@@ -103,8 +97,6 @@ After importing, the **Resources** section displays the count and list of parsed
 - **Resource Path**: the endpoint path, for example `/v1/chat/completions`
 - **Description**: the description extracted from the OpenAPI specification
 
----
-
 ## Security
 
 Configure how client applications authenticate when accessing your proxy endpoints.
@@ -124,13 +116,11 @@ Configure how client applications authenticate when accessing your proxy endpoin
 
 3. Click **Save** to apply the security configuration.
 
----
-
 ## Guardrails
 
 Attach guardrails to enforce content safety, compliance, and quality standards on this proxy.
 
-### Global Guardrails
+### Global guardrails
 
 Global guardrails apply to **all resources** in the proxy.
 
@@ -150,7 +140,7 @@ Global guardrails apply to **all resources** in the proxy.
 
 Each guardrail you add appears as a pill showing its name and version.
 
-### Resource-wise Guardrails
+### Resource-wise guardrails
 
 Resource-wise guardrails apply to **specific endpoints** only. This section lists each resource from your OpenAPI specification, so you can attach guardrails to individual endpoints.
 
@@ -175,8 +165,6 @@ Resource-wise guardrails apply to **specific endpoints** only. This section list
 !!! info
     Learn more about available guardrails in the [Policies overview](../policies/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
 
----
-
 ## Save changes
 
 After making configuration changes across any tab (Provider, Resources, Security, Guardrails), click the **Save** button at the bottom-right of the page to persist your changes.
@@ -186,14 +174,12 @@ Use the **Cancel** button to discard all unsaved changes and revert to the last 
 !!! info
     Configuration changes require a manual redeploy to take effect on deployed gateways. After saving, click **Deploy to Gateway** to apply your changes.
 
----
-
 ## Delete proxy
 
 To delete a proxy, click the **delete** icon (trash icon) in the top-right corner of the proxy details page, next to the Deploy to Gateway button.
 
 !!! danger "Irreversible action"
-    Deleting a proxy is permanent and cannot be undone.
+    Deleting a proxy is permanent and can't be undone.
 
     - The workspace removes the proxy from all gateways immediately
     - All generated API keys stop working
@@ -203,8 +189,6 @@ To delete a proxy, click the **delete** icon (trash icon) in the top-right corne
     - Ensure no applications are actively using the proxy
     - Back up any important configuration settings
     - Notify teams that depend on the proxy endpoints
-
----
 
 ## Next steps
 

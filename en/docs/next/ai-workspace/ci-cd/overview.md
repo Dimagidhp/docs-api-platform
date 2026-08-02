@@ -1,8 +1,8 @@
 ---
 title: "AI Workspace CI/CD overview"
 description: "Manage AI Workspace artifacts such as LLM providers, App LLM proxies, and MCP proxies through a Git-based CI/CD workflow."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ci-cd/overview/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ci-cd/overview.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/ci-cd/overview/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/ci-cd/overview.md
 tags:
   - cloud
   - ai-workspace
@@ -12,7 +12,7 @@ last_updated: 2026-07-08
 content_type: "overview"
 ---
 
-# AI Workspace CI/CD Overview
+# AI Workspace CI/CD overview
 
 AI Workspace CI/CD lets you manage AI Workspace artifacts as version-controlled project files and apply them to the AI Workspace control plane with the `ap` CLI. This gives platform teams a repeatable way to create, update, review, and promote AI artifacts without relying only on manual UI changes.
 
@@ -22,7 +22,7 @@ You can use this flow for:
 - **App LLM proxies** — application-facing proxy endpoints with their own security, guardrails, policies, and provider reference
 - **MCP proxies** — managed proxy endpoints for upstream MCP servers
 
-## How the CI/CD Flow Works
+## How the CI/CD flow works
 
 In a CI/CD workflow, a project in source control is the source of truth. The project contains declarative files that describe the AI Workspace artifact and the runtime behavior expected by the gateway.
 
@@ -45,18 +45,18 @@ For this declarative flow, start the AI Gateway with deployment synchronization 
 deployment_sync_enabled = false
 ```
 
-## Project Files
+## Project files
 
 An AI Workspace CI/CD project uses the same project file model as other API Platform CLI workflows.
 
 | File | Purpose |
 |------|---------|
 | `metadata.yaml` | Defines the artifact identity and display metadata. For AI Workspace artifacts, it can also include `spec.associatedGateways`. |
-| `runtime.yaml` | Defines the runtime behavior, such as context, provider reference, upstream configuration, security, and policies. Also, this is used to deploy the artifact to the gateway. |
+| `runtime.yaml` | Defines the runtime behavior, such as context, provider reference, upstream configuration, security, and policies. This file is also what deploys the artifact to the gateway. |
 | `definition.yaml` | Defines the OpenAPI or MCP capability definition used when building the AI Workspace payload. This file is required for all supported AI Workspace artifact types. |
 | `.api-platform/config.yaml` | Stores project-level CLI configuration, including the AI Workspace file paths used during build and apply. |
 
-## Supported Artifact Types
+## Supported artifact types
 
 The CLI validates that the artifact kind in `metadata.yaml` matches the kind in `runtime.yaml`.
 
@@ -66,7 +66,7 @@ The CLI validates that the artifact kind in `metadata.yaml` matches the kind in 
 | App LLM proxy | `LlmProxyMetadata` | `LlmProxy` |
 | MCP proxy | `McpMetadata` | `Mcp` |
 
-## Gateway Associations
+## Gateway associations
 
 Use `spec.associatedGateways` in `metadata.yaml` to record the gateways an AI Workspace artifact is intended to run on.
 
@@ -86,18 +86,18 @@ spec:
         host: prod-gateway.example.com
 ```
 
-AI Workspace persists these associations during create and update operations and returns them in artifact list and detail responses. The association records the intended gateway targets; it does not create gateway deployment records by itself.
+AI Workspace persists these associations during create and update operations and returns them in artifact list and detail responses. The association records the intended gateway targets; it doesn't create gateway deployment records by itself.
 
-AI Workspace validates gateway associations within the organization context of the authenticated user. A gateway from another organization cannot be associated with the artifact.
+AI Workspace validates gateway associations within the organization context of the authenticated user. You can't associate a gateway from another organization with the artifact.
 
-## CI/CD Benefits
+## Benefits of the CI/CD flow
 
 - **Git-based lifecycle** — Review, version, and promote AI Workspace artifacts through pull requests.
 - **Repeatable deployments** — Apply the same project files across environments using pipeline variables.
 - **Reduced drift** — Keep UI-managed artifacts aligned with the project files used by CI/CD.
 - **One model across artifact types** — Use the same build and apply model for every supported API Platform artifact type.
 
-## Next Steps
+## Next steps
 
 - [Configure an AI Workspace CI/CD workflow](configure-ci-cd-workflow.md): build and apply an AI Workspace artifact with the `ap` CLI
 - [Configure an LLM provider](../llm-providers/configure-provider.md): create a provider from the AI Workspace UI

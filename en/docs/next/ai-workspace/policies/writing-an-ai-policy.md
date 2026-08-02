@@ -1,8 +1,8 @@
 ---
 title: "Write an AI policy for the AI Gateway"
 description: "Build a custom AI policy using the gateway SDK, including support for buffered and streaming (SSE) LLM request and response bodies."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/writing-an-ai-policy/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/writing-an-ai-policy.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/policies/writing-an-ai-policy/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/policies/writing-an-ai-policy.md
 tags:
   - cloud
   - ai-workspace
@@ -13,7 +13,7 @@ last_updated: 2026-07-24
 content_type: "how-to"
 ---
 
-# Writing an AI policy for the AI Gateway
+# Write an AI policy for the AI Gateway
 
 An AI policy inspects, controls, and modifies the traffic going to and from a large language model (LLM) provider such as OpenAI or Anthropic.
 
@@ -68,7 +68,7 @@ Your policy must handle **both formats**.
 
 Choose based on what your policy needs to do:
 
-| Goal | Interface | Mode Setting |
+| Goal | Interface | Mode setting |
 |------|-----------|-------------|
 | Inspect prompt / model | `RequestPolicy` | `RequestBodyMode: BodyModeBuffer` |
 | Inspect headers (auth, routing) | `RequestHeaderPolicy` | `RequestHeaderMode: HeaderModeProcess` |
@@ -253,6 +253,6 @@ policies:
 
 ## Next steps
 
-- [Building the gateway with AI policies](build-gateway-with-ai-policies.md): build a gateway image that includes your custom AI policy
+- [Build the gateway with AI policies](build-gateway-with-ai-policies.md): build a gateway image that includes your custom AI policy
 - [Apply AI policies to proxies](apply-ai-policies-to-proxies.md): sync your custom AI policy to the organization and apply it to LLM providers, App LLM proxies, and MCP proxies
-- [Writing a custom policy for the self-hosted gateway](../../../cloud/api-platform-gateway/writing-a-custom-policy.md): the general-purpose policy SDK that the AI Gateway's policy engine builds on
+- [Write a custom policy for the self-hosted gateway](../../../cloud/api-platform-gateway/writing-a-custom-policy.md): the general-purpose policy SDK that the AI Gateway's policy engine builds on

@@ -752,14 +752,14 @@ nav:
     - Overview: next/ai-workspace/overview.md
     - Getting Started: next/ai-workspace/getting-started.md
     # Set up the workspace itself.
-    - Setup:
-        - Configuration & Interpolation: next/ai-workspace/configuration.md
-        - Ports: next/ai-workspace/ports.md
-        - Database: next/ai-workspace/database.md
+    - Setting Up:
+        - Configuration & Interpolation: next/ai-workspace/setting-up/configuration.md
+        - Ports: next/ai-workspace/setting-up/ports.md
+        - Database: next/ai-workspace/setting-up/database.md
         - Authentication:
-            - Overview: next/ai-workspace/authentication/overview.md
-            - Connect an Identity Provider: next/ai-workspace/authentication/connect-an-identity-provider.md
-            - Set up Asgardeo: next/ai-workspace/authentication/asgardeo-setup.md
+            - Overview: next/ai-workspace/setting-up/authentication/overview.md
+            - Connect an Identity Provider: next/ai-workspace/setting-up/authentication/connect-an-identity-provider.md
+            - Set up Asgardeo: next/ai-workspace/setting-up/authentication/asgardeo-setup.md
     # Build the artifacts, in the order you create them.
     - AI Gateways:
         - Setting Up: next/ai-workspace/ai-gateways/setting-up.md
@@ -782,7 +782,7 @@ nav:
     # Credentials the artifacts above reference.
     - Secrets Management: next/ai-workspace/secrets-management.md
     # The other two ways artifacts get created.
-    - Bottom Up AI Artifact Synchronization: next/ai-workspace/bottom-up-ai-artifact-deployment-guide.md
+    - Sync Gateway-Created Artifacts: next/ai-workspace/sync-gateway-created-artifacts.md
     - CI/CD:
         - Overview: next/ai-workspace/ci-cd/overview.md
         - Configure CI/CD Workflow: next/ai-workspace/ci-cd/configure-ci-cd-workflow.md

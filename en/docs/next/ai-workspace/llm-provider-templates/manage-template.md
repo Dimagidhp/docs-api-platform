@@ -1,8 +1,8 @@
 ---
 title: "Manage an LLM provider template"
 description: "Use an LLM provider template to create a provider, and edit, enable/disable, or delete template versions in AI Workspace."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-provider-templates/manage-template/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-provider-templates/manage-template.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-provider-templates/manage-template/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-provider-templates/manage-template.md
 tags:
   - cloud
   - ai-workspace
@@ -12,7 +12,7 @@ last_updated: 2026-07-10
 content_type: "how-to"
 ---
 
-# Manage LLM provider template
+# Manage an LLM provider template
 
 This guide shows how to create an LLM provider from a template, and how to edit, enable, disable, and delete templates.
 
@@ -49,8 +49,8 @@ You can turn a **built-in** template version on or off from the template's **Ove
 ![Built-in template Overview tab showing the Enable/Disable action](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/enable-disable-template.png)
 
 - Only built-in templates can be enabled or disabled. To remove a custom template, delete it instead.
-- A version cannot be disabled while a provider is using it.
-- Disabled templates appear dimmed in the listing and cannot be used to create new providers.
+- A version can't be disabled while a provider is using it.
+- Disabled templates appear dimmed in the listing, and you can't create providers from them.
 
 ## Delete a template
 
@@ -63,11 +63,9 @@ To remove a **custom** template version:
 ![Delete confirmation dialog for a custom template version](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/delete-template.png)
 
 !!! warning "Deletion is blocked while in use"
-    You cannot delete a template version while a provider created from it still exists. The console shows the error `Cannot delete: one or more providers were created from this template.` Delete those providers first, then try again.
+    You can't delete a template version while a provider created from it still exists. The console shows the error `Cannot delete: one or more providers were created from this template.` Delete those providers first, then try again.
 
 Deleting the last remaining version removes the whole template.
-
----
 
 ## Next steps
 

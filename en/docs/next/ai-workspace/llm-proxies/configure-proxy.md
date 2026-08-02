@@ -1,8 +1,8 @@
 ---
 title: "Configure an App LLM proxy"
 description: "Create an App LLM proxy, optionally attach guardrails, and deploy it to a gateway."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-proxies/configure-proxy/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-proxies/configure-proxy.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-proxies/configure-proxy/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-proxies/configure-proxy.md
 tags:
   - cloud
   - ai-workspace
@@ -12,7 +12,7 @@ last_updated: 2026-06-22
 content_type: "how-to"
 ---
 
-# Configure App LLM proxy
+# Configure an App LLM proxy
 
 An App LLM proxy exposes a managed endpoint that your GenAI applications or agents use to reach an LLM provider. Once deployed, the proxy handles authentication and enforces any guardrails you configure.
 
@@ -31,11 +31,9 @@ This guide walks you through creating an App LLM proxy, optionally attaching gua
         - `ap:gateway:read` to choose the target gateway.
         - `ap:secret:create`, but only when the proxy carries its own upstream credential.
 
-        Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all of these. `ap_publisher` grants every one except `ap:secret:create`.
+        Of the roles the [role-to-scope mapping](../setting-up/authentication/overview.md) ships, `ap_admin` grants all of these. `ap_publisher` grants every one except `ap:secret:create`.
 
     - At least one [configured and deployed LLM provider](../llm-providers/configure-provider.md).
-
----
 
 ## Create a new App LLM proxy
 
@@ -57,11 +55,9 @@ This guide walks you through creating an App LLM proxy, optionally attaching gua
 
 4. Click **Create Proxy** to save the proxy.
 
----
-
 ## Add guardrails (optional)
 
-You can attach policies and guardrails to your proxy that apply to all requests:
+Attach policies and guardrails that apply to every request this proxy serves:
 
 1. In the **Guardrails** tab, click **+ Add Guardrail**.
 
@@ -72,12 +68,10 @@ You can attach policies and guardrails to your proxy that apply to all requests:
 4. Click **Submit** to attach it to the proxy.
 
 !!! tip "Advanced settings"
-    Each guardrail includes advanced configuration options that allow you to fine-tune its behavior. After selecting a guardrail, you can configure these settings before attaching it to the proxy.
+    Each guardrail includes advanced configuration options for fine-tuning its behavior. After selecting a guardrail, configure these settings before you attach it to the proxy.
 
 !!! info
     Learn more about available guardrails in the [Policies overview](../policies/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
-
----
 
 ## Deploy proxy to gateway
 
@@ -118,8 +112,6 @@ Click **Back to App LLM Proxy** to return to the proxy details page.
 !!! info "Deployment status"
     Monitor deployment progress on this page. Changes take effect within seconds of successful deployment.
 
----
-
 ## Get started
 
 Once the proxy is deployed, the proxy details page shows the **Get Started** panel on the right.
@@ -153,8 +145,6 @@ Generate an API key to authenticate requests to the deployed gateway.
 ### Deployed gateways
 
 The **Deployed Gateways** section lists all gateways this proxy is deployed to, along with the deployment status.
-
----
 
 ## Next steps
 

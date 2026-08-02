@@ -1,8 +1,8 @@
 ---
 title: "AI Workspace policies overview"
 description: "What AI and MCP policies you can attach to LLM providers and proxies in AI Workspace, where each one is applied, and how the rate limit policies cap requests, tokens, and spend."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/overview/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/policies/overview.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/policies/overview/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/policies/overview.md
 tags:
   - cloud
   - ai-workspace
@@ -144,7 +144,7 @@ Caps request count like the basic policy, with more control over how requests ar
 
 **Behavior**
 
-- Chooses between the generic cell rate algorithm (GCRA), for smooth limiting, and fixed window, for a simple counter.
+- Chooses between the generic cell rate algorithm (GCRA), for smooth limiting, and fixed window, for a plain counter.
 - Supports several quotas at once, each with its own key extraction and cost extraction.
 - Weights requests, so one request can consume more than one unit of quota.
 - Stores counters in memory, in Redis, or in Redis with a local async cache. If Redis is unreachable, it fails open and lets requests through.
@@ -263,7 +263,7 @@ These two limits apply at once. Both must be satisfied for a request to proceed,
 
 ## MCP policies
 
-These policies attach to Model Context Protocol (MCP) proxies. To attach them in the workspace, see [Apply policies for MCP proxy](../mcp-proxies/apply-policies.md).
+These policies attach to Model Context Protocol (MCP) proxies. To attach them in the workspace, see [Apply policies to an MCP proxy](../mcp-proxies/apply-policies.md).
 
 | Policy | What it does |
 |--------|--------------|
@@ -283,8 +283,8 @@ Beyond the built-in policies, you can write your own AI policy and deploy it to 
 
 To build and roll one out end to end:
 
-1. [Writing an AI policy](writing-an-ai-policy.md) — implement the policy using the gateway SDK
-2. [Building the gateway with AI policies](build-gateway-with-ai-policies.md) — package the policy into a custom AI Gateway image
+1. [Write an AI policy](writing-an-ai-policy.md) — implement the policy using the gateway SDK
+2. [Build the gateway with AI policies](build-gateway-with-ai-policies.md) — package the policy into a custom AI Gateway image
 3. [Apply AI policies to proxies](apply-ai-policies-to-proxies.md) — sync the policy to the organization and attach it to a provider or proxy
 
 ## Policy Hub

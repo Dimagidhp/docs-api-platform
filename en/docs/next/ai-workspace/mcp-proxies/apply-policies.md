@@ -1,8 +1,8 @@
 ---
 title: "Apply policies to an MCP proxy"
 description: "Apply access control, authorization, and rewrite policies to MCP proxies using the Policy Hub."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/mcp-proxies/apply-policies/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/mcp-proxies/apply-policies.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/mcp-proxies/apply-policies/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/mcp-proxies/apply-policies.md
 tags:
   - cloud
   - ai-workspace
@@ -13,7 +13,7 @@ last_updated: 2026-06-22
 content_type: "how-to"
 ---
 
-# Apply policies for an MCP proxy
+# Apply policies to an MCP proxy
 
 Once you create an MCP proxy, open it from **MCP** > **MCP Proxies** and go to its **Policies** tab to apply policies.
 
@@ -35,10 +35,10 @@ These policies enforce security for MCP proxies.
 |-----------|-------------|
 | [MCP rewrite](https://wso2.com/api-platform/policy-hub/policies/mcp-rewrite) | Rewrites the MCP capabilities returned through the proxy. When applied, the proxy returns only the modified capabilities. |
 
-You can apply the other standard policies to MCP proxies too. Some of them aren't compatible with MCP, so behavior varies by policy.
+You can apply the other standard policies to MCP proxies too. Not every policy supports MCP traffic. Check the policy's entry in the [Policy Hub](https://wso2.com/api-platform/policy-hub/) for its supported proxy types and behavior before you attach it.
 
 ## Policy Hub
 
 The policies in AI Workspace are powered by the [Policy Hub](https://wso2.com/api-platform/policy-hub/), a central registry of the available policies and their versions.
 
-Visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/) to explore all available guardrails, their documentation, and configuration schemas.
+Visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/) to explore all available policies, their documentation, and configuration schemas.

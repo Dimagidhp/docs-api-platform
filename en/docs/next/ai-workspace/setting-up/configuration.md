@@ -1,8 +1,8 @@
 ---
-title: "AI Workspace Configuration and Environment Interpolation"
+title: "AI Workspace configuration and environment interpolation"
 description: "How AI Workspace and the Platform API load their config.toml files, inject environment values and mounted files through interpolation tokens, and keep sensitive values out of the config file."
-canonical_url: https://wso2.com/api-platform/docs/ai-workspace/configuration/
-md_url: https://wso2.com/api-platform/docs/ai-workspace/configuration.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/configuration/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/configuration.md
 tags:
   - ai-workspace
   - configuration
@@ -12,11 +12,11 @@ last_updated: 2026-07-24
 content_type: "reference"
 ---
 
-# AI Workspace Configuration and Environment Interpolation
+# AI Workspace configuration and environment interpolation
 
 The AI Workspace stack has two services: the AI Workspace Backend-for-Frontend (BFF) and the Platform API it proxies to. Each reads its configuration from a TOML file (`config.toml`) layered over built-in defaults.
 
-This page explains how each service loads its config file. It also covers how environment values and mounted files are injected through interpolation tokens, and how to keep sensitive values out of the file. For provisioning the keys, certificates, and credentials those tokens resolve to, see [Get started with AI Workspace](./getting-started.md).
+This page explains how each service loads its config file. It also covers how environment values and mounted files are injected through interpolation tokens, and how to keep sensitive values out of the file. For provisioning the keys, certificates, and credentials those tokens resolve to, see [Get started with AI Workspace](../getting-started.md).
 
 ## How configuration is loaded
 
@@ -27,7 +27,7 @@ Each service reads a TOML file mounted into its container, layered over that ser
 
 The per-service namespacing (`[ai_workspace]`, `[platform_api]`, `[api_portal]`) lets one `config.toml` hold multiple services' sections side by side without their keys colliding — each service reads only its own table.
 
-!!! important "Environment variables do not override config keys directly"
+!!! important "Environment variables don't override config keys directly"
     There is **no prefix that auto-maps environment variables onto config keys.** An environment value reaches a setting **only** through an explicit interpolation token written into the config file, resolved when the file is loaded. A key written as a plain literal — or absent from the file — ignores the matching variable entirely.
 
 ## Interpolation tokens
@@ -66,7 +66,7 @@ For every configurable option and the tokens the shipped files carry, refer to t
 
 ## Sensitive values in `config.toml`
 
-This section covers credentials the services need to start — database passwords, the OpenID Connect (OIDC) client secret, and the at-rest encryption key. It's a separate mechanism from the [AI Workspace secrets](./secrets-management.md) feature, which stores encrypted credentials you reference from artifacts.
+This section covers credentials the services need to start — database passwords, the OpenID Connect (OIDC) client secret, and the at-rest encryption key. It's a separate mechanism from the [AI Workspace secrets](../secrets-management.md) feature, which stores encrypted credentials you reference from artifacts.
 
 Never write a sensitive value as a literal in `config.toml`, and never hardcode one in `docker-compose.yaml`. Reference each with an interpolation token — from an environment variable or, preferably, from a mounted file:
 
@@ -88,18 +88,18 @@ client_secret = '{{ env "APIP_AIW_AUTH_OIDC_CLIENT_SECRET" }}'
 Neither `encryption_key` nor `client_secret` carries a default, so each is a required secret. Both forms fail closed: if the variable is unset or empty, or the file is missing or outside the allowed source directories, the service refuses to start. A {% raw %}`{{ file }}`{% endraw %} path must live under an allowed directory — `/etc/ai-workspace` or `/secrets/ai-workspace` for the BFF, `/etc/platform-api` or `/secrets/platform-api` for the Platform API. Override the list with the shared `APIP_CONFIG_FILE_SOURCE_ALLOWLIST` (comma-separated; it **replaces** the defaults rather than extending them).
 
 !!! important "Two unrelated mechanisms"
-    The {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens on this page are resolved by the service's config loader at startup, and only inside `config.toml`. The {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder of [Secrets Management](./secrets-management.md) is resolved by the gateway at request time, and only inside artifact configurations. Neither works in the other's place.
+    The {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens on this page are resolved by the service's config loader at startup, and only inside `config.toml`. The {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder of [Secrets management](../secrets-management.md) is resolved by the gateway at request time, and only inside artifact configurations. Neither works in the other's place.
 
 ## Where the values come from
 
 Provisioning the keys, certificates, and credentials the tokens resolve to is part of setting the stack up, not part of how the config loader works. For those steps, see:
 
-- [Run the setup script](./getting-started.md#step-2-run-the-setup-script) — what a fresh stack is given, and where each artifact lands.
-- [Rerun the setup script](./getting-started.md#rerun-the-setup-script) — the flags, and which of them rotate what.
-- [Provision the at-rest encryption key manually](./getting-started.md#provision-the-at-rest-encryption-key-manually) — the path for a deployment that doesn't use the script.
-- [Change environment values after setup](./getting-started.md#change-environment-values-after-setup) — editing `api-platform.env`, the file Compose loads into the containers.
+- [Run the setup script](../getting-started.md#step-2-run-the-setup-script) — what a fresh stack is given, and where each artifact lands.
+- [Rerun the setup script](../getting-started.md#rerun-the-setup-script) — the flags, and which of them rotate what.
+- [Provision the at-rest encryption key manually](../getting-started.md#provision-the-at-rest-encryption-key-manually) — the path for a deployment that doesn't use the script.
+- [Change environment values after setup](../getting-started.md#change-environment-values-after-setup) — editing `api-platform.env`, the file Compose loads into the containers.
 
 ## Related
 
-- [Get started with AI Workspace](./getting-started.md): provision the keys, certificates, and credentials the tokens resolve to
-- [Change the ports AI Workspace uses](./ports.md): move the stack off its default ports
+- [Get started with AI Workspace](../getting-started.md): provision the keys, certificates, and credentials the tokens resolve to
+- [Change the ports AI Workspace uses](ports.md): move the stack off its default ports

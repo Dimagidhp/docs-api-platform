@@ -1,8 +1,8 @@
 ---
 title: "Insights"
 description: "Open your Moesif analytics workspace from the AI Workspace to view traffic, token usage, latency, and consumer behavior for your AI Gateways."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/insights/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/insights.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/insights/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/insights.md
 tags:
   - cloud
   - ai-workspace
@@ -20,13 +20,13 @@ AI Workspace doesn't embed or proxy Moesif content. The Insights page provides a
 
 ## How it works
 
-1. **Configure your AI Gateway** with a Moesif Application ID (see [Enabling Moesif on a Gateway](#enabling-moesif-on-a-gateway)). The gateway runtime publishes telemetry — requests, tokens, latency, and guardrail events — directly to Moesif.
+1. **Configure your AI Gateway** with a Moesif application ID (see [Enable Moesif on a gateway](#enable-moesif-on-a-gateway)). The gateway runtime publishes telemetry — requests, tokens, latency, and guardrail events — directly to Moesif.
 2. **Open Insights** in the AI Workspace left navigation menu, then click the button to open your Moesif workspace in a new tab.
 3. **View analytics** in Moesif. All data resides in Moesif, not in the AI Workspace.
 
-## Enabling Moesif on a gateway
+## Enable Moesif on a gateway
 
-Analytics are published to Moesif only when your gateway runtime is configured with a Moesif Application ID. Set the `MOESIF_KEY` environment variable on the gateway runtime.
+Analytics are published to Moesif only when your gateway runtime is configured with a Moesif application ID. Set the `MOESIF_KEY` environment variable on the gateway runtime.
 
 When you set up the gateway, add the key to `api-platform.env`, the environment file the gateway loads. `./scripts/setup.sh` generates that file, or `.\scripts\setup.ps1` on Windows:
 
@@ -36,7 +36,7 @@ MOESIF_KEY=<your-moesif-key>
 
 Once the key is set and the gateway is running, the gateway publishes events to Moesif automatically. No changes to the AI Workspace are required.
 
-For the full gateway setup procedure, see [Setting up an AI Gateway](ai-gateways/setting-up.md).
+For the full gateway setup procedure, see [Set up an AI Gateway](ai-gateways/setting-up.md).
 
 !!! note
     If `MOESIF_KEY` isn't configured, the gateway doesn't publish telemetry, and your Moesif workspace shows no data.
@@ -53,7 +53,7 @@ With the gateway Moesif integration active, your Moesif workspace shows:
 
 Filtering, segmentation, and dashboarding are done entirely within Moesif.
 
-## Using Insights for cost and rate limit management
+## Use Insights for cost and rate limit management
 
 Use Moesif analytics to tune your [token-based rate limits](policies/overview.md#token-based-rate-limit):
 
@@ -61,7 +61,7 @@ Use Moesif analytics to tune your [token-based rate limits](policies/overview.md
 2. Check per-consumer traffic to determine appropriate per-consumer limits.
 3. Monitor error rates to detect rate limit violations (`429 Too Many Requests` responses) and adjust limits accordingly.
 
-## Using Insights for guardrail monitoring
+## Use Insights for guardrail monitoring
 
 When guardrails are active, you can use Moesif analytics to:
 
@@ -73,7 +73,7 @@ See [Policies overview](policies/overview.md) for more on configuring guardrails
 
 ## Related resources
 
-- [Setting up an AI Gateway](ai-gateways/setting-up.md) — Configure `MOESIF_KEY` on the gateway runtime
-- [Token-based rate limiting](policies/overview.md#token-based-rate-limit) — Set token limits and use analytics to monitor usage
-- [Policies overview](policies/overview.md) — Monitor guardrail interventions through analytics
-- [Integrate API Platform with Moesif](../../cloud/monitoring-and-insights/integrate-bijira-with-moesif.md) — Advanced Moesif integration options for the broader API Platform
+- [Set up an AI Gateway](ai-gateways/setting-up.md) — configure `MOESIF_KEY` on the gateway runtime
+- [Token-based rate limiting](policies/overview.md#token-based-rate-limit) — set token limits and use analytics to monitor usage
+- [Policies overview](policies/overview.md) — monitor guardrail interventions through analytics
+- [Integrate API Platform with Moesif](../../cloud/monitoring-and-insights/integrate-bijira-with-moesif.md) — advanced Moesif integration options for the broader API Platform

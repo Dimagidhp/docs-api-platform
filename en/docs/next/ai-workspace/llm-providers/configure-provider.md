@@ -1,8 +1,8 @@
 ---
 title: "Configure an LLM provider"
 description: "Add an LLM provider in AI Workspace, configure authentication and guardrails, and deploy it to an AI Gateway."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-providers/configure-provider/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-providers/configure-provider.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-providers/configure-provider/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-providers/configure-provider.md
 tags:
   - cloud
   - ai-workspace
@@ -12,9 +12,9 @@ last_updated: 2026-07-23
 content_type: "how-to"
 ---
 
-# Configure LLM provider
+# Configure an LLM provider
 
-LLM providers allow you to connect AI service platforms like OpenAI, Anthropic, and others to the AI Workspace. Once configured, providers can be deployed and used directly through the managed gateway.
+An LLM provider connects an AI service platform such as OpenAI or Anthropic to AI Workspace. Once you configure a provider, deploy it and call it directly through the managed gateway.
 
 !!! note
     App LLM proxies are optional. Use one when you want app-specific or agent-specific guardrails, authentication, or resource exposure on top of the same provider.
@@ -28,7 +28,7 @@ LLM providers allow you to connect AI service platforms like OpenAI, Anthropic, 
     - `ap:gateway:read` to choose the target gateway.
     - `ap:secret:create` because AI Workspace stores the upstream API key as an encrypted [secret](../secrets-management.md) on your behalf.
 
-    Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` grants all four.
+    Of the roles the [role-to-scope mapping](../setting-up/authentication/overview.md) ships, `ap_admin` grants all four.
 
 - At least one [AI Gateway created and set up](../ai-gateways/setting-up.md).
 - API credentials for your LLM provider, such as an API key or an access token.
@@ -103,14 +103,14 @@ The authentication fields vary depending on the provider you selected:
         Bedrock's endpoint isn't pre-configured, because the runtime host is region-specific. Use the region your API key and model access live in — a key issued in one region doesn't work against another region's endpoint.
 
 !!! info "How the API key is stored"
-    AI Workspace stores the upstream API key as an encrypted secret and keeps only a {% raw %}`{{ secret "handle" }}`{% endraw %} reference in the provider configuration. The plaintext key never lands in the provider configuration or in an API response. See [Secrets Management](../secrets-management.md).
+    AI Workspace stores the upstream API key as an encrypted secret and keeps only a {% raw %}`{{ secret "handle" }}`{% endraw %} reference in the provider configuration. The plaintext key never lands in the provider configuration or in an API response. See [Secrets management](../secrets-management.md).
 
 !!! note "Custom provider templates"
-    If you're adding a provider from a custom [LLM provider template](overview.md#connecting-a-custom-provider) (**Settings > LLM Provider Templates**), the **Authentication Type** can also be set to **other** (no credentials stored — use a policy to handle upstream auth) or **none** (no upstream authentication sent), in addition to **api-key**.
+    If you're adding a provider from a custom [LLM provider template](overview.md#connect-a-custom-provider) (**Settings > LLM Provider Templates**), the **Authentication Type** can also be set to **other** (no credentials stored — use a policy to handle upstream auth) or **none** (no upstream authentication sent), in addition to **api-key**.
 
 ### Add guardrails (optional)
 
-You can attach policies and guardrails to your provider that apply to all requests:
+Attach policies and guardrails that apply to every request this provider serves:
 
 1. In the **Guardrails** section of the form, click **+ Add Guardrail**.
 
@@ -121,7 +121,7 @@ You can attach policies and guardrails to your provider that apply to all reques
 4. Click **Add** to attach it to the provider.
 
 !!! tip "Advanced settings"
-    Each guardrail includes advanced configuration options that allow you to fine-tune its behavior. After selecting a guardrail, you can configure these settings before attaching it to the provider.
+    Each guardrail includes advanced configuration options for fine-tuning its behavior. After selecting a guardrail, configure these settings before you attach it to the provider.
 
 !!! info
     Learn more about available guardrails in the [Policies overview](../policies/overview.md). For the full list of policies and their specifications, visit the [Policy Hub](https://wso2.com/api-platform/policy-hub/).
@@ -168,8 +168,6 @@ Generate an API key to authenticate requests to the deployed gateway.
 ### Deployed gateways
 
 The **Deployed Gateways** section lists all gateways this provider is deployed to, along with the host address and deployment status.
-
----
 
 ## Next steps
 

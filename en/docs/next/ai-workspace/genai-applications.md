@@ -1,8 +1,8 @@
 ---
 title: "GenAI applications"
 description: "Group API keys under a named GenAI application for application-level usage visibility, analytics, and governance."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/genai-applications/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/genai-applications.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/genai-applications/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/genai-applications.md
 tags:
   - cloud
   - ai-workspace
@@ -77,7 +77,7 @@ After creating the application, attach the API keys that the application already
 4. Select one or more API keys generated for your LLM providers or App LLM proxies.
 5. Save the mapping.
 
-Only existing keys are mapped. This workflow does not create new keys. It links previously generated keys to the application so usage can be attributed correctly.
+Only existing keys are mapped. This workflow doesn't create new keys. It links previously generated keys to the application so usage can be attributed correctly.
 
 ## View and manage attached keys
 
@@ -93,7 +93,7 @@ For each mapped key, you can view details such as:
 
 You can remove mappings for keys that should no longer be associated with the application.
 
-Removing a mapping only detaches the key from that GenAI application. It does not delete the underlying key unless you remove it from the provider or proxy separately.
+Removing a mapping only detaches the key from that GenAI application. It doesn't delete the underlying key unless you remove it from the provider or proxy separately.
 
 ## Insights for GenAI applications
 

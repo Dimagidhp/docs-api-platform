@@ -1,8 +1,8 @@
 ---
 title: "Configure an LLM provider template"
 description: "Create a custom LLM provider template in AI Workspace, configure its connection and token mappings, version it, and deploy it to a gateway."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-provider-templates/configure-template/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/llm-provider-templates/configure-template.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-provider-templates/configure-template/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/llm-provider-templates/configure-template.md
 tags:
   - cloud
   - ai-workspace
@@ -18,7 +18,7 @@ When the built-in templates don't cover the upstream LLM service you want to use
 
 ## Prerequisites
 
-- A user whose token carries `ap:llm_template:manage`, the scope for creating, editing, and deleting templates. Of the roles the [role-to-scope mapping](../authentication/overview.md) ships, `ap_admin` and `ap_operator` grant it; `ap_publisher` and `ap_viewer` hold `ap:llm_template:read`, which only lists templates.
+- A user whose token carries `ap:llm_template:manage`, the scope for creating, editing, and deleting templates. Of the roles the [role-to-scope mapping](../setting-up/authentication/overview.md) ships, `ap_admin` and `ap_operator` grant it; `ap_publisher` and `ap_viewer` hold `ap:llm_template:read`, which only lists templates.
 - At least one [AI Gateway created and set up](../ai-gateways/setting-up.md)
 - The endpoint URL and OpenAPI specification of the upstream service
 
@@ -57,18 +57,18 @@ Configure how the gateway connects to the upstream service:
 
 ![Connection tab showing endpoint URL, OpenAPI specification, and authentication settings](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/template-connection.png)
 
-### Token Mapping
+### Token mapping
 
 Define where token usage and model information are read from in requests and responses:
 
 - **Default (Global) mappings**: prompt, completion, total, and remaining tokens, plus the request and response model.
 - **Per-resource overrides**: different mappings for individual API resources.
 
-![Token Mapping tab showing default mappings and per-resource overrides](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/template-token-mapping.png)
+![Token mapping tab showing default mappings and per-resource overrides](../../../assets/img/ai-gateway/standalone-ai-workspace/llm-provider-template/template-token-mapping.png)
 
 ## Versioning
 
-Built-in template versions are read-only. Custom template versions can be changed at any time: edit a version in place, or create a new version to introduce a different configuration while keeping the existing version available. Either way, providers already created from a version are not affected — a provider copies the template configuration at creation time.
+Built-in template versions are read-only. Custom template versions can be changed at any time: edit a version in place, or create a new version to introduce a different configuration while keeping the existing version available. Either way, providers already created from a version aren't affected — a provider copies the template configuration at creation time.
 
 **To create a new version:**
 
@@ -94,8 +94,6 @@ Built-in templates are already available on the gateway, but a custom template h
 
 !!! info
     You can apply the template manifest through the gateway's management API. See the [LLM provider template Management API reference](../../../api-gateway/next/gateway-controller-management-api/llm-provider-template-management.md) for details.
-
----
 
 ## Next steps
 

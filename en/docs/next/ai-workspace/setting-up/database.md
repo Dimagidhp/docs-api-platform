@@ -1,8 +1,8 @@
 ---
 title: "Connect a database to the Platform API"
 description: "Move the Platform API off its default SQLite file onto PostgreSQL or SQL Server: create the database, configure the connection, secure it with TLS, and tune the connection pool."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/database/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/database.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/database/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/database.md
 tags:
   - cloud
   - ai-workspace

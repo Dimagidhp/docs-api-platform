@@ -1,8 +1,8 @@
 ---
 title: "Authentication in AI Workspace"
 description: "Understand the two ways users sign in to AI Workspace: file-based authentication for local use and an identity provider for production."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/authentication/overview/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/authentication/overview.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/authentication/overview/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/setting-up/authentication/overview.md
 tags:
   - cloud
   - ai-workspace
@@ -23,11 +23,11 @@ AI Workspace and the Platform API read their settings from a single `config.toml
 
 ## File-based authentication
 
-File-based authentication stores a list of users directly in the Platform API's configuration table. It requires no external identity provider, which makes it the default when you [get started with AI Workspace](../getting-started.md) using Docker Compose.
+File-based authentication stores a list of users directly in the Platform API's configuration table. It requires no external identity provider, which makes it the default when you [get started with AI Workspace](../../getting-started.md) using Docker Compose.
 
 When `[ai_workspace.auth] mode = "basic"`, the AI Workspace login page renders a username and password form. The Platform API validates the credentials against a hashed user list defined in `[platform_api.auth.file.users]`:
 
-![AI Workspace file-based login window with Username and Password fields](../../../assets/img/ai-gateway/standalone-ai-workspace/authentication/filebased-login.png)
+![AI Workspace file-based login window with Username and Password fields](../../../../assets/img/ai-gateway/standalone-ai-workspace/authentication/filebased-login.png)
 
 ```toml
 [platform_api.auth]
@@ -85,7 +85,7 @@ The mapping file ships with these roles:
 
 Edit that file to change what a role grants, or to add your own.
 
-The `setup.sh` script bundled with the Docker Compose distribution provisions the Platform API's admin credentials. It prompts for the username and password, generates the password if you accept the default, and prints that password to the terminal once. See [Getting Started](../getting-started.md).
+The `setup.sh` script bundled with the Docker Compose distribution provisions the Platform API's admin credentials. It prompts for the username and password, generates the password if you accept the default, and prints that password to the terminal once. See [Getting Started](../../getting-started.md).
 
 File-based authentication has two limitations:
 
