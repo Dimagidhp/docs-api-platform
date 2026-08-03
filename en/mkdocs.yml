@@ -683,6 +683,7 @@ nav:
   # /next/ (or <component>/next/) URL — see extra.version_scoped_navs.
   - API Portal & MCP Hub:
     - Overview: next/api-portal/overview.md
+    - About this Release: next/api-portal/about-this-release.md
     - Getting Started: next/api-portal/getting-started.md
     - Concepts: next/api-portal/concepts.md
     - Discover APIs:
@@ -710,6 +711,7 @@ nav:
         - Authentication:
           - Overview: next/api-portal/setting-up/authentication/overview.md
           - Set up Asgardeo: next/api-portal/setting-up/authentication/asgardeo-setup.md
+        - Set up the Database: next/api-portal/setting-up/database.md
         - Artifact types: next/api-portal/artifact-types.md
         - Design Mode: next/api-portal/setting-up/design-mode.md
     - Admin Settings:
