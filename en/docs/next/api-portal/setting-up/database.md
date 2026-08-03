@@ -1,6 +1,6 @@
 ---
 title: "Set up the database"
-description: "Configure the API Portal & MCP Hub to run on SQLite, PostgreSQL, or Microsoft SQL Server, including connection settings, schema, and TLS."
+description: "Configure the API Portal & MCP Hub to run on SQLite, PostgreSQL, or Microsoft SQL Server: connection settings, schema, and Transport Layer Security (TLS)."
 canonical_url: https://wso2.com/api-platform/docs/cloud/api-portal/setting-up/database/
 md_url: https://wso2.com/api-platform/docs/cloud/api-portal/setting-up/database.md
 tags:
@@ -23,12 +23,12 @@ The API Portal & MCP Hub stores its organization, catalog, application, subscrip
 |---|---|---|
 | SQLite | `sqlite` | Single-node deployments, evaluation, and development |
 | PostgreSQL | `postgres` | Production and high-availability deployments |
-| Microsoft SQL Server | `mssql` | Production deployments standardized on SQL Server |
+| Microsoft SQL Server | `mssql` | Production deployments standardized on Microsoft SQL Server |
 
 You select the driver and its connection settings in the `[api_portal.database]` section of `config.toml`. For the full field reference, see [Configurations](../references/configurations.md).
 
 !!! note "Where the schema comes from"
-    SQLite applies its schema automatically at startup, so no manual step is needed. PostgreSQL and SQL Server require you to apply the schema before the portal connects—see [Apply the schema for PostgreSQL or SQL Server](#apply-the-schema-for-postgresql-or-sql-server).
+    SQLite applies its schema automatically at startup, so no manual step is needed. PostgreSQL and Microsoft SQL Server require you to apply the schema before the portal connects—see [Apply the schema for PostgreSQL or Microsoft SQL Server](#apply-the-schema-for-postgresql-or-microsoft-sql-server).
 
 ## Choose a driver
 
@@ -45,8 +45,8 @@ path = "./api-portal.db"
 host = "localhost"
 port = 5432                   # 1433 for MSSQL
 name = "api_portal"
-user = "postgres"
-password = ""
+user = "<db_user>"
+password = '{{ env "APIP_AP_DATABASE_PASSWORD" }}'
 ```
 
 Each field can also be supplied through an environment variable, which is useful for containerized deployments. The `config.toml` shipped with the portal reads these tokens:
@@ -62,6 +62,9 @@ Each field can also be supplied through an environment variable, which is useful
 | `password` | `APIP_AP_DATABASE_PASSWORD` |
 
 An environment variable takes effect only where `config.toml` references it with an `{{ env "..." }}` token. There's no automatic environment-variable override for arbitrary fields, so keep the tokens in place if you rely on them.
+
+!!! warning "Keep credentials out of source control"
+    Supply the database password through an environment variable or a secrets file, using an `{{ env "..." }}` or `{{ file "..." }}` token in `config.toml`. Don't write a plaintext password into `config.toml`, and don't commit credentials to version control.
 
 ## SQLite
 
@@ -83,9 +86,9 @@ SQLite is the default driver and needs no external database server.
 
 ## PostgreSQL
 
-1. Provision a PostgreSQL database and a user with privileges on it.
-2. Apply the PostgreSQL schema (see [Apply the schema for PostgreSQL or SQL Server](#apply-the-schema-for-postgresql-or-sql-server)).
-3. Point the portal at the database:
+1. Provision a PostgreSQL database. Create a dedicated application account for the portal, and reserve an administrative account (such as `postgres`) for applying the schema.
+2. Apply the PostgreSQL schema (see [Apply the schema for PostgreSQL or Microsoft SQL Server](#apply-the-schema-for-postgresql-or-microsoft-sql-server)).
+3. Point the portal at the database with the dedicated application account:
 
     ```toml
     [api_portal.database]
@@ -93,17 +96,17 @@ SQLite is the default driver and needs no external database server.
     host = "localhost"
     port = 5432
     name = "api_portal"
-    user = "postgres"
-    password = "<your_password>"
+    user = "<api_portal_db_user>"
+    password = '{{ env "APIP_AP_DATABASE_PASSWORD" }}'
     ```
 
-4. Configure the [connection pool](#connection-pool) and [TLS](#tls-for-postgresql-and-sql-server) as needed, then start the portal.
+4. Configure the [connection pool](#connection-pool) and [TLS](#tls-for-postgresql-and-microsoft-sql-server) as needed, then start the portal.
 
 ## Microsoft SQL Server
 
-1. Provision a SQL Server database and a login with privileges on it.
-2. Apply the SQL Server schema (see [Apply the schema for PostgreSQL or SQL Server](#apply-the-schema-for-postgresql-or-sql-server)).
-3. Point the portal at the database. SQL Server listens on port `1433` by default:
+1. Provision a Microsoft SQL Server database. Create a dedicated application login for the portal, and reserve an administrative login (such as `sa`) for applying the schema.
+2. Apply the Microsoft SQL Server schema (see [Apply the schema for PostgreSQL or Microsoft SQL Server](#apply-the-schema-for-postgresql-or-microsoft-sql-server)).
+3. Point the portal at the database with the dedicated application login. Microsoft SQL Server listens on port `1433` by default:
 
     ```toml
     [api_portal.database]
@@ -111,28 +114,37 @@ SQLite is the default driver and needs no external database server.
     host = "localhost"
     port = 1433
     name = "api_portal"
-    user = "sa"
-    password = "<your_password>"
+    user = "<api_portal_db_user>"
+    password = '{{ env "APIP_AP_DATABASE_PASSWORD" }}'
     ```
 
-4. Configure the [connection pool](#connection-pool) and [TLS](#tls-for-postgresql-and-sql-server) as needed, then start the portal.
+4. Configure the [connection pool](#connection-pool) and [TLS](#tls-for-postgresql-and-microsoft-sql-server) as needed, then start the portal.
 
-## Apply the schema for PostgreSQL or SQL Server
+## Apply the schema for PostgreSQL or Microsoft SQL Server
 
-Unlike SQLite, the portal doesn't create tables for PostgreSQL or SQL Server. Apply the matching schema script against an empty database before the portal connects, as a provisioning or CI step. The scripts ship with the distribution under `resources/api-portal/db-scripts/`:
+Unlike SQLite, the portal doesn't create tables for PostgreSQL or Microsoft SQL Server. Apply the matching schema script against an empty database before the portal connects, as a provisioning or continuous integration (CI) step. The scripts ship with the distribution under `resources/api-portal/db-scripts/`:
 
 | Driver | Schema script |
 |---|---|
 | PostgreSQL | `schema.postgres.sql` |
-| SQL Server | `schema.sqlserver.sql` |
+| Microsoft SQL Server | `schema.sqlserver.sql` |
 
-For example, apply the PostgreSQL schema with `psql`:
+To apply the schema, follow these steps from the distribution root:
 
-```bash
-psql -h localhost -U postgres -d api_portal -f schema.postgres.sql
-```
+1. Connect to the target database with an administrative account.
+2. Run the schema script for your driver:
 
-For SQL Server, apply `schema.sqlserver.sql` with `sqlcmd` or another SQL Server client.
+    - For PostgreSQL, use `psql`:
+
+        ```bash
+        psql -h localhost -U <admin_user> -d api_portal -f resources/api-portal/db-scripts/schema.postgres.sql
+        ```
+
+    - For Microsoft SQL Server, use `sqlcmd`:
+
+        ```bash
+        sqlcmd -S localhost,1433 -U <admin_user> -d api_portal -i resources/api-portal/db-scripts/schema.sqlserver.sql
+        ```
 
 ## Connection pool
 
@@ -148,21 +160,27 @@ pool_request_timeout_ms = 30000         # MSSQL only — per-query execution tim
 ```
 
 !!! warning "Pool settings are validated at startup"
-    For the `postgres` and `mssql` drivers, `max_open_conns` must be an integer of at least 1, the remaining pool settings must be non-negative integers, and `min_open_conns` must not exceed `max_open_conns`. An invalid value stops startup with a `[FATAL]` message rather than reaching the connection pool.
+    The following constraints apply to the `postgres` and `mssql` drivers:
+
+    - `max_open_conns` must be an integer of at least 1.
+    - The remaining pool settings must be non-negative integers.
+    - `min_open_conns` must not exceed `max_open_conns`.
+
+    An invalid value stops startup with a `[FATAL]` message rather than reaching the connection pool.
 
 SQLite ignores these settings.
 
-## TLS for PostgreSQL and SQL Server
+## TLS for PostgreSQL and Microsoft SQL Server
 
-To encrypt the database connection, set `ssl_mode`. The default is `disable`:
+To encrypt the database connection with Transport Layer Security (TLS), set `ssl_mode`. The default is `disable`:
 
 ```toml
 [api_portal.database]
 ssl_mode = "verify-full"                        # disable | verify-full
-ssl_root_cert = "./resources/security/ca.pem"   # CA certificate, used by verify-full
+ssl_root_cert = "./resources/security/ca.pem"   # certificate authority (CA) certificate, used by verify-full
 ```
 
-With `verify-full`, the portal verifies the server certificate against the CA certificate at `ssl_root_cert`. Provide a CA certificate the database server's certificate chains to.
+With `verify-full`, the portal verifies the server certificate against the certificate authority (CA) certificate at `ssl_root_cert`. Provide a CA certificate the database server's certificate chains to.
 
 ## Next steps
 
