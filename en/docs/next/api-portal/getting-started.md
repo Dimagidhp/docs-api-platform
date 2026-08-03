@@ -34,8 +34,14 @@ unzip wso2apip-api-portal-1.0.0-rc.zip
 
 ## Step 2: Run the setup script
 
+Navigate to the API Portal directory:
+
 ```bash
 cd wso2apip-api-portal-1.0.0
+```
+Run this command to set up the API Portal:
+
+```bash
 ./scripts/setup.sh
 ```
 
