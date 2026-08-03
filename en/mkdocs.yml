@@ -759,8 +759,16 @@ nav:
   - AI Workspace:
     - Overview: next/ai-workspace/overview.md
     - Getting Started: next/ai-workspace/getting-started.md
-    - Configuration: next/ai-workspace/configuration.md
-    - Bottom Up AI Artifact Synchronization: next/ai-workspace/bottom-up-ai-artifact-deployment-guide.md
+    # Set up the workspace itself.
+    - Setting Up:
+        - Configuration & Interpolation: next/ai-workspace/setting-up/configuration.md
+        - Ports: next/ai-workspace/setting-up/ports.md
+        - Database: next/ai-workspace/setting-up/database.md
+        - Authentication:
+            - Overview: next/ai-workspace/setting-up/authentication/overview.md
+            - Connect an Identity Provider: next/ai-workspace/setting-up/authentication/connect-an-identity-provider.md
+            - Set up Asgardeo: next/ai-workspace/setting-up/authentication/asgardeo-setup.md
+    # Build the artifacts, in the order you create them.
     - AI Gateways:
         - Setting Up: next/ai-workspace/ai-gateways/setting-up.md
     - LLM Providers:
@@ -769,8 +777,8 @@ nav:
         - Manage Provider: next/ai-workspace/llm-providers/manage-provider.md
     - LLM Provider Templates:
         - Overview: next/ai-workspace/llm-provider-templates/overview.md
-        - Configure Template: next/ai-workspace/llm-provider-templates/configure-template.md
-        - Manage Template: next/ai-workspace/llm-provider-templates/manage-template.md
+        - Create a Custom Template: next/ai-workspace/llm-provider-templates/configure-template.md
+        - Manage Templates: next/ai-workspace/llm-provider-templates/manage-template.md
     - App LLM Proxies:
         - Overview: next/ai-workspace/llm-proxies/overview.md
         - Configure App LLM Proxy: next/ai-workspace/llm-proxies/configure-proxy.md
@@ -779,38 +787,25 @@ nav:
         - Overview: next/ai-workspace/mcp-proxies/overview.md
         - Configure Proxy: next/ai-workspace/mcp-proxies/configure-proxy.md
         - Apply Policies: next/ai-workspace/mcp-proxies/apply-policies.md
+    # Credentials the artifacts above reference.
+    - Secrets Management: next/ai-workspace/secrets-management.md
+    # The other two ways artifacts get created.
+    - Sync Gateway-Created Artifacts: next/ai-workspace/sync-gateway-created-artifacts.md
     - CI/CD:
         - Overview: next/ai-workspace/ci-cd/overview.md
         - Configure CI/CD Workflow: next/ai-workspace/ci-cd/configure-ci-cd-workflow.md
-    - GenAI Applications: next/ai-workspace/genai-applications.md
-    - Authentication:
-        - Overview: next/ai-workspace/authentication/overview.md
-        - Set up Asgardeo: next/ai-workspace/authentication/asgardeo-setup.md
-    - Configure Inbound Auth: next/ai-workspace/configure-inbound-auth.md
-    - Secrets Management: next/ai-workspace/secrets-management.md
-    - Invoke via SDKs: next/ai-workspace/using-sdks.md
+    # Govern what you built.
     - Policies:
         - Overview: next/ai-workspace/policies/overview.md
-        - Guardrails:
-            - Overview: next/ai-workspace/policies/guardrails/overview.md
-            - PII Masking Regex: next/ai-workspace/policies/guardrails/regex-pii-masking.md
-            - Azure Content Safety: next/ai-workspace/policies/guardrails/azure-content-safety.md
-            - Word Count: next/ai-workspace/policies/guardrails/word-count-guardrail.md
-            - Sentence Count: next/ai-workspace/policies/guardrails/sentence-count-guardrail.md
-        - Rate Limit:
-            - LLM Cost: next/ai-workspace/policies/rate-limit/llm-cost.md
-            - Token-Based Rate Limit: next/ai-workspace/policies/rate-limit/token-based-rate-limit.md
-            - LLM Cost-Based Rate Limit: next/ai-workspace/policies/rate-limit/llm-cost-based-rate-limit.md
-        - Other Policies:
-            - Model Round Robin: next/ai-workspace/policies/other-policies/model-round-robin.md
-            - Prompt Decorator: next/ai-workspace/policies/other-policies/prompt-decorator.md
-            - Prompt Template: next/ai-workspace/policies/other-policies/prompt-template.md
-            - Semantic Cache: next/ai-workspace/policies/other-policies/semantic-cache.md
         - Custom Policies:
             - Writing an AI Policy: next/ai-workspace/policies/writing-an-ai-policy.md
             - Building the Gateway with AI Policies: next/ai-workspace/policies/build-gateway-with-ai-policies.md
             - Apply AI Policies to Proxies: next/ai-workspace/policies/apply-ai-policies-to-proxies.md
     - Insights: next/ai-workspace/insights.md
+    # Consume it from an application.
+    - GenAI Applications: next/ai-workspace/genai-applications.md
+    - Configure Inbound Auth: next/ai-workspace/configure-inbound-auth.md
+    - Invoke via SDKs: next/ai-workspace/using-sdks.md
   - Analytics:
     - Overview: analytics/overview.md
   - Monetization:
@@ -1027,6 +1022,27 @@ plugins:
         cloud/ai-gateway/llm/ai-tools/claude-code-configuration-with-ai-gateway.md: guides/ai-and-mcp/ai-coding-assistants/claude-code-configuration-with-ai-gateway.md
         cloud/ai-gateway/llm/ai-tools/gemini-cli-configuration-with-ai-gateway.md: guides/ai-and-mcp/ai-coding-assistants/gemini-cli-configuration-with-ai-gateway.md
         cloud/ai-gateway/llm/ai-tools/codex-configuration-with-ai-gateway.md: guides/ai-and-mcp/ai-coding-assistants/codex-configuration-with-ai-gateway.md
+        # AI Workspace policy pages consolidated into the AI Gateway policy reference.
+        # AI Workspace keeps only the overview plus rate limiting, which has no AI Gateway equivalent.
+        next/ai-workspace/policies/guardrails/overview.md: next/ai-workspace/policies/overview.md
+        next/ai-workspace/policies/guardrails/semantic-prompt-guard.md: cloud/ai-gateway/llm/guardrails/semantic-prompt-guard.md
+        next/ai-workspace/policies/guardrails/regex-pii-masking.md: cloud/ai-gateway/llm/guardrails/pii-masking-regex.md
+        next/ai-workspace/policies/guardrails/azure-content-safety.md: cloud/ai-gateway/llm/guardrails/azure-content-safety.md
+        next/ai-workspace/policies/guardrails/word-count-guardrail.md: cloud/ai-gateway/llm/guardrails/word-count.md
+        next/ai-workspace/policies/guardrails/sentence-count-guardrail.md: cloud/ai-gateway/llm/guardrails/sentence-count.md
+        next/ai-workspace/policies/other-policies/model-round-robin.md: cloud/ai-gateway/llm/load-balancing/model-round-robin.md
+        next/ai-workspace/policies/other-policies/prompt-decorator.md: cloud/ai-gateway/llm/prompt-management/prompt-decorator.md
+        next/ai-workspace/policies/other-policies/prompt-template.md: cloud/ai-gateway/llm/prompt-management/prompt-template.md
+        next/ai-workspace/policies/other-policies/semantic-cache.md: cloud/ai-gateway/llm/semantic-caching.md
+
+        # The rate limit policy pages merged into the Policies overview page.
+        next/ai-workspace/policies/rate-limit/llm-cost.md: next/ai-workspace/policies/overview.md
+        next/ai-workspace/policies/rate-limit/token-based-rate-limit.md: next/ai-workspace/policies/overview.md
+        next/ai-workspace/policies/rate-limit/llm-cost-based-rate-limit.md: next/ai-workspace/policies/overview.md
+        next/ai-workspace/policies/other-policies/basic-rate-limit.md: next/ai-workspace/policies/overview.md
+        next/ai-workspace/policies/other-policies/token-based-rate-limit.md: next/ai-workspace/policies/overview.md
+        next/ai-workspace/policies/rate-limiting.md: next/ai-workspace/policies/overview.md
+
         # AI Workspace
         ai-workspace/ai-gateways/setting-up.md: cloud/ai-workspace/ai-gateways/setting-up.md
         ai-workspace/configure-inbound-auth.md: cloud/ai-workspace/configure-inbound-auth.md

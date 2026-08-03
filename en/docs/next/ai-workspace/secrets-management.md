@@ -1,8 +1,8 @@
 ---
 title: "Secrets management"
 description: "Store and manage encrypted secrets in AI Workspace and reference them securely in artifact configurations without exposing plaintext credentials."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/secrets-management/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/secrets-management.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/secrets-management/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/secrets-management.md
 tags:
   - cloud
   - ai-workspace
@@ -13,13 +13,20 @@ last_updated: 2026-06-26
 content_type: "how-to"
 ---
 
-# Secrets Management
+# Secrets management
 
-AI Workspace lets you store sensitive credentials as **secrets** and reference them securely in artifact configurations. Secrets are encrypted at rest using AES-GCM-256. Plaintext values are never written to the database and are **never returned in any API response** — not even the creation response.
+AI Workspace lets you store sensitive credentials as **secrets** and reference them securely in artifact configurations. Secrets are encrypted at rest using AES-GCM-256. Plaintext values are never written to the database and are **never returned in any API response**—not even the creation response.
 
-Use secrets to avoid embedding raw API keys, tokens, or passwords directly in LLM provider configurations, MCP proxy configs, or API backend settings.
+Use secrets to keep raw API keys, tokens, and passwords out of your artifact configurations. They apply to the following:
 
-## How It Works
+- Large language model (LLM) provider configurations
+- Model Context Protocol (MCP) proxy configurations
+- API backend settings
+
+!!! important "Not the same as `config.toml` interpolation"
+    Secrets apply to artifact configurations only, and the gateway resolves the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder at request time. The services have their own startup credentials: the database password, the OpenID Connect (OIDC) client secret, and the at-rest encryption key. Those are supplied through the separate {% raw %}`{{ env }}`{% endraw %} and {% raw %}`{{ file }}`{% endraw %} tokens in `config.toml`. See [Sensitive values in `config.toml`](setting-up/configuration.md#sensitive-values-in-configtoml). The two placeholder sets aren't interchangeable.
+
+## How it works
 
 1. Create a secret via the Platform API with a unique `handle` and the plaintext `value`.
 2. Reference the secret in any artifact configuration using the placeholder syntax:
@@ -31,32 +38,30 @@ Use secrets to avoid embedding raw API keys, tokens, or passwords directly in LL
 3. When an artifact that contains a placeholder is deployed, the gateway resolves it with the decrypted value at runtime — the plaintext never appears in the control-plane database or configuration files.
 4. To rotate a credential, call `PUT /api/v0.9/secrets/{handle}` with the new value. Because artifacts reference the secret by handle, no artifact changes or redeployment are required.
 
-## Auto-Encryption in the AI Workspace UI
+## Automatic encryption in the AI Workspace UI
 
 When you create or update an **LLM Provider** or **MCP Proxy** through the AI Workspace UI and fill in an upstream API key or auth value, the UI automatically:
 
-1. Creates a secret via `POST /api/v0.9/secrets` using a deterministic handle derived from the resource ID (e.g. `wso2-openai-provider-api-key`).
+1. Creates a secret via `POST /api/v0.9/secrets` using a deterministic handle derived from the resource ID (for example, `wso2-openai-provider-api-key`).
 2. Substitutes the credential with the {% raw %}`{{ secret "handle" }}`{% endraw %} placeholder before saving the resource.
 
 The raw credential is sent to the secrets API only once and is never stored in the artifact configuration. Re-saving a resource that already contains a placeholder skips the secret creation step.
 
-## API Reference
+## API reference
 
-The secrets API is available at `/api/v0.9/secrets`. All requests require a valid JWT with the appropriate scope.
+The secrets API is available at `/api/v0.9/secrets`. All requests require a valid JSON Web Token (JWT) with the appropriate scope.
 
-### Required Scopes
+### Required scopes
 
 | Scope              | Grants                                   |
 |--------------------|------------------------------------------|
 | `ap:secret:read`   | List secrets and get metadata by handle  |
 | `ap:secret:create` | Create a new secret                      |
-| `ap:secret:update` | Rotate / update an existing secret value |
+| `ap:secret:update` | Rotate or update a stored secret value |
 | `ap:secret:delete` | Delete a secret                          |
 | `ap:secret:manage` | All of the above                         |
 
----
-
-### Create a Secret
+### Create a secret
 
 ```http
 POST /api/v0.9/secrets
@@ -66,7 +71,7 @@ Content-Type: multipart/form-data
 Stores a new encrypted secret. The plaintext value is never returned — not even in this response.
 
 !!! note "Why multipart/form-data?"
-    The `value` field is designed to carry arbitrary binary content in a future release (e.g. TLS certificates, SSH private keys). Using `multipart/form-data` now avoids a breaking content-type change when file-based secrets are introduced.
+    `multipart/form-data` carries the `value` field as arbitrary content, so the same endpoint accepts text and binary secrets under one content type.
 
 **Request fields**
 
@@ -120,7 +125,7 @@ sk-xxx
 }
 ```
 
-The response does not include the `value`. Store the plaintext in a secure location before submitting it — it cannot be retrieved later.
+The response doesn't include the `value`. Store the plaintext in a secure location before submitting it—you can't retrieve it later.
 
 **Error responses**
 
@@ -129,9 +134,7 @@ The response does not include the `value`. Store the plaintext in a secure locat
 | 400 | Missing required fields or invalid request |
 | 409 | A secret with the same `handle` already exists in the organization |
 
----
-
-### List Secrets
+### List secrets
 
 ```http
 GET /api/v0.9/secrets
@@ -169,15 +172,13 @@ Returns metadata for all secrets in the organization. Plaintext values are never
 }
 ```
 
----
-
-### Get Secret Metadata
+### Get secret metadata
 
 ```http
 GET /api/v0.9/secrets/{handle}
 ```
 
-Returns metadata for a single secret. The plaintext value is not included.
+Returns metadata for a single secret. The plaintext value isn't included.
 
 **Response — 200 OK**
 
@@ -199,16 +200,14 @@ Returns metadata for a single secret. The plaintext value is not included.
 |--------|--------|
 | 404 | No secret found with the given handle in this organization |
 
----
-
-### Rotate a Secret
+### Rotate a secret
 
 ```http
 PUT /api/v0.9/secrets/{handle}
 Content-Type: multipart/form-data
 ```
 
-Re-encrypts and stores a new value. Because `handle` is immutable, all {% raw %}`{{ secret "handle" }}`{% endraw %} placeholders across existing resources remain valid without modification. The plaintext value is not returned in the response.
+Re-encrypts and stores a new value. Because `handle` is immutable, all {% raw %}`{{ secret "handle" }}`{% endraw %} placeholders across existing resources remain valid without modification. The plaintext value isn't returned in the response.
 
 **Request fields**
 
@@ -254,7 +253,7 @@ Rotated on 2026-06-26 — old key decommissioned
 
 **Notes**
 
-- If the secret's status is `DEPRECATED` (previously soft-deleted), a successful rotation sets it back to `ACTIVE`. The secret can again be referenced by new resources and will be included in gateway sync.
+- If the secret's status is `DEPRECATED` (previously soft-deleted), a successful rotation sets it back to `ACTIVE`. New resources can reference the secret again, and the gateway includes it in the next sync.
 - The gateway picks up the updated value on its next sync cycle — no redeployment of referencing artifacts is required.
 
 **Error responses**
@@ -263,15 +262,13 @@ Rotated on 2026-06-26 — old key decommissioned
 |--------|--------|
 | 404 | No secret found with the given handle |
 
----
-
-### Delete a Secret
+### Delete a secret
 
 ```http
 DELETE /api/v0.9/secrets/{handle}
 ```
 
-Soft-deletes a secret by setting its status to `DEPRECATED`. Deletion is blocked with `409 Conflict` if the secret is currently referenced by any artifact — either in its saved configuration or in a snapshot currently deployed to a gateway.
+Soft-deletes a secret by setting its status to `DEPRECATED`. Deletion is blocked with `409 Conflict` if any artifact references the secret — either in its saved configuration or in a snapshot deployed to a gateway.
 
 **Response — 204 No Content**
 
@@ -294,9 +291,7 @@ Soft-deletes a secret by setting its status to `DEPRECATED`. Deletion is blocked
 }
 ```
 
----
-
-## Referencing Secrets in Artifact Configurations
+## Reference a secret in an artifact configuration
 
 Use the following placeholder syntax wherever a configuration field accepts a sensitive string value:
 
@@ -321,11 +316,9 @@ spec:
 
 **Validation at save time**
 
-When creating or updating any resource that contains {% raw %}`{{ secret "..." }}`{% endraw %} references, the Platform API validates that an active secret with the referenced handle exists in the organization. If any placeholder cannot be resolved, the request is rejected with `400 Bad Request` and the list of unresolvable handles.
+When creating or updating any resource that contains {% raw %}`{{ secret "..." }}`{% endraw %} references, the Platform API validates that an active secret with the referenced handle exists in the organization. If any placeholder can't be resolved, the request is rejected with `400 Bad Request` and the list of unresolvable handles.
 
----
-
-## Credential Rotation
+## Rotate a credential
 
 To rotate a credential without touching artifact configurations:
 
@@ -334,54 +327,18 @@ To rotate a credential without touching artifact configurations:
 
 No artifact changes or redeployment are required because resources reference the secret by handle, not by value.
 
----
+## Delete a secret safely
 
-## Deleting a Secret Safely
-
-Attempting to delete a secret that is still in use returns HTTP 409. To remove it cleanly:
+Deleting a secret that's still in use returns HTTP 409. To remove it cleanly:
 
 1. Inspect the `references` list in the 409 response.
 2. Update each referencing artifact to remove or replace the {% raw %}`{{ secret "handle" }}`{% endraw %} reference.
 3. Redeploy the updated artifacts to the gateway.
 4. Retry `DELETE /api/v0.9/secrets/{handle}`.
 
----
+## Encryption key
 
-## Configuration
-
-Secrets are encrypted at rest with the Platform API's single at-rest encryption key (also used for subscription tokens and WebSub HMAC secrets). This key is **required** - the server refuses to start if it is missing or malformed, so it must be provisioned before startup and kept stable, so previously-encrypted secrets stay readable across restarts and replicas.
-
-The key is a single 32-byte AES-256 value, supplied as **64 hex characters** or base64. Generate one with:
-
-```sh
-openssl rand -hex 32
-```
-
-The Platform API does not read the key from an environment variable directly. It reads the `encryption_key` field in `config.toml`, which pulls the value from the environment (or a mounted file) through a config-interpolation token — environment variables never override config keys directly:
-
-{% raw %}
-```toml
-# config.toml - resolved from a mounted key file:
-encryption_key = '{{ file "/etc/platform-api/keys/encryption.key" }}'
-
-# Alternatively, from an environment variable:
-# encryption_key = '{{ env "APIP_CP_ENCRYPTION_KEY" }}'
-```
-{% endraw %}
-
-For Docker Compose deployments, the AI Workspace setup script generates this key into a **file** — `resources/keys/encryption.key`, mounted into the container at `/etc/platform-api/keys` — for you (see [Getting Started](./getting-started.md)):
-
-```sh
-./scripts/setup.sh
-```
-
-To provision it manually instead, write the generated value to that file (the key is 32 bytes as 64 hex chars; a trailing newline is trimmed on load):
-
-```sh
-openssl rand -hex 32 > resources/keys/encryption.key
-```
-
-Or switch the token to the {% raw %}`{{ env "APIP_CP_ENCRYPTION_KEY" }}`{% endraw %} form and set the variable in `api-platform.env` instead.
+Secrets are encrypted at rest with the Platform API's at-rest encryption key, which also protects subscription tokens and WebSub hash-based message authentication code (HMAC) secrets. The setup script provisions this key for Docker Compose deployments. For how to generate, mount, and reference it, see [Provision the at-rest encryption key manually](./getting-started.md#provision-the-at-rest-encryption-key-manually).
 
 !!! warning
     Use the same encryption key across restarts and across all replicas. Changing or rotating it makes previously-encrypted secrets unreadable.

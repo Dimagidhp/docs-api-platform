@@ -1,8 +1,8 @@
 ---
 title: "Configure an AI Workspace CI/CD workflow"
 description: "Use the ap CLI to validate and apply AI Workspace artifacts such as LLM providers, App LLM proxies, and MCP proxies from project files."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ci-cd/configure-ci-cd-workflow/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/ci-cd/configure-ci-cd-workflow.md
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/ci-cd/configure-ci-cd-workflow/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/ci-cd/configure-ci-cd-workflow.md
 tags:
   - cloud
   - ai-workspace
@@ -12,13 +12,13 @@ last_updated: 2026-07-08
 content_type: "how-to"
 ---
 
-# Configure an AI Workspace CI/CD Workflow
+# Configure an AI Workspace CI/CD workflow
 
 This guide shows how to validate and apply AI Workspace artifacts from project files using the `ap` CLI. Use this workflow when you want **LLM providers**, **App LLM proxies**, or **MCP proxies** to be reviewed, versioned, and promoted through a Git-based release process.
 
 ## Prerequisites
 
-!!! info "Before You Begin"
+!!! info "Before you begin"
     - Install the `ap` CLI and make it available on your `PATH`.
     - Configure access to the target AI Workspace.
     - Configure access to the target gateway.
@@ -26,7 +26,7 @@ This guide shows how to validate and apply AI Workspace artifacts from project f
     - For App LLM proxy and MCP proxy artifacts, get the API Platform project ID that the artifact belongs to.
     - Keep secrets out of project files. Use platform-managed secrets or environment variables supported by the CLI.
 
-## Configure the AI Workspace Connection
+## Configure the AI Workspace connection
 
 Add the AI Workspace connection once, then set it as the active workspace for later commands.
 
@@ -78,7 +78,7 @@ Configure and select the gateway connection.
     ap gateway use --display-name dev-gw
     ```
 
-## Start the Gateway for Declarative CI/CD
+## Start the gateway for declarative CI/CD
 
 When using this CI/CD flow, start the AI Gateway with control-plane deployment synchronization disabled.
 
@@ -87,11 +87,11 @@ When using this CI/CD flow, start the AI Gateway with control-plane deployment s
 deployment_sync_enabled = false
 ```
 
-In **declarative CI/CD**, AI Workspace artifacts and gateway runtime artifacts are **applied independently** from the project files. Each operation runs **synchronously** and does not rely on output from another service or on **asynchronous gateway-to-control-plane synchronization**. Disabling deployment synchronization prevents the gateway from trying to synchronize deployed artifacts back to AI Workspace while CI/CD owns the artifact lifecycle.
+In **declarative CI/CD**, the AI Workspace artifact operation and the gateway runtime operation run **independently of each other**. Both read from the same project files. Each operation runs **synchronously**. Neither one relies on output from another service or on **asynchronous gateway-to-control-plane synchronization**. Disabling deployment synchronization keeps the gateway from synchronizing deployed artifacts back to AI Workspace while CI/CD owns the artifact lifecycle.
 
-## Create or Update the Project
+## Create or update the project
 
-Create a project if you do not already have one.
+Create a project if you don't already have one.
 
 === "Template"
     ```shell
@@ -128,7 +128,7 @@ wso2-claude-proxy/
     `-- config.yaml
 ```
 
-## Author the AI Workspace Artifact
+## Author the AI Workspace artifact
 
 Update `metadata.yaml`, `runtime.yaml`, and `definition.yaml` for the AI Workspace artifact you want to publish.
 
@@ -170,7 +170,7 @@ spec:
 
 Add the OpenAPI or MCP capability definition to `definition.yaml`. The AI Workspace build requires this file for all supported artifact types.
 
-## Validate the Artifact
+## Validate the artifact
 
 Run `ap ai-workspace build` to validate the project files. If you run the command from the project root, you can omit `-f`.
 
@@ -199,7 +199,7 @@ The build command validates that:
 - the metadata names match
 - all configured paths remain inside the project directory
 
-## Deploy the Runtime Artifact to a Gateway
+## Deploy the runtime artifact to a gateway
 
 Apply `runtime.yaml` to the selected gateway so the runtime changes described in the project files are propagated to the gateway in a declarative manner.
 
@@ -215,7 +215,7 @@ Apply `runtime.yaml` to the selected gateway so the runtime changes described in
 
 This deploys or updates the runtime artifact on the active gateway. The AI Workspace apply step is separate and can be run before or after the gateway apply step in the same pipeline, depending on how you structure promotion for the environment.
 
-## Apply the Artifact to AI Workspace
+## Apply the artifact to AI Workspace
 
 Run `ap ai-workspace apply` from the project root, or pass the project directory with `-f`.
 
@@ -273,7 +273,7 @@ The apply command validates the project, builds the request payload in memory, a
 
 Create and update use the same command. If an artifact with the same `metadata.name` already exists, `apply` updates it. Otherwise, it creates a new artifact.
 
-## Use Environment-Specific Values
+## Use environment-specific values
 
 Use `ENV_CLI_` placeholders for values that differ between environments, such as upstream URLs, hosts, model names, or project IDs.
 
@@ -301,10 +301,10 @@ Provide the values with an env file during apply.
 
 The CLI resolves placeholders from the file passed with `--env-file`, the project's `.env` file, or the process environment. Apply fails if a referenced placeholder has no value.
 
-!!! warning "Do not store secrets in project files"
-    `ENV_CLI_` placeholders are intended for environment-specific configuration values that are sent to AI Workspace. Do not use them for API keys, tokens, or other secrets. Use platform-managed secrets for sensitive values.
+!!! warning "Don't store secrets in project files"
+    `ENV_CLI_` placeholders are intended for environment-specific configuration values that are sent to AI Workspace. Don't use them for API keys, tokens, or other secrets. Use platform-managed secrets for sensitive values.
 
-## Example Pipeline
+## Example pipeline
 
 The following example validates an App LLM proxy or MCP proxy project, applies the runtime artifact to the selected gateway, and applies the AI Workspace artifact to the selected workspace.
 
@@ -354,7 +354,7 @@ For an LLM provider project, omit `--project-id`.
       --env-file /path/to/openai-provider/values.env
     ```
 
-## Verify the Applied Artifact
+## Verify the applied artifact
 
 Use the AI Workspace get or list commands to verify the result.
 
@@ -382,7 +382,7 @@ Use the AI Workspace get or list commands to verify the result.
     ap ai-workspace mcp-proxy list --project-id customer-support-project
     ```
 
-## AI Workspace CLI Commands
+## AI Workspace CLI commands
 
 The following table summarizes the AI Workspace commands available in the `ap` CLI.
 
@@ -412,7 +412,7 @@ ap ai-workspace apply --help
 ap ai-workspace app-llm-proxy list --help
 ```
 
-## Recommended Practices
+## Recommended practices
 
 - Store the project files in source control.
 - Review changes through pull requests before applying them to shared environments.
@@ -421,8 +421,8 @@ ap ai-workspace app-llm-proxy list --help
 - Avoid changing the same artifact manually in the UI and through CI/CD at the same time.
 - Avoid running another synchronization path that updates the same AI Workspace artifact while CI/CD owns it.
 
-## Next Steps
+## Next steps
 
-- [AI Workspace CI/CD Overview](overview.md) - Learn how the Git-based flow works
-- [Configure LLM Provider](../llm-providers/configure-provider.md) - Create and deploy providers from the UI
-- [Manage App LLM Proxy](../llm-proxies/manage-proxy.md) - Manage an App LLM proxy after it is created
+- [AI Workspace CI/CD overview](overview.md): how the Git-based flow works
+- [Configure an LLM provider](../llm-providers/configure-provider.md): create and deploy providers from the UI
+- [Manage an App LLM proxy](../llm-proxies/manage-proxy.md): manage an App LLM proxy after you create it

@@ -1,141 +1,168 @@
 ---
 title: "AI Workspace overview"
-description: "Centrally manage AI Gateway runtimes, LLM providers, App LLM proxies, MCP proxies, and AI policies from the AI Workspace control plane."
-canonical_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/overview/
-md_url: https://wso2.com/api-platform/docs/cloud/ai-workspace/overview.md
+description: "Centrally manage AI gateways, LLM providers, proxies, policies, and secrets from a single control plane."
+canonical_url: https://wso2.com/api-platform/docs/next/ai-workspace/overview/
+md_url: https://wso2.com/api-platform/docs/next/ai-workspace/overview.md
 tags:
   - cloud
   - ai-workspace
   - overview
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-23
+last_updated: 2026-08-01
 content_type: "overview"
 ---
 
-# AI Workspace Overview
+# AI Workspace overview
 
-The AI Workspace is the control plane for AI Gateway runtimes. It gives platform teams a centralized interface to register gateways, configure providers and application-facing proxies, apply policies, and manage deployments without working directly with the Gateway-Controller API.
+AI Workspace is the control plane for managing how your applications access AI services. It's intended for platform teams and developers who govern large language model (LLM) traffic across an organization.
 
-## What AI Workspace Manages
+From one console, you can do the following:
+
+- Connect AI Gateway runtimes.
+- Configure LLM providers and proxies.
+- Apply AI policies.
+- Manage credentials.
+- Deploy these configurations to your gateways.
+
+Instead of configuring each gateway or application separately, AI Workspace gives you a central place to manage and govern AI traffic across your organization.
+
+## How AI Workspace works
+
+AI Workspace manages your AI configuration, and the AI Gateway processes requests. The following diagram shows how the two relate:
+
+```text
+                         AI Workspace
+                         Control plane
+                              │
+                              │ Deploy configuration
+                              ▼
+Applications ────────► AI Gateway ────────► AI services
+                         Data plane
+                              │
+                    ┌─────────┼─────────┐
+                    │         │         │
+                 LLM       App LLM     MCP
+                Provider     Proxy     Proxy
+```
+
+A typical workflow has these steps:
+
+1. Connect an AI Gateway to AI Workspace.
+2. Configure AI artifacts, such as LLM providers, App LLM proxies, and Model Context Protocol (MCP) proxies.
+3. Apply policies such as guardrails and rate limits.
+4. Deploy the configuration to one or more gateways.
+5. Send application traffic through the deployed gateway.
+
+Changes you make in AI Workspace don't affect live traffic until you deploy them to a gateway.
+
+## What you can manage
 
 ### AI Gateways
 
-Register and manage AI Gateway runtimes that process AI traffic.
+Connect and manage the AI Gateway runtimes that process your AI traffic. In AI Workspace, you can do the following:
 
-- Create gateway entries and associate them with environments
-- Generate registration tokens to connect runtimes to the control plane
-- Track gateway connectivity and deployment status
+- Register gateways with AI Workspace.
+- Deploy artifacts to one or more gateways.
+- Monitor gateway status.
+- View where artifacts are deployed.
 
-Learn more in [AI Gateways](ai-gateways/setting-up.md).
+To register your first gateway, see [Set up an AI Gateway](ai-gateways/setting-up.md).
 
-### LLM Providers
+### LLM providers
 
-Define reusable connections to upstream AI services such as OpenAI, Anthropic, Azure OpenAI, Gemini, and Mistral.
+Configure connections to upstream AI services such as OpenAI, Anthropic, Azure OpenAI, Gemini, Mistral AI, and AWS Bedrock.
 
-- Store provider credentials and connection details
-- Control which upstream resources are exposed
-- Apply provider-level security, rate limits, and guardrails
+An LLM provider holds the information required to connect to an upstream AI service, including its endpoint and authentication configuration.
 
-Learn more in [LLM Providers](llm-providers/overview.md).
+To configure a connection, see [LLM providers](llm-providers/overview.md). To connect a service that has no built-in template, see [LLM provider templates](llm-provider-templates/overview.md).
 
-### App LLM Proxies
+### App LLM proxies
 
-Create optional, application-facing endpoints for Gen AI applications and agents when they need controls that differ from the underlying provider.
+Create application-facing endpoints when an application or agent needs configuration or policies that differ from the underlying LLM provider.
 
-- Publish specialized proxy endpoints for distinct Gen AI apps, copilots, or agents
-- Isolate consumers with separate API keys and policies
-- Apply proxy-level resources, security settings, and guardrails
+To decide whether you need one, see [App LLM proxies](llm-proxies/overview.md).
 
-Learn more in [App LLM Proxies](llm-proxies/overview.md).
+### MCP proxies
 
-### GenAI Applications
+Create managed endpoints for upstream MCP servers. MCP standardizes how applications share context and tools with LLMs.
 
-Represent the actual AI applications/Agents in your project and map existing API keys to them for application-level visibility.
+To put a gateway in front of an MCP server, see [MCP proxies](mcp-proxies/overview.md).
 
-- Group multiple API keys under one named application
-- Track usage, tokens, and cost per application
-- Improve governance and accountability for shared GenAI workloads
+### AI policies
 
-Learn more in [GenAI Applications](genai-applications.md).
+Apply policies to LLM providers, App LLM proxies, and MCP proxies to control how the gateway handles AI traffic. Policies fall into three groups:
 
-### MCP Proxies
+- Guardrails for content safety, personally identifiable information (PII) protection, validation, and prompt injection detection.
+- Rate limits for requests, tokens, and monetary usage.
+- Traffic and prompt controls for routing, prompt templates, semantic caching, and provider transformations.
 
-Expose and govern Model Context Protocol servers through connected gateways.
+To see what you can attach and where it takes effect, see [Policies](policies/overview.md).
 
-- Connect remote MCP servers through managed proxy endpoints
-- Apply MCP-specific authentication, authorization, rewrite, and access-control policies
-- Control how MCP capabilities are exposed to clients
+### Secrets
 
-Learn more in [MCP Proxies](mcp-proxies/overview.md).
+Store credentials securely and reference them from your AI artifacts, so credential values never appear in application or gateway configuration.
 
-### CI/CD
+To store and reference a credential, see [Secrets management](secrets-management.md).
 
-Manage AI Workspace artifacts as project files and apply them through a Git-based release workflow.
+## Control plane and data plane
 
-- Version LLM providers, App LLM proxies, and MCP proxies in source control
-- Validate project files before applying them to AI Workspace
-- Associate artifacts with intended gateway targets during create and update operations
+AI Workspace and AI Gateway work together as the control plane and the data plane. The following table compares their roles:
 
-Learn more in [AI Workspace CI/CD](ci-cd/overview.md).
+| | AI Workspace | AI Gateway |
+|---|---|---|
+| **Role** | Control plane | Data plane |
+| **Purpose** | Manage AI configurations and policies | Process AI traffic |
+| **Handles** | Artifacts, policies, secrets, and deployments | Requests and responses |
+| **When it acts** | When you configure or deploy | When an application sends a request |
 
-### Policies and Guardrails
+The workspace tracks which artifacts are deployed to which gateways. For example, you can deploy a single LLM provider to multiple gateways, and each gateway can serve multiple providers and proxies.
 
-Configure AI-specific governance controls for providers and proxies.
+To configure and operate the gateway runtime directly, see the [AI Gateway documentation](../../ai-gateway/next/overview.md).
 
-- Apply content safety and PII protection guardrails
-- Configure token- and cost-based rate limiting
-- Use prompt management, semantic cache, and model-routing policies
+## Configure AI Workspace
 
-Learn more in [Policies](policies/overview.md).
+Before you create AI artifacts, you can configure how AI Workspace runs. The following table lists the available configuration topics:
 
-### Settings
+| Topic | Description |
+|---|---|
+| [Configuration and interpolation](setting-up/configuration.md) | Configure services using `config.toml`, environment variables, and mounted files |
+| [Ports](setting-up/ports.md) | Configure the ports that AI Workspace uses |
+| [Database](setting-up/database.md) | Configure PostgreSQL or SQL Server for artifact storage |
+| [Authentication](setting-up/authentication/overview.md) | Configure local authentication or an OpenID Connect (OIDC) identity provider |
 
-Manage organization-wide assets from the **Settings** section:
+## Create and deploy artifacts
 
-- **LLM Provider Templates** — Define reusable connection templates for custom LLM providers not covered by the built-in provider types, and enable or disable templates to control what's offered when adding a provider.
-- **Custom Policies** — Review and remove the [custom AI policies](policies/writing-an-ai-policy.md) synced from your connected gateways.
+AI Workspace supports several ways to create and manage artifacts. The following table lists the available methods:
 
-## How It Works
+| Method | Description |
+|---|---|
+| AI Workspace | Create and manage artifacts from the AI Workspace console |
+| AI Gateway | Create artifacts through the gateway management API or configuration files |
+| Continuous integration and continuous delivery (CI/CD) | Manage artifacts as files in source control and deploy them using the `ap` CLI |
 
-1. Create an AI Gateway entry in AI Workspace.
-2. Start the gateway runtime and register it with the generated token.
-3. Configure LLM providers or MCP proxies in the control plane.
-4. Deploy those configurations to one or more connected gateways.
-5. Manage runtime behavior through policies, guardrails, and gateway deployments.
+To set up a Git-based workflow, see [AI Workspace CI/CD](ci-cd/overview.md). To bring artifacts that a gateway created back into the workspace, see [Sync gateway-created artifacts](sync-gateway-created-artifacts.md).
 
-## Configuration Interpolation
+## Monitor AI traffic
 
-The AI Workspace control plane itself is configured through `config.toml`, resolved once at startup. Rather than writing values directly into the file, each key can hold an interpolation token that resolves them from the environment or a mounted file:
+AI Gateway publishes traffic and usage information that shows how your applications use AI services. The published information covers the following:
 
-{% raw %}
-- `{{ env "VARIABLE_NAME" "default" }}` — reads the named environment variable, falling back to `default` if it's unset. Omit the default to make the variable required; startup fails if it isn't set.
-- `{{ file "/path/to/file" }}` — reads the value from a mounted file, the preferred way to supply secrets such as client secrets or passwords without ever putting them in the environment. The path must sit under `/etc/ai-workspace` or `/secrets/ai-workspace` (override with `APIP_CONFIG_FILE_SOURCE_ALLOWLIST`).
+- Request and token usage
+- Latency
+- Cost
+- Guardrail events
 
-```toml
-[ai_workspace.logging]
-level = '{{ env "APIP_AIW_LOGGING_LEVEL" "info" }}'
+To view this information and understand AI usage across applications and consumers, see [Insights](insights.md).
 
-[ai_workspace.auth.oidc]
-client_secret = '{{ file "/secrets/ai-workspace/oidc_client_secret" }}'
-```
-{% endraw %}
+## Where to start
 
-Resolution fails closed: an unset required variable, or an unreadable or disallowed file, aborts startup rather than running with an empty credential.
+If you haven't used AI Workspace before, follow [Get started with AI Workspace](getting-started.md). It walks you through running AI Workspace locally, connecting your first AI Gateway, and configuring an LLM provider.
 
-For each {% raw %}`{{ file }}`{% endraw %} token, mount the referenced secret at that exact path in `docker-compose.yaml`:
+Otherwise, choose the path that matches what you want to do:
 
-```yaml
-    volumes:
-      - ./secrets/oidc_client_secret:/secrets/ai-workspace/oidc_client_secret:ro
-```
-
-## Relationship to AI Gateway
-
-AI Workspace is the control plane. The [AI Gateway](../../cloud/ai-gateway/overview.md) is the runtime plane that handles the actual traffic.
-
-- Use AI Gateway docs when you want to work directly with the runtime, Gateway-Controller API, or standalone deployment model.
-- Use AI Workspace docs when you want centralized lifecycle management for connected gateways and their AI assets.
-
-## Getting Started
-
-To start using the control plane, follow the [Getting Started](getting-started.md) guide.
+- Connect a gateway: [Set up an AI Gateway](ai-gateways/setting-up.md)
+- Connect an AI service: [LLM providers](llm-providers/overview.md)
+- Create an application-specific endpoint: [App LLM proxies](llm-proxies/overview.md)
+- Connect an MCP server: [MCP proxies](mcp-proxies/overview.md)
+- Control AI traffic: [Policies](policies/overview.md)
+- Manage credentials: [Secrets management](secrets-management.md)
+- Call AI services from an application: [Invoke providers and proxies via SDKs](using-sdks.md)
