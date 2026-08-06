@@ -68,8 +68,8 @@ def main():
     ap.add_argument("docs_root", nargs="?", default="en/docs")
     ap.add_argument("--files", nargs="*", default=None,
                     help="Limit to these paths (relative to docs_root or to cwd).")
-    ap.add_argument("--policy", default="latest-only",
-                    choices=["latest-only", "strip-all", "keep-all"])
+    ap.add_argument("--policy", default="keep-all",
+                    choices=["keep-all", "latest-only", "strip-all"])
     ap.add_argument("--json", dest="json_out", default=None)
     ap.add_argument("--gate", action="store_true", help="Exit 1 if any blocking issue.")
     ap.add_argument("--quiet", action="store_true")

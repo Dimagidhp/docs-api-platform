@@ -96,8 +96,8 @@ def main():
             a.add(m.group(1))
         anchors[p] = a
 
-    tiers = {k: [] for k in ("templated", "malformed", "depth", "renamed", "gone",
-                             "stale", "anchor")}
+    tiers = {k: [] for k in ("templated_fixable", "templated", "malformed", "depth",
+                             "renamed", "gone", "stale", "anchor")}
 
     targets = [p for p in md_list if not args.scope or p.startswith(args.scope)]
     for p in targets:
@@ -118,14 +118,35 @@ def main():
             # Malformed syntax, caught before resolution so it isn't mis-filed as a
             # missing target. Both forms below occur in migrated pages and both
             # render as literal broken text, so the fix is exact.
-            # A target containing a template variable (e.g. `{{base_path}}`) is not
-            # a path — it is expanded at build time by machinery the target site may
-            # not have. Resolving it statically is meaningless and any "fix" derived
-            # from it is a guess. Report and move on; never propose a replacement.
+            # `{{base_path}}` stands for the root of the version's site, so the
+            # remainder is a path relative to that version's directory. Where the
+            # resource actually exists there, the link can be rewritten as an
+            # ordinary relative path and the variable dropped — that is a real fix,
+            # not a guess. Where it does not exist, the target may be served by a
+            # redirect, so leave it alone until the redirect strategy is settled.
             if re.search(r"\{\{.*?\}\}", t):
-                tiers["templated"].append({"file": p, "link": t,
-                                           "variable": ", ".join(sorted(set(
-                                               re.findall(r"\{\{.*?\}\}", t))))})
+                m_bp = re.match(r"^\{\{\s*base_path\s*\}\}/?(.*)$", t)
+                fixed = None
+                if m_bp:
+                    rest, _, bfrag = m_bp.group(1).partition("#")
+                    rest = urllib.parse.unquote(rest).strip("/")
+                    base_dir = vroot if vroot else ""
+                    cand = f"{base_dir}/{rest}" if base_dir else rest
+                    cand = os.path.normpath(cand).replace("\\", "/")
+                    target = next((c for c in (cand, cand + ".md", cand + "/index.md",
+                                               cand + "/README.md") if c in all_files), None)
+                    if target:
+                        fixed = os.path.relpath(target, d).replace("\\", "/")
+                        if bfrag:
+                            fixed += "#" + bfrag
+                if fixed:
+                    tiers["templated_fixable"].append({
+                        "file": p, "link": t, "suggested": fixed,
+                        "why": "resource exists, so the variable can be replaced with a relative path"})
+                else:
+                    tiers["templated"].append({"file": p, "link": t,
+                                               "variable": ", ".join(sorted(set(
+                                                   re.findall(r"\{\{.*?\}\}", t))))})
                 continue
 
             raw_t = t
@@ -221,7 +242,7 @@ def main():
     n = {k: len(v) for k, v in tiers.items()}
     total = sum(n.values())
     scope_label = args.scope or f"all of {root}"
-    auto = (n["malformed"] + n["depth"]
+    auto = (n["templated_fixable"] + n["malformed"] + n["depth"]
             + len([x for x in tiers["renamed"] if x["confidence"] == "high"]))
 
     L = []
@@ -234,7 +255,8 @@ def main():
     w("")
     w("| Tier | Cause | Count | Fixable how |")
     w("|---|---|---|---|")
-    w(f"| — | Contains a template variable | {n['templated']} | **Leave alone** — pending the redirect decision |")
+    w(f"| 0 | `{{{{base_path}}}}` where the resource exists | {n['templated_fixable']} | Exact rewrite to a relative path |")
+    w(f"| — | `{{{{base_path}}}}` where it does not | {n['templated']} | **Leave alone** — may be a redirect |")
     w(f"| 0 | Malformed link syntax | {n['malformed']} | Exact rewrite — no judgement |")
     w(f"| 1 | Wrong relative depth | {n['depth']} | Exact rewrite — no judgement |")
     w(f"| 2 | Renamed or moved target | {n['renamed']} | Proposed target, check confidence |")
@@ -257,14 +279,23 @@ def main():
             w(f"_…and {len(rows) - limit} more. Full list in the JSON sidecar._")
         w("")
 
-    if n["templated"]:
-        w("## Excluded — links containing a template variable")
+    if n["templated_fixable"]:
+        w("## Tier 0 — `{{base_path}}` where the resource exists")
         w("")
-        w("These targets contain a build-time variable such as `{{base_path}}`. They are "
-          "not paths, so there is nothing to resolve and no fix to derive — any suggestion "
-          "would be invented. **Do not rewrite them.** How these are migrated depends on "
-          "the redirect strategy, which is a separate decision; until that is settled they "
-          "are out of scope for link fixing.")
+        w("`{{base_path}}` stands for the root of the version's site, so the rest of the "
+          "target is a path within that version's directory. For these, the resource is "
+          "there: the variable can be dropped and the link written as an ordinary relative "
+          "path. The replacement below is exact.")
+        w("")
+        table(tiers["templated_fixable"], ["Page", "Currently", "Change to"],
+              ["file", "link", "suggested"], args.max_rows)
+
+    if n["templated"]:
+        w("## Excluded — `{{base_path}}` where the resource does not exist")
+        w("")
+        w("Same variable, but the target is not present at that path in this version. It may "
+          "be served by a redirect, or the page may not have been migrated. **Leave these "
+          "alone** until the redirect strategy is settled — a rewrite here would be a guess.")
         w("")
         table(tiers["templated"], ["Page", "Link", "Variable"],
               ["file", "link", "variable"], args.max_rows)
@@ -356,6 +387,7 @@ def main():
       (f" and the machine-readable list in `{args.json_out}`." if args.json_out else "."))
     w("")
     w("Apply ONLY these tiers:")
+    w("  - Tier 0 (`{{base_path}}` where the resource exists): apply every row as given.")
     w("  - Tier 0 (Malformed link syntax): apply every row exactly as given.")
     w("  - Tier 1 (Wrong relative depth): apply every row exactly as given.")
     w("  - Tier 2, high-confidence subsection only: apply every row as given.")
@@ -367,8 +399,8 @@ def main():
     w("     exact target in that file.")
     w("  3. Preserve any `#fragment` already on the link unless the plan says otherwise.")
     w("  4. Do NOT touch tiers 3, 4, or 5, and do NOT touch anything in the")
-    w("     \"Contains a template variable\" section. Do not invent a target that is")
-    w("     not in the plan.")
+    w("     \"`{{base_path}}` where the resource does not exist\" section. Do not")
+    w("     invent a target that is not in the plan.")
     w("  5. Do not reformat, reflow, or reorder anything. Minimal diffs only.")
     w("")
     w("Verify when done, from the repo root:")
@@ -400,7 +432,8 @@ def main():
 
     print(f"{total} findings across {len(targets)} pages "
           f"({auto} mechanically fixable, {n['gone']} need a human)")
-    for k in ("templated", "malformed", "depth", "renamed", "stale", "anchor", "gone"):
+    for k in ("templated_fixable", "templated", "malformed", "depth", "renamed",
+              "stale", "anchor", "gone"):
         print(f"  {n[k]:5d}  {k}")
     print(f"\nreport -> {args.out}")
     if args.json_out:

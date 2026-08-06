@@ -4,13 +4,13 @@
     python3 scripts/check_redirects.py en/mkdocs.yml en/docs
     python3 scripts/check_redirects.py en/mkdocs.yml en/docs --gate
 
-The check that matters most here is not "is every redirect valid" — it is the
-*cross-check*. Under the `latest-only` URL policy, a current-release page's
-`canonical_url` is the version-less path. That path is not a file; it only
-resolves because a redirect maps it onto the release. So a missing redirect turns
-a page's declared canonical URL into a 404 — and neither a redirect audit nor a
-frontmatter audit alone can see that, because each half looks correct in
-isolation.
+Checks that every redirect target exists, that no source is shadowed by a real
+file, that there are no chains (the plugin does not follow them), and that no map
+was left pointing at a superseded version after a version bump.
+
+`CANONICAL_UNREACHABLE` only applies under `--policy latest-only`, and is skipped
+otherwise: under the default `keep-all` a canonical is a versioned path, which is a
+real file, so it cannot depend on a redirect existing.
 """
 import os
 import re
@@ -44,8 +44,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("mkdocs_yml", nargs="?", default="en/mkdocs.yml")
     ap.add_argument("docs_root", nargs="?", default="en/docs")
-    ap.add_argument("--policy", default="latest-only",
-                    choices=["latest-only", "strip-all", "keep-all"])
+    ap.add_argument("--policy", default="keep-all",
+                    choices=["keep-all", "latest-only", "strip-all"])
     ap.add_argument("--json", dest="json_out", default=None)
     ap.add_argument("--gate", action="store_true")
     args = ap.parse_args()
@@ -81,9 +81,7 @@ def main():
                 f"`{redirects[tgt]}`. The plugin does not follow chains, so this "
                 f"lands on a redirect stub.", src)
 
-    # 4. THE CROSS-CHECK. A current-release page's canonical is the version-less
-    #    path; that path must resolve via a redirect or a real file, or the
-    #    canonical URL 404s.
+    # 4. Only under latest-only: a version-less canonical needs a redirect to resolve.
     if args.policy == "latest-only":
         for rel in sorted(on_disk):
             ver, stripped = split_version(rel)

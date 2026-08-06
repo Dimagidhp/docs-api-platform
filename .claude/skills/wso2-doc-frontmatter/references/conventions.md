@@ -39,7 +39,9 @@ buried.
 | `foo/index.md` | `{BASE}/foo/` | `{BASE}/foo.md` |
 | `foo/README.md` | `{BASE}/foo/` | `{BASE}/foo.md` |
 
-`README.md` collapses to its directory the same way `index.md` does.
+`README.md` is handled the same way as `index.md`. Note that most `README.md` files
+under `en/docs/` are housekeeping notes rather than documentation pages, and none are
+currently in the mkdocs nav.
 
 ## Versions
 
@@ -51,28 +53,20 @@ Some products keep several versions on disk:
 <product>/next/...
 ```
 
-The published site serves the **current release at a version-less URL**, with the
-`redirects` plugin in `mkdocs.yml` mapping that version-less path onto the current
-release's file. Every other version — older releases, and `next` — is served at a
-URL that includes its version segment.
+**Every version, including the latest, is published at a URL that includes its
+version segment.** So `canonical_url` and `md_url` both keep it.
 
-So the rule the scripts implement, which `fm_lib.py:site_paths()` calls
-`latest-only`:
+A version-less URL redirects to the versioned page rather than serving content, so it
+is never the canonical.
 
-> The current release gets the version-less URL. Every other version keeps its
-> version segment in both `canonical_url` and `md_url`.
-
-This is the only policy under which each file owns a unique `md_url`. Two
-alternatives exist for comparison and are selectable with `--policy`:
+`fm_lib.py:site_paths()` calls this `keep-all`, and it is the default. Two other
+policies are selectable with `--policy`; neither matches the site:
 
 | Policy | Behaviour |
 |---|---|
-| `latest-only` | Default. Current release version-less, others keep their segment. |
-| `strip-all` | Every version claims the version-less URL. Produces collisions. |
-| `keep-all` | Every version keeps its segment. No stable "latest" URL. |
-
-Changing the policy rewrites URLs across every versioned page, so say so
-explicitly when you do.
+| `keep-all` | Default. Every version keeps its segment. |
+| `latest-only` | Latest release gets a version-less URL. |
+| `strip-all` | All versions share one version-less URL. Produces collisions. |
 
 ### A version segment is only a version at the top of the tree
 
@@ -89,21 +83,15 @@ Treating that as a documentation version would invent a phantom product and stri
 the wrong segment out of a URL, so the depth limit in `MAX_VERSION_DEPTH` is
 load-bearing rather than cosmetic.
 
-## Redirects and `canonical_url` are one contract
+## Redirects
 
-Under `latest-only`, a current-release page's `canonical_url` is a version-less
-path. That path is not a file — it resolves only because a redirect maps it onto
-the release. A page can therefore have valid frontmatter *and* a valid redirect
-map and still declare a canonical URL that resolves to nothing, because each half
-looks correct on its own.
+`check_redirects.py` validates `redirect_maps` in `mkdocs.yml`: every target exists,
+no source is shadowed by a real file, no chains (the plugin does not follow them),
+and no map is left pointing at a superseded version after a version bump.
 
-`check_redirects.py` is what catches that, as `CANONICAL_UNREACHABLE`. Run it
-after changing the URL policy, and after adding a page to a versioned tree.
-
-The practical consequence: **adding a page to a versioned tree is a two-part
-change** — the page, and a `redirect_maps` entry for its version-less path. Miss
-the second and the page still renders and still passes a link check; only its
-declared canonical URL is dead.
+`CANONICAL_UNREACHABLE` only applies under `--policy latest-only`. Under `keep-all` a
+canonical is a versioned path, which is a real file, so it cannot depend on a
+redirect existing.
 
 ## Links containing build-time variables
 
@@ -115,14 +103,17 @@ around a template variable:
 <img src="{{base_path}}/assets/img/example.png" />
 ```
 
-Both the Markdown and raw-HTML forms occur. The variable is substituted at build
-time by machinery that is not present in this site, which is why migrated pages use
-relative links instead.
+Both the Markdown and raw-HTML forms occur. The variable is not available in this
+site, so these links need converting to relative paths.
 
-The checkers treat these as **out of scope, not broken**: `check_links.py` reports
-`LINK_TEMPLATED` at `polish` severity, and `report_links.py` quarantines them in a
-section with no proposed fix. Nothing should rewrite them until the redirect
-strategy is settled, because the right replacement depends on that decision.
+`{{base_path}}` stands for the root of that version's site, so the rest of the target
+is a path within the version's directory. That makes most of them mechanically
+fixable, and `report_links.py` splits them accordingly:
+
+- **The resource exists at that path** — drop the variable and write an ordinary
+  relative path. The replacement is exact, and this is the large majority.
+- **It does not exist there** — leave the link alone. It may be served by a redirect,
+  or the page may not have been migrated. Rewriting it would be a guess.
 
 Redirects themselves belong either in a `redirects.yml` file or in a `redirects`
 block inside `mkdocs.yml`.

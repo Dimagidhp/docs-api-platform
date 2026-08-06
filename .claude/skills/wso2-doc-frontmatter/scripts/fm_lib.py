@@ -3,12 +3,12 @@
 
 The one thing worth understanding before changing anything here: this repo keeps
 several *versions* of the same page on disk (``<product>/1.0.0/x.md``,
-``<product>/1.1.0/x.md``, ``<product>/next/x.md``) but the published site serves
-the newest release at a *version-less* URL, with mkdocs `redirects` mapping the
-version-less path onto the current release's file.
+``<product>/1.1.0/x.md``, ``<product>/next/x.md``), and every one of them is
+published at a URL that includes its version segment — the latest release included.
+A version-less URL redirects to the versioned page rather than serving content.
 
-That makes the version segment the only genuinely tricky part of deriving a URL
-from a path, so it is all funnelled through :func:`site_paths` below.
+That makes the version segment the only genuinely tricky part of deriving a URL from
+a path, so it is all funnelled through :func:`site_paths` below.
 """
 import os
 import re
@@ -241,17 +241,14 @@ def current_release(product, versions_map):
     return vs[-1] if vs else None
 
 
-def site_paths(rel, versions_map=None, policy="latest-only"):
+def site_paths(rel, versions_map=None, policy="keep-all"):
     """Derive (canonical_url, md_url) for a repo-relative Markdown path.
 
     policy:
-      "latest-only"  RECOMMENDED. The current release gets the version-less URL;
-                     every other version keeps its version segment. This is the
-                     only policy under which each file owns a unique md_url.
-      "strip-all"    What the repo does today: every version claims the
-                     version-less URL. Produces collisions between versions.
-      "keep-all"     Every version, including the current release, keeps its
-                     segment. Unique, but no stable "latest" URL.
+      "keep-all"     DEFAULT, and what the site does. Every version keeps its
+                     segment, latest release included.
+      "latest-only"  Gives the latest release a version-less URL.
+      "strip-all"    Every version claims one version-less URL. Collides.
     """
     versions_map = versions_map if versions_map is not None else {}
     ver, stripped = split_version(rel)

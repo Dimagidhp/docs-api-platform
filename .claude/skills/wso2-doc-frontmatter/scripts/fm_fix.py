@@ -77,8 +77,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("docs_root", nargs="?", default="en/docs")
     ap.add_argument("--files", nargs="*", default=None)
-    ap.add_argument("--policy", default="latest-only",
-                    choices=["latest-only", "strip-all", "keep-all"])
+    ap.add_argument("--policy", default="keep-all",
+                    choices=["keep-all", "latest-only", "strip-all"])
     ap.add_argument("--apply", action="store_true", help="Write changes to disk.")
     ap.add_argument("--dry-run", action="store_true", help="Report only (default).")
     ap.add_argument("--scaffold", action="store_true",

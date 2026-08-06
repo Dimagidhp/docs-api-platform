@@ -1,6 +1,6 @@
 ---
 name: wso2-doc-frontmatter
-description: Adds, repairs, and validates YAML frontmatter on WSO2 API Platform documentation pages, and checks the same pages for broken links and mechanical style-guide violations. Use this when migrating docs into wso2/docs-api-platform, when a page is missing frontmatter or has a wrong canonical_url/md_url/content_type/description, when checking a docs PR before merge, or when asked things like "add frontmatter to these pages", "why is this page's canonical URL wrong", "check this PR for broken links", "validate the metadata on all versions", or "audit the migrated docs". Handles the repo's multi-version layout (product/1.0.0/, product/1.1.0/, product/next/), where the current release is published at a version-less URL. Also runs non-interactively as a CI gate, so keep output structured.
+description: Adds, repairs, and validates YAML frontmatter on WSO2 API Platform documentation pages, and checks the same pages for broken links and mechanical style-guide violations. Use this when migrating docs into wso2/docs-api-platform, when a page is missing frontmatter or has a wrong canonical_url/md_url/content_type/description, when checking a docs PR before merge, or when asked things like "add frontmatter to these pages", "why is this page's canonical URL wrong", "check this PR for broken links", "validate the metadata on all versions", or "audit the migrated docs". Handles the repo's multi-version layout (product/1.0.0/, product/1.1.0/, product/next/), where every version is published at a URL that includes its version segment. Also runs non-interactively as a CI gate, so keep output structured.
 ---
 
 # WSO2 API Platform doc frontmatter and validation
@@ -34,7 +34,7 @@ python3 scripts/fm_audit.py en/docs --json /tmp/fm.json
 
 Read the output before changing anything. It reports per-code counts and detects the repo's versioned products automatically. Add `--files a.md b.md` to scope it to a PR's changed files, and `--gate` to make it exit non-zero on blocking issues.
 
-The `--policy` flag decides how the version segment maps to a URL. `latest-only` (default, recommended) publishes the current release at the version-less URL and keeps the segment for older versions and `next`. `strip-all` has every version claim the same version-less URL, and will report the resulting collisions. Never change the policy without saying so explicitly in your report; it rewrites URLs across hundreds of files.
+The `--policy` flag decides how the version segment maps to a URL. `keep-all` (the default) keeps it for every version, latest release included, which is what the site does. The other two do not match the site. Never change the policy without saying so explicitly in your report; it rewrites URLs across hundreds of files.
 
 ### 2. Let the script fix what's mechanical
 
@@ -91,7 +91,8 @@ completely different fixes and completely different risk:
 
 | Tier | Cause | Fix |
 |---|---|---|
-| — | Contains a template variable | **Leave alone.** Out of scope pending the redirect decision |
+| 0 | `{{base_path}}` and the resource exists | Exact rewrite to a relative path |
+| — | `{{base_path}}` and it does not | **Leave alone.** May be served by a redirect |
 | 0 | Malformed link syntax | Exact rewrite. No judgement. Safe in bulk. |
 | 1 | Wrong relative depth | Exact rewrite. No judgement. Safe in bulk. |
 | 2 | Renamed or moved target | A file of that name exists elsewhere; proposed, with confidence |
@@ -104,10 +105,9 @@ scoped to tiers 0 and 1 and the high-confidence half of tier 2. Do not widen tha
 
 Two rules the reporter enforces, and you must not work around:
 
-- **Never rewrite a link whose target contains a build-time variable** such as
-  `{{base_path}}`. It is not a path, so there is nothing to resolve and any fix is
-  invented. How these migrate depends on the redirect strategy, which is a separate
-  decision.
+- **`{{base_path}}` is version-root-relative.** Where the resource exists at that
+  path, convert the link to a relative path and drop the variable — that is an exact
+  fix. Where it does not exist, leave it: it may be served by a redirect.
 - **Never propose a target in a different version.** If a page under one version
   links to something missing, the replacement must live under that same version. A
   cross-version link silently sends a reader to a different release.
@@ -136,7 +136,7 @@ Where the repo can be built, `mkdocs build` is the authoritative check on links 
 
 `scripts/check_redirects.py` validates `redirect_maps` in `mkdocs.yml` — targets exist, no source shadowed by a real file, no chains (the plugin doesn't follow them), no map left pointing at a superseded version after a version bump.
 
-Its most valuable check is the one neither a redirect audit nor a frontmatter audit can do alone: **`CANONICAL_UNREACHABLE`**. Under `latest-only`, a current-release page's `canonical_url` is the version-less path — which is not a file, and resolves *only* because a redirect maps it onto the release. So a page can have perfectly valid frontmatter and a perfectly valid redirect map, and still declare a canonical URL that 404s. Each half looks correct in isolation; only the cross-check sees it. Always run this after changing the URL policy or adding a new page to a versioned tree.
+`CANONICAL_UNREACHABLE` only fires under `--policy latest-only`. Under the default `keep-all` a canonical is a versioned path, so it cannot depend on a redirect existing.
 
 `scripts/check_links.py` resolves every relative link, image, and anchor against what's on disk, and flags links still pointing at a pre-migration location (the list is `LEGACY_DOMAINS` in `fm_lib.py`). It catches everything `mkdocs build` warns about plus two classes mkdocs stays silent on: bare directory links to a directory with no `index.md`/`README.md`, and directory links to a path that doesn't exist at all.
 
