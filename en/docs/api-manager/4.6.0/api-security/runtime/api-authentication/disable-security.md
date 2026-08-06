@@ -1,3 +1,18 @@
+---
+title: "Disabling security for APIs"
+description: "Switch off security for a single API resource or for every resource of an API in the Publisher, so it can be invoked without an access token."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/api-authentication/disable-security/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/api-authentication/disable-security.md
+tags:
+  - api-manager
+  - api-security
+  - runtime
+  - api-authentication
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Disabling Security for APIs
 
 WSO2 API Manager enables OAuth 2.0 security for APIs by default. Therefore, all APIs must be invoked with an access token. You can get an access token in the following ways.

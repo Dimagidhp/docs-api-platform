@@ -1,3 +1,18 @@
+---
+title: "AI service provider ecosystem"
+description: "AI service providers built into the AI Gateway, including OpenAI, Azure OpenAI, AWS Bedrock, Anthropic, Gemini, and Mistral, plus custom services."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/overview.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-vendor-management
+  - overview
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "concept"
+---
+
 # AI Service Provider Ecosystem
 
 The AI Gateway provides pre-built connectors for major AI service providers:

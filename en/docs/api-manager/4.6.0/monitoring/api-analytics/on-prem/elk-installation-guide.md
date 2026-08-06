@@ -1,3 +1,18 @@
+---
+title: "ELK based analytics installation guide"
+description: "Set up ELK based analytics for WSO2 API Manager with Filebeat, Logstash, Elasticsearch, and Kibana, including security and dashboards."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/on-prem/elk-installation-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/on-prem/elk-installation-guide.md
+tags:
+  - api-manager
+  - monitoring
+  - api-analytics
+  - on-prem
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # ELK Based Analytics Installation Guide
 
 <a href="../../../../assets/img/analytics/cloud/architecture.png"><img src="../../../../assets/img/analytics/cloud/architecture.png" width="70%" alt="Deployment diagram"></a>

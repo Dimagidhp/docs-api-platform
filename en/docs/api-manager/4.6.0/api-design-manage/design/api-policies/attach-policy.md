@@ -1,3 +1,18 @@
+---
+title: "Attaching policies"
+description: "Attach shipped policies such as Add Header to an API at API level or operation level, and order them within the request, response, and fault flows."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/api-policies/attach-policy/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/api-policies/attach-policy.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - api-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Attaching Policies
 
 Follow the instructions below to attach one or more default policies that are shipped with WSO2 API Manager to an existing API.

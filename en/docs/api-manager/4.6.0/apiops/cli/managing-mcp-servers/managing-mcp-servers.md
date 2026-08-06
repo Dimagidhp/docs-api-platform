@@ -1,3 +1,18 @@
+---
+title: "Managing MCP servers"
+description: "List MCP Servers and their revisions with apictl, change lifecycle status, undeploy revisions, delete a server, and set MCP Server log levels."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-mcp-servers/managing-mcp-servers/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-mcp-servers/managing-mcp-servers.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - managing-mcp-servers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Managing MCP Servers
 
 ## Add MCP Servers in an environment

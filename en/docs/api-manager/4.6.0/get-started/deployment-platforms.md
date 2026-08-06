@@ -1,3 +1,17 @@
+---
+title: "Deployment platforms"
+description: "Compare running WSO2 API Manager on virtual machines against Kubernetes and OpenShift, with the characteristics and trade-offs of each platform."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/deployment-platforms/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/deployment-platforms.md
+tags:
+  - api-manager
+  - get-started
+  - deployment-platforms
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Deployment Platforms
 
 Choosing the right platform is the first step in planning your WSO2 API Manager deployment. The platform is the underlying environment where the API Manager will run. Each platform has distinct characteristics, and your choice will depend on your organization's infrastructure strategy, scalability needs, and operational capacity.

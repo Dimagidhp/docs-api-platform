@@ -1,3 +1,18 @@
+---
+title: "Scenario 2 - engage access control to the API"
+description: "Control access to an internal ColTrain API with role-based visibility in the Developer Portal and OAuth 2.0 scopes on resources."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario2-access-control/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario2-access-control.md
+tags:
+  - api-manager
+  - tutorials
+  - scenarios
+  - scenario2-access-control
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "tutorial"
+---
+
 # Scenario 2 - Engage Access Control to the API
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to control access to the API. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).

@@ -1,3 +1,18 @@
+---
+title: "Extending WebSub topic matching"
+description: "Plug custom topic-matching logic into WebSub APIs on the Universal Gateway by implementing and deploying an ExtensionListener."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-gateway/extending-websub-topic-matching/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-gateway/extending-websub-topic-matching.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - extending-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Extending WebSub Topic Matching
 
 When a subscriber sends a request to a WebSub API, the Universal Gateway decides whether the topic the subscriber asked for matches one of the topics defined on the API. Out of the box, this decision is based on two rules:

@@ -1,3 +1,18 @@
+---
+title: "Create a policy"
+description: "Create a common policy that any API can reuse, or an API-specific policy, from the Publisher Portal, including its definition and attributes."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/api-policies/create-policy/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/api-policies/create-policy.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - api-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create a Policy
 
 Listed below are two ways of creating a new policy. Depending on whether you need the policy to be accessible only within a specific API or available for all APIs, you can decide on the option you need to follow.

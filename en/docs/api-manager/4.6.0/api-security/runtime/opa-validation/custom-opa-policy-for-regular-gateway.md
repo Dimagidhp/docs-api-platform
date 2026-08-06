@@ -1,3 +1,17 @@
+---
+title: "Custom OPA policy for regular gateway"
+description: "Build a custom OPA request generator for the regular Gateway by implementing the OPARequestGenerator interface and deploying it as a bundle."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/opa-validation/custom-opa-policy-for-regular-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/opa-validation/custom-opa-policy-for-regular-gateway.md
+tags:
+  - api-manager
+  - api-security
+  - runtime
+  - opa-validation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
 
 # Custom OPA Policy for Regular gateway
 

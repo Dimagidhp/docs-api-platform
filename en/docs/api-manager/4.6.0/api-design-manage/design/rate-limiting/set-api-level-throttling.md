@@ -1,3 +1,18 @@
+---
+title: "Set API operation limits"
+description: "Apply advanced rate limiting policies to a whole API or to individual operations in the Publisher Portal, by request count or by bandwidth."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/rate-limiting/set-api-level-throttling/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/rate-limiting/set-api-level-throttling.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - rate-limiting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Set API Operation Limits
 
 Advanced Rate Limiting policies allow you to apply granular rate limits to your APIs at two levels: the entire API or specific operations (resources). Unlike subscription tiers which apply to application subscription, these limits control how individual APIs or operations are accessed regardless of the calling application.

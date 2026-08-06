@@ -1,3 +1,18 @@
+---
+title: "Managing users for the Admin Portal"
+description: "Create a role, set its permissions, and add a user so they can sign in to the WSO2 API Manager Admin Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/managing-users-and-roles/managing-users-for-admin-portal/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/managing-users-and-roles/managing-users-for-admin-portal.md
+tags:
+  - api-manager
+  - administer
+  - admin-portal
+  - user-management
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Managing Users for Admin Portal
 
 A user with an admin role is the API management controller who hosts and manages the gateway, responsible for creating users in the system, assigning roles to them, managing databases and security, etc. That user can access  WSO2 Admin Portal (`https://<APIM_Host>:<APIM_Port>/admin`) and perform the operations of defining workflow tasks and throttling policies, adding gateway labels, etc.

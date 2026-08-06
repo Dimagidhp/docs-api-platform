@@ -1,3 +1,18 @@
+---
+title: "Updating WSO2 API Manager"
+description: "How the WSO2 Updates command-line tool brings bug fixes and security fixes to a WSO2 API Manager release without a version upgrade."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/updating-wso2-api-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/updating-wso2-api-manager.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - updating-wso2-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Updating WSO2 API Manager
 
 WSO2 introduces [WSO2 Updates](https://updates.docs.wso2.com/en/latest/) , which is a command-line utility that allows you to get the latest updates that are available for a particular product release. These updates include the latest bug fixes and security fixes that are released by WSO2 after a particular product version is released. Therefore, you do not need to wait and upgrade to the next product release to get these bug fixes.

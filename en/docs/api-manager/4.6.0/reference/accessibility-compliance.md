@@ -1,3 +1,17 @@
+---
+title: "Accessibility compliance"
+description: "WCAG 2.1 Level A and AA conformance of the WSO2 API Manager Developer Portal, covering keyboard operation and use of color."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/accessibility-compliance/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/accessibility-compliance.md
+tags:
+  - api-manager
+  - reference
+  - accessibility-compliance
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "concept"
+---
+
 # Accessibility Compliance
 
 According to WHO over 2 billion people, about 37.5% of the world's population, have some form of disability. 

@@ -1,3 +1,18 @@
+---
+title: "Token expiration"
+description: "Change the default access token expiration time in deployment.toml and set a time stamp skew for clock differences between Key Manager nodes."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/tokens/token-expiration/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/tokens/token-expiration.md
+tags:
+  - api-manager
+  - api-security
+  - key-management
+  - tokens
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Token Expiration
 
 ### Configuring the token expiration time

@@ -1,3 +1,18 @@
+---
+title: "Secure endpoint with OAuth 2.0"
+description: "Secure an API backend with the OAuth 2.0 client credentials or password grant, and cache the retrieved tokens in memory or on a Redis server."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/endpoints/endpoint-security/oauth-2.0/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/endpoints/endpoint-security/oauth-2.0.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - endpoints
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Secure Endpoint with OAuth 2.0
 
 A secured endpoint is when you have access-protected resources. WSO2 API Manager supports Basic Authentication, Digest Authentication, and OAuth 2.0. They differ on how the credentials are communicated and how access is granted by the backend server.

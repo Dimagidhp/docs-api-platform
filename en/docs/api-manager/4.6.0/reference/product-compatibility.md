@@ -1,3 +1,17 @@
+---
+title: "Product compatibility"
+description: "Tested operating systems, JDKs, and databases for WSO2 API Manager 4.6.0, with compatible WSO2 products and Identity Server versions."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/product-compatibility/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/product-compatibility.md
+tags:
+  - api-manager
+  - reference
+  - product-compatibility
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "reference"
+---
+
 # Product Compatibility
 
 Given below are the compatibility details of the WSO2 API Manager (WSO2 API-M) 4.6.0 runtimes.

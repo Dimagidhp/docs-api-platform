@@ -1,3 +1,18 @@
+---
+title: "Adding a Non-Blocking send operation"
+description: "Build a mediation policy that removes the ClientApiNonBlocking property before the Send mediator so large VFS file transfers use a single thread."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/policies/adding-a-non-blocking-send-operation/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/policies/adding-a-non-blocking-send-operation.md
+tags:
+  - api-manager
+  - api-gateway
+  - policies
+  - adding-a-non-blocking-send-operation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Adding a Non-Blocking Send Operation
 
 In this example, the `Send` mediator in a proxy service using the VFS transport is transferring a file to a VFS endpoint. 

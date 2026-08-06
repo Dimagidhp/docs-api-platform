@@ -1,3 +1,17 @@
+---
+title: "Using SDKs to integrate AI APIs from WSO2 API Manager"
+description: "Call AI APIs exposed by WSO2 API Manager from LangChain and provider-specific Python SDKs by overriding the SDK base URL and API key."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/using-proxy-apis-in-sdks/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/using-proxy-apis-in-sdks.md
+tags:
+  - api-manager
+  - ai-gateway
+  - using-proxy-apis-in-sdks
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Using SDKs to Integrate AI APIs from WSO2 API Manager
 
 When working with AI APIs created through WSO2 API Manager's AI Gateway, you can integrate them into your applications using various SDKs. This guide covers how to use both **LangChain** and **provider-specific Python SDKs** to interact with your AI APIs.

@@ -1,3 +1,18 @@
+---
+title: "Sentence Count Guardrail"
+description: "Apply the Sentence Count Guardrail to an AI API to enforce minimum and maximum sentence counts on a JSON field chosen with JSON Path."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/sentence-count-guardrail/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/sentence-count-guardrail.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+  - sentence-count-guardrail
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Sentence Count Guardrail
 
 The **Sentence Count Guardrail** is a custom Synapse mediator for the **WSO2 API Manager Universal Gateway** that validates incoming AI API requests and GenAI responses by enforcing **minimum and/or maximum sentence count constraints** on a selected JSON field. It helps control verbosity, reduce prompt injection surface via overly long inputs, and enforce style or compliance limits.

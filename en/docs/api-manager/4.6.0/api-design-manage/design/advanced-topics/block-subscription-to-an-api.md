@@ -1,3 +1,18 @@
+---
+title: "Block subscription to an API"
+description: "Block and unblock a subscription to an API for a given user and application, either for production traffic only or for production and sandbox."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - advanced-topics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Block Subscription to an API
 
 An API publisher can **block subscription** to an API as a way of disabling access to it and managing its usage and monetization. Subscription blocking can be temporary or permanent. There is an unblocking facility to allow API invocations again.

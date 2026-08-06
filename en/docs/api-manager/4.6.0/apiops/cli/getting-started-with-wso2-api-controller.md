@@ -1,3 +1,18 @@
+---
+title: "Getting started with WSO2 API controller (apictl)"
+description: "Download and initialize apictl, add and remove environments, log in and out, and set proxies, request timeouts, and the export directory."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/getting-started-with-wso2-api-controller/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/getting-started-with-wso2-api-controller.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - getting-started-with-wso2-api-controller
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Getting Started with WSO2 API Controller (apictl)
 
 **WSO2 API Controller (apictl)** is a command-line tool providing the capability to move APIs, API Products, and Applications across environments and to perform CI/CD operations. It can also be used to perform these same tasks on a Kubernetes deployment. Furthermore, it can perform WSO2 Micro Integrator (WSO2 MI) server specific operations such as monitoring Synapse artifacts and performing MI management/administrative tasks from the command line.

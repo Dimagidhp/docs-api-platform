@@ -1,3 +1,18 @@
+---
+title: "Create a MCP server using an existing API"
+description: "Create an MCP server from an API already deployed in WSO2 API Manager by selecting the operations to expose as MCP tools in the Publisher Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/create-from-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/create-from-api.md
+tags:
+  - api-manager
+  - ai-gateway
+  - mcp-gateway
+  - create-from-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create a MCP Server Using an Existing API
 
 This creation path is ideal when the API you want to expose as MCP tools is **already deployed in WSO2 API Manager**.

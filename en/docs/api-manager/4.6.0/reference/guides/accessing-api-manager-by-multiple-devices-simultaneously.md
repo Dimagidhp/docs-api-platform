@@ -1,3 +1,18 @@
+---
+title: "Accessing API Manager by multiple devices simultaneously"
+description: "Why revoking a token on one device breaks the others, and the token handling recommended for client apps used on several devices."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously.md
+tags:
+  - api-manager
+  - reference
+  - guides
+  - accessing-api-manager-by-multiple-devices-simultaneously
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "explanation"
+---
+
 # Accessing API Manager by Multiple Devices Simultaneously
 
 When there are many users who use production deployment setups, accessing API Manager by multiple devices is more important. According to the architecture, if we logged out from one device and revoke the access token, then all the calls made with that token thereafter will get authentication failures. In this case Applications should be smart enough to detect that authentication failure and should request  for a new access token.

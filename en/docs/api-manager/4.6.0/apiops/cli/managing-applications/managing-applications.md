@@ -1,3 +1,18 @@
+---
+title: "Managing applications"
+description: "List the applications in a WSO2 API Manager environment with apictl get apps, filter them by owner, and delete an application by name."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-applications/managing-applications/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-applications/managing-applications.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - managing-applications
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Managing Applications
 
 ## Add Applications in an environment

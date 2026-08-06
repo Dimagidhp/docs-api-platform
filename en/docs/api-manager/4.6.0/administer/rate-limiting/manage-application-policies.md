@@ -1,3 +1,18 @@
+---
+title: "Manage application policies"
+description: "Add application-level rate limiting tiers in WSO2 API Manager, applied per access token generated for an application."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/manage-application-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/manage-application-policies.md
+tags:
+  - api-manager
+  - administer
+  - rate-limiting
+  - applications
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Manage Application Policies
 
 Application-level rate limiting policies are applicable per access token generated for an application.

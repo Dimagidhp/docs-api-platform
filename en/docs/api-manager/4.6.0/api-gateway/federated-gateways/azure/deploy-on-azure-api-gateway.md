@@ -1,3 +1,17 @@
+---
+title: "Deploy API on Azure API Gateway"
+description: "Register Azure API Gateway as a federated gateway in WSO2 API Manager, then design, secure, deploy, and invoke an API that runs on Azure."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/federated-gateways/azure/deploy-on-azure-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/federated-gateways/azure/deploy-on-azure-api-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - federated-gateways
+  - azure
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
 
 # Deploy API on Azure API Gateway
 

@@ -1,3 +1,18 @@
+---
+title: "OpenSearch based analytics installation guide"
+description: "Set up OpenSearch based analytics for WSO2 API Manager: configure log publishing, install Fluent Bit, and view the OpenSearch dashboards."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/on-prem/opensearch-installation-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/on-prem/opensearch-installation-guide.md
+tags:
+  - api-manager
+  - monitoring
+  - api-analytics
+  - on-prem
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # OpenSearch Based Analytics Installation Guide
 
 <a href="../../../../assets/img/analytics/opensearch/architecture.png"><img src="../../../../assets/img/analytics/opensearch/architecture.png" width="70%" alt="Deployment diagram"></a>

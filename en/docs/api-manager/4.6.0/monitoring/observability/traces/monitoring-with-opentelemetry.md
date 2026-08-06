@@ -1,3 +1,18 @@
+---
+title: "Monitoring with OpenTelemetry"
+description: "Enable distributed tracing in WSO2 API Manager with OpenTelemetry, publishing traces to Jaeger, Zipkin, a log file, or an OTLP endpoint."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/observability/traces/monitoring-with-opentelemetry/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/observability/traces/monitoring-with-opentelemetry.md
+tags:
+  - api-manager
+  - monitoring
+  - observability
+  - traces
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Monitoring with OpenTelemetry
 
 WSO2 API Manager supports a deployment architecture that has distributed components. As a result, tracing a message is important to debug and observe a message path so that you know where it originates. This setup is known as distributed tracing. OpenTelemetry allows you to enable distributed tracing for WSO2 API Manager.

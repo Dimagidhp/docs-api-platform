@@ -1,3 +1,18 @@
+---
+title: "API documentation YAML representation"
+description: "Fields in the API documentation YAML that WSO2 API Manager governance evaluates, including document type, source type, and visibility."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/api-doc-yaml-representation/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/api-doc-yaml-representation.md
+tags:
+  - api-manager
+  - reference
+  - governance
+  - api-doc-yaml-representation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "reference"
+---
+
 # API Documentation YAML Representation
 
 For governing each API's documentation, the WSO2 API Manager arranges API documentation metadata in the following structured manner:

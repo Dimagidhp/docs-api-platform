@@ -1,3 +1,18 @@
+---
+title: "Configuring the authorization manager"
+description: "Change where WSO2 API Manager stores users, roles, and permissions by configuring the authorization manager away from the default database."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/configuring-the-authorization-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/configuring-the-authorization-manager.md
+tags:
+  - api-manager
+  - administer
+  - user-store
+  - authorization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Configuring the Authorization Manager
 
 According to the default configuration in WSO2 products, the Users, Roles and Permissions are stored in the same repository (i.e., the default, embedded H2 database). However, you can change this configuration in such a way that the Users and Roles are stored in one repository (User Store) and the Permissions are stored in a separate repository. A user store can be a typical RDBMS, an LDAP or an external Active Directory. For information on how the repositories for storing information about users and roles are configured, see [Configuring User Stores](https://docs.wso2.com/display/ADMIN44x/Configuring+User+Stores) .

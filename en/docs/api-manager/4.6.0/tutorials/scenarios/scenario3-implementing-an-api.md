@@ -1,3 +1,18 @@
+---
+title: "Scenario 3 - implementing an API"
+description: "Aggregate three telecom backends that use different formats into one API with the Micro Integrator, and expose it through API Manager."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario3-implementing-an-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario3-implementing-an-api.md
+tags:
+  - api-manager
+  - tutorials
+  - scenarios
+  - scenario3-implementing-an-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "tutorial"
+---
+
 # Scenario 3 - Implementing an API
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to implement the API. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).

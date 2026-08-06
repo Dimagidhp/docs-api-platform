@@ -1,3 +1,18 @@
+---
+title: "Managing common API policies"
+description: "List the common API policies in a WSO2 API Manager environment with apictl get policies api, and delete a policy you no longer need."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-common-api-policies/managing-common-api-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-common-api-policies/managing-common-api-policies.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - managing-common-api-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Managing common API Policies
 
 Following actions on common API Policies are allowed by apictl.

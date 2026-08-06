@@ -1,3 +1,18 @@
+---
+title: "Installing the API Manager runtime"
+description: "Download and extract the WSO2 API Manager distribution, set JAVA_HOME, and pass system properties to the runtime before starting it."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installing-the-product/installing-api-m-runtime/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installing-the-product/installing-api-m-runtime.md
+tags:
+  - api-manager
+  - install-and-setup
+  - install
+  - installing-the-product
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Installing the API Manager Runtime
 
 Follow the steps given below to install the WSO2 API Manager runtime.

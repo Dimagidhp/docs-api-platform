@@ -1,3 +1,17 @@
+---
+title: "Governance concepts"
+description: "The core governance concepts in WSO2 API Manager: artifacts, rulesets, policies, and labels, and how they relate to each other."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/governance/governance-concept/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/governance/governance-concept.md
+tags:
+  - api-manager
+  - administer
+  - governance
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "concept"
+---
+
 # Governance Concepts
 
 The governance capabilities in WSO2 API Manager builds upon the following core concepts:

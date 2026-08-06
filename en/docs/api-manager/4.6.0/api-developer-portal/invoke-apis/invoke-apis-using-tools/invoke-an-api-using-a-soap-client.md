@@ -1,3 +1,18 @@
+---
+title: "Test an API using a SOAP client"
+description: "Test a SOAP API exposed through WSO2 API Manager with SOAP UI: subscribe, generate a production key, and send a request with an authorization header."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-a-soap-client/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-a-soap-client.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - invoke-apis
+  - invoke-apis-using-tools
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Test an API Using a SOAP Client
 
 You can use any SOAP client to **test an API**. Let's use the SOAP UI in the following example.

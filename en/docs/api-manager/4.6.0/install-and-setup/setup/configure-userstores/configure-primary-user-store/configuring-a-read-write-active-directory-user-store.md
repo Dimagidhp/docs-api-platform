@@ -1,3 +1,18 @@
+---
+title: "Configuring a read-write Active Directory user store"
+description: "Set an external Active Directory as the primary read-write user store of WSO2 API Manager, with the user_store properties it accepts."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-active-directory-user-store/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-active-directory-user-store.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - configure-userstores
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 #Configuring a Read-Write Active Directory User Store
 
 Follow the given steps to configure an external Active Directory as the primary user store:

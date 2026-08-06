@@ -1,3 +1,18 @@
+---
+title: "NTLM grant"
+description: "Obtain an OAuth2 access token on Windows by passing a valid NTLM token to the Token API as the iwa:ntlm authorization grant, and disable the grant."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/authentication/grant-types/ntlm-grant/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/authentication/grant-types/ntlm-grant.md
+tags:
+  - api-manager
+  - api-security
+  - key-management
+  - authentication
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # NTLM Grant
 
 **NTLM** is the successor of the authentication protocol in Microsoft LAN Manager (LANMAN), an older Microsoft product, and attempts to provide backwards compatibility with LANMAN. You can obtain an access token to your API in an API Manager instance running on **Windows** by providing a valid NTLM token as an authorization grant. The steps to get access token for NTLM grant, are given below:

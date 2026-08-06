@@ -1,3 +1,17 @@
+---
+title: "Overview of the Universal Gateway"
+description: "How the WSO2 Universal Gateway processes API requests through transports, message builders, QoS handlers, and formatters, and the features it offers."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/overview-of-the-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/overview-of-the-api-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - overview-of-the-api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Overview of the Universal Gateway
 
 [![API-M overview](../assets/img/learn/apim-overview.png){: style="width:60%"}](../assets/img/learn/apim-overview.png)

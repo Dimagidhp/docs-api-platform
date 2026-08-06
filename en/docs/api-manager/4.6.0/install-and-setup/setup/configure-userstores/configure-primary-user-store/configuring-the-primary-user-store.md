@@ -1,3 +1,18 @@
+---
+title: "Configuring the primary user store"
+description: "Primary user store configuration in WSO2 API Manager: where deployment.toml defines it and which user store types you can choose."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-the-primary-user-store/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-the-primary-user-store.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - configure-userstores
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Configuring the Primary User Store
 
 This documentation explains the process of setting up a primary user store for your system.

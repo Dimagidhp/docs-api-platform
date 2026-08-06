@@ -1,3 +1,18 @@
+---
+title: "AI guardrails"
+description: "AI Guardrails in WSO2 AI Gateway: the risks they address and the validation policies available for AI API requests and GenAI responses."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/overview.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+  - overview
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # AI Guardrails
 
 Generative AI brings immense potential—but without the right controls, it also introduces significant risks.

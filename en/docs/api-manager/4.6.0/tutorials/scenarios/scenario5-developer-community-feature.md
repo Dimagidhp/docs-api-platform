@@ -1,3 +1,18 @@
+---
+title: "Scenario 5 - getting the developer community involved"
+description: "Try the Developer Portal community features on a sample API: SDK generation, documentation, ratings, comments, and the API console."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario5-developer-community-feature/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario5-developer-community-feature.md
+tags:
+  - api-manager
+  - tutorials
+  - scenarios
+  - scenario5-developer-community-feature
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "tutorial"
+---
+
 # Scenario 5 - Getting the Developer Community Involved
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to involve the developer community. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).

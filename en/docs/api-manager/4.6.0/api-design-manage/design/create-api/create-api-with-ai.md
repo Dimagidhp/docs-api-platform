@@ -1,3 +1,18 @@
+---
+title: "API design assistant"
+description: "Use the API Design Assistant to draft REST, GraphQL, and Async API definitions from natural language after registering for an AI subscription key."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-api-with-ai/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-api-with-ai.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - create-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 #  API Design Assistant
 
 Designing APIs is a crucial part of the API development lifecycle. With API Manager, you can easily create APIs using natural language through the API Design Assistant. This AI-powered tool requires no prior coding or API knowledge, allowing you to design REST, GraphQL, and Async APIs effortlessly by transforming your requirements into API specifications.

@@ -1,3 +1,18 @@
+---
+title: "Gateway policies"
+description: "Create, deploy, and undeploy global gateway policies from the Publisher Portal so that they apply to every API deployed on a chosen gateway."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/gateway-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/gateway-policies.md
+tags:
+  - api-manager
+  - api-design-manage
+  - deploy-and-publish
+  - deploy-on-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 #Gateway Policies
 
 In WSO2 API Manager, managing Global Level Policies within the gateway infrastructure is made easier. This streamlines policy handling, eliminating the need for administrators to manually create XML-type policy files. This feature facilitates a user-friendly approach to handling policies, eliminates the requirement for manual XML creation and placement in specific directories, and enhances control by providing a clear interface for creating, deploying, and undeploying policies, offering administrators better control over policy management.

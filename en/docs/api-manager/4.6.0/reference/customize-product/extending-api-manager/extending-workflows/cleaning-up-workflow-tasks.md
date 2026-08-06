@@ -1,3 +1,18 @@
+---
+title: "Cleaning up workflow tasks"
+description: "Use cleanUpPendingTask and a BPEL cancel event so approval tasks disappear from the Admin Portal when users delete their requests."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/cleaning-up-workflow-tasks/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/cleaning-up-workflow-tasks.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - extending-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Cleaning Up Workflow Tasks
 
 When workflow extensions are enabled using default workflow executors, they create respective approval tasks in [WSO2 Business Process Server](https://wso2.com/api-manager/) (BPS). Each of these tasks are visible to administrators in the Admin Portal. The administrator has the option to accept or reject each of the requests made by other users. At the same time, users have the option to delete the application, subscription or key they created before the administrator accepts or rejects their requests. This leaves unnecessary approval requests in the Admin Portal, which can confuse the administrator.

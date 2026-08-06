@@ -1,3 +1,18 @@
+---
+title: "Pattern 6: All-in-One with WSO2 IS as key manager"
+description: "Deploy WSO2 API Manager on Kubernetes with WSO2 Identity Server 7.x as a third-party Key Manager, then register it from the portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - kubernetes-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Pattern 6: All-in-One with WSO2 IS as Key Manager
 
 This pattern deploys WSO2 API Manager as a single All-in-One node with WSO2 Identity Server 7.x acting as a third-party Key Manager. Token issuance and validation are delegated to WSO2 IS, which runs as a separate component in the same Kubernetes cluster.

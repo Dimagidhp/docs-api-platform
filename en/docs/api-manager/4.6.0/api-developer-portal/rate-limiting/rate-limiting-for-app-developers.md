@@ -1,3 +1,18 @@
+---
+title: "Rate limiting for app developers"
+description: "Application-level and subscription-level rate limits in WSO2 API Manager: default tiers, per token quota, burst control, and how limits combine."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/rate-limiting/rate-limiting-for-app-developers/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/rate-limiting/rate-limiting-for-app-developers.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - rate-limiting
+  - rate-limiting-for-app-developers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Rate Limiting for App Developers
 
 Rate limiting controls how many requests your application can make to APIs within a specific time period. This protects backend services from overload and ensures fair resource distribution among all API consumers.

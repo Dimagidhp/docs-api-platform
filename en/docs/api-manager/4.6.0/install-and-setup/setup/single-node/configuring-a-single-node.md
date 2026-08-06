@@ -1,3 +1,18 @@
+---
+title: "Pattern 0: All-in-One setup"
+description: "Configure Pattern 0 of WSO2 API Manager on one node: certificates, load balancer, databases, Gateway URLs, and production hardening."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/single-node/configuring-a-single-node/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/single-node/configuring-a-single-node.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - single-node
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Pattern 0: All-in-One Setup
 
 This page walks you through how to manually configure and deploy WSO2 API Manager in a single standalone instance, without using a distributed or HA deployment patterns. 

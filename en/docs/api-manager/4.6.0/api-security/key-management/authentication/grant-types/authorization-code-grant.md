@@ -1,3 +1,18 @@
+---
+title: "Authorization code grant"
+description: "Obtain an access token with the OAuth2 authorization code grant: enable the grant for an application, call /authorize, then exchange the code at /token."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/authentication/grant-types/authorization-code-grant/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/authentication/grant-types/authorization-code-grant.md
+tags:
+  - api-manager
+  - api-security
+  - key-management
+  - authentication
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Authorization Code Grant
 
 Instead of requesting authorization directly from the resource owner (resource owner's credentials), in this grant type, the client directs the resource owner to an authorization server. The authorization server works as an intermediary between the client and resource owner to issues an authorization code, authenticate the resource owner and obtain authorization. As this is a redirection-based flow, the client must be capable of interacting with the resource owner's user-agent (typically a Web browser) and receiving incoming requests (via redirection) from the authorization server.

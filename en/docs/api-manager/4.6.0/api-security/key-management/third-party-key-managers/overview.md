@@ -1,3 +1,18 @@
+---
+title: "Third-Party key manager integration"
+description: "Third-party Key Managers that WSO2 API Manager integrates with, including WSO2 Identity Server, Keycloak, Okta, Auth0, Azure AD, and ForgeRock."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md
+tags:
+  - api-manager
+  - api-security
+  - key-management
+  - third-party-key-managers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Third-Party Key Manager Integration
 
 WSO2 API Manager supports integration with external authorization servers as Key Managers, enabling organizations to leverage existing enterprise identity providers alongside the built-in Key Manager.

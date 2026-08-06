@@ -1,3 +1,18 @@
+---
+title: "Choreo based analytics getting started guide"
+description: "Register an on-premises environment with Choreo, generate on-prem keys, configure the Gateway, and open the analytics dashboards."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/choreo-analytics/getting-started-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/choreo-analytics/getting-started-guide.md
+tags:
+  - api-manager
+  - monitoring
+  - api-analytics
+  - choreo-analytics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "quickstart"
+---
+
 # Choreo Based Analytics Getting Started Guide
 
 !!! note

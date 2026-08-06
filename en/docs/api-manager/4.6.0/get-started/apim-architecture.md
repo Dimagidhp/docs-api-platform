@@ -1,3 +1,17 @@
+---
+title: "Architecture and key components"
+description: "How the WSO2 API Manager control plane portals, Key Manager, data plane gateways, Traffic Manager, and API Controller tooling work together."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/apim-architecture/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/apim-architecture.md
+tags:
+  - api-manager
+  - get-started
+  - apim-architecture
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Architecture and Key Components
 
 The diagram below is a high-level snapshot of WSO2 API Manager and the various components that it can work together with. 

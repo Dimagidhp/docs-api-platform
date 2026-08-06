@@ -1,3 +1,18 @@
+---
+title: "Configuring workflows in a cluster"
+description: "Configure approval workflows in a distributed WSO2 API Manager deployment, with the Admin Portal running on the Publisher node."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-workflows-in-a-cluster/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-workflows-in-a-cluster.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - extending-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Configuring Workflows in a Cluster
 
 If you are working in a clustered API Manager setup with the Developer Portal, Publisher, Gateway and Key Manager in separate servers, do the workflow configurations that are discussed in the previous topics in the **Developer Portal node** . In addition, do the following configurations.

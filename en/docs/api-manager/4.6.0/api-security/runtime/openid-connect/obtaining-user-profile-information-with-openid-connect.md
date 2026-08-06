@@ -1,3 +1,18 @@
+---
+title: "Obtaining user profile information with OpenID connect"
+description: "Obtain end-user profile claims at runtime with the openid scope, by decoding the id_token or invoking the userinfo endpoint of WSO2 API Manager."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/openid-connect/obtaining-user-profile-information-with-openid-connect/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/openid-connect/obtaining-user-profile-information-with-openid-connect.md
+tags:
+  - api-manager
+  - api-security
+  - runtime
+  - openid-connect
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Obtaining User Profile Information with OpenID Connect
 
 [OpenID Connect](http://openid.net/connect/) is an **authentication protocol** that is a simple identity layer on top of the OAuth 2.0 protocol. It allows clients to verify the identity of the end-user based on the authentication performed by an authorization server, as well as to obtain basic profile information about the end-user in an interoperable and REST-like manner.

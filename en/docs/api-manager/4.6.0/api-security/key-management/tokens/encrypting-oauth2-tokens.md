@@ -1,3 +1,18 @@
+---
+title: "Encrypting OAuth2 tokens"
+description: "Enable OAuth2 token encryption so access tokens, refresh tokens, consumer secrets, and authorization codes are encrypted with the primary keystore."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/tokens/encrypting-oauth2-tokens/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/tokens/encrypting-oauth2-tokens.md
+tags:
+  - api-manager
+  - api-security
+  - key-management
+  - tokens
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Encrypting OAuth2 Tokens 
 
 WSO2 API Manager provides the capability to encrypt OAuth2 tokens (OAuth2 access tokens, refresh tokens, consumer secrets, authorization codes, or any other OAuth2 key) using the primary keystore. The result is encoded in Base64 and stored in the database.

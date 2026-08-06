@@ -1,3 +1,18 @@
+---
+title: "Expose an existing backend implementation as a prototype API"
+description: "Publish a pre-released API that points at a working backend URL, so consumers can try it and give feedback before the API is published."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/prototype-api/backend-url-prototype-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/prototype-api/backend-url-prototype-api.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - prototype-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Expose an Existing Backend Implementation as a Prototype API
 
 This allows you to create a prototype API with an actual working backend URL and publish the API to the Developer Portal as a Pre-Released API.

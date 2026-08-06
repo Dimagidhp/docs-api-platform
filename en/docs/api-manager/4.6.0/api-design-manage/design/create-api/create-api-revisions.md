@@ -1,3 +1,18 @@
+---
+title: "API revisions"
+description: "What API revisions are, and how to create, deploy, undeploy, delete, and restore one so each gateway serves the state of the API you choose."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-api-revisions/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-api-revisions.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - create-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # API Revisions
 
 [Publishing](../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/) displays the 

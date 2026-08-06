@@ -1,3 +1,18 @@
+---
+title: "Consume MCP servers from MCP hub"
+description: "Run the WSO2 API Manager Developer Portal as an MCP Hub in MCP_ONLY mode and invoke MCP server tools with the integrated MCP Playground."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/invoke-a-mcp-server-using-playground/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/invoke-a-mcp-server-using-playground.md
+tags:
+  - api-manager
+  - ai-gateway
+  - mcp-gateway
+  - invoke-a-mcp-server-using-playground
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Consume MCP Servers from MCP Hub
 
 WSO2 API Manager can act as an MCP Hub, providing centralized discovery, management, and reuse of MCP Servers across teams and environments. When running as an MCP Hub, the API Manager Developer Portal exclusively works with MCP Servers — no APIs are available in this mode.

@@ -1,3 +1,18 @@
+---
+title: "Create a REST API"
+description: "Create a REST API from scratch in the Publisher Portal by entering its name, version, context, and the endpoint of your backend implementation."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - create-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create a REST API
 
 **API creation** is the process of linking an existing backend API implementation to the [API Publisher](../../../../get-started/apim-architecture/#api-publisher), so that you can manage and monitor the [API's lifecycle](../../../../api-design-manage/design/lifecycle-management/api-lifecycle/), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../../../../get-started/apim-architecture/#api-publisher) itself.

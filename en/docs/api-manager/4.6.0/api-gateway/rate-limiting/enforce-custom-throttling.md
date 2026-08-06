@@ -1,3 +1,18 @@
+---
+title: "Enforce custom throttling"
+description: "How the Traffic Manager evaluates custom throttling policies, the key template parameters available, and a Siddhi query that rate limits a user."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/rate-limiting/enforce-custom-throttling/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/rate-limiting/enforce-custom-throttling.md
+tags:
+  - api-manager
+  - api-gateway
+  - rate-limiting
+  - enforce-custom-throttling
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "explanation"
+---
+
 # Enforce Custom Throttling
 
 Custom throttling policies allow system administrators to define dynamic rules for specific use cases, which are applied globally across all tenants. The Traffic Manager evaluates these policies using its Siddhi-based throttling engine.

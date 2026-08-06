@@ -1,3 +1,18 @@
+---
+title: "Importing MCP servers via dev first approach"
+description: "Import an MCP Server project built from an MCP specification into a WSO2 API Manager environment with apictl, without the Publisher Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-mcp-servers/importing-mcp-servers-via-dev-first-approach/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-mcp-servers/importing-mcp-servers-via-dev-first-approach.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - managing-mcp-servers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Importing MCP Servers Via Dev First Approach
 
 **WSO2 API Controller (apictl)** allows you to create and deploy MCP (Model Context Protocol) Servers without using the Publisher Portal of the WSO2 API Manager (WSO2 API-M). You can use this feature to create an MCP Server **using an existing MCP specification** and then deploy it to the desired WSO2 API-M environment.

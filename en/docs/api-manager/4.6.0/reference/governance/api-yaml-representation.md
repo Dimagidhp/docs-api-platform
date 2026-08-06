@@ -1,3 +1,18 @@
+---
+title: "API YAML representation in WSO2 API Manager"
+description: "Every field in the api.yaml file that represents an API in WSO2 API Manager, from basic details to endpoints, CORS, and security."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/api-yaml-representation/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/api-yaml-representation.md
+tags:
+  - api-manager
+  - reference
+  - governance
+  - api-yaml-representation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "reference"
+---
+
 # API YAML Representation in WSO2 API Manager
 
 This documentation provides an overview of the structure and fields in the `api.yaml` file used in WSO2 API Manager to represent an API.

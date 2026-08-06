@@ -1,3 +1,18 @@
+---
+title: "Custom connector"
+description: "Build and deploy a custom LLMProviderService connector bundle so WSO2 API Manager can extract model and token metadata from an AI service."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/custom-ai-vendors/custom-connector/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/custom-ai-vendors/custom-connector.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-vendor-management
+  - custom-ai-vendors
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Custom Connector
 
 When onboarding a custom AI service provider to API Manager, you have the option to either use the built-in <a href='https://github.com/wso2/carbon-apimgt/blob/master/components/apimgt/org.wso2.carbon.apimgt.api/src/main/java/org/wso2/carbon/apimgt/api/DefaultLLMProviderService.java'>`default`</a> connector or write your own custom connector.

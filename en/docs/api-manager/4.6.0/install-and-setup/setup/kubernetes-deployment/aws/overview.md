@@ -1,3 +1,18 @@
+---
+title: "WSO2 API Manager deployment guide for AWS"
+description: "Deployment models, infrastructure architecture, billable AWS services, and licensing costs for running WSO2 API Manager on AWS."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/overview.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - kubernetes-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "concept"
+---
+
 # WSO2 API Manager Deployment Guide for AWS
 
 This guide provides an overview of deploying WSO2 API Manager on Amazon Web Services (AWS) using a highly available architecture across multiple availability zones.

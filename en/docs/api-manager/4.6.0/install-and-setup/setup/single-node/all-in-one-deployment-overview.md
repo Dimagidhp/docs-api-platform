@@ -1,3 +1,18 @@
+---
+title: "All-in-One deployment overview"
+description: "All-in-one deployment of WSO2 API Manager: what runs inside one instance, and how single node and active-active setups compare."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/single-node/all-in-one-deployment-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/single-node/all-in-one-deployment-overview.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - single-node
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # All-in-One Deployment Overview
 
 An all-in-one deployment contains all the API-M components in one runtime instance. This is easy to set up and requires less resources when compared with a distributed deployment. Although a distributed deployment provides high performance and a high level of scalability, it may be too complex if you want to a small to medium scale API management solution. The all-in-one deployment is ideal if you want to start small and iteratively build up a robust API management platform.

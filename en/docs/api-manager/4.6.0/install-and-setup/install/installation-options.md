@@ -1,3 +1,18 @@
+---
+title: "Installation options"
+description: "Installation options for WSO2 API Manager deployments: Kubernetes with Helm charts, Docker and Docker Compose, and Puppet artifacts."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installation-options/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installation-options.md
+tags:
+  - api-manager
+  - install-and-setup
+  - install
+  - installation-options
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "concept"
+---
+
 # Installation Options
 
 API Manager provides a wide range of installation options for deployments.

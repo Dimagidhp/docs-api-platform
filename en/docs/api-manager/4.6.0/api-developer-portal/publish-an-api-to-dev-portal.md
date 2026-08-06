@@ -1,3 +1,17 @@
+---
+title: "Publish an API to Developer Portal"
+description: "Publish APIs, AI APIs, MCP servers, and API products to the WSO2 API Manager Developer Portal by moving them to the PUBLISHED lifecycle state."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/publish-an-api-to-dev-portal/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/publish-an-api-to-dev-portal.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - publish-an-api-to-dev-portal
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Publish an API to Developer Portal
 
 This guide provides step-by-step instructions for publishing APIs, AI APIs, MCP Servers, and API Products to the WSO2 API Manager Developer Portal, making them available for application developers to discover, subscribe, and consume.

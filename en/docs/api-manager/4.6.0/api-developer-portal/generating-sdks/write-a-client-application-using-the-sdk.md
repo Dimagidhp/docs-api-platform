@@ -1,3 +1,18 @@
+---
+title: "Write a client application using the SDK"
+description: "Build a Java client for the PizzaShack API from a Developer Portal SDK, set the access token, and handle token renewal in the generated code."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/generating-sdks/write-a-client-application-using-the-sdk/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/generating-sdks/write-a-client-application-using-the-sdk.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - generating-sdks
+  - write-a-client-application-using-the-sdk
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "tutorial"
+---
+
 # Write a Client Application Using the SDK
 
 

@@ -1,3 +1,18 @@
+---
+title: "Create a server sent events API"
+description: "Create a Server Sent Events API in WSO2 API Manager to receive one-way events from an SSE backend, and map its topics to backend paths."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-streaming-api/create-a-sse-streaming-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-streaming-api/create-a-sse-streaming-api.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - create-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create a Server Sent Events API
 
 ## Overview

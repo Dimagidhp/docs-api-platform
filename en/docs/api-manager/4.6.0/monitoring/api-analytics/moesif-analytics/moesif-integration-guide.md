@@ -1,3 +1,18 @@
+---
+title: "Moesif analytics integration"
+description: "Connect WSO2 API Manager to Moesif: add the analytics key to deployment.toml, mask sensitive fields, and check the published event types."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/moesif-analytics/moesif-integration-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/moesif-analytics/moesif-integration-guide.md
+tags:
+  - api-manager
+  - monitoring
+  - api-analytics
+  - moesif-analytics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Moesif Analytics Integration
 
 !!! info "New in 4.6.0 — Moesif-powered WSO2 Analytics replaces Choreo Analytics for enhanced insights and observability."

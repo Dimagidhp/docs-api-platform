@@ -1,3 +1,18 @@
+---
+title: "Manage subscription policies"
+description: "Add subscription-level rate limiting tiers, or business plans, in WSO2 API Manager, including GraphQL and streaming API limits."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/manage-subscription-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/manage-subscription-policies.md
+tags:
+  - api-manager
+  - administer
+  - rate-limiting
+  - subscriptions
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Manage Subscription Policies (Business Plans)
 
 Subscription-level rate limiting policies (Business Plans) are used to limit the number of requests an application can make to an API during a given period of time.

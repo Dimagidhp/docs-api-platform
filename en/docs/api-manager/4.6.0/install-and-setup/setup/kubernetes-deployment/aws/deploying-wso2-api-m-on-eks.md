@@ -1,3 +1,18 @@
+---
+title: "Deploying WSO2 API Manager on AWS EKS"
+description: "Deploy WSO2 API Manager on Amazon EKS with RDS or Aurora databases, ECR images, keystores, Helm charts, and Application Load Balancer."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/deploying-wso2-api-m-on-eks/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/deploying-wso2-api-m-on-eks.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - kubernetes-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Deploying WSO2 API Manager on AWS EKS
 
 This guide provides a step-by-step approach to deploying WSO2 API Manager on Amazon Elastic Kubernetes Service (EKS). This deployment follows the standard WSO2 Kubernetes architecture, extended to use AWS-specific services such as Amazon RDS/Aurora for databases and Application Load Balancer (ALB) for ingress.

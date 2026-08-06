@@ -1,3 +1,17 @@
+---
+title: "Maintain separate gateways per single or multiple tenants"
+description: "Isolate tenant API traffic by dedicating Universal Gateways to one or several tenants with the tenant loading configuration in deployment.toml."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/maintain-seperate-gateways-per-tenants/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/maintain-seperate-gateways-per-tenants.md
+tags:
+  - api-manager
+  - api-gateway
+  - maintain-seperate-gateways-per-tenants
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Maintain Separate Gateways per Single or Multiple Tenants
 
 ## Overview

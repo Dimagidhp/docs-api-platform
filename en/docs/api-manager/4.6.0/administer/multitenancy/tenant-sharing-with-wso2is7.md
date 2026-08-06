@@ -1,3 +1,18 @@
+---
+title: "Tenant sharing with WSO2 Identity Server 7.x"
+description: "Synchronize tenants between WSO2 API Manager and WSO2 Identity Server 7.x over mutual SSL, now that shared-database sync is unsupported."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/multitenancy/tenant-sharing-with-wso2is7/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/multitenancy/tenant-sharing-with-wso2is7.md
+tags:
+  - api-manager
+  - administer
+  - multitenancy
+  - identity-server
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Tenant Sharing between WSO2 API Manager and WSO2 Identity Server 7.x
 
 When migrating to WSO2 Identity Server 7.x versions (WSO2 IS 7.x), users may notice that tenant synchronization via a shared database is no longer supported. To avoid disrupting the user experience due to this change, this feature was introduced. This mode is disabled by default and must be explicitly enabled through a configuration.

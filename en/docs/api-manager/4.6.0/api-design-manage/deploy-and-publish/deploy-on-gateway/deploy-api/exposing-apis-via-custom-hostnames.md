@@ -1,3 +1,18 @@
+---
+title: "Exposing APIs via custom hostnames"
+description: "Define virtual hosts in a gateway environment and assign one when deploying an API, so consumers reach the API through custom hostnames."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames.md
+tags:
+  - api-manager
+  - api-design-manage
+  - deploy-and-publish
+  - deploy-on-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Exposing APIs via Custom Hostnames
 
 Virtual hosts (VHosts) enable you to expose APIs using specific hostnames that correspond to a Gateway environment. Each Gateway environment will have a minimum of one VHost. Admin users can manage Gateways by creating, updating, and deleting Gateway environments via the Admin Portal. Each Gateway environment will contain the details of each of the VHosts, which are the custom hostnames, that are applicable to that Gateway environment. As a result, API publishers can use the VHosts to group their APIs by selecting a virtual host when deploying an API to Gateway environment(s). In addition, application developers can access APIs by using the defined access URLs of the virtual host.

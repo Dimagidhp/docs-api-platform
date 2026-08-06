@@ -1,3 +1,18 @@
+---
+title: "Managing tenants"
+description: "Add and view tenants from the WSO2 API Manager management console as a super user, and reach each tenant Developer Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/multitenancy/managing-tenants/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/multitenancy/managing-tenants.md
+tags:
+  - api-manager
+  - administer
+  - multitenancy
+  - tenants
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Managing Tenants
 
 

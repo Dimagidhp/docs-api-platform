@@ -1,3 +1,17 @@
+---
+title: "Enforce rate limiting and resource access policies"
+description: "See how the API Gateway applies rate limiting tiers and resource-level access policies when you invoke a subscribed REST API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/enforce-throttling-and-resource-access-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/enforce-throttling-and-resource-access-policies.md
+tags:
+  - api-manager
+  - tutorials
+  - enforce-throttling-and-resource-access-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Enforce Rate Limiting and Resource Access Policies
 
 **Rate limiting** allows you to limit the number of hits to an API during a given period, typically to protect your APIs from security attacks and your backend services from overuse, regulate traffic according to infrastructure limitations and to regulate usage for monetization. For information on different levels of rate limiting in WSO2 API Manager (WSO2 API-M), see [rate limiting tiers](../manage-apis/design/rate-limiting/setting-throttling-limits/).

@@ -1,3 +1,18 @@
+---
+title: "Configure the crypto provider"
+description: "Switch the WSO2 API Manager crypto provider between Bouncy Castle and Bouncy Castle FIPS to meet FIPS 140-2 compliance."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/advance-configurations/configuring-the-crypto-provider/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/advance-configurations/configuring-the-crypto-provider.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - advance-configurations
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Configure the Crypto Provider
 
 ## What is a Crypto Provider?

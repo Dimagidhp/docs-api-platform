@@ -1,3 +1,18 @@
+---
+title: "Revoke OAuth2 application"
+description: "Revoke the OAuth2 client of a Developer Portal application from the management console to invalidate every access token issued for it."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/generate-keys/revoke-oauth2-application/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/generate-keys/revoke-oauth2-application.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - manage-application
+  - generate-keys
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Revoke OAuth2 Application
 
 1.  An OAuth client is created when an application [access token is generated](../../../consume/manage-application/generate-keys/obtain-access-token/overview-of-access-tokens). When a subscriber creates an application and generates an access token to the application using the Developer Portal, the Developer Portal makes a call to the Key Manager to create an OAuth client and obtain an access token. Token validation happens in the Gateway itself using the in-memory data store.

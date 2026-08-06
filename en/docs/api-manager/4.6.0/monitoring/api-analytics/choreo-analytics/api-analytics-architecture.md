@@ -1,3 +1,18 @@
+---
+title: "API analytics architecture"
+description: "Architecture of the deprecated Choreo Analytics solution, where gateways publish statistics to regional Analytics Cloud deployments."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/choreo-analytics/api-analytics-architecture/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/choreo-analytics/api-analytics-architecture.md
+tags:
+  - api-manager
+  - monitoring
+  - api-analytics
+  - choreo-analytics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # API Analytics Architecture
 
 !!! note

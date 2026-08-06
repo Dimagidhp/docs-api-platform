@@ -1,3 +1,18 @@
+---
+title: "Create a MCP server by importing an OpenAPI definition"
+description: "Import an OpenAPI definition in the Publisher Portal to create an MCP server, choosing which operations become MCP tools before publishing."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/create-from-openapi/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/create-from-openapi.md
+tags:
+  - api-manager
+  - ai-gateway
+  - mcp-gateway
+  - create-from-openapi
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create a MCP Server by Importing an OpenAPI Definition
 
 This creation path is used when you already have an OpenAPI definition for your backend service and want to quickly turn its operations into MCP tools.

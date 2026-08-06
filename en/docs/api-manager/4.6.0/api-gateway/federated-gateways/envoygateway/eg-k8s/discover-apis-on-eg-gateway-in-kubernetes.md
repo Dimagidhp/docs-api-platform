@@ -1,3 +1,18 @@
+---
+title: "Discover APIs on Envoy gateway in Kubernetes"
+description: "Set up Envoy Gateway in a Kubernetes cluster as a federated gateway and discover its HTTPRoutes, services, and policies as APIs in WSO2 API Manager."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/federated-gateways/envoygateway/eg-k8s/discover-apis-on-eg-gateway-in-kubernetes/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/federated-gateways/envoygateway/eg-k8s/discover-apis-on-eg-gateway-in-kubernetes.md
+tags:
+  - api-manager
+  - api-gateway
+  - federated-gateways
+  - envoygateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Discover APIs on Envoy Gateway in Kubernetes
 
 From the 4.6.0 release onward, WSO2 API Manager introduces federated API discovery for APIs deployed on Envoy Gateway in a Kubernetes cluster. WSO2 API Manager includes a built-in Envoy Gateway connector and a separate Gateway Agent, which enables the discovery of APIs deployed on Envoy Gateway in the cluster.

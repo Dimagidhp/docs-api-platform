@@ -1,3 +1,18 @@
+---
+title: "Capturing system data in error situations"
+description: "Run the CarbonDump tool to collect heap dumps, thread dumps, and configuration data when an error occurs on a running instance."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/troubleshooting/capturing-system-data-in-error-situations/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/troubleshooting/capturing-system-data-in-error-situations.md
+tags:
+  - api-manager
+  - reference
+  - troubleshooting
+  - capturing-system-data-in-error-situations
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "troubleshooting"
+---
+
 # Capturing System Data in Error Situations
 
 Carbon Dump is a tool for collecting all the necessary data(i.e., heap and thread dumps) from a running Carbon instance at the time of an error for a head dump and thread stack analysis. The Carbon Dump generates a ZIP archive with the collected data, which helps the WSO2 support team to analyze your system and determine the problem which caused the error. Therefore, it is recommended that you run this tool as soon as an error occurs in the Carbon instance.

@@ -1,3 +1,18 @@
+---
+title: "Securing APIs with certificate bound access tokens"
+description: "Validate certificate bound JWT access tokens: import the client certificate to the truststore, enable the feature, and invoke the API over MTLS."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/api-authentication/securing-apis-using-certificate-bound-access-tokens/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/api-authentication/securing-apis-using-certificate-bound-access-tokens.md
+tags:
+  - api-manager
+  - api-security
+  - runtime
+  - api-authentication
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Securing APIs with Certificate Bound Access Tokens
 
 While OAuth 2.0 relies on bearer tokens for securing access to protected resources, bearer tokens require Transport Layer Security between an OAuth client and the resource server when presenting the access token to get access to a resource. In this security model, it is crucial to prevent access token leakage. Therefore, access token storage and transfer have to be done with care.

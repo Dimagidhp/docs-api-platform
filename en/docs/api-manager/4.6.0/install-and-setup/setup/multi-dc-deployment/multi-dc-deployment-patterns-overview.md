@@ -1,3 +1,18 @@
+---
+title: "Multi-DC deployment patterns - overview"
+description: "Multi-datacenter deployment of WSO2 API Manager: why regions matter, the two supported patterns, their trade-offs, and key components."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/multi-dc-deployment/multi-dc-deployment-patterns-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/multi-dc-deployment/multi-dc-deployment-patterns-overview.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - multi-dc-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Multi-DC Deployment Patterns - Overview
 
 ## What is Multi-DC Deployment Architecture?

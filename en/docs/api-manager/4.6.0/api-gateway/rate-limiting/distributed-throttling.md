@@ -1,3 +1,18 @@
+---
+title: "Configure distributed throttling for API Manager"
+description: "Connect WSO2 API Manager to a Redis or Valkey cluster in replication mode so Traffic Manager nodes share distributed throttling counters."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/rate-limiting/distributed-throttling/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/rate-limiting/distributed-throttling.md
+tags:
+  - api-manager
+  - api-gateway
+  - rate-limiting
+  - distributed-throttling
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Configure Distributed Throttling for API Manager
 
 In a distributed deployment of WSO2 API Manager with multiple Traffic Manager nodes, it is essential to maintain traffic counts at a global level to ensure all nodes have a consistent view of the current usage. This is achieved by connecting API Manager to a Redis or Valkey cluster, which is used to store and synchronize distributed counters across all Traffic Manager nodes.

@@ -1,3 +1,18 @@
+---
+title: "Create applications"
+description: "Create an application in the WSO2 API Manager Developer Portal to hold API subscriptions, and choose the token quota it operates under."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/create-application/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/create-application.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - manage-application
+  - create-application
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create Applications
 
 An application is a logical representation of a physical application such as a mobile app, webapp, device, etc. If an application needs to consume an API, it should subscribe to the required API over a selected business plan, which determined the usage quota the application is allowed. A single application can have multiple API subscriptions. Each application has a consumer key and consumer secret pair. The requests to the subscribed APIs are authenticated via the tokens generated using the latter mentioned security credentials.

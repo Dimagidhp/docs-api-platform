@@ -1,3 +1,18 @@
+---
+title: "Create a WebSocket API"
+description: "Create a WebSocket API in WSO2 API Manager for two-way communication, define topics as independent channels, and set runtime configurations."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-streaming-api/create-a-websocket-streaming-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-streaming-api/create-a-websocket-streaming-api.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - create-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create a WebSocket API
 
 ## Overview

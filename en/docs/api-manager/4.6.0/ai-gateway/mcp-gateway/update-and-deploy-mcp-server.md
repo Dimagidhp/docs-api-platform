@@ -1,3 +1,18 @@
+---
+title: "Updating tools and deploying the MCP server"
+description: "Rename, describe, and add tools on an MCP server, then deploy it to a gateway, test it in the MCP Playground, and publish it."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/update-and-deploy-mcp-server/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/mcp-gateway/update-and-deploy-mcp-server.md
+tags:
+  - api-manager
+  - ai-gateway
+  - mcp-gateway
+  - update-and-deploy-mcp-server
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Updating Tools and Deploying the MCP Server
 
 After creating a MCP Server from an existing API, you may need to refine the generated tools, verify their behavior, and deploy them to the right environment. This ensures they are intuitive for consumers and function as expected before being published.

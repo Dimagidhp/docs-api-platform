@@ -1,3 +1,18 @@
+---
+title: "Change default view"
+description: "Switch the Developer Portal API listing from the default grid view to a table view with the defaultApiView setting in userTheme.json."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/change-default-view/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/change-default-view.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - customizations
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Change Default View
 
 By default the API Listing view is a grid view. You can follow the steps below to change the default API listing to a table view by configuring `userTheme.json`.

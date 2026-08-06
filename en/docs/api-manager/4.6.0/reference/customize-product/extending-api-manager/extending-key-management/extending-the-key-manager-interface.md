@@ -1,3 +1,18 @@
+---
+title: "Extending the key manager interface"
+description: "Extend the KeyManager interface to connect WSO2 API Manager to a third-party OAuth provider for client registration and tokens."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-key-management/extending-the-key-manager-interface/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-key-management/extending-the-key-manager-interface.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - extending-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Extending the Key Manager Interface
 
 In a typical WSO2 API Manager (WSO2 API-M) deployment, different components talk to the **KeyManager** interface to achieve different tasks. 

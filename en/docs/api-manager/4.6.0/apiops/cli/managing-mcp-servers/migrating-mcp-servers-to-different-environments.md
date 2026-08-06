@@ -1,3 +1,18 @@
+---
+title: "Migrating MCP servers to different environments"
+description: "Export an MCP Server with apictl and import it into another WSO2 API Manager environment, including tenanted environments."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-mcp-servers/migrating-mcp-servers-to-different-environments/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-mcp-servers/migrating-mcp-servers-to-different-environments.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - managing-mcp-servers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Migrating MCP Servers to Different Environments
 
 **WSO2 API Controller (apictl)** allows you to maintain multiple environments running on the same WSO2 API Manager (WSO2 API-M) version. This allows you to import and export MCP Servers between your environments. For example, if you have an MCP Server running in the development environment, you can export it and import it to the production environment. Thereby, MCP Servers do not have to be created from scratch in different environments.

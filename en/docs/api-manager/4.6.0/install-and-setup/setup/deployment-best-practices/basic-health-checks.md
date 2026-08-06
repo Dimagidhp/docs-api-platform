@@ -1,3 +1,18 @@
+---
+title: "Basic health checks"
+description: "Check the health of WSO2 API Manager nodes by connecting to component ports and calling the Version service with a cURL request."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/basic-health-checks/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/basic-health-checks.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - deployment-best-practices
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Basic Health Checks
 
 WSO2 API-M exposes health check APIs as explained below.

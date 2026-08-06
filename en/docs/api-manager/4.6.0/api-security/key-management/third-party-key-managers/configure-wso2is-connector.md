@@ -1,3 +1,18 @@
+---
+title: "Configure WSO2 IS as a key manager"
+description: "Configure WSO2 Identity Server 6.x or earlier as a Key Manager for WSO2 API Manager by updating both deployment.toml files and the Admin Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-wso2is-connector/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-wso2is-connector.md
+tags:
+  - api-manager
+  - api-security
+  - key-management
+  - third-party-key-managers
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Configure WSO2 IS as a Key Manager
 
 WSO2 API Manager supports multiple Key Managers. As a result, WSO2 API Manager is prepacked with an inbuilt resident Key Manager and it has the inbuilt capability of configuring WSO2 Identity Server (WSO2 IS) as a Key Manager.

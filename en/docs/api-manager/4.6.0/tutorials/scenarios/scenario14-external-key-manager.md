@@ -1,3 +1,18 @@
+---
+title: "Scenario 14 - external key manager support"
+description: "Configure Keycloak as an external key manager for a tenant, then generate tokens from the Keycloak IdP and invoke an API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario14-external-key-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario14-external-key-manager.md
+tags:
+  - api-manager
+  - tutorials
+  - scenarios
+  - scenario14-external-key-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "tutorial"
+---
+
 # Scenario 14 - External Key Manager Support
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to configure a Key Manager. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).

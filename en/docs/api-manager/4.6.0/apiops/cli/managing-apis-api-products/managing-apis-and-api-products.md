@@ -1,3 +1,18 @@
+---
+title: "Managing APIs and API Products"
+description: "List APIs, API Products, and their revisions with apictl, change lifecycle status, undeploy revisions, delete them, and set API log levels."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-apis-api-products/managing-apis-and-api-products/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/managing-apis-api-products/managing-apis-and-api-products.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - managing-apis-api-products
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Managing APIs and API Products
 
 ## Add APIs or API Products in an environment

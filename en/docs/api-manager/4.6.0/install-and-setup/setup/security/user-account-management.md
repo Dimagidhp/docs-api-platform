@@ -1,3 +1,18 @@
+---
+title: "User account management"
+description: "Enable password recovery, account locking, and password policies for Developer Portal, Publisher, and Admin Portal user accounts."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/security/user-account-management/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/security/user-account-management.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # User Account Management
 
 The following sections explain how to manage Developer Portal, Publisher, and the Admin Portal related user accounts.

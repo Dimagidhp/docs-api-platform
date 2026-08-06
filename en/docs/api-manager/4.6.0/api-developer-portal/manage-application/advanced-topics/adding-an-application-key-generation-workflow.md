@@ -1,3 +1,18 @@
+---
+title: "Adding an application key generation workflow"
+description: "Attach an approval workflow to application registration so production or sandbox key generation needs admin approval before tokens are issued."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/adding-an-application-key-generation-workflow/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/adding-an-application-key-generation-workflow.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - manage-application
+  - advanced-topics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Adding an Application Key Generation Workflow
 
 This section explains as to how you can attach a simple approval workflow to the **application registration** operation in the API Manager. 

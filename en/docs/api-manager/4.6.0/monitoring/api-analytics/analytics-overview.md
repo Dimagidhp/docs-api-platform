@@ -1,3 +1,18 @@
+---
+title: "API analytics overview"
+description: "Inbound, outbound, and AI analytics data collected in WSO2 API Manager, and the platforms available for monitoring API traffic."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/analytics-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/analytics-overview.md
+tags:
+  - api-manager
+  - monitoring
+  - api-analytics
+  - analytics-overview
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 !!! info "New in 4.6.0 — Moesif-powered WSO2 Analytics replaces Choreo Analytics for enhanced insights and observability."
 
 # API Analytics Overview

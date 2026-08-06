@@ -1,3 +1,18 @@
+---
+title: "Maintaining logins and passwords"
+description: "Change the super admin credentials of WSO2 API Manager, enable email-based login, and add social media login to the Developer Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Maintaining Logins and Passwords
 
 The following section explains how you can change your credentials, recover your password, and customize your login.

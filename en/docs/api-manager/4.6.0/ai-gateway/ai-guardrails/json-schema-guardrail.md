@@ -1,3 +1,18 @@
+---
+title: "JSON Schema Guardrail"
+description: "Apply the JSON Schema Guardrail to an AI API to validate request and response payloads against a JSON Schema, targeting fields with JSON Path."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/json-schema-guardrail/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/json-schema-guardrail.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+  - json-schema-guardrail
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # JSON Schema Guardrail
 
 The **JSON Schema Guardrail** is a custom Synapse mediator for the **WSO2 API Manager Universal Gateway** that validates incoming AI API requests and GenAI responses JSON payloads against a user‑defined **JSON Schema**. It enables creators to enforce structural and field-level compliance in both request and response flows using JSON Path targeting.

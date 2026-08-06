@@ -1,3 +1,18 @@
+---
+title: "Add custom attributes to applications"
+description: "Configure server-wide or tenant-specific custom application attributes in API Manager, then set their values when creating a Developer Portal application."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/add-custom-attributes-to-applications/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/add-custom-attributes-to-applications.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - manage-application
+  - advanced-topics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Add Custom Attributes to Applications
 
 You as a developer can register applications via the WSO2 API Manager Developer Portal. When you create a subscription to an API for an application, it allows you to consume the API. Thereby, this helps developers to expose and monetize their APIs. Applications can be created with a predefined set of properties. In addition, WSO2 API Manager also allows you to add a set of custom attributes while creating an application if required.

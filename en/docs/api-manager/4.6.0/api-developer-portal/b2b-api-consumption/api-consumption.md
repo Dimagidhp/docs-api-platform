@@ -1,3 +1,18 @@
+---
+title: "B2B API consumption"
+description: "Configure organization-based API visibility in WSO2 API Manager: federate an identity server, register organizations, and add organization key managers."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/b2b-api-consumption/api-consumption/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/b2b-api-consumption/api-consumption.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - b2b-api-consumption
+  - api-consumption
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # B2B API Consumption
 
 Before this release, WSO2 API Manager operated without a defined organizational structure, maintaining a flat hierarchy. This led to limitations, including a lack of control over API visibility, business-specific subscriptions, and business-level insights. With the introduction of B2B features, you can now achieve a more structured approach.

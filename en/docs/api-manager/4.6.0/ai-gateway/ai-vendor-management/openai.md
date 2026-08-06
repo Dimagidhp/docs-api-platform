@@ -1,3 +1,18 @@
+---
+title: "OpenAI"
+description: "Configure OpenAI as an AI service provider in the WSO2 API Manager Admin Portal and manage the models available to AI APIs."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/openai/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/openai.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-vendor-management
+  - openai
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # OpenAI
 
 OpenAI is a **default AI Service Provider** in WSO2 API Manager that allows you to integrate with OpenAI's advanced language models. For more information about OpenAI, see the [OpenAI API Documentation](https://platform.openai.com/docs).

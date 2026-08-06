@@ -1,3 +1,18 @@
+---
+title: "Implement custom throttling"
+description: "Define a custom rate limiting policy in the Admin Portal with a key template and Siddhi query, and adapt it for distributed throttling setups."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/rate-limiting/implement-custom-throttling/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/rate-limiting/implement-custom-throttling.md
+tags:
+  - api-manager
+  - api-gateway
+  - rate-limiting
+  - implement-custom-throttling
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Implement Custom Throttling
 
 Custom rate limiting allows system administrators to define dynamic rules for specific use cases, which are applied globally across all tenants. When a custom rate limiting policy is created, it is possible to define any policy you like. The Traffic Manager acts as the global rate limiting engine and is based on the same technology as WSO2 Complex Event Processor (CEP), which uses the [Siddhi query language](https://docs.wso2.com/complex-event-processor/SiddhiQL+Guide+3.1) . Users are therefore able to create their own custom rate limiting policies by writing custom Siddhi queries. The specific combination of attributes being checked in the policy need to be defined as the key (also called the key template). The key template usually includes a predefined format and a set of predefined parameters. It can contain a combination of allowed keys separated by a colon (:), where each key must start with the prefix $. The following keys can be used to create custom rate limiting policies:

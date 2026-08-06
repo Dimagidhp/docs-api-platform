@@ -1,3 +1,18 @@
+---
+title: "Kubernetes gateway integration with API Manager"
+description: "Kubernetes Gateway integration with WSO2 API Manager: Control Plane architecture, the APIM-APK agent, and the features supported."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-apim-as-a-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-apim-as-a-gateway.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - distributed-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Kubernetes Gateway integration with API Manager
 
 ## Overview

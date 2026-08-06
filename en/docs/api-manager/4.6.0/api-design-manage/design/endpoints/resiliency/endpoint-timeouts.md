@@ -1,3 +1,18 @@
+---
+title: "Endpoint timeouts"
+description: "Set the Advanced Endpoint Configurations for production and sandbox endpoints, including suspend state, timeout duration, and retry behaviour."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/endpoints/resiliency/endpoint-timeouts/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/endpoints/resiliency/endpoint-timeouts.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - endpoints
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Endpoint Timeouts
 
 WSO2 API Manager allows you to control the production and sandbox endpoints using the Advanced Endpoint Configurations.

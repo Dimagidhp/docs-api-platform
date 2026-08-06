@@ -1,3 +1,18 @@
+---
+title: "Adding an application update workflow"
+description: "Attach an approval workflow to application updates so changes stay in UPDATE PENDING until an admin approves or rejects them in WSO2 API Manager."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/adding-an-application-update-workflow/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/adding-an-application-update-workflow.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - manage-application
+  - advanced-topics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Adding an Application Update Workflow
 
 This section explains how to attach an application update approval workflow to the application update operation in the API Manager.

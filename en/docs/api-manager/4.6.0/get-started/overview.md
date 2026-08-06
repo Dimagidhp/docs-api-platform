@@ -1,3 +1,17 @@
+---
+title: "Overview"
+description: "What WSO2 API Manager offers across API design, AI Gateway, gateways, security, Developer Portal, rate limiting, analytics, governance, and deployment."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/overview.md
+tags:
+  - api-manager
+  - get-started
+  - overview
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Overview
 
 WSO2 API Manager is a comprehensive, fully open-source API management platform that provides complete API lifecycle management with enterprise-grade security, advanced gateway capabilities, and AI-powered features. It enables organizations to design, secure, publish, and analyze APIs while providing developers with a rich marketplace experience.

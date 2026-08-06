@@ -1,3 +1,18 @@
+---
+title: "OWASP top 10"
+description: "The OWASP Top 10 ruleset for API definition governance in WSO2 API Manager, with each rule, its severity, and how to fix violations."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/owasp-top-10/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/owasp-top-10.md
+tags:
+  - api-manager
+  - reference
+  - governance
+  - owasp-top-10
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "reference"
+---
+
 # OWASP Top 10
 
 The OWASP Top 10 ruleset enforces security best practices based on OWASP guidelines to prevent common vulnerabilities in API definitions. This ruleset ensures that API definitions comply with security standards, reducing the risk of security breaches.

@@ -1,3 +1,17 @@
+---
+title: "Performance test results for token persistence"
+description: "Throughput, CPU, and database results for the WSO2 API Manager token endpoint with and without token persistence, per OAuth2 grant type."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/performance-test-results-token-persistence/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/performance-test-results-token-persistence.md
+tags:
+  - api-manager
+  - reference
+  - performance-test-results-token-persistence
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "reference"
+---
+
 # Performance Test Results for Token Persistence
 
 

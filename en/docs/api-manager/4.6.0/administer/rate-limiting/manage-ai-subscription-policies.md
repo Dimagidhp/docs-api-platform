@@ -1,3 +1,18 @@
+---
+title: "Manage AI subscription policies"
+description: "Set token-based quotas for AI APIs in WSO2 API Manager by adding AI API subscription throttling policies to business plans."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/manage-ai-subscription-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/manage-ai-subscription-policies.md
+tags:
+  - api-manager
+  - administer
+  - rate-limiting
+  - ai-apis
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Manage AI Subscription Policies
 
 AI APIs use token-based rate limiting policies in subscriptions through business plans. These policies allow for granular control of how AI APIs are used by applications.

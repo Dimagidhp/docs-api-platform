@@ -1,3 +1,18 @@
+---
+title: "Installation prerequisites"
+description: "Environment compatibility, system and database storage requirements, required applications, and ARM support for the API-M runtime."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installation-prerequisites/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installation-prerequisites.md
+tags:
+  - api-manager
+  - install-and-setup
+  - install
+  - installation-prerequisites
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "reference"
+---
+
 # Installation Prerequisites
 
 WSO2 API Manager contains multiple runtimes. Before installing the runtimes, be sure that the appropriate prerequisites are fulfilled.

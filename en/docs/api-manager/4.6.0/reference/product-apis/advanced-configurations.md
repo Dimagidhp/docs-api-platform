@@ -1,3 +1,18 @@
+---
+title: "Advanced configurations"
+description: "Map REST API scopes to roles in tenant-conf.json and set the allowed origins for cross-origin calls to the API Manager REST APIs."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/product-apis/advanced-configurations/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/product-apis/advanced-configurations.md
+tags:
+  - api-manager
+  - reference
+  - product-apis
+  - advanced-configurations
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Advanced Configurations
 
 This section explains how to configure scope to role mappings for API Manager REST APIs.

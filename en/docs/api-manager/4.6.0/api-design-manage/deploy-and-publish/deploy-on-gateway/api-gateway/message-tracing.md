@@ -1,3 +1,18 @@
+---
+title: "Message tracing"
+description: "Enable the Message Tracer from the management console to dump message flow trace events for Universal Gateway transactions to the carbon logs."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/message-tracing/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/message-tracing.md
+tags:
+  - api-manager
+  - api-design-manage
+  - deploy-and-publish
+  - deploy-on-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Message Tracing
 
 !!! Info "Deprecated feature"

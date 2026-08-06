@@ -1,3 +1,18 @@
+---
+title: "Implement custom rate limiting policies"
+description: "Define custom throttling policies with a key template in WSO2 API Manager to apply dynamic rate limiting rules across all tenants."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/implement-custom-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/rate-limiting/implement-custom-policies.md
+tags:
+  - api-manager
+  - administer
+  - rate-limiting
+  - policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Implement Custom Policies
 
 Custom rate limiting allows system administrators to define dynamic rules for specific use cases, which are applied globally across all tenants. When a custom rate limiting policy is created, it is possible to define any policy you like. The Traffic Manager acts as the global rate limiting engine and is based on the same technology as WSO2 Complex Event Processor (CEP), which uses the [Siddhi query language](https://docs.wso2.com/complex-event-processor/SiddhiQL+Guide+3.1). Users are therefore able to create their own custom rate limiting policies by writing custom Siddhi queries.

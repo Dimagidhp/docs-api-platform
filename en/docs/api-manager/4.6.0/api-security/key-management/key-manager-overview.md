@@ -1,3 +1,18 @@
+---
+title: "WSO2 key manager"
+description: "How the WSO2 Key Manager secures API runtimes: architecture, the built-in and third-party key managers, token lifecycle, and grant type support."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/key-manager-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/key-management/key-manager-overview.md
+tags:
+  - api-manager
+  - api-security
+  - key-management
+  - key-manager-overview
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # WSO2 Key Manager
 
 Production API deployments face authentication and authorization challenges: token management complexity, OAuth application lifecycle overhead, inconsistent security policies across providers, and the need for enterprise-grade access control systems.

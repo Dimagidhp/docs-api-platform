@@ -1,3 +1,18 @@
+---
+title: "Configuring environment specific parameters"
+description: "Generate a deployment directory and define a params file so apictl applies endpoint, certificate, and deployment values per environment."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - advanced-topics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 #  Configuring Environment Specific Parameters
 
 To allow easily configuring environment-specific details when there are multiple environments, **WSO2 API Controller (apictl)** supports an additional parameter file (will be referred to as the "parameters file" in this document) or an additional directory to store these deployment-related artifacts. It is recommended to store the parameters file inside the deployment directory if there are certificates and other details included. However, it can be stored somewhere else when certificates are not specified via this parameters file. 

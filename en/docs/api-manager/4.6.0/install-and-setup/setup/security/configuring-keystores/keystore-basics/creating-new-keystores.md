@@ -1,3 +1,18 @@
+---
+title: "Creating new keystores"
+description: "Create a keystore for WSO2 API Manager with keytool from an existing or a fresh certificate, and import CA-signed certificates."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - security
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Creating New Keystores
 
 WSO2 API Manager is shipped with a default keystore named **wso2carbon.jks** , which is stored in the `<API-M_HOME>/repository/resources/security` directory. This keystore comes with a private/public key pair that is used for all purposes, such as encrypting sensitive information, communicating over SSL. You can either use one new keystore for all purposes, or you can create multiple keystores for each purpose.

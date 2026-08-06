@@ -1,3 +1,18 @@
+---
+title: "View generated documentation for rest APIs"
+description: "View the document that WSO2 API Manager generates from a REST API's OpenAPI definition on the Documents tab of the Publisher Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/api-documentation/view-generated-documentation/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/api-documentation/view-generated-documentation.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - api-documentation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # View Generated Documentation for Rest APIs
 
 Follow the instructions below to view the generated documentation to a REST API.

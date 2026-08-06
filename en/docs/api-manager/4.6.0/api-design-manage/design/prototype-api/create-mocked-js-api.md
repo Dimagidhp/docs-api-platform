@@ -1,3 +1,18 @@
+---
+title: "Mock implementation with API Gateway"
+description: "Create a prototype API whose responses come from generated JavaScript running on the gateway, and restrict the Java classes those scripts reach."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/prototype-api/create-mocked-js-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/prototype-api/create-mocked-js-api.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - prototype-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Mock Implementation with API Gateway
 
 Let's create a Prototype API that has a mock implementation of JavaScript snippets auto-generated based on the OpenAPI specification, and invoke it via Publisher and Developer Portals to test it out.

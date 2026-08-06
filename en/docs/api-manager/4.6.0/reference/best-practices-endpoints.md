@@ -1,3 +1,17 @@
+---
+title: "Best practices for working with endpoints"
+description: "Recommendations for endpoints in WSO2 API Manager: use named endpoints, set timeouts, and tune suspension and retry behaviour."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/best-practices-endpoints/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/best-practices-endpoints.md
+tags:
+  - api-manager
+  - reference
+  - best-practices-endpoints
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Best practices for working with endpoints
 
 - Do not use anonymous endpoints. Always use [named endpoints](https://mi.docs.wso2.com/en/latest/reference/synapse-properties/endpoint-properties/). As anynymous endpoints have auto-generated names in the synapse

@@ -1,3 +1,18 @@
+---
+title: "Validate request with open policy agent (OPA)"
+description: "Offload API request authorization to an Open Policy Agent server: attach an OPA policy to operations and shape the request and response payloads."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/opa-validation/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/opa-validation/overview.md
+tags:
+  - api-manager
+  - api-security
+  - runtime
+  - opa-validation
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Validate Request with Open Policy Agent (OPA)
 
 The [Open Policy Agent (OPA)](https://openpolicyagent.org/) is an open source, general-purpose policy engine that unifies policy enforcement. 

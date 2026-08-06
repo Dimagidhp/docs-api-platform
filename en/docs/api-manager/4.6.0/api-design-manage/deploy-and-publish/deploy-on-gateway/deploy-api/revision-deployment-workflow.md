@@ -1,3 +1,18 @@
+---
+title: "Revision deployment workflow"
+description: "Engage the Approval Workflow Executor so an administrator approves or declines each API revision deployment before it reaches the gateway."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/revision-deployment-workflow/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/revision-deployment-workflow.md
+tags:
+  - api-manager
+  - api-design-manage
+  - deploy-and-publish
+  - deploy-on-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Revision Deployment Workflow
 
 In this section let's see how to add an approval workflow to control the deployment of revisions in WSO2 API Manager. When the revisions deployment workflow is activated, the API publisher can submit a revision deployment request to the administrator. If approved, the revision is deployed on the gateway. If declined, the gateway stays unchanged.

@@ -1,3 +1,18 @@
+---
+title: "Changing the owner of an application"
+description: "Transfer ownership of a Developer Portal application to another user in your organization so that user can edit or delete the application."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/changing-the-owner-of-an-application/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/advanced-topics/changing-the-owner-of-an-application.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - manage-application
+  - advanced-topics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Changing the Owner of an Application
 
 If required, you can transfer the ownership of your application to another user in your organization. Thereby, when transferring ownership, the new owner will have the required permission to delete or edit the respective application.

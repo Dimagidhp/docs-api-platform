@@ -1,3 +1,18 @@
+---
+title: "Configuring workflows for tenants"
+description: "Deploy a BPEL process and HumanTask per tenant so each tenant runs its own approval workflows without editing configuration files."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-workflows-for-tenants/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-workflows-for-tenants.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - extending-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Configuring Workflows for Tenants
 
 Using the API Manager, you can configure custom workflows that get invoked at user signup, application creation, registration, subscription etc. You do these configurations in the `workflow-extensions.xml` as described in the previous sections.

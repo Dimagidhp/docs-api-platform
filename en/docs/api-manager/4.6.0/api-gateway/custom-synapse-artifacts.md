@@ -1,3 +1,17 @@
+---
+title: "Storing custom synapse artifacts"
+description: "Keep custom runtime Synapse artifacts on Gateway nodes by listing APIs, endpoints, sequences, and local entries in a skip list in deployment.toml."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/custom-synapse-artifacts/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/custom-synapse-artifacts.md
+tags:
+  - api-manager
+  - api-gateway
+  - custom-synapse-artifacts
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Storing Custom Synapse Artifacts
 
 WSO2 API Manager contains two types of artifacts; these are runtime artifacts and design-time artifacts. The API Synapse artifacts that act as the API definitions for the Gateway nodes fall into the runtime artifacts category. Without Synapse artifacts, the Universal Gateway will not be able to serve the specific API requests during the runtime.

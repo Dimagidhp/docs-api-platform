@@ -1,3 +1,18 @@
+---
+title: "Deploy WSO2 API Manager on OpenShift"
+description: "Deploy WSO2 API Manager on OpenShift with Helm: build a GID 0 compatible image, set security contexts, and route traffic via NGINX."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - kubernetes-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Deploy WSO2 API Manager on OpenShift
 
 OpenShift is a Kubernetes distribution with stricter security defaults. The core deployment approach — Helm charts, the same patterns (P0–P5) — is identical to standard Kubernetes. The key difference is that OpenShift ignores the UID defined in the Docker image and injects a random UID at runtime, which requires additional file permission configuration in the image and specific security context settings in the Helm values.

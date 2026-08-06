@@ -1,3 +1,18 @@
+---
+title: "Changing to MSSQL"
+description: "Replace the default H2 databases of WSO2 API Manager with Microsoft SQL Server: create databases, add drivers, and set datasources."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mssql/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mssql.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - setting-up-databases
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Changing to MSSQL
 
 By default, WSO2 API Manager uses the embedded H2 database as the database for storing user management and registry data. Given below are the steps you need to follow in order to use MSSQL for this purpose.

@@ -1,3 +1,18 @@
+---
+title: "Application scopes"
+description: "Enable application scopes for the resident or global Key Manager, then add allowed scopes to an application in the WSO2 Developer Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/authorization/oauth2-scopes/application-scopes/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-security/runtime/authorization/oauth2-scopes/application-scopes.md
+tags:
+  - api-manager
+  - api-security
+  - runtime
+  - authorization
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Application Scopes
 
 Application scopes are configured at the application level as allowed scopes for specific application. In the client credentials grant type, if these scopes are requested during a token request, these will be granted along with the other approved scopes.

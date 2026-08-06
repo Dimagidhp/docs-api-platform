@@ -1,3 +1,18 @@
+---
+title: "Semantic prompt guardrail"
+description: "Apply the Semantic Prompt Guardrail to an AI API to allow or deny prompts by embedding similarity, using deny, allow, or hybrid mode."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/semantic-prompt-guardrail/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-guardrails/semantic-prompt-guardrail.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-guardrails
+  - semantic-prompt-guardrail
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Semantic Prompt Guardrail
 
 The **Semantic Prompt Guardrail** is a custom Synapse mediator for the **WSO2 API Manager Universal Gateway** that validates incoming AI API requests based on their semantic similarity to API creator defined allow and deny prompt sets. Instead of relying on literal or regex phrase matching, it enforces intent boundaries using embedding similarity.

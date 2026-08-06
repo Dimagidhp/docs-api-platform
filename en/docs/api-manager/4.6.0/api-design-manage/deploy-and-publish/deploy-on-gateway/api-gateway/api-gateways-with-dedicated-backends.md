@@ -1,3 +1,18 @@
+---
+title: "Gateways with dedicated backends"
+description: "Point each Universal Gateway at its own backend by using parameterized endpoint URLs that resolve to a host and port at gateway startup."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/api-gateways-with-dedicated-backends/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/api-gateways-with-dedicated-backends.md
+tags:
+  - api-manager
+  - api-design-manage
+  - deploy-and-publish
+  - deploy-on-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Gateways with Dedicated Backends
 
 We can extend the [multiple gateway environments](../../../../api-gateway/maintaining-separate-production-and-sandbox-gateways.md) feature by utilizing parameterized endpoint capabilities of WSO2 API Manager to have each gateway point to a different back-end endpoint. Universal Gateway is the actual runtime of the APIs that are developed and published from the API Publisher. WSO2 API Manager is capable of publishing APIs to different Gateways where API users connect to those Universal Gateways in order to do the actual API calls through the applications to which they are subscribed.

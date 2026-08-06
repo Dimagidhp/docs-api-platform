@@ -1,3 +1,18 @@
+---
+title: "Pattern 2: simple scalable setup"
+description: "Deploy WSO2 API Manager on Kubernetes with a dedicated Universal Gateway beside the all-in-one node so the Gateway scales on its own."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - kubernetes-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Pattern 2: Simple Scalable Setup
 
 This pattern deploys a dedicated Universal Gateway alongside the All-in-One node, allowing the Gateway to scale independently from the control plane. It is suitable for production environments with moderate to high API traffic where Gateway scaling is the primary concern.

@@ -1,3 +1,17 @@
+---
+title: "Choosing your deployment strategy"
+description: "Match a WSO2 API Manager deployment pattern and platform to your needs, with scenarios for testing, high availability, high traffic, and isolation."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/choosing-your-deployment-strategy/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/choosing-your-deployment-strategy.md
+tags:
+  - api-manager
+  - get-started
+  - choosing-your-deployment-strategy
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "explanation"
+---
+
 # Choosing Your Deployment Strategy
 
 Selecting the right deployment strategy for WSO2 API Manager involves making two key, independent decisions based on your specific needs:

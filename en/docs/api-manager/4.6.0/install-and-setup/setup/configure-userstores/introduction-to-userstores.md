@@ -1,3 +1,18 @@
+---
+title: "Introduction to user stores"
+description: "User stores in WSO2 API Manager: where user and role data is kept, the embedded H2 default, and read-only versus read/write modes."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/configure-userstores/introduction-to-userstores/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/configure-userstores/introduction-to-userstores.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - configure-userstores
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "concept"
+---
+
 A user store is the database where information of the users and/or user roles are stored. User information includes log-in name, password, first name, last name, e-mail etc. The WSO2 API Manager have an embedded H2 database by default for this purpose. 
 
 Permissions and other authorization related information is stored in a separate database called the user management database, which by default is H2 as well. However, users have the ability to connect to external user stores as well.

@@ -1,3 +1,18 @@
+---
+title: "Working with databases"
+description: "Default H2 databases shipped with WSO2 API Manager, where the schema scripts live, and what to change when moving to a production RDBMS."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - setting-up-databases
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Working with Databases
 
 WSO2 API Manager is shipped with an H2 database for storing data. These default databases are located in the `<API-M_HOME>/repository/database` directory of the product pack.

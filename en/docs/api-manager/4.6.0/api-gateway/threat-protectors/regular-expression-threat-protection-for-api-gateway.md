@@ -1,3 +1,18 @@
+---
+title: "Regular expression threat protection for Universal Gateway"
+description: "Block injection attacks with regex threat protection: recommended deny patterns, the validator sequence, and applying the policy to an API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/threat-protectors/regular-expression-threat-protection-for-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/threat-protectors/regular-expression-threat-protection-for-api-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - threat-protectors
+  - regular-expression-threat-protection-for-api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Regular Expression Threat Protection for Universal Gateway
 
 WSO2 API Manager provides predefined regex patterns to sanitize the request from SQL injection attacks. The attacks 

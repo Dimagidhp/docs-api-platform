@@ -1,3 +1,18 @@
+---
+title: "Validating API definitions against custom linter rules"
+description: "Add custom linter rules in the Admin Portal and read the validation results shown when creating, importing, or editing an API definition."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/advanced-topics/validate-api-definitions-with-linters/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/advanced-topics/validate-api-definitions-with-linters.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - advanced-topics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Validating API Definitions Against Custom Linter Rules
 
 By default, API Definitions are validated against the standard Open API specification when importing and writing or editing them via a built-in API Definition editor in the Publisher Portal. Apart from the default OpenAPI validation, the APIs created by the API publisher can be validated against a set of custom rules and it is useful in standardizing and keeping API definitions clean.

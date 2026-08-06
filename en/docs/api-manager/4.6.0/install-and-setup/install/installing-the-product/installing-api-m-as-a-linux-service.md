@@ -1,3 +1,18 @@
+---
+title: "Running API Manager as a Linux service"
+description: "Register the WSO2 API Manager runtime as a Linux service with update-rc.d so the server starts automatically at machine boot."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installing-the-product/installing-api-m-as-a-linux-service/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/install/installing-the-product/installing-api-m-as-a-linux-service.md
+tags:
+  - api-manager
+  - install-and-setup
+  - install
+  - installing-the-product
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Running API Manager as a Linux Service
 
 !!! warning

@@ -1,3 +1,17 @@
+---
+title: "About this release"
+description: "What ships in WSO2 API Manager 4.6.0: MCP Gateway, AI guardrails, federated gateway discovery, improvements, deprecations, and fixed issues."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/about-this-release/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/about-this-release.md
+tags:
+  - api-manager
+  - get-started
+  - about-this-release
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "release-notes"
+---
+
 # About this Release
 
 WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It comes with a cloud-native, standards-based messaging engine, and an integration framework for integrating APIs, services, data, SaaS, proprietary, and legacy systems and it can also serve streaming-based integrations. The product comes with command-line and developer tools that enable easy design, development, and testing.

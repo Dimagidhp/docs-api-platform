@@ -1,3 +1,18 @@
+---
+title: "Test a REST API using Postman"
+description: "Download an OpenAPI-based API as a Postman collection from the Developer Portal and invoke its resources in Postman with an access token."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/try-out-using-postman/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/try-out-using-postman.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - invoke-apis
+  - invoke-apis-using-tools
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Test a REST API Using Postman
 
 You can download a Postman collection for an **OpenAPI** using WSO2 API Manager, and test the REST API using Postman.

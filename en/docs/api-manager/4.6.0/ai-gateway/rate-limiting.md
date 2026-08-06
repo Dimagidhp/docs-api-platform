@@ -1,3 +1,17 @@
+---
+title: "Rate limiting for AI APIs"
+description: "Request-based and token-based rate limiting for AI APIs in WSO2 API Manager, at subscription level and against the backend AI service."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/rate-limiting/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/rate-limiting.md
+tags:
+  - api-manager
+  - ai-gateway
+  - rate-limiting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Rate Limiting for AI APIs
 
 AI APIs often consume resources based on token usage, and excessive requests can lead to increased costs, throttling, or service disruptions. WSO2 API Manager supports both request-based and token-based rate limiting for AI APIs.

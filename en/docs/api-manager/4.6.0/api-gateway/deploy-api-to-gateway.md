@@ -1,3 +1,17 @@
+---
+title: "Deploy an API to gateway"
+description: "Deploy APIs and API Products to the WSO2 Universal Gateway from the Publisher Portal using revisions, and undeploy them from an environment."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/deploy-api-to-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/deploy-api-to-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - deploy-api-to-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Deploy an API to Gateway
 
 This guide provides comprehensive instructions for deploying APIs and API Products to the WSO2 Universal Gateway, enabling them to be invoked through Gateway environments.

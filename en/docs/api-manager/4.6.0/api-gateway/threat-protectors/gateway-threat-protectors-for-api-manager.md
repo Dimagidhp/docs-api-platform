@@ -1,3 +1,18 @@
+---
+title: "Gateway threat protectors"
+description: "The three Universal Gateway threat protectors, regex, JSON, and XML, and a custom mediation sequence that combines validators in a single policy."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/threat-protectors/gateway-threat-protectors-for-api-manager/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/threat-protectors/gateway-threat-protectors-for-api-manager.md
+tags:
+  - api-manager
+  - api-gateway
+  - threat-protectors
+  - gateway-threat-protectors-for-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Gateway Threat Protectors
 
 WSO2 API Manager has three types of threat protectors for the Gateway.

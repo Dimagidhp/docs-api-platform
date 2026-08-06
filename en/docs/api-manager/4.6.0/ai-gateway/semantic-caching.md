@@ -1,3 +1,17 @@
+---
+title: "Semantic caching"
+description: "Configure the Semantic Cache policy for AI APIs: register an embedding provider and Zilliz vector database, then tune similarity thresholds."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/semantic-caching/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/semantic-caching.md
+tags:
+  - api-manager
+  - ai-gateway
+  - semantic-caching
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Semantic Caching
 
 The Semantic Cache is a custom policy for the WSO2 API Manager Universal Gateway that provides intelligent, meaning-based caching for AI requests. Unlike traditional caches that rely on exact matches, the Semantic Cache uses vector embeddings to identify and serve responses for semantically similar queries. This reduces latency, lowers costs associated with calling backend AI models, and improves overall API performance.

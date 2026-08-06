@@ -1,3 +1,18 @@
+---
+title: "WSO2 rule validator"
+description: "WSO2 Rule Validator, the Java implementation of Spectral used by governance: ruleset syntax, core functions, aliases, and limitations."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/rule-validator/rule-validator/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/governance/rule-validator/rule-validator.md
+tags:
+  - api-manager
+  - reference
+  - governance
+  - rule-validator
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "reference"
+---
+
 # WSO2 Rule Validator
 
 ---

@@ -1,3 +1,18 @@
+---
+title: "Adding custom properties to APIs"
+description: "Add custom properties to an API from the Publisher Portal or the REST API, follow the naming rules, and search for APIs by property value."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/adding-custom-properties-to-apis/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/adding-custom-properties-to-apis.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - create-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Adding Custom Properties to APIs
 
 Usually, APIs have a predefined set of properties such as the name, version, context, etc. However, there may be instances where you want to add specific custom properties to your API. You can do this in either of the following ways:

@@ -1,3 +1,18 @@
+---
+title: "Reset application throttling policies"
+description: "Reset the application-level rate limiting quota for one end user of your application in the Developer Portal, and find that user's UUID."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/rate-limiting/resetting-application-throttling-policies/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/rate-limiting/resetting-application-throttling-policies.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - rate-limiting
+  - resetting-application-throttling-policies
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Reset Application Throttling Policies
 
 As an application owner, you can reset the application-level rate limiting quota for specific end-users of your application. This allows individual users to continue using your application even after they've exhausted their quota, without waiting for the time window to reset.

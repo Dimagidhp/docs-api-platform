@@ -1,3 +1,18 @@
+---
+title: "Generate REST API from SOAP backend"
+description: "Generate a RESTful API from a SOAP backend WSDL in the Publisher Portal, and check which WSDL and XML schema components are supported."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/generate-rest-api-from-soap-backend/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/generate-rest-api-from-soap-backend.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - create-api
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Generate REST API from SOAP Backend
 
 !!! Warning "Limitations"

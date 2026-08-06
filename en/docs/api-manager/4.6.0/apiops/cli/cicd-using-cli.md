@@ -1,3 +1,18 @@
+---
+title: "CI/CD for APIs - using the CLI"
+description: "Build a CI/CD pipeline with apictl: prepare environments, export and initialize API projects, import to upper environments, and get keys."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/cicd-using-cli/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/cicd-using-cli.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - cicd-using-cli
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # CI/CD for APIs - Using the CLI
 
 When you implement CI/CD for your APIs, there are two approaches you can use.

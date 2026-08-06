@@ -1,3 +1,17 @@
+---
+title: "Deployment patterns"
+description: "Compare the all-in-one, distributed, and multi-datacenter architectures for WSO2 API Manager, along with the components and databases each pattern uses."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/deployment-patterns/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/deployment-patterns.md
+tags:
+  - api-manager
+  - get-started
+  - deployment-patterns
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "concept"
+---
+
 # Deployment Patterns
 
 A deployment pattern refers to the architecture you use to run WSO2 API Manager's components. The pattern you choose determines how the system handles load, scales, and ensures high availability. These patterns are independent of the underlying platform; you can use any of them on both Virtual Machines and Kubernetes.

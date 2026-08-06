@@ -1,3 +1,17 @@
+---
+title: "WSO2 admin services"
+description: "Discover the hidden WSDLs of WSO2 admin services through the OSGi console, authenticate, and generate client stubs to invoke them."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/wso2-admin-services/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/wso2-admin-services.md
+tags:
+  - api-manager
+  - reference
+  - wso2-admin-services
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # WSO2 Admin Services
 
 WSO2 products are managed internally using SOAP Web services known as **admin services**, and they come with a management console UI, which communicates with these admin services to facilitate administration capabilities through the UI.

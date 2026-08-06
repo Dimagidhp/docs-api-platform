@@ -1,3 +1,18 @@
+---
+title: "Choreo based analytics via proxy"
+description: "Configure API Manager analytics to reach Choreo through mitmproxy, generating a self-signed certificate for the intercepted traffic."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/choreo-analytics/choreo-based-analytics-via-proxy/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/api-analytics/choreo-analytics/choreo-based-analytics-via-proxy.md
+tags:
+  - api-manager
+  - monitoring
+  - api-analytics
+  - choreo-analytics
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "how-to"
+---
+
 # Choreo Based Analytics via Proxy
 
    This documentation outlines the steps to configure APIM Analytics with Choreo through a proxy, utilizing a self-signed certificate for secure communication.

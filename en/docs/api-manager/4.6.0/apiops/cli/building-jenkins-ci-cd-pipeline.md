@@ -1,3 +1,18 @@
+---
+title: "Building a CI/CD pipeline for APIs using WSO2 API controller"
+description: "Build an API CI/CD pipeline with apictl, Jenkins, GitHub, and JFrog Artifactory, then test promotion across WSO2 API Manager instances."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/building-jenkins-ci-cd-pipeline/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/apiops/cli/building-jenkins-ci-cd-pipeline.md
+tags:
+  - api-manager
+  - apiops
+  - cli
+  - building-jenkins-ci-cd-pipeline
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "tutorial"
+---
+
 # Building a CI/CD Pipeline for APIs Using WSO2 API Controller
 
 In the modern digital-era, many organizations adopt digital transformation technologies to keep up with the changes. APIs are one of the basic building blocks used in a digitally-driven organization. When the number of APIs managed by the organization grows, they need to have an automated process to handle the rapid API development process. Having a proper continuous integration and continuous deployment (CI/CD) process would give an added advantage to your organization. 

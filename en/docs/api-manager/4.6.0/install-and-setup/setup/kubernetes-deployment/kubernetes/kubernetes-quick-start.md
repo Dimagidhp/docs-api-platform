@@ -1,3 +1,18 @@
+---
+title: "Quick start guide: WSO2 API Manager on Kubernetes"
+description: "Get WSO2 API Manager running on Kubernetes using Helm defaults - an H2 database, NGINX ingress, one node - and open the web portals."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-quick-start/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-quick-start.md
+tags:
+  - api-manager
+  - install-and-setup
+  - setup
+  - kubernetes-deployment
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "quickstart"
+---
+
 # Quick Start Guide: WSO2 API Manager on Kubernetes
 
 This guide gets WSO2 API Manager running on Kubernetes in minutes using default settings — an embedded H2 database, default keystores, and a single node. It is intended for evaluation only.

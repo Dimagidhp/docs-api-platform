@@ -1,3 +1,18 @@
+---
+title: "Application keys"
+description: "Generate and renew production or sandbox application keys in the Developer Portal, including PKCE-enabled keys and keys managed by Okta or Keycloak."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/generate-keys/generate-api-keys/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/manage-application/generate-keys/generate-api-keys.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - manage-application
+  - generate-keys
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Application Keys
 
 An API Access Token/Key is a string that is passed as an HTTP header of an API request. WSO2 API-M provides OAuth2.0 bearer token-based authentication for API access, and the API key has to be submitted alongside the API request in order to authenticate the access.

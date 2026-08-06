@@ -1,3 +1,17 @@
+---
+title: "Quick start guide"
+description: "Create, deploy, and publish your first API in the Publisher Portal, then subscribe to it and invoke it from the WSO2 API Manager Developer Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/api-manager-quick-start-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/get-started/api-manager-quick-start-guide.md
+tags:
+  - api-manager
+  - get-started
+  - api-manager-quick-start-guide
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "quickstart"
+---
+
 # Quick Start Guide
 
 New to WSO2 API Manager? No worries; we'll guide you through the basics!

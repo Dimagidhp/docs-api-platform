@@ -1,3 +1,18 @@
+---
+title: "Override API overview page per API"
+description: "Replace the Developer Portal overview content for one API by adding Markdown to the API description in the Publisher Portal."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/customizations/customizing-the-developer-portal/override-api-overview-page-per-api/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/customizations/customizing-the-developer-portal/override-api-overview-page-per-api.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - customizations
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Override API Overview page per API
 
 It is possible to display a custom Overview content for any API by following the steps given below.

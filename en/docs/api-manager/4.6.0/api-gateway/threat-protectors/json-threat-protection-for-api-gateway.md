@@ -1,3 +1,18 @@
+---
+title: "JSON threat protection for Universal Gateway"
+description: "Limit JSON payload depth, key length, and array size with the json_validator sequence, apply it as a policy, and test the JSON threat protector."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/threat-protectors/json-threat-protection-for-api-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-gateway/threat-protectors/json-threat-protection-for-api-gateway.md
+tags:
+  - api-manager
+  - api-gateway
+  - threat-protectors
+  - json-threat-protection-for-api-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # JSON Threat Protection for Universal Gateway
 
 The JSON threat protector in WSO2 API Manager validates the request body of the JSON message based on pre-configured to 

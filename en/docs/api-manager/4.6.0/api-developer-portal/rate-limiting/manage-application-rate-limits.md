@@ -1,3 +1,18 @@
+---
+title: "Manage application Rate Limits"
+description: "View and change your application's rate limiting tier in the Developer Portal, manage API subscriptions, and reset the quota of a single user."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/rate-limiting/manage-application-rate-limits/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-developer-portal/rate-limiting/manage-application-rate-limits.md
+tags:
+  - api-manager
+  - api-developer-portal
+  - rate-limiting
+  - manage-application-rate-limits
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Manage Application Rate Limits
 
 As an application developer, you can view and modify your application's rate limiting configuration, manage API subscriptions, and reset individual user quotas when needed. This guide shows you how to perform these management tasks in the Developer Portal.

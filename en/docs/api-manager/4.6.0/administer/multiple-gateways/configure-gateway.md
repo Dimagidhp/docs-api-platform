@@ -1,3 +1,18 @@
+---
+title: "Create a Gateway environment"
+description: "Define a Gateway environment with its VHosts in WSO2 API Manager, using either the Admin Portal or the configuration file."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/multiple-gateways/configure-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/multiple-gateways/configure-gateway.md
+tags:
+  - api-manager
+  - administer
+  - gateway
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Create a Gateway environment
 
 Each Gateway environment definition contains details related to a specific Gateway. You can create a Gateway environment that includes VHosts using either one of the following methods.

@@ -1,3 +1,18 @@
+---
+title: "Governance quick start guide"
+description: "Set up API governance end to end: create a ruleset, define a policy, and apply it using labels in WSO2 API Manager."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/governance/quick-start-guide/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/governance/quick-start-guide.md
+tags:
+  - api-manager
+  - administer
+  - governance
+  - quickstart
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-20
+content_type: "quickstart"
+---
+
 # Quick Start Guide: API Manager Governance  
 
 This guide provides a step-by-step overview of how to set up and apply governance policies in the API Manager.  

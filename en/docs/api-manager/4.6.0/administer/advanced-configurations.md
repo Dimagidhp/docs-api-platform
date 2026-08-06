@@ -1,3 +1,18 @@
+---
+title: "Advanced configurations"
+description: "Change advanced tenant configurations from the API Manager Admin Portal, including custom linter rules, and check the schema before saving."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/advanced-configurations/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/administer/advanced-configurations.md
+tags:
+  - api-manager
+  - administer
+  - admin-portal
+  - configuration
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # **Advanced Configurations**
 
 This section covers how to change and configure several features related to the advanced tenant configurations.

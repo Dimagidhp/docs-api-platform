@@ -1,3 +1,18 @@
+---
+title: "Scenario 6 - integrating with data sources"
+description: "Expose an employee database as a REST API using a Micro Integrator data service, then invoke it through WSO2 API Manager."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario6-integrating-with-data-sources/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/tutorials/scenarios/scenario6-integrating-with-data-sources.md
+tags:
+  - api-manager
+  - tutorials
+  - scenarios
+  - scenario6-integrating-with-data-sources
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "tutorial"
+---
+
 # Scenario 6 - Integrating with Data Sources
 
 This is a tutorial that is part of a series and can be used as a standalone tutorial on how to integrate with Data Sources. For more details on the scenario and general prerequisites, please see [the scenario overview page](../../tutorials/scenarios/scenario-overview.md).

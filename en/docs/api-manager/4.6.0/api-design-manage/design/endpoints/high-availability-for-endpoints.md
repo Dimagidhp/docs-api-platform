@@ -1,3 +1,18 @@
+---
+title: "High availability for endpoints"
+description: "Configure load balanced and failover group endpoints for an API in the Publisher Portal so requests keep flowing when a backend becomes unavailable."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/endpoints/high-availability-for-endpoints/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/endpoints/high-availability-for-endpoints.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - endpoints
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # High Availability for Endpoints
 
 ## Configuring Load Balancing Endpoints

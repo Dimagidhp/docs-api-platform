@@ -1,3 +1,18 @@
+---
+title: "Monitoring with OpenTracing"
+description: "Enable distributed tracing in WSO2 API Manager with OpenTracing, sending instrumented data to Jaeger, Zipkin, a log file, or a custom tracer."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/observability/traces/monitoring-with-opentracing/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/monitoring/observability/traces/monitoring-with-opentracing.md
+tags:
+  - api-manager
+  - monitoring
+  - observability
+  - traces
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Monitoring with OpenTracing
 
 In a distributed API Manager architecture, tracing a message is important to debug and observe a message path. This is known as distributed tracing. OpenTracing allows you to enable distributed tracing for WSO2 API Manager.

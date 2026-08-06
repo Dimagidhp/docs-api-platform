@@ -1,3 +1,18 @@
+---
+title: "Rate limiting for AI APIs"
+description: "Add AI API subscription policies in the Admin Portal with request count, total token, prompt token, and completion token quotas per application."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/rate-limiting/rate-limiting-for-ai-apis/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/api-design-manage/design/rate-limiting/rate-limiting-for-ai-apis.md
+tags:
+  - api-manager
+  - api-design-manage
+  - design
+  - rate-limiting
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Rate Limiting for AI APIs
 
 ## Overview

@@ -1,3 +1,17 @@
+---
+title: "Getting started with LLM gateway"
+description: "Create an OpenAI-backed AI API in WSO2 API Manager, configure backend security, deploy and publish it, and then invoke the AI API."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/getting-started-with-ai-gateway/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/getting-started-with-ai-gateway.md
+tags:
+  - api-manager
+  - ai-gateway
+  - getting-started-with-ai-gateway
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "quickstart"
+---
+
 # Getting Started with LLM Gateway
 
 The LLM Gateway in WSO2 API Manager simplifies the integration of AI services into applications by providing a seamless way to manage and expose AI APIs. With built-in support for leading AI Service Providers such as **Anthropic**, **AWS Bedrock**, **Azure AI Foundry**, **Azure OpenAI**, **Gemini**, **Mistral**, and **OpenAI**, as well as the flexibility to configure custom AI providers, LLM Gateway enables organizations to adopt AI securely and efficiently.

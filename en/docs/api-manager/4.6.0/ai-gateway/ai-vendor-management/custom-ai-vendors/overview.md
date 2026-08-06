@@ -1,3 +1,18 @@
+---
+title: "Custom AI service providers"
+description: "Register a custom AI service provider in WSO2 API Manager, from naming and token usage extraction to uploading the API definition."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/custom-ai-vendors/overview/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/ai-gateway/ai-vendor-management/custom-ai-vendors/overview.md
+tags:
+  - api-manager
+  - ai-gateway
+  - ai-vendor-management
+  - custom-ai-vendors
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Custom AI Service Providers
 
 You can integrate **WSO2 API Manager** with custom AI Service Providers to consume their services via AI APIs. This guide walks you through configuring a custom AI Service Provider to manage and track AI model interactions efficiently.

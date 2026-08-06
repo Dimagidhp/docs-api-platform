@@ -1,3 +1,18 @@
+---
+title: "Writing custom handlers"
+description: "Write, deploy, and engage a custom handler to change the default mediation flow of API requests on the WSO2 API Manager Gateway."
+canonical_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-gateway/writing-custom-handlers/
+md_url: https://wso2.com/api-platform/docs/api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-gateway/writing-custom-handlers.md
+tags:
+  - api-manager
+  - reference
+  - customize-product
+  - extending-api-manager
+author: WSO2 API Platform Documentation Team
+last_updated: 2026-07-23
+content_type: "how-to"
+---
+
 # Writing Custom Handlers
 
 This section introduces handlers and explains how to write a custom handler using an example.
