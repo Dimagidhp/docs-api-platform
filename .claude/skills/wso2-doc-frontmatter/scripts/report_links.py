@@ -33,6 +33,23 @@ LINK = re.compile(r'(!?)\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+"[^"]*")?\s*\)')
 HTML_SRC = re.compile(r'<(?:img|a)[^>]+(?:src|href)="([^"]+)"')
 
 
+def url_base(rel):
+    """Directory the RENDERED page sits in, under `use_directory_urls: true`.
+
+    `a/b/page.md` is served at `/a/b/page/`, so it is one level DEEPER than the
+    source file, while `a/b/index.md` is served at `/a/b/` — the same level.
+
+    This matters because mkdocs rewrites relative targets in Markdown syntax
+    (resolving them against the source file) but passes raw HTML through
+    untouched, so an `<img src>` is resolved by the browser against the rendered
+    URL instead. The same string is therefore correct in one syntax and broken in
+    the other, and the two must not be checked the same way.
+    """
+    d = os.path.dirname(rel)
+    stem = os.path.basename(rel)[:-3] if rel.endswith(".md") else os.path.basename(rel)
+    return d if stem in ("index", "README") else (f"{d}/{stem}" if d else stem)
+
+
 def version_root(rel):
     """`<product>/<version>/a/b.md` -> `<product>/<version>`, else ''."""
     ver, _ = split_version(rel)
@@ -96,8 +113,8 @@ def main():
             a.add(m.group(1))
         anchors[p] = a
 
-    tiers = {k: [] for k in ("templated_fixable", "templated", "malformed", "depth",
-                             "renamed", "gone", "stale", "anchor")}
+    tiers = {k: [] for k in ("templated_fixable", "templated", "malformed", "dir_style",
+                             "depth", "renamed", "gone", "stale", "anchor")}
 
     targets = [p for p in md_list if not args.scope or p.startswith(args.scope)]
     for p in targets:
@@ -108,10 +125,13 @@ def main():
         stem = os.path.basename(p)[:-3]
         vroot = version_root(p)
 
-        raw = [(m.group(1) == "!", m.group(3)) for m in LINK.finditer(body)]
-        raw += [(False, m.group(1)) for m in HTML_SRC.finditer(body)]
+        # The third element records whether the target was written in raw HTML.
+        # mkdocs rewrites Markdown targets and leaves HTML alone, so the two need
+        # different bases — see url_base() above.
+        raw = [(m.group(1) == "!", m.group(3), False) for m in LINK.finditer(body)]
+        raw += [(False, m.group(1), True) for m in HTML_SRC.finditer(body)]
 
-        for is_img, t in raw:
+        for is_img, t, is_html in raw:
             if t.startswith(("mailto:", "tel:", "//", "#!")):
                 continue
 
@@ -177,24 +197,56 @@ def main():
                     tiers["anchor"].append({"file": p, "link": t, "target_file": p, "anchor": frag})
                 continue
 
-            src_rel = os.path.normpath(os.path.join(d, path)).replace("\\", "/")
-            if resolves(src_rel):
+            # WHICH BASE APPLIES — verified against a real mkdocs build.
+            #
+            # mkdocs rewrites a Markdown target only when the literal path names a
+            # file that exists; then it is resolved against the SOURCE directory.
+            # Everything else — raw HTML, directory-style links (`../foo/bar/`),
+            # extensionless links (`../foo/bar`) — is passed through verbatim and
+            # resolved by the browser against the RENDERED URL, one level deeper.
+            if is_html:
+                own_base, alt_base = url_base(p), d
+                rewritten = False
+            else:
+                literal = os.path.normpath(os.path.join(d, path)).replace("\\", "/")
+                rewritten = literal in all_files
+                own_base, alt_base = (d, url_base(p)) if rewritten else (url_base(p), d)
+
+            own_rel = os.path.normpath(os.path.join(own_base, path)).replace("\\", "/")
+            if resolves(own_rel):
                 if frag:
-                    tf = next((c for c in (src_rel, src_rel + ".md", src_rel + "/index.md",
-                                           src_rel + "/README.md") if c in all_files), None)
+                    tf = next((c for c in (own_rel, own_rel + ".md", own_rel + "/index.md",
+                                           own_rel + "/README.md") if c in all_files), None)
                     if tf and tf.endswith(".md") and frag not in anchors.get(tf, set()):
                         tiers["anchor"].append({"file": p, "link": t, "target_file": tf, "anchor": frag})
                 continue
 
-            # Directory-URL semantics: the rendered page sits one level deeper
-            # than the source file, so a link written against the *URL* needs one
-            # fewer `../` to be correct against the source.
-            url_rel = os.path.normpath(os.path.join(d, stem, path)).replace("\\", "/")
-            if resolves(url_rel):
-                fixed = os.path.relpath(url_rel, d).replace("\\", "/")
-                if url_rel + ".md" in all_files:
+            # A Markdown link written in URL shape, whose `.md` file sits exactly
+            # where the link already points. Adding the extension is the real fix,
+            # not adding a `../`: mkdocs then owns the depth calculation and the link
+            # keeps working when the page moves. Checked BEFORE the depth tier so the
+            # brittle fix never wins.
+            if not is_html and not rewritten:
+                src_guess = os.path.normpath(os.path.join(d, path)).replace("\\", "/")
+                md_target = next((c for c in (src_guess + ".md", src_guess + "/index.md",
+                                              src_guess + "/README.md") if c in all_files), None)
+                if md_target:
+                    fixed = os.path.relpath(md_target, d).replace("\\", "/")
+                    tiers["dir_style"].append({
+                        "file": p, "link": t, "resolves_to": md_target,
+                        "suggested": fixed + (("#" + frag) if frag else ""),
+                        "why": "written as a URL, so mkdocs passes it through unresolved"})
+                    continue
+
+            # Resolves against the OTHER base — so the depth is wrong by exactly the
+            # one level between a source file and its rendered directory.
+            alt_rel = os.path.normpath(os.path.join(alt_base, path)).replace("\\", "/")
+            if resolves(alt_rel):
+                fixed = os.path.relpath(alt_rel, own_base).replace("\\", "/")
+                if not is_html and alt_rel + ".md" in all_files:
                     fixed += ".md"
-                tiers["depth"].append({"file": p, "link": t, "resolves_to": url_rel,
+                tiers["depth"].append({"file": p, "link": t, "resolves_to": alt_rel,
+                                       "is_html": is_html,
                                        "suggested": fixed + (("#" + frag) if frag else "")})
                 continue
 
@@ -242,7 +294,7 @@ def main():
     n = {k: len(v) for k, v in tiers.items()}
     total = sum(n.values())
     scope_label = args.scope or f"all of {root}"
-    auto = (n["templated_fixable"] + n["malformed"] + n["depth"]
+    auto = (n["templated_fixable"] + n["malformed"] + n["dir_style"] + n["depth"]
             + len([x for x in tiers["renamed"] if x["confidence"] == "high"]))
 
     L = []
@@ -253,19 +305,34 @@ def main():
       f"**{auto}** have an exact or high-confidence mechanical fix; "
       f"**{n['gone']}** need a human decision.")
     w("")
-    w("| Tier | Cause | Count | Fixable how |")
-    w("|---|---|---|---|")
-    w(f"| 0 | `{{{{base_path}}}}` where the resource exists | {n['templated_fixable']} | Exact rewrite to a relative path |")
-    w(f"| — | `{{{{base_path}}}}` where it does not | {n['templated']} | **Leave alone** — may be a redirect |")
-    w(f"| 0 | Malformed link syntax | {n['malformed']} | Exact rewrite — no judgement |")
-    w(f"| 1 | Wrong relative depth | {n['depth']} | Exact rewrite — no judgement |")
-    w(f"| 2 | Renamed or moved target | {n['renamed']} | Proposed target, check confidence |")
-    w(f"| 3 | Pre-migration domain | {n['stale']} | Map to new site, or drop |")
-    w(f"| 4 | Missing anchor | {n['anchor']} | Heading was reworded |")
-    w(f"| 5 | No target anywhere | {n['gone']} | Human decision — cannot automate |")
+    # Groups are named, not numbered. The name is the value `fix_links.py --tier`
+    # takes, so a row in this table is directly runnable. Numbering them invited
+    # the obvious question of why two groups shared a number and one had none.
+    w("### Fixable by script")
     w("")
-    w("Work the tiers in order. Tier 1 is safe to apply in bulk; tier 5 is the only "
-      "one that needs someone who knows what the page was supposed to say.")
+    w("Run in this order. Each is a separate `fix_links.py --tier` run, and every "
+      "rewrite is verified against the files on disk before it is written.")
+    w("")
+    w("| Order | Group | Cause | Count | Fix |")
+    w("|---|---|---|---|---|")
+    w(f"| 1 | `malformed` | Malformed link syntax | {n['malformed']} | Exact — no judgement |")
+    w(f"| 2 | `dir_style` | Written as a URL, so mkdocs never resolves it | {n['dir_style']} | Add `.md` — mkdocs then owns the depth |")
+    w(f"| 3 | `depth` | Wrong relative depth | {n['depth']} | Exact — no judgement |")
+    w(f"| 4 | `renamed` | Renamed or moved target | {n['renamed']} | Proposed; `high` confidence applied by default |")
+    w(f"| 5 | `templated_fixable` | `{{{{base_path}}}}` where the resource exists | {n['templated_fixable']} | Exact rewrite to a relative path |")
+    w("")
+    w("### Needs a person")
+    w("")
+    w("`fix_links.py` refuses these. The information needed is not in the repository, "
+      "and a guess produces a confident link to the wrong page — worse than a visibly "
+      "broken one, because nobody re-checks it.")
+    w("")
+    w("| Group | Cause | Count | Why it cannot be automated |")
+    w("|---|---|---|---|")
+    w(f"| `templated` | `{{{{base_path}}}}` where the resource does not exist | {n['templated']} | May be served by a redirect |")
+    w(f"| `stale` | Pre-migration domain | {n['stale']} | Needs the equivalent page on the new site |")
+    w(f"| `anchor` | Missing anchor | {n['anchor']} | The heading was reworded — which one now? |")
+    w(f"| `gone` | No target anywhere | {n['gone']} | Was it dropped, missed, or merged? |")
     w("")
 
     def table(rows, cols, keys, limit):
@@ -280,7 +347,7 @@ def main():
         w("")
 
     if n["templated_fixable"]:
-        w("## Tier 0 — `{{base_path}}` where the resource exists")
+        w("## `templated_fixable` — `{{base_path}}` where the resource exists")
         w("")
         w("`{{base_path}}` stands for the root of the version's site, so the rest of the "
           "target is a path within that version's directory. For these, the resource is "
@@ -301,7 +368,7 @@ def main():
               ["file", "link", "variable"], args.max_rows)
 
     if n["malformed"]:
-        w("## Tier 0 — Malformed link syntax")
+        w("## `malformed` — Malformed link syntax")
         w("")
         w("The link target is not a valid path or URL, so it renders as literal broken text "
           "regardless of whether the destination exists. Carried over from the old wiki. "
@@ -310,8 +377,21 @@ def main():
         table(tiers["malformed"], ["Page", "Currently", "Change to", "Why"],
               ["file", "link", "suggested", "why"], args.max_rows)
 
+    if n["dir_style"]:
+        w("## `dir_style` — Written as a URL, so mkdocs never resolves it")
+        w("")
+        w("These point at the right page already. Because the target is written in URL "
+          "shape rather than naming the `.md` file, mkdocs passes it through untouched and "
+          "the browser resolves it against the rendered page URL — one directory deeper "
+          "than the source file, so it lands one level short. Adding the extension hands "
+          "the depth calculation back to mkdocs, permanently.")
+        w("")
+        table(tiers["dir_style"], ["Page", "Currently", "Change to"],
+              ["file", "link", "suggested"], args.max_rows)
+        w("")
+
     if n["depth"]:
-        w("## Tier 1 — Wrong relative depth")
+        w("## `depth` — Wrong relative depth")
         w("")
         w("The target exists; the path has one `../` too many. These render correctly in a "
           "browser (the published URL sits one directory deeper than the source file), so they "
@@ -324,7 +404,7 @@ def main():
     if n["renamed"]:
         hi = [x for x in tiers["renamed"] if x["confidence"] == "high"]
         lo = [x for x in tiers["renamed"] if x["confidence"] != "high"]
-        w("## Tier 2 — Renamed or moved target")
+        w("## `renamed` — Renamed or moved target")
         w("")
         w("The target does not exist at the path written, but a file of the same name exists "
           "elsewhere under the same version. This is the restructure: directories were renamed "
@@ -341,7 +421,7 @@ def main():
                   ["file", "link", "suggested", "confidence"], args.max_rows)
 
     if n["stale"]:
-        w("## Tier 3 — Links to the pre-migration site")
+        w("## `stale` — Links to the pre-migration site")
         w("")
         w("These point at a location the documentation has migrated away from. For each "
           "one: find the equivalent page on the new site and link to it relatively, or if the "
@@ -351,7 +431,7 @@ def main():
         table(tiers["stale"], ["Page", "Link"], ["file", "link"], args.max_rows)
 
     if n["anchor"]:
-        w("## Tier 4 — Missing anchor")
+        w("## `anchor` — Missing anchor")
         w("")
         w("The page resolves but the `#fragment` matches no heading, so the reader lands at the "
           "top instead of the section. Usually the heading was reworded. Open the target, find "
@@ -361,7 +441,7 @@ def main():
               ["file", "link", "target_file", "anchor"], args.max_rows)
 
     if n["gone"]:
-        w("## Tier 5 — No target anywhere")
+        w("## `gone` — No target anywhere")
         w("")
         w("No file of this name exists anywhere under the docs root, so there is nothing to "
           "point at. Each needs a decision: was the page meant to be migrated and missed, was it "
@@ -377,8 +457,11 @@ def main():
     w("## Prompt for an AI coding agent")
     w("")
     w("Paste the block below to an agent working in the repo root. It is deliberately scoped to "
-      "tiers 1 and 2-high — the tiers with a defensible mechanical answer. Tiers 3 to 5 need "
-      "judgement and are left out on purpose.")
+      "the four groups with a defensible mechanical answer. `templated`, `stale`, `anchor` and "
+      "`gone` need judgement and are left out on purpose.")
+    w("")
+    w("Alternatively, run `fix_links.py --tier <group>` yourself — same scope, one group at a "
+      "time, and every rewrite verified against the files on disk before it is written.")
     w("")
     w("````text")
     w(f"You are fixing broken links in the WSO2 API Platform docs, scope: {scope_label}.")
@@ -386,11 +469,12 @@ def main():
     w(f"Read the fix plan in `{args.out}`" +
       (f" and the machine-readable list in `{args.json_out}`." if args.json_out else "."))
     w("")
-    w("Apply ONLY these tiers:")
-    w("  - Tier 0 (`{{base_path}}` where the resource exists): apply every row as given.")
-    w("  - Tier 0 (Malformed link syntax): apply every row exactly as given.")
-    w("  - Tier 1 (Wrong relative depth): apply every row exactly as given.")
-    w("  - Tier 2, high-confidence subsection only: apply every row as given.")
+    w("Apply ONLY these groups:")
+    w("  - `templated_fixable`: apply every row as given.")
+    w("  - `malformed`: apply every row exactly as given.")
+    w("  - `dir_style`: apply every row exactly as given (adds `.md`).")
+    w("  - `depth`: apply every row exactly as given.")
+    w("  - `renamed`, the high-confidence subsection only: apply every row as given.")
     w("")
     w("Rules:")
     w("  1. Replace only the link target inside the parentheses. Never change the link TEXT,")
@@ -398,9 +482,8 @@ def main():
     w("  2. A target may appear more than once in a file — replace every occurrence of that")
     w("     exact target in that file.")
     w("  3. Preserve any `#fragment` already on the link unless the plan says otherwise.")
-    w("  4. Do NOT touch tiers 3, 4, or 5, and do NOT touch anything in the")
-    w("     \"`{{base_path}}` where the resource does not exist\" section. Do not")
-    w("     invent a target that is not in the plan.")
+    w("  4. Do NOT touch `templated`, `stale`, `anchor` or `gone`. Do not invent a")
+    w("     target that is not in the plan.")
     w("  5. Do not reformat, reflow, or reorder anything. Minimal diffs only.")
     w("")
     w("Verify when done, from the repo root:")
@@ -410,10 +493,10 @@ def main():
     w("The blocking count must go DOWN and no new codes may appear. If any count rises, stop")
     w("and report what you changed rather than continuing.")
     w("")
-    w("Then report: rows applied per tier, files touched, and the before/after blocking counts.")
+    w("Then report: rows applied per group, files touched, and the before/after blocking counts.")
     w("````")
     w("")
-    w("### Why tiers 3 to 5 are excluded")
+    w("### Why `templated`, `stale`, `anchor` and `gone` are excluded")
     w("")
     w("Each needs information that isn't in the repo: which new page replaces an old-site link, "
       "which reworded heading was meant, whether a missing page was dropped on purpose. An agent "

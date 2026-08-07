@@ -43,16 +43,45 @@ TODO = "TODO"
 
 
 def sentence_case(s):
-    """Lowercase a Title Case heading, preserving acronyms and the first word."""
-    words = s.split()
+    """Lowercase a Title Case heading into sentence case.
+
+    Preserved: the first word, acronyms, anything in `TITLE_PROPER`, and any
+    multi-word product name in `PROPER_PHRASES` ("API Manager", "Developer
+    Portal"). Those allowlists are shared with `check_style.py` — without them
+    this function lowercases the very capitals that checker calls correct, and
+    an H1 of "API Manager Configuration Catalog" becomes the wrong
+    "API manager configuration catalog".
+    """
+    from fm_lib import TITLE_PROPER, PROPER_PHRASES
+
+    # Mask phrases first: they cannot be decided one word at a time. Match on word
+    # boundaries — a bare `in` test lets "Rate Limit" swallow "Rate Limiting" and
+    # preserve a capital that belongs in lower case.
+    # A trailing "s" is kept, so "Developer Portals" survives as a plural rather than
+    # being restored as the singular the allowlist happens to spell.
+    holes = {}
+    for n, ph in enumerate(sorted(PROPER_PHRASES, key=len, reverse=True)):
+        pat = r"\b" + re.escape(ph) + r"(s?)\b"
+
+        def _hole(m, n=n):
+            token = "\x00%d.%d\x00" % (n, len(holes))
+            holes[token] = m.group(0)
+            return token
+
+        s = re.sub(pat, _hole, s)
+
     out = []
-    for i, w in enumerate(words):
-        core = w.strip("()[],.:;")
-        if i == 0 or core.upper() == core or not re.match(r"^[A-Z][a-z]+$", core):
+    for i, w in enumerate(s.split()):
+        core = w.strip("()[],.:;\"'")
+        if (i == 0 or core in TITLE_PROPER or core.upper() == core
+                or not re.match(r"^[A-Z][a-z]+$", core)):
             out.append(w)
         else:
             out.append(w[0].lower() + w[1:])
-    return " ".join(out)
+    joined = " ".join(out)
+    for token, ph in holes.items():
+        joined = joined.replace(token, ph)
+    return joined
 
 
 def derive_tags(rel):

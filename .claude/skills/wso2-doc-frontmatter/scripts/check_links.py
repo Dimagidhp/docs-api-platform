@@ -11,6 +11,8 @@ _ap.add_argument("docs_root", nargs="?", default="en/docs")
 _ap.add_argument("--json", dest="json_out", default=None,
                  help="Write full findings to this path. Omitted = summary only.")
 _ap.add_argument("--gate", action="store_true", help="Exit 1 if any blocking finding.")
+_ap.add_argument("--mkdocs-yml", dest="mkdocs_yml", default=None,
+                 help="Where to read `toc_depth` from. Defaults to <docs_root>/../mkdocs.yml.")
 _args = _ap.parse_args()
 DOCS = _args.docs_root.rstrip("/")
 SITE = "https://wso2.com/api-platform/docs"
@@ -33,24 +35,77 @@ def slug(h):
     h = re.sub(r"[^\w\s-]", "", h).strip().lower()
     return re.sub(r"[-\s]+", "-", h)
 
+def toc_depth(mkdocs_yml):
+    """The `toc_depth` configured for the python-markdown toc extension.
+
+    This is load-bearing, not cosmetic. With `toc_depth: 3`, python-markdown
+    assigns NO `id` to h4 and deeper — so `#some-h4-heading` links resolve to
+    nothing in the built site even though the heading is right there in the
+    Markdown. Neither this checker nor `mkdocs build` on 1.4.x flags that on its
+    own, so a page can look clean and still have dead in-page links.
+    """
+    if not os.path.isfile(mkdocs_yml):
+        return 6
+    text = open(mkdocs_yml, encoding="utf-8", errors="replace").read()
+    m = re.search(r"^\s*toc_depth:\s*['\"]?(\d)", text, re.M)
+    return int(m.group(1)) if m else 6
+
+
+MKDOCS_YML = _args.mkdocs_yml or os.path.join(os.path.dirname(DOCS) or ".", "mkdocs.yml")
+TOC_DEPTH = toc_depth(MKDOCS_YML)
+
 # harvest anchors per file (headings + explicit <a name>/{#id})
-anchors = {}
+#
+# `anchors` is what the build actually produces. `deep_anchors` holds the ids a
+# heading WOULD have if toc_depth allowed it — kept separately so a link to one
+# can be reported as its own cause rather than as a generic missing anchor.
+#
+# Do NOT suggest `{#id}` as the fix for a deep heading here, even though
+# `attr_list` would honour it: the `markdownextradata` plugin runs every page
+# through Jinja BEFORE Markdown, and `{#` opens a Jinja comment. An unterminated
+# one fails the whole build with "Missing end of comment tag". The safe additive
+# fix is `<a name="...">` immediately above the heading — inert HTML, already used
+# in ~300 pages here, and it leaves the heading level and the TOC untouched.
+anchors, deep_anchors = {}, {}
 for p in md_files:
     txt = open(os.path.join(DOCS, p), encoding="utf-8", errors="replace").read()
     txt = re.sub(r"<!--.*?-->", "", txt, flags=re.S)
     txt = re.sub(r"```.*?```", "", txt, flags=re.S)
-    a = set()
-    for m in re.finditer(r"^#{1,6}\s+(.+?)\s*$", txt, re.M):
-        h = m.group(1)
+    a, deep = set(), set()
+    for m in re.finditer(r"^(#{1,6})\s+(.+?)\s*$", txt, re.M):
+        level, h = len(m.group(1)), m.group(2)
         exp = re.search(r"\{#([\w-]+)\}", h)
-        if exp: a.add(exp.group(1)); h = h[:exp.start()]
-        a.add(slug(h))
+        if exp:
+            a.add(exp.group(1))            # explicit id survives any toc_depth
+            h = h[:exp.start()]
+        (a if level <= TOC_DEPTH else deep).add(slug(h))
     for m in re.finditer(r'<a[^>]+(?:name|id)="([^"]+)"', txt): a.add(m.group(1))
     for m in re.finditer(r'\{#([\w-]+)\}', txt): a.add(m.group(1))
     anchors[p] = a
+    deep_anchors[p] = deep - a
 
 LINK = re.compile(r'(!?)\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+"[^"]*")?\s*\)')
-HTML_SRC = re.compile(r'<img[^>]+src="([^"]+)"')
+# Tag name is captured so an `<a href>` is reported as a broken LINK and an
+# `<img src>` as a missing IMAGE. Lumping them together mislabels every raw-HTML
+# link as an image, which sends whoever reads the report looking for the wrong thing.
+HTML_SRC = re.compile(r'<(img|a|source|iframe)[^>]+(?:src|href)="([^"]+)"')
+
+
+def url_base(rel):
+    """Directory the RENDERED page sits in, under `use_directory_urls: true`.
+
+    `a/b/page.md` is served at `/a/b/page/` — one level deeper than the source —
+    while `a/b/index.md` is served at `/a/b/`, the same level.
+
+    mkdocs rewrites relative targets written in Markdown syntax, resolving them
+    against the source file, but passes raw HTML through untouched, so the browser
+    resolves an `<img src>` against the rendered URL instead. The identical string
+    is therefore correct in one syntax and broken in the other. Resolving both the
+    same way is how a working image gets "fixed" into a broken one.
+    """
+    d = os.path.dirname(rel)
+    stem = os.path.basename(rel)[:-3] if rel.endswith(".md") else os.path.basename(rel)
+    return d if stem in ("index", "README") else (f"{d}/{stem}" if d else stem)
 
 findings = []
 def add(f, sev, code, msg):
@@ -64,10 +119,10 @@ for p in sorted(md_files):
     body = re.sub(r"`[^`\n]*`", "", body)
     d = os.path.dirname(p)
 
-    targets = [(m.group(1) == "!", m.group(3)) for m in LINK.finditer(body)]
-    targets += [(True, m.group(1)) for m in HTML_SRC.finditer(body)]
+    targets = [(m.group(1) == "!", m.group(3), False) for m in LINK.finditer(body)]
+    targets += [(m.group(1).lower() != "a", m.group(2), True) for m in HTML_SRC.finditer(body)]
 
-    for is_img, t in targets:
+    for is_img, t, is_html in targets:
         if t.startswith(("mailto:", "tel:", "#!")):
             continue
         # Build-time template variables (e.g. `{{base_path}}`) are not paths. They
@@ -92,7 +147,14 @@ for p in sorted(md_files):
         if t.startswith("#"):
             frag = urllib.parse.unquote(t[1:])
             if frag and frag not in anchors.get(p, set()):
-                add(p, "should-fix", "ANCHOR_MISSING", f"In-page anchor `{t}` has no matching heading.")
+                if frag in deep_anchors.get(p, set()):
+                    add(p, "blocking", "ANCHOR_TOO_DEEP",
+                        f"`{t}` names a heading deeper than h{TOC_DEPTH}, and `toc_depth: {TOC_DEPTH}` "
+                        f"means the build gives it no id — so the link goes nowhere. Add "
+                        f"`<a name=\"{frag}\"></a>` just above the heading, or promote the heading "
+                        f"to h{TOC_DEPTH}.")
+                else:
+                    add(p, "should-fix", "ANCHOR_MISSING", f"In-page anchor `{t}` has no matching heading.")
             continue
 
         path, _, frag = t.partition("#")
@@ -100,7 +162,29 @@ for p in sorted(md_files):
         frag = urllib.parse.unquote(frag)
         if not path:
             continue
-        cand = os.path.normpath(os.path.join(d, path)) if not path.startswith("/") else path.lstrip("/")
+        # WHICH BASE APPLIES — verified against a real mkdocs build, not inferred.
+        #
+        # mkdocs rewrites a Markdown target only when the literal path names a file
+        # that exists in docs_dir (`../c/target.md`, `../img.png`). Then, and only
+        # then, is the target resolved against the SOURCE directory.
+        #
+        # Everything else is passed through verbatim and resolved by the browser
+        # against the RENDERED URL, which sits one level deeper for a non-index page:
+        #   * raw HTML (`<img src>`, `<a href>`)
+        #   * directory-style Markdown links (`../c/target/`)
+        #   * extensionless Markdown links (`../c/target`) — passed through even
+        #     when `target.md` exists right there
+        #
+        # Judging a passed-through link source-relative is how a link that is broken
+        # in the browser gets reported as clean.
+        if path.startswith("/"):
+            cand = path.lstrip("/")
+            rewritten = False
+        else:
+            literal = os.path.normpath(os.path.join(d, path)).replace("\\", "/")
+            rewritten = (not is_html) and literal in all_files
+            rel_base = d if rewritten else url_base(p)
+            cand = os.path.normpath(os.path.join(rel_base, path))
         if cand.startswith(".."):
             add(p, "blocking", "LINK_ESCAPES_ROOT", f"Link `{t}` resolves outside the docs root.")
             continue
@@ -118,8 +202,13 @@ for p in sorted(md_files):
             continue
         if frag and resolved.endswith(".md"):
             if frag not in anchors.get(resolved, set()):
-                add(p, "should-fix", "ANCHOR_MISSING",
-                    f"Anchor `#{frag}` not found in `{resolved}` (link was `{t}`).")
+                if frag in deep_anchors.get(resolved, set()):
+                    add(p, "blocking", "ANCHOR_TOO_DEEP",
+                        f"`{t}` names a heading in `{resolved}` deeper than h{TOC_DEPTH}, which "
+                        f"`toc_depth: {TOC_DEPTH}` leaves without an id, so the link goes nowhere.")
+                else:
+                    add(p, "should-fix", "ANCHOR_MISSING",
+                        f"Anchor `#{frag}` not found in `{resolved}` (link was `{t}`).")
 
     # Alt text. The style guide is specific here and it is easy to get wrong:
     #   - alt="" is CORRECT for purely decorative images or screenshots that

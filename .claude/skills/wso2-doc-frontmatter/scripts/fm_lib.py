@@ -170,6 +170,86 @@ CT_ALIASES = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Capitalisation allowlists. Shared, because two scripts need the same answer:
+# `check_style.py` decides whether a capital in a heading is a violation, and
+# `fm_fix.py` decides whether to lowercase a word when it derives a `title` from
+# an H1. If those disagree, one script lowercases what the other says is correct.
+# ---------------------------------------------------------------------------
+
+SMALL = {"a", "an", "and", "as", "at", "but", "by", "for", "from", "in", "into", "nor",
+         "of", "on", "onto", "or", "over", "per", "the", "to", "up", "via", "with",
+         "vs", "near", "off", "out"}
+
+# Product/proper nouns and acronyms that legitimately stay capitalised mid-heading.
+PROPER = {"WSO2", "API", "APIs", "AI", "LLM", "LLMs", "MCP", "REST", "gRPC", "GraphQL",
+          "JSON", "YAML", "XML", "HTTP", "HTTPS", "OAuth", "OAuth2", "JWT", "SSO", "IdP",
+          "OIDC", "SAML", "TLS", "mTLS", "SSL", "CORS", "URL", "URI", "URLs", "ID", "IDs",
+          "UI", "CLI", "SDK", "IDE", "CI", "CD", "VM", "VMs", "K8s", "Kubernetes",
+          "Docker", "Helm", "Istio", "Envoy", "Redis", "PostgreSQL", "MySQL", "Oracle",
+          "Grafana", "Prometheus", "Jaeger", "Zipkin", "OpenTelemetry", "OpenSearch",
+          "Elasticsearch", "Moesif", "Stripe", "AWS", "Azure", "GCP", "Bedrock", "OpenAI",
+          "Anthropic", "Gemini", "Mistral", "Ollama", "Choreo", "Bijira", "Ballerina",
+          "Git", "GitHub", "GitLab", "Linux", "Windows", "macOS", "Java", "Python", "Go",
+          "Node", "npm", "Maven", "Gradle", "Swagger", "OpenAPI", "AsyncAPI", "Postman",
+          "Portal", "Gateway", "Platform", "Manager", "Publisher", "Developer",
+          "Control", "Plane",
+          "Hub", "Workspace", "Analytics", "PII", "RBAC", "ACL", "SLA", "TPS", "QPS",
+          "DNS", "IP", "TCP", "UDP", "gRPC-Web", "Kafka", "RabbitMQ", "NGINX", "Terraform",
+          "Ansible", "Prometheus-compatible", "Bitbucket", "Vault", "Keycloak", "Okta",
+          "Auth0", "Asgardeo", "I", "Step", "Table", "Contents", "Note", "Tip", "Warning",
+          "Example", "Appendix", "FAQ", "README", "Enumerated", "Values"}
+
+# Phrase-level allowlist: matched case-sensitively and masked out BEFORE per-word
+# scanning, because multi-word product names cannot be expressed as single words.
+PROPER_PHRASES = {
+    # Third-party products / cloud services
+    "Google Cloud Trace", "Google Cloud Monitoring", "Google Cloud",
+    "Azure AI Content Safety", "Azure Content Safety Content Moderation",
+    "Azure Content Safety Guardrail", "Azure Content Safety", "Azure OpenAI",
+    "AWS Bedrock Guardrails", "AWS Bedrock Guardrail", "Docker Compose",
+    "OpenSearch Dashboards", "VS Code", "Server-Sent Events",
+    # Kubernetes API kinds / concepts
+    "Horizontal Pod Autoscaler", "Pod Disruption Budget", "Custom Resource Definition",
+    "Service Account", "ConfigMap", "StatefulSet", "DaemonSet", "HTTPRoute", "Gateway API",
+    # Standards
+    "JSON Schema Draft 7", "JSON Schema", "JSONPath",
+    # WSO2 components (capitalised-dominant in the corpus)
+    "Gateway Controller", "Developer Portal", "Control Plane", "Policy Hub",
+    "Policy Engine", "Gateway Builder", "Event Gateway", "API Platform Console",
+    "API Platform", "MCP Proxy", "API Proxy", "Publisher Portal", "Admin Portal",
+    "API Gateway",
+    "API Manager", "AI Gateway", "Universal Gateway", "Micro Integrator",
+    "Service Catalog", "API Product", "API Products",
+    # --- Policy Hub policy names -------------------------------------------------
+    # Treated as proper nouns, matching the Policy Hub catalogue. Remove this block
+    # if policy names should instead follow sentence case.
+    "Model Weighted Round Robin", "Model Round Robin", "Sentence Count Guardrail",
+    "Word Count Guardrail", "Content Length Guardrail", "JSON Schema Guardrail",
+    "Regex Guardrail", "URL Guardrail", "Semantic Prompt Guard",
+    "Semantic Tool Filtering", "PII Masking", "Analytics Header Filter",
+    "Subscription Validation", "API Key Auth", "Basic Auth", "JWT Auth", "Rate Limit",
+}
+
+# Conventional release-stage / status labels never count as Title Case evidence.
+STATUS_LABELS = {"beta", "alpha", "ga", "preview", "deprecated", "optional",
+                 "experimental", "recommended", "required", "default", "new", "legacy"}
+
+# Words in PROPER that are NOT product names on their own. Two kinds:
+# document furniture ("Table of Contents", "Step 3"), and generic component words
+# that are only capitalised inside a longer name — "Gateway" in "AI Gateway",
+# "Portal" in "Developer Portal". `check_style.py` needs them in PROPER so it does
+# not flag those longer names word by word, but a title derived from an H1 should
+# lowercase them unless the full phrase is present in PROPER_PHRASES.
+TITLE_GENERIC = {"Table", "Contents", "Note", "Tip", "Warning", "Example", "Appendix",
+                 "Step", "Values", "Enumerated", "I",
+                 "Gateway", "Portal", "Platform", "Manager", "Publisher", "Developer",
+                 "Control", "Plane", "Hub", "Workspace", "Analytics"}
+
+# What `fm_fix.py` protects when it sentence-cases an H1 into a `title`.
+TITLE_PROPER = PROPER - TITLE_GENERIC
+
+
 # Domains the documentation has migrated away from. A link or a frontmatter URL
 # still pointing at one of these is migration debt regardless of which source repo
 # it came from, so add to this list rather than editing the checkers when another

@@ -89,19 +89,19 @@ can tell which parts are theirs.
 The report classifies every finding by **cause**, because the causes have
 completely different fixes and completely different risk:
 
-| Tier | Cause | Fix |
-|---|---|---|
-| 0 | `{{base_path}}` and the resource exists | Exact rewrite to a relative path |
-| — | `{{base_path}}` and it does not | **Leave alone.** May be served by a redirect |
-| 0 | Malformed link syntax | Exact rewrite. No judgement. Safe in bulk. |
-| 1 | Wrong relative depth | Exact rewrite. No judgement. Safe in bulk. |
-| 2 | Renamed or moved target | A file of that name exists elsewhere; proposed, with confidence |
-| 3 | Pre-migration domain | Needs the new equivalent page — human |
-| 4 | Missing anchor | Heading was reworded — human |
-| 5 | No target anywhere | Was it dropped, missed, or merged? — human |
+| Tier name | Cause | Fix | Applied by `fix_links.py`? |
+|---|---|---|---|
+| `templated_fixable` | `{{base_path}}` and the resource exists | Exact rewrite to a relative path | Yes |
+| `malformed` | Malformed link syntax | Exact rewrite. No judgement. | Yes |
+| `depth` | Wrong relative depth | Exact rewrite. No judgement. | Yes |
+| `renamed` | Renamed or moved target | A file of that name exists elsewhere; proposed, with confidence | Yes, `high` confidence only by default |
+| `templated` | `{{base_path}}` and it does not exist | **Leave alone.** May be served by a redirect | No — refused |
+| `stale` | Pre-migration domain | Needs the new equivalent page | No — refused |
+| `anchor` | Missing anchor | Heading was reworded | No — refused |
+| `gone` | No target anywhere | Was it dropped, missed, or merged? | No — refused |
 
-It ends with a **ready-to-paste prompt for an AI coding agent**, deliberately
-scoped to tiers 0 and 1 and the high-confidence half of tier 2. Do not widen that scope.
+The report also ends with a **ready-to-paste prompt for an AI coding agent**, for
+when someone wants to hand the work off rather than run step 5 here.
 
 Two rules the reporter enforces, and you must not work around:
 
@@ -111,15 +111,69 @@ Two rules the reporter enforces, and you must not work around:
 - **Never propose a target in a different version.** If a page under one version
   links to something missing, the replacement must live under that same version. A
   cross-version link silently sends a reader to a different release.
-Tiers 3 to 5 need information that is not in the repo, and an agent asked to fix
-them produces confident links to the wrong pages — worse than a visibly broken
-link, because a plausible wrong link never gets re-checked.
+`stale`, `anchor` and `gone` need information that is not in the repo, and an agent
+asked to fix them produces confident links to the wrong pages — worse than a
+visibly broken link, because a plausible wrong link never gets re-checked.
 
 When you report back, give the tier counts and say plainly how many need a human. A
 raw total is alarming and useless on its own; "N have an exact fix, M need a
 decision" is what someone can act on.
 
-### 5. Re-audit, and verify against a real build
+### 5. Fix the links one tier at a time, and ask before each tier
+
+The report is a plan, not a change. `scripts/fix_links.py` is the only thing that
+applies it, and it takes **one tier per run**:
+
+```bash
+# show what this tier would do — nothing is written
+python3 scripts/fix_links.py en/docs --plan BROKEN-LINKS-<scope>.json --tier malformed
+# apply it, and record what changed
+python3 scripts/fix_links.py en/docs --plan BROKEN-LINKS-<scope>.json --tier malformed \
+    --apply --journal /tmp/fixed-malformed.json
+```
+
+Work the tiers in this order, easiest and safest first:
+
+1. `malformed` — link syntax
+2. `depth` — wrong number of `../`
+3. `renamed` — target moved (`high` confidence only; `--min-confidence` widens it)
+4. `templated_fixable` — if the scope has any
+
+**The rule for each tier: dry-run it, show the person a sample, tell them how many
+would change and how many the verifier refused, and wait for an explicit yes before
+`--apply`.** Never chain tiers in one go, and never apply a tier the person has not
+seen. Their answer for one tier is not their answer for the next — `depth` is
+arithmetic, but `renamed` is a proposal, and someone may want every one of those
+eyeballed.
+
+After each applied tier, report what actually changed and stop:
+
+```
+tier `depth`: 667 verified, 3 refused, 132 files changed, 667 links rewritten.
+Refused: 3 where the anchor no longer exists. Next tier is `renamed` (448, 406
+verified). Apply it?
+```
+
+**Regenerate the plan between tiers.** Fixing one tier changes what the others
+resolve to, so a plan written before the last tier was applied is stale — and
+`fix_links.py` will skip entries whose link text it can no longer find rather than
+guess.
+
+Two things the script does that you should not work around:
+
+- **It verifies every rewrite against the disk before writing anything.** A
+  proposal whose target does not resolve, or whose anchor does not exist on the new
+  page, is refused rather than applied. Those refusals are the useful output — they
+  are the cases where the report was optimistic.
+- **It refuses `templated`, `stale`, `anchor` and `gone` outright.** Those need
+  information that is not in the repo. Do not hand-apply them in bulk to save
+  time; a plausible wrong link is worse than a visibly broken one, because nobody
+  re-checks it.
+
+Finish by re-running the link checker and quoting the before/after, since that —
+not the number of files touched — is what says the fix worked.
+
+### 6. Re-audit, and verify against a real build
 
 ```bash
 python3 scripts/fm_audit.py en/docs --gate
@@ -132,7 +186,11 @@ Re-auditing is not optional: it's the only thing that proves the fix worked rath
 
 Where the repo can be built, `mkdocs build` is the authoritative check on links — the link checker is calibrated against it and finds a superset of what it reports. If you have the dependencies, run it and reconcile any difference rather than assuming the script is right.
 
-## The other checkers
+## The other scripts
+
+`scripts/fix_links.py` applies one tier of a `report_links.py` plan. Dry run by
+default; `--apply` writes; `--journal` records every rewrite so a tier can be
+reviewed or undone. It is the only script here that edits link text.
 
 `scripts/check_redirects.py` validates `redirect_maps` in `mkdocs.yml` — targets exist, no source shadowed by a real file, no chains (the plugin doesn't follow them), no map left pointing at a superseded version after a version bump.
 
