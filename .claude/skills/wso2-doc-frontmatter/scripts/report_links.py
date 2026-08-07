@@ -30,7 +30,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fm_lib import split_version, is_legacy_url  # noqa: E402
 
 LINK = re.compile(r'(!?)\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+"[^"]*")?\s*\)')
-HTML_SRC = re.compile(r'<(?:img|a)[^>]+(?:src|href)="([^"]+)"')
+# Quote character captured and back-referenced: HTML allows single or double
+# quotes and these pages use both, so a double-quote-only pattern silently skips
+# whatever is single-quoted.
+HTML_SRC = re.compile(r"""<(img|a|source|iframe)[^>]+(?:src|href)=(["'])(.*?)\2""")
 
 
 def url_base(rel):
@@ -109,8 +112,8 @@ def main():
                 a.add(exp.group(1))
                 h = h[: exp.start()]
             a.add(slug(h))
-        for m in re.finditer(r'<a[^>]+(?:name|id)="([^"]+)"', txt):
-            a.add(m.group(1))
+        for m in re.finditer(r"""<a[^>]+(?:name|id)=(["'])(.*?)\1""", txt):
+            a.add(m.group(2))
         anchors[p] = a
 
     tiers = {k: [] for k in ("templated_fixable", "templated", "malformed", "dir_style",
@@ -129,7 +132,7 @@ def main():
         # mkdocs rewrites Markdown targets and leaves HTML alone, so the two need
         # different bases — see url_base() above.
         raw = [(m.group(1) == "!", m.group(3), False) for m in LINK.finditer(body)]
-        raw += [(False, m.group(1), True) for m in HTML_SRC.finditer(body)]
+        raw += [(m.group(1).lower() != "a", m.group(3), True) for m in HTML_SRC.finditer(body)]
 
         for is_img, t, is_html in raw:
             if t.startswith(("mailto:", "tel:", "//", "#!")):

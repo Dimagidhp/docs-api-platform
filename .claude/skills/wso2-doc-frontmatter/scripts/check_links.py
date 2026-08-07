@@ -79,7 +79,7 @@ for p in md_files:
             a.add(exp.group(1))            # explicit id survives any toc_depth
             h = h[:exp.start()]
         (a if level <= TOC_DEPTH else deep).add(slug(h))
-    for m in re.finditer(r'<a[^>]+(?:name|id)="([^"]+)"', txt): a.add(m.group(1))
+    for m in re.finditer(r"""<a[^>]+(?:name|id)=(["'])(.*?)\1""", txt): a.add(m.group(2))
     for m in re.finditer(r'\{#([\w-]+)\}', txt): a.add(m.group(1))
     anchors[p] = a
     deep_anchors[p] = deep - a
@@ -88,7 +88,12 @@ LINK = re.compile(r'(!?)\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+"[^"]*")?\s*\)')
 # Tag name is captured so an `<a href>` is reported as a broken LINK and an
 # `<img src>` as a missing IMAGE. Lumping them together mislabels every raw-HTML
 # link as an image, which sends whoever reads the report looking for the wrong thing.
-HTML_SRC = re.compile(r'<(img|a|source|iframe)[^>]+(?:src|href)="([^"]+)"')
+#
+# The quote character is captured and back-referenced, so single-quoted attributes
+# are matched too. HTML allows either, the migrated pages use both, and a
+# double-quote-only pattern skips the single-quoted ones silently — they look
+# checked when they were never read.
+HTML_SRC = re.compile(r"""<(img|a|source|iframe)[^>]+(?:src|href)=(["'])(.*?)\2""")
 
 
 def url_base(rel):
@@ -120,7 +125,7 @@ for p in sorted(md_files):
     d = os.path.dirname(p)
 
     targets = [(m.group(1) == "!", m.group(3), False) for m in LINK.finditer(body)]
-    targets += [(m.group(1).lower() != "a", m.group(2), True) for m in HTML_SRC.finditer(body)]
+    targets += [(m.group(1).lower() != "a", m.group(3), True) for m in HTML_SRC.finditer(body)]
 
     for is_img, t, is_html in targets:
         if t.startswith(("mailto:", "tel:", "#!")):

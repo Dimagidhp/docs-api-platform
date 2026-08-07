@@ -73,8 +73,8 @@ def anchors_of(path):
             out.add(exp.group(1))
             h = h[:exp.start()]
         out.add(slug(h))
-    for m in re.finditer(r'<a[^>]+(?:name|id)="([^"]+)"', txt):
-        out.add(m.group(1))
+    for m in re.finditer(r"""<a[^>]+(?:name|id)=(["'])(.*?)\1""", txt):
+        out.add(m.group(2))
     for m in re.finditer(r"\{#([\w-]+)\}", txt):
         out.add(m.group(1))
     return out
