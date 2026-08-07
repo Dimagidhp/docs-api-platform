@@ -64,4 +64,4 @@ You can configure failover for your AI API by attaching the **Model Failover** p
 
 6. Finally, scroll to the bottom of the page and click on **Save and deploy**.
 
-7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview/) section.
+7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview.md) section.

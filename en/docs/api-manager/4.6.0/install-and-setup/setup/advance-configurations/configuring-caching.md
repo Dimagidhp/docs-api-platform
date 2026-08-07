@@ -57,7 +57,7 @@ If you need to change the default behavior, you can implement the `org.wso2.carb
 notifier_impl="org.wso2.carbon.apimgt.notification.TokenRevocationNotifier"
 ```
 
-For more information on the above configuration, see the [Config Catalog](../../../reference/config-catalog/#api-m-token-revocation).
+For more information on the above configuration, see the [Config Catalog](../../../reference/config-catalog.md#api-m-token-revocation).
 
 ## Resource cache
 
@@ -90,7 +90,7 @@ For information on how to enable response caching for a given API, see [Response
 
 ## JWT claims cache
 
-For information on how to enable JWT claims caching, see [JWT claims Caching](../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/#expiry-time-of-the-jwt).
+For information on how to enable JWT claims caching, see [JWT claims Caching](../../../api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md#expiry-time-of-the-jwt).
 
 ## Publisher cache
 

@@ -142,7 +142,7 @@ key_password =  "passwd12#"
     ```
 ## Configuring Custom Keystores
 
-You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog](../../../../reference/config-catalog/).
+You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog](../../../../reference/config-catalog.md).
 
 To configure custom keystores, add the following to the `<API-M_HOME>/repository/conf/deployment.toml` file.
 
@@ -196,4 +196,4 @@ Follow the recommendations given below when you set up your keystores.
             ... 1 more
     ```
 
--   If you already have the required keystores for your product, you can generate CA-signed certificates and import them into the keystores. It is not recommended to create new keystores for the purpose of replacing the certificates in the keystore. See [Adding CA-signed certificates to keystores](../keystore-basics/creating-new-keystores/#adding-ca-signed-certificates-to-keystores) for instructions.
+-   If you already have the required keystores for your product, you can generate CA-signed certificates and import them into the keystores. It is not recommended to create new keystores for the purpose of replacing the certificates in the keystore. See [Adding CA-signed certificates to keystores](keystore-basics/creating-new-keystores.md#adding-ca-signed-certificates-to-keystores) for instructions.

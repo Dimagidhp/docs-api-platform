@@ -124,16 +124,16 @@ Follow the instructions below to create an AI API using the basic flow:
 
     [![API Key Configuration](../../../../assets/img/learn/ai-gateway/ai-api-configure-backend-security.png){: style="width:90%"}](../../../../assets/img/learn/ai-gateway/ai-api-configure-backend-security.png)
 
-Now, you have successfully created an AI API. Next, [deploy the API](../../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API](../../../../api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
+Now, you have successfully created an AI API. Next, [deploy the API](../../../deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md), [test the API](../create-rest-api/test-a-rest-api.md), and finally [publish the API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ## See Also
 
 Learn more on the concepts that you need to know when creating a REST API:
 
--   [API Security](../../../../api-security/runtime/secure-apis-using-oauth2-tokens/)
--   [Rate Limiting for AI APIs](../../../../ai-gateway/rate-limiting/)
--   [Multi-Model Routing](../../../../ai-gateway/multi-model-routing/overview/)
--   [Life Cycle Management](../../../../api-design-manage/design/lifecycle-management/api-lifecycle/)
--   [API Visibility](../../../../api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation](../../../../api-design-manage/design/api-documentation/add-api-documentation/)
--   [Custom Properties](../../../../api-design-manage/design/create-api/adding-custom-properties-to-apis/)
+-   [API Security](../../../../api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens.md)
+-   [Rate Limiting for AI APIs](../../../../ai-gateway/rate-limiting.md)
+-   [Multi-Model Routing](../../../../ai-gateway/multi-model-routing/overview.md)
+-   [Life Cycle Management](../../lifecycle-management/api-lifecycle.md)
+-   [API Visibility](../../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+-   [API Documentation](../../api-documentation/add-api-documentation.md)
+-   [Custom Properties](../adding-custom-properties-to-apis.md)

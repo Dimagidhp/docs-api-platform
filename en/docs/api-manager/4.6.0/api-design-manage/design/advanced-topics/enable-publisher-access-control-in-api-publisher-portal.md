@@ -17,16 +17,16 @@ content_type: "how-to"
 
 The APIs created in the API Publisher are visible to any user who signs in to the API Publisher, by default. However, WSO2 API Manager allows API creators to restrict the visibility of their APIs within the API Publisher if required. API creators can set the Publisher Access control option to restrict API view and modify actions to a set of users, based on their roles. You can enable Publisher Access Control in API Publisher using one of the following methods:
 
-- [Using the API Publisher](../../../api-design-manage/design/advanced-topics/enable-publisher-access-control-in-api-publisher-portal/#using-the-api-publisher)
-- [Using the REST API](../../../api-design-manage/design/advanced-topics/enable-publisher-access-control-in-api-publisher-portal/#using-the-rest-api)
+- [Using the API Publisher](enable-publisher-access-control-in-api-publisher-portal.md#using-the-api-publisher)
+- [Using the REST API](enable-publisher-access-control-in-api-publisher-portal.md#using-the-rest-api)
 
 ## Using the API Publisher
 
 1.  Sign in to API Publisher as an API Creator. 
 
-     For more information on User Roles, see [Managing Users and Roles](../../../administer/managing-users-and-roles/managing-user-roles/).
+     For more information on User Roles, see [Managing Users and Roles](../../../administer/managing-users-and-roles/managing-user-roles.md).
 
-2.  [Create a new API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/). 
+2.  [Create a new API](../create-api/create-rest-api/create-a-rest-api.md). 
 
 3.  Go to **Portal Configurations** from the left menu and click **Basic Info**.
 

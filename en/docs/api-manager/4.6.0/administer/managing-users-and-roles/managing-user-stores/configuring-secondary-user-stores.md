@@ -78,7 +78,7 @@ There are two approaches to configure a secondary user store. It can be configur
 
 5. Enter values for the properties, using the descriptions in the Descriptions column for guidance. 
 
-     The properties vary based on the user store manager class that you selected, and there may be additional properties under "Optional" or "Advanced" sections at the bottom of the screen. For information on the properties that are used when defining user stores, see [Properties of User Stores](../../../administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/).
+     The properties vary based on the user store manager class that you selected, and there may be additional properties under "Optional" or "Advanced" sections at the bottom of the screen. For information on the properties that are used when defining user stores, see [Properties of User Stores](working-with-properties-of-user-stores.md).
 
     [![Secondary user store definition](../../../assets/img/administer/secondary-user-store-definition.png)](../../../assets/img/administer/secondary-user-store-definition.png)
 

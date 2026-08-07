@@ -106,7 +106,7 @@ Let's see how to add a comment and how to reply to a comment:
 ## Access GitHub and Slack URLs
 
 !!! note
-    The GitHub and Slack URLs will appear in the Developer Portal only if the [API Publisher has defined these URLs for the API.](../../manage-apis/design/api-collaborations/enable-social-media-interaction/#add-github-and-slack-channel-urls-to-an-api)
+    The GitHub and Slack URLs will appear in the Developer Portal only if the [API Publisher has defined these URLs for the API.](../../api-design-manage/design/api-collaborations/enable-social-media-interaction.md#add-github-and-slack-channel-urls-to-an-api)
 
 1. Sign in to the Developer Portal.
 

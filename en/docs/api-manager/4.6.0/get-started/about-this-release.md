@@ -18,7 +18,7 @@ WSO2 API Manager is a complete platform for building, integrating, and exposing 
 
 **WSO2 API Manager 4.6.0** is the latest **WSO2 API Manager release** and is the successor of **WSO2 API Manager 4.5.0**.
 
-For more information on WSO2 API Manager, see the [overview](../get-started/overview/).
+For more information on WSO2 API Manager, see the [overview](overview.md).
 
 ## Downloads
 
@@ -37,13 +37,13 @@ For more information on WSO2 API Manager, see the [overview](../get-started/over
     - **Managing remote MCP Servers:** Import an external MCP Server and proxy via WSO2 API Manager.
     - **QoS for MCP Servers:** Apply rate limiting, authentication, and other policies.
 
-    **[Learn more](../ai-gateway/mcp-gateway/overview/)**
+    **[Learn more](../ai-gateway/mcp-gateway/overview.md)**
 
 ??? note "MCP Hub"
 
     The control plane can now function as a MCP Hub, enabling centralized discovery and reuse of MCP Servers across teams and environments.
 
-    **[Learn more](../ai-gateway/mcp-gateway/invoke-a-mcp-server-using-playground/)**
+    **[Learn more](../ai-gateway/mcp-gateway/invoke-a-mcp-server-using-playground.md)**
 
 ??? note "Multi-Model AI Service Provider Support"
 
@@ -54,24 +54,24 @@ For more information on WSO2 API Manager, see the [overview](../get-started/over
 
     Onboarded AI service providers:
 
-    - [AWS Bedrock](../ai-gateway/ai-vendor-management/aws-bedrock/)
-    - [Azure AI Foundry](../ai-gateway/ai-vendor-management/azure-ai-foundry/)
+    - [AWS Bedrock](../ai-gateway/ai-vendor-management/aws-bedrock.md)
+    - [Azure AI Foundry](../ai-gateway/ai-vendor-management/azure-ai-foundry.md)
 
 ??? note "AI Guardrails and Semantic Caching for AI Gateway"
 
     AI Gateway is now equipped with AI Guardrails and Semantic Caching.
 
-    - **AI Guardrails:** Real-time validation and enforcement to ensure AI safety, reliability, and compliance. **[Learn more](../ai-gateway/ai-guardrails/overview/)**
-    - **Semantic Caching:** Meaning-based response caching for improved performance and reduced latency in AI workloads. **[Learn more](../ai-gateway/semantic-caching/)**
+    - **AI Guardrails:** Real-time validation and enforcement to ensure AI safety, reliability, and compliance. **[Learn more](../ai-gateway/ai-guardrails/overview.md)**
+    - **Semantic Caching:** Meaning-based response caching for improved performance and reduced latency in AI workloads. **[Learn more](../ai-gateway/semantic-caching.md)**
 
 ??? note "API Discovery support for Federated Gateways"
 
     WSO2 API Manager 4.6.0 release introduces the API discovery support for Federated Gateways. The allows organizations to manage APIs deployed in multiple third-party gateways through a unified control plane. Gateways supported in this release include:
 
-    - [AWS API Gateway](../manage-apis/deploy-and-publish/federated-gateways/aws/discover-apis-on-aws-api-gateway/)
-    - [Azure API Gateway](../deploy-and-publish/federated-gateways/azure/discover-apis-on-azure-api-gateway/)
-    - Kong Gateway: [Kubernetes](../manage-apis/deploy-and-publish/federated-gateways/kong/kong-kubernetes/discover-apis-on-kong-gateway-in-kubernetes/) | [Standalone](../manage-apis/deploy-and-publish/federated-gateways/kong/kong-standalone/discover-apis-on-kong-gateway/)
-    - [Envoy Gateway](../manage-apis/deploy-and-publish/federated-gateways/envoygateway/eg-k8s/discover-apis-on-eg-gateway-in-kubernetes/)
+    - [AWS API Gateway](../api-gateway/federated-gateways/aws/discover-apis-on-aws-api-gateway.md)
+    - [Azure API Gateway](../api-gateway/federated-gateways/azure/discover-apis-on-azure-api-gateway.md)
+    - Kong Gateway: [Kubernetes](../api-gateway/federated-gateways/kong/kong-kubernetes/discover-apis-on-kong-gateway-in-kubernetes.md) | [Standalone](../api-gateway/federated-gateways/kong/kong-standalone/discover-apis-on-kong-gateway.md)
+    - [Envoy Gateway](../api-gateway/federated-gateways/envoygateway/eg-k8s/discover-apis-on-eg-gateway-in-kubernetes.md)
 
     **[Learn more](../manage-apis/deploy-and-publish/deploy-on-gateway/federated-gateways/overview/)**
 
@@ -81,19 +81,19 @@ For more information on WSO2 API Manager, see the [overview](../get-started/over
 
     This integration enables you to collect and publish API analytics data to the Moesif dashboard, providing insights into API usage, traffic trends, and error tracking in near real-time.
 
-     **[Learn more](../monitoring/api-analytics/moesif-analytics/moesif-integration-guide/)**
+     **[Learn more](../monitoring/api-analytics/moesif-analytics/moesif-integration-guide.md)**
 
 ??? note "Application update workflow"
 
     Enhances application lifecycle management by introducing workflow-driven updates with an approval process. This ensures governance and compliance before changes are applied, as applications enter an UPDATE PENDING state until updates are reviewed and approved.
 
-     **[Learn more](../consume/manage-application/advanced-topics/adding-an-application-update-workflow/)**
+     **[Learn more](../api-developer-portal/manage-application/advanced-topics/adding-an-application-update-workflow.md)**
 
 ??? note "Application level scopes"
 
     Application scopes provide fine-grained control over permissions at the application level, enhancing security and flexibility. These scopes are configured as allowed scopes for specific applications and can only be selected from the subscribed scopes (scopes available from all subscribed APIs).
 
-     **[Learn more](../api-security/runtime/authorization/oauth2-scopes/application-scopes/)** 
+     **[Learn more](../api-security/runtime/authorization/oauth2-scopes/application-scopes.md)** 
 
 ## Improvements
 
@@ -101,10 +101,10 @@ For more information on WSO2 API Manager, see the [overview](../get-started/over
 
     With this release, we have onboarded the following AI Service Providers that are ready for use out of the box.
 
-    - [AWS Bedrock](../ai-gateway/ai-vendor-management/aws-bedrock/)
-    - [Azure AI Foundry](../ai-gateway/ai-vendor-management/azure-ai-foundry/)
-    - [Gemini](../ai-gateway/ai-vendor-management/gemini/)
-    - [Anthropic](../ai-gateway/ai-vendor-management/anthropic/)
+    - [AWS Bedrock](../ai-gateway/ai-vendor-management/aws-bedrock.md)
+    - [Azure AI Foundry](../ai-gateway/ai-vendor-management/azure-ai-foundry.md)
+    - [Gemini](../ai-gateway/ai-vendor-management/gemini.md)
+    - [Anthropic](../ai-gateway/ai-vendor-management/anthropic.md)
 
     Also, we have shipped version 2.0.0 for the following AI Service Providers:
 
@@ -117,7 +117,7 @@ For more information on WSO2 API Manager, see the [overview](../get-started/over
     - All gateways share throttling state through distributed counters, ensuring consistent and accurate rate limiting regardless of which node or cluster processes a request.
     - This model supports billions of API calls per day while maintaining high performance and real-time throttling decisions.
 
-     **[Learn more](../manage-apis/design/rate-limiting/advanced-topics/distributed-throttling/)**
+     **[Learn more](../api-gateway/rate-limiting/distributed-throttling.md)**
 
 ??? note "Gateway health and API deployment monitoring support"
 
@@ -140,7 +140,7 @@ For more information on WSO2 API Manager, see the [overview](../get-started/over
 
     WSO2 API Manager now supports OpenSearch as the analytics provider for private cloud and on-premises environments. This solution publishes analytics data into log files, which are then processed through a deployment architecture consisting of Fluent Bit, OpenSearch, and OpenSearch Dashboards.
 
-     **[Learn more](../monitoring/api-analytics/on-prem/opensearch-installation-guide/)**
+     **[Learn more](../monitoring/api-analytics/on-prem/opensearch-installation-guide.md)**
 
 ## Compatible WSO2 product versions
 
@@ -158,7 +158,7 @@ With the removal of database dependency in the Universal Gateway and Traffic Man
 This change improves scalability and simplifies deployment across distributed environments.
 
 - **Disabled Admin Services:**
-[Admin Services](../reference/wso2-admin-services/) are SOAP-based web services that are used for internal management. We have disabled the below listed services from APIM 4.6.0 onwards:
+[Admin Services](../reference/wso2-admin-services.md) are SOAP-based web services that are used for internal management. We have disabled the below listed services from APIM 4.6.0 onwards:
 
     ??? note "List of denied admin services"
         - ClassMediatorAdmin
@@ -184,7 +184,7 @@ This change improves scalability and simplifies deployment across distributed en
 
 ## Deprecations
 
-[Admin Services](../reference/wso2-admin-services/) are SOAP-based web services that are used for internal management. Note that we have deprecated the below listed services from APIM 4.6.0 onwards:
+[Admin Services](../reference/wso2-admin-services.md) are SOAP-based web services that are used for internal management. Note that we have deprecated the below listed services from APIM 4.6.0 onwards:
 
 ??? note "Deprecated admin services"
     - APIGatewayAdmin

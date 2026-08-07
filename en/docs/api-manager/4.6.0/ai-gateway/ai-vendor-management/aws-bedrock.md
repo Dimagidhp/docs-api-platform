@@ -58,7 +58,7 @@ The **Model Provider(s)** section allows you to add and configure different AI m
 </table>
 
 !!! Note "Add Multiplde Model Providers and models"
-    Adding multiple models under a provider allows you to use advanced routing strategies such as failover, load balancing, and other traffic management options. You can configure these routing policies when creating AI APIs to control how requests are distributed among the available models. For more details, see [Multi-Model Routing Overview](../../ai-gateway/multi-model-routing/overview/).
+    Adding multiple models under a provider allows you to use advanced routing strategies such as failover, load balancing, and other traffic management options. You can configure these routing policies when creating AI APIs to control how requests are distributed among the available models. For more details, see [Multi-Model Routing Overview](../multi-model-routing/overview.md).
 
 ##### Example Provider Configurations
 

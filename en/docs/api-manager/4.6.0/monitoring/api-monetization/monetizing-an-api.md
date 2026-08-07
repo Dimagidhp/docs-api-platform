@@ -734,7 +734,7 @@ You can use the admin REST API, which is available in WSO2 API Manager, to publi
 
 1. Obtain the consumer key and secret key pair by calling the dynamic client registration endpoint.
 
-    For more information, see [Admin REST API v4.2](../../reference/product-apis/admin-apis/admin-v4/admin-v4/).
+    For more information, see [Admin REST API v4.2](../../reference/product-apis/admin-apis/admin-v4/admin-v4.md).
 
     ```bash
     curl -X POST -H "Authorization: Basic <base64encoded-admin-account-credentials>" \

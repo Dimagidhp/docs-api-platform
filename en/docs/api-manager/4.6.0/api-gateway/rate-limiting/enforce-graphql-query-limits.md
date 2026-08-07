@@ -154,4 +154,4 @@ Publishers can customize field complexity values for their GraphQL APIs to accur
 
 ## See Also
 
-- For more information on creating and configuring graphql query limits in subscription level policies, see [Managing Subscription Policies](../../administer/rate-limiting/manage-subscription-policies/#graphql-query-limits-in-subscription-policies)
+- For more information on creating and configuring graphql query limits in subscription level policies, see [Managing Subscription Policies](../../administer/rate-limiting/manage-subscription-policies.md#graphql-query-limits-in-subscription-policies)

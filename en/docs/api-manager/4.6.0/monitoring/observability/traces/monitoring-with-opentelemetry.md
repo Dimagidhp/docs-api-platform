@@ -24,7 +24,7 @@ OpenTelemetry is a single set of APIs and libraries that standardize how telemet
  - Log
  - OTLP
 
-For more information, see [OpenTelemetry Configurations](../../../reference/config-catalog/#api-m-open-tracer-configurations).
+For more information, see [OpenTelemetry Configurations](../../../reference/config-catalog.md#api-m-open-tracer-configurations).
 
 !!! note
     At a time, only one of the below types can be enabled.

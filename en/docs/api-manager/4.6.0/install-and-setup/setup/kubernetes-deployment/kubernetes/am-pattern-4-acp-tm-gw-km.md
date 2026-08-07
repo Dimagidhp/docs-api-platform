@@ -201,7 +201,7 @@ Pattern 4 requires custom Docker images for the API Control Plane, Traffic Manag
 
 Pattern 4 requires two databases: `apim_db` and `shared_db`. Both must be reachable from inside the Kubernetes cluster before the pods start.
 
-Follow the [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/) guide to:
+Follow the [Setting Up Databases](../../setting-up-databases/overview.md) guide to:
 
 1. Set up a database instance accessible from your cluster
 2. Obtain the schema scripts for your database type
@@ -245,7 +245,7 @@ The Helm chart mounts a Kubernetes secret named `apim-keystore-secret` as a volu
     ```
 
 !!! note
-    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/).
+    The commands above use the default WSO2 keystores which are suitable for evaluation only. For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../security/configuring-keystores/configuring-keystores-in-wso2-api-manager.md).
 
 ### Step 8 — Deploy the API Control Plane { #step-8 }
 
@@ -286,7 +286,7 @@ The Helm chart mounts a Kubernetes secret named `apim-keystore-secret` as a volu
               password: "<DB_PASSWORD>"
     ```
 
-    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/#changing-the-default-databases).
+    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases](../../setting-up-databases/overview.md#changing-the-default-databases).
 
 3. Deploy the API Control Plane:
 
@@ -348,7 +348,7 @@ The Helm chart mounts a Kubernetes secret named `apim-keystore-secret` as a volu
               password: "<DB_PASSWORD>"
     ```
 
-    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases](../../../../install-and-setup/setup/setting-up-databases/overview/#changing-the-default-databases).
+    Replace `<JDBC_URL_FOR_APIM_DB>` and `<JDBC_URL_FOR_SHARED_DB>` with the JDBC connection URL for your database. For URL formats per database type, see [Setting Up Databases](../../setting-up-databases/overview.md#changing-the-default-databases).
 
 3. Deploy the Key Manager:
 
@@ -591,7 +591,7 @@ All available configuration options for each Helm chart are documented in their 
 
 In [Step 7](#step-7), you created `apim-keystore-secret` using the default WSO2 keystores. Those are self-signed certificates suitable for evaluation only.
 
-For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/). Then recreate the secret with your own certificates:
+For production-level keystore setup, refer to [Configuring Keystores in WSO2 API Manager](../../security/configuring-keystores/configuring-keystores-in-wso2-api-manager.md). Then recreate the secret with your own certificates:
 
 ```bash
 kubectl create secret generic apim-keystore-secret \

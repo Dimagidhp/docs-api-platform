@@ -21,7 +21,7 @@ Let's get started with creating new keystores.
 
 ## Before you begin
 
-Be sure to go through the [Recommendations for setting up keystores](../../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#recommendations-for-setting-up-keystores) to understand the types of keystores you need.
+Be sure to go through the [Recommendations for setting up keystores](../configuring-keystores-in-wso2-api-manager.md#recommendations-for-setting-up-keystores) to understand the types of keystores you need.
 
 ## Creating a new keystore
 
@@ -57,7 +57,7 @@ Secure Sockets Layer (SSL) is a protocol that is used to secure communication be
 
     !!! Important
 
-        If you are creating a new keystore for data encryption, be sure to acquire a public key certificate that contains the **Data Encipherment** key usage as explained in [Recommendations for setting up keystores](../../../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#recommendations-for-setting-up-keystores). Otherwise, the following error can occur when you attempt data encryption:
+        If you are creating a new keystore for data encryption, be sure to acquire a public key certificate that contains the **Data Encipherment** key usage as explained in [Recommendations for setting up keystores](../configuring-keystores-in-wso2-api-manager.md#recommendations-for-setting-up-keystores). Otherwise, the following error can occur when you attempt data encryption:
 
         ``` java
             Exception in thread "main" org.wso2.ciphertool.CipherToolException: Error initializing Cipher 

@@ -100,7 +100,7 @@ The following configurations can be updated:
 
 - By default, the following models are included: `claude-opus-4-1-20250805`, `claude-sonnet-4-20250514`, and `claude-3-7-sonnet-20250219`.
 - To add available models supported by Anthropic, type the model name and press enter. 
-- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview](../../ai-gateway/multi-model-routing/overview/).
+- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview](../multi-model-routing/overview.md).
 
 ### Step 3: Save Configuration
 

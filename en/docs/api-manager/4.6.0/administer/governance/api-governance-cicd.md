@@ -43,5 +43,5 @@ Integrating this step into your CI/CD pipeline helps ensure that only compliant 
 improving governance and reducing the risk of introducing faulty APIs.
 
 For more information on how to use WSO2 APICTL, refer to the 
-[WSO2 APICTL documentation](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/).
+[WSO2 APICTL documentation](../../apiops/cli/getting-started-with-wso2-api-controller.md).
 

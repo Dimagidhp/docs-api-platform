@@ -42,7 +42,7 @@ After the custom properties have been added, you can [search for APIs using cust
       
       Example: `https://localhost:9443/publisher`
 
-2.  [Create a new API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) or edit an existing API.
+2.  [Create a new API](create-rest-api/create-a-rest-api.md) or edit an existing API.
 
 3.  Click **Properties** and click **Add New Property**.
 
@@ -58,7 +58,7 @@ After the custom properties have been added, you can [search for APIs using cust
 
 ### Add custom properties via the REST API
 
-Use the [existing REST API](../../../reference/product-apis/overview/) to add a new API and in order to add the API with custom properties make sure to add the following element to the request body including the relevant properties.
+Use the [existing REST API](../../../reference/product-apis/overview.md) to add a new API and in order to add the API with custom properties make sure to add the following element to the request body including the relevant properties.
 
 ```
 "additionalProperties": [

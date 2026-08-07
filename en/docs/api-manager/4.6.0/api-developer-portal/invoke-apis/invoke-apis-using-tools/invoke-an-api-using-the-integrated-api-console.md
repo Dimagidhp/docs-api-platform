@@ -23,7 +23,7 @@ Follow the instructions below to use the API Console, which is available in the 
     You can only try out HTTPS-based APIs via the API Console because the Developer Portal runs on HTTPS.
 
 
-The examples here use the `PizzaShack` REST API, which was created in [Create a REST API](../../../manage-apis/design/create-api/create-rest-api/create-a-rest-api/).
+The examples here use the `PizzaShack` REST API, which was created in [Create a REST API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md).
 
 1. Sign in to the WSO2 Developer Portal (`https://<hostname>:9443/devportal`) and click an API (e.g., `PizzaShack`).
 

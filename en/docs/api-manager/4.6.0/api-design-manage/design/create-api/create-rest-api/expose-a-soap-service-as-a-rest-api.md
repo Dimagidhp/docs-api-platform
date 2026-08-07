@@ -16,7 +16,7 @@ content_type: "how-to"
 # Expose a SOAP Service as a REST API
 
 WSO2 API Manager supports the management of an existing SOAP and WSDL based services exposing as REST APIs.
-The organizations that have SOAP/WSDL based services can easily bridge their existing services to REST without the cost of a major migration. WSO2 API Manager supports two types of services. One service performs a pass-through of the SOAP message to the backend, and the other service generates [a RESTful API from the backend SOAP service](../../../../api-design-manage/design/create-api/create-rest-api/generate-rest-api-from-soap-backend/).
+The organizations that have SOAP/WSDL based services can easily bridge their existing services to REST without the cost of a major migration. WSO2 API Manager supports two types of services. One service performs a pass-through of the SOAP message to the backend, and the other service generates [a RESTful API from the backend SOAP service](generate-rest-api-from-soap-backend.md).
 
 Follow the instructions below to create a SOAP service as a RESTful API using **Pass Through**
 
@@ -66,7 +66,7 @@ Follow the instructions below to create a SOAP service as a RESTful API using **
   
      <html><div class="admonition note"><p class="admonition-title">Note</p>
      <p>
-     If you wish to add scopes to the resources that were created, click  **Resources**. Thereafter, create new scopes and specify them under operation scope. If you specify a scope, you need to use the same scope when generating access tokens for the subscribed application to invoke the API. For more information on working with the scopes, see [OAuth scopes](../../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/).
+     If you wish to add scopes to the resources that were created, click  **Resources**. Thereafter, create new scopes and specify them under operation scope. If you specify a scope, you need to use the same scope when generating access tokens for the subscribed application to invoke the API. For more information on working with the scopes, see [OAuth scopes](../../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes.md).
      </p>
      </div></html>   
 
@@ -81,8 +81,8 @@ Follow the instructions below to create a SOAP service as a RESTful API using **
 
 Now, the SOAP service is created and configured successfully as a RESTful API. 
 
-For more information on API publishing, see [Publish API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/).
+For more information on API publishing, see [Publish API](../../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
-Once you create and publish the API, you can also <a href="../../../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/">deploy the API you created</a>.
+Once you create and publish the API, you can also <a href="../../../../deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md">deploy the API you created</a>.
 
-To learn more, see the tutorial on [Creating and Publishing a SOAP service as a RESTful API](../../../../tutorials/expose-a-soap-service-as-a-rest-api/).
+To learn more, see the tutorial on [Creating and Publishing a SOAP service as a RESTful API](../../../../tutorials/expose-a-soap-service-as-a-rest-api.md).

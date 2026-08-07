@@ -52,11 +52,11 @@ After providing the required information, click on the **Create** button to crea
 
 ### Writing Your Own Ruleset
 
-Please refer to the [WSO2 Rule Validator Documentation](../../governance/rule-validator/rule-validator) to understand the ruleset format and how to write your own ruleset.
+Please refer to the [WSO2 Rule Validator Documentation](../../reference/governance/rule-validator/rule-validator.md) to understand the ruleset format and how to write your own ruleset.
 
 - If Ruleset Type is selected as **API Definition**, the ruleset should only contain rules that can be validated against the API definition file (OpenAPI or AsyncAPI).
-- If Ruleset Type is selected as **API Metadata**, the ruleset should only contain rules that can be validated against the [API's YAML Representation](../../reference/governance/api-yaml-representation/). This representation is common for REST and Async APIs.
-- If Ruleset Type is selected as **Documentation**, the ruleset should only contain rules that can be validated against the [Documentation YAML Representation](../../reference/governance/api-doc-yaml-representation/). This representation is common for REST and Async APIs.
+- If Ruleset Type is selected as **API Metadata**, the ruleset should only contain rules that can be validated against the [API's YAML Representation](../../reference/governance/api-yaml-representation.md). This representation is common for REST and Async APIs.
+- If Ruleset Type is selected as **Documentation**, the ruleset should only contain rules that can be validated against the [Documentation YAML Representation](../../reference/governance/api-doc-yaml-representation.md). This representation is common for REST and Async APIs.
 
 ### Default Rulesets
 
@@ -151,12 +151,12 @@ This widget offers a detailed overview of each policy's compliance, including th
 
 ### API-Specific Compliance View
 
-By clicking on each API listed in [API Compliance Details](###api-compliance-details) widget, an API compliance page will be displayed. This page provides a detailed view of the API's compliance status, including a breakdown of the compliance status for each policy attached to the API.
+By clicking on each API listed in [API Compliance Details](#api-compliance-details) widget, an API compliance page will be displayed. This page provides a detailed view of the API's compliance status, including a breakdown of the compliance status for each policy attached to the API.
 
 ## Configuration Options
 
 The background compliance evaluation tasks are conducted by a scheduler which by default runs every 2 minutes and consists of a thread pool of 20 threads and a queue size of 20. These values can be updated by updating the following configuration in the `deployment.toml` file located in the `<APIM_HOME>/repository/conf` directory.
-For more information refer the [configuration catalog](../../reference/config-catalog/#apim-governance-configurations).
+For more information refer the [configuration catalog](../../reference/config-catalog.md#apim-governance-configurations).
 
 ```toml
 [apim.governance.scheduler]

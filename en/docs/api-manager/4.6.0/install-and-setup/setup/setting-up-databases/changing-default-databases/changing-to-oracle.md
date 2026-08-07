@@ -219,7 +219,7 @@ Follow the instructions below to change the type of the default datasource.
 1.  Restart the server.
 
     !!! note
-        To give the Key Manager, Publisher, and Developer Portal components access to the user management data with shared permissions, JDBCUserStoreManager has been configured by default. For more information, refer [Configuring Userstores](../../../../administer/product-administration/managing-users-and-roles/managing-user-stores/configure-primary-user-store/configuring-a-jdbc-user-store).
+        To give the Key Manager, Publisher, and Developer Portal components access to the user management data with shared permissions, JDBCUserStoreManager has been configured by default. For more information, refer [Configuring Userstores](../../configure-userstores/configure-primary-user-store/configuring-a-jdbc-user-store.md).
 
     !!! info
         **Changing WSO2CARBON_DB to Oracle**

@@ -52,7 +52,7 @@ Follow the instructions below to generate/renew application keys:
      
 
 !!! tip
-    When you generate Access Tokens for APIs that are protected by scopes, you can select the respective [scopes](../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/) and, thereafter, generate the token for it.
+    When you generate Access Tokens for APIs that are protected by scopes, you can select the respective [scopes](../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes.md) and, thereafter, generate the token for it.
 
 ## Generating application keys with PKCE enabled
 
@@ -79,7 +79,7 @@ The following are the associated options when enabling PKCE.
 ## Generating application keys using Okta
 
 !!! note
-     Before you begin, make sure to follow [steps 1 and 2 in Configure Okta as a Key Manager](../../../administer/key-managers/configure-okta-connector/) guide.
+     Before you begin, make sure to follow [steps 1 and 2 in Configure Okta as a Key Manager](../../../api-security/key-management/third-party-key-managers/configure-okta-connector.md) guide.
 
 Follow the instructions below to generate keys using Okta as the Key Manager:
 
@@ -104,7 +104,7 @@ Follow the instructions below to generate keys using Okta as the Key Manager:
 ## Generating application keys using Keycloak
 
 !!! note
-     Before you begin, make sure to follow [steps 1 and 2 in Configure Keycloak as a Key Manager](../../../administer/key-managers/configure-keycloak-connector/) guide.
+     Before you begin, make sure to follow [steps 1 and 2 in Configure Keycloak as a Key Manager](../../../api-security/key-management/third-party-key-managers/configure-keycloak-connector.md) guide.
 
 Follow the instructions below to generate keys using the Keycloak as the Key Manager:
 

@@ -20,7 +20,7 @@ When you publish an API, you must define the limits under which applications can
 Subscription tiers effectively differentiate your product offerings, allowing you to monetize your APIs by charging higher rates for developers requiring larger quotas or bandwidth.
 
 !!! tip
-    Subscription tiers are defined by Administrators in the Admin Portal. As a Publisher, you select which tiers to make available for your API. For information on creating custom business plans, see [Adding a new subscription-level Rate Limiting tier](../../../administer/rate-limiting/manage-subscription-policies/).
+    Subscription tiers are defined by Administrators in the Admin Portal. As a Publisher, you select which tiers to make available for your API. For information on creating custom business plans, see [Adding a new subscription-level Rate Limiting tier](../../../administer/rate-limiting/manage-subscription-policies.md).
 
 ## How Quotas Work
 

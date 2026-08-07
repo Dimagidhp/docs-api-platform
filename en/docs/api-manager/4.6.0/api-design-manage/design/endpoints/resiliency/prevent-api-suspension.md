@@ -83,4 +83,4 @@ Follow the instructions below to prevent or turn off API suspension:
         </endpoint>
         ```
 
-For more details on configuring different timeouts, see [Timeout configurations for an API call](../../../../install-and-setup/setup/deployment-best-practices/tuning-performance/) in the Performance Tuning guide.
+For more details on configuring different timeouts, see [Timeout configurations for an API call](../../../../install-and-setup/setup/deployment-best-practices/tuning-performance.md) in the Performance Tuning guide.

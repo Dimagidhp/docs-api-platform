@@ -51,7 +51,7 @@ Follow the instructions below to enable CORS response headers globally. Once thi
 ## Enabling CORS Per API
 
 !!! note
-    You need to enable CORS globally before you enable CORS Per API. Therefore, if you have not enabled CORS globally, follow the instructions in [Enabling CORS Globally](../../../api-design-manage/design/advanced-topics/enabling-cors-for-apis/#enabling-cors-globally) before carrying out the following instructions.
+    You need to enable CORS globally before you enable CORS Per API. Therefore, if you have not enabled CORS globally, follow the instructions in [Enabling CORS Globally](enabling-cors-for-apis.md#enabling-cors-globally) before carrying out the following instructions.
 
 !!! note
     When CORS is enabled globally, it applies to all APIs served by the API Gateway. You can override this global configuration for a specific API by following the instructions below. However, disabling CORS for an individual API does not turn off the global CORS configuration.

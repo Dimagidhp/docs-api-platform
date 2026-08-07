@@ -18,15 +18,15 @@ content_type: "how-to"
 ## Add Applications in an environment
 
 You can add Applications via the Developer Portal.
-However, **WSO2 API Controller (apictl)** allows you to create Applications without using the Developer Portal. For more information on adding Applications, see [Migrating Apps to Different Environments](../../../install-and-setup/setup/api-controller/managing-applications/migrating-applications-to-different-environments).
+However, **WSO2 API Controller (apictl)** allows you to create Applications without using the Developer Portal. For more information on adding Applications, see [Migrating Apps to Different Environments](migrating-applications-to-different-environments.md).
 
 ## Get Applications in an environment
 
 Follow the instructions below to display a list of Applications in an environment using apictl:
 
 1.  Make sure that the WSO2 API Manager (WSO2 API-M) is started and the apictl is set up.   
-     For more information, see [Download and Initialize the apictl](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl).
-2.  Log in to the WSO2 API-M in the environment by following the instructions in [Login to an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#login-to-an-environment).
+     For more information, see [Download and Initialize the apictl](../getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl).
+2.  Log in to the WSO2 API-M in the environment by following the instructions in [Login to an Environment](../getting-started-with-wso2-api-controller.md#login-to-an-environment).
 3.  Run the corresponding apictl command below to get (list) Applications in an environment.
 
     -   **Command**
@@ -83,7 +83,7 @@ Follow the instructions below to display a list of Applications in an environmen
             When an environment is registered with the `--devportal` flag, the `apictl get apps` command will always list only the applications that belong to the currently logged-in user, regardless of the `--owner` flag value.
 
         !!!note
-            Output of the `get apps` command can be formatted with Go Templates. For more information on formatting the get commands, see [Formatting the outputs of get commands](../../../install-and-setup/setup/api-controller/advanced-topics/formatting-the-output-of-get-command).
+            Output of the `get apps` command can be formatted with Go Templates. For more information on formatting the get commands, see [Formatting the outputs of get commands](../advanced-topics/formatting-the-output-of-get-command.md).
 
         !!!note
             `apictl list apps` command has been deprecated from apictl 4.0.0 onwards. Instead use `apictl get apps` as shown above. 
@@ -91,8 +91,8 @@ Follow the instructions below to display a list of Applications in an environmen
 ## Delete an Application in an environment
 
 1.  Make sure that the WSO2 API-M is started and the apictl is set up.   
-     For more information, see [Download and Initialize the apictl](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl).
-2.  Log in to the WSO2 API-M in the environment by following the instructions in [Login to an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#login-to-an-environment).
+     For more information, see [Download and Initialize the apictl](../getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl).
+2.  Log in to the WSO2 API-M in the environment by following the instructions in [Login to an Environment](../getting-started-with-wso2-api-controller.md#login-to-an-environment).
 3.  Run the corresponding apictl command below to get (list) Applications in an environment.
 
     -   **Command**

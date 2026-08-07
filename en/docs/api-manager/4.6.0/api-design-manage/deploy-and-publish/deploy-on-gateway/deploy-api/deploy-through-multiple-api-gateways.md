@@ -177,7 +177,7 @@ Carry out the following instructions in the **second** and the **third** instanc
 
 4.  Enable JSON Web Token (JWT) if required.
 
-     For instructions, see [Generating JSON Web Token](../../../../api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/).   
+     For instructions, see [Generating JSON Web Token](../../../../api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md).   
      
 5.  Add the public certificate of the private key (that is used for signing the tokens) to the truststore under the `"gateway_certificate_alias"` alias. 
     
@@ -195,7 +195,7 @@ Carry out the following instructions in the **second** and the **third** instanc
     1.  Create a copy of the API-M Gateway node that you just configured. This is the second node of the API-M Gateway cluster.
     2.  Configure a load balancer fronting the two Gateway nodes in your deployment.
                 
-        For instructions, see [Configuring the Proxy Server and the Load Balancer](../../../../install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer/).
+        For instructions, see [Configuring the Proxy Server and the Load Balancer](../../../../install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer.md).
 
         !!! Note
         

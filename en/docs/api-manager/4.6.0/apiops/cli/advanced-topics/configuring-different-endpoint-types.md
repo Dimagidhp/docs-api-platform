@@ -15,7 +15,7 @@ content_type: "how-to"
 
 #  Configuring Different Endpoint Types
 
-When there are multiple environments, to allow easily configuring environment-specific details, **WSO2 API Controller (apictl)** supports an additional parameter file. (Please refer [Configuring Environment Specific Parameters](../../../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters) for more information). You can specify different types of endpoints in this file, as discussed in this section.
+When there are multiple environments, to allow easily configuring environment-specific details, **WSO2 API Controller (apictl)** supports an additional parameter file. (Please refer [Configuring Environment Specific Parameters](configuring-environment-specific-parameters.md) for more information). You can specify different types of endpoints in this file, as discussed in this section.
 
 API Manager supports four (4) main types of endpoints as follows.
 
@@ -240,7 +240,7 @@ The following is an example parameters file for this scenario. (Make sure to spe
     ```
 
 !!! tip
-    When importing an API, if you are specifying the endpoint type as `dynamic`, you can include a message mediation policy with a `To` header inside the `Sequences` directory of your API Project. (Refer [Adding Dynamic Endpoints](../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/message-mediation/adding-dynamic-endpoints/#adding-dynamic-endpoints) to learn more about Dynamic endpoints and message mediations associated with that.)
+    When importing an API, if you are specifying the endpoint type as `dynamic`, you can include a message mediation policy with a `To` header inside the `Sequences` directory of your API Project. (Refer [Adding Dynamic Endpoints](../../../api-gateway/policies/adding-dynamic-endpoints.md#adding-dynamic-endpoints) to learn more about Dynamic endpoints and message mediations associated with that.)
 
 ### AWS Lambda Endpoints
 

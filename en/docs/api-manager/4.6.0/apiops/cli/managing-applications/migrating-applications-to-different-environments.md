@@ -19,10 +19,10 @@ content_type: "how-to"
 !!! info
     **Before you begin** 
 
-    -   Make sure apictl is initialized and running, if not follow the instructions in [Download and Initialize the apictl](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl).
+    -   Make sure apictl is initialized and running, if not follow the instructions in [Download and Initialize the apictl](../getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl).
 
     -  Make sure to add an environment before you start working with the following CTL commands, because all applications need to be imported or exported to/from a specific environment.    
-       For more information, see [Add an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#add-an-environment).
+       For more information, see [Add an Environment](../getting-started-with-wso2-api-controller.md#add-an-environment).
     
 !!! tip
     A user with `Internal/devops` role or `admin` role are allowed to import/export Applications. To create a custom user who can import/export APIs, refer [Steps to Create a Custom User who can Perform API Controller Operations](../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations).
@@ -38,7 +38,7 @@ The lifecycle of an application could be defined as the stages of an application
 
 You can export an application in the Developer Portal and download it as a zipped file.
 
-1.  Log in to the WSO2 API-M in the exporting environment by following the instructions in [Login to an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#login-to-an-environment).  
+1.  Log in to the WSO2 API-M in the exporting environment by following the instructions in [Login to an Environment](../getting-started-with-wso2-api-controller.md#login-to-an-environment).  
     
     !!! tip
         If you are already logged-in and your logged-in credentials and the keys or the access-token are (is) already available in the `<USER_HOME>/.wso2apictl/keys.json` file, you can skip this step. 
@@ -191,7 +191,7 @@ You can use the below command to export all the Applications belong to the curre
 
 You can import an application to your environment as a zipped application. When you import an application as a zipped file, a new application is created within the target environment.
 
-1.  Log in to the WSO2 API-M in the importing environment by following the instructions in [Login to an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#login-to-an-environment).  
+1.  Log in to the WSO2 API-M in the importing environment by following the instructions in [Login to an Environment](../getting-started-with-wso2-api-controller.md#login-to-an-environment).  
     
     !!! tip
         If you are already logged-in and your logged-in credentials and the keys or the access-token are (is) already available in the `<USER_HOME>/.wso2apictl/keys.json` file, you can skip this step. 

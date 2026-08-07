@@ -28,7 +28,7 @@ This guide provides step-by-step instructions for publishing APIs, AI APIs, MCP 
 
 **API Publishing** is the process of making an API visible and available for subscription in the Developer Portal. When an API is published:
 
-- The lifecycle state changes from **CREATED** to **PUBLISHED** (see [API Lifecycle](../api-design-manage/design/lifecycle-management/api-lifecycle/))
+- The lifecycle state changes from **CREATED** to **PUBLISHED** (see [API Lifecycle](../api-design-manage/design/lifecycle-management/api-lifecycle.md))
 - API metadata becomes visible in the Developer Portal
 - Application developers can discover and subscribe to the API
 - The API becomes available for consumption through applications
@@ -39,8 +39,8 @@ This guide provides step-by-step instructions for publishing APIs, AI APIs, MCP 
 
 Before publishing, ensure the following requirements are met:
 
-1. **Endpoint Configuration**: Valid [endpoint URL](../api-design-manage/design/endpoints/endpoint-types/) configured (for APIs and AI APIs)
-2. **Business Plans**: At least one [business plan](../api-design-manage/design/rate-limiting/assign-business-plans/) (subscription tier) selected
+1. **Endpoint Configuration**: Valid [endpoint URL](../api-design-manage/design/endpoints/endpoint-types.md) configured (for APIs and AI APIs)
+2. **Business Plans**: At least one [business plan](../api-design-manage/design/rate-limiting/assign-business-plans.md) (subscription tier) selected
 3. **Created State**: The API, AI API, MCP Server, or API Product must be created and in CREATED state
 
 !!! tip
@@ -131,7 +131,7 @@ Before publishing, ensure the following requirements are met:
 
 WSO2 API Manager supports publishing APIs that are deployed on external gateways. These APIs are listed in the Developer Portal for discovery but are not proxied through WSO2 Gateway.
 
-For detailed instructions on adding and configuring third-party APIs, see [Add a Third-party API](../api-design-manage/deploy-and-publish/publish-on-dev-portal/third-party-api-support/).
+For detailed instructions on adding and configuring third-party APIs, see [Add a Third-party API](../api-design-manage/deploy-and-publish/publish-on-dev-portal/third-party-api-support.md).
 
 ---
 
@@ -139,9 +139,9 @@ For detailed instructions on adding and configuring third-party APIs, see [Add a
 
 ### Before Publishing
 
-1. **Complete API Documentation**: Add comprehensive documentation before publishing - See [Add API Documentation](../api-design-manage/design/api-documentation/add-api-documentation/)
-2. **Configure Appropriate Business Plans**: Select business plans that match your API's target audience - See [Assign Business Plans](../api-design-manage/design/rate-limiting/assign-business-plans/)
-3. **Set Correct Visibility**: Configure API visibility (Public, Restricted, Private) - See [Control API Visibility and Subscription Availability](../api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
+1. **Complete API Documentation**: Add comprehensive documentation before publishing - See [Add API Documentation](../api-design-manage/design/api-documentation/add-api-documentation.md)
+2. **Configure Appropriate Business Plans**: Select business plans that match your API's target audience - See [Assign Business Plans](../api-design-manage/design/rate-limiting/assign-business-plans.md)
+3. **Set Correct Visibility**: Configure API visibility (Public, Restricted, Private) - See [Control API Visibility and Subscription Availability](../api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
 4. **Add Business Information**: Include business owner and technical owner details
 5. **Test Endpoints**: Verify all endpoints are reachable and working
 
@@ -162,7 +162,7 @@ Following these steps ensures your APIs, AI APIs, MCP Servers, and API Products 
 
 ## See Also
 
-- [Consume APIs Overview](../api-developer-portal/consume-api-overview/) - Learn how application developers can discover and consume published APIs.
-- [Discover APIs](../api-developer-portal/discover-apis/search/) - Explore how to search and find APIs in the Developer Portal.
-- [Subscribe to an API](../api-developer-portal/manage-subscription/subscribe-to-an-api/) - Subscribe to published APIs from an application.
-- [Create Application](../api-developer-portal/manage-application/create-application/) - Create applications to consume APIs.
+- [Consume APIs Overview](consume-api-overview.md) - Learn how application developers can discover and consume published APIs.
+- [Discover APIs](discover-apis/search.md) - Explore how to search and find APIs in the Developer Portal.
+- [Subscribe to an API](manage-subscription/subscribe-to-an-api.md) - Subscribe to published APIs from an application.
+- [Create Application](manage-application/create-application.md) - Create applications to consume APIs.

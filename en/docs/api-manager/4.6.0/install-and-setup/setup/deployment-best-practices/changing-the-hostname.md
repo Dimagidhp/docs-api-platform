@@ -52,7 +52,7 @@ Follow the steps given below.
 
 2.  Generate a key store, export the public certificate from the keystore, and import that certificate to the `client­-truststore.jks` file.
     
-     For more information, see [Creating New Keystores](../../../install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/).
+     For more information, see [Creating New Keystores](../security/configuring-keystores/keystore-basics/creating-new-keystores.md).
 
 3.  Restart the server.
 

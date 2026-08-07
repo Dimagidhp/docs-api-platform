@@ -76,4 +76,4 @@ The following default subscription tiers are available for Streaming APIs:
 
 ## See Also
 
-- For more information on setting Streaming API Limits in Subscription Policies, see [Streaming API Limits in Subscription Policies](../../../administer/rate-limiting/manage-subscription-policies/#streaming-api-limits-in-subscription-policies).
+- For more information on setting Streaming API Limits in Subscription Policies, see [Streaming API Limits in Subscription Policies](../../../administer/rate-limiting/manage-subscription-policies.md#streaming-api-limits-in-subscription-policies).

@@ -100,7 +100,7 @@ LLM Gateway gives you the ability to create AI APIs, which serve as a bridge bet
 
 ### Configure Backend Security
 
-Now that the AI API is successfully created, next step is to configure the backend security to ensure AI provider accessibility. You can follow along the steps mentioned below. For detailed steps, see [AI Backend Security](../ai-gateway/ai-backend-security/).
+Now that the AI API is successfully created, next step is to configure the backend security to ensure AI provider accessibility. You can follow along the steps mentioned below. For detailed steps, see [AI Backend Security](ai-backend-security.md).
 
 1. Create an **API key** to access the OpenAI API.
 2. Navigate to **API Configurations** --> **Endpoints**.
@@ -109,7 +109,7 @@ Now that the AI API is successfully created, next step is to configure the backe
 
 ### Deploy, Test and Publish your AI API
 
-Following the successful AI API creation and backend security configuration, you can proceed to [deploy](../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test](../api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and [publish](../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md) the AI API.
+Following the successful AI API creation and backend security configuration, you can proceed to [deploy](../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md), [test](../api-design-manage/design/create-api/create-rest-api/test-a-rest-api.md), and [publish](../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md) the AI API.
 
 ### Invoke AI API
 
@@ -137,21 +137,21 @@ Now, you have successfully created, deployed, published and invoked an AI API.
 Now that you've successfully created your first AI API, explore these advanced capabilities to optimize your AI integration:
 
 ### Enhance Security and Performance
-- **[AI Backend Security](../ai-gateway/ai-backend-security/)** - Implement advanced authentication and security configurations
-- **[Rate Limiting](../ai-gateway/rate-limiting/)** - Control API usage and prevent abuse with token-based limits
+- **[AI Backend Security](ai-backend-security.md)** - Implement advanced authentication and security configurations
+- **[Rate Limiting](rate-limiting.md)** - Control API usage and prevent abuse with token-based limits
 
 ### Advanced AI Features
-- **[Multi-Model Routing](../ai-gateway/multi-model-routing/overview/)** - Route requests across multiple AI models for load balancing and failover
-- **[Prompt Management](../ai-gateway/prompt-management/overview/)** - Centrally manage and version your AI prompts and templates
-- **[AI Guardrails](../ai-gateway/ai-guardrails/overview/)** - Implement content filtering and safety measures
-- **[Semantic Caching](../ai-gateway/semantic-caching/)** - Improve performance and reduce costs with intelligent caching
+- **[Multi-Model Routing](multi-model-routing/overview.md)** - Route requests across multiple AI models for load balancing and failover
+- **[Prompt Management](prompt-management/overview.md)** - Centrally manage and version your AI prompts and templates
+- **[AI Guardrails](ai-guardrails/overview.md)** - Implement content filtering and safety measures
+- **[Semantic Caching](semantic-caching.md)** - Improve performance and reduce costs with intelligent caching
 
 ### AI Service Provider Management
-- **[AI Service Provider Management](../ai-gateway/ai-vendor-management/overview/)** - Configure additional AI providers beyond OpenAI
-- **[Custom AI Service Providers](../ai-gateway/ai-vendor-management/custom-ai-vendors/overview/)** - Integrate your custom AI services
+- **[AI Service Provider Management](ai-vendor-management/overview.md)** - Configure additional AI providers beyond OpenAI
+- **[Custom AI Service Providers](ai-vendor-management/custom-ai-vendors/overview.md)** - Integrate your custom AI services
 
 ### Developer Experience
-- **[AI APIs via SDKs](../ai-gateway/using-proxy-apis-in-sdks/)** - Generate and use SDKs for your AI APIs
+- **[AI APIs via SDKs](using-proxy-apis-in-sdks.md)** - Generate and use SDKs for your AI APIs
 
 ### Explore MCP Gateway
 - **[MCP Gateway](../mcp/overview/)** - Transform your APIs into AI-ready tools for Large Language Models

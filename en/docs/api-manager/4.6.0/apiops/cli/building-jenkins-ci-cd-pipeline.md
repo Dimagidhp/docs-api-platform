@@ -36,7 +36,7 @@ Log in to the server and install following.
   sudo apt-get install jq
 
   ```
-2. Install the [apictl tool](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl). Extract to a location henceforth referred as `CTL_HOME`.
+2. Install the [apictl tool](getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl). Extract to a location henceforth referred as `CTL_HOME`.
 
 3. Install java.
 
@@ -86,7 +86,7 @@ Source repository is now configured.
 Now let’s initialize the source repository. This will be done from the developer’s local machine.
 
 !!! note
-    If you haven’t setup API Controller, set it up using the [apictl tool](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl) 
+    If you haven’t setup API Controller, set it up using the [apictl tool](getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl) 
 
 1. Clone the source repository. Navigate to the repository folder.
 
@@ -153,7 +153,7 @@ Deployment repository will be used to gather configurations for each deployment.
 
 ### Step 4 - Setup API-M instances
 
-Download the WSO2 API Manager [here](../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl) and start the instance. Set this in a separate instance as the `dev` instance. 
+Download the WSO2 API Manager [here](getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl) and start the instance. Set this in a separate instance as the `dev` instance. 
 
 ### Step 5 - Configure Jenkins Jobs
 

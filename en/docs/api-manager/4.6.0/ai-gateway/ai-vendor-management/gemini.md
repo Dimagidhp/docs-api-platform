@@ -100,7 +100,7 @@ The following configurations can be updated:
 
 - By default, the following models are included: `gemini-2.5-flash-lite`, `gemini-2.5-flash`, and `gemini-2.5-pro`.
 - To add available models supported by Gemini, type the model name and press enter.
-- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview](../../ai-gateway/multi-model-routing/overview/).
+- This enables model-based load balancing and failover capabilities. For more details, see [Multi-Model Routing Overview](../multi-model-routing/overview.md).
 
 ### Step 3: Save Configuration
 

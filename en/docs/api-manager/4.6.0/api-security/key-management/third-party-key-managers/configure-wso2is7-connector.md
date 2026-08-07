@@ -28,8 +28,8 @@ WSO2 API Manager supports multiple Key Managers. As a result, WSO2 API Manager i
 Data models of WSO2 API Manager {{site_version}} and WSO2 Identity Server 7.x are different. Therefore, when using WSO2 API Manager
 {{site_version}} with WSO2 Identity Server 7.x as the key manager,
 
-- **Tenant sharing has to be configured.** Please refer [**Tenant sharing between WSO2 API Manager and WSO2 IS 7.x**](../../../administer/multitenancy/tenant-sharing-with-wso2is7/)
-- To configure WSO2 IS 7.x as default key manager please refer [**Configuring WSO2 IS 7.x as the default key manager**](../../../administer/multitenancy/tenant-sharing-with-wso2is7/#configuring-wso2-is-7x-as-the-default-key-manager).
+- **Tenant sharing has to be configured.** Please refer [**Tenant sharing between WSO2 API Manager and WSO2 IS 7.x**](../../../administer/multitenancy/tenant-sharing-with-wso2is7.md)
+- To configure WSO2 IS 7.x as default key manager please refer [**Configuring WSO2 IS 7.x as the default key manager**](../../../administer/multitenancy/tenant-sharing-with-wso2is7.md#configuring-wso2-is-7x-as-the-default-key-manager).
 
 
 Follow the steps given below to configure WSO2 IS 7.x as a Key Manager component.
@@ -76,7 +76,7 @@ Follow the steps given below to configure WSO2 IS 7.x as a Key Manager component
     !!! Note
         **Before you begin:**
 
-        You need to import the public certificate of the WSO2 Identity Server 7.x to the truststore of the WSO2 API Manager, and vice-versa. For information on importing the certificates, see the [Importing certificates to the truststore](../../../install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/#step-3-importing-certificates-to-the-truststore) guide.
+        You need to import the public certificate of the WSO2 Identity Server 7.x to the truststore of the WSO2 API Manager, and vice-versa. For information on importing the certificates, see the [Importing certificates to the truststore](../../../install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores.md#step-3-importing-certificates-to-the-truststore) guide.
 
 3. Download [notification.event.handlers-2.0.8.jar](../../../assets/attachments/administer/wso2is.notification.event.handlers-2.0.8.4.jar) and add it to `<IS_HOME>/repository/components/dropins`
 

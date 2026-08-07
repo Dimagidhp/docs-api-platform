@@ -24,6 +24,8 @@ The diagram below is a high-level snapshot of WSO2 API Manager and the various c
 
 The API Control Plane is where API creation and API management takes place. It consists of portals (Publisher, Developer Portal and Service Catalog) for users to create and manage APIs, implement rate limiting policies, monitor, and monetize etc. The API Control Plane consists of a Key manager component for API security validation and API key generation. It also provides a set of APIs to interact with external tools like API Controller. The API Control Plane includes API Analytics dashboards, displaying various business insights.
 
+<a name="api-publisher"></a>
+
 #### API Publisher
 
 [![API Publisher](../assets/img/get_started/architecture/publisher-overview.png)](../assets/img/get_started/architecture/publisher-overview.png)
@@ -44,6 +46,8 @@ WSO2 API Control Plane includes a Service Catalog where developers can register 
 
 These integration services can be created using WSO2 Integration Studio and a variety of other platforms. For an Integration Studio user, the service registration happens automatically when exporting the project as a composite application (CApp).
 
+<a name="key-manager"></a>
+
 #### Key Manager
  
 [![Key Manager](../assets/img/get_started/architecture/key-manager-overview.png)](../assets/img/get_started/architecture/key-manager-overview.png)
@@ -60,7 +64,7 @@ In addition to using the built-in Key Manager as the IDP, WSO2 API Control Plane
 
 - For information on the architecture, see [API Analytics Architecture](../monitoring/api-analytics/analytics-overview/#architecture/)
 
-- For information on working with Analytics, see the [API Analytics Getting Started Guide](../monitoring/moesif-analytics/moesif-integration-guide/).
+- For information on working with Analytics, see the [API Analytics Getting Started Guide](../monitoring/api-analytics/moesif-analytics/moesif-integration-guide.md).
 
 ## Data Plane
 

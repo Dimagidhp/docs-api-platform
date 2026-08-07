@@ -158,7 +158,7 @@ For precise cluster-wide enforcement, configure Redis as a distributed counter s
 - **Throttling policies**: Continue to use Traffic Manager (unchanged)
 - **Burst control and backend throughput**: Use Redis for cluster-wide accuracy
 
-For configuration details, see [Connect to Redis/Valkey](../../api-gateway/rate-limiting/configuring-rate-limiting-api-gateway-cluster/).
+For configuration details, see [Connect to Redis/Valkey](configuring-rate-limiting-api-gateway-cluster.md).
 
 ## Enforcement Accuracy
 
@@ -178,9 +178,9 @@ The throttling solution in API Manager is designed in a fully asynchronous and d
 
 GraphQL and Streaming APIs have specialized enforcement mechanisms due to their unique characteristics:
 
-- **GraphQL APIs**: GraphQL APIs use complexity-based and depth-based limiting in addition to request-based rate limiting and burst control. The maximum values for complexity and depth can be enforced through the subscription policy. See [GraphQL Query Complexity Limit](../../api-design-manage/design/rate-limiting/graphql-api/query-complexity-analysis/) and [GraphQL Query Depth Limit](../../api-design-manage/design/rate-limiting/graphql-api/query-depth-analysis/) for details.
+- **GraphQL APIs**: GraphQL APIs use complexity-based and depth-based limiting in addition to request-based rate limiting and burst control. The maximum values for complexity and depth can be enforced through the subscription policy. See [GraphQL Query Complexity Limit](../../api-design-manage/design/rate-limiting/graphql-api/query-complexity-analysis.md) and [GraphQL Query Depth Limit](../../api-design-manage/design/rate-limiting/graphql-api/query-depth-analysis.md) for details.
 
-- **Streaming APIs**: Business plans for Streaming APIs count events/frames rather than HTTP requests, and limit number of active long-lived connections. See [Streaming API Enforcement](../../api-design-manage/design/rate-limiting/set-streaming-api-limits/) for details.
+- **Streaming APIs**: Business plans for Streaming APIs count events/frames rather than HTTP requests, and limit number of active long-lived connections. See [Streaming API Enforcement](../../api-design-manage/design/rate-limiting/set-streaming-api-limits.md) for details.
 
 ## Monitoring and Troubleshooting
 
@@ -200,6 +200,6 @@ Check the Gateway logs for more detailed information about which specific limit 
 
 ## See Also
 
-- [Configuring Distributed Throttling](../../api-gateway/rate-limiting/distributed-throttling/) - To maintain traffic counts at a global level
-- [Connecting to Redis/Valkey](../../api-gateway/rate-limiting/configuring-rate-limiting-api-gateway-cluster/) - Configure Distributed Burst Control, Backend Rate Limiting for an API Gateway Cluster
-- [Custom Throttling](../../api-gateway/rate-limiting/enforce-custom-throttling/) - To implement custom rate limiting logic
+- [Configuring Distributed Throttling](distributed-throttling.md) - To maintain traffic counts at a global level
+- [Connecting to Redis/Valkey](configuring-rate-limiting-api-gateway-cluster.md) - Configure Distributed Burst Control, Backend Rate Limiting for an API Gateway Cluster
+- [Custom Throttling](enforce-custom-throttling.md) - To implement custom rate limiting logic

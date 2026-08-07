@@ -1,0 +1,2285 @@
+{
+ "scope": "api-manager/4.6.0",
+ "docs_root": "en/docs",
+ "counts": {
+  "templated_fixable": 0,
+  "templated": 1,
+  "malformed": 0,
+  "dir_style": 39,
+  "depth": 0,
+  "renamed": 39,
+  "gone": 118,
+  "stale": 38,
+  "anchor": 113
+ },
+ "tiers": {
+  "templated_fixable": [],
+  "templated": [
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "{{base}}/install-and-setup/setup/security/configuring-transport-level-security/#disabling-weak-ciphers",
+    "variable": "{{base}}"
+   }
+  ],
+  "malformed": [],
+  "dir_style": [
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "link": "../../administer/managing-users-and-roles/managing-user-roles/#update-before-the-first-startup-recommended",
+    "resolves_to": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "suggested": "managing-user-roles.md#update-before-the-first-startup-recommended",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-users.md",
+    "link": "../../administer/managing-users-and-roles/managing-user-roles/#create-user-roles",
+    "resolves_to": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "suggested": "managing-user-roles.md#create-user-roles",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-users.md",
+    "link": "../../administer/managing-users-and-roles/managing-user-roles/#create-user-roles",
+    "resolves_to": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "suggested": "managing-user-roles.md#create-user-roles",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/multiple-gateways/configure-gateway-visibility.md",
+    "link": "../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/multiple-gateways/configure-gateway-visibility.md",
+    "link": "../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/multiple-gateways/configure-gateway.md",
+    "link": "../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames.md",
+    "link": "../../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames.md",
+    "link": "../../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/exposing-apis-via-custom-hostnames.md",
+    "link": "../../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md",
+    "link": "../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md",
+    "link": "../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md",
+    "link": "../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/policies/configuring-message-builders-formatters.md",
+    "link": "../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/applications/provisioning-out-of-band-oauth-clients.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/authentication/grant-types/jwt-grant.md",
+    "link": "../../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-forgerock-connector.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-global-key-manager.md",
+    "link": "../../../api-security/key-management/third-party-key-managers/overview/#configuring-key-managers-with-wso2-api-m",
+    "resolves_to": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+    "suggested": "overview.md#configuring-key-managers-with-wso2-api-m",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/encrypting-oauth2-tokens.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/hashing-oauth-keys.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../install-and-setup/install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/jwt-tokens.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../install-and-setup/install/installing-the-product/running-the-api-m.md#accessing-the-api-publisher",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/token-persistence.md",
+    "link": "../../../reference/product-apis/devportal-apis/devportal-v3/devportal-v3/#tag/Applications/paths/~1applications~1%7BapplicationId%7D/put",
+    "resolves_to": "api-manager/4.6.0/reference/product-apis/devportal-apis/devportal-v3/devportal-v3.md",
+    "suggested": "../../../reference/product-apis/devportal-apis/devportal-v3/devportal-v3.md#tag/Applications/paths/~1applications~1{applicationId}/put",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../install-and-setup/install/installing-the-product/running-the-api-m.md#accessing-the-api-publisher",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../../install-and-setup/install/installing-the-product/running-the-api-m.md#accessing-the-api-publisher",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "link": "../../../administer/managing-users-and-roles/managing-user-roles/#create-user-roles",
+    "resolves_to": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "suggested": "../../../administer/managing-users-and-roles/managing-user-roles.md#create-user-roles",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/api-manager-quick-start-guide.md",
+    "link": "../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one/#step-1-set-up-basic-configurations",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "suggested": "../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md#step-1-set-up-basic-configurations",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/apim-architecture.md",
+    "link": "../monitoring/api-analytics/analytics-overview/#architecture/",
+    "resolves_to": "api-manager/4.6.0/monitoring/api-analytics/analytics-overview.md",
+    "suggested": "../monitoring/api-analytics/analytics-overview.md#architecture/",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-2.md",
+    "link": "../../../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup/#configure-the-gateway-nodes",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup.md",
+    "suggested": "../distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup.md#configure-the-gateway-nodes",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/multi-dc-deployment/configuring-multi-dc-deployment-pattern-2.md",
+    "link": "../../../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup/#configure-the-traffic-manager-nodes",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup.md",
+    "suggested": "../distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup.md#configure-the-traffic-manager-nodes",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/single-node/configuring-a-single-node.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/single-node/configuring-an-active-active-deployment.md",
+    "link": "../../..//install-and-setup/setup/deployment-best-practices/production-deployment-guidelines/#common-guidelines-and-checklist/",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "suggested": "../deployment-best-practices/production-deployment-guidelines.md#common-guidelines-and-checklist/",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/single-node/configuring-an-active-active-deployment.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../../install/installing-the-product/running-the-api-m.md#starting-the-server",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/integrate/develop/working-with-service-catalog.md",
+    "link": "../../tutorials/tutorials-overview/#integration-tutorials",
+    "resolves_to": "api-manager/4.6.0/tutorials/tutorials-overview.md",
+    "suggested": "../../tutorials/tutorials-overview.md#integration-tutorials",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/monitoring-correlation-logs.md",
+    "link": "../../reference/product-apis/devops-apis/devops-v0/devops-v0/#/paths/~1config~1correlation~1/get",
+    "resolves_to": "api-manager/4.6.0/reference/product-apis/devops-apis/devops-v0/devops-v0.md",
+    "suggested": "../../reference/product-apis/devops-apis/devops-v0/devops-v0.md#/paths/~1config~1correlation~1/get",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-http-redirection-for-workflows.md",
+    "link": "../../../../reference/product-apis/admin-apis/admin-v4/admin-v4/#tag/Workflows-(Individual",
+    "resolves_to": "api-manager/4.6.0/reference/product-apis/admin-apis/admin-v4/admin-v4.md",
+    "suggested": "../../../product-apis/admin-apis/admin-v4/admin-v4.md#tag/Workflows-(Individual",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-http-redirection-for-workflows.md",
+    "link": "../../../../reference/product-apis/admin-apis/admin-v4/admin-v4/#tag/Workflows-(Individual",
+    "resolves_to": "api-manager/4.6.0/reference/product-apis/admin-apis/admin-v4/admin-v4.md",
+    "suggested": "../../../product-apis/admin-apis/admin-v4/admin-v4.md#tag/Workflows-(Individual",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/default-product-ports.md",
+    "link": "../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#configuring-the-port-offset",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset.md",
+    "suggested": "../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset.md#configuring-the-port-offset",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "../install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords/#setting-up-an-e-mail-login",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords.md",
+    "suggested": "../install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords.md#setting-up-an-e-mail-login",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "../install-and-setup/install/installing-the-product/running-the-api-m/#configuring-the-session-time-out",
+    "resolves_to": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "suggested": "../install-and-setup/install/installing-the-product/running-the-api-m.md#configuring-the-session-time-out",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/product-apis/advanced-configurations.md",
+    "link": "../../administer/managing-users-and-roles/managing-permissions/#adding-role-based-permissions",
+    "resolves_to": "api-manager/4.6.0/administer/managing-users-and-roles/managing-permissions.md",
+    "suggested": "../../administer/managing-users-and-roles/managing-permissions.md#adding-role-based-permissions",
+    "why": "written as a URL, so mkdocs passes it through unresolved"
+   }
+  ],
+  "depth": [],
+  "renamed": [
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "link": "../../administer/product-administration/managing-users-and-roles/managing-user-stores/introduction-to-userstores",
+    "found_at": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/introduction-to-userstores.md",
+    "suggested": "managing-user-stores/introduction-to-userstores.md",
+    "confidence": "low (2 candidates)",
+    "alternatives": [
+     "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/introduction-to-userstores.md",
+     "api-manager/4.6.0/install-and-setup/setup/configure-userstores/introduction-to-userstores.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "link": "../../administer/product-administration/managing-users-and-roles/managing-permissions/#adding-role-based-permissions",
+    "found_at": "api-manager/4.6.0/administer/managing-users-and-roles/managing-permissions.md",
+    "suggested": "managing-permissions.md#adding-role-based-permissions",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "link": "../../administer/product-administration/managing-users-and-roles/managing-user-stores/introduction-to-userstores",
+    "found_at": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/introduction-to-userstores.md",
+    "suggested": "managing-user-stores/introduction-to-userstores.md",
+    "confidence": "low (2 candidates)",
+    "alternatives": [
+     "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/introduction-to-userstores.md",
+     "api-manager/4.6.0/install-and-setup/setup/configure-userstores/introduction-to-userstores.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/ai-gateway/mcp-gateway/invoke-a-mcp-server-using-playground.md",
+    "link": "../../consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/#step-3-get-an-access-token",
+    "found_at": "api-manager/4.6.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md",
+    "suggested": "../../api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md#step-3-get-an-access-token",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/scaling-the-gateway.md",
+    "link": "../../../../administer/product-configurations/configuring-caching/#key-cache",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/advance-configurations/configuring-caching.md",
+    "suggested": "../../../../install-and-setup/setup/advance-configurations/configuring-caching.md#key-cache",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/api-developer-portal/collaboration/interact-with-the-community.md",
+    "link": "../../manage-apis/design/api-collaborations/enable-social-media-interaction/#enable-sharing-api-links-on-social-media",
+    "found_at": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "suggested": "../../api-design-manage/design/api-collaborations/enable-social-media-interaction.md#enable-sharing-api-links-on-social-media",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md",
+    "link": "../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways/#multiple-gateways-to-handle-production-and-sandbox-requests-separately",
+    "found_at": "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways.md",
+    "suggested": "../../../api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways.md#multiple-gateways-to-handle-production-and-sandbox-requests-separately",
+    "confidence": "low (2 candidates)",
+    "alternatives": [
+     "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways.md",
+     "api-manager/4.6.0/api-gateway/maintaining-separate-production-and-sandbox-gateways.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-graphql-api-using-the-integrated-graphql-console.md",
+    "link": "../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways/#multiple-gateways-to-handle-production-and-sandbox-requests-separately",
+    "found_at": "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways.md",
+    "suggested": "../../../api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways.md#multiple-gateways-to-handle-production-and-sandbox-requests-separately",
+    "confidence": "low (2 candidates)",
+    "alternatives": [
+     "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/maintaining-separate-production-and-sandbox-gateways.md",
+     "api-manager/4.6.0/api-gateway/maintaining-separate-production-and-sandbox-gateways.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/scaling-the-gateway.md",
+    "link": "../administer/product-configurations/configuring-caching/#key-cache",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/advance-configurations/configuring-caching.md",
+    "suggested": "../install-and-setup/setup/advance-configurations/configuring-caching.md#key-cache",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/cicd-using-cli.md",
+    "link": "../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/cicd-using-cli.md",
+    "link": "../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/##set-export-directory",
+    "found_at": "api-manager/4.6.0/apiops/cli/getting-started-with-wso2-api-controller.md",
+    "suggested": "getting-started-with-wso2-api-controller.md##set-export-directory",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/importing-apis-via-dev-first-approach.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/using-dynamic-data-in-api-controller-projects/#initialize-api-projects-with-dynamic-data",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/using-dynamic-data-in-api-controller-projects.md",
+    "suggested": "../advanced-topics/using-dynamic-data-in-api-controller-projects.md#initialize-api-projects-with-dynamic-data",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/importing-apis-via-dev-first-approach.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "../advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/migrating-api-products-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "../advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/migrating-api-products-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters/#defining-the-params-file-for-an-api-product",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md",
+    "suggested": "../advanced-topics/configuring-environment-specific-parameters.md#defining-the-params-file-for-an-api-product",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/migrating-api-products-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/using-dynamic-data-in-api-controller-projects/#add-dynamic-data-to-environment-configs",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/using-dynamic-data-in-api-controller-projects.md",
+    "suggested": "../advanced-topics/using-dynamic-data-in-api-controller-projects.md#add-dynamic-data-to-environment-configs",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/migrating-apis-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "../advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/migrating-apis-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters/#defining-the-params-file-for-an-api",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md",
+    "suggested": "../advanced-topics/configuring-environment-specific-parameters.md#defining-the-params-file-for-an-api",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-apis-api-products/migrating-apis-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/using-dynamic-data-in-api-controller-projects/#add-dynamic-data-to-environment-configs",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/using-dynamic-data-in-api-controller-projects.md",
+    "suggested": "../advanced-topics/using-dynamic-data-in-api-controller-projects.md#add-dynamic-data-to-environment-configs",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-applications/migrating-applications-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "../advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-common-api-policies/migrating-common-api-policies-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "../advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-mcp-servers/importing-mcp-servers-via-dev-first-approach.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "../advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-mcp-servers/migrating-mcp-servers-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/creating-custom-users-to-perform-api-controller-operations.md",
+    "suggested": "../advanced-topics/creating-custom-users-to-perform-api-controller-operations.md#steps-to-create-a-custom-user-who-can-perform-api-controller-operations",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-mcp-servers/migrating-mcp-servers-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters/#defining-the-params-file-for-an-mcp-server",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md",
+    "suggested": "../advanced-topics/configuring-environment-specific-parameters.md#defining-the-params-file-for-an-mcp-server",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/managing-mcp-servers/migrating-mcp-servers-to-different-environments.md",
+    "link": "../../../install-and-setup/setup/api-controller/advanced-topics/using-dynamic-data-in-api-controller-projects/#add-dynamic-data-to-environment-configs",
+    "found_at": "api-manager/4.6.0/apiops/cli/advanced-topics/using-dynamic-data-in-api-controller-projects.md",
+    "suggested": "../advanced-topics/using-dynamic-data-in-api-controller-projects.md#add-dynamic-data-to-environment-configs",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/about-this-release.md",
+    "link": "../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/maintain-seperate-gateways-per-tenants/",
+    "found_at": "api-manager/4.6.0/api-gateway/maintain-seperate-gateways-per-tenants.md",
+    "suggested": "../api-gateway/maintain-seperate-gateways-per-tenants.md",
+    "confidence": "low (2 candidates)",
+    "alternatives": [
+     "api-manager/4.6.0/api-gateway/maintain-seperate-gateways-per-tenants.md",
+     "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/maintain-seperate-gateways-per-tenants.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/includes/deploy/steps-to-deploy-apim-in-a-distributed-setup-with-km-separation.md",
+    "link": "../../../../install-and-setup/deploying-wso2-api-manager/production-deployment-guidelines/#common-guidelines-and-checklist",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "suggested": "../../install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md#common-guidelines-and-checklist",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/includes/deploy/steps-to-deploy-apim-in-a-distributed-setup-with-tm-separation.md",
+    "link": "../../../../install-and-setup/deploying-wso2-api-manager/production-deployment-guidelines/#common-guidelines-and-checklist",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "suggested": "../../install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md#common-guidelines-and-checklist",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install/installation-prerequisites.md",
+    "link": "../../install-and-setup/setup/reference/product-compatibility/#tested-operating-systems-and-jdks",
+    "found_at": "api-manager/4.6.0/reference/product-compatibility.md",
+    "suggested": "../../reference/product-compatibility.md#tested-operating-systems-and-jdks",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install/installation-prerequisites.md",
+    "link": "../../install-and-setup/setup/reference/product-compatibility/#tested-wso2-products",
+    "found_at": "api-manager/4.6.0/reference/product-compatibility.md",
+    "suggested": "../../reference/product-compatibility.md#tested-wso2-products",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/advance-configurations/configuring-caching.md",
+    "link": "../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/response-caching/",
+    "found_at": "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/response-caching.md",
+    "suggested": "../../../api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/response-caching.md",
+    "confidence": "low (2 candidates)",
+    "alternatives": [
+     "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/response-caching.md",
+     "api-manager/4.6.0/api-gateway/response-caching.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-only-ldap-user-store.md",
+    "link": "../../../../administer/product-security/logins-and-passwords/maintaining-logins-and-passwords/#setting-up-an-e-mail-login",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords.md",
+    "suggested": "../../security/logins-and-passwords/maintaining-logins-and-passwords.md#setting-up-an-e-mail-login",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-ldap-user-store.md",
+    "link": "../../../../administer/product-security/logins-and-passwords/maintaining-logins-and-passwords/#setting-up-an-e-mail-login",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords.md",
+    "suggested": "../../security/logins-and-passwords/maintaining-logins-and-passwords.md#setting-up-an-e-mail-login",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment.md",
+    "link": "../../../install-and-setup/setup/reference/product-compatibility/#tested-operating-systems-and-jdks",
+    "found_at": "api-manager/4.6.0/reference/product-compatibility.md",
+    "suggested": "../../../reference/product-compatibility.md#tested-operating-systems-and-jdks",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-simple-scalable-setup.md",
+    "link": "../../../../install-and-setup/deploying-wso2-api-manager/production-deployment-guidelines/#common-guidelines-and-checklist",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "suggested": "../deployment-best-practices/production-deployment-guidelines.md#common-guidelines-and-checklist",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/multi-dc-deployment/multi-dc-deployment-patterns-overview.md",
+    "link": "../../../manage-apis/deploy-and-publish/deploy-on-gateway/api-gateway/scaling-the-gateway",
+    "found_at": "api-manager/4.6.0/api-gateway/scaling-the-gateway.md",
+    "suggested": "../../../api-gateway/scaling-the-gateway.md",
+    "confidence": "low (2 candidates)",
+    "alternatives": [
+     "api-manager/4.6.0/api-gateway/scaling-the-gateway.md",
+     "api-manager/4.6.0/api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/scaling-the-gateway.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/single-node/configuring-a-single-node.md",
+    "link": "../../../install-and-setup/deploying-wso2-api-manager/production-deployment-guidelines/#common-guidelines-and-checklist",
+    "found_at": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "suggested": "../deployment-best-practices/production-deployment-guidelines.md#common-guidelines-and-checklist",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/customizations/adding-internationalization.md",
+    "link": "../../../consume/customizations/customizing-the-developer-portal/overriding-developer-portal-theme/#uploading-via-the-admin-portal-tenants-only",
+    "found_at": "api-manager/4.6.0/reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme.md",
+    "suggested": "customizing-the-developer-portal/overriding-developer-portal-theme.md#uploading-via-the-admin-portal-tenants-only",
+    "confidence": "high"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "../install-and-setup/setup/reference/default-product-ports/#api-manager",
+    "found_at": "api-manager/4.6.0/reference/default-product-ports.md",
+    "suggested": "default-product-ports.md#api-manager",
+    "confidence": "high"
+   }
+  ],
+  "gone": [
+   {
+    "file": "api-manager/4.6.0/administer/admin-overview.md",
+    "link": "../administer/key-managers/overview",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/administer/governance/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "link": "../../getting-started/overview/#api-gateway",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/administer/governance/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "link": "../../getting-started/overview/#api-publisher",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/administer/governance/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-roles.md",
+    "link": "../../getting-started/overview/#developer-portal",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/administer/governance/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/administer/rate-limiting/manage-subscription-policies.md",
+    "link": "../../manage-apis/design/rate-limiting/graphql-api/query-complexity-limitation/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/rate-limiting/manage-subscription-policies.md",
+    "link": "../../manage-apis/design/rate-limiting/graphql-api/query-depth-limitation/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/ai-gateway/ai-vendor-management/custom-ai-vendors/custom-connector.md",
+    "link": "../../../assets/attachments/administer/llm.provider.connector.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/ai-gateway/getting-started-with-ai-gateway.md",
+    "link": "../mcp/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/ai-gateway/ai-vendor-management/overview.md",
+     "api-manager/4.6.0/ai-gateway/prompt-management/overview.md",
+     "api-manager/4.6.0/ai-gateway/ai-vendor-management/custom-ai-vendors/overview.md",
+     "api-manager/4.6.0/ai-gateway/ai-guardrails/overview.md",
+     "api-manager/4.6.0/ai-gateway/mcp-gateway/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api.md",
+    "link": "../../../api-design-manage/design/rate-limiting/access-control/#denying-requests",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api.md",
+    "link": "../../../getting-started/overview/#api-gateway",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/api-design-manage/design/api-policies/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md",
+     "api-manager/4.6.0/api-security/key-management/authentication/grant-types/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api.md",
+    "link": "../../../getting-started/overview/#api-gateway",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/api-design-manage/design/api-policies/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md",
+     "api-manager/4.6.0/api-security/key-management/authentication/grant-types/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/advanced-topics/block-subscription-to-an-api.md",
+    "link": "../../../getting-started/overview/#api-gateway",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/api-design-manage/design/api-policies/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md",
+     "api-manager/4.6.0/api-security/key-management/authentication/grant-types/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md",
+    "link": "../../../develop/product-apis/restful-apis/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md",
+    "link": "../../../develop/product-apis/restful-apis/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/advanced-topics/enable-publisher-access-control-in-api-publisher-portal.md",
+    "link": "../../../reference/product-apis/restful-apis/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-versioning/create-a-new-api-version.md",
+    "link": "../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-a-graphql-api.md",
+    "link": "../../../api-design-manage/design/rate-limiting/graphql-api/overview-query-limits-for-graphql/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-ai-api/create-an-ai-api.md",
+    "link": "../../../../ai-gateway/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/api-policies/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md",
+     "api-manager/4.6.0/api-security/key-management/authentication/grant-types/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-an-api-using-a-service.md",
+    "link": "../../../api-design-manage/design/rate-limiting/introducing-throttling-use-cases/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-an-api-using-a-service.md",
+    "link": "../../../api-design-manage/design/rate-limiting/rate-limiting-for-streaming-apis/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition.md",
+    "link": "../../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition.md",
+    "link": "../../../../assets/attachments/design/sample-archive.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md",
+    "link": "../../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/create-api/create-rest-api/expose-a-soap-service-as-a-rest-api.md",
+    "link": "../../../../manage-apis/design/rate-limiting/setting-throttling-limits/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/endpoints/resiliency/endpoint-timeouts.md",
+    "link": "../../../../reference/synapse-properties/endpoint-properties",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/prototype-api/create-mocked-js-api.md",
+    "link": "../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-developer-portal/consume-api-overview.md",
+    "link": "../manage-apis/design/rate-limiting/introducing-throttling-use-cases",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-developer-portal/manage-application/create-application.md",
+    "link": "../../consume/manage-application/create-application/#create-a-new-application",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/federated-gateways/configure-custom-gateway-agent.md",
+    "link": "../../assets/attachments/deploy-and-publish/custom.gw.client.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/policies/adding-dynamic-endpoints.md",
+    "link": "../../learn/api-gateway/message-mediation/changing-the-default-mediation-flow-of-api-requests#creating-and-uploading-manually-in-api-publisher",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/policies/removing-specific-request-headers-from-response.md",
+    "link": "../../api-gateway/message-mediation/changing-the-default-mediation-flow-of-api-requests",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/policies/transforming-api-message-payload.md",
+    "link": "../../integrate/examples/json_examples/json-examples/#accessing-content-from-json-payloads",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/policies/transforming-api-message-payload.md",
+    "link": "../../integrate/examples/json_examples/json-examples/#logging-json-payloads",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/policies/transforming-api-message-payload.md",
+    "link": "../../integrate/examples/json_examples/json-examples/#constructing-and-transforming-json-payloads",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/policies/transforming-api-message-payload.md",
+    "link": "../../integrate/examples/json_examples/json-examples/#troubleshooting-debugging-and-logging",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/design-time/configuring-api-security-audit.md",
+    "link": "auditreports",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/authentication/grant-types/kerberos-oauth2-grant.md",
+    "link": "../../../../assets/attachments/kerberos-grant-1.0.0.jar",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/authentication/grant-types/saml-extension-grant.md",
+    "link": "../../../../assets/attachments/learn/saml2-assertion-creator.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-custom-connector.md",
+    "link": "../../../assets/attachments/administer/custom.auth.client.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-wso2is-connector.md",
+    "link": "../../../assets/attachments/administer/wso2is-extensions-1.7.17.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-wso2is7-connector.md",
+    "link": "../../../assets/attachments/administer/wso2is.notification.event.handlers-2.0.8.4.jar",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/encrypting-oauth2-tokens.md",
+    "link": "../../../install-and-setup/deploying-wso2-api-manager/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/ci-cd-with-wso2-api-management.md",
+    "link": "../../install-and-setup/setup/api-controller/building-jenkins-ci-cd-pipeline-for-dev-first-approach",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/cicd-using-cli.md",
+    "link": "../../assets/img/learn/api-controller/prod-dev-endpoints-petstore-api.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/cicd-using-cli.md",
+    "link": "../../install-and-setup/setup/api-controller/building-jenkins-ci-cd-pipeline-for-dev-first-approach/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/encrypting-secrets-with-ctl.md",
+    "link": "../../install-and-setup/setup/mi-setup/security/encrypting_plain_text/#dynamic-secrets",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/about-this-release.md",
+    "link": "../manage-apis/deploy-and-publish/deploy-on-gateway/federated-gateways/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md",
+     "api-manager/4.6.0/api-gateway/federated-gateways/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/apim-architecture.md",
+    "link": "../manage-apis/design/rate-limiting/introducing-throttling-use-cases",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/deployment-platforms.md",
+    "link": "../install-and-setup/setup/deployment-overview/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/includes/deploy/steps-to-deploy-apim-in-a-distributed-setup-with-km-separation.md",
+    "link": "../../../../install-and-setup/setup/setting-up-databases/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md",
+     "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/includes/deploy/steps-to-deploy-apim-in-a-distributed-setup-with-tm-separation.md",
+    "link": "../../../../install-and-setup/setup/setting-up-databases/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md",
+     "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install-and-setup-overview.md",
+    "link": "../install-and-setup/setup/deployment-overview",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install-and-setup-overview.md",
+    "link": "../install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install-and-setup-overview.md",
+    "link": "../install-and-setup/setup/api-controller/building-jenkins-ci-cd-pipeline-for-dev-first-approach",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install/deploying-api-manager-with-kubernetes-resources.md",
+    "link": "../../install-and-setup/setup/deployment-overview/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install/installing-the-product/installing-api-m-as-a-linux-service.md",
+    "link": "../../../install-and-setup/ProductCompatibility",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/install/installing-the-product/installing-api-m-as-a-windows-service.md",
+    "link": "../../../install-and-setup/ProductCompatibility",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-jdbc-user-store.md",
+    "link": "../../../../install-and-setup/setting-up-databases/overview",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md",
+     "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-only-ldap-user-store.md",
+    "link": "ldap://10.100.1.100:389",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-only-ldap-user-store.md",
+    "link": "ldaps://10.100.1.102:639",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-active-directory-user-store.md",
+    "link": "../../../../install-and-setup/setup/security/creating_keystores",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-active-directory-user-store.md",
+    "link": "../../../../administer/managing-users-and-roles/configuring-the-system-administrator",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-ldap-user-store.md",
+    "link": "ldap://10.100.1.100:389",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-ldap-user-store.md",
+    "link": "ldaps://10.100.1.102:639",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-ldap-user-store.md",
+    "link": "../../../../deploy/security/use-asymmetric-encryption",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-write-ldap-user-store.md",
+    "link": "../../../../deploy/performance/performance-tuning-recommendations#performance-tuning-ldaps-pooling",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "link": "../../../install-and-setup/setup/deployment-overview",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment.md",
+    "link": "../../../install-and-setup/setup/deployment-overview",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/tuning-performance.md",
+    "link": "../../../install-and-setup/setup/mi-setup/transport_configurations/configuring-transports/#configuring-the-httphttps-transport",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager.md",
+    "link": "../../../assets/attachments/administer/wso2is-extensions-1.7.17.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/deploying-wso2-api-m-on-eks.md",
+    "link": "../../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/security/configuring-transport-level-security.md",
+    "link": "../../../assets/attachments/admin/testsslserver-jar.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/security/logins-and-passwords/configuring-recaptcha-for-single-sign-on.md",
+    "link": "../../../../assets/img/learn/api-security/recaptcha/recaptcha-sso.png",
+    "kind": "image",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md",
+    "link": "../../../install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md",
+    "link": "../../../install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/single-node/configuring-a-single-node.md",
+    "link": "../../../install-and-setup/setting-up-databases/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md",
+     "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/single-node/configuring-an-active-active-deployment.md",
+    "link": "../../../install-and-setup/setting-up-databases/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/overview.md",
+     "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/aws/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-add-new-attribute.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-add-new-attribute-add.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-add-new-attribute-details.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-profile-edit.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-profile-edit.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-profile-edit2.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-profile-edit2.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-profile-edit3.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-profile-edit3.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-apim-add-role-permissions3.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-apim-add-role-permissions3.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-apim-add-role-permissions2.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-apim-add-role-permissions2.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-apim-add-role-permissions1.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/sso/okta-as-an-external-idp-using-saml.md",
+    "link": "../../../assets/img/learn/okta-apim-add-role-permissions1.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/integrate/develop/working-with-service-catalog.md",
+    "link": "../../tutorials/integration-tutorials/service-catalog-tutorial",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/integrate/develop/working-with-service-catalog.md",
+    "link": "../../tutorials/integration-tutorials/service-catalog-tutorial-for-proxy-services",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/integrate/develop/working-with-service-catalog.md",
+    "link": "../../integrate/develop/integration-development-kickstart",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/integrate/develop/working-with-service-catalog.md",
+    "link": "../../reference/config-catalog-mi/#service-catalog-client",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/integrate/develop/working-with-service-catalog.md",
+    "link": "../../assets/img/integrate/tutorials/service-catalog/metadata-folder-service-catalog.png",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/api-analytics/on-prem/datadog-installation-guide.md",
+    "link": "../../../assets/attachments/apim-elk/dashboards.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/api-monetization/monetizing-an-api.md",
+    "link": "../../manage-apis/design/rate-limiting/adding-new-throttling-policies#Adding-a-new-subscription---level-throttling-tier",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/traces/monitoring-with-opentracing.md",
+    "link": "../../../assets/attachments/administer/custom.tracing.client.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/customizations/customizing-login-pages-for-dev-portal-and-publisher.md",
+    "link": "../../../assets/attachments/reference/authenticationendpoint.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme.md",
+    "link": "../../../../reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-info-section/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/customizations/customizing-the-developer-portal/overriding-developer-portal-theme.md",
+    "link": "../../../../assets/attachments/learn/sample-theme.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-gateway/customizing-api-template-for-gateway.md",
+    "link": "../../../../install-and-setup/setup/distributed-deployment/understanding-the-distributed-deployment-of-wso2-api-m/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-gateway/writing-custom-handlers.md",
+    "link": "../../../../assets/attachments/reference/org.wso2.carbon.test.authenticator.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-key-management/extending-scope-validation.md",
+    "link": "../../../../manage-apis/design/api-security/oauth2/oauth2-scopes/scope-allowlisting",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/extending-api-manager/extending-workflows/configuring-http-redirection-for-workflows.md",
+    "link": "../../../../develop/product-apis/admin-apis/admin-v1/admin-v1/#tag/Workflows-(Individual",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "../getting-started/overview/",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/reference/product-apis/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "../learn/design-api/publish-api/publish-through-multiple-api-gateways",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/guides/message-flow-in-the-api-manager-gateway.md",
+    "link": "../../manage-apis/design/api-policies/overview",
+    "kind": "link",
+    "note": "17 files share this name \u2014 too ambiguous to propose one",
+    "candidates": [
+     "api-manager/4.6.0/reference/product-apis/overview.md",
+     "api-manager/4.6.0/api-design-manage/design/prototype-api/overview.md",
+     "api-manager/4.6.0/get-started/overview.md",
+     "api-manager/4.6.0/ai-gateway/multi-model-routing/overview.md",
+     "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+     "api-manager/4.6.0/api-security/key-management/third-party-key-managers/overview.md"
+    ]
+   },
+   {
+    "file": "api-manager/4.6.0/reference/troubleshooting/troubleshooting-jms.md",
+    "link": "../../integrate/develop/customizations/creating-custom-mediators",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/wso2-admin-services.md",
+    "link": "../assets/attachments/develop/org.wso2.carbon.sample.admin.service.invoker.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/create-and-publish-websocket-api.md",
+    "link": "../assets/img/learn/design-new-streaming-api.jpg",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/create-and-publish-websocket-api.md",
+    "link": "../manage-apis/design/create-api/create-a-websocket-api",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/create-distributed-setup-using-the-enterprise-package.md",
+    "link": "../assets/attachments/tutorials/create-distributed-setup-using-the-enterprise-package/apim-distributed-dev-setup.zip",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/enforce-throttling-and-resource-access-policies.md",
+    "link": "../manage-apis/design/rate-limiting/setting-throttling-limits/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/expose-a-soap-service-as-a-rest-api.md",
+    "link": "../manage-apis/design/rate-limiting/setting-throttling-limits/",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/integrating-with-solace.md",
+    "link": "../manage-apis/design/rate-limiting/adding-new-throttling-policies/#adding-a-new-subscription-level-rate-limiting-tier",
+    "kind": "link",
+    "note": "no file of this name exists anywhere under the docs root"
+   }
+  ],
+  "stale": [
+   {
+    "file": "api-manager/4.6.0/api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md",
+    "link": "https://apim.docs.wso2.com/en/latest/design/api-monetization/monetizing-an-api/#step-2-enable-monetization"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/api-controller/encrypting-secrets-with-ctl/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "link": "https://apim.docs.wso2.com/en/latest/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-through-multiple-api-gateways/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "link": "https://apim.docs.wso2.com/en/latest/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-through-multiple-api-gateways/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "https://apim.docs.wso2.com/en/latest/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-through-multiple-api-gateways/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "https://apim.docs.wso2.com/en/latest/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-through-multiple-api-gateways/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-through-multiple-api-gateways/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-through-multiple-api-gateways/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "https://apim.docs.wso2.com/en/4.6.0/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/#step-3-importing-certificates-to-the-truststore"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "https://apim.docs.wso2.com/en/4.6.0/install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/#step-3-importing-certificates-to-the-truststore"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/managing-users-and-roles/managing-user-stores/working-with-properties-of-user-stores/"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/api-analytics/choreo-analytics/choreo-based-analytics-via-proxy.md",
+    "link": "https://apim.docs.wso2.com/en/latest/monitoring/api-analytics/choreo-analytics/getting-started-guide/#step-2-register-your-environment"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/api-analytics/moesif-analytics/moesif-integration-guide.md",
+    "link": "https://apim.docs.wso2.com/"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/deploying-apis-to-federated-gateways-with-wso2.md",
+    "link": "https://apim.docs.wso2.com/en/latest/tutorials/single-control-plane-for-multiple-gateways/#setting-up-the-api-control-plane-and-universal-gateway"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/deploying-apis-to-federated-gateways-with-wso2.md",
+    "link": "https://apim.docs.wso2.com/en/latest/administer/key-managers/configure-auth0-connector/"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/single-control-plane-for-multiple-gateways.md",
+    "link": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mysql/"
+   },
+   {
+    "file": "api-manager/4.6.0/tutorials/single-control-plane-for-multiple-gateways.md",
+    "link": "https://apim.docs.wso2.com/en/latest/manage-apis/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition/"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/install-and-setup/install/installing-the-product/running-the-si/#starting-the-si-server"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/develop/streaming-apps/creating-a-siddhi-application/"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/develop/streaming-apps/creating-a-siddhi-application/"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/develop/streaming-apps/working-with-the-async-api-view/"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/assets/img/streaming/working-with-async-api/async-api-websocket-deploy-to-server.png"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/develop/streaming-apps/deploying-streaming-applications"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/assets/img/integrate/tutorials/service-catalog/open-service-catalog.png"
+   },
+   {
+    "file": "api-manager/4.6.0/use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md",
+    "link": "https://apim.docs.wso2.com/en/4.3.0/get-started/streaming-quick-start-guide/"
+   }
+  ],
+  "anchor": [
+   {
+    "file": "api-manager/4.6.0/administer/governance/governance-concept.md",
+    "link": "#Artifact",
+    "target_file": "api-manager/4.6.0/administer/governance/governance-concept.md",
+    "anchor": "Artifact"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/configuring-the-authorization-manager.md",
+    "link": "#ConfiguringtheAuthorizationManager-Step1:Settinguptherepository",
+    "target_file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/configuring-the-authorization-manager.md",
+    "anchor": "ConfiguringtheAuthorizationManager-Step1:Settinguptherepository"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/configuring-the-authorization-manager.md",
+    "link": "#ConfiguringtheAuthorizationManager-Step2:Updatingtheuserrealmconfigurations",
+    "target_file": "api-manager/4.6.0/administer/managing-users-and-roles/managing-user-stores/configuring-the-authorization-manager.md",
+    "anchor": "ConfiguringtheAuthorizationManager-Step2:Updatingtheuserrealmconfigurations"
+   },
+   {
+    "file": "api-manager/4.6.0/administer/multiple-gateways/configure-gateway.md",
+    "link": "../../../install-and-setup/install/installing-the-product/running-the-api-m/#starting-the-server",
+    "target_file": "api-manager/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m.md",
+    "anchor": "starting-the-server"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "link": "#step-1---enable-the-community-links-option",
+    "target_file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "anchor": "step-1---enable-the-community-links-option"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "link": "#step-2---verify-the-changes",
+    "target_file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "anchor": "step-2---verify-the-changes"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "link": "#step-1---define-your-github-and-slack-channel-urls",
+    "target_file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "anchor": "step-1---define-your-github-and-slack-channel-urls"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "link": "#step-2---verify-the-changes-1",
+    "target_file": "api-manager/4.6.0/api-design-manage/design/api-collaborations/enable-social-media-interaction.md",
+    "anchor": "step-2---verify-the-changes-1"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-documentation/add-api-documentation.md",
+    "link": "#add-in-line-documentation",
+    "target_file": "api-manager/4.6.0/api-design-manage/design/api-documentation/add-api-documentation.md",
+    "anchor": "add-in-line-documentation"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-documentation/add-api-documentation.md",
+    "link": "#add-documentation-using-a-url",
+    "target_file": "api-manager/4.6.0/api-design-manage/design/api-documentation/add-api-documentation.md",
+    "anchor": "add-documentation-using-a-url"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-documentation/add-api-documentation.md",
+    "link": "#add-documentation-using-a-file",
+    "target_file": "api-manager/4.6.0/api-design-manage/design/api-documentation/add-api-documentation.md",
+    "anchor": "add-documentation-using-a-file"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-policies/create-policy.md",
+    "link": "../../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/#restrict-access-java",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment.md",
+    "anchor": "restrict-access-java"
+   },
+   {
+    "file": "api-manager/4.6.0/api-design-manage/design/api-policies/create-policy.md",
+    "link": "../../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/#restrict-access-java",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment.md",
+    "anchor": "restrict-access-java"
+   },
+   {
+    "file": "api-manager/4.6.0/api-developer-portal/collaboration/interact-with-the-community.md",
+    "link": "#rate-an-API",
+    "target_file": "api-manager/4.6.0/api-developer-portal/collaboration/interact-with-the-community.md",
+    "anchor": "rate-an-API"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md",
+    "link": "#jwt-generation-configuration-details",
+    "target_file": "api-manager/4.6.0/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md",
+    "anchor": "jwt-generation-configuration-details"
+   },
+   {
+    "file": "api-manager/4.6.0/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md",
+    "link": "#sample-jwt",
+    "target_file": "api-manager/4.6.0/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md",
+    "anchor": "sample-jwt"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/design-time/configuring-api-security-audit.md",
+    "link": "#auditreports",
+    "target_file": "api-manager/4.6.0/api-security/design-time/configuring-api-security-audit.md",
+    "anchor": "auditreports"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-keycloak-connector.md",
+    "link": "#step12",
+    "target_file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-keycloak-connector.md",
+    "anchor": "step12"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-okta-connector.md",
+    "link": "#section3",
+    "target_file": "api-manager/4.6.0/api-security/key-management/third-party-key-managers/configure-okta-connector.md",
+    "anchor": "section3"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/securing-oauth-token-with-hmac-validation.md",
+    "link": "#SecuringOAuthTokenwithHMACValidation-Preventingmiss-useofOAuthTokens",
+    "target_file": "api-manager/4.6.0/api-security/key-management/tokens/securing-oauth-token-with-hmac-validation.md",
+    "anchor": "SecuringOAuthTokenwithHMACValidation-Preventingmiss-useofOAuthTokens"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/securing-oauth-token-with-hmac-validation.md",
+    "link": "#SecuringOAuthTokenwithHMACValidation-WSO2ISExtension-OAuthTokenGeneratorExtension",
+    "target_file": "api-manager/4.6.0/api-security/key-management/tokens/securing-oauth-token-with-hmac-validation.md",
+    "anchor": "SecuringOAuthTokenwithHMACValidation-WSO2ISExtension-OAuthTokenGeneratorExtension"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/securing-oauth-token-with-hmac-validation.md",
+    "link": "#SecuringOAuthTokenwithHMACValidation-WSO2APIManagerextension-HMACandtimestampverificationhandler",
+    "target_file": "api-manager/4.6.0/api-security/key-management/tokens/securing-oauth-token-with-hmac-validation.md",
+    "anchor": "SecuringOAuthTokenwithHMACValidation-WSO2APIManagerextension-HMACandtimestampverificationhandler"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/token-persistence.md",
+    "link": "#conn-app-key-constraint",
+    "target_file": "api-manager/4.6.0/api-security/key-management/tokens/token-persistence.md",
+    "anchor": "conn-app-key-constraint"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/token-persistence.md",
+    "link": "#asynchronous-token-persistence-recovery-flow",
+    "target_file": "api-manager/4.6.0/api-security/key-management/tokens/token-persistence.md",
+    "anchor": "asynchronous-token-persistence-recovery-flow"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/key-management/tokens/token-persistence.md",
+    "link": "#synchronous-token-persistence-recovery-flow",
+    "target_file": "api-manager/4.6.0/api-security/key-management/tokens/token-persistence.md",
+    "anchor": "synchronous-token-persistence-recovery-flow"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/runtime/authorization/role-based-access-control-using-xacml.md",
+    "link": "../../../reference/customize-product/extending-api-manager/saml2-sso/configuring-identity-server-as-idp-for-sso.md#sharing-the-user-store",
+    "target_file": "api-manager/4.6.0/reference/customize-product/extending-api-manager/saml2-sso/configuring-identity-server-as-idp-for-sso.md",
+    "anchor": "sharing-the-user-store"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+    "link": "#custom-opa-policy-with-custom-request-generator",
+    "target_file": "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+    "anchor": "custom-opa-policy-with-custom-request-generator"
+   },
+   {
+    "file": "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+    "link": "#custom-opa-policy-with-custom-request-generator",
+    "target_file": "api-manager/4.6.0/api-security/runtime/opa-validation/overview.md",
+    "anchor": "custom-opa-policy-with-custom-request-generator"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md",
+    "link": "#handling-the-certificates-using-the-params-file",
+    "target_file": "api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md",
+    "anchor": "handling-the-certificates-using-the-params-file"
+   },
+   {
+    "file": "api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md",
+    "link": "#handling-the-certificates-using-the-params-file",
+    "target_file": "api-manager/4.6.0/apiops/cli/advanced-topics/configuring-environment-specific-parameters.md",
+    "anchor": "handling-the-certificates-using-the-params-file"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/choosing-your-deployment-strategy.md",
+    "link": "../get-started/deployment-platforms.md#on-premises--virtual-machines-vms",
+    "target_file": "api-manager/4.6.0/get-started/deployment-platforms.md",
+    "anchor": "on-premises--virtual-machines-vms"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/choosing-your-deployment-strategy.md",
+    "link": "../get-started/deployment-platforms.md#on-premises--virtual-machines-vms",
+    "target_file": "api-manager/4.6.0/get-started/deployment-platforms.md",
+    "anchor": "on-premises--virtual-machines-vms"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/choosing-your-deployment-strategy.md",
+    "link": "../get-started/deployment-platforms.md#on-premises--virtual-machines-vms",
+    "target_file": "api-manager/4.6.0/get-started/deployment-platforms.md",
+    "anchor": "on-premises--virtual-machines-vms"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/choosing-your-deployment-strategy.md",
+    "link": "../get-started/deployment-platforms.md#on-premises--virtual-machines-vms",
+    "target_file": "api-manager/4.6.0/get-started/deployment-platforms.md",
+    "anchor": "on-premises--virtual-machines-vms"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/choosing-your-deployment-strategy.md",
+    "link": "../get-started/deployment-platforms.md#on-premises--virtual-machines-vms",
+    "target_file": "api-manager/4.6.0/get-started/deployment-platforms.md",
+    "anchor": "on-premises--virtual-machines-vms"
+   },
+   {
+    "file": "api-manager/4.6.0/get-started/choosing-your-deployment-strategy.md",
+    "link": "../get-started/deployment-patterns.md#pattern-4-fully-distributed-deployment",
+    "target_file": "api-manager/4.6.0/get-started/deployment-patterns.md",
+    "anchor": "pattern-4-fully-distributed-deployment"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-only-ldap-user-store.md",
+    "link": "#admin_ConfiguringaRead-OnlyLDAPUserStore-Updatingthesystemadministrator",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/configure-userstores/configure-primary-user-store/configuring-a-read-only-ldap-user-store.md",
+    "anchor": "admin_ConfiguringaRead-OnlyLDAPUserStore-Updatingthesystemadministrator"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "link": "#cb1-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/production-deployment-guidelines.md",
+    "anchor": "cb1-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/tuning-performance.md",
+    "link": "#configuring-wso2-api-m-to-perform-regular-cleaning",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/deployment-best-practices/tuning-performance.md",
+    "anchor": "configuring-wso2-api-m-to-perform-regular-cleaning"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager.md",
+    "link": "#Linux-Mac",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager.md",
+    "anchor": "Linux-Mac"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager.md",
+    "link": "#windows",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager.md",
+    "anchor": "windows"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager.md",
+    "link": "#step3-2",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager.md",
+    "anchor": "step3-2"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "link": "#section-6",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "anchor": "section-6"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "link": "#section-1-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "anchor": "section-1-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "link": "#section-3-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md",
+    "anchor": "section-3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "link": "#section-3-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "anchor": "section-3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "link": "#step-7",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md",
+    "anchor": "step-7"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "#step-9",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "anchor": "step-9"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "#step-9",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "anchor": "step-9"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "#section-3-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "anchor": "section-3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "link": "#step-7",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md",
+    "anchor": "step-7"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#step-9",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "step-9"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#step-10",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "step-10"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#step-9",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "step-9"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#step-10",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "step-10"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#section-3-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "section-3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "link": "#step-7",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md",
+    "anchor": "step-7"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "link": "#step-11",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "anchor": "step-11"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "link": "#section-3-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "anchor": "section-3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "link": "#step-7",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md",
+    "anchor": "step-7"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "#step-9",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "anchor": "step-9"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "#step-10",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "anchor": "step-10"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "#section-3-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "anchor": "section-3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "link": "#step-7",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md",
+    "anchor": "step-7"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "#step-6",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "anchor": "step-6"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "#section-3-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "anchor": "section-3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "link": "#step-8",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-6-all-in-one-is-as-km.md",
+    "anchor": "step-8"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "link": "#step-7",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "anchor": "step-7"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "link": "#step-5",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "anchor": "step-5"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "link": "#section-1",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "anchor": "section-1"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "link": "#step-5",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/kubernetes-deployment/openshift/openshift-deployment-overview.md",
+    "anchor": "step-5"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/managing-data-growth-and-improving-performance.md",
+    "link": "#schedule-task-for-mysql",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/managing-data-growth-and-improving-performance.md",
+    "anchor": "schedule-task-for-mysql"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/managing-data-growth-and-improving-performance.md",
+    "link": "#schedule-task-for-sql-server",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/setting-up-databases/managing-data-growth-and-improving-performance.md",
+    "anchor": "schedule-task-for-sql-server"
+   },
+   {
+    "file": "api-manager/4.6.0/install-and-setup/setup/single-node/all-in-one-deployment-overview.md",
+    "link": "#active---active-deployment",
+    "target_file": "api-manager/4.6.0/install-and-setup/setup/single-node/all-in-one-deployment-overview.md",
+    "anchor": "active---active-deployment"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/api-monetization/monetizing-an-api.md",
+    "link": "#step-4---customize-the-developer-portal-for-stripe-payment-flows",
+    "target_file": "api-manager/4.6.0/monitoring/api-monetization/monetizing-an-api.md",
+    "anchor": "step-4---customize-the-developer-portal-for-stripe-payment-flows"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/api-monetization/monetizing-an-api.md",
+    "link": "#step-3---subscribe-to-a-monetized-api",
+    "target_file": "api-manager/4.6.0/monitoring/api-monetization/monetizing-an-api.md",
+    "anchor": "step-3---subscribe-to-a-monetized-api"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/metrics/jmx-based-monitoring.md",
+    "link": "#using-the-serviceadmin-mbean",
+    "target_file": "api-manager/4.6.0/monitoring/observability/metrics/jmx-based-monitoring.md",
+    "anchor": "using-the-serviceadmin-mbean"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "link": "#cb1-1",
+    "target_file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "anchor": "cb1-1"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "link": "#cb2-1",
+    "target_file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "anchor": "cb2-1"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "link": "#cb3-1",
+    "target_file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "anchor": "cb3-1"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "link": "#cb4-1",
+    "target_file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "anchor": "cb4-1"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "link": "#cb5-1",
+    "target_file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "anchor": "cb5-1"
+   },
+   {
+    "file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "link": "#cb6-1",
+    "target_file": "api-manager/4.6.0/monitoring/observability/monitoring-http-access-logs.md",
+    "anchor": "cb6-1"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-1",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-1"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-2",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-2"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-3",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-3"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-4",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-4"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-5",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-5"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-6",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-6"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-7",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-7"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "link": "#cb1-8",
+    "target_file": "api-manager/4.6.0/reference/best-practices-endpoints.md",
+    "anchor": "cb1-8"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/customize-product/customizations/customize-the-api-store-and-gateway-urls-for-tenants.md",
+    "link": "#configure-per-tenant-service-provider-creation-for-devportal",
+    "target_file": "api-manager/4.6.0/reference/customize-product/customizations/customize-the-api-store-and-gateway-urls-for-tenants.md",
+    "anchor": "configure-per-tenant-service-provider-creation-for-devportal"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "#FAQ-Keystorepassword",
+    "target_file": "api-manager/4.6.0/reference/faq.md",
+    "anchor": "FAQ-Keystorepassword"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/faq.md",
+    "link": "#FAQ-Step1-CreateaselfsignedJavaKeyStorefileandincludeyourdomainastheCN",
+    "target_file": "api-manager/4.6.0/reference/faq.md",
+    "anchor": "FAQ-Step1-CreateaselfsignedJavaKeyStorefileandincludeyourdomainastheCN"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/governance/owasp-top-10.md",
+    "link": "#owaspapi22023-jwt-best-practice",
+    "target_file": "api-manager/4.6.0/reference/governance/owasp-top-10.md",
+    "anchor": "owaspapi22023-jwt-best-practice"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/governance/owasp-top-10.md",
+    "link": "#owaspapi32023-no-additionalProperties",
+    "target_file": "api-manager/4.6.0/reference/governance/owasp-top-10.md",
+    "anchor": "owaspapi32023-no-additionalProperties"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "link": "#operation-operationId",
+    "target_file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "anchor": "operation-operationId"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "link": "#oas2-anyOf",
+    "target_file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "anchor": "oas2-anyOf"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "link": "#oas2-oneOf",
+    "target_file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "anchor": "oas2-oneOf"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "link": "#oas3-examples-value-or-externalValue",
+    "target_file": "api-manager/4.6.0/reference/governance/wso2-rest-api-design-guidelines.md",
+    "anchor": "oas3-examples-value-or-externalValue"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously.md",
+    "link": "#AccessingAPIManagerbyMultipleDevicesSimultaneously-Issueinhavingmultipleaccesstokens",
+    "target_file": "api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously.md",
+    "anchor": "AccessingAPIManagerbyMultipleDevicesSimultaneously-Issueinhavingmultipleaccesstokens"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously.md",
+    "link": "#AccessingAPIManagerbyMultipleDevicesSimultaneously-RecommendedSolution",
+    "target_file": "api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously.md",
+    "anchor": "AccessingAPIManagerbyMultipleDevicesSimultaneously-RecommendedSolution"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously.md",
+    "link": "#AccessingAPIManagerbyMultipleDevicesSimultaneously-Howthisshouldwork",
+    "target_file": "api-manager/4.6.0/reference/guides/accessing-api-manager-by-multiple-devices-simultaneously.md",
+    "anchor": "AccessingAPIManagerbyMultipleDevicesSimultaneously-Howthisshouldwork"
+   },
+   {
+    "file": "api-manager/4.6.0/reference/vendor-extensions-catalog.md",
+    "link": "#x-wso2-pass-request-payload-to-enforcer",
+    "target_file": "api-manager/4.6.0/reference/vendor-extensions-catalog.md",
+    "anchor": "x-wso2-pass-request-payload-to-enforcer"
+   }
+  ]
+ }
+}

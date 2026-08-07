@@ -60,7 +60,7 @@ When you create multiple tenants in an API Manager deployment, the API developer
   
          [![](../../assets/img/administer/tenant-naviagtion-bar.png)](../../assets/img/administer/tenant-naviagtion-bar.png)
 
-    -   You can also browse the other tenant developer portals listed in the public developer portal. But, within other tenant developer portals, you can only subscribe to the APIs to which your tenant domain is permitted to subscribe to. At the time an API is created, the API creator can specify which tenants are allowed to subscribe to the API. For information, see [API Subscriptions](../../consume/manage-subscription/subscribe-to-an-api).
+    -   You can also browse the other tenant developer portals listed in the public developer portal. But, within other tenant developer portals, you can only subscribe to the APIs to which your tenant domain is permitted to subscribe to. At the time an API is created, the API creator can specify which tenants are allowed to subscribe to the API. For information, see [API Subscriptions](../../api-developer-portal/manage-subscription/subscribe-to-an-api.md).
 
     !!! info
         A tenant can be deleted through the `TenantMgtAdminService`. Admin service operations can be invoked using a SOAP client such as SOAP UI. Follow the below steps to configure the `TenantMgtAdminService` using SOAP UI.

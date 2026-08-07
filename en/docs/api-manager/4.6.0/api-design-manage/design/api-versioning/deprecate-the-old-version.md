@@ -18,14 +18,14 @@ content_type: "how-to"
 When you publish a new version of an API, you have to maintain the old versions of the API until all the subscribers move to the new version. However, it would be best if you encourage subscribers to use the latest version. For this use case, you can use '**Deprecate old versions after publishing the API**' option when publishing the new version.
 
 !!! note
-    For more details on the API lifecycle stages, see [API lifecycle](../../../api-design-manage/design/lifecycle-management/api-lifecycle/).
+    For more details on the API lifecycle stages, see [API lifecycle](../lifecycle-management/api-lifecycle.md).
 
 
 1.  Sign in to the WSO2 API Publisher as a user who has the `publisher` role assigned to themselves.
 
      `https://<hostname>:9443/publisher`
 
-2.  Click on the API that you created in the [previous tutorial](../../../api-design-manage/design/api-versioning/create-a-new-api-version/) (e.g., `PizzaShackAPI 2.0.0`).
+2.  Click on the API that you created in the [previous tutorial](create-a-new-api-version.md) (e.g., `PizzaShackAPI 2.0.0`).
 
 3.  Click **Lifecycle**. The API Lifecycle page appears.
 

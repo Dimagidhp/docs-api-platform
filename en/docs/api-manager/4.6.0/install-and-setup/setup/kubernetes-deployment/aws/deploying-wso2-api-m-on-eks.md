@@ -18,7 +18,7 @@ content_type: "how-to"
 This guide provides a step-by-step approach to deploying WSO2 API Manager on Amazon Elastic Kubernetes Service (EKS). This deployment follows the standard WSO2 Kubernetes architecture, extended to use AWS-specific services such as Amazon RDS/Aurora for databases and Application Load Balancer (ALB) for ingress.
 
 !!! info
-    This deployment aligns with the standard deployment models described in [WSO2 API Manager Deployment Patterns](../../../../install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/#deployment-patterns) and [API-M Deployment with All-in-One HA Setup](../../../../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/).
+    This deployment aligns with the standard deployment models described in [WSO2 API Manager Deployment Patterns](../kubernetes/kubernetes-overview.md#deployment-patterns) and [API-M Deployment with All-in-One HA Setup](../kubernetes/am-pattern-1-all-in-one-ha.md).
 
 ## Contents
 
@@ -428,10 +428,10 @@ Check:
 ## Next Steps
 
 - Set up [Rate Limiting](../../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
-- Enable [Analytics](../../../../monitoring/api-analytics/analytics-overview/)
+- Enable [Analytics](../../../../monitoring/api-analytics/analytics-overview.md)
 
 ## See Also
 
-- [Kubernetes Deployment Overview](../../../../install-and-setup/setup/kubernetes-deployment/kubernetes/kubernetes-overview/)
-- [API-M Deployment with All-in-One HA Setup](../../../../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/)
+- [Kubernetes Deployment Overview](../kubernetes/kubernetes-overview.md)
+- [API-M Deployment with All-in-One HA Setup](../kubernetes/am-pattern-1-all-in-one-ha.md)
 - [AWS Load Balancer Controller Documentation](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)

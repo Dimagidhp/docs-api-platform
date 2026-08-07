@@ -89,5 +89,5 @@ By assigning subscription tiers with appropriate depth limits, you protect your 
 
 ## See Also
 
-- For more information on setting GraphQL Query Limits in Subscription Policies, see [GraphQL Query Limits in Subscription Policies](../../../../administer/rate-limiting/manage-subscription-policies/#graphql-query-limits-in-subscription-policies).
+- For more information on setting GraphQL Query Limits in Subscription Policies, see [GraphQL Query Limits in Subscription Policies](../../../../administer/rate-limiting/manage-subscription-policies.md#graphql-query-limits-in-subscription-policies).
 - Learn how to limit query complexity to protect your backend from computationally expensive queries, see [GraphQL Query Complexity Analysis](../../../../api-design-manage/design/rate-limiting/graphql-api/query-complexity-analysis.md).

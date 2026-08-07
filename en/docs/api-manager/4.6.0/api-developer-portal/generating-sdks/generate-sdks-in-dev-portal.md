@@ -57,4 +57,4 @@ Follow the instructions below to configure the languages available for SDK gener
 
     ```
     
-3.  [Restart the server](../../install-and-setup/install/installing-the-product/running-the-api-m/) to apply the configuration changes.
+3.  [Restart the server](../../install-and-setup/install/installing-the-product/running-the-api-m.md) to apply the configuration changes.

@@ -30,7 +30,7 @@ Choreo API-M Analytics can be used to fulfill the stats and analytics needs of t
 ## Step 1: Set up analytics
 
 !!! info "Before you begin..."
-    You need to be a registered user to follow the steps below. Refer the [Analytics Getting Started Guide](../../monitoring/api-analytics/choreo-analytics/getting-started-guide/) for instructions.
+    You need to be a registered user to follow the steps below. Refer the [Analytics Getting Started Guide](../../monitoring/api-analytics/choreo-analytics/getting-started-guide.md) for instructions.
 
 To configure analytics, 
 

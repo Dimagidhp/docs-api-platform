@@ -26,7 +26,7 @@ By default, WSO2 supports rollover based on a time period. This interval is, by 
 
 ## Managing the growth of Carbon Logs
 
-Log growth in [Carbon Logs](../../../administer/logging-and-monitoring/logging/configuring-logging/#configuring-carbon-logs) can be managed by following configurations in `<API-M_HOME>/repository/conf/log4j2.properties` file.
+Log growth in [Carbon Logs](../../../monitoring/observability/configuring-logging.md#configuring-carbon-logs) can be managed by following configurations in `<API-M_HOME>/repository/conf/log4j2.properties` file.
 
 
 -   Rollover based on a time period can be configured by changing `appender.CARBON_LOGFILE.policies.time.interval` value in days (Default value is 1 day).
@@ -82,6 +82,8 @@ Log growth in [Carbon Logs](../../../administer/logging-and-monitoring/logging/c
         ```
 
         You can change the `appender.CARBON_LOGFILE.strategy.action.condition.age` parameter to accept files that are as old or older than the specified duration.
+
+<a name="managing-the-growth-of-audit-log-files"></a>
 
 #### Managing the growth of audit log files
 

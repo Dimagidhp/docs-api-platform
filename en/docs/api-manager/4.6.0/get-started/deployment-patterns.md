@@ -33,7 +33,7 @@ A single API Manager instance contains all components, including the API Control
 
 <a href="../../assets/img/setup-and-install/single-node-apim-deployment.png"><img src="../../assets/img/setup-and-install/single-node-apim-deployment.png" alt="Pattern 0: Single Node" width="60%"></a>
 
-> **View the Configuration Guides for Pattern 0:** [Deploy on VMs](../install-and-setup/setup/single-node/configuring-a-single-node/) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one/)
+> **View the Configuration Guides for Pattern 0:** [Deploy on VMs](../install-and-setup/setup/single-node/configuring-a-single-node.md) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-0-all-in-one.md)
 
 ---
 
@@ -46,7 +46,7 @@ This pattern involves running two or more identical All-in-One nodes in an activ
 
 <a href="../../assets/img/setup-and-install/active-active-apim-deployment.png"><img src="../../assets/img/setup-and-install/active-active-apim-deployment.png" alt="Pattern 1: All-in-One HA" width="60%"></a>
 
-> **View the Configuration Guides for Pattern 1:** [Deploy on VMs](../install-and-setup/setup/single-node/configuring-an-active-active-deployment/) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha/)
+> **View the Configuration Guides for Pattern 1:** [Deploy on VMs](../install-and-setup/setup/single-node/configuring-an-active-active-deployment.md) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-1-all-in-one-ha.md)
 
 ---
 
@@ -169,7 +169,7 @@ This pattern separates the API Gateway from an All-in-One node that serves as th
     
 <a href="../../assets/img/setup-and-install/simple-distributed.png"><img src="../../assets/img/setup-and-install/simple-distributed.png" alt="Pattern 2: Simple Scalable" width="80%"></a>
 
-> **View the Configuration Guides for Pattern 2:** [Deploy on VMs](../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-simple-scalable-setup/) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw/)
+> **View the Configuration Guides for Pattern 2:** [Deploy on VMs](../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-simple-scalable-setup.md) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-2-all-in-one-gw.md)
 
 ---
 
@@ -183,7 +183,7 @@ This pattern separates the API Control Plane, Traffic Manager, and Gateway into 
 
 <a href="../../assets/img/setup-and-install/distributed-deployment-tm.png"><img src="../../assets/img/setup-and-install/distributed-deployment-tm.png" alt="Pattern 3: Recommended Distributed" width="80%"></a>
 
-> **View the Configuration Guides for Pattern 3:** [Deploy on VMs](../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup/) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw/)
+> **View the Configuration Guides for Pattern 3:** [Deploy on VMs](../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup.md) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-3-acp-tm-gw.md)
 
 ---
 
@@ -196,7 +196,7 @@ This pattern extends Pattern 3 by also separating the Key Manager into its own d
 
 <a href="../../assets/img/setup-and-install/distributed-deployment-km.png"><img src="../../assets/img/setup-and-install/distributed-deployment-km.png" alt="Pattern 4: Fully Distributed" width="80%"></a>
 
-> **View the Configuration Guides for Pattern 4:** [Deploy on VMs](../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup-with-km-separated/) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km/)
+> **View the Configuration Guides for Pattern 4:** [Deploy on VMs](../install-and-setup/setup/distributed-deployment/deploying-wso2-api-m-in-a-distributed-setup-with-km-separated.md) or [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-4-acp-tm-gw-km.md)
 
 ---
 
@@ -209,7 +209,7 @@ This is a variation of Pattern 2 where the Gateway and Key Manager are separated
   
 <a href="../../assets/img/setup-and-install/deployment-cp-gw-km.png"><img src="../../assets/img/setup-and-install/deployment-cp-gw-km.png" alt="Pattern 5: Simple Scalable with KM" width="80%"></a>
 
-> **View the Configuration Guides for Pattern 5:** [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km/)
+> **View the Configuration Guides for Pattern 5:** [Deploy on Kubernetes](../install-and-setup/setup/kubernetes-deployment/kubernetes/am-pattern-5-all-in-one-gw-km.md)
 
 ---
 
@@ -233,4 +233,4 @@ For global enterprises, deploying across multiple datacenters or cloud regions i
     *   **Active-Active**: Each region has a complete, synchronized API Manager deployment, and traffic is routed to the nearest or healthiest region.
     *   **Active-Passive (with a Centralized Control Plane)**: A single region hosts the master Control Plane, while other regions run synchronized data planes (Gateways) to handle local traffic. This simplifies management while still providing global traffic distribution.
 
-> **View the Configuration Guides:**  [Multi-DC Deployment Guides](../install-and-setup/setup/multi-dc-deployment/multi-dc-deployment-patterns-overview/)
+> **View the Configuration Guides:**  [Multi-DC Deployment Guides](../install-and-setup/setup/multi-dc-deployment/multi-dc-deployment-patterns-overview.md)

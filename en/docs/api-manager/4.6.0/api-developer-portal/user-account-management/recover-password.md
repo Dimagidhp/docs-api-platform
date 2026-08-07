@@ -16,7 +16,7 @@ content_type: "how-to"
 # Recover Password
 
 !!! note
-    The password recovery feature does not work out-of-the-box because an email server needs to be configured to be able to send the password recovery email. For more information, see [Enable Password Recovery](../../install-and-setup/setup/security/user-account-management/#enable-password-recovery).
+    The password recovery feature does not work out-of-the-box because an email server needs to be configured to be able to send the password recovery email. For more information, see [Enable Password Recovery](../../install-and-setup/setup/security/user-account-management.md#enable-password-recovery).
 
 1.  Click **Forgot Password** on the Sign In page and request a password change.
 

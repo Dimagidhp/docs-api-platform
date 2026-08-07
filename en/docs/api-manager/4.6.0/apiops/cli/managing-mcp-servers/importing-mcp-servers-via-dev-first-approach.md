@@ -20,11 +20,11 @@ content_type: "how-to"
 !!! info
     **Before you begin** 
 
-    -   Make sure that the apictl is downloaded and initialized, if not, follow the steps in [Download and Initialize the apictl](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl).
+    -   Make sure that the apictl is downloaded and initialized, if not, follow the steps in [Download and Initialize the apictl](../getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl).
 
     -   Make sure you already have added an environment using the apictl for the WSO2 API-M environment you plan to import the MCP Server to. 
 
-        If not, follow the steps in [Add an Environment](../../../install-and-setup/setup//api-controller/getting-started-with-wso2-api-controller#add-an-environment).
+        If not, follow the steps in [Add an Environment](../getting-started-with-wso2-api-controller.md#add-an-environment).
 
 
 ## Import an MCP Server project
@@ -32,9 +32,9 @@ content_type: "how-to"
 !!! info
     **Before you begin...** 
 
-    -   Make sure you have already created an environment to which you are planning to import the MCP Server. If not, follow steps in [Add an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#add-an-environment).
+    -   Make sure you have already created an environment to which you are planning to import the MCP Server. If not, follow steps in [Add an Environment](../getting-started-with-wso2-api-controller.md#add-an-environment).
     
-    -   Make sure you have logged-in to the importing environment. If not, follow steps in [Login to an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#login-to-an-environment). 
+    -   Make sure you have logged-in to the importing environment. If not, follow steps in [Login to an Environment](../getting-started-with-wso2-api-controller.md#login-to-an-environment). 
 
 
 !!! tip
@@ -64,7 +64,7 @@ You can import the MCP Server to an environment using any of the following comma
             `--skip-deployments` : Skip the deployment environments specified in the project and only update the current MCP Server.   
             `--preserve-provider` : Preserve the existing provider of MCP Server after importing. The default value is `true`.   
             `--update` : Update an existing MCP Server or create a new MCP Server in the importing environment.    
-            `--params` : Provide an API Manager environment params file. For more information, see [Configuring Environment Specific Parameters](../../../install-and-setup/setup/api-controller/advanced-topics/configuring-environment-specific-parameters).    
+            `--params` : Provide an API Manager environment params file. For more information, see [Configuring Environment Specific Parameters](../advanced-topics/configuring-environment-specific-parameters.md).    
             `--skip-cleanup` : Leave all temporary files created in apictl during import process. The default value is `false`.    
     
     !!! note

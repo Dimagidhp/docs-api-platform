@@ -27,12 +27,12 @@ TCPMon is available in the `<API-M_HOME>/bin` directory of any WSO2 Carbon based
 
 Ensure that the following prerequisites are fulfilled in order to run TCPMon.
 
--   [Install JDK](../../../install-and-setup/setup/reference/product-compatibility/#tested-jdks).
+-   [Install JDK](../../../reference/product-compatibility.md#tested-jdks).
 -   Set the `JAVA_HOME` variable. 
      This setting is required only if you are using the TCPMon available in the WSO2 Carbon based product pack.
 
     !!! info
-        For information on how to set the `JAVA_HOME` variable, go to [Installing the Product](../../../install-and-setup/install/installing-the-product/installing-api-m-runtime/#setting-up-java_home), select the instructions relevant to your operating system and refer to the 'Setting JAVA\_HOME' section.
+        For information on how to set the `JAVA_HOME` variable, go to [Installing the Product](../../../install-and-setup/install/installing-the-product/installing-api-m-runtime.md#setting-up-java_home), select the instructions relevant to your operating system and refer to the 'Setting JAVA\_HOME' section.
 
 
 Follow the instructions below to run the TCPMon available with your WSO2 Carbon product pack:

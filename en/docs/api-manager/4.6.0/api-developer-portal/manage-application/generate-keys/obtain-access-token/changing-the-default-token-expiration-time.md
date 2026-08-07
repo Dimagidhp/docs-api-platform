@@ -91,4 +91,4 @@ Follow the instructions below to configure the token expiration time at the appl
 
 
 !!! info "More methods to optimize key validation"
-    In addition, see [Configuring Caching](../../../../install-and-setup/setup/advance-configurations/configuring-caching/) for several caching options that you can use to optimize key validation.
+    In addition, see [Configuring Caching](../../../../install-and-setup/setup/advance-configurations/configuring-caching.md) for several caching options that you can use to optimize key validation.

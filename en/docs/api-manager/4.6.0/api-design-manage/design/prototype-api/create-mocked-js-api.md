@@ -24,7 +24,7 @@ Note the following when creating an interface for the API.
 - You can create either a new API or a new version of an existing API for this purpose.
 - Leave the endpoint field empty since the gateway will be acting as a backend using the javascript definitions we provide.
 
-For this example, let's follow [steps 1 to 5 in the Create a REST API from an OpenAPI Definition - basic flow guide](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition/#create-an-api-using-the-basic-flow) to create the basic structure of the API interface using the following details.
+For this example, let's follow [steps 1 to 5 in the Create a REST API from an OpenAPI Definition - basic flow guide](../create-api/create-rest-api/create-a-rest-api-from-an-openapi-definition.md#create-an-api-using-the-basic-flow) to create the basic structure of the API interface using the following details.
 
 | **Field**    | **Value**                        |
 |----------|-------------------------------------|
@@ -185,14 +185,14 @@ Follow the instructions below to add a mock implementation to the API:
 1. Click **View in Dev Portal** to navigate to the Developer Portal.
 
     !!! note 
-        If you have enabled security for the prototype API, follow the [Subscribe to an API](../../../api-developer-portal/manage-subscription/subscribe-to-an-api/) guide to subscribe and obtain an access token to invoke the prototype API.
+        If you have enabled security for the prototype API, follow the [Subscribe to an API](../../../api-developer-portal/manage-subscription/subscribe-to-an-api.md) guide to subscribe and obtain an access token to invoke the prototype API.
 
 2. Click **Try Out** to navigate to the API Console.
 
 3. If you have enabled security, you can either use the access token that you got from the above step or use the **GET TEST KEY** option.
      
     !!! note
-        Skip this step if you have [disabled security for the API](../../../manage-apis/design/api-security/api-authentication/disable-security/), and leave the **Access Token** field empty.
+        Skip this step if you have [disabled security for the API](../../../api-security/runtime/api-authentication/disable-security.md), and leave the **Access Token** field empty.
 
      [![Try out prototype](../../../assets/img/learn/prototype-api/create-prototype-api-dev-portal-tryout-petstore.png)](../../../assets/img/learn/prototype-api/create-prototype-api-dev-portal-tryout-petstore.png)
 
@@ -328,11 +328,11 @@ It is recommended to use an Allow List approach for both class and method access
 
 Learn more on the concepts that you need to know when creating a Prototype API:
 
--   [Endpoints](../../../manage-apis/design/endpoints/endpoint-types/)
--   [API Security](../../../manage-apis/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
+-   [Endpoints](../endpoints/endpoint-types.md)
+-   [API Security](../../../api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens.md)
 -   [Rate Limiting](../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
--   [Life Cycle Management](../../../manage-apis/design/lifecycle-management/api-lifecycle/)
--   [API Monetization](../../../manage-apis/design/api-monetization/monetizing-an-api/)
--   [API Visibility](../../../manage-apis/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation](../../../manage-apis/design/api-documentation/add-api-documentation/)
--   [Custom Properties](../../../manage-apis/design/create-api/adding-custom-properties-to-apis/)
+-   [Life Cycle Management](../lifecycle-management/api-lifecycle.md)
+-   [API Monetization](../../../monitoring/api-monetization/monetizing-an-api.md)
+-   [API Visibility](../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+-   [API Documentation](../api-documentation/add-api-documentation.md)
+-   [Custom Properties](../create-api/adding-custom-properties-to-apis.md)

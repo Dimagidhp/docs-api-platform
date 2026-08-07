@@ -29,9 +29,9 @@ Follow the instructions below to configure and deploy API-M by using an Active-A
     `wso2carbon.jks` is configured with private key and self signed public key pair for all purposes, such as encrypting 
     sensitive information, communicating over SSL etc. 
     
-    In a **production setup**, it is advised to set up several different keystores with separate trust chains for different use cases. For more information, see [Recommendations for setting up keystores in WSO2 products](../../../install-and-setup/setup/security/configuring-keystores/configuring-keystores-in-wso2-api-manager/#recommendations-for-setting-up-keystores).
+    In a **production setup**, it is advised to set up several different keystores with separate trust chains for different use cases. For more information, see [Recommendations for setting up keystores in WSO2 products](../security/configuring-keystores/configuring-keystores-in-wso2-api-manager.md#recommendations-for-setting-up-keystores).
 
-To create an all purpose keystore or multiple keystores for authentication and protection of data, follow the steps in [Creating New Keystores](../../../install-and-setup/setup/security/configuring-keystores/keystore-basics/creating-new-keystores/). 
+To create an all purpose keystore or multiple keystores for authentication and protection of data, follow the steps in [Creating New Keystores](../security/configuring-keystores/keystore-basics/creating-new-keystores.md). 
 
 !!! tip
     You should use the same keystore and truststore for SSL in both WSO2 API-M instances.
@@ -239,7 +239,7 @@ enabled = true
 
 API Manager Analytics is delivered via the API Manager Analytics cloud solution. You need to configure the API Manager Gateway to publish analytics data into the cloud.
 
-See the instructions on [configuring the API Gateway](../../../monitoring/api-analytics/choreo-analytics/getting-started-guide/#step-3-configure-the-gateway) with the cloud-based analytics solution.
+See the instructions on [configuring the API Gateway](../../../monitoring/api-analytics/choreo-analytics/getting-started-guide.md#step-3-configure-the-gateway) with the cloud-based analytics solution.
 
 ## Step 11 - Configure Production Hardening
 
@@ -247,7 +247,7 @@ In a **production setup**, ensure that you have taken into account the respectiv
 (e.g., changing and encrypting the default passwords, configuring JVM security etc.) and other production deployment 
 guidelines (e.g., tuning parameters, backup and recovery recommendations etc.) before deploying WSO2 API-M nodes. 
 
-For more information on security hardening guidelines, see [Security Guidelines for Production Deployment](../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment/).
+For more information on security hardening guidelines, see [Security Guidelines for Production Deployment](../deployment-best-practices/security-guidelines-for-production-deployment.md).
 
 For more information on other production deployment guidelines, see [Production Deployment Guidelines](../../..//install-and-setup/setup/deployment-best-practices/production-deployment-guidelines/#common-guidelines-and-checklist/).
 

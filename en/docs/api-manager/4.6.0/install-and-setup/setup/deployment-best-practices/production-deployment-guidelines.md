@@ -42,7 +42,7 @@ Given below is a checklist that will guide you to set up your production environ
                      <strong>Related links</strong>
                   </div>
                   <div class="panelContent">
-                     <p><a href="../../../../install-and-setup/setup/deployment-best-practices/security-guidelines-for-production-deployment">Security Guidelines for a Production Deployment</a></p>
+                     <p><a href="../security-guidelines-for-production-deployment.md">Security Guidelines for a Production Deployment</a></p>
                   </div>
                </div>
             </div>
@@ -65,7 +65,7 @@ Given below is a checklist that will guide you to set up your production environ
                      <strong>Related links</strong>
                   </div>
                   <div class="panelContent">
-                     <p><a href="../../../../install-and-setup/setup/deployment-best-practices/changing-the-hostname">Changing the hostname</a></p>
+                     <p><a href="../changing-the-hostname.md">Changing the hostname</a></p>
                   </div>
                </div>
             </div>
@@ -79,7 +79,7 @@ Given below is a checklist that will guide you to set up your production environ
                <p>Note that the default setup does not include database backup procedures. The production setup should obviously need to have regular database backup procedures configured.</p>
                <ul>
                   <li>
-                     <a href="../../../../install-and-setup/setup/setting-up-databases/overview">Database registry</a> for the API-M runtime.
+                     <a href="../../setting-up-databases/overview.md">Database registry</a> for the API-M runtime.
                   </li>
                </ul>
             </div>
@@ -128,7 +128,7 @@ Given below is a checklist that will guide you to set up your production environ
          <td>
             If the runtime is hosted behind a proxy such as ApacheHTTPD, you can configure the runtime  to use the proxy server. See the following topics for instructions:
             <ul>
-               <li>Configuring a <a href="../../../../install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer">proxy server for the API-M runtime</a>.</li>
+               <li>Configuring a <a href="../../setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer.md">proxy server for the API-M runtime</a>.</li>
                <li>Configuring a <a href="https://mi.docs.wso2.com/en/latest/install-and-setup/setup/configuring-proxy-servers/">proxy server for the Micro Integrator runtime</a>.</li>
             </ul>
          </td>
@@ -165,7 +165,7 @@ maxHttpHeaderSize = 32768</code></pre>
       </tr>
       <tr class="odd">
          <td>Data backup and archiving</td>
-         <td>Implement a <a href="../../../../install-and-setup/setup/deployment-best-practices/backup-recovery">backup and recovery strategy</a> for your system.</td>
+         <td>Implement a <a href="../backup-recovery.md">backup and recovery strategy</a> for your system.</td>
       </tr>
    </tbody>
 </table>

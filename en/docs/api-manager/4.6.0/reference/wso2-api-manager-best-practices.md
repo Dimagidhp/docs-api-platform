@@ -25,10 +25,10 @@ Here are the guidelines and recommendations to design and deploy APIs using WSO2
 
 ## Best practices for creating an API
 
--   [Create APIs](../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) for dedicated backend services.
--   For each of the resources, decide on the [HTTP methods that are used to perform the required application functions](../get-started/key-concepts/) . This includes the use of applicable HTTP headers.
+-   [Create APIs](../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md) for dedicated backend services.
+-   For each of the resources, decide on the [HTTP methods that are used to perform the required application functions](../get-started/key-concepts.md) . This includes the use of applicable HTTP headers.
 -   Decide on special behaviors required by the application (e.g., concurrency control, long running requests).
--   Identify potential [error-prone situations and define corresponding error messages](../reference/troubleshooting/error-handling/) .
+-   Identify potential [error-prone situations and define corresponding error messages](troubleshooting/error-handling.md) .
 
 ### Proper Naming APIs
 
@@ -36,9 +36,13 @@ It's important to have proper names for services and service paths. For example,
 
 Following are some of the guidelines for designing proper API/Resource paths and names. Note that these are not mandatory rules but best practices.
 
+<a name="naming-resources"></a>
+
 #### Naming Resources
 
 Atomic resources, collection resources, and composite resources should be named as nouns because they represent ‘things’; not ‘actions’. Actions lean more towards verbs as names of resources. Processing-function resources and controller resources should be named as verbs because they represent actions. Function resources and controller resources should not be sub-resources of individual resources.
+
+<a name="naming-complex-resources"></a>
 
 #### Naming Complex Resources
 
@@ -48,9 +52,13 @@ Use lower case characters only in names. This is because the rules about which U
 
 The version of an API is part of its URI. It is usually given as a pair of integers (separated by a dot) referred to as the major and the minor number of the version, preceded by the lowercase letter "v". For example, a valid version string in the base path is v2.1, indicating the first minor version of the second major version of the corresponding API.
 
+<a name="advantages-of-api-versioning"></a>
+
 #### Advantages of API Versioning
 
 A proper versioning strategy is helpful for all API users and clients to communicate with APIs easily and effectively. WSO2 API Manager has versioning support. You can copy existing APIs and create new versions of the same APIs. The recommended way to change the functionality of a running API is to create a new version from the existing API. You can then modify the new version, and test the functionalities of the new version before publishing it.
+
+<a name="major-minor-patch-versions"></a>
 
 #### Major, Minor, Patch Versions
 

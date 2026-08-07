@@ -15,13 +15,13 @@ content_type: "how-to"
 
 # Customizing API Template
 
-When an API is [published](../../../../manage-apis/deploy-and-publish/publish-on-dev-portal/publish-an-api/) and [deployed](../../../../manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/) in the Gateway, corresponding API is generated and deployed in the gateway in-memory. 
+When an API is [published](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md) and [deployed](../../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md) in the Gateway, corresponding API is generated and deployed in the gateway in-memory. 
  
 An API's gateway configuration file(Synapse configuration) content contains API metadata, API resource information, properties etc and it is generated based on the API template file which can be found in `<APIM_HOME>/repository/resources/api_templates/velocity_template.xml` location. You can modify the default API template definition in order to customize the synapse configurations of the API.
 
 ## Engaging a custom handler based on API Properties
 
-In API Manager, you can implement and engage custom handlers to customize the default mediation flow of API requests. See [Writing a custom handler]() for more information. The [API properties](../../../../manage-apis/design/create-api/adding-custom-properties-to-apis/) can be used to conditionally engage these custom handlers for APIs.
+In API Manager, you can implement and engage custom handlers to customize the default mediation flow of API requests. See [Writing a custom handler]() for more information. The [API properties](../../../../api-design-manage/design/create-api/adding-custom-properties-to-apis.md) can be used to conditionally engage these custom handlers for APIs.
 
 Following steps illustrate how you can enable a custom handler for a selected set of APIs which are having a particular property value. 
 
@@ -89,7 +89,7 @@ Following steps illustrate how you can enable a custom handler for a selected se
      
  3. Save the changes.
  
- 4. Add `custom_authentication=true` as an [additional property](../../../../manage-apis/design/create-api/adding-custom-properties-to-apis/) for those APIs which you need to enable the custom handler.
+ 4. Add `custom_authentication=true` as an [additional property](../../../../api-design-manage/design/create-api/adding-custom-properties-to-apis.md) for those APIs which you need to enable the custom handler.
  
     <a href="../../../../../assets/img/develop/extensions/custom_properties.png" ><img src="../../../../../assets/img/develop/extensions/custom_properties.png" alt="Add Custom Property" 
            title="Add Custom Property" width="80%" /></a>

@@ -103,12 +103,12 @@ You need to write a custom Key Manager connector as explained below.
   
 3. Extend `AbstractKeyManager`.
 
-      The `AbstractKeyManager` implements the `KeyManager` interface. For more information on the operations carried out on the `KeyManager` interface, see [Extending the Key Manager Interface](../../../develop/extending-api-manager/extending-key-management/extending-the-key-manager-interface).
+      The `AbstractKeyManager` implements the `KeyManager` interface. For more information on the operations carried out on the `KeyManager` interface, see [Extending the Key Manager Interface](../../../reference/customize-product/extending-api-manager/extending-key-management/extending-the-key-manager-interface.md).
 
 
       In the sample project, the `AbstractKeyManager` interface has been extended using the `org.wso2.custom.client.CustomOAuthClient.java` class.
 
-4. If you need to customize the `JWTValidation` interface, you need to [extend the JWTValidator](../../../develop/extending-api-manager/extending-key-management/extending-key-validation).
+4. If you need to customize the `JWTValidation` interface, you need to [extend the JWTValidator](../../../reference/customize-product/extending-api-manager/extending-key-management/extending-key-validation.md).
 
 5. Build the project.
 

@@ -164,8 +164,8 @@ Before creating a custom AI service provider, ensure you have:
 
 Once your custom AI service provider is configured:
 
-1. **Create AI APIs** using the configured provider - See [Getting Started with AI Gateway](../../../ai-gateway/getting-started-with-ai-gateway/)
-2. **Set up rate limiting** and **policies** specific to your AI service - See [Rate Limiting](../../../ai-gateway/rate-limiting/) and [API Policies](../../../api-design-manage/design/api-policies/overview/)
-3. **Configure monitoring** and **analytics** to track usage - See [API Analytics](../../../monitoring/api-analytics/analytics-overview/)
-4. **Test the integration** with sample requests - See [AI Gateway Overview](../../../ai-gateway/ai-gateway-overview/)
-5. **Deploy to production** and manage access through the API Gateway - See [Deploy an API](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/)
+1. **Create AI APIs** using the configured provider - See [Getting Started with AI Gateway](../../getting-started-with-ai-gateway.md)
+2. **Set up rate limiting** and **policies** specific to your AI service - See [Rate Limiting](../../rate-limiting.md) and [API Policies](../../../api-design-manage/design/api-policies/overview.md)
+3. **Configure monitoring** and **analytics** to track usage - See [API Analytics](../../../monitoring/api-analytics/analytics-overview.md)
+4. **Test the integration** with sample requests - See [AI Gateway Overview](../../ai-gateway-overview.md)
+5. **Deploy to production** and manage access through the API Gateway - See [Deploy an API](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md)

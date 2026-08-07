@@ -29,7 +29,7 @@ Choose a deployment option to start WSO2 API Manager All-in-one package. The All
     1. Install [Java SE Development Kit (JDK)](https://adoptium.net/temurin/releases/?arch=any&version=21) version **21** and set the `JAVA_HOME` environment variable.
     
         !!! tip
-            For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install](../install-and-setup/install/installing-the-product/installing-api-m-runtime/#setting-up-java_home)
+            For more information on setting the `JAVA_HOME` environment variable for different operating systems, see [Setup and Install](../install-and-setup/install/installing-the-product/installing-api-m-runtime.md#setting-up-java_home)
     
     2. Download WSO2 API-Manager All-in-one package.
     - [Open Source Distribution](https://github.com/wso2/product-apim/releases/tag/v4.6.0)

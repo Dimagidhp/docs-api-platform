@@ -26,20 +26,20 @@ Organizations can configure multiple Key Managers within a single tenant, allowi
 ## Supported Third-Party Key Managers
 
 ### Enterprise Identity Providers
-- **[WSO2 Identity Server](../../../api-security/key-management/third-party-key-managers/configure-wso2is-connector/)**: Full-featured identity and access management platform
-- **[WSO2 Identity Server 7.x](../../../api-security/key-management/third-party-key-managers/configure-wso2is7-connector/)**: Latest identity server with enhanced capabilities  
-- **[Keycloak](../../../api-security/key-management/third-party-key-managers/configure-keycloak-connector/)**: Open-source identity and access management solution
+- **[WSO2 Identity Server](configure-wso2is-connector.md)**: Full-featured identity and access management platform
+- **[WSO2 Identity Server 7.x](configure-wso2is7-connector.md)**: Latest identity server with enhanced capabilities  
+- **[Keycloak](configure-keycloak-connector.md)**: Open-source identity and access management solution
 
 ### Cloud Identity Services
-- **[Okta](../../../api-security/key-management/third-party-key-managers/configure-okta-connector/)**: Cloud-based identity service integration
-- **[Auth0](../../../api-security/key-management/third-party-key-managers/configure-auth0-connector/)**: Developer-focused identity platform
-- **[Azure AD](../../../api-security/key-management/third-party-key-managers/configure-azure-ad-key-manager/)**: Microsoft Azure Active Directory integration
+- **[Okta](configure-okta-connector.md)**: Cloud-based identity service integration
+- **[Auth0](configure-auth0-connector.md)**: Developer-focused identity platform
+- **[Azure AD](configure-azure-ad-key-manager.md)**: Microsoft Azure Active Directory integration
 
 ### Enterprise Platforms
-- **[PingFederate](../../../api-security/key-management/third-party-key-managers/configure-pingfederate-connector/)**: Enterprise federation and single sign-on
-- **[ForgeRock](../../../api-security/key-management/third-party-key-managers/configure-forgerock-connector/)**: ForgeRock Identity Platform integration
+- **[PingFederate](configure-pingfederate-connector.md)**: Enterprise federation and single sign-on
+- **[ForgeRock](configure-forgerock-connector.md)**: ForgeRock Identity Platform integration
 
 ### Custom Integration
-- **[Custom Key Manager](../../../api-security/key-management/third-party-key-managers/configure-custom-connector/)**: Build connectors for proprietary authorization servers
-- **[Custom Key Manager (Out-of-Band Provisioning)](../../../api-security/key-management/third-party-key-managers/configure-custom-km-out-of-band/)**: Integrate any external authorization server using Out-of-Band provisioning mode
-- **[Global Key Manager](../../../api-security/key-management/third-party-key-managers/configure-global-key-manager/)**: Cross-tenant key manager configuration
+- **[Custom Key Manager](configure-custom-connector.md)**: Build connectors for proprietary authorization servers
+- **[Custom Key Manager (Out-of-Band Provisioning)](configure-custom-km-out-of-band.md)**: Integrate any external authorization server using Out-of-Band provisioning mode
+- **[Global Key Manager](configure-global-key-manager.md)**: Cross-tenant key manager configuration

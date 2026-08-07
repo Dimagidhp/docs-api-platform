@@ -237,12 +237,12 @@ The following is a sample Gateway Wire Log for an API request.
 
 ## HTTP Access Logs
 
-HTTP requests/responses are logged in Access Logs to monitor the activities related to an application's usage. For instructions on how to configure and use the HTTP Access Logs in WSO2 API Manager, see [Monitoring the HTTP Access Logs](../../monitoring/observability/monitoring-http-access-logs/).
+HTTP requests/responses are logged in Access Logs to monitor the activities related to an application's usage. For instructions on how to configure and use the HTTP Access Logs in WSO2 API Manager, see [Monitoring the HTTP Access Logs](monitoring-http-access-logs.md).
 
 ## Audit Logs
 
-Audit Logs are used for tracking the sequence of actions that affect a particular task carried out on the server. For instructions on how to configure and use Audit Logs in WSO2 API Manager, see [Monitoring Audit Logs](../../monitoring/observability/monitoring-audit-logs/).
+Audit Logs are used for tracking the sequence of actions that affect a particular task carried out on the server. For instructions on how to configure and use Audit Logs in WSO2 API Manager, see [Monitoring Audit Logs](monitoring-audit-logs.md).
 
 ## API Logs
 
-API Logs are used for tracking requests and responses going through the WSO2 API Gateway. API Logs are disabled by default and can be enabled per API using Devops REST API or APICTL. For instructions on how to configure and use API Logs in WSO2 API Manager, see [Monitoring API Logs](../../monitoring/observability/monitoring-api-logs/).
+API Logs are used for tracking requests and responses going through the WSO2 API Gateway. API Logs are disabled by default and can be enabled per API using Devops REST API or APICTL. For instructions on how to configure and use API Logs in WSO2 API Manager, see [Monitoring API Logs](monitoring-api-logs.md).

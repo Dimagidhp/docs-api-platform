@@ -35,6 +35,8 @@ As WSO2 API Manager is a Java application, you can generally run it on most oper
 |Rocky Linux         | 9.3          |
 |RHEL                | 9            |
 
+<a name="tested-jdks"></a>
+
 #### Tested JDKs
 
 The **WSO2 API-M** runtime has been tested with the following JDKs:

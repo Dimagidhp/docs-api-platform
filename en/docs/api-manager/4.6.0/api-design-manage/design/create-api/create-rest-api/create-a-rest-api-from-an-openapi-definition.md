@@ -255,17 +255,17 @@ The Transport Level Security defines the transport protocol on which the API is 
 
 Now, a REST API from an OpenAPI Definition has been created and configured successfully. 
 
-Next, [deploy the API](../../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API](../../../../api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/).
+Next, [deploy the API](../../../deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md), [test the API](test-a-rest-api.md), and finally [publish the API](../../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ## See Also
 
 Learn more on the concepts that you need to know when creating a REST API:
 
--   [Endpoints](../../../../manage-apis/design/endpoints/endpoint-types/)
--   [API Security](../../../../manage-apis/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
+-   [Endpoints](../../endpoints/endpoint-types.md)
+-   [API Security](../../../../api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens.md)
 -   [Rate Limiting](../../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
--   [Life Cycle Management](../../../../manage-apis/design/lifecycle-management/api-lifecycle/)
--   [API Monetization](../../../../manage-apis/design/api-monetization/monetizing-an-api/)
--   [API Visibility](../../../../manage-apis/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation](../../../../manage-apis/design/api-documentation/add-api-documentation/)
--   [Custom Properties](../../../../manage-apis/design/create-api/adding-custom-properties-to-apis/)
+-   [Life Cycle Management](../../lifecycle-management/api-lifecycle.md)
+-   [API Monetization](../../../../monitoring/api-monetization/monetizing-an-api.md)
+-   [API Visibility](../../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+-   [API Documentation](../../api-documentation/add-api-documentation.md)
+-   [Custom Properties](../adding-custom-properties-to-apis.md)

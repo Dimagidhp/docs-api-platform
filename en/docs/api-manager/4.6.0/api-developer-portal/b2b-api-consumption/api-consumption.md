@@ -26,7 +26,7 @@ Before this release, WSO2 API Manager operated without a defined organizational 
 
 The WSO2 API Manager B2B Organization feature is compatible with any Identity Server that supports organization hierarchies. To utilize the Identity Server's organization hierarchy within API Manager, we need to configure it as a federated identity provider. This documentation uses WSO2 Identity Server 7.1.0 as an example, due to its built-in organization support.
 
-For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 Identity Server as a federated authenticator](../../manage-apis/design/b2b-api-management/setup-identity-server/)
+For more information on setting up WSO2 Identity Server 7.1.0, see [Setup WSO2 Identity Server as a federated authenticator](setup-identity-server.md)
 
 
 ## Set Up WSO2 API Manager

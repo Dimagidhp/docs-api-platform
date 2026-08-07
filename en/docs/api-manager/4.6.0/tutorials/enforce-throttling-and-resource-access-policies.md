@@ -19,7 +19,7 @@ content_type: "how-to"
 !!! note
     This tutorial uses the `PizzaShack` API, which has  GET and POST methods to access it and a rate limiting policy enforced.
 
-    **Before you begin** , follow the [Create and Publish an API](../create-api/create-rest-api/create-a-rest-api/) to create and publish the `PizzaShack` API and then the [Subscribe to an API](../consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/) to subscribe to the API using the `Bronze` rate limiting tier.
+    **Before you begin** , follow the [Create and Publish an API](../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md) to create and publish the `PizzaShack` API and then the [Subscribe to an API](../api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md) to subscribe to the API using the `Bronze` rate limiting tier.
 
 
 After you created, published, and subscribed to the API, let's see how the API Gateway enforces rate limiting and resource access policies to the API.

@@ -24,7 +24,7 @@ This page describes the default ports used by each runtime of WSO2 API Manager.
 Listed below are the ports used by the API-M runtime when the [port offset](../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#configuring-the-port-offset) is 0.
 
 !!! Info
-    See the instructions on [changing the default API-I ports](../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset/#changing-the-default-api-m-ports).
+    See the instructions on [changing the default API-I ports](../install-and-setup/setup/deployment-best-practices/changing-the-default-ports-with-offset.md#changing-the-default-api-m-ports).
 
 <table>
     <tr>

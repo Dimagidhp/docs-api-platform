@@ -40,4 +40,4 @@ If you already have an existing application, follow the instructions below to su
     [![Subscribe to new app](../../assets/img/learn/subscription-list.png)](../../assets/img/learn/subscription-list.png)
 
 
-If you do not have an existing application, you can create one and then subscribe to the MCP Server. For detailed steps, refer to [Subscribe to an API](../../consume/manage-subscription/subscribe-to-an-api/), as the process is similar.
+If you do not have an existing application, you can create one and then subscribe to the MCP Server. For detailed steps, refer to [Subscribe to an API](../../api-developer-portal/manage-subscription/subscribe-to-an-api.md), as the process is similar.

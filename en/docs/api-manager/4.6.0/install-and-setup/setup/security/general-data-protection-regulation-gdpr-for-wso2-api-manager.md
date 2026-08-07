@@ -250,6 +250,8 @@ Follow the instructions below to run the Forget-Me Tool in standalone mode:
     
      Example:  `Report-log-file-1598483873677.txt`
      
+<a name="supported-command-line-options-when-running-the-forget-me-tool"></a>
+
 #### Supported command-line options when running the Forget-Me Tool
 
 The following is the list of all the command-line options that can be used with this command.

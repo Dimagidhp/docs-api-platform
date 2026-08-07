@@ -25,7 +25,7 @@ OpenTracing aims to be an open, vendor-neutral standard for distributed systems 
  - Zipkin
  - Log
 
-For more information, see [OpenTracer Configurations](../../../reference/config-catalog/#api-m-open-tracer-configurations).
+For more information, see [OpenTracer Configurations](../../../reference/config-catalog.md#api-m-open-tracer-configurations).
 
 ## Enabling Jaeger Tracing
 

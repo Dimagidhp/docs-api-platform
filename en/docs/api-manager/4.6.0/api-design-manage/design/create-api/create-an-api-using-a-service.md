@@ -27,7 +27,7 @@ More information:
 
 - For information on creating and publishing a REST API based on an integration service, see [Exposing an Integration Service as a Managed API](../../../integrate/develop/working-with-service-catalog.md).
 
-- For information on creating and publishing a Streaming API based on a streaming integration service, see [Exposing a Stream as a Managed API](../../../use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog/).
+- For information on creating and publishing a Streaming API based on a streaming integration service, see [Exposing a Stream as a Managed API](../../../use-cases/streaming-usecase/exposing-stream-as-managed-api-in-service-catalog.md).
 
 ## Step 2 - Discover the services
 
@@ -77,19 +77,19 @@ Follow the instructions below to discover the integration services:
 
      Now, you have successfully created an API using a service.
 
-After you complete configuring the API, [Publish the API](../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api/).
+After you complete configuring the API, [Publish the API](../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ## See Also
 
 Learn more on the concepts that you need to know when creating an API:
 
- - [Endpoints](../../../api-design-manage/design/endpoints/endpoint-types/)
- -   [API Security](../../../api-security/runtime/secure-apis-using-oauth2-tokens/)
+ - [Endpoints](../endpoints/endpoint-types.md)
+ -   [API Security](../../../api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens.md)
  -   Rate Limiting:
      -   [Rate Limiting for REST APIs](../../../api-design-manage/design/rate-limiting/introducing-throttling-use-cases/)
      -   [Rate Limiting for Streaming APIs](../../../api-design-manage/design/rate-limiting/rate-limiting-for-streaming-apis/)
- -   [Life Cycle Management](../../../api-design-manage/design/lifecycle-management/api-lifecycle/)
- -   [API Monetization](../../../api-design-manage/design/api-monetization/monetizing-an-api/)
- -   [API Visibility](../../../api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
- -   [API Documentation](../../../api-design-manage/design/api-documentation/add-api-documentation/)
- -   [Custom Properties](../../../api-design-manage/design/create-api/adding-custom-properties-to-apis/)
+ -   [Life Cycle Management](../lifecycle-management/api-lifecycle.md)
+ -   [API Monetization](../../../monitoring/api-monetization/monetizing-an-api.md)
+ -   [API Visibility](../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+ -   [API Documentation](../api-documentation/add-api-documentation.md)
+ -   [Custom Properties](adding-custom-properties-to-apis.md)

@@ -135,9 +135,9 @@ Your API or API Product is now deployed and ready to receive traffic through the
 
 ## See Also
 
-- [Deploy an API](../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/) - Step-by-step guide to deploy an API using revisions.
-- [Create API Revisions](../api-design-manage/design/create-api/create-api-revisions/) - Learn how to create and manage API revisions for deployment.
-- [Publish an API to Developer Portal](../api-developer-portal/publish-an-api-to-dev-portal/) - Make your deployed APIs discoverable and subscribable in the Developer Portal.
-- [Gateway Environments](../api-gateway/maintaining-separate-production-and-sandbox-gateways/) - Configure separate production and sandbox Gateway environments.
-- [Gateway Policies](../api-gateway/gateway-policies/) - Apply global policies across all APIs deployed on a Gateway.
-- [Understand Rate Limit Enforcement](../api-gateway/rate-limiting/understand-rate-limit-enforcement/) - Learn how the Gateway enforces rate limiting policies in real-time.
+- [Deploy an API](../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md) - Step-by-step guide to deploy an API using revisions.
+- [Create API Revisions](../api-design-manage/design/create-api/create-api-revisions.md) - Learn how to create and manage API revisions for deployment.
+- [Publish an API to Developer Portal](../api-developer-portal/publish-an-api-to-dev-portal.md) - Make your deployed APIs discoverable and subscribable in the Developer Portal.
+- [Gateway Environments](maintaining-separate-production-and-sandbox-gateways.md) - Configure separate production and sandbox Gateway environments.
+- [Gateway Policies](gateway-policies.md) - Apply global policies across all APIs deployed on a Gateway.
+- [Understand Rate Limit Enforcement](rate-limiting/understand-rate-limit-enforcement.md) - Learn how the Gateway enforces rate limiting policies in real-time.

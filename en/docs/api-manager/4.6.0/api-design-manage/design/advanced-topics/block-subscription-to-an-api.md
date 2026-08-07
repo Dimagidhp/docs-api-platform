@@ -38,9 +38,9 @@ Blocking can be done at two levels:
   <p class="admonition-title">Note</p>
   <p>See the following topics for the descriptions on the concepts that you need to know when you block subscriptions to an API:
   <ul>
-    <li><a href="../../../getting-started/key-concepts/#application">Applications</a></li>
-    <li><a href="../../../getting-started/key-concepts/#rate-limits">Rate Limiting</a></li>
-    <li> <a href="../../../getting-started/key-concepts/#access-token">Access tokens</a></li></ul>
+    <li><a href="../../../../get-started/key-concepts.md#application">Applications</a></li>
+    <li><a href="../../../../get-started/key-concepts.md#rate-limits">Rate Limiting</a></li>
+    <li> <a href="../../../../get-started/key-concepts.md#access-token">Access tokens</a></li></ul>
     </p>
   </div> 
   </html>
@@ -57,7 +57,7 @@ Blocking can be done at two levels:
          <html>
          <div class="admonition tip"> 
          <p class="admonition-title">Tip</p>
-         <p>For more information, see [Create and Publish an API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/).</p>
+         <p>For more information, see [Create and Publish an API](../create-api/create-rest-api/create-a-rest-api.md).</p>
          </div>
          </html>
          
@@ -85,7 +85,7 @@ Blocking can be done at two levels:
       <html>
       <div class="admonition tip"> 
       <p class="admonition-title">Tip</p>
-      <p>For more information, see  [Consume an API](../../../api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).</p>
+      <p>For more information, see  [Consume an API](../../../api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md).</p>
       </div>
       </html>
 

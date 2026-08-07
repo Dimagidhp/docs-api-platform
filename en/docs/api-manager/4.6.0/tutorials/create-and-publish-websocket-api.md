@@ -106,9 +106,9 @@ invoke it using the **wscat** WebSocket client.
      
          For more information, see the following sections on endpoint related configurations.
 
-         - [Endpoint Timeouts](../manage-apis/design/endpoints/resiliency/endpoint-timeouts)
-         - [Endpoint Suspension](../manage-apis/design/endpoints/resiliency/endpoint-suspension)
-         - [Prevent API Suspension](../manage-apis/design/endpoints/resiliency/prevent-api-suspension)
+         - [Endpoint Timeouts](../api-design-manage/design/endpoints/resiliency/endpoint-timeouts.md)
+         - [Endpoint Suspension](../api-design-manage/design/endpoints/resiliency/endpoint-suspension.md)
+         - [Prevent API Suspension](../api-design-manage/design/endpoints/resiliency/prevent-api-suspension.md)
 
      [![View endpoint details](../assets/img/learn/endpoint-view-of-websocket-api.jpg)](../assets/img/learn/endpoint-view-of-websocket-api.jpg)
 

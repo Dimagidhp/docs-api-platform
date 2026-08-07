@@ -44,11 +44,11 @@ Follow the instructions below to create the `creator`, `publisher`, and `subscri
     In the Domain list, specify the user store where you want to create this role. This list includes the primary user store and any other secondary user stores that are configured for your product. For information on how user stores (which are repositories storing information about users and roles) are set up and configured, see [Configuring User Stores](../../administer/product-administration/managing-users-and-roles/managing-user-stores/introduction-to-userstores). Enter a unique name for this role (`creator`) and click **Finish**.
 
     !!! tip
-            The **Domain** drop-down list contains all user stores configured in the system. By default, only the PRIMARY user store is configured. To configure secondary user stores, see [Configuring Secondary User Stores](../../administer/product-administration/managing-users-and-roles/managing-user-stores/configuring-secondary-user-stores/).
+            The **Domain** drop-down list contains all user stores configured in the system. By default, only the PRIMARY user store is configured. To configure secondary user stores, see [Configuring Secondary User Stores](managing-user-stores/configuring-secondary-user-stores.md).
 
     !!! warning
 
-            In WSO2 API Manager, Developer Portal and Publisher Web Application UIs are populated by API-M REST APIs and all the authentication and authorization to access the different components in the UI solely depend on the scope role mapping defined in `/_system/config/apimgt/applicationdata/tenant-conf.json` that can be accessed through the [Admin Console](`https://localhost:9443/admin`) from **Settings** > **Advanced**.
+            In WSO2 API Manager, Developer Portal and Publisher Web Application UIs are populated by API-M REST APIs and all the authentication and authorization to access the different components in the UI solely depend on the scope role mapping defined in `/_system/config/apimgt/applicationdata/tenant-conf.json` that can be accessed through the [Admin Console](https://localhost:9443/admin) from **Settings** > **Advanced**.
 
             By default, the scope-role mapping contains `Internal/creator`, `Internal/publisher`, `Internal/subscriber`, `Internal/analytics`, and `Internal/devops` as the default roles. If there are custom roles defined with API creator, API publisher, admin and API subscriber permissions, those roles have to be configured in the `tenant-conf.json` file under the relevant scopes.
 
@@ -168,7 +168,7 @@ This will update all the scope mappings in the `tenant-conf.json` file with the 
 
 ### Updating before the first startup (recommended)
 
-The default role name of the Administrator, (`admin`) can be changed before starting WSO2 API Manager by editing `<API-M_HOME>/repository/conf/deployment.toml` file. For more information, see [Change the super admin credentials](../../install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords/#change-the-super-admin-credentials).
+The default role name of the Administrator, (`admin`) can be changed before starting WSO2 API Manager by editing `<API-M_HOME>/repository/conf/deployment.toml` file. For more information, see [Change the super admin credentials](../../install-and-setup/setup/security/logins-and-passwords/maintaining-logins-and-passwords.md#change-the-super-admin-credentials).
 
 Configure the property `admin_role` with your custom role (`administrator`) in the `deployment.toml` file as follows and start the server.
 

@@ -25,7 +25,7 @@ When an API is invoked specifying an API key as the authentication method, the A
 - Subscription validation
 
 !!! info
-...in the WSO2 API Manager developer portal without direct key manager communication, cannot be directly forwarded to the backend through the API Gateway for API requests. To grant backends access to user, application specific attributes during API calls, enable backend JWT generation. For detailed instructions on how to enable and utilize backend JWT generation for passing end-user attributes to the backend via the API Gateway, refer to [Passing End-User Attributes to the Backend via API Gateway](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway/).
+...in the WSO2 API Manager developer portal without direct key manager communication, cannot be directly forwarded to the backend through the API Gateway for API requests. To grant backends access to user, application specific attributes during API calls, enable backend JWT generation. For detailed instructions on how to enable and utilize backend JWT generation for passing end-user attributes to the backend via the API Gateway, refer to [Passing End-User Attributes to the Backend via API Gateway](../../../api-gateway/passing-enduser-attributes-to-the-backend-via-api-gateway.md).
 
 ## Prerequisites for API keys
 
@@ -166,7 +166,7 @@ By default, the alias name is `gateway_certificate_alias`. Follow the instructio
 
 ### Configuring Custom Keystores
 
-You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog](../../../reference/config-catalog/).
+You can also configure and use a custom Keystore in API Manager to sign the API Keys. Given below is a sample TOML configuration to configure a custom Keystore in the API Manager server. For more information, see [Configuration Catalog](../../../reference/config-catalog.md).
 
 To configure custom keystores, add the following to the `<API-M_HOME>/repository/conf/deployment.toml` file.
 

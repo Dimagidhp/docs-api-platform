@@ -18,7 +18,7 @@ content_type: "how-to"
 You can download a Postman collection for an **OpenAPI** using WSO2 API Manager, and test the REST API using Postman.
 
 !!! note "Try out using the Integrated API Console"
-    If required, instead of using Postman you can try out your REST APIs using the [Integrated API Console](../../../consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/) in WSO2 API Manager.
+    If required, instead of using Postman you can try out your REST APIs using the [Integrated API Console](invoke-an-api-using-the-integrated-api-console.md) in WSO2 API Manager.
     
 Let's download an OpenAPI as a Postman collection and try it out using Postman.
 
@@ -38,7 +38,7 @@ Follow the instructions below to download an OpenAPI as a Postman collection:
 
     [![Postman try out](../../../assets/img/learn/postman_try_out.png)](../../../assets/img/learn/postman_try_out.png)
 
-3.  [Subscribe to an API](../../../consume/manage-subscription/subscribe-to-an-api) if you have not done so already.
+3.  [Subscribe to an API](../../manage-subscription/subscribe-to-an-api.md) if you have not done so already.
 
 4. Select the application name and click **Postman collection**.
      

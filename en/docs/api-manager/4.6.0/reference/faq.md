@@ -34,7 +34,7 @@ For a list of all default ports available, see [Default Ports of WSO2 Products](
 
 ### What are the technologies used underneath WSO2 API Manager?
 
-The API Manager is built on top of [WSO2 Carbon](https://wso2.com/products/carbon/), an OSGi based components framework for SOA. For more details, see [API Manager components](../getting-started/key-concepts/).
+The API Manager is built on top of [WSO2 Carbon](https://wso2.com/products/carbon/), an OSGi based components framework for SOA. For more details, see [API Manager components](../get-started/key-concepts.md).
 
 ### Can I get involved in API-M development activities?
 
@@ -62,7 +62,7 @@ Copy any third-party JARs to `<API-M_HOME>/repository/components/lib` directory 
 
 ### Can I connect the API Manager directly to an LDAP or Active Directory where corporate identities are stored?
 
-Yes, you can configure the API Manager with multiple user stores. For more details, see [Configuring User Stores](../administer/managing-users-and-roles/managing-user-stores/configuring-secondary-user-stores/).
+Yes, you can configure the API Manager with multiple user stores. For more details, see [Configuring User Stores](../administer/managing-users-and-roles/managing-user-stores/configuring-secondary-user-stores.md).
 
 ### Can I extend the management console UI to add custom UIs?
 
@@ -82,7 +82,7 @@ The memory allocation settings are stored in the `<API-M_HOME>/bin/api-manager.s
 
 ### What are the different deployment patterns and clustering configurations of the API Manager?
 
-See [Deploying WSO2 API Manager](../install-and-setup/setup/deployment-patterns/).
+See [Deploying WSO2 API Manager](../get-started/deployment-patterns.md).
 
 ### What are the container technologies that are supported in API Manager?
 
@@ -111,7 +111,7 @@ For more details, see [Setting up an e-mail login](../install-and-setup/setup/se
 
 ### How can I set up a reverse proxy server to pass server requests?
 
-See [Configuring the Proxy Server and the Load Balancer](../install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer/).
+See [Configuring the Proxy Server and the Load Balancer](../install-and-setup/setup/setting-up-proxy-server-and-the-load-balancer/configuring-the-proxy-server-and-the-load-balancer.md).
 
 ------------------------------------------------------------------------
 
@@ -187,7 +187,7 @@ You can enable centralized authentication using a WSO2 Identity Server based [se
 
 ### How can I manage the API permissions/visibility?
 
-To set visibility of the API only to selected user roles in the server, see [API Visibility](../manage-apis/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/).
+To set visibility of the API only to selected user roles in the server, see [API Visibility](../api-design-manage/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md).
 
 ### How can I add security policies (UT, XACML, etc.) for the services?
 
@@ -195,11 +195,11 @@ This should be done in the backend services in the Application Server or WSO2 ES
 
 ### How can I enable self signup to the Developer Portal ?
 
-See [how to enable self signup](../consume/customizations/customizing-the-developer-portal/enabling-or-disabling-self-signup/).
+See [how to enable self signup](customize-product/customizations/customizing-the-developer-portal/enabling-or-disabling-self-signup.md).
 
 ### How can I disable self signup to the Developer Portal ? I want to engage my own approval mechanism.
 
-To disable the self signup capability, open the API-M management console and click the **Resources &gt; Browse** menu. The registry opens. Navigate to the `/_system/governance/apimgt/applicationdata/sign-up-config.xml` file and set the `<SelfSignUp><Enabled>` element to false. To engage your own signup process, see [Adding a User Signup Workflow](../develop/customizations/adding-a-user-signup-workflow/).
+To disable the self signup capability, open the API-M management console and click the **Resources &gt; Browse** menu. The registry opens. Navigate to the `/_system/governance/apimgt/applicationdata/sign-up-config.xml` file and set the `<SelfSignUp><Enabled>` element to false. To engage your own signup process, see [Adding a User Signup Workflow](customize-product/customizations/adding-a-user-signup-workflow.md).
 
 ### Is there a way to lock a user's account after a certain number of failed login attempts to the Developer Portal ?
 
@@ -419,7 +419,7 @@ This parameter verifies the hostname of the certificate of a server when the API
 
 ### When I add new users or roles, I get an error message stating that the entered user name is not conforming to policy. What should I do?
 
-This is because your user name or password length or any other parameter is not conforming to the `RegEx` configurations of the user store. See [Managing Users and Roles](../administer/managing-users-and-roles/introduction-to-user-management/).
+This is because your user name or password length or any other parameter is not conforming to the `RegEx` configurations of the user store. See [Managing Users and Roles](../administer/managing-users-and-roles/introduction-to-user-management.md).
 
 ### When I call a REST API, a lot of temporary files are created in my server and takes up a lot of space. What should I do?
 
@@ -446,7 +446,7 @@ The Gateway Failures UI error occurs when the `service_url`, `username`, `passwo
 
 ### How can I capture the state of a system?
 
-At the time of an error, you can use a tool called Carbon Dump (`carbondump.sh`) to collect all the necessary data (i.e., heap and thread dumps) from a running WSO2 API Manager instance in order to carryout a head dump and thread stack analysis. For more information on using this tool, see [Capturing the state of the system](../reference/troubleshooting/admin-troubleshooting-in-production-environments/#capturing-the-state-of-the-system) in the Administration guide.
+At the time of an error, you can use a tool called Carbon Dump (`carbondump.sh`) to collect all the necessary data (i.e., heap and thread dumps) from a running WSO2 API Manager instance in order to carryout a head dump and thread stack analysis. For more information on using this tool, see [Capturing the state of the system](troubleshooting/admin-troubleshooting-in-production-environments.md#capturing-the-state-of-the-system) in the Administration guide.
 
 ### How can I clean up the REG\_LOG table?
 

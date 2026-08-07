@@ -28,7 +28,7 @@ The topics below explain the configurations.
   - [Configuring WSO2 API Manager apps as SAML 2.0 SSO service providers](#configuring-wso2-api-manager-apps-as-saml-20-sso-service-providers)
 
 !!! tip
-    In this documentation, MySQL is used as the database to configure WSO2 API Manager with WSO2 Identity Server. For instructions on replacing the default H2 database with MySQL, see [Setting up MySQL](../../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mysql/#setting-up-mysql).
+    In this documentation, MySQL is used as the database to configure WSO2 API Manager with WSO2 Identity Server. For instructions on replacing the default H2 database with MySQL, see [Setting up MySQL](../../../../install-and-setup/setup/setting-up-databases/changing-default-databases/changing-to-mysql.md#setting-up-mysql).
 
 
 ## Configuring WSO2 API Manager as Service Provider for Identity Server

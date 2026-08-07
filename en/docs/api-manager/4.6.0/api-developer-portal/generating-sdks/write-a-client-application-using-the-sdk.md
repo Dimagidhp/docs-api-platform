@@ -24,7 +24,7 @@ content_type: "tutorial"
         <p>Once the keys are generated, copy the access token. You can use this token to invoke APIs that you subscribe to using the same application.</p>
     </div>
 
-2.  Go to the Developer Portal. Select your API and [download the SDK for Java](../../consume/generating-sdks/generate-sdks-in-dev-portal/). 
+2.  Go to the Developer Portal. Select your API and [download the SDK for Java](generate-sdks-in-dev-portal.md). 
 
 ![Default SDKs in Developer Portal](../../assets/img/consume/default-sdks.png)
 
@@ -155,7 +155,7 @@ content_type: "tutorial"
 
     <div class="admonition warning">
         <p class="admonition-title">Warning</p>
-        <p>You need an access token to invoke the API. It is important to have a valid subscription before using the SDK, to obtain an access token. Note that the obtained access token has an [expiration time](/learn/consume-api/manage-application/generate-keys/obtain-access-token/changing-the-default-token-expiration-time).</p>
+        <p>You need an access token to invoke the API. It is important to have a valid subscription before using the SDK, to obtain an access token. Note that the obtained access token has an [expiration time](../manage-application/generate-keys/obtain-access-token/changing-the-default-token-expiration-time.md).</p>
     </div>
     
 9.  Set the base path to the API client.

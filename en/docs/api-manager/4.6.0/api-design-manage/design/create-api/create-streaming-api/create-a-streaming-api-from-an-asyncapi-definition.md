@@ -17,9 +17,9 @@ content_type: "how-to"
 
 [AsyncAPI specification](https://www.asyncapi.com/) is a format that describes streaming APIs. An API Creator can import an existing AsyncAPI definition to WSO2 API Manager to create a streaming API using any one of the following protocols.
 
-- [WebSocket](../../../../design/create-api/create-streaming-api/create-a-websocket-streaming-api/#overview)
-- [WebSub (WebHooks)](../../../../design/create-api/create-streaming-api/create-a-websub-streaming-api/#overview)
-- [Server Sent Events (SSE)](../../../../design/create-api/create-streaming-api/create-a-sse-streaming-api/#overview)
+- [WebSocket](create-a-websocket-streaming-api.md#overview)
+- [WebSub (WebHooks)](create-a-websub-streaming-api.md#overview)
+- [Server Sent Events (SSE)](create-a-sse-streaming-api.md#overview)
 
 The API Creator can import the existing AsyncAPI definition by either uploading a file or by providing an Async API URL.
 
@@ -96,16 +96,16 @@ The AsyncAPI definition of the streaming API, which you just created, appears.
 
 Now, you have successfully created a Streaming API from an Async API Definition. 
 
-Next, publish the API, for more information, see [Publish an API](../../../../deploy-and-publish/publish-on-dev-portal/publish-an-api).
+Next, publish the API, for more information, see [Publish an API](../../../deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 
 <div class="admonition note">
 <p class="admonition-title">What's Next?</p>
 <p>Learn how to create Streaming APIs from scratch by trying out the following tutorials: 
 <ul>
-<li><a href="../../../../../tutorials/streaming-api/create-and-publish-websocket-api">Create and Publish a WebSocket API</a></li>
-<li><a href="../../../../../tutorials/streaming-api/create-and-publish-websub-api">Create and Publish a WebSub API</a></li>
-<li><a href="../../../../../tutorials/streaming-api/create-and-publish-sse-api">Create and Publish a Server Sent Events API</a></li>
+<li><a href="../../../../../tutorials/streaming-api/create-and-publish-websocket-api.md">Create and Publish a WebSocket API</a></li>
+<li><a href="../../../../../tutorials/streaming-api/create-and-publish-websub-api.md">Create and Publish a WebSub API</a></li>
+<li><a href="../../../../../tutorials/streaming-api/create-and-publish-sse-api.md">Create and Publish a Server Sent Events API</a></li>
 </ul>
 </p>
 </div>

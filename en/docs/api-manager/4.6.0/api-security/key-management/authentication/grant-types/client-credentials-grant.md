@@ -118,4 +118,4 @@ If you want to **disable the Client Credentials grant type** in the API-M instan
 
 ### Refresh Token grant type - supported or not
 
-The Client Credentials grant type **does not support** the Refresh Token grant type. This grant type does not issue a refresh token which can be used to obtain new access tokens using the [refresh token grant](../../../../api-security/key-management/authentication/grant-types/refresh-token-grant/).
+The Client Credentials grant type **does not support** the Refresh Token grant type. This grant type does not issue a refresh token which can be used to obtain new access tokens using the [refresh token grant](refresh-token-grant.md).

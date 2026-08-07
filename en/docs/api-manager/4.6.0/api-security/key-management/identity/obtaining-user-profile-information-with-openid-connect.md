@@ -24,11 +24,13 @@ The following two options are available to obtain the actual user information.
     -   [Decoding the id_token](#decoding-the-id_token)
     -   [Invoking the userinfo endpoint](#invoking-the-userinfo-endpoint)
     
+<a name="decoding-the-id_token"></a>
+
 #### Decoding the id_token
 
 Follow the instructions below to obtain user profile information with OpenID connect with WSO2 API Manager.
 
-1.  Obtain a token using password grant type and `openid` scope. For more information on token generation with password grant type, see [Password Grant Type](../../../api-security/key-management/authentication/grant-types/password-grant/). The format of the curl command and a sample is given below :
+1.  Obtain a token using password grant type and `openid` scope. For more information on token generation with password grant type, see [Password Grant Type](../authentication/grant-types/password-grant.md). The format of the curl command and a sample is given below :
 
     === "Format"
         ``` bash
@@ -71,6 +73,8 @@ Follow the instructions below to obtain user profile information with OpenID con
       "email": "user1@gmail.com"
     }
     ```
+
+<a name="invoking-the-userinfo-endpoint"></a>
 
 #### Invoking the userinfo endpoint
 

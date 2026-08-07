@@ -22,7 +22,7 @@ There are mainly two ways to customize and override the developer portal theme.
 
 In this section, we will cover the first method which is the simplest way to change the appearance of Developer portal.
 
-For the second method, please refer [Advanced Customization](../../../../reference/customize-product/customizations/advanced-ui-customization/) section.
+For the second method, please refer [Advanced Customization](../advanced-ui-customization.md) section.
 ## Global Theming
 
 You can find the default theme in the following location `<API-M_HOME>/repository/deployment/server/webapps/devportal/source/src/app/data/defaultTheme.js`.
@@ -67,17 +67,17 @@ Enable landing page. **defaultTheme.json** (Tenant theming).
 
 The following documents describe some of the most commonly used customizations, that you can do by changing the `userTheme.json`
 
-  - [Enabling or Disabling API Detail Tabs](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enabling-or-disabling-api-detail-tabs/)
-  - [Override API Overview Page per API](../../../../reference/customize-product/customizations/customizing-the-developer-portal/override-api-overview-page-per-api/)
-  - [Enable or Disable Rating](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-rating/)
-  - [Enable or Disable Home Page](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-home-page/)
-  - [Enable or Disable Tag Cloud](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-tag-cloud/)
-  - [Enable or Disable Footer](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-footer/)
-  - [Enable or Disable Banner](../../../../reference/customize-product/customizations/customizing-the-developer-portal/enable-or-disable-banner/)
-  - [Styling API Details Left Menu](../../../../reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-left-menu/)
+  - [Enabling or Disabling API Detail Tabs](enabling-or-disabling-api-detail-tabs.md)
+  - [Override API Overview Page per API](override-api-overview-page-per-api.md)
+  - [Enable or Disable Rating](enable-or-disable-rating.md)
+  - [Enable or Disable Home Page](enable-or-disable-home-page.md)
+  - [Enable or Disable Tag Cloud](enable-or-disable-tag-cloud.md)
+  - [Enable or Disable Footer](enable-or-disable-footer.md)
+  - [Enable or Disable Banner](enable-or-disable-banner.md)
+  - [Styling API Details Left Menu](styling-api-details-left-menu.md)
   - [Styling API Details Info Section](../../../../reference/customize-product/customizations/customizing-the-developer-portal/styling-api-details-info-section/)
-  - [Styling the Logo and Header](../../../../reference/customize-product/customizations/customizing-the-developer-portal/styling-the-logo-and-header/)
-  - [Customize API Listing Default View](../../../../reference/customize-product/customizations/customizing-the-developer-portal/customize-api-listing/change-default-view/)
+  - [Styling the Logo and Header](styling-the-logo-and-header.md)
+  - [Customize API Listing Default View](customize-api-listing/change-default-view.md)
 
 ## Tenant Theming 
 

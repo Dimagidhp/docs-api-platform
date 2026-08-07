@@ -15,7 +15,7 @@ content_type: "how-to"
 
 # Create a REST API
 
-**API creation** is the process of linking an existing backend API implementation to the [API Publisher](../../../../get-started/apim-architecture/#api-publisher), so that you can manage and monitor the [API's lifecycle](../../../../api-design-manage/design/lifecycle-management/api-lifecycle/), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../../../../get-started/apim-architecture/#api-publisher) itself.
+**API creation** is the process of linking an existing backend API implementation to the [API Publisher](../../../../get-started/apim-architecture.md#api-publisher), so that you can manage and monitor the [API's lifecycle](../../lifecycle-management/api-lifecycle.md), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../../../../get-started/apim-architecture.md#api-publisher) itself.
 
 Follow the instructions below to create a REST API using the basic flow:
 
@@ -186,17 +186,17 @@ Follow the instructions below to create a REST API using the basic flow:
         </div>
 
 
-Now, you have successfully created and configured a REST API. Next, [deploy the API](../../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API](../../../../api-design-manage/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
+Now, you have successfully created and configured a REST API. Next, [deploy the API](../../../deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md), [test the API](test-a-rest-api.md), and finally [publish the API](../../../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md).
 
 ## See Also
 
 Learn more on the concepts that you need to know when creating a REST API:
 
--   [Endpoints](../../../../manage-apis/design/endpoints/endpoint-types/)
--   [API Security](../../../../manage-apis/design/api-security/api-authentication/secure-apis-using-oauth2-tokens/)
+-   [Endpoints](../../endpoints/endpoint-types.md)
+-   [API Security](../../../../api-security/runtime/api-authentication/secure-apis-using-oauth2-tokens.md)
 -   [Rate Limiting](../../../../manage-apis/design/rate-limiting/introducing-throttling-use-cases/)
--   [Life Cycle Management](../../../../manage-apis/design/lifecycle-management/api-lifecycle/)
--   [API Monetization](../../../../manage-apis/design/api-monetization/monetizing-an-api/)
--   [API Visibility](../../../../manage-apis/design/advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal/)
--   [API Documentation](../../../../manage-apis/design/api-documentation/add-api-documentation/)
--   [Custom Properties](../../../../manage-apis/design/create-api/adding-custom-properties-to-apis/)
+-   [Life Cycle Management](../../lifecycle-management/api-lifecycle.md)
+-   [API Monetization](../../../../monitoring/api-monetization/monetizing-an-api.md)
+-   [API Visibility](../../advanced-topics/control-api-visibility-and-subscription-availability-in-developer-portal.md)
+-   [API Documentation](../../api-documentation/add-api-documentation.md)
+-   [Custom Properties](../adding-custom-properties-to-apis.md)

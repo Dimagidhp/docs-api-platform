@@ -254,7 +254,7 @@ Document visibility levels can be one of the following options:
 1.  Sign in to the API Publisher as an API creator using the following URL: 
      `https://<localhost>:9443/publisher`
 
-2.  [Create a new API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) or edit an existing API.
+2.  [Create a new API](../create-api/create-rest-api/create-a-rest-api.md) or edit an existing API.
 
 3.  In the **Documents** tab, Click **Add New Document**, to see a new drop-down list added to select visibility from.
      [ ![API document visibility selector](../../../assets/img/learn/api-doc-visibility-selector.png)](../../../assets/img/learn/api-doc-visibility-selector.png)

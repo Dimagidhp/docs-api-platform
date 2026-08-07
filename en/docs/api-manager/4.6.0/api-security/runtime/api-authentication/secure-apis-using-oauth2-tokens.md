@@ -15,10 +15,10 @@ content_type: "how-to"
 
 # Securing APIs using OAuth2 Access Tokens
 
-APIs published on WSO2 API Gateway can be secured by OAuth 2.0, which is the de facto standard for access delegation in the REST API world. Any client application invoking an OAuth2 secured API needs to have a valid subscription to that particular API and present a valid OAuth2.0 Access Token when invoking it. For more information on how to subscribe to an application to an API and generate credentials for it, see [Subscribe to an API](../../../api-developer-portal/manage-subscription/subscribe-to-an-api/).
+APIs published on WSO2 API Gateway can be secured by OAuth 2.0, which is the de facto standard for access delegation in the REST API world. Any client application invoking an OAuth2 secured API needs to have a valid subscription to that particular API and present a valid OAuth2.0 Access Token when invoking it. For more information on how to subscribe to an application to an API and generate credentials for it, see [Subscribe to an API](../../../api-developer-portal/manage-subscription/subscribe-to-an-api.md).
 
 After you have got the required credentials, namely the consumer key and consumer secret for your application, you (application users) can obtain access tokens to invoke the APIs that are subscribed under the given application. WSO2 API Manager offers a set of OAuth2 grant types for obtaining access tokens depending on the type of the access token owner, type of the application, and the trust relationship with the application.
-For more information, see [OAuth2 Grant Types](../../../api-security/key-management/authentication/grant-types/overview/).
+For more information, see [OAuth2 Grant Types](../../key-management/authentication/grant-types/overview.md).
 
 ## OAuth 2.0 access token types
 
@@ -107,7 +107,7 @@ Each tenant can define their name for the authorization header by following the 
      `https://<server-host>:9443/admin`
 
     !!! tip
-        For information on creating a tenant, see [Managing Tenants](../../../administer/multitenancy/managing-tenants/).
+        For information on creating a tenant, see [Managing Tenants](../../../administer/multitenancy/managing-tenants.md).
 
 
 2.  Go to **Settings** --> **Advanced**.
@@ -232,7 +232,7 @@ Follow the instructions below to add a customized authorization header for an AP
 1.  [Sign in to the Publisher](../../../install-and-setup/install/installing-the-product/running-the-api-m/#accessing-the-api-publisher).
 `https://<server-host>:9443/publisher         `
 
-2.  When [creating](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) or updating an API, define the customized authorization header in the **Runtime** tab under **Develop -> API Configurations**.
+2.  When [creating](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md) or updating an API, define the customized authorization header in the **Runtime** tab under **Develop -> API Configurations**.
 
     [![Custom Auth Header](../../../assets/img/learn/custom-auth-header-publisher.png)](../../../assets/img/learn/custom-auth-header-publisher.png)
 

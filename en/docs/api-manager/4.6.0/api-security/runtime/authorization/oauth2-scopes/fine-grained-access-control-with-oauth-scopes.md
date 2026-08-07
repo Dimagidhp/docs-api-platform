@@ -109,7 +109,7 @@ A local scope can be created and applied to a resource at API creation time by f
 
 1. Login to API Publisher (https://localhost:9443/publisher) 
 
-2. Start creating an API as described [here](../../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/).
+2. Start creating an API as described [here](../../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md).
 
 3. Navigate to **Local Scopes** section and click on **CREATE SCOPES** button.
 
@@ -177,8 +177,8 @@ Once you attach multiple scopes per resource, the resource will look as follows.
 
 ## Defining OAuth Scopes in API Definition
 
-Both [Shared Scopes](../../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/#shared-scopes) 
-and [Local Scopes](../../../../api-security/runtime/authorization/oauth2-scopes/fine-grained-access-control-with-oauth-scopes/#local-scopes) should be defined in same way in the OpenAPI definition as follows.
+Both [Shared Scopes](fine-grained-access-control-with-oauth-scopes.md#shared-scopes) 
+and [Local Scopes](fine-grained-access-control-with-oauth-scopes.md#local-scopes) should be defined in same way in the OpenAPI definition as follows.
 
 <a href="../../../../../assets/img/learn/api-security/oauth2/oauth2-scopes/resource-scope-api-definition.png" ><img src="../../../../../assets/img/learn/api-security/oauth2/oauth2-scopes/resource-scope-api-definition.png" alt="Resource Scopes API Definition" 
      title="Resource Scopes API Definition" width="50%" /></a>

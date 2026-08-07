@@ -20,17 +20,17 @@ content_type: "how-to"
 !!! info
     **Before you begin** 
 
-    -   Make sure apictl is initialized and setup, if not follow the steps in [Download and Initialize the apictl](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/#download-and-initialize-the-apictl).
+    -   Make sure apictl is initialized and setup, if not follow the steps in [Download and Initialize the apictl](../getting-started-with-wso2-api-controller.md#download-and-initialize-the-apictl).
 
     -  Make sure to add an environment before you start working with the following apictl commands, because all MCP Servers need to be imported or exported to/from a specific environment.      
-    For more information, visit [Add an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#add-an-environment).
+    For more information, visit [Add an Environment](../getting-started-with-wso2-api-controller.md#add-an-environment).
 
 !!! tip
     A user with `Internal/devops` role or `admin` role are allowed to import/export MCP Servers. To create a custom user who can import/export MCP Servers, refer [Steps to Create a Custom User who can Perform API Controller Operations](../../../install-and-setup/setup/api-controller/advanced-topics/creating-custom-users-to-perform-api-controller-operations/#steps-to-create-a-custom-user-who-can-perform-api-controller-operations).
 
 ### Export an MCP Server
 
-1.  Log in to the WSO2 API-M in the exporting environment by following steps in [Login to an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#login-to-an-environment).  
+1.  Log in to the WSO2 API-M in the exporting environment by following steps in [Login to an Environment](../getting-started-with-wso2-api-controller.md#login-to-an-environment).  
     
     !!! tip
         If you are already logged-in and your logged-in credentials and keys or the access-token are (is) already available in the `<USER_HOME>/.wso2apictl/keys.json` file, you can skip this step. 
@@ -232,7 +232,7 @@ If the MCP Server archive contains information about deployment environments in 
 once the MCP Server is successfully created or updated, a **new revision will be created** and that revision will be deployed in the
 mentioned gateway environments. If the **deployment environments are not provided, only the working copy will be updated**.  
 
-1.  Log in to the WSO2 API-M in the importing environment by following steps in [Login to an Environment](../../../install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller#login-to-an-environment).
+1.  Log in to the WSO2 API-M in the importing environment by following steps in [Login to an Environment](../getting-started-with-wso2-api-controller.md#login-to-an-environment).
     
     !!! tip
         If you are already logged-in and your logged-in credentials and keys or the access-token are (is) already available in the `<USER_HOME>/.wso2apictl/keys.json` file, you can skip this step. 

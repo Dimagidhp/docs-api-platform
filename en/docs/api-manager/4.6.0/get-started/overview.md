@@ -30,7 +30,7 @@ Create and manage diverse API types with comprehensive tooling and AI assistance
 - **Prototype APIs**: Mock implementations and existing backend prototypes
 - **Versioning & Revisions**: Comprehensive API versioning with revision-based deployment
 
-> **[Learn more about API Design](../api-design-manage/design/design-api-overview/)**
+> **[Learn more about API Design](../api-design-manage/design/design-api-overview.md)**
 
 ---
 
@@ -46,7 +46,7 @@ Enterprise-grade AI infrastructure management with dual gateway modes:
 - **Prompt Management**: Centralized prompt templates and decorators for consistent AI interactions
 - **Cost Control**: Smart routing, usage quotas, and spending limits to prevent runaway expenses
 
-> **[Explore AI Gateway](../ai-gateway/ai-gateway-overview/)**
+> **[Explore AI Gateway](../ai-gateway/ai-gateway-overview.md)**
 
 ---
 
@@ -60,7 +60,7 @@ Deploy APIs across multiple gateway types with centralized management:
 - **Multiple Environments**: Production, sandbox, and custom gateway environments
 - **Gateway Policies**: Transformations, mediations, custom handlers, and policy enforcement
 
-> **[Learn about Universal API Gateway](../api-gateway/overview-of-the-api-gateway/)**
+> **[Learn about Universal API Gateway](../api-gateway/overview-of-the-api-gateway.md)**
 
 ---
 
@@ -75,7 +75,7 @@ Multi-layered security with flexible authentication and authorization:
 - **OPA Validation**: Open Policy Agent integration for policy-based validation
 - **Security Audit**: Design-time security audits and runtime validation
 
-> **[Explore Runtime API Security](../api-security/runtime/api-authentication/api-authentication-overview/)**
+> **[Explore Runtime API Security](../api-security/runtime/api-authentication/api-authentication-overview.md)**
 
 ---
 
@@ -91,7 +91,7 @@ Rich developer experience with AI-powered discovery:
 - **Collaboration**: Comments, ratings, forums, and social media integration
 - **Self-Service**: User registration, password recovery, and profile management
 
-> **[Visit Developer Portal](../api-developer-portal/consume-api-overview/)**
+> **[Visit Developer Portal](../api-developer-portal/consume-api-overview.md)**
 
 ---
 
@@ -106,7 +106,7 @@ Sophisticated traffic management:
 - **Conditional Policies**: IP-based, header-based, query parameter, and JWT claim-based rate limiting
 - **Deny Policies**: Block specific IPs, applications, or users
 
-> **[Understand Rate Limiting](../api-gateway/rate-limiting/understand-rate-limit-enforcement/)**
+> **[Understand Rate Limiting](../api-gateway/rate-limiting/understand-rate-limit-enforcement.md)**
 
 ---
 
@@ -121,7 +121,7 @@ Comprehensive insights and revenue generation with multiple analytics solutions:
 - **Metrics**: JMX-based monitoring and custom metrics
 - **API Monetization**: Usage-based billing, subscription management, business plans (Free, Bronze, Silver, Gold, Unlimited), and Stripe integration for revenue generation
 
-> **[Explore Analytics](../monitoring/api-analytics/analytics-overview/)**
+> **[Explore Analytics](../monitoring/api-analytics/analytics-overview.md)**
 
 ---
 
@@ -136,7 +136,7 @@ Complete lifecycle management with compliance controls:
 - **CI/CD Support**: APIOps with apictl for environment promotion and automation
 - **API Discovery**: Automatic API discovery from federated gateways
 
-> **[Learn about Governance Framework](../administer/governance/overview/)**
+> **[Learn about Governance Framework](../administer/governance/overview.md)**
 
 ---
 
@@ -149,7 +149,7 @@ Deploy anywhere with comprehensive infrastructure support:
 - **OpenShift**: Native OpenShift deployment support
 - **Multi-Tenancy**: Logical isolation for departments or organizational units
 
-> **[View Deployment Options](../get-started/deployment-platforms/)**
+> **[View Deployment Options](deployment-platforms.md)**
 
 ---
 

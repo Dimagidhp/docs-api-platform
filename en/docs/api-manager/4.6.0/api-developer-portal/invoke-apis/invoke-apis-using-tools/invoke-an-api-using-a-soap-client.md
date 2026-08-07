@@ -17,7 +17,7 @@ content_type: "how-to"
 
 You can use any SOAP client to **test an API**. Let's use the SOAP UI in the following example.
 
-The examples here uses the `PhoneVerification` API, which is created in section [Expose a SOAP service as a REST API](../../../tutorials/expose-a-soap-service-as-a-rest-api/).
+The examples here uses the `PhoneVerification` API, which is created in section [Expose a SOAP service as a REST API](../../../tutorials/expose-a-soap-service-as-a-rest-api.md).
 
 Let's invoke the `PhoneVerification` API using a SOAP client.
 

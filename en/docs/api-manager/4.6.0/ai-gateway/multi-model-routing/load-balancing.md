@@ -64,7 +64,7 @@ You can enforce round robin based load balancing for your AI API by attaching th
 
 6. Finally, scroll to the bottom of the page and click on **Save and deploy**.
 
-7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview/) section.
+7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview.md) section.
 
 ### Try Out Round Robin Routing
 
@@ -124,7 +124,7 @@ You can enforce weighted round robin based load balancing for your AI API by att
 
 6. Finally, scroll to the bottom of the page and click on **Save and deploy**.
 
-7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview/) section.
+7. For more information on how to work with API Policies, refer to the [API Policies](../../api-design-manage/design/api-policies/overview.md) section.
 
 ### Try Out Weighted Round Robin Routing
 

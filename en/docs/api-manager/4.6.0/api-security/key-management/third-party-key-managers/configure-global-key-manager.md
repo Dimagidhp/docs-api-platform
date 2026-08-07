@@ -77,11 +77,11 @@ Let's look at a scenario where a single access token generated for an applicatio
 
 3. Start the WSO2 API Manager.
 
-4. [Create a tenant](../../../administer/multitenancy/managing-tenants/) (Ex: abc.com)
+4. [Create a tenant](../../../administer/multitenancy/managing-tenants.md) (Ex: abc.com)
 
 5. Sign in to the WSO2 API Publisher (`https://<hostname>:9443/publisher`) using the super tenant’s admin credentials
 
-6. [Create an API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api/) (Eg: SampleAPI)
+6. [Create an API](../../../api-design-manage/design/create-api/create-rest-api/create-a-rest-api.md) (Eg: SampleAPI)
 
     [![Sample API Creation](../../../assets/img/administer/global-keymanager/sample-api-creation.png)](../../../assets/img/administer/global-keymanager/sample-api-creation.png)
 
@@ -92,13 +92,13 @@ Let's look at a scenario where a single access token generated for an applicatio
 
     [![Relationship between the API's visibility and subscription availability](../../../assets/img/learn/api-subscription-availability.png)](../../../assets/img/learn/api-subscription-availability.png)
 
-8. [Deploy the API](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/)
+8. [Deploy the API](../../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md)
 
 9. Sign in to the WSO2 API Publisher (`https://<hostname>:9443/publisher`) using the new tenant’s (abc.com) admin credentials and repeat Steps 5 - 7
 
 10. Sign in to the super tenant's Developer Portal using the super tenant’s admin credentials (`https://<hostname>:9443/devportal`)
 
-11. [Create an application](../../../api-developer-portal/manage-application/create-application/) (Ex: SampleApp)
+11. [Create an application](../../../api-developer-portal/manage-application/create-application.md) (Ex: SampleApp)
 
     [![Sample App Creation](../../../assets/img/administer/global-keymanager/sample-app-creation.png)](../../../assets/img/administer/global-keymanager/sample-app-creation.png)
 
@@ -110,11 +110,11 @@ Let's look at a scenario where a single access token generated for an applicatio
 
 14. Click **GENERATE ACCESS TOKEN** to generate an application access token. Make sure to copy the generated JWT access token that appears so that you can use it in the future.
 
-15. Go to the Developer Portal landing page, select the SampleAPI and [Subscribe](../../../api-developer-portal/manage-subscription/subscribe-to-an-api/#subscribe-to-an-existing-application) to the SampleApp
+15. Go to the Developer Portal landing page, select the SampleAPI and [Subscribe](../../../api-developer-portal/manage-subscription/subscribe-to-an-api.md#subscribe-to-an-existing-application) to the SampleApp
 
     [![Subscribe SampleAPI to SampleApp](../../../assets/img/administer/global-keymanager/subscribe-sample-api-to-sample-app.png)](../../../assets/img/administer/global-keymanager/subscribe-sample-api-to-sample-app.png)
 
-16. [Try Out the API](../../../api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/) with the access token generated using the Global Key Manager
+16. [Try Out the API](../../../api-developer-portal/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console.md) with the access token generated using the Global Key Manager
 
     A Successful response indicates that an API of the super tenant can be invoked using an access token generated for an application using the Global Key Manager.
 

@@ -80,7 +80,7 @@ Update the metadata for your service as explained below.
 </table>
 
 !!! Tip
-    See the [Service Catalog API documentation](../../reference/product-apis/service-catalog-apis/service-catalog-v1/service-catalog-v1/) for more information on the metadata in the YAML file.
+    See the [Service Catalog API documentation](../../reference/product-apis/service-catalog-apis/service-catalog-v1/service-catalog-v1.md) for more information on the metadata in the YAML file.
 
 ## Step 2 - Configure the Micro Integrator server
 
@@ -106,6 +106,6 @@ Note that the API-M server should be started before the Micro Integrator. The cl
 
 Once the servers are started and the services are published, you can access the service from the API-M layer, and then proceed to **Create**, **Deploy**, and **Publish** the API as follows:
 
-1. [Create and API ](../../manage-apis/design/create-api/create-an-api-using-a-service) using the integration service.
-2. [Deploy the API](../../manage-apis/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api) in the API Gateway.
-3. [Publish the API](../../manage-apis/deploy-and-publish/publish-on-dev-portal/publish-an-api) to the Developer Portal.
+1. [Create and API ](../../api-design-manage/design/create-api/create-an-api-using-a-service.md) using the integration service.
+2. [Deploy the API](../../api-design-manage/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api.md) in the API Gateway.
+3. [Publish the API](../../api-design-manage/deploy-and-publish/publish-on-dev-portal/publish-an-api.md) to the Developer Portal.

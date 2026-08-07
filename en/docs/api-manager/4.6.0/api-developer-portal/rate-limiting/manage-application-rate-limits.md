@@ -112,6 +112,6 @@ If your usage requirements change, you can upgrade or downgrade your subscriptio
 
 ## See Also
 
-- [Rate Limiting for App Developers](../../api-developer-portal/rate-limiting/rate-limiting-for-app-developers/) - Understand how rate limiting works
-- [Handle Rate Limiting Errors](../../api-developer-portal/rate-limiting/handle-rate-limiting-errors/) - Implement error handling strategies
-- [Reset Application Throttling Policies](../../api-developer-portal/rate-limiting/resetting-application-throttling-policies/) - Reset individual user quotas
+- [Rate Limiting for App Developers](rate-limiting-for-app-developers.md) - Understand how rate limiting works
+- [Handle Rate Limiting Errors](handle-rate-limiting-errors.md) - Implement error handling strategies
+- [Reset Application Throttling Policies](resetting-application-throttling-policies.md) - Reset individual user quotas
