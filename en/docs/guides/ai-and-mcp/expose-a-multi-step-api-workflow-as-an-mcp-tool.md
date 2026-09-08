@@ -17,16 +17,17 @@ content_type: "tutorial"
 
 ## Overview
 
-The usual way to give an AI agent access to a REST API is to turn every endpoint
-into a tool. That works for a small API. It stops working as you add more.
+A REST API can be given to an AI agent as one MCP tool per endpoint. That's
+manageable for a small API. It gets harder to rely on as the API grows, and it
+falls short whenever the calls have to happen in a particular order.
 
 - **The order of the calls has nowhere to live.** It survives only in the prompt
   you wrote for the agent, so you can't version it, test it, or review it.
-- **A half-finished sequence becomes the agent's problem.** The reservation
-  succeeds, the order fails, and stock is held for an order that was never created.
 - **The tool list fills up.** Every tool's schema is sent to the model on every
   request, and similar tools compete, so the model picks the wrong one or calls
   them out of order.
+- **A half-finished sequence becomes the agent's problem.** The reservation
+  succeeds, the order fails, and stock is held for an order that was never created.
 
 The alternative: describe the sequence once as a workflow, and give the agent a
 single tool that runs it.
