@@ -1,6 +1,6 @@
 ---
 title: "Expose a multi-step API workflow as an MCP tool"
-description: "Combine several API calls into one Arazzo workflow, generate an MCP server from it, and expose that server as a governed MCP proxy in the API Platform console."
+description: "Combine several API calls into one Arazzo workflow, generate an MCP server from it, and expose that server as a governed MCP proxy in AI Workspace."
 canonical_url: https://wso2.com/api-platform/docs/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/
 md_url: https://wso2.com/api-platform/docs/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool.md
 tags:
@@ -34,8 +34,8 @@ single tool that runs it.
 
 In this guide you take three APIs, describe an ordering sequence over them in an
 [Arazzo](https://spec.openapis.org/arazzo/latest.html) specification, generate an
-MCP server from it, and expose that server through the API Platform console as a
-governed MCP proxy.
+MCP server from it, and expose that server through AI Workspace as a governed
+MCP proxy.
 
 ## What you build
 
@@ -55,7 +55,9 @@ The agent makes one call and never sees the three.
 - Docker, to build and run the generated server.
 - [`arazzo-mcp-gen`](https://github.com/wso2/arazzo-mcp-generator), from the
   releases page.
-- An API Platform account, with a project you can create components in.
+- Access to AI Workspace with the **Admin** or **Developer** role.
+- An [AI Gateway](../../cloud/ai-workspace/ai-gateways/setting-up.md) you have set
+  up and that shows **Active**.
 
 ## Step 1: Describe the sequence in Arazzo
 
@@ -204,74 +206,100 @@ curl -X POST http://localhost:5000/mcp \
 ```
 
 !!! warning "The server must be reachable from the internet"
-    The console connects to this URL to fetch the tool list, and the gateway calls
-    it at runtime, so a server on `localhost` won't work.
-
+    AI Workspace connects to this URL to fetch the tool list, and the gateway
+    calls it at runtime, so a server on `localhost` won't work.
     To give it a public address, deploy the image on Choreo. See
     [Develop a service with Docker](https://wso2.com/choreo/docs/develop-components/develop-services/develop-a-service-with-docker/).
 
-## Step 4: Create the MCP server proxy
+## Step 4: Create the MCP proxy
 
-1. In the console, click **Create New**, select **MCP Server**, then, under
-   **Proxy Existing MCP Servers**, click **Start with MCP Server URL**.
-2. Enter your MCP server URL, ending in `/mcp`. The console connects to it and
-   lists the tools it finds. Confirm `place_an_order` appears.
-3. Click **Next**.
-4. Fill in the details:
+1. In AI Workspace, click **MCP** > **MCP Proxies** in the left navigation menu.
+2. Click **+ Create MCP Proxy**.
+3. Enter your MCP server URL, ending in `/mcp`. AI Workspace connects to it and
+   lists the tools it finds. Wait for `place_an_order` to appear before continuing.
+
+    ![Create MCP Proxy from Endpoint screen with the MCP server URL entered and place_an_order listed under Tools with its description](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/create-mcp-proxy.png)
+
+    If your MCP server requires credentials, enter them under **Advanced
+    Configurations** before this step. AI Workspace uses them to fetch the tools.
+
+4. Click **Next**.
+5. Fill in the proxy details:
 
     | Field | What to enter |
     |---|---|
-    | **Name** | A name for the proxy, such as `Order Workflow` |
-    | **Identifier** | Filled in from the name |
+    | **Name** | A name for the proxy, such as `Place an Order` |
     | **Version** | Pre-filled, editable |
-    | **Description** | What the proxy exposes. This shows in the Developer Portal |
-    | **Gateway Type** | WSO2 Managed Gateway |
+    | **Description** | What the proxy exposes |
+    | **Context** | The base path for the proxy endpoint |
     | **Target** | Filled in from the URL you entered |
 
-    ![Create MCP Server from Endpoint form showing Name, Identifier, Version, Base Path, Description, Type, Gateway Type set to WSO2 Managed Gateway, and the Target URL](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/create-mcp-server.png)
+    ![Proxy details form showing Name, Version, Description, Context, and the Target URL](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/mcp-proxy-details.png)
 
-5. Click **Create**.
+6. Click **Create**.
 
-## Step 5: Check the deployment
+## Step 5: Check the tool
 
-The proxy is deployed to the Development environment when it's created. The
-overview page shows its status, the gateway URL, and the tools it exposes.
+The proxy's **Overview** tab lists the capabilities it exposes. One tool,
+`place_an_order`, with the description you wrote in the workflow. Click
+**View Schema** to see the inputs it takes.
 
-![MCP proxy overview showing Development deployment status Active, the gateway URL, and place_an_order in the tool list](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/deployed-to-development.png)
+![MCP proxy overview showing Place an Order with one tool, place_an_order, its description, and a View Schema button](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/mcp-proxy-created.png)
 
+Nothing here was typed into a form. The tool, its description and its schema all
+came from the Arazzo specification.
 
-## Step 6: Test the tool
+## Step 6: Deploy the proxy to a gateway
 
-1. In the left navigation menu, click **Test**, then **MCP Playground**.
-2. Select the **Development** environment.
-3. Click **Get Test Key** if the **Token** field is empty, then click **Connect**.
-4. Select `place_an_order` and fill in the parameters.
-5. Click **Run Tool**.
+A proxy isn't reachable until you deploy it.
 
-![MCP Playground connected, with place_an_order run and the result showing orderId ORD-31904 and status CONFIRMED](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/mcp-playground.png)
+1. Click **Deploy to Gateway** on the proxy page.
+2. Find the gateway you want, and click **Deploy**.
+3. Expand the gateway card to confirm the **Deployment Status** is Active.
 
-The result carries the workflow's outputs: the order identifier and its status.
-Three API calls ran in order behind that one tool call.
+![Deploy to Gateway page showing local-test-gateway with Deployment Status Active and an entry in the API Deployment History](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/deploy-to-gateway.png)
 
-## Step 7: Promote to production
+The proxy endpoint follows this format:
 
-1. In the left navigation menu, click **Deploy**.
-2. On the **Development** card, click **Promote**.
-3. Select **Use Development endpoint configuration**, then click **Next**.
+```text
+https://{gateway-host}/{proxy-context}/mcp
+```
 
-The **Production** card shows **Active** when the deployment finishes.
+That endpoint is what an AI agent connects to. Every call passes through the
+gateway, where authentication, policies and observability apply, before the
+workflow runs its three API calls.
 
-To let consumers discover the MCP server, click **Develop** > **Lifecycle**, then
-**Publish**.
+## Step 7: Call the tool through the gateway
+
+Ask the gateway endpoint what tools it exposes:
+
+```bash
+curl -sk -X POST https://{gateway-host}/{proxy-context}/mcp \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+```
+
+One tool comes back, `place_an_order`, with `sku`, `quantity` and `customerId`
+as its required inputs. That schema came from the Arazzo specification, not from
+anything typed into a form.
+
+You can also test it from the Developer Portal. Publish the proxy to the MCP Hub,
+open it there, and use the **MCP Playground** to connect and run the tool.
+
+!!! warning "The proxy has no authentication until you add it"
+    A newly created proxy accepts any caller. Use the **Policies** tab to apply
+    authentication and access control before exposing it to anything real.
 
 ## Troubleshooting
 
 | Symptom | Resolution |
 |---|---|
-| The console can't fetch the tool list | The URL must end in `/mcp` and be reachable from the internet. A `localhost` address won't work. |
+| AI Workspace can't fetch the tool list | The URL must end in `/mcp` and be reachable from the internet. A `localhost` address won't work. If the server needs credentials, set them under Advanced Configurations. |
 | `arazzo-mcp-gen` reports an unresolved operation | An `operationId` in the workflow doesn't match any operation in the referenced OpenAPI definition. |
 | A later step receives an empty value | The earlier step's `outputs` block doesn't capture the field, or the JSON pointer doesn't match the response body. |
 | The tool runs but returns no outputs | A step didn't reach its API. Check that the `servers` URL in each OpenAPI definition is reachable from inside the container. |
+| The proxy exists but calls fail | The proxy isn't deployed to a gateway. Deploying is a separate step from creating. |
 | The workflow ends without creating an order | Expected when stock is short. The `onSuccess` condition stops the sequence. |
 | macOS blocks `arazzo-mcp-gen` | The released binaries aren't signed. Run `xattr -d com.apple.quarantine arazzo-mcp-gen`. |
 
@@ -282,12 +310,13 @@ To let consumers discover the MCP server, click **Develop** > **Lifecycle**, the
 - How to describe that sequence in an Arazzo specification.
 - How to turn the specification into an MCP server, where one workflow becomes
   one tool.
-- How to expose that server through the console and call the tool.
+- How to expose that server through AI Workspace as a governed MCP proxy, and
+  call the tool through the gateway.
 
 ## Next steps
 
-- **Manage the tools.** Under **Develop** > **Policy**, rename tools, edit their
-  descriptions, or remove ones you don't want exposed. Redeploy after saving.
+- **Apply policies to the proxy.** Use the **Policies** tab for access control,
+  authorization and rewrite policies.
 - **Add more workflows.** Each one becomes another tool.
 
 ## Try the sample
