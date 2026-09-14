@@ -32,22 +32,35 @@ falls short whenever the calls have to happen in a particular order.
 The alternative: describe the sequence once as a workflow, and give the agent a
 single tool that runs it.
 
-In this guide you take three APIs, describe an ordering sequence over them in an
-[Arazzo](https://spec.openapis.org/arazzo/latest.html) specification, generate an
-MCP server from it, and expose that server through AI Workspace as a governed
-MCP proxy.
+In this guide, you build one tool called `place_an_order` that runs three calls
+in order:
 
-## What you build
-
-One tool, `place_an_order`, that runs three calls in order:
-
-| Step | Call | Why it comes here |
+| Step | Call | Description |
 |---|---|---|
 | 1 | Check stock for the SKU | No point reserving what isn't there |
 | 2 | Reserve the quantity | Holds the stock while the order is created |
 | 3 | Create the order | Needs the reservation identifier from step 2 |
 
 The agent makes one call and never sees the three.
+
+To build it, you:
+
+- Take three APIs and describe an ordering sequence over them in an
+  [Arazzo](https://spec.openapis.org/arazzo/latest.html) specification.
+- Generate an MCP server from that specification.
+- Expose that server through AI Workspace as a governed MCP proxy.
+
+## Learning objectives
+
+By the end of this guide, you understand:
+
+- Why a call sequence is better described once, as a workflow, than left for an
+  agent to work out each time.
+- How Arazzo syntax passes values between steps and decides when a step runs.
+- Why one workflow becomes exactly one MCP tool, and where that tool's
+  description and input schema come from.
+- What the gateway adds once the proxy is deployed: authentication, policies and
+  observability.
 
 ## Prerequisites
 
@@ -63,7 +76,8 @@ The agent makes one call and never sees the three.
 
 Create a folder holding your OpenAPI definitions and one Arazzo file.
 
-Name the APIs and the inputs the sequence takes:
+The Arazzo file names the APIs, declares the inputs the sequence takes, and
+lists the steps that run:
 
 ```yaml
 arazzo: "1.0.0"
@@ -104,12 +118,7 @@ workflows:
         customerId:
           type: string
           description: The customer placing the order.
-```
 
-Then the steps. Each names an operation by its `operationId`, says what counts as
-success, and captures the values later steps need:
-
-```yaml
     steps:
       - stepId: checkAvailability
         description: Check how many units are in stock.
@@ -163,7 +172,10 @@ success, and captures the values later steps need:
       status: $steps.createOrder.outputs.status
 ```
 
-Three pieces of syntax carry the sequence:
+Each step in `steps` names an operation by its `operationId`, says what counts as
+success, and captures the values later steps need.
+
+Three syntax patterns pass data and direct execution between steps:
 
 - `$inputs.sku` passes a caller-supplied value into a step.
 - `$steps.reserveStock.outputs.reservationId` passes a value from an earlier step
@@ -214,7 +226,7 @@ curl -X POST http://localhost:5000/mcp \
 ## Step 4: Create the MCP proxy
 
 1. In AI Workspace, click **MCP** > **MCP Proxies** in the left navigation menu.
-2. Click **+ Create MCP Proxy**.
+2. Click **Create MCP Proxy**.
 3. Enter your MCP server URL, ending in `/mcp`. AI Workspace connects to it and
    lists the tools it finds. Wait for `place_an_order` to appear before continuing.
 
@@ -246,8 +258,8 @@ The proxy's **Overview** tab lists the capabilities it exposes. One tool,
 
 ![MCP proxy overview showing Place an Order with one tool, place_an_order, its description, and a View Schema button](../../assets/img/guides/ai-and-mcp/expose-a-multi-step-api-workflow-as-an-mcp-tool/mcp-proxy-created.png)
 
-Nothing here was typed into a form. The tool, its description and its schema all
-came from the Arazzo specification.
+Nothing here is typed into a form. The tool, its description and its schema all
+come from the Arazzo specification.
 
 ## Step 6: Deploy the proxy to a gateway
 
@@ -280,9 +292,9 @@ curl -sk -X POST https://{gateway-host}/{proxy-context}/mcp \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
 ```
 
-One tool comes back, `place_an_order`, with `sku`, `quantity` and `customerId`
-as its required inputs. That schema came from the Arazzo specification, not from
-anything typed into a form.
+The command returns one tool named `place_an_order`, with `sku`, `quantity`, and
+`customerId` as its required inputs. The schema comes from the Arazzo
+specification.
 
 You can also test it from the Developer Portal. Publish the proxy to the MCP Hub,
 open it there, and use the **MCP Playground** to connect and run the tool.
@@ -293,7 +305,7 @@ open it there, and use the **MCP Playground** to connect and run the tool.
 
 ## Troubleshooting
 
-| Symptom | Resolution |
+| Issue | Resolution |
 |---|---|
 | AI Workspace can't fetch the tool list | The URL must end in `/mcp` and be reachable from the internet. A `localhost` address won't work. If the server needs credentials, set them under Advanced Configurations. |
 | `arazzo-mcp-gen` reports an unresolved operation | An `operationId` in the workflow doesn't match any operation in the referenced OpenAPI definition. |
@@ -302,16 +314,6 @@ open it there, and use the **MCP Playground** to connect and run the tool.
 | The proxy exists but calls fail | The proxy isn't deployed to a gateway. Deploying is a separate step from creating. |
 | The workflow ends without creating an order | Expected when stock is short. The `onSuccess` condition stops the sequence. |
 | macOS blocks `arazzo-mcp-gen` | The released binaries aren't signed. Run `xattr -d com.apple.quarantine arazzo-mcp-gen`. |
-
-## What you learned
-
-- Why a sequence of API calls is better described once, as a workflow, than left
-  for an agent to work out each time.
-- How to describe that sequence in an Arazzo specification.
-- How to turn the specification into an MCP server, where one workflow becomes
-  one tool.
-- How to expose that server through AI Workspace as a governed MCP proxy, and
-  call the tool through the gateway.
 
 ## Next steps
 
@@ -325,4 +327,4 @@ The companion sample runs this setup locally using a self-hosted gateway, so you
 can generate an MCP server from an Arazzo workflow and call it through a gateway
 without a cloud account.
 
-[View the sample on GitHub](https://github.com/wso2/api-platform/tree/main/samples/rest-to-mcp)
+[View the sample on GitHub](https://github.com/wso2/api-platform/tree/main/samples/rest-to-mcp).
