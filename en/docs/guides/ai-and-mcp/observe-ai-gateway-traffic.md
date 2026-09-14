@@ -48,7 +48,7 @@ This guide shows you where to find each of those figures and how to read them. A
 
 ## Prerequisites
 
-- A WSO2 API Platform account. [Sign up for free](https://ai-workspace.bijira.dev/).
+- A WSO2 API Platform account. [Sign up for free](https://console.bijira.dev).
 - An AI gateway that shows **Active** in the AI Workspace. See [Setting up an AI Gateway](../../cloud/ai-workspace/ai-gateways/setting-up.md).
 - At least one of the following, deployed to that gateway:
     - For LLM traffic, an [LLM provider](../../cloud/ai-workspace/llm-providers/configure-provider.md). Add an [App LLM proxy](../../cloud/ai-workspace/llm-proxies/configure-proxy.md) as well if you want per-application authentication or guardrails.
@@ -102,7 +102,7 @@ Send a few requests, including one that fails, so both the traffic panels and th
 
 ## Step 2: Open Insights and set the scope
 
-1. Sign in to the [WSO2 AI Workspace](https://ai-workspace.bijira.dev/).
+1. Sign in to [WSO2 API Platform](https://console.bijira.dev/), then click **AI Workspace** in the header.
 2. Select your organization and project from the selectors at the top of the page.
 3. In the left navigation menu, click **Insights**.
 4. Set **Environment** to the environment your proxies are deployed to, such as **Development**.
