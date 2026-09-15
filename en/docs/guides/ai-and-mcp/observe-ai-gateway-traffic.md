@@ -147,7 +147,7 @@ Then work down the panels:
 | **Latency Trend** | P95 latency per model, so a slow tail shows up rather than hiding behind an average. |
 | **AI API Details** | Token usage and request count per proxy or provider. Compare its request count against **Total Requests**: the difference is the requests that failed before reaching a model. |
 | **Guardrail Triggers** | How often each guardrail fired, named individually. This is where you confirm a new guardrail is working. |
-| **Error Type Breakdown** | The mix of error types the model provider returned. Requests the gateway rejected before they reached a model — a failed key, a guardrail, a rate limit — are counted in **Average Error Rate** instead. |
+| **Error Type Breakdown** | The mix of fault categories across failed requests: `AUTH` for rejected credentials, `THROTTLED` for rate limits, `TARGET_CONNECTIVITY` for a provider the gateway couldn't reach, and `OTHER` for everything else. |
 
 ## Step 5: Read MCP tool activity
 
