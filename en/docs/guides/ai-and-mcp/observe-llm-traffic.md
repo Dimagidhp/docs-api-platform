@@ -143,10 +143,10 @@ Then work down the panels:
 
 | Symptom | Resolution |
 |---|---|
-| No data at all, though your proxies answer requests normally | Start the gateway with `docker compose --env-file configs/keys.env up`. That file is generated when you register the gateway and holds the key the runtime publishes with. Started without it, the gateway serves traffic but reports nothing. |
+| No data on any dashboard | Start the gateway with `docker compose --env-file configs/keys.env up`, using the file generated when you registered the gateway. It holds the key the runtime publishes with. |
 | Every tile reads zero | Set **Environment** to the environment your proxies are deployed to. |
-| Tiles show counts but the charts look empty | Widen the time range so it covers when the traffic was sent. |
-| Token usage appears but estimated cost doesn't | Cost is calculated from provider pricing. Confirm the model name in your request matches one the pricing data covers. |
+| You want estimated cost alongside token usage | Cost is calculated from provider pricing, so call a model the pricing data covers. |
+| You want token usage and cost attributed to individual applications | Map the proxy's API keys to a [GenAI application](../../cloud/ai-workspace/genai-applications.md). **AI Application Details** and **Top Applications** then group by that application name. |
 
 ## Next steps
 
