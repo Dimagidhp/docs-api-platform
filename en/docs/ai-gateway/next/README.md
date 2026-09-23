@@ -20,6 +20,7 @@ A gateway for managing and securing AI traffic, including Large Language Model (
 
 - [LLM Quick Start Guide](quick-start-guide.md) — Set up the gateway and route traffic to LLM providers like OpenAI
 - [MCP proxy](gateway-artifacts/mcp-proxy.md) — Set up the gateway and route traffic to MCP servers
+- [A2A agent quick start guide](agent-governance/quick-start-guide.md) — Put an A2A agent behind the gateway and invoke it on both protocol bindings
 
 ## Key Concepts
 
@@ -67,6 +68,14 @@ An MCP Proxy routes Model Context Protocol traffic to MCP servers. MCP is a prot
 - Expose MCP servers through a centralized gateway
 - Apply authentication and access control to MCP traffic
 - Manage multiple MCP servers from a single control plane
+
+### Agent
+
+An Agent fronts an Agent2Agent (A2A) agent. A2A is a protocol that lets one AI agent discover another and delegate work to it. With Agents, you can:
+
+- Expose an A2A agent on the JSON-RPC binding, the HTTP+JSON binding, or both
+- Serve an Agent Card that advertises the gateway rather than the agent
+- Apply authentication and rate limits to individual A2A operations
 
 ## Default Ports
 
