@@ -31,7 +31,7 @@ All requests to the gateway must include your API key in the request header name
 When you create a provider from a built-in template, that header defaults to the one the vendor's own SDK already sends. For example, OpenAI uses `Authorization: Bearer <key>` and Anthropic uses `x-api-key`. An App LLM proxy inherits the header from its provider. So the examples below pass the gateway API key through the SDK's normal `api_key` parameter, with no extra header configuration. See [Configure inbound authentication](configure-inbound-auth.md) for the default header per provider.
 
 !!! note
-    If you changed the header in the **Security** tab, or your provider was created before this default applied and still uses `X-API-Key`, send the key in that header as well. Each example includes a commented-out line that does this. Uncomment it and set the header name your Security tab shows.
+    If the **Security** tab uses a different header, send the key in that header as well. Each example includes commented-out custom-header configuration. Uncomment it and set the header name shown on the **Security** tab.
 
 ## OpenAI
 
@@ -280,7 +280,7 @@ Mistral exposes both a native SDK and an OpenAI-compatible API at `/v1`.
     **Install:** `pip install mistralai httpx`
 
     !!! note
-        The Mistral SDK sends its API key as an `Authorization: Bearer` token, which is the default header for providers created from the Mistral template. No additional header configuration is needed. `httpx` is only needed for the commented-out event hook below, which adds a custom header.
+        The Mistral SDK sends its API key as an `Authorization: Bearer` token. This is the default header for providers created from the Mistral template. No additional header configuration is needed. The example imports `httpx`, so keep it installed. The optional event hook adds a custom header.
 
     **Basic chat completion:**
 
