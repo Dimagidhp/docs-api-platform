@@ -9,7 +9,7 @@ tags:
   - quickstart
   - docker
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-08-31
+last_updated: 2026-09-24
 content_type: "quickstart"
 ---
 
@@ -299,14 +299,14 @@ The **API Keys** section on the provider's **Overview** tab only appears once th
 
 This part sends a real chat completion request through your deployed provider and confirms the response.
 
-All requests to the gateway authenticate with the `X-API-Key` header by default. This is the same header named on the provider's **Security** tab. Mistral AI exposes an OpenAI-compatible API at `/v1`, so append that to the Invoke URL to reach the chat completions resource.
+All requests to the gateway authenticate with the API key in the header named on the provider's **Security** tab. A provider created from the Mistral AI template defaults to `Authorization` with the `Bearer` prefix, the same header Mistral's own API uses. See [Configure inbound authentication](configure-inbound-auth.md) for the default header of other providers. Mistral AI exposes an OpenAI-compatible API at `/v1`, so append that to the Invoke URL to reach the chat completions resource.
 
 The following example assumes the Mistral AI provider from Part 3. If you configured a different kind of provider instead, this exact request path and body don't apply. Anthropic, Gemini, Azure OpenAI, and Azure AI Foundry each use their own native request shape. See [Invoke providers and proxies via SDKs](using-sdks.md) for the equivalent call. AWS Bedrock isn't covered there; check your model's Bedrock API documentation for the request format.
 
 ```bash
 curl -X POST "<INVOKE_URL>/v1/chat/completions" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: <YOUR_GENERATED_API_KEY>" \
+  -H "Authorization: Bearer <YOUR_GENERATED_API_KEY>" \
   -d '{
     "model": "mistral-small-latest",
     "messages": [

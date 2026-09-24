@@ -7,7 +7,7 @@ tags:
   - ai-workspace
   - troubleshooting
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-08-31
+last_updated: 2026-09-24
 content_type: "troubleshooting"
 ---
 
@@ -25,4 +25,4 @@ Check that:
 
 ## A chat completion request returns `401` or `403`
 
-Confirm you're sending the generated inbound API key in the header your provider's **Security** tab configures (`X-API-Key` by default), not your AI Workspace sign-in session. These authenticate two different things: one signs you in to AI Workspace; the other authenticates an application to the gateway.
+Confirm you're sending the generated inbound API key in the header your provider's **Security** tab configures, including its **API Key Value Prefix** if one is set, and not your AI Workspace sign-in session. By default, that header is the one the provider's vendor uses, such as `Authorization: Bearer <key>` for OpenAI or `api-key: <key>` for Azure OpenAI. See [Configure inbound authentication](configure-inbound-auth.md#default-header-per-provider). These authenticate two different things: one signs you in to AI Workspace; the other authenticates an application to the gateway.
