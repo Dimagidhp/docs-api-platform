@@ -647,6 +647,14 @@ nav:
                 - LLM Header Routing: ai-gateway/next/routing/routing-policies/llm-header-routing.md
         - Prompt Management: ai-gateway/next/prompt-management.md
         - MCP Governance: ai-gateway/next/mcp-governance.md
+        - Agent Governance:
+            - ai-gateway/next/agent-governance/index.md
+            - Quick Start Guide: ai-gateway/next/agent-governance/quick-start-guide.md
+            - Expose an Agent: ai-gateway/next/agent-governance/expose-an-agent.md
+            - Agent Card: ai-gateway/next/agent-governance/agent-card.md
+            - Apply Policies: ai-gateway/next/agent-governance/apply-policies.md
+            - Authenticate Clients: ai-gateway/next/agent-governance/authenticate-clients.md
+            - Streaming and Timeouts: ai-gateway/next/agent-governance/streaming-and-timeouts.md
         - Transform Requests and Responses: ai-gateway/next/transform-requests-and-responses.md
         - Timeouts and Resilience: ai-gateway/next/timeouts-and-resilience.md
         - Stream Responses: ai-gateway/next/streaming-responses.md
@@ -726,12 +734,14 @@ nav:
         - Reference:
             - ai-gateway/next/reference/index.md
             - Provider Templates: ai-gateway/next/reference/llm-templates.md
+            - Agent Configuration: ai-gateway/next/reference/agent-configuration.md
             - Management REST API:
                 - ai-gateway/next/reference/management-api/index.md
                 - LLM Provider Template Management: ai-gateway/next/reference/management-api/llm-provider-template-management.md
                 - LLM Provider Management: ai-gateway/next/reference/management-api/llm-provider-management.md
                 - LLM Proxy Management: ai-gateway/next/reference/management-api/llm-proxy-management.md
                 - MCP Proxy Management: ai-gateway/next/reference/management-api/mcp-proxy-management.md
+                - Agent Management: ai-gateway/next/reference/management-api/agent-management.md
                 - Certificate Management: ai-gateway/next/reference/management-api/certificate-management.md
                 - Secrets Management: ai-gateway/next/reference/management-api/secrets-management.md
                 - Schemas: ai-gateway/next/reference/management-api/schemas.md
