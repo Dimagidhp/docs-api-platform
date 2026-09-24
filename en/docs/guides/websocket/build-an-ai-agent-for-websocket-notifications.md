@@ -21,20 +21,20 @@ content_type: "tutorial"
 
 This guide continues from [Build a WebSocket-based real-time notification system](build-a-websocket-notification-system.md). It connects a Python agent to that guide's Stock Notifications API, and for any tick that crosses an alert threshold, asks Gemini which of a small set of tools to call in response, then actually calls it through a governed MCP proxy. Below-threshold ticks never reach the LLM at all.
 
-By the end, you'll have a running agent that autonomously chooses between logging a watch note, raising an alert, or escalating for human follow-up, spanning two separate WSO2 consoles: WSO2 API Platform Cloud for the WebSocket API, and AI Workspace for the MCP proxy and LLM provider.
+By the end, you'll have a running agent that autonomously chooses between logging a watch note, raising an alert, or escalating for human follow-up. You'll use WSO2 API Platform Cloud for the WebSocket API, and AI Workspace for the MCP proxy and LLM provider.
 
 !!! note
-    This guide assumes you've already completed the previous guide and have your Stock Notifications API deployed. Publishing it and finding its `wss://` invoke URL happen in Step 5.
+    This guide assumes you've already completed [Build a WebSocket-based real-time notification system](build-a-websocket-notification-system.md) and have your Stock Notifications API deployed. Publishing it and finding its `wss://` invoke URL happen in Step 5.
 
 ## Key concepts
 
 Before you start, here are the WSO2 API Platform terms this guide adds to the ones from the previous guide.
 
-*AI Workspace* is a separate WSO2 console for creating and governing the MCP proxy and LLM provider an AI agent calls. You sign in to it at its own URL, apart from the WSO2 API Platform Cloud console you used for the WebSocket API in the previous guide, and it keeps its own organizations and projects.
+*AI Workspace* is where you create and manage the MCP proxy and LLM provider an AI agent calls. You open it from WSO2 API Platform by clicking **AI Workspace** in the header.
 
 An *AI gateway* is the runtime that executes AI Workspace's MCP proxies and LLM providers. You install and start it yourself (Docker, a VM, or Kubernetes), then connect it to AI Workspace with a registration token. Nothing you create in AI Workspace is callable until it's deployed to an active AI gateway.
 
-An *MCP proxy* is a governed endpoint AI Workspace creates in front of a server that speaks the Model Context Protocol. It runs on an AI gateway, the same way a WebSocket API proxy runs on WSO2 API Platform Cloud.
+An *MCP proxy* is a governed endpoint AI Workspace creates in front of a server that speaks the Model Context Protocol. It runs on an AI gateway, the same way a WebSocket API proxy runs on WSO2 API Platform Cloud Gateway.
 
 An *LLM provider* connects a third-party model service, such as Google Gemini, to AI Workspace, and stores its API key so your agent never holds it directly. Your agent calls the provider's own invoke URL instead of calling Gemini directly.
 
@@ -42,10 +42,9 @@ A *tool* is a single function the agent can choose to call. In this guide, `log_
 
 ## Prerequisites
 
-- The previous guide completed, with the Stock Notifications API deployed.
-- A WSO2 API Platform Cloud account (the same one from the previous guide).
-- Access to the [WSO2 AI Workspace](https://ai-workspace.bijira.dev/), a separate console from WSO2 API Platform Cloud. Sign in with a Google, GitHub, or Microsoft account.
-- Somewhere to run a small AI gateway runtime, such as Docker.
+- The guide [Build a WebSocket-based real-time notification system](build-a-websocket-notification-system.md) completed, with the Stock Notifications API deployed.
+- A WSO2 API Platform Cloud account (the same one from the previous guide). You open AI Workspace from it.
+- An AI gateway set up in AI Workspace and showing as **Active**. See [Set up an AI Gateway](../../ai-workspace/1.0.0/ai-gateways/setting-up.md).
 - A Google AI API key from [Google AI Studio](https://aistudio.google.com/apikey), which the LLM provider uses to call the Gemini API on your behalf.
 - Python 3.9 or later, and pip.
 - A place to deploy a small MCP server publicly, same as the notification backend in the previous guide.
@@ -64,7 +63,7 @@ Python Agent <----------------------------------------- WebSocket API proxy
                         AI gateway (AI Workspace)
 ```
 
-The agent holds three separate connections: it listens on the WebSocket API proxy for notifications, and for any that cross the threshold, it calls the LLM provider to decide on a tool and the MCP proxy to actually run it. The WebSocket API proxy lives in WSO2 API Platform Cloud, from the previous guide; the MCP proxy and LLM provider live in the separate AI Workspace console, both running on the same AI gateway.
+The agent holds three separate connections: it listens on the WebSocket API proxy for notifications, and for any that cross the threshold, it calls the LLM provider to decide on a tool and the MCP proxy to actually run it. The WebSocket API proxy is the one you created in the previous guide. The MCP proxy and LLM provider are in AI Workspace, both running on the same AI gateway.
 
 ## Step 1: Set up the tool server
 
@@ -79,7 +78,7 @@ Before you create the MCP proxy, you need a running server that speaks the Model
 
 ## Step 2: Create the MCP proxy
 
-1. Go to the [WSO2 AI Workspace](https://ai-workspace.bijira.dev/) and sign in. Choose an existing project, or create one.
+1. Sign in to [WSO2 API Platform](https://console.bijira.dev/), and click **AI Workspace** in the header. Choose an existing project, or create one.
 2. From the project home page, go to **MCP Proxies** from the left navigation bar, click **+ Create MCP Proxy**.
 3. Under **MCP Proxy Endpoint URL**, provide your tool server's URL, ending in `/mcp`:
 
@@ -116,7 +115,7 @@ An MCP proxy isn't callable until you deploy it to an AI gateway.
 ![MCP proxy overview page showing the Deploy to Gateway and Publish to MCP Hub buttons, the selected gateway, and its invoke URL](../../assets/img/guides/websocket/notification-agent/deploy-mcp-proxy.png){.cInlineImage-full}
 
 !!! note
-    A deployed MCP proxy has no inbound authentication by default. Anyone who reaches the invoke URL can call it. For a real deployment, attach the **MCP Authentication** policy from the proxy's **Policies** tab, which enforces the MCP specification's own authorization profile; see [Apply policies to an MCP proxy](../../ai-workspace/1.0.0/mcp-proxies/apply-policies.md). This guide leaves the proxy unauthenticated to keep `agent.py` simple, so treat that as a gap to close before using this pattern for real notifications.
+    For production use, attach the **MCP Authentication** policy from the proxy's **Policies** tab. See [Apply policies to an MCP proxy](../../ai-workspace/1.0.0/mcp-proxies/apply-policies.md). This guide doesn't configure it, to keep `agent.py` simple.
 
 Publishing the proxy to the MCP Hub is optional and only affects discoverability in your organization's MCP catalog. It doesn't change whether `agent.py` can call the proxy, so this guide skips it.
 
@@ -147,7 +146,7 @@ This creates the governed endpoint your agent uses to call Gemini.
 
 ## Step 5: Publish the WebSocket API and subscribe to it
 
-The LLM provider authenticates with the API key from Step 4. The MCP proxy has no inbound authentication in this guide, as noted in Step 3. The WebSocket API, back in WSO2 API Platform Cloud, still uses that console's own application, key, and access token model, and it needs to be published before it's visible here.
+The LLM provider authenticates with the API key from Step 4. The WebSocket API uses an application, key, and access token from WSO2 API Platform Cloud, and it needs to be published before you can subscribe to it.
 
 **Publish the API, if you haven't already:**
 
@@ -207,15 +206,15 @@ Watch the terminal until a notification crosses the threshold, and confirm a `to
 
 ## What you learned
 
-- Connected an AI agent to a WebSocket notification stream in WSO2 API Platform Cloud and an MCP proxy in the separate AI Workspace console
+- Connected an AI agent to a WebSocket notification stream in WSO2 API Platform Cloud and an MCP proxy in AI Workspace
 - Used a threshold check to decide when a notification is worth an LLM call, keeping routine ticks cheap and silent
 - Discovered an MCP proxy's tools at startup instead of hardcoding them, so adding a tool to the server doesn't require an agent code change
 - Routed every reasoning call through a governed LLM provider instead of calling the model service directly
-- Deployed AI Workspace resources to a self-hosted AI gateway, and understood that a real deployment needs the MCP Authentication policy this guide skipped
+- Deployed an MCP proxy and an LLM provider to an AI gateway
 
 ## Next steps
 
-- **Attach the MCP Authentication policy:** The MCP proxy in this guide has no inbound authentication; see the note in Step 3 before using this pattern for real notifications.
+- **Attach the MCP Authentication policy:** Secure the MCP proxy before using this pattern for real notifications. See the note in Step 3.
 - **Add a token-based rate limit to the LLM provider:** Cap how much the agent can spend on reasoning calls, the same way you'd rate-limit any other API.
 - **Aggregate tools from multiple MCP servers:** See [Build an AI agent that uses aggregated MCP tools from multiple APIs](../ai-and-mcp/build-ai-agent-with-multiple-mcp-servers.md) for the pattern extended to several governed backends at once.
 - **Add more tools to the tool server:** Anything you add is picked up automatically the next time the agent calls `list_tools()`.
