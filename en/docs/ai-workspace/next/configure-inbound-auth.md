@@ -35,7 +35,7 @@ The AI Workspace generates the API key and shows it once, at creation. Keys gene
 
 ## Default header per provider
 
-When you create an LLM provider from a built-in template, the Security tab defaults to the same header, and prefix, that the vendor's own API uses. The vendor's SDK therefore sends your gateway API key in the right header without any extra configuration:
+When you create an LLM provider from a built-in template, the **Security** tab uses the same header and prefix as the vendor's API. The vendor's SDK therefore sends your gateway API key in the correct header without extra configuration:
 
 | Provider template | Key name | API Key Value Prefix | Client sends |
 |-------------------|----------|----------------------|--------------|
@@ -47,7 +47,7 @@ When you create an LLM provider from a built-in template, the Security tab defau
 | Azure AI Foundry | `api-key` | — | `api-key: <your-api-key>` |
 | Gemini | `x-goog-api-key` | — | `x-goog-api-key: <your-api-key>` |
 
-After the provider is created, you can change the key name and prefix in the Security tab.
+After creating the provider, you can change **Key name** and **API Key Value Prefix** in the **Security** tab.
 
 An App LLM proxy inherits the key name and prefix of the provider it's created from.
 
@@ -70,6 +70,6 @@ Authorization: Bearer <your-api-key>
 ## Configure the header name
 
 1. Open your LLM provider or App LLM proxy and go to the **Security** tab.
-2. Set the **API Key** or **Key name** field to the header name your application uses, and the **API Key Value Prefix** if the header value carries one, such as `Bearer`.
+2. Set **API Key** or **Key name** to the header name your application uses. Set **API Key Value Prefix** if the value includes one, such as `Bearer`.
 3. Click **Save**.
 4. Click **Deploy to Gateway**. Security changes take effect only after redeployment.
