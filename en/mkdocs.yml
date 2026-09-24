@@ -158,6 +158,7 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: docs
   - attr_list
+  - md_in_html
 hooks:
   - hooks.py
 
