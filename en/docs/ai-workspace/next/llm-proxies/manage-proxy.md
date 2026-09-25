@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - llm-proxies
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-07-23
+last_updated: 2026-09-24
 content_type: "how-to"
 ---
 
@@ -54,7 +54,7 @@ If your selected provider uses API key authentication, you'll see the **API Key 
 
 | Field | Description |
 |-------|-------------|
-| **Header Name** | The authentication header required by the provider (for example, `X-API-Key`). This field is read-only and is defined by the provider template. |
+| **Header Name** | The authentication header the provider requires, taken from the provider's **Security** tab (for example, `Authorization` for an OpenAI provider). This field is read-only. |
 | **API Key** | Enter your provider's API key in this field. |
 
 **To configure:**
@@ -110,7 +110,7 @@ Configure how client applications authenticate when accessing your proxy endpoin
 | Field | Description |
 |-------|-------------|
 | **Authentication type** | Select the authentication method from the dropdown. **API Key** is the only available method. |
-| **Key name** | The name of the request header that clients must provide, for example `X-API-Key`. |
+| **Key name** | The name of the request header that clients must provide. A new proxy inherits its provider's key name, for example `Authorization` for an OpenAI provider. |
 | **Sent in** | Where clients send the key. `header` is the only supported option. |
 | **API Key Value Prefix** | An optional prefix prepended to the value clients must send, for example `Bearer`, so that clients send `Bearer <key>`. |
 
