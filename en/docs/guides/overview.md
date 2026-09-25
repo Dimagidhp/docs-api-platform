@@ -26,7 +26,7 @@ Use guides to see how components such as AI Gateway, AI Workspace, Developer Por
 
 ## Explore what you can build
 
-Manage and govern API traffic and AI traffic, discover APIs and MCP Servers, control LLM usage and cost, turn your APIs into MCP tools, monetize usage, and more. Pick a use case and follow its guides end to end.
+The guides below are grouped by use case. Whether you want to secure and manage your APIs, control LLM usage and cost, monitor AI traffic, turn your APIs into MCP tools, give AI agents access to your APIs as MCP tools, or monetize your usage, browse the guides for your use case and try them out on your own from start to finish.
 
 <div class="cards-container guides-cards" markdown="1">
 
@@ -222,7 +222,7 @@ Clone runnable sample apps for these guides from GitHub.
 
 ---
 
-Visit our Get Started page to find quick start guides tailored to your goals, or ask from community!
+New to WSO2 API Platform? Start with a quick start guide, or ask the community for help.
 
 [Get started &rarr;](../get-started.md)
 
