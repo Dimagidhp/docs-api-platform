@@ -32,7 +32,7 @@ The guides below are grouped by use case. Whether you want to secure and manage 
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg>Govern LLM Traffic
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg>Govern LLM Traffic
 
 ---
 
@@ -62,7 +62,7 @@ Route, secure, and control cost for requests to LLM providers.
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M9 3v6M15 3v6M6 9h12v4a6 6 0 01-12 0zM12 19v3"/></svg>Expose and Govern MCP Servers
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v6M15 3v6M6 9h12v4a6 6 0 01-12 0zM12 19v3"/></svg>Expose and Govern MCP Servers
 
 ---
 
@@ -96,7 +96,7 @@ Turn APIs into MCP tools, publish them, and control access.
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0"/></svg>Discover APIs and MCP Servers
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0"/></svg>Discover APIs and MCP Servers
 
 ---
 
@@ -114,7 +114,7 @@ Find APIs and MCP servers in the Developer Portal and MCP Hub, and make your fir
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg>Configure AI Coding Assistants with AI Gateway
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg>Configure AI Coding Assistants with AI Gateway
 
 ---
 
@@ -140,7 +140,7 @@ Route Claude Code, Gemini CLI, and Codex traffic through AI Gateway.
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M3 7h18v10H3zM3 11h18"/></svg>Monetize APIs and MCP Tools
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v10H3zM3 11h18"/></svg>Monetize APIs and MCP Tools
 
 ---
 
@@ -158,7 +158,7 @@ Charge for API calls and MCP tool usage with usage-based plans.
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Manage and Govern APIs
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Manage and Govern APIs
 
 ---
 
@@ -172,7 +172,7 @@ Publish your APIs as managed API proxies, and control who calls them with authen
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>Connect Third-Party Gateways
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>Connect Third-Party Gateways
 
 ---
 
@@ -186,7 +186,7 @@ Connect gateways such as AWS API Gateway, discover their APIs, and govern them f
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Expose Real-Time APIs
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Expose Real-Time APIs
 
 ---
 
@@ -206,7 +206,7 @@ Put an API proxy in front of WebSocket backends and push live updates to every c
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg>Try the samples
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg>Try the samples
 
 ---
 
@@ -218,7 +218,7 @@ Clone runnable sample apps for these guides from GitHub.
 
 <div class="card" markdown="1">
 
-### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--md-primary-fg-color); vertical-align: -4px; margin-right: 8px" aria-hidden="true"><path d="M12 22a10 10 0 100-20 10 10 0 000 20zM9.1 9a3 3 0 015.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Need help?
+### <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a10 10 0 100-20 10 10 0 000 20zM9.1 9a3 3 0 015.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Need help?
 
 ---
 
