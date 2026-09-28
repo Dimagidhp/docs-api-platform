@@ -21,18 +21,26 @@ content_type: "tutorial"
 
 This guide continues from [Build a WebSocket-based real-time notification system](build-a-websocket-notification-system.md). It connects a Python agent to that guide's Stock Notifications API, and for any tick that crosses an alert threshold, asks Gemini which of a small set of tools to call in response, then actually calls it through a governed MCP proxy. Below-threshold ticks never reach the LLM at all.
 
-By the end, you'll have a running agent that autonomously chooses between logging a watch note, raising an alert, or escalating for human follow-up. You'll use WSO2 API Platform Cloud for the WebSocket API, and AI Workspace for the MCP proxy and LLM provider.
+By the end, you'll have a running agent that autonomously chooses between logging a watch note, raising an alert, or escalating for human follow-up. You'll use WSO2 API Platform Cloud for the WebSocket API, and AI Workspace for the MCP Proxy and LLM Provider.
 
 !!! note
-    This guide assumes you've already completed [Build a WebSocket-based real-time notification system](build-a-websocket-notification-system.md) and have your Stock Notifications API deployed. Publishing it and finding its `wss://` invoke URL happen in Step 5.
+    This guide assumes you've already completed [Build a WebSocket-based real-time notification system](build-a-websocket-notification-system.md) and have your Stock Notifications API deployed. Publishing it and finding its `wss://` invoke URL happen in step 5.
+
+## Learning objectives
+
+- Connect an AI agent to a WebSocket notification stream in WSO2 API Platform Cloud and an MCP proxy in AI Workspace.
+- Use a threshold check to decide when a notification is worth an LLM call, keeping routine ticks cheap and silent.
+- Discover an MCP proxy's tools at startup instead of hardcoding them, so adding a tool to the server doesn't require an agent code change.
+- Route every reasoning call through a governed LLM provider instead of calling the model service directly.
+- Deploy an MCP proxy and an LLM provider to an AI gateway.
 
 ## Key concepts
 
 Before you start, here are the WSO2 API Platform terms this guide adds to the ones from the previous guide.
 
-*AI Workspace* is where you create and manage the MCP proxy and LLM provider an AI agent calls. You open it from WSO2 API Platform by clicking **AI Workspace** in the header.
+*AI Workspace* is where you create and manage the MCP Proxy and LLM Provider an AI agent calls. You open it from WSO2 API Platform by clicking **AI Workspace** in the header.
 
-An *AI gateway* is the runtime that executes AI Workspace's MCP proxies and LLM providers. You install and start it yourself (Docker, a VM, or Kubernetes), then connect it to AI Workspace with a registration token. Nothing you create in AI Workspace is callable until it's deployed to an active AI gateway.
+An *AI gateway* is the runtime that executes AI Workspace's MCP Proxies and LLM Providers. You install and start it yourself (Docker, a VM, or Kubernetes), then connect it to AI Workspace with a registration token. Nothing you create in AI Workspace is callable until it's deployed to an active AI gateway.
 
 An *MCP proxy* is a governed endpoint AI Workspace creates in front of a server that speaks the Model Context Protocol. It runs on an AI gateway, the same way a WebSocket API proxy runs on WSO2 API Platform Cloud Gateway.
 
@@ -46,6 +54,7 @@ A *tool* is a single function the agent can choose to call. In this guide, `log_
 - A WSO2 API Platform Cloud account (the same one from the previous guide). You open AI Workspace from it.
 - An AI gateway set up in AI Workspace and showing as **Active**. See [Set up an AI Gateway](../../ai-workspace/1.0.0/ai-gateways/setting-up.md).
 - A Google AI API key from [Google AI Studio](https://aistudio.google.com/apikey), which the LLM provider uses to call the Gemini API on your behalf.
+- Node.js and npm, to install and run the tool server.
 - Python 3.9 or later, and pip.
 - A place to deploy a small MCP server publicly, same as the notification backend in the previous guide.
 
@@ -63,7 +72,7 @@ Python Agent <----------------------------------------- WebSocket API proxy
                         AI gateway (AI Workspace)
 ```
 
-The agent holds three separate connections: it listens on the WebSocket API proxy for notifications, and for any that cross the threshold, it calls the LLM provider to decide on a tool and the MCP proxy to actually run it. The WebSocket API proxy is the one you created in the previous guide. The MCP proxy and LLM provider are in AI Workspace, both running on the same AI gateway.
+The agent holds three separate connections: it listens on the WebSocket API proxy for notifications, and for any that cross the threshold, it calls the LLM provider to decide on a tool and the MCP proxy to actually run it. The WebSocket API proxy is the one you created in the previous guide. The MCP Proxy and LLM Provider are in AI Workspace, both running on the same AI gateway.
 
 ## Step 1: Set up the tool server
 
@@ -90,10 +99,10 @@ Before you create the MCP proxy, you need a running server that speaks the Model
 
     | Field | Value |
     |---|---|
-    | **Name** | stock-agent-tools |
-    | **Context** | /default/stock-agent-tools |
-    | **Version** | v1.0 |
-    | **Description** | Tools an agent can call in response to a significant stock notification |
+    | **Name** | `stock-agent-tools` |
+    | **Context** | `/default/stock-agent-tools` |
+    | **Version** | `v1.0` |
+    | **Description** | `Tools an agent can call in response to a significant stock notification` |
 
 5. Click **Create**.
 
@@ -131,12 +140,12 @@ This creates the governed endpoint your agent uses to call Gemini.
 
     | Field | Value |
     |---|---|
-    | **Name** | stock-agent-gemini |
-    | **Version** | v1.0 |
+    | **Name** | `stock-agent-gemini` |
+    | **Version** | `v1.0` |
     | **API Key** | the Google AI API key from step 2 |
 
 6. Click **Add Provider**.
-7. Click **Deploy to Gateway**, select the same AI gateway from Step 3, and click **Deploy**.
+7. Click **Deploy to Gateway**, select the same AI gateway from step 3, and click **Deploy**.
 8. Once deployed, click **Generate API Key** in the Overview page, and copy the key immediately. It's shown only once. Collect this key. We'll call this `LLM_API_KEY`.
 9. Note the **Invoke URL** shown in the same panel. Collect this URL. We'll call this `LLM_URL`.
 
@@ -146,7 +155,7 @@ This creates the governed endpoint your agent uses to call Gemini.
 
 ## Step 5: Publish the WebSocket API and subscribe to it
 
-The LLM provider authenticates with the API key from Step 4. The WebSocket API uses an application, key, and access token from WSO2 API Platform Cloud, and it needs to be published before you can subscribe to it.
+The LLM provider authenticates with the API key from step 4. The WebSocket API uses an application, key, and access token from WSO2 API Platform Cloud, and it needs to be published before you can subscribe to it.
 
 **Publish the API, if you haven't already:**
 
@@ -204,23 +213,15 @@ For every notification that crosses the threshold, the agent asks Gemini which t
 Watch the terminal until a notification crosses the threshold, and confirm a `tool result` line prints for it.
 
 
-## What you learned
-
-- Connected an AI agent to a WebSocket notification stream in WSO2 API Platform Cloud and an MCP proxy in AI Workspace
-- Used a threshold check to decide when a notification is worth an LLM call, keeping routine ticks cheap and silent
-- Discovered an MCP proxy's tools at startup instead of hardcoding them, so adding a tool to the server doesn't require an agent code change
-- Routed every reasoning call through a governed LLM provider instead of calling the model service directly
-- Deployed an MCP proxy and an LLM provider to an AI gateway
-
 ## Next steps
 
-- **Attach the MCP Authentication policy:** Secure the MCP proxy before using this pattern for real notifications. See the note in Step 3.
+- **Attach the MCP Authentication policy:** Secure the MCP proxy before using this pattern for real notifications. See the note in step 3.
 - **Add a token-based rate limit to the LLM provider:** Cap how much the agent can spend on reasoning calls, the same way you'd rate-limit any other API.
 - **Aggregate tools from multiple MCP servers:** See [Build an AI agent that uses aggregated MCP tools from multiple APIs](../ai-and-mcp/build-ai-agent-with-multiple-mcp-servers.md) for the pattern extended to several governed backends at once.
 - **Add more tools to the tool server:** Anything you add is picked up automatically the next time the agent calls `list_tools()`.
 
 ## Try the sample
 
-The companion sample's `agent.py` is this exact guide's pattern. Plug in the URLs and credentials from Steps 3 through 5 and run it against your own deployed WSO2 API Platform Cloud and AI Workspace resources.
+The companion sample's `agent.py` is this exact guide's pattern. Plug in the URLs and credentials from steps 3 through 5 and run it against your own deployed WSO2 API Platform Cloud and AI Workspace resources.
 
 [View the sample on GitHub](https://github.com/wso2/api-platform/tree/main/samples/websocket-notification-agent)
