@@ -410,6 +410,22 @@ if (preRelLink) {
  *   3. On change, keep the user on the equivalent page under the new version,
  *      falling back to that version's overview when it does not exist.
  */
+// A native <select> is as wide as its longest option. Size it to the selected
+// option instead by measuring a one-option clone, which keeps the browser's own
+// padding and arrow width. The clone is attached to <body> so it still measures
+// while the nav drawer is hidden (mobile).
+function fitSelectToValue(select) {
+  var selected = select.options[select.selectedIndex];
+  if (!selected) return;
+  var probe = document.createElement('select');
+  probe.className = select.className;
+  probe.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;width:auto;max-width:none;';
+  probe.appendChild(new Option(selected.textContent));
+  document.body.appendChild(probe);
+  select.style.width = Math.ceil(probe.getBoundingClientRect().width) + 'px';
+  document.body.removeChild(probe);
+}
+
 // The navigation sidebar is re-rendered on every navigation, so resolve the
 // active version and rebind the selectors per page.
 onEachPage(function () {
@@ -487,6 +503,7 @@ onEachPage(function () {
         unreleasedGroup.appendChild(option);
       }
       if (select.value !== version) select.value = version;
+      fitSelectToValue(select);
       try {
         window.localStorage.setItem(storageKey, version);
       } catch (e) {
@@ -513,6 +530,7 @@ onEachPage(function () {
     }
 
     select.addEventListener('change', function () {
+      fitSelectToValue(select);
       var target = select.value;
       var group = groupForVersion(target);
       if (!group) return;
