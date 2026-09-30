@@ -7,7 +7,7 @@ tags:
   - ai-workspace
   - platform-api
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-08-07
+last_updated: 2026-09-30
 content_type: "reference"
 ---
 
@@ -4904,7 +4904,12 @@ Request/response translator applied when this provider is the selected upstream.
       }
     }
   },
-  "mcpSpecVersion": "2025-06-18",
+  "mcpSpecVersions": [
+    "2025-06-18"
+  ],
+  "upstreamMcpSpecVersions": [
+    "2025-06-18"
+  ],
   "policies": [
     {
       "executionCondition": "request.header.x-custom == 'enabled'",
@@ -4957,7 +4962,9 @@ Request/response translator applied when this provider is the selected upstream.
 |context|string|false|none|Base path for all routes exposed by this proxy. Must start with / and carry no trailing slash; the single exception is the root path "/", which is the default.|
 |vhost|string|false|none|Virtual host name used for routing. Supports standard domain names, subdomains, or wildcard domains. Must follow RFC-compliant hostname rules. Wildcards are only allowed in the left-most label (e.g., *.example.com).|
 |upstream|[Upstream](#schemaupstream)|true|none|Upstream backend configuration with main and sandbox endpoints|
-|mcpSpecVersion|string|false|none|MCP specification version supported by this proxy|
+|mcpSpecVersion|string|false|none|DEPRECATED - use `mcpSpecVersions`. Still honored when `mcpSpecVersions` is absent.|
+|mcpSpecVersions|[string]|false|none|MCP specification versions this proxy serves.|
+|upstreamMcpSpecVersions|[string]|false|none|MCP specification versions supported by the upstream server. Informational only; not used for routing.
 |policies|[[Policy](#schemapolicy)]|false|none|List of policies to be applied|
 |kind|string|false|none|Kind of the API based on its communication protocol or architectural style|
 |capabilities|[MCPProxyCapabilities](#schemamcpproxycapabilities)|false|none|List of capabilities supported by this proxy. This will be stored as-is and can be used in the future if we need this for governance purposes|
@@ -4969,8 +4976,6 @@ Request/response translator applied when this provider is the selected upstream.
 
 |Property|Value|
 |---|---|
-|mcpSpecVersion|2025-06-18|
-|mcpSpecVersion|2025-11-25|
 
 ## MCPProxyListItem
 
@@ -4989,7 +4994,9 @@ Request/response translator applied when this provider is the selected upstream.
   "version": "v1.0",
   "projectId": "default-project",
   "status": "deployed",
-  "mcpSpecVersion": "2025-11-25",
+  "mcpSpecVersions": [
+    "2025-11-25"
+  ],
   "createdAt": "2025-11-25T10:30:00Z",
   "updatedAt": "2025-11-25T10:30:00Z",
   "readOnly": false
@@ -5009,7 +5016,8 @@ Request/response translator applied when this provider is the selected upstream.
 |version|string|false|none|none|
 |projectId|string|false|none|Handle (URL-friendly slug) of the project this proxy belongs to|
 |status|string|false|none|none|
-|mcpSpecVersion|string|false|none|none|
+|mcpSpecVersion|string|false|none|DEPRECATED - use `mcpSpecVersions`.|
+|mcpSpecVersions|[string]|false|none|MCP specification versions this proxy serves.|
 |createdAt|string(date-time)|false|none|none|
 |updatedAt|string(date-time)|false|none|none|
 |readOnly|boolean|false|none|True when the artifact originated from a data-plane gateway (origin gateway_api) and is read-only in the control plane.|
@@ -5042,7 +5050,9 @@ Request/response translator applied when this provider is the selected upstream.
       "version": "v1.0",
       "projectId": "default-project",
       "status": "deployed",
-      "mcpSpecVersion": "2025-11-25",
+      "mcpSpecVersions": [
+        "2025-11-25"
+      ],
       "createdAt": "2025-11-25T10:30:00Z",
       "updatedAt": "2025-11-25T10:30:00Z",
       "readOnly": false
