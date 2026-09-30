@@ -26,16 +26,7 @@ Use guides to see how components such as AI Gateway, AI Workspace, Developer Por
 
 ## Explore what you can build
 
-The guides below are grouped by use case, such as:
-
-- Securing and managing APIs
-- LLM usage and cost control
-- Monitoring AI traffic
-- Converting APIs into MCP tools
-- Giving AI agents access to APIs as MCP tools
-- Monetizing usage
-
-Browse the guides for your use case and try them out on your own from start to finish.
+The guides below are grouped by use case. Whether you want to secure and manage your APIs, control LLM usage and cost, monitor AI traffic, turn your APIs into MCP tools, give AI agents access to your APIs as MCP tools, or monetize your usage, browse the guides for your use case and try them out on your own from start to finish.
 
 <div class="cards-container guides-cards" markdown="1">
 
