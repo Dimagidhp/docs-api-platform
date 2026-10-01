@@ -8,7 +8,7 @@ tags:
   - ai-workspace
   - mcp-proxies
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-06-22
+last_updated: 2026-09-30
 content_type: "how-to"
 ---
 
@@ -29,14 +29,20 @@ This guide walks you through creating a proxy and deploying it to a gateway.
 
 2. Click **+ Create MCP Proxy**.
 
-3. Provide the **MCP Server URL**. AI Workspace connects to that URL and fetches the server information.
+3. Provide the **MCP Server URL**, then click **Fetch Server Info**. AI Workspace connects to that URL and fetches the server information: the tools, resources, and prompts the server exposes, along with the MCP specification versions it reports.
 
     !!! warning "Protected servers"
         If the MCP server is protected with static credentials, provide them under **Advanced Configurations**. AI Workspace uses those credentials when it fetches the server information.
 
-4. Click **Next** to proceed to the next step.
+4. Review what the server reported, shown beside the form in two sections:
 
-5. Fill in the required proxy details:
+    - **Upstream server info**: the server's name and version, and under **Supported MCP versions**, the specification versions the server reports.
+
+    - **Capabilities**: the **Tools**, **Resources**, and **Prompts** the server exposes.
+
+5. Click **Next** to proceed to the next step.
+
+6. Fill in the required proxy details:
 
     1. **Name** (required): Enter a unique name for the proxy (for example, `mcp-tools-proxy`, `context-server-proxy`). The Proxy ID is auto-generated from the name (lowercase, hyphen-separated).
 
@@ -48,7 +54,7 @@ This guide walks you through creating a proxy and deploying it to a gateway.
 
     5. **Target** (required): The MCP server URL the gateway calls. AI Workspace fills this in from the URL you provided in the previous step.
 
-6. Click **Create** to create and save the proxy.
+7. Click **Create** to create and save the proxy.
 
 ## Deploy proxy to gateway
 
