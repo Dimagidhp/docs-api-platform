@@ -16,20 +16,41 @@ content_type: "how-to"
 
 # Configuring GitHub Copilot with AI Gateway
 
-This guide explains how to configure GitHub Copilot to send requests through WSO2 API Platform using an AI Gateway, an OpenAI LLM provider, and an App LLM Proxy. It covers two GitHub Copilot clients.
+## Overview
+
+GitHub Copilot uses GitHub-hosted models by default. Its bring your own key (BYOK) option lets you point GitHub Copilot at a model provider of your choice instead.
+
+This guide shows you how to use BYOK to route GitHub Copilot requests through the WSO2 AI Gateway to OpenAI. When developers connect GitHub Copilot to OpenAI directly, each developer needs the OpenAI API key, and there is no central place to control or track how GitHub Copilot is used. By the end, you'll have GitHub Copilot sending requests to an App LLM Proxy on the WSO2 AI Gateway, where each request is authenticated with a WSO2 API Platform API key, governed by the policies you attach, and recorded in Insights.
+
+The guide covers two GitHub Copilot clients.
 
 - **GitHub Copilot CLI**, the terminal assistant
 - **GitHub Copilot in Visual Studio Code (VS Code)**, using Copilot Chat
 
-By routing requests through WSO2 API Platform instead of invoking OpenAI directly, you can apply security, traffic control, and governance policies such as guardrails, rate limiting, analytics, and monitoring. The gateway acts as an intermediary, forwarding requests from GitHub Copilot to OpenAI while enforcing these controls.
+## Learning objectives
 
-Both clients connect to the App LLM Proxy using GitHub Copilot's bring your own key (BYOK) option, which lets you point GitHub Copilot at a model provider of your choice.
+- Route GitHub Copilot requests to OpenAI through an App LLM Proxy, so developers use a WSO2 API Platform API key and never handle the OpenAI API key
+- Configure GitHub Copilot CLI and GitHub Copilot in VS Code to send requests to a custom endpoint using BYOK
+- Set up SSL certificate trust so GitHub Copilot can connect to an AI Gateway that uses a self-signed certificate
+- Control GitHub Copilot usage by attaching guardrail, rate limit, and prompt decorator policies to the App LLM Proxy
+- Monitor GitHub Copilot token usage and cost in Insights
 
-This guide is for platform administrators who want to govern how their teams use GitHub Copilot, and for developers who connect GitHub Copilot to the WSO2 AI Gateway.
+## Key concepts
+
+This guide uses the following terms.
+
+- *AI Workspace* is where you create and manage AI Gateways, LLM providers, App LLM Proxies, and the policies attached to them.
+- *AI Gateway* is the runtime that receives requests from GitHub Copilot and enforces the policies attached to the App LLM Proxy.
+- *LLM provider* is a registered connection to a model provider, such as OpenAI. It stores the provider's API key, so developers don't need it.
+- *App LLM Proxy* is the endpoint that GitHub Copilot calls. It sits in front of the LLM provider, and it's where you attach policies.
+- *Policy* is a rule that the AI Gateway applies to each request, such as a guardrail, a rate limit, or a prompt decorator.
+- *Bring your own key (BYOK)* is the GitHub Copilot option that sends requests to a model provider you configure instead of to GitHub-hosted models. In VS Code, a model added this way is called a custom endpoint model.
 
 ---
 
 ## How the request flow works
+
+When a developer selects a model configured with BYOK, GitHub Copilot sends the chat and agent requests for that model to the URL configured for the model, instead of to GitHub-hosted models. In this setup, that URL is the invoke URL of an App LLM Proxy deployed on the WSO2 AI Gateway.
 
 The following diagram shows how a GitHub Copilot request travels through the WSO2 AI Gateway.
 
@@ -52,8 +73,9 @@ This setup provides the following benefits.
 
 Before you begin, make sure you have the following.
 
+- A WSO2 API Platform account. [Sign up for free](https://console.bijira.dev/).
+- AI Workspace access with an Admin role.
 - An [OpenAI API key](https://platform.openai.com/api-keys)
-- A WSO2 API Platform admin account
 - One of the following GitHub Copilot clients:
     - [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) installed
     - [VS Code](https://code.visualstudio.com/) with GitHub Copilot installed
@@ -235,7 +257,6 @@ Run the following commands, replacing the placeholders with your values.
 ```bash
 export COPILOT_PROVIDER_TYPE="openai"
 export COPILOT_PROVIDER_BASE_URL="<INVOKE URL>"
-export COPILOT_PROVIDER_API_KEY="dummy-value"
 export COPILOT_PROVIDER_HEADERS="X-API-Key: <API PLATFORM API KEY>"
 export COPILOT_MODEL="gpt-4.1"
 ```
