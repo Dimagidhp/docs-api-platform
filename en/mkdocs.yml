@@ -347,6 +347,7 @@ nav:
         - Quick Start Guide: api-gateway/next/quick-start-guide.md
         - Setup:
           - Configuration & Interpolation: api-gateway/next/setup/configuration.md
+          - Minimum resource requirements: api-gateway/next/setup/resource-requirement.md
           - Setting Up the Database: api-gateway/next/setup/database-setup.md
           - Artifact Templating: api-gateway/next/setup/artifact-templating.md
           - Health Checks: api-gateway/next/setup/health-checks.md
@@ -421,6 +422,7 @@ nav:
         - Quick Start Guide: api-gateway/1.2.0/quick-start-guide.md
         - Setup:
           - Configuration & Interpolation: api-gateway/1.2.0/setup/configuration.md
+          - Minimum resource requirements: api-gateway/1.2.0/setup/resource-requirement.md
           - Setting Up the Database: api-gateway/1.2.0/setup/database-setup.md
           - Artifact Templating: api-gateway/1.2.0/setup/artifact-templating.md
           - Health Checks: api-gateway/1.2.0/setup/health-checks.md
@@ -675,6 +677,7 @@ nav:
         - Setup and Deployment:
             - ai-gateway/next/setup-and-deployment/index.md
             - Install the Gateway: ai-gateway/next/setup-and-deployment/install-the-gateway.md
+            - Minimum resource requirements: ai-gateway/next/setup-and-deployment/resource-requirement.md
             - Kubernetes:
                 - ai-gateway/next/setup-and-deployment/kubernetes/index.md
                 - Standalone Mode: ai-gateway/next/setup-and-deployment/kubernetes/kubernetes-standalone.md
@@ -795,6 +798,7 @@ nav:
         - Setup and Deployment:
             - ai-gateway/2026.09.24/setup-and-deployment/index.md
             - Install the Gateway: ai-gateway/2026.09.24/setup-and-deployment/install-the-gateway.md
+            - Minimum resource requirements: ai-gateway/2026.09.24/setup-and-deployment/resource-requirement.md
             - Kubernetes:
                 - ai-gateway/2026.09.24/setup-and-deployment/kubernetes/index.md
                 - Standalone Mode: ai-gateway/2026.09.24/setup-and-deployment/kubernetes/kubernetes-standalone.md
@@ -903,6 +907,7 @@ nav:
         - Setup and Deployment:
             - ai-gateway/1.2.0/setup-and-deployment/index.md
             - Install the Gateway: ai-gateway/1.2.0/setup-and-deployment/install-the-gateway.md
+            - Minimum resource requirements: ai-gateway/1.2.0/setup-and-deployment/resource-requirement.md
             - Kubernetes:
                 - ai-gateway/1.2.0/setup-and-deployment/kubernetes/index.md
                 - Standalone Mode: ai-gateway/1.2.0/setup-and-deployment/kubernetes/kubernetes-standalone.md
@@ -1094,6 +1099,7 @@ nav:
         - Getting Started: api-portal/next/getting-started.md
         - Setting Up:
             - Configuration & Interpolation: api-portal/next/setting-up/configuration.md
+            - Minimum resource requirements: api-portal/next/setting-up/resource-requirement.md
             - Ports: api-portal/next/setting-up/ports.md
             - Database: api-portal/next/setting-up/database.md
             - Authentication:
@@ -1184,6 +1190,7 @@ nav:
         - Getting Started: api-portal/1.0.0/getting-started.md
         - Setting Up:
             - Configuration & Interpolation: api-portal/1.0.0/setting-up/configuration.md
+            - Minimum resource requirements: api-portal/1.0.0/setting-up/resource-requirement.md
             - Ports: api-portal/1.0.0/setting-up/ports.md
             - Database: api-portal/1.0.0/setting-up/database.md
             - Authentication:
@@ -1273,6 +1280,7 @@ nav:
       # Set up the workspace itself.
       - Setting Up:
           - Configuration & Interpolation: ai-workspace/next/setting-up/configuration.md
+          - Minimum resource requirements: ai-workspace/next/setting-up/resource-requirement.md
           - Ports: ai-workspace/next/setting-up/ports.md
           - Database: ai-workspace/next/setting-up/database.md
           - Authentication:
@@ -1357,6 +1365,7 @@ nav:
       # Set up the workspace itself.
       - Setting Up:
           - Configuration & Interpolation: ai-workspace/1.0.0/setting-up/configuration.md
+          - Minimum resource requirements: ai-workspace/1.0.0/setting-up/resource-requirement.md
           - Ports: ai-workspace/1.0.0/setting-up/ports.md
           - Database: ai-workspace/1.0.0/setting-up/database.md
           - Authentication:
