@@ -84,6 +84,7 @@ nav:
       # Set up the workspace itself.
       - Setting Up:
           - Configuration & Interpolation: ai-workspace/next/setting-up/configuration.md
+          - Minimum resource requirements: ai-workspace/next/setting-up/resource-requirement.md
           - Ports: ai-workspace/next/setting-up/ports.md
           - Database: ai-workspace/next/setting-up/database.md
           - Authentication:
