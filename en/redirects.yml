@@ -1,1 +1,7 @@
-redirect_maps: {}
+redirect_maps:
+  # API Monetization pages moved from api-monetization/ to monetization/ on main (c7d80c9b9)
+  api-monetization/getting-started.md: monetization/getting-started.md
+  api-monetization/manage-paid-subscription-plans.md: monetization/manage-paid-subscription-plans.md
+  api-monetization/overview.md: monetization/overview.md
+  api-monetization/subscribe-to-paid-plan.md: monetization/subscribe-to-paid-plan.md
+  api-monetization/view-billing-and-usage.md: monetization/view-billing-and-usage.md
