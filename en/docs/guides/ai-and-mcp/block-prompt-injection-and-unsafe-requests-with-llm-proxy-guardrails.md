@@ -446,4 +446,4 @@ Use the API key and invoke URL from Step 12. The invoke URL already includes you
 
 The companion sample runs this same four-guardrail chain locally using Docker, with a mock LLM and embedding backend — no real Mistral, OpenAI, or Azure OpenAI account required.
 
-[View the sample on GitHub](https://github.com/wso2/api-platform/tree/main/samples/llm-guardrails-in-action)
+[View the sample on GitHub](https://github.com/wso2/api-platform/tree/main/samples/request-path-guardrails)
