@@ -68,7 +68,7 @@ The gateway performs the selection, translation and authentication at request ti
 9. Click **Create Proxy**.
 
 !!! note
-    **Create Proxy** stays disabled until every provider that requires one has a credential. Hovering the disabled button says which condition is unmet. A provider still showing **Required** in the **Transformer policy** column does *not* block creation. The proxy is created, and the gateway still routes to that provider - but the request arrives in the proxy's inbound format, untranslated, so the provider is likely to reject it until you attach a transformer.
+    **Create Proxy** stays disabled until every provider that requires one has a credential. Hovering the disabled button says which condition is unmet. A provider still showing **Required** in the **Transformer policy** column does *not* block creation. The proxy is created. A gateway at **2026.09.24** or later still routes to that provider, but the request arrives untranslated in the proxy's inbound format. The provider is likely to reject it until you attach a transformer. Earlier gateways reach a provider that carries no transformer only by accident.
 
 ## Choose the inbound interface
 
@@ -122,7 +122,7 @@ Click **Add** in a provider's **Transformer policy** column to open the **Transf
 
 Each entry shows its source - **WSO2** for a catalogue policy, **Custom** for one built for your gateway - and its version. Clearing the category filter widens the list to every policy. Selecting a transformer opens its parameters for configuration.
 
-A transformer is recorded on the proxy only when it is attached. A provider left showing **Required** still receives requests, but they arrive untranslated in the proxy's inbound format.
+A transformer is recorded on the proxy only when it is attached. On a gateway at **2026.09.24** or later, a provider left showing **Required** still receives requests, but they arrive untranslated in the proxy's inbound format. Earlier gateways reach it only by accident.
 
 !!! note
     Automatic matching looks for a policy named for the exact conversion - for example `openai-to-anthropic-transformer`. A provider whose template handle does not match any policy name is reported as unmatched even when a suitable transformer exists in the catalogue under a slightly different name. Pick it manually in that case.
@@ -138,7 +138,7 @@ A gateway at **1.2.x** serves multi-provider proxies, but reads only the older `
 | A transformer on the primary provider | **2026.09.24** |
 | Routing to a provider that carries no transformer | **2026.09.24** |
 
-A proxy using a capability its target gateway does not support fails when you deploy it, rather than deploying and behaving unexpectedly.
+A proxy that declares the canonical list, a primary alias or transformer, or its own inbound interface fails to deploy to an older gateway. It does not deploy and then behave unexpectedly. Routing to a provider with no transformer is the exception. The proxy deploys, but an older gateway reaches that provider only by accident.
 
 ## Next steps
 

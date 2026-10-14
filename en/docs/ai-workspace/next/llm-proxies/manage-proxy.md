@@ -187,7 +187,8 @@ Resource-wise guardrails apply to **specific endpoints** only. This section list
 
 ## Save changes
 
-After making configuration changes across any tab (Definition, Providers, Security, Guardrails & Policies), click the **Save** button at the bottom-right of the page to persist your changes.
+To save changes, click the **Save** button at the bottom-right of the page.
+This saves changes across the **Definition**, **Providers**, **Security**, and **Guardrails & Policies** tabs.
 
 Use the **Cancel** button to discard all unsaved changes and revert to the last saved state.
 
