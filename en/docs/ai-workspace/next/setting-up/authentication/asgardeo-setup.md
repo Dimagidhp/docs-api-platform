@@ -161,7 +161,7 @@ In a production deployment, prefer supplying it from a mounted secret file. Swap
 
 Once configured, opening AI Workspace redirects you to the Asgardeo-hosted login page instead of the file-based login form:
 
-![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../../../assets/img/ai-gateway/standalone-ai-workspace/authentication/oidc-login-redirect.png)
+![AI Workspace login page redirecting to the Asgardeo-hosted login page](../../assets/img/ai-gateway/standalone-ai-workspace/authentication/oidc-login-redirect.png)
 
 ## Claim flow summary
 
