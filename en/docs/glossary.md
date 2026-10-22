@@ -12,7 +12,7 @@ tags:
   - mcp
   - policies
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-09-30
+last_updated: 2026-10-22
 content_type: "reference"
 ---
 
@@ -24,7 +24,13 @@ This glossary defines terms specific to WSO2 API Platform.
 
 ### AI Gateway
 
-The AI Gateway routes, secures, and observes AI traffic. It handles requests to Large Language Model (LLM) providers and to Model Context Protocol (MCP) servers. It runs on its own or connects to [AI Workspace](#ai-workspace) for central management.
+The AI Gateway routes, secures, and observes AI traffic. It governs three kinds of traffic, each through its own proxy type:
+
+- **[LLM Proxy](#llm-proxy):** requests to Large Language Model (LLM) providers.
+- **[MCP Proxy](#mcp-proxy):** Model Context Protocol (MCP) traffic between agents and tools.
+- **Agent artifact:** Agent2Agent (A2A) traffic to agents.
+
+The AI Gateway runs on the same Go-based runtime and policy engine as the [API Gateway](#api-gateway). It runs on its own or connects to [AI Workspace](#ai-workspace) for central management.
 
 For more information, see the [AI Gateway overview](ai-gateway/1.2.0/overview.md).
 
@@ -36,13 +42,13 @@ For more information, see the [AI Workspace overview](ai-workspace/1.0.0/overvie
 
 ### API Control Plane
 
-In the API Control Plane, you design, publish, version, and govern APIs through a web UI or configuration files. The API Control Plane enforces policies across all connected gateways. API Platform Cloud and WSO2 API Manager both include it.
+In the API Control Plane, you design, publish, version, and govern APIs through a web UI or configuration files. The API Control Plane distributes policies to all connected gateways, and the gateways enforce those policies. API Platform Cloud and WSO2 API Manager both include the API Control Plane.
 
 For more information, see [Platform components](index.md#platform-components).
 
 ### API Gateway
 
-The API Gateway handles API traffic, including REST, WebSocket, and GraphQL APIs, on a Go-based runtime. It applies authentication, rate limiting, transformations, and custom policies. It runs in [standalone mode](#standalone-mode) or connects to a control plane.
+The API Gateway handles REST, GraphQL, SOAP, and WebSocket traffic, both inbound and outbound, on a Go-based runtime. It applies authentication, rate limiting, transformations, and custom policies. It runs in [standalone mode](#standalone-mode) or connects to a control plane.
 
 For more information, see the [API Gateway overview](api-gateway/1.2.0/overview.md).
 
@@ -54,19 +60,21 @@ For more information, see the [API Platform Cloud overview](cloud/introduction/w
 
 ### API Platform Console
 
-The API Platform Console provides the web UI for API Platform Cloud. You use it to create projects, API Proxies, and MCP Servers, and to manage your organization.
+The API Platform Console provides the web UI for API Platform Cloud. You use the console to create projects, API Proxies, and MCP Servers, and to manage your organization.
 
 For more information, see the [API Proxy quick start guide](cloud/introduction/quick-start-guide.md), [Design and publish MCP servers](cloud/mcp-servers/design-mcp-servers.md), and [Organizations](cloud/bijira-concepts/organization.md).
 
 ### API Portal
 
-In the API Portal and MCP Hub, consumers discover APIs and MCP servers. Developers subscribe under a plan and generate credentials in the portal. You can use the portal in Cloud or run it as a self-hosted portal. The Cloud documentation also calls it the API Platform Developer Portal.
+In the API Portal and MCP Hub, developers and AI agents discover APIs, MCP servers, [API workflows](#api-workflow), and documentation. Developers subscribe under a [subscription plan](#subscription-plan) and generate credentials in the portal. AI agents use machine-readable endpoints, such as `/llms.txt`, instead of the visual portal.
+
+The portal also provides API try-out, SDK and Postman collection generation, and visibility controls by role, organization, or tenant. It runs in Cloud or self-hosted, with multi-tenancy, in API-only, MCP-only, or combined mode. The Cloud documentation also calls the portal the API Platform Developer Portal.
 
 For more information, see the [API Portal overview](api-portal/1.0.0/overview.md).
 
 ### API Proxy
 
-In API Platform Cloud, an API Proxy fronts a backend API. It secures, protects, and manages access to that API. An API Proxy can front an API in your organization or a third-party API.
+In API Platform Cloud, an API Proxy fronts a backend API. The API Proxy secures, protects, and manages access to that backend API. An API Proxy can front an API in your organization or a third-party API.
 
 For more information, see the [Create API Proxy overview](cloud/create-api-proxy/overview.md).
 
@@ -95,7 +103,7 @@ For more information, see [Create an application](cloud/devportal/manage-applica
 
 ### Control plane
 
-In the control plane, you design and manage APIs and AI configuration. The control plane doesn't process API traffic. Instead, the gateways in the [data plane](#data-plane) run on its configuration. The API Control Plane and AI Workspace both act as control planes.
+In the control plane, you design and manage APIs and AI configuration. The control plane doesn't process API traffic. Instead, the gateways in the [data plane](#data-plane) run on the control plane's configuration. The API Control Plane and AI Workspace both act as control planes.
 
 For more information, see [Data planes](cloud/bijira-concepts/data-planes.md).
 
@@ -138,7 +146,7 @@ For more information, see [GenAI Applications](ai-workspace/1.0.0/genai-applicat
 
 ### Guardrail
 
-A guardrail, a type of [policy](#policy), inspects the content of AI requests and responses. Guardrails validate, filter, or transform that content before it reaches a model or returns to the client. Examples include PII Masking, Azure Content Safety, and Semantic Prompt Guard.
+A guardrail, a type of [policy](#policy), inspects AI content: prompts, retrieved context, tool outputs, and responses. Depending on its configuration, a guardrail allows, transforms, redacts, or blocks that content. Examples include PII Masking, Azure AI Content Safety, and Semantic Prompt Guard.
 
 For more information, see the [guardrails overview](ai-gateway/1.2.0/guardrails/index.md).
 
@@ -154,7 +162,7 @@ For more information, see [Self-Hosted Gateway](#self-hosted-gateway).
 
 ### LLM Provider
 
-An LLM Provider connects the AI Gateway to an upstream AI service, such as OpenAI. Administrators configure it with the following details:
+An LLM Provider connects the AI Gateway to an upstream AI service, such as OpenAI. Administrators configure an LLM Provider with the following details:
 
 - An [LLM Provider Template](#llm-provider-template)
 - The upstream service URL
@@ -204,7 +212,7 @@ For more information, see [LLM proxy](ai-gateway/1.2.0/gateway-artifacts/llm-pro
 
 ### MCP Hub
 
-The MCP Hub gives developers a visual catalog for browsing MCP servers. The MCP registry powers it.
+The MCP Hub gives developers a visual catalog for browsing MCP servers. The MCP registry powers the MCP Hub.
 
 For more information, see [Browse the MCP Hub](cloud/mcp-servers/browse-mcp-hub.md).
 
@@ -216,7 +224,7 @@ For more information, see [MCP proxy](ai-gateway/1.2.0/gateway-artifacts/mcp-pro
 
 ### MCP registry
 
-The MCP registry catalogs MCP servers so that clients can discover them. Each organization has its own registry. When you publish an MCP Proxy from AI Workspace, API Platform registers it in the registry. AI clients query the registry through the MCP Registry API.
+The MCP registry catalogs MCP servers so that clients can discover them. Each organization has its own registry. When you publish an MCP Proxy from AI Workspace, API Platform registers the MCP Proxy in the registry. AI clients query the registry through the MCP Registry API.
 
 For more information, see the [MCP registry overview](cloud/mcp-servers/mcp-registry.md).
 
@@ -236,7 +244,7 @@ For more information, see the [MCP proxies overview](ai-workspace/1.0.0/mcp-prox
 
 ### Organization
 
-An organization groups users and their resources in a top-level container. In API Platform Cloud, every user belongs to an organization. Users and resources in one organization can't access another organization unless someone invites them.
+An organization groups users and their resources in a top-level container. In API Platform Cloud, every user belongs to an organization. Users and resources in one organization can't access another organization unless someone invites those users.
 
 For more information, see [Organizations](cloud/bijira-concepts/organization.md).
 
@@ -264,25 +272,25 @@ For more information, see [Projects](cloud/bijira-concepts/project.md).
 
 ### Self-Hosted Gateway
 
-A Self-Hosted Gateway runs the API Platform API Gateway in your own infrastructure. The API Platform Cloud control plane still manages it centrally.
+A Self-Hosted Gateway runs the API Platform API Gateway in your own infrastructure. The API Platform Cloud control plane still manages the gateway centrally.
 
 For more information, see [Getting started with the Self-Hosted Gateway](cloud/api-platform-gateway/getting-started.md).
 
 ### Semantic cache
 
-A semantic cache answers a prompt from stored responses when an earlier prompt had the same meaning. A cache hit skips the upstream LLM call, which saves latency and token cost. The Semantic Cache policy provides this behavior.
+A semantic cache answers a prompt from stored responses when an earlier prompt had the same meaning. A cache hit skips the upstream LLM call, saving latency and token cost. The Semantic Cache policy provides this behavior.
 
 For more information, see [Semantic caching](ai-gateway/1.2.0/semantic-caching.md).
 
 ### Standalone mode
 
-Standalone mode runs the API Gateway or AI Gateway without a control plane. You configure the gateway through YAML files, the CLI, or REST APIs. You can connect a standalone gateway to a control plane later.
+Standalone mode runs the API Gateway or AI Gateway without a control plane. You configure the gateway through YAML files, the CLI, or the Gateway Controller API. You can connect a standalone gateway to a control plane later.
 
 For more information, see [the difference between standalone mode and platform mode](index.md#what-is-the-difference-between-standalone-mode-and-platform-mode).
 
 ### Subscription plan
 
-A subscription plan defines a named usage tier that controls how much of an API a consumer can use. Plans can define rate limits and, in Cloud, pricing. Consumers choose a plan when they subscribe:
+A subscription plan defines a named usage tier that controls how much of an API a consumer can use. Plans can define rate limits and pricing. Consumers choose a plan when they subscribe:
 
 - **Cloud Developer Portal:** an application subscribes to an API under a plan.
 - **Self-hosted API Portal:** a developer subscribes directly to an API or MCP server under a plan.
