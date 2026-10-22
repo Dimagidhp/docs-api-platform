@@ -250,11 +250,6 @@ Governance provides the following capabilities:
 
 - Violations can block publishing or deployment.
 - A compliance dashboard shows violations, severity, scores, and remediation guidance.
-- The platform includes the following built-in rulesets, and also supports custom rulesets:
-    - [WSO2 API Management Guidelines](https://apim.docs.wso2.com/en/4.7.0/reference/governance/wso2-api-management-guidelines)
-    - [WSO2 REST API Design Guidelines](https://apim.docs.wso2.com/en/4.7.0/reference/governance/wso2-rest-api-design-guidelines)
-    - [OWASP API Top 10](https://apim.docs.wso2.com/en/4.5.0/reference/governance/owasp-top-10/)
-    - [WSO2 MCP Server Management Guidelines](https://apim.docs.wso2.com/en/4.7.0/reference/governance/wso2-mcp-server-management-guidelines)
 - The platform validates documentation completeness alongside definitions.
 
 For more information, see the [API governance overview](cloud/governance/overview.md).
