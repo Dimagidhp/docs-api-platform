@@ -236,7 +236,7 @@ For more information, see [Design and publish MCP servers](cloud/mcp-servers/des
 
 ### Model Context Protocol (MCP)
 
-Model Context Protocol, a JSON-RPC-based protocol, standardizes how applications interact with LLMs. It lets applications share context with LLMs and expose tools for AI-driven workflows.
+Model Context Protocol (MCP) is a JSON-RPC-based protocol that connects AI agents and applications to external tools and data sources. An MCP client, such as an AI agent, connects to an MCP server and uses the tools, resources, and prompts that the server exposes. On the AI Gateway, an [MCP Proxy](#mcp-proxy) governs this agent-to-tool traffic.
 
 For more information, see the [MCP proxies overview](ai-workspace/1.0.0/mcp-proxies/overview.md).
 
@@ -272,9 +272,11 @@ For more information, see [Projects](cloud/bijira-concepts/project.md).
 
 ### Self-Hosted Gateway
 
-A Self-Hosted Gateway runs the API Platform API Gateway in your own infrastructure. The API Platform Cloud control plane still manages the gateway centrally.
+A Self-Hosted Gateway is an API Gateway or AI Gateway that runs in your own infrastructure. The API Platform Cloud control plane still manages the gateway centrally. When you add a Self-Hosted Gateway in the API Platform Console, you choose the gateway type. Self-Hosted Gateways make up the data plane in a [hybrid deployment](#hybrid-deployment).
 
-For more information, see [Getting started with the Self-Hosted Gateway](cloud/api-platform-gateway/getting-started.md).
+In a self-managed deployment, gateways also run in your infrastructure, but they connect to a self-hosted control plane, such as a self-hosted [AI Workspace](#ai-workspace).
+
+For more information, see [Getting started with the Self-Hosted Gateway](cloud/api-platform-gateway/getting-started.md) and [Set up an AI Gateway](cloud/ai-workspace/ai-gateways/setting-up.md).
 
 ### Semantic cache
 
