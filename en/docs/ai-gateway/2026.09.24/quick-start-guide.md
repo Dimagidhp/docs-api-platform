@@ -43,18 +43,18 @@ The **Windows (PowerShell)** examples on this page require PowerShell 7.3 or lat
 
 ## Start the gateway
 
-The commands below use version `1.2.0`. Substitute the API Platform AI Gateway release version you want to run in the download URL, the archive name, and the directory name.
+The commands below use version `2026.09.24`. Substitute the API Platform AI Gateway release version you want to run in the download URL, the archive name, and the directory name.
 
 === "Linux / macOS"
 
     ```bash
     # Download distribution.
-    curl -fL -o wso2apip-ai-gateway-1.2.0.zip https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip
+    curl -fL -o wso2apip-ai-gateway-2026.09.24.zip https://github.com/wso2/api-platform/releases/download/ai-gateway/v2026.09.24/wso2apip-ai-gateway-2026.09.24.zip
 
     # Unzip the downloaded distribution.
-    unzip wso2apip-ai-gateway-1.2.0.zip
+    unzip wso2apip-ai-gateway-2026.09.24.zip
 
-    cd wso2apip-ai-gateway-1.2.0/
+    cd wso2apip-ai-gateway-2026.09.24/
 
     # Run the one-time setup. This provisions the Advanced Encryption Standard (AES)-256 at-rest
     # encryption key, the router HTTPS listener certificate, api-platform.env, and the
@@ -77,12 +77,12 @@ The commands below use version `1.2.0`. Substitute the API Platform AI Gateway r
 
     ```powershell
     # Download distribution.
-    Invoke-WebRequest -Uri https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip -OutFile wso2apip-ai-gateway-1.2.0.zip
+    Invoke-WebRequest -Uri https://github.com/wso2/api-platform/releases/download/ai-gateway/v2026.09.24/wso2apip-ai-gateway-2026.09.24.zip -OutFile wso2apip-ai-gateway-2026.09.24.zip
 
     # Unzip the downloaded distribution.
-    Expand-Archive -Path wso2apip-ai-gateway-1.2.0.zip -DestinationPath .
+    Expand-Archive -Path wso2apip-ai-gateway-2026.09.24.zip -DestinationPath .
 
-    Set-Location wso2apip-ai-gateway-1.2.0
+    Set-Location wso2apip-ai-gateway-2026.09.24
 
     # Run the one-time setup. This provisions the Advanced Encryption Standard (AES)-256 at-rest
     # encryption key, the router HTTPS listener certificate, api-platform.env, and the
