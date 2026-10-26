@@ -110,7 +110,7 @@ AI Workspace configures OpenAI's upstream endpoint URL, so you don't need to sup
 
 ### Step 3: Add guardrails (optional)
 
-In the Provider creation screen, you can opt to attach [guardrails like the AWS Bedrock Guardrail](./llm/guardrails/aws-bedrock-guardrail/), content-safety, or PII masking. Skip this for now.
+In the Provider creation screen, you can opt to attach guardrails like the AWS Bedrock Guardrail, content-safety, or PII masking. Skip this for now.
 
 ### Step 4: Save the provider
 
