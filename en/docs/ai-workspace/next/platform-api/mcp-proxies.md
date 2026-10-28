@@ -7,7 +7,7 @@ tags:
   - ai-workspace
   - platform-api
 author: WSO2 API Platform Documentation Team
-last_updated: 2026-08-07
+last_updated: 2026-09-30
 content_type: "reference"
 ---
 
@@ -64,7 +64,12 @@ Deploy a new MCP proxy configuration.
       }
     }
   },
-  "mcpSpecVersion": "2025-06-18",
+  "mcpSpecVersions": [
+    "2025-06-18"
+  ],
+  "upstreamMcpSpecVersions": [
+    "2025-06-18"
+  ],
   "policies": [
     {
       "executionCondition": "request.header.x-custom == 'enabled'",
@@ -148,7 +153,12 @@ Required scopes (the token must carry at least one of): `ap:mcp_proxy:create`, `
       }
     }
   },
-  "mcpSpecVersion": "2025-06-18",
+  "mcpSpecVersions": [
+    "2025-06-18"
+  ],
+  "upstreamMcpSpecVersions": [
+    "2025-06-18"
+  ],
   "policies": [
     {
       "executionCondition": "request.header.x-custom == 'enabled'",
@@ -315,7 +325,9 @@ Required scopes (the token must carry at least one of): `ap:mcp_proxy:read`, `ap
       "version": "v1.0",
       "projectId": "default-project",
       "status": "deployed",
-      "mcpSpecVersion": "2025-11-25",
+      "mcpSpecVersions": [
+        "2025-11-25"
+      ],
       "createdAt": "2025-11-25T10:30:00Z",
       "updatedAt": "2025-11-25T10:30:00Z",
       "readOnly": false
@@ -425,7 +437,12 @@ Required scopes (the token must carry at least one of): `ap:mcp_proxy:read`, `ap
       }
     }
   },
-  "mcpSpecVersion": "2025-06-18",
+  "mcpSpecVersions": [
+    "2025-06-18"
+  ],
+  "upstreamMcpSpecVersions": [
+    "2025-06-18"
+  ],
   "policies": [
     {
       "executionCondition": "request.header.x-custom == 'enabled'",
@@ -551,7 +568,12 @@ Update the configuration of an existing MCP proxy.
       }
     }
   },
-  "mcpSpecVersion": "2025-06-18",
+  "mcpSpecVersions": [
+    "2025-06-18"
+  ],
+  "upstreamMcpSpecVersions": [
+    "2025-06-18"
+  ],
   "policies": [
     {
       "executionCondition": "request.header.x-custom == 'enabled'",
@@ -636,7 +658,12 @@ Required scopes (the token must carry at least one of): `ap:mcp_proxy:update`, `
       }
     }
   },
-  "mcpSpecVersion": "2025-06-18",
+  "mcpSpecVersions": [
+    "2025-06-18"
+  ],
+  "upstreamMcpSpecVersions": [
+    "2025-06-18"
+  ],
   "policies": [
     {
       "executionCondition": "request.header.x-custom == 'enabled'",
