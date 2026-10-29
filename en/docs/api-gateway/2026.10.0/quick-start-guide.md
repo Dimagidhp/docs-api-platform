@@ -35,20 +35,20 @@ docker --version
 docker compose version
 ```
 
-<!-- Replace `${version}` with the API Platform Gateway release version you want to run. -->
+You also need WSO2 subscription credentials to pull the gateway images from the WSO2 private registry (`registry.wso2.com`).
+
+Download the API Platform Gateway 2026.10.0 distribution (`wso2apip-api-gateway-stsrelease-2026.10.0.zip`) from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway). Then run the following commands from the folder where you saved it.
 
 ```bash
-# Download distribution.
-wget https://github.com/wso2/api-platform/releases/download/gateway/v1.2.0/wso2apip-api-gateway-1.2.0.zip
-
 # Unzip the downloaded distribution.
-unzip wso2apip-api-gateway-1.2.0.zip
+unzip wso2apip-api-gateway-stsrelease-2026.10.0.zip
 
-cd wso2apip-api-gateway-1.2.0/
+cd wso2apip-api-gateway-stsrelease-2026.10.0/
 
 # Run the one-time setup. This provisions the AES-256 at-rest encryption key,
 # the router HTTPS listener certificate, api-platform.env, and the gateway-controller
 # admin credentials. It prints the admin password once — copy it.
+# When asked, press Enter to use the default username "admin" and a generated password.
 ./scripts/setup.sh
 
 # Export the admin credentials so the management-API calls below can authenticate.
@@ -56,8 +56,11 @@ cd wso2apip-api-gateway-1.2.0/
 export ADMIN_USERNAME=admin
 export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
 
-# Start the complete stack
-docker compose up
+# Log in to the WSO2 private registry with your WSO2 subscription credentials.
+docker login registry.wso2.com
+
+# Start the complete stack in the background
+docker compose up -d
 
 # Verify gateway controller admin endpoint is running
 curl http://localhost:9094/api/admin/v1/health

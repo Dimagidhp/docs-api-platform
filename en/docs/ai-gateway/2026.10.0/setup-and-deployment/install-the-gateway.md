@@ -18,7 +18,9 @@ You can run the AI Gateway on your own machine, on a virtual machine, in Docker,
 
 This page installs a gateway and starts it, and nothing else. For a walkthrough that also deploys an LLM provider and an LLM proxy and routes a request through them, see the [quick start guide](../quick-start-guide.md).
 
-The commands below use version `1.2.0`. Substitute the API Platform AI Gateway release version you want to run in the download URL, the archive name, and the directory name. The PowerShell commands require PowerShell 7.3 or later.
+The commands below use version `2026.10.0`. The PowerShell commands require PowerShell 7.3 or later.
+
+You also need WSO2 subscription credentials to pull the gateway images from the WSO2 private registry (`registry.wso2.com`).
 
 ## Install and start the gateway
 
@@ -32,29 +34,26 @@ Select the context you're installing in, then follow the steps in that tab.
 
     **Step 1: Download the distribution**
 
+    Download `wso2apip-ai-gateway-stsrelease-2026.10.0.zip` from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway). Then unzip it:
+
     ```bash
-    # Download distribution.
-    curl -fL -o wso2apip-ai-gateway-1.2.0.zip https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip
-
     # Unzip the downloaded distribution.
-    unzip wso2apip-ai-gateway-1.2.0.zip
+    unzip wso2apip-ai-gateway-stsrelease-2026.10.0.zip
 
-    cd wso2apip-ai-gateway-1.2.0/
+    cd wso2apip-ai-gateway-stsrelease-2026.10.0/
     ```
 
-    On Windows, download and unpack the distribution with PowerShell:
+    On Windows, unpack the distribution with PowerShell:
 
     ```powershell
-    Invoke-WebRequest -Uri https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip -OutFile wso2apip-ai-gateway-1.2.0.zip
+    Expand-Archive -Path wso2apip-ai-gateway-stsrelease-2026.10.0.zip -DestinationPath .
 
-    Expand-Archive -Path wso2apip-ai-gateway-1.2.0.zip -DestinationPath .
-
-    Set-Location wso2apip-ai-gateway-1.2.0
+    Set-Location wso2apip-ai-gateway-stsrelease-2026.10.0
     ```
 
     **Step 2: Run the one-time setup**
 
-    The setup script provisions the Advanced Encryption Standard (AES)-256 at-rest encryption key, the router HTTPS listener certificate, `api-platform.env`, and the gateway-controller admin credentials. It prints the admin password once — copy it.
+    The setup script provisions the Advanced Encryption Standard (AES)-256 at-rest encryption key, the router HTTPS listener certificate, `api-platform.env`, and the gateway-controller admin credentials. When asked, press Enter to use the default username `admin` and a generated password. It prints the admin password once — copy it.
 
     ```bash
     ./scripts/setup.sh
@@ -85,8 +84,11 @@ Select the context you're installing in, then follow the steps in that tab.
     **Step 4: Start the gateway and verify it answers**
 
     ```bash
-    # Start the complete stack
-    docker compose up
+    # Log in to the WSO2 private registry with your WSO2 subscription credentials.
+    docker login registry.wso2.com
+
+    # Start the complete stack in the background
+    docker compose up -d
 
     # Verify gateway controller admin endpoint is running
     curl http://localhost:9094/api/admin/v1/health
@@ -104,29 +106,26 @@ Select the context you're installing in, then follow the steps in that tab.
 
     **Step 1: Download the distribution**
 
+    Download `wso2apip-ai-gateway-stsrelease-2026.10.0.zip` from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway) and copy it to the VM. Then unzip it:
+
     ```bash
-    # Download distribution.
-    curl -fL -o wso2apip-ai-gateway-1.2.0.zip https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip
-
     # Unzip the downloaded distribution.
-    unzip wso2apip-ai-gateway-1.2.0.zip
+    unzip wso2apip-ai-gateway-stsrelease-2026.10.0.zip
 
-    cd wso2apip-ai-gateway-1.2.0/
+    cd wso2apip-ai-gateway-stsrelease-2026.10.0/
     ```
 
-    On Windows, download and unpack the distribution with PowerShell:
+    On Windows, unpack the distribution with PowerShell:
 
     ```powershell
-    Invoke-WebRequest -Uri https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip -OutFile wso2apip-ai-gateway-1.2.0.zip
+    Expand-Archive -Path wso2apip-ai-gateway-stsrelease-2026.10.0.zip -DestinationPath .
 
-    Expand-Archive -Path wso2apip-ai-gateway-1.2.0.zip -DestinationPath .
-
-    Set-Location wso2apip-ai-gateway-1.2.0
+    Set-Location wso2apip-ai-gateway-stsrelease-2026.10.0
     ```
 
     **Step 2: Run the one-time setup**
 
-    The setup script provisions the Advanced Encryption Standard (AES)-256 at-rest encryption key, the router HTTPS listener certificate, `api-platform.env`, and the gateway-controller admin credentials. It prints the admin password once — copy it.
+    The setup script provisions the Advanced Encryption Standard (AES)-256 at-rest encryption key, the router HTTPS listener certificate, `api-platform.env`, and the gateway-controller admin credentials. When asked, press Enter to use the default username `admin` and a generated password. It prints the admin password once — copy it.
 
     ```bash
     ./scripts/setup.sh
@@ -157,8 +156,11 @@ Select the context you're installing in, then follow the steps in that tab.
     **Step 4: Start the gateway and verify it answers**
 
     ```bash
-    # Start the complete stack
-    docker compose up
+    # Log in to the WSO2 private registry with your WSO2 subscription credentials.
+    docker login registry.wso2.com
+
+    # Start the complete stack in the background
+    docker compose up -d
 
     # Verify gateway controller admin endpoint is running
     curl http://localhost:9094/api/admin/v1/health
@@ -179,29 +181,26 @@ Select the context you're installing in, then follow the steps in that tab.
 
     **Step 1: Download the distribution**
 
+    Download `wso2apip-ai-gateway-stsrelease-2026.10.0.zip` from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway). Then unzip it:
+
     ```bash
-    # Download distribution.
-    curl -fL -o wso2apip-ai-gateway-1.2.0.zip https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip
-
     # Unzip the downloaded distribution.
-    unzip wso2apip-ai-gateway-1.2.0.zip
+    unzip wso2apip-ai-gateway-stsrelease-2026.10.0.zip
 
-    cd wso2apip-ai-gateway-1.2.0/
+    cd wso2apip-ai-gateway-stsrelease-2026.10.0/
     ```
 
-    On Windows, download and unpack the distribution with PowerShell:
+    On Windows, unpack the distribution with PowerShell:
 
     ```powershell
-    Invoke-WebRequest -Uri https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip -OutFile wso2apip-ai-gateway-1.2.0.zip
+    Expand-Archive -Path wso2apip-ai-gateway-stsrelease-2026.10.0.zip -DestinationPath .
 
-    Expand-Archive -Path wso2apip-ai-gateway-1.2.0.zip -DestinationPath .
-
-    Set-Location wso2apip-ai-gateway-1.2.0
+    Set-Location wso2apip-ai-gateway-stsrelease-2026.10.0
     ```
 
     **Step 2: Run the one-time setup**
 
-    The setup script provisions the Advanced Encryption Standard (AES)-256 at-rest encryption key, the router HTTPS listener certificate, `api-platform.env`, and the gateway-controller admin credentials. It prints the admin password once — copy it.
+    The setup script provisions the Advanced Encryption Standard (AES)-256 at-rest encryption key, the router HTTPS listener certificate, `api-platform.env`, and the gateway-controller admin credentials. When asked, press Enter to use the default username `admin` and a generated password. It prints the admin password once — copy it.
 
     ```bash
     ./scripts/setup.sh
@@ -232,8 +231,11 @@ Select the context you're installing in, then follow the steps in that tab.
     **Step 4: Start the gateway and verify it answers**
 
     ```bash
-    # Start the complete stack
-    docker compose up
+    # Log in to the WSO2 private registry with your WSO2 subscription credentials.
+    docker login registry.wso2.com
+
+    # Start the complete stack in the background
+    docker compose up -d
 
     # Verify gateway controller admin endpoint is running
     curl http://localhost:9094/api/admin/v1/health

@@ -39,26 +39,26 @@ docker compose version
 
 To call an LLM through the gateway, you also need an API key from the specific LLM service.
 
+You also need WSO2 subscription credentials to pull the gateway images from the WSO2 private registry (`registry.wso2.com`).
+
 The **Windows (PowerShell)** examples on this page require PowerShell 7.3 or later.
 
 ## Start the gateway
 
-The commands below use version `1.2.0`. Substitute the API Platform AI Gateway release version you want to run in the download URL, the archive name, and the directory name.
+Download the API Platform AI Gateway 2026.10.0 distribution (`wso2apip-ai-gateway-stsrelease-2026.10.0.zip`) from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway). Then run the following commands from the folder where you saved it.
 
 === "Linux / macOS"
 
     ```bash
-    # Download distribution.
-    curl -fL -o wso2apip-ai-gateway-1.2.0.zip https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip
-
     # Unzip the downloaded distribution.
-    unzip wso2apip-ai-gateway-1.2.0.zip
+    unzip wso2apip-ai-gateway-stsrelease-2026.10.0.zip
 
-    cd wso2apip-ai-gateway-1.2.0/
+    cd wso2apip-ai-gateway-stsrelease-2026.10.0/
 
     # Run the one-time setup. This provisions the Advanced Encryption Standard (AES)-256 at-rest
     # encryption key, the router HTTPS listener certificate, api-platform.env, and the
     # gateway-controller admin credentials. It prints the admin password once — copy it.
+    # When asked, press Enter to use the default username "admin" and a generated password.
     ./scripts/setup.sh
 
     # Export the admin credentials so the management-API calls below can authenticate.
@@ -66,8 +66,11 @@ The commands below use version `1.2.0`. Substitute the API Platform AI Gateway r
     export ADMIN_USERNAME=admin
     export ADMIN_PASSWORD='<the password scripts/setup.sh printed>'
 
-    # Start the complete stack
-    docker compose up
+    # Log in to the WSO2 private registry with your WSO2 subscription credentials.
+    docker login registry.wso2.com
+
+    # Start the complete stack in the background
+    docker compose up -d
 
     # Verify gateway controller admin endpoint is running
     curl http://localhost:9094/api/admin/v1/health
@@ -76,17 +79,15 @@ The commands below use version `1.2.0`. Substitute the API Platform AI Gateway r
 === "Windows (PowerShell)"
 
     ```powershell
-    # Download distribution.
-    Invoke-WebRequest -Uri https://github.com/wso2/api-platform/releases/download/ai-gateway/v1.2.0/wso2apip-ai-gateway-1.2.0.zip -OutFile wso2apip-ai-gateway-1.2.0.zip
-
     # Unzip the downloaded distribution.
-    Expand-Archive -Path wso2apip-ai-gateway-1.2.0.zip -DestinationPath .
+    Expand-Archive -Path wso2apip-ai-gateway-stsrelease-2026.10.0.zip -DestinationPath .
 
-    Set-Location wso2apip-ai-gateway-1.2.0
+    Set-Location wso2apip-ai-gateway-stsrelease-2026.10.0
 
     # Run the one-time setup. This provisions the Advanced Encryption Standard (AES)-256 at-rest
     # encryption key, the router HTTPS listener certificate, api-platform.env, and the
     # gateway-controller admin credentials. It prints the admin password once — copy it.
+    # When asked, press Enter to use the default username "admin" and a generated password.
     pwsh -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 
     # Set the admin credentials so the management-API calls below can authenticate.
@@ -94,8 +95,11 @@ The commands below use version `1.2.0`. Substitute the API Platform AI Gateway r
     $env:ADMIN_USERNAME='admin'
     $env:ADMIN_PASSWORD='<the password setup.ps1 printed>'
 
-    # Start the complete stack
-    docker compose up
+    # Log in to the WSO2 private registry with your WSO2 subscription credentials.
+    docker login registry.wso2.com
+
+    # Start the complete stack in the background
+    docker compose up -d
 
     # Verify gateway controller admin endpoint is running
     curl.exe http://localhost:9094/api/admin/v1/health

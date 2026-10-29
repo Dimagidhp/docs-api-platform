@@ -20,8 +20,8 @@ content_type: "how-to"
 Render the chart without installing it. This catches the fail-closed encryption check and any malformed values before anything reaches the cluster:
 
 ```bash
-helm template ai-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
-  --version 1.2.0 \
+helm template ai-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
   --namespace ai-gateway \
   --values ./values.yaml > /dev/null
 ```
@@ -33,8 +33,8 @@ A failure mentioning encryption keys means `gateway.controller.encryptionKeys` i
 === "Open Container Initiative (OCI) registry (recommended)"
 
     ```bash
-    helm install ai-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
-      --version 1.2.0 \
+    helm install ai-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+      --version 2026.10.0 \
       --namespace ai-gateway \
       --create-namespace \
       --values ./values.yaml \
@@ -53,7 +53,7 @@ A failure mentioning encryption keys means `gateway.controller.encryptionKeys` i
       --timeout 5m
     ```
 
-Chart version `1.2.0` pairs with AI Gateway 1.2.0. Keep the chart major version aligned with the image tags you pinned in the [overview](./index.md#pin-the-image-versions).
+Chart version `2026.10.0` pairs with AI Gateway 2026.10.0. Keep the chart major version aligned with the image tags you pinned in the [overview](./index.md#pin-the-image-versions).
 
 ## Verify the deployment
 
@@ -245,13 +245,13 @@ Then call the proxy repeatedly through the Service to confirm that load balancin
 Review what changed between chart versions:
 
 ```bash
-helm show values oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version <new-version>
+helm show values oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway --version <new-version>
 ```
 
 Diff your release against the new chart. This needs the `helm-diff` plugin:
 
 ```bash
-helm diff upgrade ai-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm diff upgrade ai-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
   --version <new-version> \
   --namespace ai-gateway \
   --values ./values.yaml
@@ -260,7 +260,7 @@ helm diff upgrade ai-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway
 Upgrade:
 
 ```bash
-helm upgrade ai-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm upgrade ai-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
   --version <new-version> \
   --namespace ai-gateway \
   --values ./values.yaml \

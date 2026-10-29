@@ -38,7 +38,7 @@ For **PostgreSQL** and **SQL Server**, the Gateway Controller connects to the da
 The scripts ship inside the gateway distribution:
 
 ```text
-wso2apip-api-gateway-<version>/
+wso2apip-api-gateway-stsrelease-2026.10.0/
 └── resources/
     └── gateway-controller/
         └── db-scripts/

@@ -49,7 +49,7 @@ A `build.yaml` with one Policy Hub policy and one local policy looks like this:
 ```yaml
 version: v1
 gateway:
-  version: 1.2.0
+  version: 2026.10.0
 policies:
   - name: set-headers
     gomodule: github.com/wso2/gateway-controllers/policies/set-headers@v1
@@ -161,9 +161,9 @@ For the full list of build options and base-image configuration, see [Building t
     ```yaml
     services:
       gateway-controller:
-        image: ghcr.io/wso2/api-platform/gateway-controller:1.2.0
+        image: registry.wso2.com/wso2-api-platform/sts/gateway-controller:2026.10.0
       gateway-runtime:
-        image: ghcr.io/wso2/api-platform/gateway-runtime:1.2.0
+        image: registry.wso2.com/wso2-api-platform/sts/gateway-runtime:2026.10.0
     ```
 
     to the built images:
@@ -171,9 +171,9 @@ For the full list of build options and base-image configuration, see [Building t
     ```yaml
     services:
       gateway-controller:
-        image: ghcr.io/wso2/api-platform/my-gateway-gateway-controller:1.2.0
+        image: registry.wso2.com/wso2-api-platform/sts/my-gateway-gateway-controller:2026.10.0
       gateway-runtime:
-        image: ghcr.io/wso2/api-platform/my-gateway-gateway-runtime:1.2.0
+        image: registry.wso2.com/wso2-api-platform/sts/my-gateway-gateway-runtime:2026.10.0
     ```
 
     On later updates that keep the same name and version, the image names do not change, so you can leave `docker-compose.yaml` as it is. For the full steps, see [Building the Gateway with Custom Policies](custom-policies/building-gateway-with-custom-policies.md).

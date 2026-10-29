@@ -16,7 +16,7 @@ content_type: "concept"
 
 # Production deployment overview
 
-This section is for platform engineers and site reliability engineers who run API Platform AI Gateway 1.2.0 for an organization. It covers a highly available Helm deployment on Kubernetes:
+This section is for platform engineers and site reliability engineers who run API Platform AI Gateway 2026.10.0 for an organization. It covers a highly available Helm deployment on Kubernetes:
 
 - Hardened security.
 - An external database shared by every controller replica.
@@ -26,7 +26,7 @@ This section is for platform engineers and site reliability engineers who run AP
 For a single-host evaluation, follow the [quick start guide](../../quick-start-guide.md) instead. For the other ways to run the gateway, see [Immutable Gateway](../immutable-gateway.md) and [Kubernetes deployment modes](../kubernetes/index.md).
 
 !!! info "Version-pinned instructions"
-    Every command and configuration key on these pages is taken from the `ai-gateway/v1.2.0` release tag and Helm chart `1.2.0`. Chart fields change between releases, so follow the pages for the AI Gateway version you deploy.
+    Every command and configuration key on these pages is taken from the 2026.10.0 release and Helm chart `2026.10.0`. Chart fields change between releases, so follow the pages for the AI Gateway version you deploy.
 
 ## What you deploy
 
@@ -103,35 +103,33 @@ helm version
 
 ### Start with the base values file
 
-Download the `values.yaml` that ships with the 1.2.0 gateway chart and use it as the starting point. Every field referenced in this section lives in this file.
+Export the `values.yaml` that ships with the 2026.10.0 gateway chart and use it as the starting point. Every field referenced in this section lives in this file. The chart comes from the WSO2 private registry, so log Helm in with your WSO2 subscription credentials first.
 
 ```bash
-curl -o values.yaml https://raw.githubusercontent.com/wso2/api-platform/refs/tags/ai-gateway/v1.2.0/kubernetes/helm/gateway-helm-chart/values.yaml
+helm registry login registry.wso2.com
+helm show values oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway --version 2026.10.0 > values.yaml
 ```
 
 ### Pin the image versions
 
-Set the controller and runtime image tags to 1.2.0 before changing anything else.
+Set the controller and runtime image tags to 2026.10.0 before changing anything else.
 
 ```yaml
 gateway:
   controller:
     image:
-      tag: "1.2.0"
+      tag: "2026.10.0"
   gatewayRuntime:
     image:
-      tag: "1.2.0"
+      tag: "2026.10.0"
 ```
 
 !!! note
     Use the same tag for both components. Mixed versions between the controller and the runtime aren't supported. Keep the major version of the image tags aligned with the major version of the Helm chart.
 
-!!! note "WSO2 subscription users"
-    With a WSO2 subscription, use image tags that carry the U2 update version as a fourth digit, such as `1.2.0.1`, instead of the base `1.2.0` release. The fourth digit carries patch-level updates delivered through the WSO2 private registry.
-
 ### Pull images from the WSO2 private registry
 
-With a WSO2 subscription, images come from `registry.wso2.com` instead of the public GHCR registry. One chart field switches this on end to end.
+The gateway images come from the WSO2 private registry (`registry.wso2.com`), so the cluster needs your WSO2 subscription credentials to pull them.
 
 Create an image pull Secret in the namespace you install into. Replace `<namespace>` and `<wso2-email>` with your values, then enter your password or token at the prompt:
 
@@ -161,7 +159,7 @@ wso2:
     imagePullSecret: wso2-subscription-creds
 ```
 
-Setting this field rewrites every default `ghcr.io/wso2/api-platform/` repository to `registry.wso2.com/wso2-api-platform/` and injects the Secret into the `imagePullSecrets` block of every component. An explicit `image.repository` override, such as an internal mirror, passes through unchanged. Left empty, the chart renders exactly as a non-subscription install.
+Setting this field injects the Secret into the `imagePullSecrets` block of every component. An explicit `image.repository` override, such as an internal mirror, passes through unchanged.
 
 !!! note
     The chart stores only the name of the Secret, so the credentials themselves stay out of Helm release state.

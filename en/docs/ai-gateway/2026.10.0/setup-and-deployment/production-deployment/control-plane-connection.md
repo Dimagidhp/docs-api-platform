@@ -110,8 +110,8 @@ The remaining fields control sync behavior. `deployment_sync_enabled: true` push
 Apply the change:
 
 ```bash
-helm upgrade ai-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
-  --version 1.2.0 \
+helm upgrade ai-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
   --namespace ai-gateway \
   --values ./values.yaml \
   --wait

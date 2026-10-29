@@ -29,7 +29,7 @@ All three matter more on an AI Gateway than on a plain API gateway. Its artifact
 
 The controller encrypts sensitive data at rest with 256-bit keys under Advanced Encryption Standard in Galois/Counter Mode (AES-GCM). On an AI Gateway this covers the LLM provider upstream API keys and the guardrail service credentials, such as Azure Content Safety and AWS Bedrock Guardrails keys. It also covers any values you store through the secrets management API.
 
-At-rest encryption is mandatory. The 1.2.0 chart is fail-closed: it refuses to render unless `gateway.controller.encryptionKeys.enabled` is `true` with a `secretName`, and the controller doesn't start without its key. Provision the key before you install.
+At-rest encryption is mandatory. The 2026.10.0 chart is fail-closed: it refuses to render unless `gateway.controller.encryptionKeys.enabled` is `true` with a `secretName`, and the controller doesn't start without its key. Provision the key before you install.
 
 Generate a 256-bit AES key:
 

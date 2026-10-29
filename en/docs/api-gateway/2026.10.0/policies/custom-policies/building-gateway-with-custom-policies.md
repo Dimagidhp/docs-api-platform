@@ -107,7 +107,7 @@ The `build.yaml` file is already included in the unzipped gateway package. It de
 ```yaml
 version: v1
 gateway:
-  version: 1.0.0
+  version: 2026.10.0
 policies:
   - name: <policy-name>
     gomodule: <go-module-path>@<version>   # for policy hub managed policies
@@ -149,61 +149,35 @@ policies:
 
 ### Overriding the Base Images
 
-`ap gateway image build` resolves three images during a build: the **builder** image that performs the build, and the **controller** and **runtime** base images that the produced images extend. By default, all three are pulled from the public WSO2 GitHub Container Registry (GHCR) at the version declared in `gateway.version`.
-
-You can override any of them independently by adding an `images` block under `gateway`. This is optional for standard builds that use the public images, but **required for WSO2 subscription users**, who must point these images at the WSO2 private registry (see below). It is also useful for air-gapped environments and internal registry mirrors.
-
-| Key | Used as | Default (when not set) |
-|---|---|---|
-| `builder` | image run to perform the build | `ghcr.io/wso2/api-platform/gateway-builder:<version>` |
-| `controller` | base image extended by the built controller | `ghcr.io/wso2/api-platform/gateway-controller:<version>` |
-| `runtime` | base image extended by the built runtime | `ghcr.io/wso2/api-platform/gateway-runtime:<version>` |
+`ap gateway image build` resolves three images during a build: the **builder** image that performs the build, and the **controller** and **runtime** base images that the produced images extend. In the gateway package, `build.yaml` already sets all three to the WSO2 private registry (`registry.wso2.com`):
 
 ```yaml
 version: v1
 gateway:
-  version: 1.0.0
-  images:   # optional — if omitted, the public GHCR images above are used
-    builder: ghcr.io/wso2/api-platform/gateway-builder:1.0.0
-    controller: ghcr.io/wso2/api-platform/gateway-controller:1.0.0
-    runtime: ghcr.io/wso2/api-platform/gateway-runtime:1.0.0
+  version: 2026.10.0
+  images:
+    builder: registry.wso2.com/wso2-api-platform/sts/gateway-builder:2026.10.0
+    controller: registry.wso2.com/wso2-api-platform/sts/gateway-controller:2026.10.0
+    runtime: registry.wso2.com/wso2-api-platform/sts/gateway-runtime:2026.10.0
 policies:
   - name: set-headers
     gomodule: github.com/wso2/gateway-controllers/policies/set-headers@v1
 ```
 
-Each key is resolved independently, so you can override only the ones you need; any key left out falls back to its default public GHCR image. The resolved images are printed at the start of the build under **Resolved images**, so you can confirm which ones were used.
+Keep the `images` block when you edit `build.yaml`. You can point any of the three keys at another registry, such as an internal mirror. The resolved images are printed at the start of the build under **Resolved images**, so you can confirm which ones were used.
 
-!!! note "WSO2 Subscription Users"
-    If you have a WSO2 subscription, use image tags that include the **U2 update version (4th digit)**, for example `1.1.0.0`, instead of the base release `1.1.0`. The 4th digit represents **patch-level (U2) updates**, which include the latest fixes and security updates delivered through the WSO2 private registry (`registry.wso2.com`).
+The `ap` CLI uses your local Docker installation to pull and build images, so log in to the WSO2 private registry with your WSO2 subscription credentials first:
 
-    Because these images are not published to the public GHCR registry, set **all three** keys explicitly to the `registry.wso2.com/wso2-api-platform/` path:
-
-    ```yaml
-    version: v1
-    gateway:
-      version: "1.1.0.0"
-      images:
-        builder: registry.wso2.com/wso2-api-platform/gateway-builder:1.1.0.0
-        controller: registry.wso2.com/wso2-api-platform/gateway-controller:1.1.0.0
-        runtime: registry.wso2.com/wso2-api-platform/gateway-runtime:1.1.0.0
-    policies:
-      - name: set-headers
-        gomodule: github.com/wso2/gateway-controllers/policies/set-headers@v1
-    ```
-
-    The `ap` CLI uses your local Docker installation to pull and build images, so authenticate to the private registry first:
-
-    ```bash
-    docker login registry.wso2.com   # use your WSO2 email and access token
-    ```
+```bash
+docker login registry.wso2.com
+```
 
 ## Build the Gateway Image
 
 Once `build.yaml` is ready, run the following command from the directory containing `build.yaml` to build the custom gateway image:
 
 ```bash
-ap gateway image build
+ap gateway image build --name my-gateway
 ```
 
 This packages the gateway runtime together with all listed policies into a container image that can be used in place of the standard gateway image.
@@ -212,8 +186,8 @@ Once the build completes, the output lists the two image names produced. For exa
 
 ```text
 ✓ Built gateway images with 1 policies:
-  • ghcr.io/wso2/api-platform/gateway-v1.0.0-gateway-runtime:1.0.0
-  • ghcr.io/wso2/api-platform/gateway-v1.0.0-gateway-controller:1.0.0
+  • registry.wso2.com/wso2-api-platform/sts/my-gateway-gateway-runtime:2026.10.0
+  • registry.wso2.com/wso2-api-platform/sts/my-gateway-gateway-controller:2026.10.0
 ```
 
 A `build-manifest.yaml` file is also written alongside `build.yaml`, recording the resolved versions of all policies included in the build.
@@ -227,10 +201,10 @@ Locate the `gateway-controller` and `gateway-runtime` services and replace their
 ```yaml
 services:
   gateway-controller:
-    image: ghcr.io/wso2/api-platform/gateway-v1.0.0-gateway-controller:1.0.0  # (1)
+    image: registry.wso2.com/wso2-api-platform/sts/my-gateway-gateway-controller:2026.10.0  # (1)
 
   gateway-runtime:
-    image: ghcr.io/wso2/api-platform/gateway-v1.0.0-gateway-runtime:1.0.0     # (2)
+    image: registry.wso2.com/wso2-api-platform/sts/my-gateway-gateway-runtime:2026.10.0     # (2)
 ```
 
 1. Replace with the `gateway-controller` image name from your build output.

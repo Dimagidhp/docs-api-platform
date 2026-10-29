@@ -31,15 +31,15 @@ The gateway chart deploys the runtime components used by API Platform Gateway (c
 
 Chart reference:
 
-- OCI chart: `oci://ghcr.io/wso2/api-platform/helm-charts/gateway`
-- Local chart (repo): `kubernetes/helm/gateway-helm-chart`
+- OCI chart: `oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway`, version `2026.10.0`
 
 ## Prerequisites
 
 - Kubernetes `1.24+`
-- Helm `3.12+`
+- Helm `3.14+`
 - `kubectl`
 - `cert-manager` (required for cert-manager-backed TLS flows)
+- WSO2 subscription credentials to pull the chart and images from the WSO2 private registry (`registry.wso2.com`)
 
 ## Install cert-manager
 
@@ -58,6 +58,26 @@ Verify:
 ```bash
 kubectl get pods -n cert-manager
 ```
+
+## Log in to the WSO2 private registry
+
+Log Helm in to the registry so it can pull the chart:
+
+```bash
+helm registry login registry.wso2.com
+```
+
+Create an image pull secret so the cluster can pull the gateway images. Create it in the namespace you install into:
+
+```bash
+kubectl create secret docker-registry wso2-subscription-creds \
+  --docker-server=registry.wso2.com \
+  --docker-username=<wso2-username> \
+  --docker-password=<wso2-password>
+# For a non-default namespace, add `-n <namespace>`.
+```
+
+The install commands below pass this secret to the chart with `wso2.subscription.imagePullSecret`.
 
 ## Create the Encryption Key Secret
 
@@ -81,7 +101,9 @@ Use one of the following patterns.
 ### Default install
 
 ```bash
-helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
+  --set wso2.subscription.imagePullSecret=wso2-subscription-creds \
   --set gateway.controller.encryptionKeys.enabled=true \
   --set gateway.controller.encryptionKeys.secretName=gateway-encryption-keys
 ```
@@ -91,7 +113,9 @@ helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
 ```bash
 kubectl create namespace api-gateway
 
-helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
+  --set wso2.subscription.imagePullSecret=wso2-subscription-creds \
   --namespace api-gateway \
   --set gateway.controller.encryptionKeys.enabled=true \
   --set gateway.controller.encryptionKeys.secretName=gateway-encryption-keys
@@ -100,7 +124,9 @@ helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
 ### Install with control-plane overrides
 
 ```bash
-helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
+  --set wso2.subscription.imagePullSecret=wso2-subscription-creds \
   --set gateway.controller.controlPlane.host="platform.example.com" \
   --set gateway.controller.controlPlane.port=8443 \
   --set gateway.controller.controlPlane.token.value="your-token-here" \
@@ -110,9 +136,12 @@ helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
 
 ### Install with a values file
 
-`custom-values.yaml` must define the mandatory encryption settings:
+`custom-values.yaml` must define the image pull secret and the mandatory encryption settings:
 
 ```yaml
+wso2:
+  subscription:
+    imagePullSecret: wso2-subscription-creds
 gateway:
   controller:
     encryptionKeys:
@@ -121,7 +150,8 @@ gateway:
 ```
 
 ```bash
-helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
   -f custom-values.yaml
 ```
 
@@ -147,7 +177,7 @@ kubectl logs -l app.kubernetes.io/component=gateway-runtime
 Upgrade:
 
 ```bash
-helm upgrade ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway -f custom-values.yaml
+helm upgrade ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway --version 2026.10.0 -f custom-values.yaml
 ```
 
 Uninstall:
@@ -182,7 +212,9 @@ Refer to inline comments in chart `values.yaml` for all supported fields.
 ### Option 1: cert-manager (recommended)
 
 ```bash
-helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
+  --set wso2.subscription.imagePullSecret=wso2-subscription-creds \
   --set gateway.controller.tls.enabled=true
 ```
 
@@ -212,7 +244,9 @@ kubectl create secret tls gateway-tls \
   --cert=path/to/tls.crt \
   --key=path/to/tls.key
 
-helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
+  --set wso2.subscription.imagePullSecret=wso2-subscription-creds \
   --set gateway.controller.tls.enabled=true \
   --set gateway.controller.tls.certificateProvider=secret \
   --set gateway.controller.tls.secret.name=gateway-tls
@@ -227,7 +261,9 @@ kubectl create secret generic upstream-ca-certs \
   --from-file=ca1.crt=path/to/ca1.crt \
   --from-file=ca2.crt=path/to/ca2.crt
 
-helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+  --version 2026.10.0 \
+  --set wso2.subscription.imagePullSecret=wso2-subscription-creds \
   --set gateway.controller.upstreamCerts.enabled=true \
   --set gateway.controller.upstreamCerts.secretName=upstream-ca-certs
 ```

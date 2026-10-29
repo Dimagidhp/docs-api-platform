@@ -113,6 +113,7 @@ The distribution ships `scripts/setup.sh` (and `scripts/setup.ps1`, its Windows 
 
     ```bash
     ./scripts/setup.sh
+    docker login registry.wso2.com
     docker compose up
     ```
 
@@ -120,6 +121,7 @@ The distribution ships `scripts/setup.sh` (and `scripts/setup.ps1`, its Windows 
 
     ```powershell
     powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+    docker login registry.wso2.com
     docker compose up
     ```
 

@@ -16,7 +16,7 @@ content_type: "how-to"
 
 # Database configuration
 
-An external database is what makes controller high availability possible. It replaces the default SQLite backend, which supports a single replica. The external database becomes the shared source of truth that every Gateway Controller replica reads and writes. AI Gateway 1.2.0 supports **PostgreSQL** and **SQL Server**.
+An external database is what makes controller high availability possible. It replaces the default SQLite backend, which supports a single replica. The external database becomes the shared source of truth that every Gateway Controller replica reads and writes. AI Gateway 2026.10.0 supports **PostgreSQL** and **SQL Server**.
 
 ## Before you begin
 
@@ -25,7 +25,7 @@ Create the database, the gateway account, and the schema first. That procedure, 
 Come back here once the schema exists. This page covers only the chart configuration.
 
 !!! important
-    Use the schema scripts that ship with AI Gateway 1.2.0. A script from another release can leave the schema out of step with what the controller expects.
+    Use the schema scripts that ship with AI Gateway 2026.10.0. A script from another release can leave the schema out of step with what the controller expects.
 
 ## Store the password in a Kubernetes Secret
 

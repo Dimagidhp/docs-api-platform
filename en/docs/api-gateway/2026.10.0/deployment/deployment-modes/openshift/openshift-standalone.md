@@ -26,6 +26,7 @@ For more information about OpenShift container security and file permissions, se
 
 Make sure you have the following before you deploy:
 
+- **WSO2 subscription credentials:** the chart and images come from the WSO2 private registry (`registry.wso2.com`). You use them in [Step 5](#step-5).
 - **An at-rest encryption key Secret:** the chart refuses to install without it. You create it in [Step 5](#step-5).
 - **cert-manager, or your own TLS Secret:** the chart uses it for the gateway's HTTPS listener certificate.
 - **A StorageClass:** the gateway controller stores its state in a PersistentVolumeClaim (PVC). Either the cluster has a default StorageClass, or you set one explicitly.
@@ -142,7 +143,7 @@ The gateway runtime runs three processes in one container: the Router (Envoy), t
               mountPath: /var/run/api-platform
     ```
 
-### Step 5: Create the encryption key Secret { #step-5 }
+### Step 5: Create the encryption key and image pull Secrets { #step-5 }
 
 The gateway controller encrypts sensitive data at rest with an AES-256 key. The chart doesn't install unless this Secret exists and the values reference it.
 
@@ -162,8 +163,19 @@ The gateway controller encrypts sensitive data at rest with an AES-256 key. The 
     oc get secret gateway-encryption-keys -n <PROJECT-NAME>
     ```
 
+3. Log Helm in to the WSO2 private registry, and create an image pull secret so the cluster can pull the gateway images:
+
+    ```bash
+    helm registry login registry.wso2.com
+    oc create secret docker-registry wso2-subscription-creds \
+      --docker-server=registry.wso2.com \
+      --docker-username=<wso2-username> \
+      --docker-password=<wso2-password> \
+      -n <PROJECT-NAME>
+    ```
+
 !!! note
-    - Create the Secret in the same project that you install the gateway into.
+    - Create both Secrets in the same project that you install the gateway into.
     - Name the key entry exactly `default-aesgcm256-v1.bin`.
     - Keep a secure backup of the key. You can't recover data encrypted with it if you lose the key.
 
@@ -172,9 +184,17 @@ The gateway controller encrypts sensitive data at rest with an AES-256 key. The 
 1. Update your `values.yaml` file with the following sections. To start from the chart's defaults, export them first:
 
     ```bash
-    helm show values oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version <CHART_VERSION> > values.yaml
+    helm show values oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway --version 2026.10.0 > values.yaml
     ```
 
+
+    **Image pull secret:** reference the pull secret from [Step 5](#step-5):
+
+    ```yaml
+    wso2:
+      subscription:
+        imagePullSecret: wso2-subscription-creds
+    ```
 
     **Encryption key:** reference the Secret from [Step 5](#step-5):
 
@@ -236,8 +256,8 @@ The gateway controller encrypts sensitive data at rest with an AES-256 key. The 
 2. Install the chart:
 
     ```bash
-    helm install gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
-      --version <CHART_VERSION> \
+    helm install gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+      --version 2026.10.0 \
       --namespace <PROJECT-NAME> \
       -f values.yaml
     ```

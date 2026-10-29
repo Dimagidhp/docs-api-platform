@@ -20,8 +20,8 @@ content_type: "how-to"
 === "OCI Registry (Recommended)"
 
     ```bash
-    helm install ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
-      --version 1.1.3 \
+    helm install ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
+      --version 2026.10.0 \
       --namespace ap-gateway \
       --create-namespace \
       --values ./values.yaml \
@@ -66,13 +66,13 @@ kubectl exec -n ap-gateway deploy/ap-gateway-controller -- \
 **Pull latest chart values to see what changed:**
 
 ```bash
-helm show values oci://ghcr.io/wso2/api-platform/helm-charts/gateway --version <new-version>
+helm show values oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway --version <new-version>
 ```
 
 **Diff current release vs the new chart (requires the `helm-diff` plugin):**
 
 ```bash
-helm diff upgrade ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm diff upgrade ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
   --version <new-version> \
   --namespace ap-gateway \
   --values ./values.yaml
@@ -81,7 +81,7 @@ helm diff upgrade ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway
 **Upgrade:**
 
 ```bash
-helm upgrade ap-gateway oci://ghcr.io/wso2/api-platform/helm-charts/gateway \
+helm upgrade ap-gateway oci://registry.wso2.com/wso2-api-platform/sts/helm-charts/gateway \
   --version <new-version> \
   --namespace ap-gateway \
   --values ./values.yaml \
