@@ -37,7 +37,7 @@ docker compose version
 
 You also need WSO2 subscription credentials to pull the gateway images from the WSO2 private registry (`registry.wso2.com`).
 
-Download the API Platform Gateway 2026.10.0 distribution (`wso2apip-api-gateway-stsrelease-2026.10.0.zip`) from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway). Then run the following commands from the folder where you saved it.
+Download the API Platform Gateway 2026.10.0 distribution from the [WSO2 downloads page]({{ sts_downloads_page }}), or download [`wso2apip-api-gateway-stsrelease-2026.10.0.zip`](../../assets/files/gateway/2026.10.0/wso2apip-api-gateway-stsrelease-2026.10.0.zip) directly. Then run the following commands from the folder where you saved it.
 
 ```bash
 # Unzip the downloaded distribution.

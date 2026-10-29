@@ -2459,6 +2459,7 @@ extra_javascript:
   - assets/lib/highlightjs/highlight.min.js
   - assets/js/theme.js
 extra:
+  sts_downloads_page: "https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway"
   show_repo_in_nav: false
   page_title_suffix: "API Platform Docs"
   social:

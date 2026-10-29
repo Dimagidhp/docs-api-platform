@@ -34,7 +34,7 @@ Select the context you're installing in, then follow the steps in that tab.
 
     **Step 1: Download the distribution**
 
-    Download `wso2apip-ai-gateway-stsrelease-2026.10.0.zip` from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway). Then unzip it:
+    Download the distribution from the [WSO2 downloads page]({{ sts_downloads_page }}), or download [`wso2apip-ai-gateway-stsrelease-2026.10.0.zip`](../../../assets/files/gateway/2026.10.0/wso2apip-ai-gateway-stsrelease-2026.10.0.zip) directly. Then unzip it:
 
     ```bash
     # Unzip the downloaded distribution.
@@ -106,7 +106,7 @@ Select the context you're installing in, then follow the steps in that tab.
 
     **Step 1: Download the distribution**
 
-    Download `wso2apip-ai-gateway-stsrelease-2026.10.0.zip` from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway) and copy it to the VM. Then unzip it:
+    Download the distribution from the [WSO2 downloads page]({{ sts_downloads_page }}), or download [`wso2apip-ai-gateway-stsrelease-2026.10.0.zip`](../../../assets/files/gateway/2026.10.0/wso2apip-ai-gateway-stsrelease-2026.10.0.zip) directly, and copy it to the VM. Then unzip it:
 
     ```bash
     # Unzip the downloaded distribution.
@@ -181,7 +181,7 @@ Select the context you're installing in, then follow the steps in that tab.
 
     **Step 1: Download the distribution**
 
-    Download `wso2apip-ai-gateway-stsrelease-2026.10.0.zip` from the [WSO2 downloads page](https://wso2.com/products/downloads/?product=wso2am&package=platform-gateway). Then unzip it:
+    Download the distribution from the [WSO2 downloads page]({{ sts_downloads_page }}), or download [`wso2apip-ai-gateway-stsrelease-2026.10.0.zip`](../../../assets/files/gateway/2026.10.0/wso2apip-ai-gateway-stsrelease-2026.10.0.zip) directly. Then unzip it:
 
     ```bash
     # Unzip the downloaded distribution.
