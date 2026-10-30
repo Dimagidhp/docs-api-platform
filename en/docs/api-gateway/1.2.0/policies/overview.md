@@ -231,15 +231,15 @@ The following table presents the available policies alphabetically.
 | [CORS](https://wso2.com/api-platform/policy-hub/policies/cors) | Security, AI, MCP | Cross-Origin Resource Sharing (CORS) policy that handles preflight requests and adds appropriate CORS headers to responses. |
 | [Dynamic Endpoint](https://wso2.com/api-platform/policy-hub/policies/dynamic-endpoint) | Transformation | Routes requests to a named upstream definition at request time. |
 | [Host Rewrite](https://wso2.com/api-platform/policy-hub/policies/host-rewrite) | Transformation | Sets the Host/:authority header sent to the upstream. |
-| [Interceptor Service](https://wso2.com/api-platform/policy-hub/policies/interceptor-service) | Transformation | Invokes a user-defined HTTP interceptor service in the request and/or response phase. |
+| [Interceptor Service](https://wso2.com/api-platform/policy-hub/policies/interceptor-service) | Transformation | Invokes a user-defined HTTP interceptor service in the request phase, the response phase, or both. |
 | [JSON Schema Guardrail](https://wso2.com/api-platform/policy-hub/policies/json-schema-guardrail) | Guardrails, AI | Validates request or response body content against a JSON Schema. |
 | [JSON/XML Mediator](https://wso2.com/api-platform/policy-hub/policies/json-xml-mediator) | Transformation | Mediates request and response payloads between downstream and upstream JSON/XML formats. |
 | [JWT Auth](https://wso2.com/api-platform/policy-hub/policies/jwt-auth) | Security, AI | Validates JWT access tokens using one or more JWKS providers (key managers). |
 | [LLM Cost](https://wso2.com/api-platform/policy-hub/policies/llm-cost) | AI | Calculates the monetary cost of LLM API calls at response time and stores the result in SharedContext for use by downstream policies. |
-| [LLM Cost Based Ratelimit](https://wso2.com/api-platform/policy-hub/policies/llm-cost-based-ratelimit) | AI | A specialized rate limiting policy that enforces monetary budget limits on LLM API usage. |
+| [LLM Cost-Based Rate Limit](https://wso2.com/api-platform/policy-hub/policies/llm-cost-based-ratelimit) | AI | Enforces monetary budget limits on LLM API usage. |
 | [Log Message](https://wso2.com/api-platform/policy-hub/policies/log-message) | Logging, Analytics & Monitoring, MCP | This policy provides the capability to log the payload and headers of a request/response. |
 | [MCP Access Control](https://wso2.com/api-platform/policy-hub/policies/mcp-acl-list) | MCP, AI | MCP ACL List policy controls access to tools, resources, and prompts using mode and exceptions. |
-| [MCP Authentication](https://wso2.com/api-platform/policy-hub/policies/mcp-auth) | MCP, AI, Security | This policy is used to secure traffic to Model Context Protocol server as defined in the specification (https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization). |
+| [MCP Authentication](https://wso2.com/api-platform/policy-hub/policies/mcp-auth) | MCP, AI, Security | Secures traffic to Model Context Protocol (MCP) servers as defined in the [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization). |
 | [MCP Authorization](https://wso2.com/api-platform/policy-hub/policies/mcp-authz) | MCP, AI, Security | MCP Authorization policy validates access to MCP resources (tools, resources, prompts) and methods based on JWT claims or OAuth scopes provided by the mcp-auth policy. |
 | [MCP Rewrite](https://wso2.com/api-platform/policy-hub/policies/mcp-rewrite) | MCP, AI | MCP Rewrite policy defines user-facing tools, resources, and prompts and maps them to backend capability names using optional "target" fields. |
 | [Model Round Robin](https://wso2.com/api-platform/policy-hub/policies/model-round-robin) | AI | Implements round-robin load balancing for AI models. |
@@ -248,11 +248,11 @@ The following table presents the available policies alphabetically.
 | [Prompt Compressor](https://wso2.com/api-platform/policy-hub/policies/prompt-compressor) | AI | Compresses selected prompt text in JSON request bodies before upstream LLM calls. |
 | [Prompt Decorator](https://wso2.com/api-platform/policy-hub/policies/prompt-decorator) | AI | Dynamically modifies the prompt by applying custom decorations using a configured strategy. |
 | [Prompt Template](https://wso2.com/api-platform/policy-hub/policies/prompt-template) | AI | Dynamically modifies the prompt by applying custom templates using a configured strategy. |
-| [Rate Limit - Advanced](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) | Security, AI | Rate limiting policy supporting multiple algorithms (GCRA, Fixed Window), multi-dimensional quotas, weighted rate limiting, flexible key extraction, and both in-memory and Redis backends. |
-| [Rate Limit - Basic](https://wso2.com/api-platform/policy-hub/policies/basic-ratelimit) | Security, AI | Simple request rate limiting policy that limits the number of requests per time window. |
+| [Rate Limit - Advanced](https://wso2.com/api-platform/policy-hub/policies/advanced-ratelimit) | Security, AI | Supports the Generic Cell Rate Algorithm (GCRA) and fixed-window algorithms, multi-dimensional quotas, weighted rate limiting, flexible key extraction, and both in-memory and Redis backends. |
+| [Rate Limit - Basic](https://wso2.com/api-platform/policy-hub/policies/basic-ratelimit) | Security, AI | Limits the number of requests per time window. |
 | [Regex Guardrail](https://wso2.com/api-platform/policy-hub/policies/regex-guardrail) | Guardrails, AI | Validates request or response body content against a regular expression pattern. |
 | [Remove Headers](https://wso2.com/api-platform/policy-hub/policies/remove-headers) | Transformation, MCP | This policy provides the capability to remove headers from either the request or the response. |
-| [Request Rewrite](https://wso2.com/api-platform/policy-hub/policies/request-rewrite) | Transformation | Rewrites incoming requests by updating path, query parameters, and/or HTTP method before forwarding to upstream services. |
+| [Request Rewrite](https://wso2.com/api-platform/policy-hub/policies/request-rewrite) | Transformation | Rewrites the path, query parameters, HTTP method, or any combination of these before forwarding requests to upstream services. |
 | [Respond](https://wso2.com/api-platform/policy-hub/policies/respond) | AI | Returns an immediate response to the client without forwarding the request to the upstream backend. |
 | [Semantic Cache](https://wso2.com/api-platform/policy-hub/policies/semantic-cache) | AI | Implements semantic caching for LLM responses using vector similarity search. |
 | [Semantic Prompt Guard](https://wso2.com/api-platform/policy-hub/policies/semantic-prompt-guard) | Guardrails, AI | Blocks or allows prompts based on semantic similarity to configured allow/deny phrase embeddings. |
@@ -260,7 +260,7 @@ The following table presents the available policies alphabetically.
 | [Sentence Count Guardrail](https://wso2.com/api-platform/policy-hub/policies/sentence-count-guardrail) | Guardrails, AI | Validates the sentence count of request or response body content. |
 | [Set Headers](https://wso2.com/api-platform/policy-hub/policies/set-headers) | Transformation, MCP | This policy provides the capability to set arbitrary headers to either the request or the response. |
 | [Subscription Validation](https://wso2.com/api-platform/policy-hub/policies/subscription-validation) | Security | Validates that incoming requests are associated with an active subscription for the target API. |
-| [Token Based Ratelimit](https://wso2.com/api-platform/policy-hub/policies/token-based-ratelimit) | AI | A specialized rate limiting policy for LLM APIs that enforces usage quotas based on token counts. |
+| [Token-Based Rate Limit](https://wso2.com/api-platform/policy-hub/policies/token-based-ratelimit) | AI | Enforces usage quotas on LLM APIs based on token counts. |
 | [URL Guardrail](https://wso2.com/api-platform/policy-hub/policies/url-guardrail) | Guardrails, AI | Validates URLs found in request or response body content. |
 | [Word Count Guardrail](https://wso2.com/api-platform/policy-hub/policies/word-count-guardrail) | Guardrails, AI | Validates the word count of request or response body content. |
 <!-- POLICY_TABLE_END -->
